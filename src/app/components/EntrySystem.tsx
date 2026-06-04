@@ -10,7 +10,6 @@ export default function EntrySystem() {
     const [progress, setProgress] = useState(0);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
-    // Simulated Progress Loader
     useEffect(() => {
         if (progress < 100) {
             const timer = setTimeout(() => setProgress(prev => prev + 1), 30);
@@ -43,86 +42,99 @@ export default function EntrySystem() {
             <AnimatePresence>
                 {!isInitialized && (
                     <motion.div
-                        exit={{ opacity: 0, scale: 1.1 }}
-                        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className="fixed inset-0 z-[999] bg-[#004aad] flex flex-col items-center justify-center p-10 overflow-hidden"
+                        exit={{ opacity: 0, scale: 1.05 }}
+                        className="fixed inset-0 z-[999] bg-[#004aad] flex items-center justify-center p-6 overflow-hidden"
                     >
-                        {/* Background Industrial Grid */}
-                        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]" />
+                        {/* GLOBAL BACKGROUND GRID (Subtle) */}
+                        <div className="absolute inset-0 opacity-10 pointer-events-none" />
 
+                        {/* CENTRAL INTERFACE CARD */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-center space-y-8 max-w-2xl w-full"
+                            className="w-full max-w-xl bg-[#004aad] border border-white/10 rounded-sm overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.5)]"
                         >
-                            <div className="space-y-2">
-                                <h1 className="text-white text-3xl md:text-6xl font-black tracking-tighter uppercase leading-none">
-                                 The site is under Maintenance  <br /> 
-                                </h1>
-                                
-                                <div className="flex items-center justify-center gap-4 py-4">
-                                    <Activity className="w-4 h-4 text-[#1B79EE] animate-pulse" />
-                                    <p className="text-[#1B79EE] font-mono text-[10px] tracking-[0.4em] uppercase">
-                                        {progress < 100 ? "Syncing Trenching Systems..." : "Systems Synchronized"}
-                                    </p>
-                                </div>
+                            {/* TOP SECTION: VIDEO HEADER (Opacity 100) */}
+                            <div className="relative w-full h-64   overflow-hidden border-b border-[#1B79EE]/30">
+                                <video 
+                                    autoPlay 
+                                    loop 
+                                    muted 
+                                    playsInline
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                >
+                                    <source src="/assets/video/6029794_Lofoten Drone Ocean Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4" type="video/mp4" />
+                                </video> 
+ 
                             </div>
 
-                            {/* PROGRESS BAR SECTION */}
-                            <div className="w-full space-y-4">
-                                <div className="flex justify-between font-mono text-[10px] text-white/50 uppercase tracking-widest">
-                                    <span>Deployment Progress</span>
-                                    <span>{progress}%</span>
-                                </div>
-                                <div className="h-[2px] w-full bg-white/10 relative">
-                                    <motion.div 
-                                        className="absolute top-0 left-0 h-full bg-[#1B79EE]"
-                                        initial={{ width: 0 }}
-                                        animate={{ width: `${progress}%` }}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* BUTTON - Only fully visible when progress is 100 */}
-                            <div className="h-24 flex items-center justify-center">
-                                {progress === 100 ? (
-                                    <motion.button
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        onClick={handleStart}
-                                        className="group relative px-20 py-6 border-2 border-[#1B79EE] overflow-hidden bg-transparent transition-all"
-                                    >
-                                        <div className="absolute inset-0 bg-[#1B79EE] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
-                                        <span className="relative z-10 flex items-center gap-4 text-white font-black text-xs uppercase tracking-[0.5em]">
-                                            <Power className="w-4 h-4" /> Enter Site
-                                        </span>
-                                    </motion.button>
-                                ) : (
-                                    <div className="flex gap-8 opacity-40 grayscale">
-                                        <Hammer className="w-6 h-6 text-white animate-bounce" />
-                                        <HardHat className="w-6 h-6 text-white animate-bounce delay-150" />
+                            {/* BOTTOM SECTION: TELEMETRY & CONTROLS */}
+                            <div className="p-10 space-y-8">
+                                <div className="space-y-2">
+                                    <h2 className="text-white text-3xl font-black uppercase tracking-tighter leading-none">
+                                        The site is under  <span className="text-[#1B79EE]">Progress</span>
+                                    </h2>
+                                    <div className="flex items-center gap-3">
+                                        <Activity className="w-4 h-4 text-[#1B79EE] animate-pulse" />
+                                        <p className="text-[#1B79EE] font-mono text-[9px] tracking-[0.4em] uppercase font-bold">
+                                            {progress < 100 ? "Loading Infrastructure..." : "Ready for Deployment"}
+                                        </p>
                                     </div>
-                                )}
+                                </div>
+
+                                {/* PROGRESS SYSTEM */}
+                                <div className="w-full space-y-3">
+                                    <div className="flex justify-between font-mono text-[9px] text-white/40 uppercase tracking-widest font-bold">
+                                        <span>Sync Status</span>
+                                        <span>{progress}%</span>
+                                    </div>
+                                    <div className="h-[2px] w-full bg-white/5 relative">
+                                        <motion.div 
+                                            className="absolute top-0 left-0 h-full bg-[#1B79EE]"
+                                            initial={{ width: 0 }}
+                                            animate={{ width: `${progress}%` }}
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* ENTRY PROTOCOL BUTTON */}
+                                <div className="h-20 flex items-center justify-center">
+                                    {progress === 100 ? (
+                                        <motion.button
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            onClick={handleStart}
+                                            className="group relative w-full py-5 border border-[#1B79EE] bg-transparent transition-all overflow-hidden"
+                                        >
+                                            <div className="absolute inset-0 bg-[#1B79EE] -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                                            <span className="relative z-10 flex items-center justify-center gap-4 text-white font-black text-xs uppercase tracking-[0.5em]">
+                                                <Power className="w-4 h-4" /> Enter Site
+                                            </span>
+                                        </motion.button>
+                                    ) : (
+                                        <div className="flex gap-6 opacity-30 grayscale">
+                                            <Hammer className="w-5 h-5 text-white animate-bounce" />
+                                            <HardHat className="w-5 h-5 text-white animate-bounce delay-150" />
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </motion.div>
- 
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            {/* AUDIO CONTROLLER (Remains the same as your original) */}
+            {/* FLOATING AUDIO CONTROLLER */}
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={isInitialized ? { opacity: 1, y: 0 } : {}}
-                className="fixed top-0 right-8 md:right-7 z-[100] flex items-center "
+                initial={{ opacity: 0 }}
+                animate={isInitialized ? { opacity: 1 } : {}}
+                className="fixed top-0.5 right-4 z-[100] flex items-center"
             >
- 
-                <div className="h-6 w-[1px] bg-white/20 mx-2" />
                 <button
                     onClick={toggleMute}
-                    className="p-3 text-white transition-colors"
+                    className="p-3 text-white  transition-colors"
                 >
-                    {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>
             </motion.div>
         </>

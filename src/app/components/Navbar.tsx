@@ -145,12 +145,12 @@ export const Navbar = () => {
         <div className="w-full px-6 xl:px-20 h-full flex justify-between items-center relative">
 
           {/* Logo */}
-          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center pr-4 xl:pr-8 border-r border-[#004aad]/10 h-10">
+          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center border-r border-[#004aad]/10 h-10">
             <Image
               src="/PEG.png"
               alt="PEG Precast Engineering Group"
-              width={220} // Scaled down slightly to help fit on zoomed screens
-              height={45}
+              width={330} // Scaled down slightly to help fit on zoomed screens
+              height={55}
               className="object-contain"
               priority
             />

@@ -24,6 +24,7 @@ import TrenchingSystem from "./components/TrenchingSystem";
 import RetainingWallComponent from "./components/RetainingWallComponent";
 import MarinaSystemComponent from "./components/MarinaSystemComponent";
 import SponsorMarquee from "./components/SponsorMarquee";
+import AutomationDashboard from "./components/AutomationDashboard";
 
 export default function Home() {
   return (
@@ -53,12 +54,12 @@ export default function Home() {
       <AgencySlider />
       <ContentSection />
       <PegHero />
+      <AutomationDashboard />
       <DotMatrixSlider />
       <FutureCulvertComponent />
       <PegLocations />
 
 
-      
       <PrecastersGoDigital />
       <MeetAtShows />
       <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">

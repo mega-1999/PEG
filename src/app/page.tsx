@@ -25,6 +25,7 @@ import RetainingWallComponent from "./components/RetainingWallComponent";
 import MarinaSystemComponent from "./components/MarinaSystemComponent";
 import SponsorMarquee from "./components/SponsorMarquee";
 import AutomationDashboard from "./components/AutomationDashboard";
+import PegResourceGrid from "./components/PegResourceGrid";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
       {/* <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" /> */}
       {/* <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" /> */}
       {/* <BusinessPodcastSection/> */}
+      <PegResourceGrid />
       <AgencySlider />
       <ContentSection />
       <PegHero />
@@ -58,7 +60,6 @@ export default function Home() {
       <DotMatrixSlider />
       <FutureCulvertComponent />
       <PegLocations />
-
 
       <PrecastersGoDigital />
       <MeetAtShows />

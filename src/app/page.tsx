@@ -26,6 +26,7 @@ import MarinaSystemComponent from "./components/MarinaSystemComponent";
 import SponsorMarquee from "./components/SponsorMarquee";
 import AutomationDashboard from "./components/AutomationDashboard";
 import PegResourceGrid from "./components/PegResourceGrid";
+import HexagonLogoShowcase from "./components/HexagonLogoShowcase";
 
 export default function Home() {
   return (
@@ -60,7 +61,7 @@ export default function Home() {
       <DotMatrixSlider />
       <FutureCulvertComponent />
       <PegLocations />
-
+      <HexagonLogoShowcase />
       <PrecastersGoDigital />
       <MeetAtShows />
       <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">

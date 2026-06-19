@@ -29,6 +29,8 @@ import PegResourceGrid from "./components/PegResourceGrid";
 import HexagonLogoShowcase from "./components/HexagonLogoShowcase";
 import ManufacturingHub from "./components/ManufacturingHub";
 import EngineeringExecuted from "./components/EngineeringExecuted";
+import InnovativeContactComponent from "./components/InnovativeContactComponent";
+import ContactTerminal from "./components/ContactTerminal";
 
 export default function Home() {
   return (
@@ -68,8 +70,9 @@ export default function Home() {
       <HexagonLogoShowcase />
       <PrecastersGoDigital />
       <MeetAtShows />
-      <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">
+      <section id="contact" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         {/* <ContactTerminal /> */}
+        {/* <InnovativeContactComponent/> */}
       </section>
     </main>
   );

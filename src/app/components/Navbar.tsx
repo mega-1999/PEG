@@ -74,7 +74,7 @@ const navData = [
       { name: 'About PEG', href: '/about' },
       { name: 'Blog', href: '/blog' },
       { name: 'Global Locations', href: '/global-location' },
-      { name: 'Contacts', href: '/contact' }
+      { name: 'Contacts', href: '#contact' }
     ]
   }
 ];
@@ -224,7 +224,7 @@ export const Navbar = () => {
                                         <Link
                                           href={link.href}
                                           onClick={() => setActiveMenu(null)}
-                                          className="text-sm font-medium text-[#004aad]/70 hover:text-[#1B79EE] transition-colors"
+                                          className="text-xs font-medium text-[#004aad]/70 hover:text-[#1B79EE] transition-colors"
                                         >
                                           {link.name}
                                         </Link>
@@ -246,7 +246,7 @@ export const Navbar = () => {
                                 [Illustration]
                               </div>
 
-                              <h5 className="font-bold text-sm text-[#004aad] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
+                              <h5 className="font-bold text-xs text-[#004aad] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
                               <p className="text-xs text-[#004aad]/60 mb-6 leading-relaxed">{item.featured?.description}</p>
 
                               <Link

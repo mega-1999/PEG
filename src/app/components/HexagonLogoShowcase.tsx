@@ -1,112 +1,41 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 const partnerLogos = [
-  {
-    id: "NODE_01",
-    src: "/PrecastIndustry%20Links/1.jpg",
-    alt: "PEG Precasters",
-  },
-  {
-    id: "NODE_02",
-    src: "/PrecastIndustry%20Links/2.jpg",
-    alt: "Precast Engineering",
-  },
+  { id: "NODE_01", src: "/PrecastIndustry%20Links/1.jpg", alt: "PEG Precasters" },
+  { id: "NODE_02", src: "/PrecastIndustry%20Links/2.jpg", alt: "Precast Engineering" },
   { id: "NODE_03", src: "/PrecastIndustry%20Links/3.jpg", alt: "P-Xchange" },
-  {
-    id: "NODE_04",
-    src: "/PrecastIndustry%20Links/4.jpg",
-    alt: "Total Tech Solutions",
-  },
-  {
-    id: "NODE_05",
-    src: "/PrecastIndustry%20Links/5.jpg",
-    alt: "Trench Unlimited",
-  },
-  {
-    id: "NODE_06",
-    src: "/PrecastIndustry%20Links/6.jpg",
-    alt: "Alternative Alliance",
-  },
-  {
-    id: "NODE_07",
-    src: "/PrecastIndustry%20Links/7.jpg",
-    alt: "Global Mold Tech",
-  },
-  {
-    id: "NODE_08",
-    src: "/PrecastIndustry%20Links/8.jpg",
-    alt: "Parametric Vault",
-  },
-  {
-    id: "NODE_09",
-    src: "/PrecastIndustry%20Links/9.jpg",
-    alt: "Grid Infrastructure",
-  },
-  {
-    id: "NODE_10",
-    src: "/PrecastIndustry%20Links/10.jpg",
-    alt: "Hydro Systems",
-  },
-  {
-    id: "NODE_11",
-    src: "/PrecastIndustry%20Links/11.jpg",
-    alt: "PEG Precasters",
-  },
-  {
-    id: "NODE_12",
-    src: "/PrecastIndustry%20Links/12.jpg",
-    alt: "Precast Engineering",
-  },
+  { id: "NODE_04", src: "/PrecastIndustry%20Links/4.jpg", alt: "Total Tech Solutions" },
+  { id: "NODE_05", src: "/PrecastIndustry%20Links/5.jpg", alt: "Trench Unlimited" },
+  { id: "NODE_06", src: "/PrecastIndustry%20Links/6.jpg", alt: "Alternative Alliance" },
+  { id: "NODE_07", src: "/PrecastIndustry%20Links/7.jpg", alt: "Global Mold Tech" },
+  { id: "NODE_08", src: "/PrecastIndustry%20Links/8.jpg", alt: "Parametric Vault" },
+  { id: "NODE_09", src: "/PrecastIndustry%20Links/9.jpg", alt: "Grid Infrastructure" },
+  { id: "NODE_10", src: "/PrecastIndustry%20Links/10.jpg", alt: "Hydro Systems" },
+  { id: "NODE_11", src: "/PrecastIndustry%20Links/11.jpg", alt: "PEG Precasters" },
+  { id: "NODE_12", src: "/PrecastIndustry%20Links/12.jpg", alt: "Precast Engineering" },
   { id: "NODE_13", src: "/PrecastIndustry%20Links/13.jpg", alt: "P-Xchange" },
-  {
-    id: "NODE_14",
-    src: "/PrecastIndustry%20Links/14.jpg",
-    alt: "Total Tech Solutions",
-  },
-  {
-    id: "NODE_15",
-    src: "/PrecastIndustry%20Links/15.jpg",
-    alt: "Trench Unlimited",
-  },
-  {
-    id: "NODE_16",
-    src: "/PrecastIndustry%20Links/16.jpg",
-    alt: "Alternative Alliance",
-  },
-  {
-    id: "NODE_17",
-    src: "/PrecastIndustry%20Links/17.jpg",
-    alt: "Global Mold Tech",
-  },
-  {
-    id: "NODE_18",
-    src: "/PrecastIndustry%20Links/18.jpg",
-    alt: "Parametric Vault",
-  },
-  {
-    id: "NODE_19",
-    src: "/PrecastIndustry%20Links/19.jpg",
-    alt: "Grid Infrastructure",
-  },
-  {
-    id: "NODE_20",
-    src: "/PrecastIndustry%20Links/20.jpg",
-    alt: "Hydro Systems",
-  },
+  { id: "NODE_14", src: "/PrecastIndustry%20Links/14.jpg", alt: "Total Tech Solutions" },
+  { id: "NODE_15", src: "/PrecastIndustry%20Links/15.jpg", alt: "Trench Unlimited" },
+  { id: "NODE_16", src: "/PrecastIndustry%20Links/16.jpg", alt: "Alternative Alliance" },
+  { id: "NODE_17", src: "/PrecastIndustry%20Links/17.jpg", alt: "Global Mold Tech" },
+  { id: "NODE_18", src: "/PrecastIndustry%20Links/18.jpg", alt: "Parametric Vault" },
+  { id: "NODE_19", src: "/PrecastIndustry%20Links/19.jpg", alt: "Grid Infrastructure" },
+  { id: "NODE_20", src: "/PrecastIndustry%20Links/20.jpg", alt: "Hydro Systems" },
 ];
 
 export default function HexagonLogoShowcase() {
   return (
-    <section className="w-full bg-[#004aad] text-white py-16 md:py-32 px-6 md:px-10 lg:px-20 relative overflow-hidden font-sans">
+    <section className="w-full bg-[#004aad] text-white py-16 md:py-32 overflow-hidden relative font-sans">
       {/* INTEGRATED ARCHITECTURAL GRID */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:30px_30px] md:bg-[size:40px_40px]" />
 
-      <div className="max-w-[1600px] mx-auto relative z-10 space-y-12 md:space-y-20">
+      <div className="w-full relative z-10 space-y-12 md:space-y-16">
         {/* HEADER SPECIFICATION */}
-        <div className="text-center max-w-2xl mx-auto space-y-4">
+        <div className="text-center max-w-2xl mx-auto space-y-4 px-6">
           <div className="w-12 h-1 bg-[#1B79EE] mx-auto" />
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">
             Global Ecosystem <br />
@@ -117,62 +46,31 @@ export default function HexagonLogoShowcase() {
           </p>
         </div>
 
-        {/* HONEYCOMB SHOWCASE MATRIX */}
-        <div className="flex flex-col items-center justify-center gap-1 w-full py-6">
-          {/* ROW 1 */}
-          <div className="flex flex-row gap-1 md:gap-1.5">
-            {partnerLogos.slice(0, 4).map((logo, idx) => (
+        {/* EDGE-TO-EDGE HONEYCOMB MATRIX (Strictly 2 lines) */}
+        <div className="flex flex-col items-center justify-center gap-1 w-full overflow-x-auto no-scrollbar py-4 px-4">
+          
+          {/* LINE 1 - First 10 items spanning edge-to-edge */}
+          <div className="flex flex-row gap-1 md:gap-1.5 min-w-max justify-center">
+            {partnerLogos.slice(0, 10).map((logo, idx) => (
               <HexagonNode
                 key={`r1-${logo.id}`}
                 logo={logo}
-                delay={idx * 0.05}
+                delay={idx * 0.04}
               />
             ))}
           </div>
 
-          {/* ROW 2 - OFFSET SYSTEM */}
-          <div className="flex flex-row gap-1 md:gap-1.5 translate-x-10 md:translate-x-14 lg:translate-x-16">
-            {partnerLogos.slice(4, 8).map((logo, idx) => (
+          {/* LINE 2 - Last 10 items offset horizontally for interlocking honeycomb design */}
+          <div className="flex flex-row gap-1 md:gap-1.5 min-w-max justify-center translate-x-10 md:translate-x-14 lg:translate-x-16">
+            {partnerLogos.slice(10, 20).map((logo, idx) => (
               <HexagonNode
                 key={`r2-${logo.id}`}
                 logo={logo}
-                delay={idx * 0.05}
+                delay={idx * 0.04}
               />
             ))}
           </div>
 
-          {/* ROW 3 */}
-          <div className="flex flex-row gap-1 md:gap-1.5">
-            {partnerLogos.slice(8, 12).map((logo, idx) => (
-              <HexagonNode
-                key={`r3-${logo.id}`}
-                logo={logo}
-                delay={idx * 0.05}
-              />
-            ))}
-          </div>
-
-          {/* ROW 4 - OFFSET SYSTEM */}
-          <div className="flex flex-row gap-1 md:gap-1.5 -translate-x-10 md:-translate-x-14 lg:-translate-x-16">
-            {partnerLogos.slice(12, 16).map((logo, idx) => (
-              <HexagonNode
-                key={`r4-${logo.id}`}
-                logo={logo}
-                delay={idx * 0.05}
-              />
-            ))}
-          </div>
-
-          {/* ROW 5 */}
-          <div className="flex flex-row gap-1 md:gap-1.5">
-            {partnerLogos.slice(16, 20).map((logo, idx) => (
-              <HexagonNode
-                key={`r5-${logo.id}`}
-                logo={logo}
-                delay={idx * 0.05}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -205,12 +103,12 @@ function HexagonNode({
         }}
       >
         {/* LOGO IMAGE BOUNDARY WITH SHARP INTERIOR SCALE EFFECT */}
-        <div className="relative w-full h-full max-w-[75%] max-h-[75%] transition-transform duration-500 ease-out group-hover:scale-165">
+        <div className="relative w-full h-full max-w-[75%] max-h-[75%] transition-transform duration-500 ease-out group-hover:scale-125">
           <Image
             src={logo.src}
             alt={logo.alt}
             fill
-            className="object-contain p-0.5 transition-all duration-300 "
+            className="object-contain p-0.5 transition-all duration-300"
           />
         </div>
 

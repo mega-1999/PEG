@@ -67,12 +67,12 @@ const HeroEngineering = () => {
         </motion.div>
         
         {/* 4. POPULAR TAGS: Technical styling */}
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-black text-[#004aad] uppercase tracking-[0.2em]">
           <span className="hover:text-[#1B79EE] cursor-pointer transition-colors">Popular_Nodes:</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-300">Wall Panels</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-300">Hollow-Core Slabs</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-300">Bridge Girders</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-300">Culvert Systems</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Wall Panels</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Hollow-Core Slabs</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Bridge Girders</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Culvert Systems</span>
         </div>
 
       </div>

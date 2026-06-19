@@ -105,7 +105,7 @@ export const ResourceDirectory = () => {
                           </span>
 
                           {link.highlight && (
-                            <span className="ml-auto text-[8px] font-mono font-bold bg-[#1B79EE] text-[#004aad] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
+                            <span className="ml-auto text-[8px] font-mono font-bold bg-white text-[#004aad] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
                               NEW_NODE
                             </span>
                           )}

@@ -37,7 +37,7 @@ const techPillars = [
 
 export default function AdvancedEngineeringTech() {
   return (
-    <section className="w-full  bg-white overflow-hidden relative">
+    <section className="w-full py-24 bg-white overflow-hidden relative">
       
       {/* Background Accent Lines */}
       <div className="absolute top-0 left-10 md:left-20 w-px h-full bg-[#004aad]/5 pointer-events-none" />
@@ -85,7 +85,7 @@ export default function AdvancedEngineeringTech() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
               // HOVER STATE: Row turns PEG Dark Blue, borders remain clean.
-              className="group flex flex-col md:flex-row items-start md:items-center border-b border-[#004aad]/10 hover:bg-[#004aad] transition-all duration-500 cursor-pointer p-2 md:px-8 md:py-4 gap-8 md:gap-8 relative overflow-hidden"
+              className="group flex flex-col md:flex-row items-start md:items-center border-b-3 border-[#004aad]/10 hover:bg-[#004aad] transition-all duration-500 cursor-pointer p-2 md:px-8 md:py-4 gap-8 md:gap-8 relative overflow-hidden"
             >
               
               {/* LARGE WATERMARK (Visible only on hover) */}

@@ -27,6 +27,7 @@ import SponsorMarquee from "./components/SponsorMarquee";
 import AutomationDashboard from "./components/AutomationDashboard";
 import PegResourceGrid from "./components/PegResourceGrid";
 import HexagonLogoShowcase from "./components/HexagonLogoShowcase";
+import ManufacturingHub from "./components/ManufacturingHub";
 
 export default function Home() {
   return (
@@ -42,6 +43,7 @@ export default function Home() {
       <SeamlessConnection />
       <TrenchingSystem />
       <RetainingWallComponent />
+      <ManufacturingHub />
       <MarinaSystemComponent />
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />

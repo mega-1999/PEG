@@ -271,7 +271,7 @@ export const Navbar = () => {
           <div className="hidden xl:flex shrink-0 pl-4 xl:pl-8 border-l border-[#004aad]/10 h-10 items-center">
             <Link
               href="#technical-vault"
-              className="bg-[#1B79EE] whitespace-nowrap hover:bg-[#004aad] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+              className="bg-[#004aad] whitespace-nowrap hover:bg-[#1B79EE] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
             >
               Access Vault
             </Link>
@@ -358,7 +358,7 @@ export const Navbar = () => {
                 onClick={() => setIsMobileOpen(false)}
                 className="block text-center w-full bg-[#004aad] hover:bg-[#1B79EE] text-white py-4 text-xs font-bold uppercase tracking-wider rounded transition-colors"
               >
-                Access Technical Vault
+                Access Vault
               </Link>
             </div>
           </motion.div>

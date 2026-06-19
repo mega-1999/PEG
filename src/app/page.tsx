@@ -42,7 +42,7 @@ export default function Home() {
       <TargetAudience />
       <UnchallengedResources />
       <SeamlessConnection />
-      {/* <EngineeringExecuted/> */}
+      <EngineeringExecuted/>
       <TrenchingSystem />
       <RetainingWallComponent />
       <ManufacturingHub />

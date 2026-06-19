@@ -28,6 +28,7 @@ import AutomationDashboard from "./components/AutomationDashboard";
 import PegResourceGrid from "./components/PegResourceGrid";
 import HexagonLogoShowcase from "./components/HexagonLogoShowcase";
 import ManufacturingHub from "./components/ManufacturingHub";
+import EngineeringExecuted from "./components/EngineeringExecuted";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
       <TargetAudience />
       <UnchallengedResources />
       <SeamlessConnection />
+      {/* <EngineeringExecuted/> */}
       <TrenchingSystem />
       <RetainingWallComponent />
       <ManufacturingHub />

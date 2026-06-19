@@ -2,20 +2,33 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-// Provision for 50 Agencies
-const AGENCIES = Array.from({ length: 50 }).map((_, i) => ({
-  id: i,
-  name: `AGENCY_${i + 1 < 10 ? `0${i + 1}` : i + 1}`,
-}));
+// Agency logos (public/agency-Logos)
+const AGENCY_LOGOS = [
+  { src: "/agency-Logos/NDOTLogo.webp", alt: "NDOT Logo" },
+  { src: "/agency-Logos/arizona-water-company.jpg", alt: "Arizona Water Company" },
+  { src: "/agency-Logos/att.webp", alt: "AT&T" },
+  { src: "/agency-Logos/caltrans.webp", alt: "CalTrans" },
+  { src: "/agency-Logos/edison.webp", alt: "Edison" },
+  { src: "/agency-Logos/la-dwp.webp", alt: "LA DWP" },
+  { src: "/agency-Logos/las-vegas-water-district-1.jpg", alt: "Las Vegas Water District" },
+  { src: "/agency-Logos/nv-energy-1-1.webp", alt: "NV Energy" },
+  { src: "/agency-Logos/sdge.webp", alt: "SDGE" },
+  { src: "/agency-Logos/smud.png", alt: "SMUD" },
+  { src: "/agency-Logos/verizon.jpg", alt: "Verizon" },
+];
 
 export default function FullWidthAgencySlider() {
   return (
-    /* overflow-x-hidden on the section prevents the scrollbar entirely */
-    <section className="relative w-full   bg-[#F5F5F5] overflow-x-hidden select-none">
+    /* Cleaned out neutral background to match your strict theme palette */
+    <section className="relative w-full bg-white overflow-x-hidden select-none py-16 md:py-24">
       
+      {/* INTEGRATED ARCHITECTURAL GRID BACKGROUND */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[size:40px_40px]" />
+
       {/* 1. HEADER: FULL WIDTH WITH PADDING */}
-      <div className="w-full px-10 md:px-20 py-16">
+      <div className="w-full px-10 md:px-20 mb-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,105 +36,87 @@ export default function FullWidthAgencySlider() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#004aad]/10 pb-10"
         >
           <div className="space-y-2">
- 
             <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter leading-none">
               AGENCY <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>STANDARDS</span>
             </p>
           </div>
-          
- 
         </motion.div>
       </div>
 
-      {/* 2. THE SLIDER: EDGE-TO-EDGE */}
-      <div className="relative flex flex-col gap-4 w-full">
+      {/* 2. THE SLIDER: EDGE-TO-EDGE WITH SYMMETRICAL CARDS */}
+      <div className="relative flex flex-col gap-6 w-full relative z-10">
         
         {/* Row 1: Sliding Left */}
         <div className="relative w-full flex overflow-hidden group">
-          {/* Edge Fading Masks */}
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#F5F5F5] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#F5F5F5] to-transparent z-10 pointer-events-none" />
+          {/* Edge Fading Masks over Pure White background */}
+          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{
-              duration: 60,
+              duration: 35, // Optimized speed for seamless reading
               ease: "linear",
               repeat: Infinity,
             }}
-            className="flex flex-nowrap whitespace-nowrap"
+            className="flex flex-nowrap whitespace-nowrap gap-6 pr-6"
           >
-            {[...AGENCIES, ...AGENCIES].map((agency, idx) => (
+            {[...AGENCY_LOGOS, ...AGENCY_LOGOS].map((logo, idx) => (
               <div
                 key={`left-${idx}`}
-                className="flex items-center justify-center px-16 py-12 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-default"
+                className="flex items-center justify-center shrink-0 py-4"
               >
-                <span className="text-3xl font-black tracking-[0.2em] text-[#004aad] hover:text-[#1B79EE]">
-                  {agency.name}
-                </span>
+                {/* WHITE CARD CONTAINER: Forces identical size, alignment, and hover lift */}
+                <div className="relative w-24 h-24 bg-white rounded-full flex items-center justify-center p-4 border border-[#004aad]/10 shadow-sm transition-all duration-300 hover:scale-110 hover:border-[#1B79EE] hover:shadow-md cursor-crosshair group/inner">
+                  <div className="relative w-full h-full">
+                    <Image 
+                      src={logo.src} 
+                      alt={logo.alt} 
+                      fill 
+                      className="object-contain transition-transform duration-300 group-hover/inner:scale-110" 
+                    />
+                  </div>
+                </div>
               </div>
             ))}
           </motion.div>
         </div>
 
         {/* Row 2: Sliding Right */}
-        <div className="relative w-full flex overflow-hidden">
-          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#F5F5F5] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-[#F5F5F5] to-transparent z-10 pointer-events-none" />
+        <div className="relative w-full flex overflow-hidden group">
+          <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <motion.div
             animate={{ x: ["-50%", "0%"] }}
             transition={{
-              duration: 75,
+              duration: 40,
               ease: "linear",
               repeat: Infinity,
             }}
-            className="flex flex-nowrap whitespace-nowrap"
+            className="flex flex-nowrap whitespace-nowrap gap-6 pr-6"
           >
-            {[...AGENCIES, ...AGENCIES].reverse().map((agency, idx) => (
+            {[...AGENCY_LOGOS, ...AGENCY_LOGOS].reverse().map((logo, idx) => (
               <div
                 key={`right-${idx}`}
-                className="flex items-center justify-center px-16 py-12 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-700 cursor-default"
+                className="flex items-center justify-center shrink-0 py-4"
               >
-                <span 
-                  className="text-3xl font-black tracking-[0.2em]"
-                  style={{ WebkitTextStroke: "1px #004aad", color: "transparent" }}
-                >
-                  {agency.name}
-                </span>
+                {/* MATCHING WHITE CARD CONTAINER */}
+                <div className="relative w-24 h-24 bg-white rounded-full flex items-center justify-center p-4 border border-[#004aad]/10 shadow-sm transition-all duration-300 hover:scale-110 hover:border-[#1B79EE] hover:shadow-md cursor-crosshair group/inner">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      fill
+                      className="object-contain transition-transform duration-300 group-hover/inner:scale-110"
+                    />
+                  </div>
+                </div>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
-
-      {/* 3. FOOTER: FULL WIDTH GRID */}
-      {/* <div className="w-full px-10 md:px-20 mt-16">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-12 pt-10 border-t border-[#004aad]/5"
-        >
-          {[
-            { label: 'Compliance', status: 'Verified' },
-            { label: 'Precision', status: 'Millimeter' },
-            { label: 'Scalability', status: 'Unlimited' },
-            { label: 'Authorization', status: 'Active' }
-          ].map((item, i) => (
-            <div key={i} className="group cursor-default">
-              <p className="text-xs font-mono text-[#1B79EE] mb-1">
-                DATA_POINT_0{i + 1}
-              </p>
-              <p className="text-lg font-black text-[#004aad] uppercase tracking-tighter group-hover:text-[#1B79EE] transition-colors">
-                {item.label}
-              </p>
-              <p className="text-xs font-mono text-slate-400 mt-1 uppercase">
-                Status: {item.status}
-              </p>
-            </div>
-          ))}
-        </motion.div>
-      </div> */}
 
     </section>
   );

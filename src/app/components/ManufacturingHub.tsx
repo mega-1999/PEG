@@ -147,13 +147,7 @@ export default function ManufacturingHub() {
             </motion.div>
           ))}
         </div>
-
-        {/* FACTORY DATA FOOTER REEL */}
-        <div className="mt-16 flex flex-wrap gap-x-16 gap-y-4 border-t border-slate-100 pt-8 opacity-40">
-          <div className="font-mono text-[9px] uppercase tracking-widest text-[#004aad]">Plant_Status: Continuous_Feed</div>
-          <div className="font-mono text-[9px] uppercase tracking-widest text-[#004aad]">ISO_M-4_Material_Core</div>
-          <div className="font-mono text-[9px] uppercase tracking-widest text-[#004aad]">Output_Node: North_American_Logistics</div>
-        </div>
+ 
 
       </div>
     </section>

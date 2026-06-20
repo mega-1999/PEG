@@ -46,6 +46,7 @@ export default function Home() {
       <SeamlessConnection />
       <EngineeringExecuted/>
       <TrenchingSystem />
+      
       <RetainingWallComponent />
       <ManufacturingHub />
       <MarinaSystemComponent />
@@ -71,8 +72,8 @@ export default function Home() {
       <PrecastersGoDigital />
       <MeetAtShows />
       <section id="contact" className="w-full bg-[#004aad] text-white overflow-hidden relative">
-        {/* <ContactTerminal /> */}
-        {/* <InnovativeContactComponent/> */}
+        <ContactTerminal />
+        <InnovativeContactComponent/>
       </section>
     </main>
   );

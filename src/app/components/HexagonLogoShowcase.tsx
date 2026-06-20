@@ -96,7 +96,7 @@ function HexagonNode({
     >
       {/* SOLID WHITE EXTERIOR CONTAINER */}
       <div
-        className="absolute inset-0 bg-white transition-all duration-300 group-hover:bg-[#1B79EE] flex items-center justify-center p-2.5 sm:p-3 md:p-4 shadow-inner"
+        className="absolute inset-0 bg-white transition-all duration-300 flex items-center justify-center p-2.5 sm:p-3 md:p-4 shadow-inner"
         style={{
           clipPath:
             "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",

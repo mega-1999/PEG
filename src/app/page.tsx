@@ -35,8 +35,9 @@ import ContactTerminal from "./components/ContactTerminal";
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
-      <HeroEngineering />
       <ResourceDirectory />
+      <HeroEngineering />
+      <FutureCulvertComponent />
       <SponsorMarquee />
       <PrecasterManifesto />
       <FuturisticCTA />
@@ -66,7 +67,6 @@ export default function Home() {
       <PegHero />
       <AutomationDashboard />
       <DotMatrixSlider />
-      <FutureCulvertComponent />
       <PegLocations />
       <HexagonLogoShowcase />
       <PrecastersGoDigital />

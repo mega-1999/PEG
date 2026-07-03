@@ -8,7 +8,7 @@ import { Search, Activity } from 'lucide-react';
 
 const HeroEngineering = () => {
   return ( 
-    <section className="relative w-full pt-36 pb-24 flex flex-col items-center justify-center border-b bg-white overflow-hidden">
+    <section className="relative w-full py-12 flex flex-col items-center justify-center border-b bg-white overflow-hidden">
       
       {/* 1. THE GRID SYSTEM: Increased opacity slightly for 32" monitors */}
       <div className="absolute inset-0 -z-10 opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>

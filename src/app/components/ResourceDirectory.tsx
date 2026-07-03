@@ -63,7 +63,7 @@ export const ResourceDirectory = () => {
 
   return (
     <section className="w-full bg-[#004aad] text-white overflow-hidden">
-      <div className="w-full px-10 md:px-20 py-16">
+      <div className="w-full px-10 md:px-20 py-36">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-stretch">
           

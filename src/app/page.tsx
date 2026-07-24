@@ -31,6 +31,7 @@ import ManufacturingHub from "./components/ManufacturingHub";
 import EngineeringExecuted from "./components/EngineeringExecuted";
 import InnovativeContactComponent from "./components/InnovativeContactComponent";
 import ContactTerminal from "./components/ContactTerminal";
+import MembershipBox from "./components/MembershipBox";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
       <FuturisticCTA />
       <AdvancedEngineeringTech />
       <TargetAudience />
+      <MembershipBox/>
       <UnchallengedResources />
       <SeamlessConnection />
       <EngineeringExecuted/>

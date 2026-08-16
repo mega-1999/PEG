@@ -45,7 +45,7 @@ export default function DeliverableUpgrade() {
         
         {/* 1. MASSIVE TYPOGRAPHY HEADER */}
         <div className="max-w-5xl mb-8 space-y-6">
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase">
             Upgrade your <br />
             {/* ONLY White and Bright Blue used here */}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#1B79EE]">
@@ -53,7 +53,7 @@ export default function DeliverableUpgrade() {
             </span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/80 font-medium max-w-3xl leading-relaxed mt-2 border-l-4 border-[#1B79EE] pl-6">
+          <p className="text-xl md:text-lg text-white/80 font-medium max-w-3xl leading-relaxed mt-2 border-l-4 border-[#1B79EE] pl-6">
             Stop losing time on revisions. Elevate your production pipeline with bulletproof submittals, hyper-accurate illustrations, and non-stop code compliance.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function DeliverableUpgrade() {
                   {feature.subtitle}
                 </p>
                 {/* Title: Dark Blue -> Hovers to White */}
-                <h3 className="text-[#004aad] group-hover:text-white text-3xl font-black uppercase tracking-tighter mb-3 leading-none transition-colors duration-500">
+                <h3 className="text-[#004aad] group-hover:text-white text-xl font-black uppercase tracking-tighter mb-3 leading-none transition-colors duration-500">
                   {feature.title}
                 </h3>
                 {/* Description: Dark Blue faded -> Hovers to White faded */}

@@ -112,7 +112,7 @@ const engineeringServices = [
 export default function EngineeringExecuted() {
   return (
     <section className="w-full bg-[#f8fafc] py-32 px-10 md:px-20 overflow-hidden">
-      <div className="max-w-[1800px] mx-auto">
+      <div className="">
         
         {/* HEADER: Massive Brand Statement */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
@@ -122,7 +122,7 @@ export default function EngineeringExecuted() {
               whileInView={{ opacity: 1, width: '80px' }}
               className="h-1 bg-[#1B79EE]"
             />
-            <h2 className="text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
               ENGINEERING <br />
               <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>EXECUTED YOUR WAY.</span>
             </h2>
@@ -167,7 +167,7 @@ export default function EngineeringExecuted() {
                   ${service.highlight ? 'text-[#1B79EE] group-hover:text-white' : 'text-slate-400'}`}>
                   {service.subtitle}
                 </p>
-                <h3 className={`text-3xl font-black uppercase tracking-tighter mb-4 leading-none
+                <h3 className={`text-xl font-black uppercase tracking-tighter mb-4 leading-none
                   ${service.highlight ? 'text-white' : 'text-[#004aad]'}`}>
                   {service.title}
                 </h3>

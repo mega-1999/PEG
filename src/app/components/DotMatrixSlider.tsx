@@ -195,12 +195,12 @@ export default function DotMatrixSlider() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#1B79EE]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#004aad]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 -translate-x-1/3 translate-y-1/3" />
 
-      <div className="w-full px-10 md:px-20 py-16  relative z-10">
+      <div className="w-full px-10 md:px-20 py-16 relative z-10">
         
         {/* HEADER AREA */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12 border-b border-slate-200 pb-8">
           <div className="space-y-4">
-            <h2 className="text-4xl md:text-5xl font-black text-[#004aad] tracking-tight leading-none uppercase">
+            <h2 className="text-2xl md:text-3xl font-black text-[#004aad] tracking-tight leading-none uppercase">
               State DOT Drawings <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004aad] to-[#1B79EE]">Compliance Databank</span>
             </h2>
@@ -243,7 +243,7 @@ export default function DotMatrixSlider() {
                           DOT Jurisdiction
                         </span>
                       </div>
-                      <h3 className="text-3xl font-black text-[#004aad] tracking-tight mt-1">
+                      <h3 className="text-xl font-black text-[#004aad] tracking-tight mt-1">
                         {activeEnriched.state}
                       </h3>
                       <p className="text-[#1B79EE] font-bold text-xs uppercase tracking-widest flex items-center gap-1.5 mt-0.5">

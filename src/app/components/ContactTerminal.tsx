@@ -46,7 +46,7 @@ export default function ContactTerminal() {
         style={{ backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`, backgroundSize: '50px 50px' }}
       />
 
-      <div className="w-full max-w-[1700px] mx-auto px-10 md:px-20 relative z-10">
+      <div className="w-full px-10 md:px-20 relative z-10">
         
         {/* TERMINAL HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
@@ -54,7 +54,7 @@ export default function ContactTerminal() {
             <div className="flex items-center gap-3 text-white font-mono text-[10px] font-black uppercase tracking-[0.5em]">
               <Server className="w-4 h-4 text-[#1B79EE] animate-pulse" /> Global Communications Hub
             </div>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase">
               INITIATE <br />
               <span className="text-[#1B79EE]">
                 CONTACT.
@@ -163,7 +163,7 @@ export default function ContactTerminal() {
             <div className="absolute -bottom-3 -left-3 w-6 h-6 border-b-2 border-l-2 border-[#1B79EE]" />
 
             <div className="flex items-center justify-between mb-10">
-              <h3 className="text-3xl font-black uppercase tracking-tighter text-[#004aad]">Project Telemetry Link</h3>
+              <h3 className="text-xl font-black uppercase tracking-tighter text-[#004aad]">Project Telemetry Link</h3>
               <TerminalSquare className="w-8 h-8 text-[#004aad]/20" />
             </div>
 

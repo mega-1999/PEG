@@ -61,7 +61,7 @@ export default function PrecastersGoDigital() {
         {/* 1. BROADCAST HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
           <div className="space-y-6 max-w-4xl">
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase">
               PRECASTERS <br />
               <span style={{ WebkitTextStroke: "1px #ffffff", color: "transparent" }}>GO DIGITAL.</span>
             </h2>
@@ -93,7 +93,7 @@ export default function PrecastersGoDigital() {
                   {channel.subtitle}
                 </p>
                 {/* TITLE: Dark Blue -> White on hover */}
-                <h3 className="text-4xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
+                <h3 className="text-2xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                   {channel.title}
                 </h3>
                 {/* DESCRIPTION: Faded Dark Blue -> Faded White on hover */}

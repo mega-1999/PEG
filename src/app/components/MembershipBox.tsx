@@ -24,14 +24,14 @@ const membershipPerks = [
 
 export default function MembershipBox() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-10 lg:px-20 flex justify-center font-sans">
+    <section className="w-full bg-[#004aad] py-4 my-2 px-6 md:px-10 lg:px-20 flex justify-center font-sans">
       
       <motion.div 
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-[1500px] bg-[#004aad] relative overflow-hidden shadow-[0_30px_60px_rgba(0,74,173,0.2)]"
+        className="w-full relative overflow-hidden shadow-[0_30px_60px_rgba(0,74,173,0.2)]"
       >
         {/* INTERNAL BLUEPRINT GRID BACKGROUND */}
         <div 
@@ -58,7 +58,7 @@ export default function MembershipBox() {
               </span>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
+            <h2 className="text-2xl md:text-4xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
               Join The Precast <br />
               <span className="text-[#1B79EE]">Family Of Precasters.</span>
             </h2>

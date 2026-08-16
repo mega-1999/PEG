@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full px-10 md:px-20 py-12 bg-[#004aad] overflow-hidden flex items-center justify-center min-h-[60vh]">
+    <section className="relative w-full px-10 md:px-20 py-12 bg-[#004aad] overflow-hidden flex items-center justify-center">
       
       {/* BACKGROUND: Futuristic CAD Grid & Glows */}
       <div 
@@ -17,7 +17,7 @@ export default function FuturisticCTA() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#004aad] rounded-full blur-[150px] opacity-30 z-0 pointer-events-none" />
 
       {/* CONTENT CONTAINER */}
-      <div className="relative z-10 w-full max-w-[1800px] mx-auto flex flex-col items-center text-center">
+      <div className="relative z-10 w-full flex flex-col items-center text-center">
         
         {/* Eyebrow Label */}
         <motion.div 
@@ -40,10 +40,10 @@ export default function FuturisticCTA() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-6"
+          className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-6"
         >
-          PEG YOUR <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white  to-[#1B79EE]">
+          PEG YOUR 
+          <span className="text-transparent bg-clip-text pl-2 bg-gradient-to-r from-white to-[#1B79EE]">
             IDEAS.
           </span>
         </motion.h2>
@@ -56,7 +56,7 @@ export default function FuturisticCTA() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col items-center gap-4 mb-16"
         >
-          <p className="text-2xl md:text-4xl font-bold text-slate-300 tracking-tight max-w-4xl leading-snug">
+          <p className="text-lg md:text-2xl font-bold text-slate-300 tracking-tight leading-snug">
             Trust in us for <span className="text-white italic">futuristic</span> precasting.
           </p>
           <div className="flex items-center gap-6 mt-4 opacity-70">
@@ -79,15 +79,15 @@ export default function FuturisticCTA() {
         >
           <Link 
             href="/contact"
-            className="group relative inline-flex items-center justify-center gap-4 bg-white text-[#004aad] px-10 py-6 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)]"
+            className="group relative inline-flex items-center justify-center gap-3 bg-white text-[#004aad] h-14 px-10 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)]"
           >
             {/* Hover Sweep Effect */}
             <div className="absolute inset-0 bg-[#1B79EE] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
             
-            <span className="relative z-10 font-mono text-sm font-black uppercase tracking-[0.3em] group-hover:text-[#004aad] transition-colors">
+            <span className="relative z-10 font-mono text-sm font-black uppercase tracking-[0.2em] group-hover:text-white transition-colors">
               Initiate Deployment
             </span>
-            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-[#004aad] transition-transform" />
+            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-white transition-transform" />
           </Link>
         </motion.div>
 

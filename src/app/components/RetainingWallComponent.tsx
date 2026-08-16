@@ -26,12 +26,12 @@ const wallSystems = [
 export default function RetainingWallComponent() {
   return (
     <section className="w-full bg-slate-50 px-10 md:px-20 overflow-hidden">
-      <div className="max-w-[1800px] mx-auto">
+      <div className="">
         
         {/* HEADER: Technical Alignment */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-slate-200 pb-12">
           <div className="space-y-2">
-            <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter uppercase">
+            <p className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase">
               Retaining <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>Walls.</span>
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function RetainingWallComponent() {
             >
               {/* Vertical Side Label (Brutalist Touch) */}
               <div className="hidden md:flex items-center justify-center w-16 bg-[#004aad] text-white/20 select-none">
-                <span className="rotate-[-90deg] font-black text-2xl tracking-[0.3em] whitespace-nowrap uppercase">
+                <span className="rotate-[-90deg] font-black text-lg tracking-[0.3em] whitespace-nowrap uppercase">
                   {wall.tag}
                 </span>
               </div>
@@ -65,7 +65,7 @@ export default function RetainingWallComponent() {
                   </div>
                 </div>
 
-                <h3 className="text-4xl font-black text-[#004aad] uppercase tracking-tighter mb-6 group-hover:text-[#1B79EE] transition-colors">
+                <h3 className="text-2xl font-black text-[#004aad] uppercase tracking-tighter mb-6 group-hover:text-[#1B79EE] transition-colors">
                   {wall.title}
                 </h3>
 

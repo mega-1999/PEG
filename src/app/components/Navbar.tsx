@@ -105,7 +105,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <header ref={navRef} className="fixed top-0  left-0 w-full z-[100] flex flex-col shadow-sm">
+    <header ref={navRef} className="fixed top-0 left-0 w-full z-[100] flex flex-col shadow-sm">
 
       {/* 1. TOP UTILITY BAR */}
       {/* Adjusted padding for smaller screens */}

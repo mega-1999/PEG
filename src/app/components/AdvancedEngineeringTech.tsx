@@ -55,7 +55,7 @@ export default function AdvancedEngineeringTech() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
             >
               Advanced Engineering <br />
               <span className="text-[#1B79EE]">& Technologies.</span>
@@ -95,7 +95,7 @@ export default function AdvancedEngineeringTech() {
 
               {/* NUMBER & ICON */}
               <div className="flex items-center gap-8 shrink-0 relative z-10">
-                <span className="text-4xl md:text-5xl font-black text-[#1B79EE] group-hover:text-[#1B79EE] transition-colors duration-500">
+                <span className="text-2xl md:text-3xl font-black text-[#1B79EE] group-hover:text-[#1B79EE] transition-colors duration-500">
                   {pillar.id}
                 </span>
                 <div className="p-4 bg-[#004aad]/5 group-hover:bg-[#1B79EE] text-[#004aad] group-hover:text-white transition-colors duration-500">
@@ -108,7 +108,7 @@ export default function AdvancedEngineeringTech() {
                 <p className="text-[#1B79EE] group-hover:text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] mb-2 transition-colors duration-500">
                   {pillar.category}
                 </p>
-                <h3 className="text-2xl md:text-4xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
+                <h3 className="text-lg md:text-2xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                   {pillar.title}
                 </h3>
                 <p className="text-[#004aad]/70 group-hover:text-white/80 text-sm leading-relaxed font-medium max-w-3xl transition-colors duration-500">

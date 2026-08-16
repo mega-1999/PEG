@@ -76,7 +76,7 @@ export default function InteractiveCulvertViewer() {
       {/* Background Matrix Grid */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: `linear-gradient(#1B79EE 1px, transparent 1px), linear-gradient(90deg, #1B79EE 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />
 
-      <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 relative z-10 h-full flex flex-col xl:flex-row gap-12">
+      <div className="px-6 md:px-12 lg:px-20 relative z-10 h-full flex flex-col xl:flex-row gap-12">
         
         {/* LEFT PANEL: UI & SELECTOR HUD */}
         <div className="xl:w-1/3 flex flex-col justify-center space-y-10">
@@ -84,7 +84,7 @@ export default function InteractiveCulvertViewer() {
             <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
               <Cuboid className="w-4 h-4 animate-pulse" /> Live CAD Matrix
             </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none uppercase">
+            <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-none uppercase">
               INTERACTIVE <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B79EE] to-[#1B79EE]">
                 TELEMETRY.

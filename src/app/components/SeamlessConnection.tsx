@@ -17,7 +17,7 @@ export default function SeamlessConnection() {
         }}
       />
 
-      <div className="w-full px-10 md:px-20 pt-16 pb-24 relative z-10 max-w-[1600px] mx-auto">
+      <div className="w-full px-10 md:px-20 pt-16 pb-24 relative z-10">
         
         {/* HEADER SECTION */}
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-16 space-y-8">
@@ -39,7 +39,7 @@ export default function SeamlessConnection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase"
+            className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase"
           >
             One Unique Connection <br />
             For All Your Precast Concrete <br />
@@ -51,7 +51,7 @@ export default function SeamlessConnection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-3xl font-black text-[#004aad]/80 tracking-tight leading-snug max-w-3xl"
+            className="text-xl md:text-xl font-black text-[#004aad]/80 tracking-tight leading-snug max-w-3xl"
           >
             How do we assist from your desk back to your shop seamlessly?
           </motion.p>
@@ -93,7 +93,7 @@ export default function SeamlessConnection() {
               <div className="w-24 h-24 rounded-full bg-[#004aad]/5 group-hover:bg-white flex items-center justify-center mb-6 transition-colors duration-500">
                 <Monitor className="w-10 h-10 text-[#004aad] group-hover:text-[#1B79EE] transition-colors duration-500" />
               </div>
-              <h3 className="text-3xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
+              <h3 className="text-xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                 From Your Desk
               </h3>
               <p className="text-[#1B79EE] group-hover:text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] mb-6 transition-colors duration-500">
@@ -115,7 +115,7 @@ export default function SeamlessConnection() {
               <div className="w-24 h-24 rounded-full bg-[#004aad]/5 group-hover:bg-white flex items-center justify-center mb-6 transition-colors duration-500">
                 <Factory className="w-10 h-10 text-[#004aad] group-hover:text-[#1B79EE] transition-colors duration-500" />
               </div>
-              <h3 className="text-3xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
+              <h3 className="text-xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                 Back To Your Shop
               </h3>
               <p className="text-[#1B79EE] group-hover:text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] mb-6 transition-colors duration-500">

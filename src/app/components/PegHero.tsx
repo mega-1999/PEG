@@ -40,13 +40,13 @@ const TypingOutline = ({ text, delay = 0 }: { text: string; delay?: number }) =>
 
 export default function PegHero() {
   return (
-    <section className="relative min-h-screen w-full px-10 md:px-20 py-16 bg-[#F5F5F5] flex flex-col justify-center items-center overflow-hidden  font-sans select-none">
+    <section className="relative min-h-screen w-full px-10 md:px-20 py-16 bg-[#F5F5F5] flex flex-col justify-center items-center overflow-hidden font-sans select-none">
 
       {/* Background: Engineering Matrix Grid (Subtle) */}
       <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
         style={{ backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px)`, backgroundSize: '40px 40px' }} />
 
-      <div className="max-w-7xl w-full flex flex-col items-center text-center z-10">
+      <div className="w-full flex flex-col items-center text-center z-10">
 
         {/* Top Floating Badge */}
         <motion.div
@@ -67,7 +67,7 @@ export default function PegHero() {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[12vw] md:text-[10rem] font-black text-[#004aad] tracking-tighter"
+            className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter"
           >
             PRECAST
           </motion.h1>
@@ -75,7 +75,7 @@ export default function PegHero() {
           {/* Row 2: PEG Light Blue (Typing Outline) 
           Using your TypingOutline component for the core service
       */}
-          <div className="text-[10vw] md:text-[8.5rem] font-black tracking-tighter">
+          <div className="text-5xl md:text-7xl font-black tracking-tighter mt-2">
             <TypingOutline text="ENGINEERS" delay={0.6} />
           </div>
 
@@ -86,7 +86,7 @@ export default function PegHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="text-[#1B79EE] text-[4vw] md:text-[3.5rem] font-black tracking-[0.2em] mt-2 italic"
+            className="text-[#1B79EE] text-2xl md:text-4xl font-black tracking-[0.2em] mt-4 italic"
           >
             BY THE HOUR.
           </motion.div>
@@ -96,11 +96,10 @@ export default function PegHero() {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1.8, duration: 0.6 }}
-            className="text-[#004aad] text-[6vw] md:text-[5.5rem] font-black tracking-tight mt-6"
+            className="text-[#004aad] text-4xl md:text-6xl font-black tracking-tight mt-6"
           >
             FOR ANY SITUATION.
           </motion.div>
-
 
         </div>
 

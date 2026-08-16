@@ -76,7 +76,7 @@ export default function ManufacturingHub() {
         }}
       />
 
-      <div className="max-w-[1800px] mx-auto relative z-10">
+      <div className="relative z-10">
         
         {/* LINE SYSTEM HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b-2 border-slate-100 pb-12 gap-8">
@@ -84,7 +84,7 @@ export default function ManufacturingHub() {
             <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
               <Settings2 className="w-4 h-4 animate-spin-slow" /> Fabrication & Casting Complexes
             </div>
-            <h2 className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
               HEAVY INDUSTRIAL <br />
               <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>PRODUCTION LINE.</span>
             </h2>
@@ -122,7 +122,7 @@ export default function ManufacturingHub() {
                 <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest font-black mb-2">
                   {cell.subtitle}
                 </p>
-                <h3 className="text-2xl font-black text-[#004aad] uppercase tracking-tighter leading-tight mb-4">
+                <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter leading-tight mb-4">
                   {cell.title}
                 </h3>
                 <p className="text-slate-500 text-xs font-medium leading-relaxed">

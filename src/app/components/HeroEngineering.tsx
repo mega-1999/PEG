@@ -30,7 +30,7 @@ const HeroEngineering = () => {
           </div>
 
           {/* THE NEW HEADLINE */}
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-[#004aad] leading-[0.9] uppercase">
+          <h1 className="text-3xl md:text-6xl font-black tracking-tighter text-[#004aad] leading-[0.9] uppercase">
             THE FUTURE OF <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>PRECAST ENGINEERING.</span>
           </h1>
@@ -40,7 +40,7 @@ const HeroEngineering = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium italic"
+            className="text-xl md:text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium italic"
           >
             "From conception to execution, the Futuristic highway of  <span className="text-[#004aad] font-bold">Precast Engineering</span>, <span className="text-[#004aad] font-bold">Advanced Technologies</span> & beyond."
           </motion.p>
@@ -51,17 +51,17 @@ const HeroEngineering = () => {
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="w-full max-w-4xl flex items-center gap-0 bg-white border-[3px] border-[#004aad] rounded-none overflow-hidden shadow-[20px_20px_0px_-5px_rgba(0,74,173,0.05)]"
+          className="w-full max-w-4xl flex items-center gap-0 bg-white border-[3px] border-[#004aad] rounded-none overflow-hidden shadow-[10px_10px_0px_-5px_rgba(0,74,173,0.05)]"
         >
-          <div className="pl-6">
-            <Search className="w-7 h-7 text-[#1B79EE]" />
+          <div className="pl-4">
+            <Search className="w-5 h-5 text-[#1B79EE]" />
           </div>
           <Input
             type="text"
             placeholder="Search structural precast, or technical specs..."
-            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-xl py-10 placeholder:text-slate-300 font-medium"
+            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base py-6 placeholder:text-slate-300 font-medium"
           />
-          <Button className="rounded-none h-20 px-12 bg-[#004aad] hover:bg-[#1B79EE] text-white font-black transition-all text-xl tracking-widest">
+          <Button className="rounded-none h-14 px-8 bg-[#004aad] hover:bg-[#1B79EE] text-white font-black transition-all text-sm tracking-widest">
             INITIALIZE SEARCH
           </Button>
         </motion.div>

@@ -92,7 +92,7 @@ export default function AutomationDashboard() {
         </svg>
       </div>
 
-      <div className="max-w-[1800px] mx-auto relative z-10">
+      <div className="relative z-10">
         
         {/* TOP COMMAND STRIP */}
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-10">
@@ -100,7 +100,7 @@ export default function AutomationDashboard() {
             <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
               <ScanLine className="w-5 h-5 animate-pulse" /> Autonomous Infrastructure
             </div>
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-none uppercase text-white">
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none uppercase text-white">
               INDUSTRIAL <br />
               <span className="text-white">AUTOMATION.</span>
             </h2>
@@ -153,7 +153,7 @@ export default function AutomationDashboard() {
                 <p className="font-mono text-[9px] uppercase tracking-widest font-black mb-3 text-[#1B79EE] group-hover:text-white/80 transition-colors">
                   {node.subtitle}
                 </p>
-                <h3 className="text-3xl lg:text-4xl font-black uppercase tracking-tighter mb-4 text-[#004aad] group-hover:text-white transition-colors">
+                <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tighter mb-4 text-[#004aad] group-hover:text-white transition-colors">
                   {node.title}
                 </h3>
                 <p className="text-[#004aad]/70 group-hover:text-white/90 text-sm font-medium leading-relaxed md:max-w-[85%] transition-colors">

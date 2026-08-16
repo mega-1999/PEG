@@ -37,7 +37,7 @@ export default function HexagonLogoShowcase() {
         {/* HEADER SPECIFICATION */}
         <div className="text-center max-w-2xl mx-auto space-y-4 px-6">
           <div className="w-12 h-1 bg-[#1B79EE] mx-auto" />
-          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none">
+          <h2 className="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
             Global Ecosystem <br />
             <span className="text-white">& Partner Alliances.</span>
           </h2>

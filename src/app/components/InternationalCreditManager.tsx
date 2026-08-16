@@ -11,7 +11,7 @@ export default function InternationalCreditManager() {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-200 pb-6">
         <div>
-          <h2 className="text-2xl font-bold text-[#004aad]">Global Communication Credits</h2>
+          <h2 className="text-lg font-bold text-[#004aad]">Global Communication Credits</h2>
           <p className="text-slate-500 text-sm font-medium uppercase tracking-tight">Mega Foundries US | Project ID: 2026-MF</p>
         </div>
         <Badge variant="outline" className="bg-[#1B79EE]/10 text-[#1B79EE] border-[#1B79EE] px-4 py-1 text-sm font-bold">
@@ -66,7 +66,7 @@ export default function InternationalCreditManager() {
           <CardContent className="pt-8 flex flex-col items-center text-center">
             <PhoneCall className="w-10 h-10 mb-4 opacity-50 text-[#1B79EE]" />
             <span className="text-[10px] font-black uppercase tracking-widest opacity-70">Remaining Minutes</span>
-            <h3 className="text-4xl font-black mt-1">42:15</h3>
+            <h3 className="text-2xl font-black mt-1">42:15</h3>
             <p className="text-[10px] mt-4 font-medium opacity-60">Status: Connection Stable</p>
           </CardContent>
         </Card>

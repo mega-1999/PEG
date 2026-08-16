@@ -61,7 +61,7 @@ export default function PegLocations() {
         <div className="mb-16 flex items-end justify-between border-b-2 border-slate-100 pb-8">
           <div>
             <h2 className="text-[#004aad] text-xs font-black tracking-[0.5em] uppercase mb-2">Global Logstics</h2>
-            <p className="text-5xl font-black text-[#004aad] tracking-tighter">
+            <p className="text-3xl font-black text-[#004aad] tracking-tighter">
               OFFICES & <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>LOCATIONS</span>
             </p>
           </div>
@@ -110,7 +110,7 @@ function LocationCard({ loc, isWide = false }: { loc: any, isWide?: boolean }) {
         <Globe2 className="w-20 h-20 text-[#004aad]" />
       </div>
 
-      <h4 className="text-[#004aad] text-2xl font-black uppercase tracking-tighter mb-6 group-hover:text-[#1B79EE] transition-colors">
+      <h4 className="text-[#004aad] text-lg font-black uppercase tracking-tighter mb-6 group-hover:text-[#1B79EE] transition-colors">
         {loc.region}
       </h4>
 

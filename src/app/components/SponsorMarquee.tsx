@@ -19,11 +19,11 @@ export default function SponsorMarquee() {
 
     return (
         <section className="w-full bg-white py-4 border-t border-b border-[#004aad]/10 overflow-hidden select-none">
-            <div className="max-w-[1800px] mx-auto">
+            <div className="">
 
                 {/* STRUCTURAL ENGINEERING HEADER */}
                 <div className="flex flex-col items-center text-center mb-12 px-6">
-                    <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter leading-none">
+                    <h2 className="text-xl md:text-3xl font-black text-[#004aad] uppercase tracking-tighter leading-none">
                         Proudly Supporting <span className="text-[#1B79EE]">& Sponsoring</span>
                     </h2>
                     <div className="w-12 h-1 bg-[#1B79EE] mt-4" />

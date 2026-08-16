@@ -12,7 +12,7 @@ export const ContentSection = () => {
         {/* HEADER: Massive Structural Typography */}
         <div className="mb-4 space-y-6">
  
-          <h2 className="text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+          <h2 className="text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
             SOLUTIONS FOR <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THE CRITICAL PATH.</span>
           </h2>
@@ -32,7 +32,7 @@ export const ContentSection = () => {
             
             <div className="relative z-10">
                 
-                <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-none">
+                <h3 className="text-2xl font-black uppercase tracking-tighter mb-8 leading-none">
                     01:00 HRS.<br />The Midnight<br />Submittal.
                 </h3>
                 
@@ -64,7 +64,7 @@ export const ContentSection = () => {
                         <Workflow className="w-8 h-8" />
                     </div>
                     <div>
-                        <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
+                        <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
                             Full-Spectrum Lifecycle Support
                         </h3>
                         <p className="text-slate-500 font-medium leading-relaxed">
@@ -103,7 +103,7 @@ export const ContentSection = () => {
                 >
                     <div>
                         <Unlock className="w-8 h-8 text-white mb-6" />
-                        <h4 className="text-2xl font-black uppercase tracking-tighter mb-4">Zero-Friction Access</h4>
+                        <h4 className="text-lg font-black uppercase tracking-tighter mb-4">Zero-Friction Access</h4>
                         <p className="text-white/80 text-sm font-medium leading-relaxed">
                             No paywalls. No mandatory lead-capture forms requiring your phone number. Our architectural detail library and specs are completely open-source. 
                         </p>

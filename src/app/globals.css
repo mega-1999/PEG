@@ -55,6 +55,21 @@ html {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Fluid Typography Overrides for Tailwind text utilities */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.75rem);
+  --text-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
+  --text-base: clamp(0.9rem, 0.85rem + 0.25vw, 1rem);
+  --text-lg: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-xl: clamp(1.1rem, 1.05rem + 0.25vw, 1.25rem);
+  --text-2xl: clamp(1.2rem, 1.15rem + 0.25vw, 1.5rem);
+  --text-3xl: clamp(1.4rem, 1.3rem + 0.5vw, 1.875rem);
+  --text-4xl: clamp(1.6rem, 1.4rem + 1vw, 2.25rem);
+  --text-5xl: clamp(2rem, 1.7rem + 1.5vw, 3rem);
+  --text-6xl: clamp(2.5rem, 2rem + 2vw, 3.75rem);
+  --text-7xl: clamp(3rem, 2.2rem + 3vw, 4.5rem);
+  --text-8xl: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  --text-9xl: clamp(4rem, 3rem + 5vw, 8rem);
 }
 
 :root {

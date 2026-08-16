@@ -17,7 +17,7 @@ export const BusinessPodcastSection = () => {
       {/* LEFT: BPM Solutions & Testimonial */}
       <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
         <div className="max-w-xl space-y-6">
-          <h2 className="text-3xl font-bold text-[#004aad] tracking-tight">
+          <h2 className="text-xl font-bold text-[#004aad] tracking-tight">
             Solutions for BPM's
           </h2>
           <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
@@ -49,7 +49,7 @@ export const BusinessPodcastSection = () => {
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/building-bg.jpg')] bg-cover bg-center"></div>
         
         <div className="relative z-10 max-w-xl">
-          <h2 className="text-4xl font-light italic mb-2">Tune into <span className="font-bold not-italic">Detailed</span></h2>
+          <h2 className="text-2xl font-light italic mb-2">Tune into <span className="font-bold not-italic">Detailed</span></h2>
           <p className="text-blue-100/70 text-sm mb-12 max-w-md">
             Every building has a story. Our popular podcast introduces you to some of the most complex, interesting, and unusual ones around.
           </p>

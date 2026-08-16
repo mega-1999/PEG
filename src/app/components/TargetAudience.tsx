@@ -56,7 +56,7 @@ export default function TargetAudience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
+              className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
             >
               Precisely who <br className="hidden md:block" />
               <span className="text-[#1B79EE]">is PEG for?</span>
@@ -70,7 +70,7 @@ export default function TargetAudience() {
             transition={{ delay: 0.2 }}
             className="lg:max-w-md border-l-4 border-[#1B79EE] pl-6"
           >
-            <p className="text-[#004aad] font-black text-xl md:text-2xl uppercase tracking-tight leading-snug">
+            <p className="text-[#004aad] font-black text-xl md:text-lg uppercase tracking-tight leading-snug">
               Individuals or establishments associated with Precast & Concrete for further advancement seamlessly & effectively.
             </p>
           </motion.div>
@@ -106,7 +106,7 @@ export default function TargetAudience() {
 
               {/* CONTENT AREA */}
               <div className="relative z-10 flex-grow">
-                <h3 className="text-3xl font-black text-white uppercase tracking-tighter leading-none mb-4">
+                <h3 className="text-xl font-black text-white uppercase tracking-tighter leading-none mb-4">
                   {audience.title}
                 </h3>
                 <p className="text-white/70 group-hover:text-white/90 text-sm leading-relaxed font-medium transition-colors duration-500">

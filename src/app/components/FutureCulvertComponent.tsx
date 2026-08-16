@@ -38,7 +38,7 @@ export default function FutureCulvertComponent() {
       {/* 1. HEADER STRIP */}
       <div className="w-full px-10 md:px-20 py-16 flex justify-between items-end border-b border-white/10 relative z-30">
         <div className="space-y-2">
-          <h2 className="text-white text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">
+          <h2 className="text-white text-3xl md:text-5xl font-black tracking-tighter leading-[0.9]">
             THE FUTURE OF <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>BOX CULVERTS.</span>
           </h2>
@@ -83,7 +83,7 @@ export default function FutureCulvertComponent() {
                 <p className="text-[#1B79EE] font-black text-xs uppercase tracking-widest mb-2">{item.subtitle}</p>
                 {/* Headline using text-shadow for clarity against brighter hovered image */}
                 <h3 
-                  className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-5 transition-all duration-300 group-hover:text-[#1B79EE] leading-none"
+                  className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-5 transition-all duration-300 group-hover:text-[#1B79EE] leading-none"
                   style={{ textShadow: "0px 2px 2px rgba(0, 74, 173, 0.5)" }}
                 >
                   {item.title}
@@ -105,7 +105,7 @@ export default function FutureCulvertComponent() {
             </div>
 
             {/* Decorative Column Number */}
-            <div className="absolute top-12 right-12 z-20 font-mono text-white/10 text-9xl font-black group-hover:text-[#1B79EE]/10 transition-colors cursor-default">
+            <div className="absolute top-12 right-12 z-20 font-mono text-white/10 text-7xl font-black group-hover:text-[#1B79EE]/10 transition-colors cursor-default">
               0{idx + 1}
             </div>
           </motion.div>

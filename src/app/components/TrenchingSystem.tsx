@@ -57,12 +57,12 @@ export default function StaticTrenchingGrid() {
       {/* MAIN CONTAINER WRAPPER
          Centers the static row of cards, constrained to the standard max-width.
       */}
-      <div className="max-w-[1600px] mx-auto px-10 md:px-20 relative z-10 space-y-16">
+      <div className="px-10 md:px-20 relative z-10 space-y-16">
 
         {/* SECTION HEADER: Title + Manifesto */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-[#004aad]/5 pb-16">
           <div className="md:col-span-5">
-            <h3 className="text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
+            <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
               Trenching <br /> Systems.
             </h3>
           </div>
@@ -89,7 +89,7 @@ export default function StaticTrenchingGrid() {
           <div className="flex h-[500px] w-full flex-col justify-center p-12 bg-[#004aad] text-white relative shadow-xl col-span-1">
             <div className="absolute top-0 left-0 w-3 h-full bg-[#1B79EE]" />
             <Waypoints className="w-12 h-12 text-[#1B79EE] mb-10" />
-            <h4 className="text-4xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+            <h4 className="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
               Miles of <br /> Integration.
             </h4>
             <p className="text-white/70 text-sm leading-relaxed font-medium">
@@ -106,7 +106,7 @@ export default function StaticTrenchingGrid() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               whileHover={{ y: -15 }}
-              className="group relative h-[500px] w-full border transition-all duration-500 overflow-hidden col-span-1 bg-white border-[#004aad]/10 text-[#004aad] hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(0,74,173,0.1)] "
+              className="group relative h-[500px] w-full border transition-all duration-500 overflow-hidden col-span-1 bg-white border-[#004aad]/10 text-[#004aad] hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(0,74,173,0.1)]"
             >
               {/* IMAGE CONTAINER */}
               <div className={`relative h-56 w-full flex items-center justify-center p-10 transition-colors duration-500
@@ -130,7 +130,7 @@ export default function StaticTrenchingGrid() {
               {/* Content Area */}
               <div className="p-10 flex flex-col flex-grow">
                 {/* Purged 'Specs' data point to satisfying 'smaller is better' feedback */}
-                <h4 className={`text-3xl font-black uppercase tracking-tighter leading-tight mb-3 transition-colors group-hover:text-[#1B79EE]`}>
+                <h4 className={`text-xl font-black uppercase tracking-tighter leading-tight mb-3 transition-colors group-hover:text-[#1B79EE]`}>
                   {item.title}
                 </h4>
                 <p className="text-[#004aad] text-xs font-black uppercase tracking-tight opacity-80">
@@ -162,7 +162,7 @@ export default function StaticTrenchingGrid() {
               <Zap className="w-6 h-6 animate-spin-slow" />
               <span className="font-mono text-xs font-black tracking-widest">DEPLOYMENT_PROTOCOL</span>
             </div>
-            <h3 className="text-5xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
+            <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
               Scalable. <br /> Secure.
             </h3>
             <p className="text-[#004aad]/60 text-sm leading-relaxed max-w-xs font-medium">

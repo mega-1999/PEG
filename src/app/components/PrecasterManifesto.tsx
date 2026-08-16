@@ -49,7 +49,7 @@ export default function PrecasterManifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
+              className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
             >
               By Precasters. <br />
               <span className="text-[#1B79EE]">For Precasters.</span>
@@ -63,7 +63,7 @@ export default function PrecasterManifesto() {
             transition={{ delay: 0.2 }}
             className="hidden lg:block text-right pb-2"
           >
-            <p className="text-[#004aad] font-black text-2xl uppercase tracking-tighter">
+            <p className="text-[#004aad] font-black text-lg uppercase tracking-tighter">
               Why, What & Who?
             </p>
           </motion.div>
@@ -104,7 +104,7 @@ export default function PrecasterManifesto() {
                 <p className="text-white/70 group-hover:text-white font-black text-[11px] uppercase tracking-[0.2em] mb-4 transition-colors duration-500">
                   {item.subtitle}
                 </p>
-                <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-tight mb-6">
+                <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter leading-tight mb-6">
                   {item.headline}
                 </h3>
                 <p className="text-white/80 group-hover:text-white text-sm leading-relaxed font-medium transition-colors duration-500">

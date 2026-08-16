@@ -60,7 +60,7 @@ export default function InnovativeContactComponent() {
       {/* TECHNICAL MATHEMATICAL SYSTEM GRID */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#004aad_1px,transparent_1px),linear-gradient(to_bottom,#004aad_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-      <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative z-10 items-stretch">
         
         {/* LEFT COLUMN: THE SWITCHBOARD INTERFACE (Spans 5 Columns) */}
         <div className="lg:col-span-5 flex flex-col justify-between space-y-12">
@@ -69,7 +69,7 @@ export default function InnovativeContactComponent() {
             <div className="flex items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.4em] text-[#1B79EE]">
               <span className="w-2 h-2 bg-[#1B79EE] animate-ping" /> Comms Protocol v4.26
             </div>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none text-[#004aad]">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase leading-none text-[#004aad]">
               Initialize <br />
               <span className="text-[#1B79EE]">Connection.</span>
             </h2>
@@ -241,7 +241,7 @@ export default function InnovativeContactComponent() {
                 <div className="w-16 h-16 bg-[#1B79EE]/10 border border-[#1B79EE] text-[#1B79EE] flex items-center justify-center rounded-full mb-2 animate-bounce">
                   <ShieldCheck className="w-8 h-8" />
                 </div>
-                <h3 className="text-4xl font-black uppercase tracking-tighter text-[#004aad]">
+                <h3 className="text-2xl font-black uppercase tracking-tighter text-[#004aad]">
                   Packet Transmitted <br />
                   <span className="text-[#1B79EE]">Successfully.</span>
                 </h3>

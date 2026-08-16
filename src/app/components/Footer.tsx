@@ -61,7 +61,7 @@ export const Footer = () => {
               />
             </div>
             <div>
-              <h2 className="text-2xl md:text-3xl font-serif leading-tight max-w-md">
+              <h2 className="text-lg md:text-xl font-serif leading-tight max-w-md">
                 Your complete source for finding, selecting, detailing and specifying precast products.
               </h2>
               <p className="text-sm text-blue-100/60 font-medium">

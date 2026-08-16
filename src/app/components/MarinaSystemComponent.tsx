@@ -30,7 +30,7 @@ export default function MarinaSystemComponent() {
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: `radial-gradient(#1B79EE 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
-      <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start relative z-10">
         
         {/* LEFT COLUMN: The "Master Specs" (Occupies 5/12 columns) */}
         <div className="lg:col-span-5 space-y-12">
@@ -40,7 +40,7 @@ export default function MarinaSystemComponent() {
               whileInView={{ width: '80px' }}
               className="h-1 bg-[#1B79EE]"
             />
-            <h2 className="text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-none">
+            <h2 className="text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-none">
               FLOATING <br />
               <span className="text-[#1B79EE]">MARINAS.</span>
             </h2>
@@ -91,7 +91,7 @@ export default function MarinaSystemComponent() {
             <div className="absolute inset-0 flex flex-col justify-end p-12 text-white z-20">
               <div className="flex justify-between items-end">
                 <div>
-                  <h3 className="text-4xl font-black uppercase tracking-tighter">Monolithic Concrete Pontoons</h3>
+                  <h3 className="text-2xl font-black uppercase tracking-tighter">Monolithic Concrete Pontoons</h3>
                 </div>
                 <div className="p-4 rounded-full border border-white/20 bg-[#004aad]/40 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all">
                   <ArrowUpRight className="w-6 h-6" />
@@ -106,12 +106,12 @@ export default function MarinaSystemComponent() {
           {/* Secondary Sub-Modules */}
           <div className="bg-white border-2 border-[#004aad] p-8 flex flex-col justify-between hover:bg-[#004aad]/5 transition-colors group">
              <Anchor className="w-10 h-10 text-[#1B79EE] mb-6" />
-             <h4 className="text-2xl font-black text-[#004aad] uppercase tracking-tighter">Anchoring <br />Systems</h4>
+             <h4 className="text-lg font-black text-[#004aad] uppercase tracking-tighter">Anchoring <br />Systems</h4>
           </div>
 
           <div className="bg-[#1B79EE] p-8 flex flex-col justify-between text-white hover:bg-[#004aad] transition-colors group">
              <Navigation className="w-10 h-10 text-white mb-6" />
-             <h4 className="text-2xl font-black uppercase tracking-tighter">Modular <br />Expansion</h4>
+             <h4 className="text-lg font-black uppercase tracking-tighter">Modular <br />Expansion</h4>
           </div>
 
         </div>

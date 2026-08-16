@@ -86,13 +86,13 @@ export default function MeetAtShows() {
 
           <div className="space-y-6">
             <div className="space-y-2">
-              <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
+              <p className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
                 Meet at <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>the Shows.</span>
               </p>
             </div>
 
             {/* NEW TAGLINE ADDED HERE */}
-            <p className="text-xl md:text-2xl font-black text-[#004aad]/80 tracking-tight uppercase border-l-4 border-[#1B79EE] pl-4">
+            <p className="text-xl md:text-lg font-black text-[#004aad]/80 tracking-tight uppercase border-l-4 border-[#1B79EE] pl-4">
               Make Your Presence Count.
             </p>
           </div>
@@ -166,7 +166,7 @@ export default function MeetAtShows() {
                 </div>
                 <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-white border border-slate-200 cursor-pointer text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
                   <Link href={show.link}>
-                    <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform " />
+                    <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
                 <div className="absolute bottom-0 right-4 z-10 text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
@@ -211,7 +211,7 @@ export default function MeetAtShows() {
                 {/* <div className="mt-auto">
                   <a
                     href={show.link}
-                    className="group/btn flex items-center justify-center gap-3  bg-[#004aad] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#1B79EE] transition-all duration-300 shadow-lg shadow-[#004aad]/20"
+                    className="group/btn flex items-center justify-center gap-3 bg-[#004aad] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#1B79EE] transition-all duration-300 shadow-lg shadow-[#004aad]/20"
                   >
                     <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </a>

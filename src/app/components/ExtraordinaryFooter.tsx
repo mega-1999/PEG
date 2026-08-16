@@ -55,7 +55,7 @@ export default function ExtraordinaryFooter() {
                         {/* 2. MIDDLE: HEADLINE + MARQUEE (Spans 6 Columns) */}
                         <div className="lg:col-span-6 flex flex-col items-center lg:border-x border-slate-100 px-0 lg:px-10">
 
-                            <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-8 text-center">
+                            <h3 className="text-xl font-black text-white uppercase tracking-tighter mb-8 text-center">
                                 Our Group Dedicated to Precast
                             </h3>
 
@@ -67,7 +67,7 @@ export default function ExtraordinaryFooter() {
                                             className="flex items-center justify-center shrink-0"
                                         >
                                             {/* FIXED WHITE CONTAINER: Same size for every logo */}
-                                            <div className="relative w-20 h-12 bg-white rounded-xl flex items-center justify-center  p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform duration-300">
+                                            <div className="relative w-20 h-12 bg-white rounded-xl flex items-center justify-center p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                                                 <div className="relative w-full h-full">
                                                     <Image
                                                         src={logo.src}
@@ -102,7 +102,7 @@ export default function ExtraordinaryFooter() {
                         - White background
                         - Hover effect turns it PEG Bright Blue
                     */}
-                                            <div className="w-12 h-12 bg-white   flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-[#1B79EE]">
+                                            <div className="w-12 h-12 bg-white flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-[#1B79EE]">
                                                 <Icon className="w-5 h-5 text-[#004aad] group-hover:text-white transition-colors duration-300" />
                                             </div>
                                         </motion.a>
@@ -113,7 +113,7 @@ export default function ExtraordinaryFooter() {
 
                     </div>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b mb-4 border-slate-100 pb-12 ">
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b mb-4 border-slate-100 pb-12">
                     {footerData.map((section, idx) => (
                         <div key={idx} className="flex flex-col gap-6">
                             <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
@@ -140,8 +140,8 @@ export default function ExtraordinaryFooter() {
                 </div>
 
                 {/* BOTTOM BAR: LEGAL & STATUS */}
-                <div className=" flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="font-mono text-[9px] text-white/80 font-bold tracking-widest flex items-center gap-8   ">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="font-mono text-[9px] text-white/80 font-bold tracking-widest flex items-center gap-8">
                         <span>© 2026 PRECAST ENGINEERING GROUP</span>
                         <span className="hidden md:block w-[1px] h-3 bg-slate-200" />
                         <span className="hover:text-white cursor-pointer transition-colors uppercase">Privacy Policy</span>

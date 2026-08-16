@@ -35,7 +35,7 @@ export default function ExtraordinaryAgencyCluster() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full border-2 border-dashed border-[#1B79EE]/10 pointer-events-none hidden md:block" />
 
       {/* CORE FRAMEWORK ELEMENT LAYER */}
-      <div className="w-full h-full min-h-[70vh] md:min-h-[80vh] relative max-w-[1700px] mx-auto px-6 md:px-10 mt-12 flex flex-wrap gap-6 justify-center md:block">
+      <div className="w-full h-full min-h-[70vh] md:min-h-[80vh] relative px-6 md:px-10 mt-12 flex flex-wrap gap-6 justify-center md:block">
         
         {/* INTERLOCKING LOGO MATRIX NODES */}
         {AGENCY_LOGOS.map((logo, idx) => (
@@ -81,7 +81,7 @@ export default function ExtraordinaryAgencyCluster() {
         {/* STATIC CENTERPIECE OVERLAY HUB */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:flex flex-col items-center justify-center pointer-events-none text-center bg-white/80 backdrop-blur-md p-10 rounded-full border border-[#004aad]/5 shadow-2xl z-20 w-80 h-80">
           <p className="text-[10px] font-black tracking-[0.5em] text-[#1B79EE] uppercase mb-2">System Approvals</p>
-          <h2 className="text-4xl font-black text-[#004aad] tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-2xl font-black text-[#004aad] tracking-tighter uppercase leading-[0.9]">
             Agency <br /> Standards.
           </h2>
           <div className="w-8 h-0.5 bg-[#1B79EE] mt-4" />

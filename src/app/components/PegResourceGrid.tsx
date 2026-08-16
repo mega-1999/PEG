@@ -58,12 +58,12 @@ export default function PegResourceGrid() {
       {/* BRAND ARCHITECTURE BACKGROUND GRID */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-      <div className="max-w-[1600px] mx-auto relative z-10 space-y-16">
+      <div className="relative z-10 space-y-16">
         
         {/* STRUCTURAL HEADER SECTION */}
         <div className="max-w-3xl space-y-4">
           <div className="w-16 h-1 bg-[#1B79EE]" />
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none">
+          <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none">
             Knowledge Hub <br />
             <span className="text-white">& Infrastructure Ecosystem.</span>
           </h2>
@@ -97,7 +97,7 @@ export default function PegResourceGrid() {
 
                 {/* METADATA IDENTIFIER */}
                 <div className="space-y-3">
-                  <h3 className="text-2xl font-black uppercase tracking-tighter text-[#004aad]">
+                  <h3 className="text-lg font-black uppercase tracking-tighter text-[#004aad]">
                     {node.title}
                   </h3>
                   <p className="text-[#004aad]/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs mx-auto">

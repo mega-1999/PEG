@@ -62,11 +62,11 @@ const products = [
 const MegaProducts = () => {
   return (
     <section className="bg-[#121212] text-gray-200 py-16 px-4 md:px-8 font-sans">
-      <div className="max-w-6xl mx-auto">
+      <div className="">
         
         {/* Header Section */}
         <div className="border-b border-zinc-800 pb-6 mb-10">
-          <h2 className="text-3xl font-light tracking-wide text-white mb-2">
+          <h2 className="text-xl font-light tracking-wide text-white mb-2">
             Explore <span className="font-semibold text-[#cc2221]">Mega Foundries</span> Products
           </h2>
           <p className="text-sm text-zinc-400">
@@ -108,7 +108,7 @@ const MegaProducts = () => {
 
               {/* Product Content Details */}
               <div className="w-full md:w-2/3 flex flex-col items-start justify-center">
-                <h3 className="text-2xl font-semibold text-white tracking-wide mb-3">
+                <h3 className="text-lg font-semibold text-white tracking-wide mb-3">
                   {product.title}
                 </h3>
                 <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-2xl">

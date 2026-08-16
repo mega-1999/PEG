@@ -77,7 +77,7 @@ const GridContent = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className='text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-none'
+                        className='text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-none'
                     >
                         PEG SOLUTIONS <br />
                         <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>FOR THE WHOLE TEAM.</span>
@@ -85,7 +85,7 @@ const GridContent = () => {
 
                     <div className="flex flex-col md:flex-row justify-between items-end gap-8 pt-2 border-t border-slate-100">
                         <div className="max-w-2xl">
-                            <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tight mb-4">
+                            <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight mb-4">
                                 What is Precast Engineering?
                             </h3>
                             <p className="text-slate-500 font-medium text-lg leading-relaxed">
@@ -99,7 +99,7 @@ const GridContent = () => {
 
                 {/* HEADER: Brutalist Style */}
                 <div className="mb-8 border-l-8 border-[#1B79EE] pl-8">
-                    <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter">
+                    <p className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter">
                         TECHNICAL <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>SPECS.</span>
                     </p>
                 </div>
@@ -127,7 +127,7 @@ const GridContent = () => {
                                 </div> 
                             </div>
 
-                            <h3 className="text-2xl font-black uppercase tracking-tighter mb-10 text-[#004aad] group-hover:text-white relative z-10 transition-colors duration-300">
+                            <h3 className="text-lg font-black uppercase tracking-tighter mb-10 text-[#004aad] group-hover:text-white relative z-10 transition-colors duration-300">
                                 {spec.category}
                             </h3>
 
@@ -167,7 +167,7 @@ const GridContent = () => {
                             <Zap className="w-8 h-8 text-[#1B79EE] animate-pulse" />
                         </span>
                     </div>
-                    <h2 className='text-4xl md:text-6xl text-center mt-10 font-black text-[#004aad] tracking-tighter uppercase'>
+                    <h2 className='text-2xl md:text-4xl text-center mt-10 font-black text-[#004aad] tracking-tighter uppercase'>
                         Innovations, More Innovations <br />
                         <span className="text-[#1B79EE]">& Non-Stop Innovations.</span>
                     </h2>
@@ -202,7 +202,7 @@ function QuickLinkCard({ icon, title, description, href, count, tag }: {
                 </div>
 
                 <div className="flex flex-col flex-1">
-                    <h3 className="text-2xl font-black text-[#004aad] mb-4 tracking-tight group-hover:text-[#1B79EE] transition-colors">
+                    <h3 className="text-lg font-black text-[#004aad] mb-4 tracking-tight group-hover:text-[#1B79EE] transition-colors">
                         {title}
                     </h3>
                     <p className="text-sm font-medium text-slate-500 leading-relaxed mb-8">

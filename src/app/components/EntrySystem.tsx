@@ -55,7 +55,7 @@ export default function EntrySystem() {
                             className="w-full max-w-xl bg-[#004aad] border border-white/10 rounded-sm overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.5)]"
                         >
                             {/* TOP SECTION: VIDEO HEADER (Opacity 100) */}
-                            <div className="relative w-full h-64   overflow-hidden border-b border-[#1B79EE]/30">
+                            <div className="relative w-full h-64 overflow-hidden border-b border-[#1B79EE]/30">
                                 <video 
                                     autoPlay 
                                     loop 
@@ -71,7 +71,7 @@ export default function EntrySystem() {
                             {/* BOTTOM SECTION: TELEMETRY & CONTROLS */}
                             <div className="p-10 space-y-8">
                                 <div className="space-y-2">
-                                    <h2 className="text-white text-3xl font-black uppercase tracking-tighter leading-none">
+                                    <h2 className="text-white text-xl font-black uppercase tracking-tighter leading-none">
                                         The site is under  <span className="text-[#1B79EE]">Progress</span>
                                     </h2>
                                     <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function EntrySystem() {
             >
                 <button
                     onClick={toggleMute}
-                    className="p-3 text-white  transition-colors"
+                    className="p-3 text-white transition-colors"
                 >
                     {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>

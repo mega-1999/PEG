@@ -57,7 +57,7 @@ export default function UnchallengedResources() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] uppercase text-white"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white"
             >
               Unchallenged <br />
               <span className="text-[#1B79EE]">Resources</span> <br />
@@ -71,7 +71,7 @@ export default function UnchallengedResources() {
               transition={{ delay: 0.2 }}
               className="border-l-4 border-[#1B79EE] pl-6 py-2 mt-8"
             >
-              <p className="text-xl md:text-3xl font-black text-white/90 uppercase tracking-tight leading-snug">
+              <p className="text-xl md:text-xl font-black text-white/90 uppercase tracking-tight leading-snug">
                 At the snap of your fingers. <br />
                 <span className="text-[#1B79EE]">Seamlessly integrated.</span> <br />
                 Action ready.
@@ -113,7 +113,7 @@ export default function UnchallengedResources() {
                       {resource.subtitle}
                     </p>
                     {/* TITLE: Dark Blue -> Hovers to White */}
-                    <h3 className="text-3xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
+                    <h3 className="text-xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                       {resource.title}
                     </h3>
                     {/* DESCRIPTION: Dark Blue -> Hovers to White */}

@@ -74,7 +74,7 @@ export const ResourceDirectory = () => {
             <div className="max-w-xl">
               <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
               </div>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] uppercase">
+              <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
                 BEYOND <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B79EE] to-[#1B79EE]">
                   SPECIFICATIONS.
@@ -122,7 +122,7 @@ export const ResourceDirectory = () => {
           {/* RIGHT PANEL: PLAYLIST VIDEO PLAYER (Spans 5 Columns) */}
           <div className="xl:col-span-5 w-full h-full min-h-[400px]">
             {/* FIXED: Removed ALL black. Now using a pure translucent glass layer (bg-white/5) over the deep blue background */}
-            <div className="relative w-full h-full    overflow-hidden group  0">
+            <div className="relative w-full h-full overflow-hidden group 0">
               
               {/* Absolute Positioning Wrapper */}
               <div className="absolute inset-0 p-1.5">

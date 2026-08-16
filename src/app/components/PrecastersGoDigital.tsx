@@ -61,7 +61,7 @@ export default function PrecastersGoDigital() {
         {/* 1. BROADCAST HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
           <div className="space-y-6 max-w-4xl">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase">
               PRECASTERS <br />
               <span style={{ WebkitTextStroke: "1px #ffffff", color: "transparent" }}>GO DIGITAL.</span>
             </h2>

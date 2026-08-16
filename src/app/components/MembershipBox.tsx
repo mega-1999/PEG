@@ -67,7 +67,7 @@ export default function MembershipBox() {
               Become an authorized node in the PEG network. Secure your position alongside industry leaders and scale your production with our integrated engineering ecosystem.
             </p>
 
-            <button className="group relative w-full sm:w-auto bg-white text-[#004aad] py-5 px-10 flex items-center justify-center gap-4 overflow-hidden transition-all shadow-xl self-start">
+            <button className="group relative w-full sm:w-auto bg-white text-[#004aad] flex items-center justify-center gap-4 overflow-hidden transition-all shadow-xl self-start">
               {/* Button Hover Fill */}
               <div className="absolute inset-0 bg-[#1B79EE] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
               

@@ -156,7 +156,7 @@ export const ResourceDirectory = () => {
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={playPrevVideo}
-                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
                     aria-label="Previous Video"
                   >
                     <SkipBack className="w-4 h-4 group-hover/btn:-translate-x-0.5 transition-transform" />
@@ -164,7 +164,7 @@ export const ResourceDirectory = () => {
 
                   <button 
                     onClick={playNextVideo}
-                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
                     aria-label="Next Video"
                   >
                     <SkipForward className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />

@@ -11,7 +11,7 @@ const automationNodes = [
     subtitle: "Zero-Touch Assembly",
     description: "Automated mesh welding, laser-guided formwork plotting, and robotic concrete distribution ensure millimeter precision without human fatigue.",
     icon: <Bot className="w-8 h-8" />,
-    metric: "100% CNC Precision",
+    metric: "CNC-Assisted Precision",
     colSpan: "lg:col-span-2"
   },
   {
@@ -34,7 +34,7 @@ const automationNodes = [
   },
   {
     id: "AUTO_YRD_04",
-    title: "Autonomous Logistics",
+    title: "Digital Logistics Tracking",
     subtitle: "Smart Yard Management",
     description: "RFID-tagged elements are tracked via drone and autonomous carriers, optimizing yard storage and orchestrating precise just-in-time delivery loading.",
     icon: <Factory className="w-8 h-8" />,
@@ -100,7 +100,7 @@ export default function AutomationDashboard() {
             <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
               <ScanLine className="w-5 h-5 animate-pulse" /> Autonomous Infrastructure
             </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-none uppercase text-white">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-none uppercase text-white">
               INDUSTRIAL <br />
               <span className="text-white">AUTOMATION.</span>
             </h2>

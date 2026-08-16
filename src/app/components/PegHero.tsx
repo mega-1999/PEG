@@ -67,7 +67,7 @@ export default function PegHero() {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter"
+            className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter"
           >
             PRECAST
           </motion.h1>
@@ -75,7 +75,7 @@ export default function PegHero() {
           {/* Row 2: PEG Light Blue (Typing Outline) 
           Using your TypingOutline component for the core service
       */}
-          <div className="text-5xl md:text-7xl font-black tracking-tighter mt-2">
+          <div className="text-3xl md:text-5xl font-black tracking-tighter mt-2">
             <TypingOutline text="ENGINEERS" delay={0.6} />
           </div>
 
@@ -96,7 +96,7 @@ export default function PegHero() {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1.8, duration: 0.6 }}
-            className="text-[#004aad] text-4xl md:text-6xl font-black tracking-tight mt-6"
+            className="text-[#004aad] text-3xl md:text-5xl font-black tracking-tight mt-6"
           >
             FOR ANY SITUATION.
           </motion.div>
@@ -122,13 +122,13 @@ export default function PegHero() {
           className="flex flex-col sm:flex-row gap-5 mt-14 w-full max-w-lg"
         >
           {/* Primary Button: Dark Blue */}
-          <Button className="flex-1 bg-[#004aad] hover:bg-[#1B79EE] text-white rounded-none h-20 px-6 text-sm font-black tracking-[0.2em] transition-all duration-500 group shadow-xl">
+          <Button className="flex-1 bg-[#004aad] hover:bg-[#1B79EE] text-white rounded-none font-black tracking-[0.2em] transition-all duration-500 group shadow-xl">
             INITIALIZE PROPOSAL
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-3" />
           </Button>
 
           {/* Secondary Button: Outline Dark Blue */}
-          <Button variant="outline" className="flex-1 border-2 border-[#004aad] bg-transparent text-[#004aad] rounded-none h-20 text-sm font-black tracking-[0.2em] hover:bg-[#004aad] hover:text-white transition-all duration-500 uppercase">
+          <Button variant="outline" className="flex-1 border-2 border-[#004aad] bg-transparent text-[#004aad] rounded-none font-black tracking-[0.2em] hover:bg-[#004aad] hover:text-white transition-all duration-500 uppercase">
             <Ruler className="mr-2 w-5 h-5" />
             CAPABILITIES
           </Button>

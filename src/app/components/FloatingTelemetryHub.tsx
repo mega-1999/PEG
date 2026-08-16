@@ -76,7 +76,7 @@ export default function FloatingTelemetryHub() {
             {/* ROUNDED: Added rounded-full to make the main button a perfect circle */}
             <button
               onClick={scrollToTop}
-              className="group relative w-12 h-12 rounded-full bg-white text-[#004aad] border-2 border-[#004aad] flex items-center justify-center overflow-hidden shadow-[0_8px_20px_rgba(0,74,173,0.15)] hover:shadow-[0_0_30px_rgba(27,121,238,0.4)] transition-all duration-300"
+              className="group relative w-12 rounded-full bg-white text-[#004aad] border-2 border-[#004aad] flex items-center justify-center overflow-hidden shadow-[0_8px_20px_rgba(0,74,173,0.15)] hover:shadow-[0_0_30px_rgba(27,121,238,0.4)] transition-all duration-300"
             >
               {/* Added rounded-full to the fill animation to respect the circular border */}
               <div className="absolute inset-0 rounded-full bg-[#004aad] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />

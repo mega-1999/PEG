@@ -20,7 +20,7 @@ export const RegistrationBanner = ({ txtSrc, btSrc }: RegistrationBannerProps) =
         {btSrc && (
           <Button
             variant="outline"
-            className="rounded-none border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#004aad] px-8 py-6 font-bold uppercase tracking-[0.15em] text-sm transition-all duration-300"
+            className="rounded-none border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#004aad] font-bold uppercase tracking-[0.15em] transition-all duration-300"
           >
             {btSrc}
           </Button>

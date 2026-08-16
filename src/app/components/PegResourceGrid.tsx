@@ -108,7 +108,7 @@ export default function PegResourceGrid() {
 
               {/* CLEAN ACTION PROMPT BUTTON */}
               <div className="w-full pt-8 mt-8 border-t border-[#004aad]/5">
-                <button className="inline-flex items-center gap-2 bg-[#004aad] hover:bg-[#1B79EE] text-white px-6 py-3 font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105">
+                <button className="inline-flex items-center gap-2 bg-[#004aad] hover:bg-[#1B79EE] text-white font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105">
                   {node.linkText} <ArrowRight className="w-3 h-3" />
                 </button>
               </div>

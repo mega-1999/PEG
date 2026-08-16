@@ -62,7 +62,7 @@ export default function StaticTrenchingGrid() {
         {/* SECTION HEADER: Title + Manifesto */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-[#004aad]/5 pb-16">
           <div className="md:col-span-5">
-            <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
+            <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
               Trenching <br /> Systems.
             </h3>
           </div>
@@ -169,7 +169,7 @@ export default function StaticTrenchingGrid() {
               Seamlessly integrated from desk to shop floor. Action ready.
             </p>
           </div>
-          <button className="relative z-10 bg-[#004aad] hover:bg-[#1B79EE] text-white px-10 py-5 text-[11px] font-black uppercase tracking-widest transition-all shadow-xl whitespace-nowrap self-start md:self-center">
+          <button className="relative z-10 bg-[#004aad] hover:bg-[#1B79EE] text-white text-[11px] font-black uppercase tracking-widest transition-all shadow-xl whitespace-nowrap self-start md:self-center">
             Initiate Protocol
           </button>
         </div>

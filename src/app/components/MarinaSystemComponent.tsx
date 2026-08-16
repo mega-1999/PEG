@@ -40,7 +40,7 @@ export default function MarinaSystemComponent() {
               whileInView={{ width: '80px' }}
               className="h-1 bg-[#1B79EE]"
             />
-            <h2 className="text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-none">
+            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-none">
               FLOATING <br />
               <span className="text-[#1B79EE]">MARINAS.</span>
             </h2>

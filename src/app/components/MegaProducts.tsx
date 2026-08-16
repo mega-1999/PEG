@@ -79,7 +79,7 @@ const MegaProducts = () => {
           {categories.map((cat, index) => (
             <button
               key={index}
-              className="px-3 py-2 border border-zinc-800 bg-[#1a1a1a] hover:bg-[#cc2221] hover:border-[#cc2221] text-zinc-300 hover:text-white transition-all duration-200 rounded-sm"
+              className="border border-zinc-800 bg-[#1a1a1a] hover:bg-[#cc2221] hover:border-[#cc2221] text-zinc-300 hover:text-white transition-all duration-200 rounded-sm"
             >
               {cat}
             </button>

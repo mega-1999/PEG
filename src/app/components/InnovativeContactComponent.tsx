@@ -215,7 +215,7 @@ export default function InnovativeContactComponent() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-[#004aad] hover:bg-[#1B79EE] text-white py-5 font-mono text-[11px] font-black uppercase tracking-[0.3em] shadow-xl transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group mt-4 disabled:opacity-70"
+                  className="w-full h-12 bg-[#004aad] hover:bg-[#1B79EE] text-white font-mono text-[11px] font-black uppercase tracking-[0.3em] shadow-xl transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group mt-4 disabled:opacity-70"
                 >
                   {loading ? (
                     <>

@@ -25,8 +25,8 @@ const manifestoData = [
     id: "03",
     title: "The Why",
     subtitle: "Clearly Why",
-    headline: "To Guarantee Zero-Friction Agency Approvals.",
-    description: "Because generic engineering causes site-level failures. We exist to protect your margins, accelerate your production pipeline, and ensure absolute code compliance.",
+    headline: "To Streamlined Agency Approvals.",
+    description: "Because generic engineering causes site-level failures. We exist to protect your margins, accelerate your production pipeline, and ensure Code-Aligned Engineering.",
     icon: <Target className="w-10 h-10" />
   }
 ];
@@ -49,7 +49,7 @@ export default function PrecasterManifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
             >
               By Precasters. <br />
               <span className="text-[#1B79EE]">For Precasters.</span>

@@ -16,7 +16,7 @@ const pegResources = [
     id: "RES_02",
     title: "CAD Component Library",
     subtitle: "Parametric Assets",
-    description: "Thousands of pre-modeled, exact-tolerance precast connections, lifting inserts, and formwork assemblies ready to drop into your master model.",
+    description: "Thousands of pre-modeled, Specified-Tolerance precast connections, lifting inserts, and formwork assemblies ready to drop into your master model.",
     icon: <Layers className="w-8 h-8" />
   },
   {
@@ -30,7 +30,7 @@ const pegResources = [
     id: "RES_04",
     title: "Automated Submittals",
     subtitle: "Turnkey Documentation",
-    description: "Pre-formatted, rigorously engineered calculation packages and shop drawings generated and ready for immediate agency sign-off.",
+    description: "Pre-formatted, rigorously engineered calculation packages and shop drawings generated and ready for Approval-Ready Documentation.",
     icon: <FolderSync className="w-8 h-8" />
   }
 ];

@@ -21,7 +21,7 @@ const engineeringServices = [
     id: "01",
     title: "Engineering Drawings",
     subtitle: "Parametric Shop Models",
-    desc: "Exact-tolerance 3D modeling and 2D drafting engineered for flawless factory casting and rapid on-site assembly.",
+    desc: "Specified-Tolerance 3D modeling and 2D drafting engineered for flawless factory casting and rapid on-site assembly.",
     icon: <DraftingCompass className="w-6 h-6" />,
     colSpan: "lg:col-span-2", // Wide block
     highlight: true
@@ -30,7 +30,7 @@ const engineeringServices = [
     id: "02",
     title: "Rapid Approvals",
     subtitle: "Fast-Track Clearance",
-    desc: "PE-stamped documentation engineered to bypass red tape and secure immediate agency sign-off.",
+    desc: "PE-stamped documentation engineered to bypass red tape and secure Approval-Ready Documentation.",
     icon: <Zap className="w-6 h-6" />,
     colSpan: "lg:col-span-1",
     highlight: false
@@ -66,7 +66,7 @@ const engineeringServices = [
     id: "06",
     title: "Reverse Engineering",
     subtitle: "Point-Cloud to CAD",
-    desc: "Deconstructing legacy components or site conditions into hyper-accurate digital models for replication.",
+    desc: "Deconstructing legacy components or site conditions into High-Accuracy digital models for replication.",
     icon: <Undo2 className="w-6 h-6" />,
     colSpan: "lg:col-span-1",
     highlight: false
@@ -75,7 +75,7 @@ const engineeringServices = [
     id: "07",
     title: "Governmental Consulting",
     subtitle: "Federal & State Ops",
-    desc: "Navigating complex DOT requirements and federal infrastructure compliance with total authority.",
+    desc: "Navigating complex DOT requirements and federal infrastructure compliance with Experienced Regulatory Guidance.",
     icon: <Landmark className="w-6 h-6" />,
     colSpan: "lg:col-span-1",
     highlight: false
@@ -93,7 +93,7 @@ const engineeringServices = [
     id: "09",
     title: "Testing Labs",
     subtitle: "Material Analysis",
-    desc: "Rigorous concrete strength, durability, and stress testing to validate performance under extreme conditions.",
+    desc: "Rigorous concrete strength, durability, and stress testing to validate performance under Demanding Service Conditions.",
     icon: <FlaskConical className="w-6 h-6" />,
     colSpan: "lg:col-span-1",
     highlight: false
@@ -102,7 +102,7 @@ const engineeringServices = [
     id: "10",
     title: "Certifications",
     subtitle: "Inspections & QA/QC",
-    desc: "On-site and in-plant auditing to guarantee 100% adherence to PCI, ACI, and ASTM standards.",
+    desc: "On-site and in-plant auditing to guarantee Rigorous Standards Compliance to PCI, ACI, and ASTM standards.",
     icon: <ShieldCheck className="w-6 h-6" />,
     colSpan: "lg:col-span-1",
     highlight: true // Accent block
@@ -122,7 +122,7 @@ export default function EngineeringExecuted() {
               whileInView={{ opacity: 1, width: '80px' }}
               className="h-1 bg-[#1B79EE]"
             />
-            <h2 className="text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
               ENGINEERING <br />
               <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>EXECUTED YOUR WAY.</span>
             </h2>

@@ -9,7 +9,7 @@ const targetAudiences = [
     id: "01",
     title: "Precast Manufacturers",
     subtitle: "Plant Operations",
-    description: "For facilities requiring exact-tolerance shop drawings, parametric mold designs, and optimized manufacturing workflows to accelerate plant output.",
+    description: "For facilities requiring Specified-Tolerance shop drawings, parametric mold designs, and optimized manufacturing workflows to accelerate plant output.",
     icon: <Factory className="w-10 h-10" />
   },
   {
@@ -56,7 +56,7 @@ export default function TargetAudience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
             >
               Precisely who <br className="hidden md:block" />
               <span className="text-[#1B79EE]">is PEG for?</span>

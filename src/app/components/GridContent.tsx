@@ -61,7 +61,7 @@ const technicalData = [
         icon: <Activity className="w-6 h-6" />,
         items: [
             { label: "Robotics Implementation", sub: "Automated casting & reinforcement placement." },
-            { label: "Neural Process Mapping", sub: "AI-driven supply chain optimization." }
+            { label: "Digital Process Optimization", sub: "Technology-Assisted Supply Chain Optimization." }
         ],
         activeBg: "#004aad",
         activeText: "#ffffff",
@@ -77,7 +77,7 @@ const GridContent = () => {
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className='text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-none'
+                        className='text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-none'
                     >
                         PEG SOLUTIONS <br />
                         <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>FOR THE WHOLE TEAM.</span>

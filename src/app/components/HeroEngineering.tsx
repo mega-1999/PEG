@@ -30,7 +30,7 @@ const HeroEngineering = () => {
           </div>
 
           {/* THE NEW HEADLINE */}
-          <h1 className="text-3xl md:text-6xl font-black tracking-tighter text-[#004aad] leading-[0.9] uppercase">
+          <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-[#004aad] leading-[0.9] uppercase">
             THE FUTURE OF <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>PRECAST ENGINEERING.</span>
           </h1>
@@ -61,7 +61,7 @@ const HeroEngineering = () => {
             placeholder="Search structural precast, or technical specs..."
             className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base py-6 placeholder:text-slate-300 font-medium"
           />
-          <Button className="rounded-none h-14 px-8 bg-[#004aad] hover:bg-[#1B79EE] text-white font-black transition-all text-sm tracking-widest">
+          <Button className="rounded-none bg-[#004aad] hover:bg-[#1B79EE] text-white font-black transition-all tracking-widest">
             INITIALIZE SEARCH
           </Button>
         </motion.div>

@@ -7,14 +7,14 @@ import { FileSignature, PenTool, BookOpenCheck, ArrowRight } from 'lucide-react'
 const upgradeFeatures = [
   {
     title: "Powerful Submittals",
-    subtitle: "Zero-Friction Approval",
-    description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for immediate agency sign-off.",
+    subtitle: "Streamlined Approval Process",
+    description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for Approval-Ready Documentation.",
     icon: <FileSignature className="w-8 h-8" />,
   },
   {
     title: "Precision Illustrations",
     subtitle: "Multi-Dimensional Clarity",
-    description: "Eliminate site-level confusion. We deliver exact-tolerance shop drawings, 3D component isolation, and step-by-step erection sequencing.",
+    description: "Eliminate site-level confusion. We deliver Specified-Tolerance shop drawings, 3D component isolation, and step-by-step erection sequencing.",
     icon: <PenTool className="w-8 h-8" />,
   },
   {
@@ -45,7 +45,7 @@ export default function DeliverableUpgrade() {
         
         {/* 1. MASSIVE TYPOGRAPHY HEADER */}
         <div className="max-w-5xl mb-8 space-y-6">
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.9] uppercase">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase">
             Upgrade your <br />
             {/* ONLY White and Bright Blue used here */}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#1B79EE]">
@@ -54,7 +54,7 @@ export default function DeliverableUpgrade() {
           </h2>
           
           <p className="text-xl md:text-lg text-white/80 font-medium max-w-3xl leading-relaxed mt-2 border-l-4 border-[#1B79EE] pl-6">
-            Stop losing time on revisions. Elevate your production pipeline with bulletproof submittals, hyper-accurate illustrations, and non-stop code compliance.
+            Stop losing time on revisions. Elevate your production pipeline with Comprehensive Submittals, High-Accuracy illustrations, and non-stop code compliance.
           </p>
         </div>
 

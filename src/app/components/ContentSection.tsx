@@ -12,7 +12,7 @@ export const ContentSection = () => {
         {/* HEADER: Massive Structural Typography */}
         <div className="mb-4 space-y-6">
  
-          <h2 className="text-4xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+          <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
             SOLUTIONS FOR <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THE CRITICAL PATH.</span>
           </h2>

@@ -81,7 +81,7 @@ export default function PegPortalDashboard() {
       <div className="w-full mb-20 text-center">
  
         
-        <h1 className="text-3xl md:text-6xl font-black text-[#004aad] tracking-tighter flex flex-wrap justify-center items-center gap-x-5">
+        <h1 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter flex flex-wrap justify-center items-center gap-x-5">
           <span>PORTAL</span>
           <span className="relative min-w-[320px] text-left inline-flex items-center">
             <span style={{ WebkitTextStroke: "2px #1B79EE", color: "transparent" }}>

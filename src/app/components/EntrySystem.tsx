@@ -132,7 +132,7 @@ export default function EntrySystem() {
             >
                 <button
                     onClick={toggleMute}
-                    className="p-3 text-white transition-colors"
+                    className="text-white transition-colors"
                 >
                     {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>

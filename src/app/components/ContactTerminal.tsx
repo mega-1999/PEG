@@ -255,7 +255,7 @@ export default function ContactTerminal() {
               {/* Submit Button */}
               <button 
                 type="submit"
-                className="w-full group relative bg-[#004aad] text-white py-5 flex items-center justify-center gap-3 overflow-hidden transition-all shadow-xl hover:shadow-[#1B79EE]/30 mt-6"
+                className="w-full group relative bg-[#004aad] text-white flex items-center justify-center gap-3 overflow-hidden transition-all shadow-xl hover:shadow-[#1B79EE]/30 mt-6"
               >
                 {/* Button Hover Fill */}
                 <div className="absolute inset-0 bg-[#1B79EE] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />

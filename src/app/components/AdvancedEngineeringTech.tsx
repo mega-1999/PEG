@@ -9,21 +9,21 @@ const techPillars = [
     id: "01",
     title: "Parametric 3D Precision",
     category: "Engineering & CAD",
-    description: "We eliminate field errors before concrete is ever poured. Our exact-tolerance shop drawings and 3D component isolation ensure flawless geometry and clash detection across every module.",
+    description: "We eliminate field errors before concrete is ever poured. Our Specified-Tolerance shop drawings and 3D component isolation ensure flawless geometry and clash detection across every module.",
     icon: <Layers className="w-8 h-8" />
   },
   {
     id: "02",
     title: "Automated Code Compliance",
     category: "Specs & Compliance",
-    description: "Algorithmic alignment with the latest PCI, AASHTO, ASTM, and state DOT master specifications. We engineer structural submittals designed for zero-friction, immediate agency sign-off.",
+    description: "Algorithmic alignment with the latest PCI, AASHTO, ASTM, and state DOT master specifications. We engineer structural submittals designed for zero-friction, Approval-Ready Documentation.",
     icon: <ShieldCheck className="w-8 h-8" />
   },
   {
     id: "03",
     title: "Algorithmic Manufacturing",
     category: "IT & Automation",
-    description: "Powered by proprietary ERP and neural process mapping. We bridge the gap between complex digital modeling and automated factory-floor robotics, maximizing structural output.",
+    description: "Powered by proprietary ERP and Digital Process Optimization. We bridge the gap between complex digital modeling and automated factory-floor robotics, maximizing structural output.",
     icon: <Cpu className="w-8 h-8" />
   },
   {
@@ -70,7 +70,7 @@ export default function AdvancedEngineeringTech() {
             className="hidden lg:block text-right max-w-sm"
           >
             <p className="text-[#004aad]/70 font-medium text-sm leading-relaxed">
-              What is important to us? Utilizing next-generation technology to protect your margins, accelerate production, and ensure absolute precision.
+              What is important to us? Utilizing next-generation technology to protect your margins, accelerate production, and ensure High-Precision Engineering.
             </p>
           </motion.div>
         </div>

@@ -32,12 +32,12 @@ export const BusinessPodcastSection = () => {
               "Specifiers rely on PEG as a trusted resource, and being present there ensures our products are discovered at the right time in their design process... Maintaining a steady presence on PEG builds familiarity and trust, and ultimately helps turn early interest into specification."
             </p>
             <p className="text-sm font-bold text-slate-700">Trish B, Sales Manager at Fire Trol Fireproof</p>
-            <Button variant="outline" className="mt-6 border-[#004aad] text-[#004aad] hover:bg-[#004aad] hover:text-white rounded-none uppercase text-xs font-bold tracking-widest">
+            <Button variant="outline" className="mt-6 border-[#004aad] text-[#004aad] hover:bg-[#004aad] hover:text-white rounded-none uppercase font-bold tracking-widest">
               More Testimonials <ArrowRight className="ml-2 w-3 h-3" />
             </Button>
           </div>
 
-          <Button className="w-full md:w-auto bg-[#004aad] hover:bg-[#004aad] text-white rounded-none px-10 py-6 uppercase font-bold tracking-tighter mt-8">
+          <Button className="w-full md:w-auto bg-[#004aad] hover:bg-[#004aad] text-white rounded-none uppercase font-bold tracking-tighter mt-8">
             Discover all the benefits of PEG
           </Button>
         </div>
@@ -70,7 +70,7 @@ export const BusinessPodcastSection = () => {
             ))}
           </div>
 
-          <Button variant="outline" className="mt-12 border-white text-white hover:bg-white hover:text-[#004aad] rounded-none uppercase text-xs font-bold tracking-widest bg-transparent px-8">
+          <Button variant="outline" className="mt-12 border-white text-white hover:bg-white hover:text-[#004aad] rounded-none uppercase font-bold tracking-widest bg-transparent">
             More Episodes <ArrowRight className="ml-2 w-3 h-3" />
           </Button>
         </div>

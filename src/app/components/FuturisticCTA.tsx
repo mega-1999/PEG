@@ -40,7 +40,7 @@ export default function FuturisticCTA() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-6"
+          className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-6"
         >
           PEG YOUR 
           <span className="text-transparent bg-clip-text pl-2 bg-gradient-to-r from-white to-[#1B79EE]">

@@ -23,8 +23,8 @@ const futureInitiatives = [
   },
   {
     title: "Eco-Friendly Concrete",
-    subtitle: "Carbon-Negative Precast",
-    description: "Implementing Pozzolanic admixtures and CO2 mineralization to create culverts that actively sequester carbon over their 100-year lifespan.",
+    subtitle: "Lower-Carbon Precast Solutions",
+    description: "Implementing Pozzolanic admixtures and CO2 mineralization to create culverts that actively sequester carbon over their Designed for Long Service Life.",
     icon: <Leaf className="w-6 h-6" />,
     img: "/assets/images/Box Culvert/13.jpeg", // IMAGE 1
   }

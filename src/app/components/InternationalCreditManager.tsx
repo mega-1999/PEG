@@ -36,7 +36,7 @@ export default function InternationalCreditManager() {
                 <Input defaultValue="30" className="pl-8 border-slate-200 focus-visible:ring-[#1B79EE]" />
               </div>
             </div>
-            <Button className="w-full bg-[#1B79EE] hover:bg-[#004aad] text-white font-bold rounded-none uppercase tracking-widest text-xs">
+            <Button className="w-full bg-[#1B79EE] hover:bg-[#004aad] text-white font-bold rounded-none uppercase tracking-widest">
               Add GIO Credit
             </Button>
           </CardContent>
@@ -55,7 +55,7 @@ export default function InternationalCreditManager() {
               <p className="text-xs font-bold text-slate-700">60 Minutes Pack</p>
               <p className="text-[10px] text-slate-500 uppercase">Valid for 30 Days</p>
             </div>
-            <Button variant="outline" className="w-full border-[#004aad] text-[#004aad] hover:bg-slate-50 font-bold rounded-none uppercase text-xs">
+            <Button variant="outline" className="w-full border-[#004aad] text-[#004aad] hover:bg-slate-50 font-bold rounded-none uppercase">
               Activate One HR
             </Button>
           </CardContent>

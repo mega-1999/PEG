@@ -98,7 +98,7 @@ export default function AutomationDashboard() {
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-10">
           <div className="space-y-6 max-w-4xl">
             <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
-              <ScanLine className="w-5 h-5 animate-pulse" /> Autonomous Infrastructure
+              <ScanLine className="w-5 h-5 animate-pulse" /> Digital Engineering & Manufacturing Workflows
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-none uppercase text-white">
               INDUSTRIAL <br />

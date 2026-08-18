@@ -28,9 +28,9 @@ const engineeringServices = [
   },
   {
     id: "02",
-    title: "Rapid Approvals",
+    title: "Agency Submittals",
     subtitle: "Fast-Track Clearance",
-    desc: "PE-stamped documentation engineered to bypass red tape and secure Approval-Ready Documentation.",
+    desc: "Engineering Documentation & Professional Review to secure Approval-Ready Documentation.",
     icon: <Zap className="w-6 h-6" />,
     colSpan: "lg:col-span-1",
     highlight: false
@@ -124,7 +124,7 @@ export default function EngineeringExecuted() {
             />
             <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
               ENGINEERING <br />
-              <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>EXECUTED YOUR WAY.</span>
+              <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THAT FITS YOUR PRODUCTION.</span>
             </h2>
           </div>
           <div className="hidden lg:block max-w-sm text-right">

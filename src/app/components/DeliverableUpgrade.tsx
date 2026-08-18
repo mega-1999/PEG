@@ -7,7 +7,7 @@ import { FileSignature, PenTool, BookOpenCheck, ArrowRight } from 'lucide-react'
 const upgradeFeatures = [
   {
     title: "Powerful Submittals",
-    subtitle: "Streamlined Approval Process",
+    subtitle: "Streamlined Documentation & Approval Support",
     description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for Approval-Ready Documentation.",
     icon: <FileSignature className="w-8 h-8" />,
   },

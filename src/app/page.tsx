@@ -24,7 +24,6 @@ import TrenchingSystem from "./components/TrenchingSystem";
 import RetainingWallComponent from "./components/RetainingWallComponent";
 import MarinaSystemComponent from "./components/MarinaSystemComponent";
 import SponsorMarquee from "./components/SponsorMarquee";
-import AutomationDashboard from "./components/AutomationDashboard";
 import PegResourceGrid from "./components/PegResourceGrid";
 import HexagonLogoShowcase from "./components/HexagonLogoShowcase";
 import ManufacturingHub from "./components/ManufacturingHub";
@@ -32,47 +31,71 @@ import EngineeringExecuted from "./components/EngineeringExecuted";
 import InnovativeContactComponent from "./components/InnovativeContactComponent";
 import ContactTerminal from "./components/ContactTerminal";
 import MembershipBox from "./components/MembershipBox";
+import PegServices from "./components/PegServices";
 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
       <ResourceDirectory />
+      
+      {/* 1. HERO */}
       <HeroEngineering />
-      <FutureCulvertComponent />
       <SponsorMarquee />
+      
+      {/* 2. CORE SERVICES */}
+      <PegServices />
+      
+      {/* 3. TECHNICAL EXPERTISE & ENGINEERING */}
       <PrecasterManifesto />
-      <FuturisticCTA />
       <AdvancedEngineeringTech />
+      <EngineeringExecuted />
+      <DeliverableUpgrade />
+      
+      {/* 4. PRODUCTS & APPLICATIONS */}
+      <div className="w-full bg-slate-900 py-24 text-center border-y border-slate-800 relative z-20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/20 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#1B79EE]">
+          Engineered Portfolios
+        </div>
+        <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">
+          Precast Applications <span className="text-[#1B79EE]">& Products</span>
+        </h2>
+        <p className="mt-6 text-slate-400 font-medium max-w-2xl mx-auto px-6">
+          Explore examples of our structural engineering, from underground infrastructure to marine systems. We design products for real-world performance.
+        </p>
+      </div>
+      
+      <FutureCulvertComponent />
+      <TrenchingSystem />
+      <RetainingWallComponent />
+      <MarinaSystemComponent />
+
+      {/* 5. MANUFACTURING & OPERATIONS SUPPORT */}
+      <ManufacturingHub />
       <TargetAudience />
       <MembershipBox/>
       <UnchallengedResources />
       <SeamlessConnection />
-      <EngineeringExecuted/>
-      <TrenchingSystem />
       
-      <RetainingWallComponent />
-      <ManufacturingHub />
-      <MarinaSystemComponent />
+      {/* 6. PORTALS & RESOURCES */}
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />
       </section>
-      <DeliverableUpgrade />
+      
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <GridContent />
       </section>
-      {/* <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" /> */}
-      {/* <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" /> */}
-      {/* <BusinessPodcastSection/> */}
+      
       <PegResourceGrid />
       <AgencySlider />
       <ContentSection />
       <PegHero />
-      <AutomationDashboard />
       <DotMatrixSlider />
       <PegLocations />
       <HexagonLogoShowcase />
       <PrecastersGoDigital />
       <MeetAtShows />
+      <FuturisticCTA />
+      
       <section id="contact" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <ContactTerminal />
         <InnovativeContactComponent/>
@@ -80,4 +103,3 @@ export default function Home() {
     </main>
   );
 }
-

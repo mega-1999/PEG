@@ -31,18 +31,18 @@ const HeroEngineering = () => {
 
           {/* THE NEW HEADLINE */}
           <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-[#004aad] leading-[0.9] uppercase">
-            THE FUTURE OF <br />
-            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>PRECAST ENGINEERING.</span>
+            PRECAST ENGINEERING & <br />
+            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>TECHNICAL SERVICES.</span>
           </h1>
 
-          {/* THE UPDATED TEXT: Typo fixed in "Futuristic" */}
+          {/* THE UPDATED TEXT */}
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium italic"
+            className="text-xl md:text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            "From conception to execution, the Futuristic highway of  <span className="text-[#004aad] font-bold">Precast Engineering</span>, <span className="text-[#004aad] font-bold">Advanced Technologies</span> & beyond."
+            Providing specialized engineering, CAD, and technical support exclusively for the precast concrete industry.
           </motion.p>
         </motion.div>
 

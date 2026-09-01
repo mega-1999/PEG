@@ -80,7 +80,7 @@ export default function MarinaSystemComponent() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="/assets/video/MARINE PRODUCT/MARINE PRODUCT.mp4" type="video/mp4" />
+              <source src="/assets/video/MARINE PRODUCT/E20 V1 final.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
@@ -104,14 +104,14 @@ export default function MarinaSystemComponent() {
           </motion.div>
 
           {/* Secondary Sub-Modules */}
-          <div className="bg-white border-2 border-[#004aad] p-8 flex flex-col justify-between hover:bg-[#004aad]/5 transition-colors group">
-             <Anchor className="w-10 h-10 text-[#1B79EE] mb-6" />
-             <h4 className="text-lg font-black text-[#004aad] uppercase tracking-tighter">Anchoring <br />Systems</h4>
+          <div className="bg-white border-2 border-[#004aad] p-8 flex justify-between hover:bg-[#004aad]/5 transition-colors group">
+             <Anchor className="w-8 h-8 text-[#1B79EE] mb-6" />
+             <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tighter">Anchoring <br />Systems</h4>
           </div>
 
-          <div className="bg-[#1B79EE] p-8 flex flex-col justify-between text-white hover:bg-[#004aad] transition-colors group">
+          <div className="bg-[#1B79EE] p-8 flex justify-between text-white hover:bg-[#004aad] transition-colors group">
              <Navigation className="w-10 h-10 text-white mb-6" />
-             <h4 className="text-lg font-black uppercase tracking-tighter">Modular <br />Expansion</h4>
+             <h4 className="text-sm font-black uppercase tracking-tighter">Modular <br />Expansion</h4>
           </div>
 
         </div>

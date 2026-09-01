@@ -29,7 +29,7 @@ export default function RetainingWallComponent() {
       <div className="">
         
         {/* HEADER: Technical Alignment */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 border-b border-slate-200 pb-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-2 gap-6 border-b border-slate-200 pb-12">
           <div className="space-y-2">
             <p className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase">
               Retaining <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>Walls.</span>

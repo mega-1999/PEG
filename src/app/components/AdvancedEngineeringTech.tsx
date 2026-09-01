@@ -37,7 +37,7 @@ const techPillars = [
 
 export default function AdvancedEngineeringTech() {
   return (
-    <section className="w-full py-24 bg-white overflow-hidden relative">
+    <section className="w-full py-8 bg-white overflow-hidden relative">
       
       {/* Background Accent Lines */}
       <div className="absolute top-0 left-10 md:left-20 w-px h-full bg-[#004aad]/5 pointer-events-none" />
@@ -46,7 +46,7 @@ export default function AdvancedEngineeringTech() {
       <div className="w-full px-10 md:px-20 relative z-10">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-4 gap-10">
           <div className="space-y-4 max-w-4xl">
             
             

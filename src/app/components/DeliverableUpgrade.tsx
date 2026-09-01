@@ -68,7 +68,7 @@ export default function DeliverableUpgrade() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // CARD BACKGROUND: White -> Hovers to PEG Bright Blue
-              className="group relative bg-white border border-[#004aad]/10 px-10 py-2 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
+              className="group relative bg-white border border-[#004aad]/10 px-10 py-6 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
             >
               
               {/* TOP STRIP */}

@@ -111,11 +111,11 @@ const engineeringServices = [
 
 export default function EngineeringExecuted() {
   return (
-    <section className="w-full bg-[#f8fafc] py-32 px-10 md:px-20 overflow-hidden">
+    <section className="w-full bg-[#f8fafc] py-10 px-10 md:px-20 overflow-hidden">
       <div className="">
         
         {/* HEADER: Massive Brand Statement */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-4 gap-10">
           <div className="space-y-6 max-w-5xl">
             <motion.div 
               initial={{ opacity: 0, width: 0 }}

@@ -36,7 +36,7 @@ const trenchData = [
 export default function StaticTrenchingGrid() {
   return (
     // Reverted the section height from 300vh to h-auto. Removed refs and scroll logic.
-    <section className="relative h-auto bg-white py-24 border-t-2 border-[#004aad]/10 select-none">
+    <section className="relative h-auto bg-white py-4 border-t-2 border-[#004aad]/10 select-none">
 
       {/* MILES & MILES BACKGROUND WATERMARK
          Statically positioned relative to the section, not fixed. 
@@ -57,7 +57,7 @@ export default function StaticTrenchingGrid() {
       {/* MAIN CONTAINER WRAPPER
          Centers the static row of cards, constrained to the standard max-width.
       */}
-      <div className="px-10 md:px-20 relative z-10 space-y-16">
+      <div className="px-10 md:px-20 relative z-10 space-y-4">
 
         {/* SECTION HEADER: Title + Manifesto */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-[#004aad]/5 pb-16">

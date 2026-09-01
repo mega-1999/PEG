@@ -36,18 +36,18 @@ export default function FutureCulvertComponent() {
     <section className="w-full bg-[#004aad] overflow-hidden flex flex-col select-none">
       
       {/* 1. HEADER STRIP */}
-      <div className="w-full px-10 md:px-20 py-16 flex justify-between items-end border-b border-white/10 relative z-30">
+      <div className="w-full px-10 md:px-20 py-8 flex justify-between items-end border-b border-white/10 relative z-30">
         <div className="space-y-2">
           <h2 className="text-white text-3xl md:text-5xl font-black tracking-tighter leading-[0.9]">
             THE FUTURE OF <br />
-            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>BOX CULVERTS.</span>
+            <span style={{ WebkitTextStroke: "1.5px #ffffff", color: "transparent" }}>BOX CULVERTS</span>
           </h2>
         </div>
  
       </div>
 
       {/* 2. TRIPTYCH GRID: The 3 vertical panels */}
-      <div className="w-full px-10 md:px-20 py-16 flex-grow grid grid-cols-1 md:grid-cols-3 h-full">
+      <div className="w-full px-10 md:px-20 py-8 flex-grow grid grid-cols-1 md:grid-cols-3 h-full">
         {futureInitiatives.map((item, idx) => (
           <motion.div
             key={idx}
@@ -83,7 +83,7 @@ export default function FutureCulvertComponent() {
                 <p className="text-[#1B79EE] font-black text-xs uppercase tracking-widest mb-2">{item.subtitle}</p>
                 {/* Headline using text-shadow for clarity against brighter hovered image */}
                 <h3 
-                  className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-5 transition-all duration-300 group-hover:text-[#1B79EE] leading-none"
+                  className="text-2xl md:text-3xl font-black text-white uppercase tracking-tighter mb-5 transition-all duration-300 group-hover:text-[#004aad] leading-none"
                   style={{ textShadow: "0px 2px 2px rgba(0, 74, 173, 0.5)" }}
                 >
                   {item.title}

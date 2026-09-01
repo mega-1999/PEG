@@ -33,15 +33,15 @@ const manifestoData = [
 
 export default function PrecasterManifesto() {
   return (
-    <section className="w-full py-8 bg-white overflow-hidden relative">
+    <section className="w-full py-4 bg-white overflow-hidden relative">
       
       {/* STANDARDIZED CONTAINER */}
-      <div className="w-full px-10 md:px-20 py-16 relative z-10">
+      <div className="w-full px-10 md:px-20  relative z-10">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 border-b-4 border-[#004aad] pb-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-4 gap-12  ">
           
-          <div className="space-y-6 max-w-4xl">
+          <div className="space-y-2 max-w-4xl">
 
             
             <motion.h2 

@@ -52,11 +52,11 @@ export default function Home() {
       <DeliverableUpgrade />
       
       {/* 4. PRODUCTS & APPLICATIONS */}
-      <div className="w-full bg-slate-900 py-24 text-center border-y border-slate-800 relative z-20">
+      <div className="w-full bg-white py-10 text-center relative z-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/20 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#1B79EE]">
           Engineered Portfolios
         </div>
-        <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">
+        <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter">
           Precast Applications <span className="text-[#1B79EE]">& Products</span>
         </h2>
         <p className="mt-6 text-slate-400 font-medium max-w-2xl mx-auto px-6">

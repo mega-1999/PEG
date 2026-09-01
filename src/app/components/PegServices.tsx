@@ -61,10 +61,10 @@ const services = [
 
 export default function PegServices() {
   return (
-    <section className="w-full bg-slate-50 py-24 border-b border-slate-200">
+    <section className="w-full bg-slate-50 py-10 border-b border-slate-200">
       <div className="w-full px-10 md:px-20 ">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="mb-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#1B79EE]">
             Core Competencies
           </div>
@@ -88,9 +88,6 @@ export default function PegServices() {
               transition={{ delay: index * 0.1 }}
               className="bg-white border border-slate-200 p-8 hover:border-[#1B79EE] hover:shadow-[0_10px_40px_-10px_rgba(27,121,238,0.15)] transition-all duration-300 group flex flex-col"
             >
-              <div className="text-slate-300 font-mono text-sm font-bold mb-6">
-                //{service.id}
-              </div>
               <div className="w-14 h-14 bg-slate-50 border border-slate-100 flex items-center justify-center text-[#004aad] mb-6 group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
                 {service.icon}
               </div>

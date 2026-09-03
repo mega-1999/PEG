@@ -62,6 +62,7 @@ const navData = [
   {
     title: 'RESOURCES & KNOWLEDGE',
     links: [
+      { name: 'Precast Engineering Blog', href: '/blog' },
       { name: 'Catalogs & Brochures', href: '/resources/catalogs-brochures' },
       { name: 'Technical Videos', href: '/resources/technical-videos' },
       { name: 'Project Gallery', href: '/resources/project-gallery' },
@@ -72,7 +73,7 @@ const navData = [
     title: 'COMPANY',
     links: [
       { name: 'About PEG', href: '/about' },
-      { name: 'Blog', href: '/blog' },
+      { name: 'Precast Blog', href: '/blog' },
       { name: 'Global Locations', href: '/global-location' },
       { name: 'Contacts', href: '#contact' }
     ]
@@ -117,10 +118,15 @@ export const Navbar = () => {
         </div>
         <div className="h-full flex justify-end items-center gap-6 pr-14 xl:pr-0 text-[11px] font-bold tracking-wider">
 
+          <Link href={'/blog'} className="hover:text-blue-200 transition-colors uppercase font-black text-[11px] tracking-wider px-2.5 py-1 bg-white/15 hover:bg-white/25 rounded border border-white/25 flex items-center gap-1 shadow-sm">
+            BLOG
+          </Link>
+
           <Link href={'#portal'}>
             <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
               PORTALS <ChevronDown className="w-3 h-3" />
-            </button></Link>
+            </button>
+          </Link>
 
           {/* Integrated Search Bar - Hidden on very small screens to save space */}
           <div className="hidden sm:flex items-center bg-white/10 rounded px-3 py-1.5 w-48 md:w-64 border border-white/20 focus-within:border-[#1B79EE] transition-colors">

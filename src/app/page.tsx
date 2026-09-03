@@ -32,6 +32,7 @@ import InnovativeContactComponent from "./components/InnovativeContactComponent"
 import ContactTerminal from "./components/ContactTerminal";
 import MembershipBox from "./components/MembershipBox";
 import PegServices from "./components/PegServices";
+import PrecastBlogSection from "./components/PrecastBlogSection";
 
 export default function Home() {
   return (
@@ -86,6 +87,7 @@ export default function Home() {
       </section>
       
       <PegResourceGrid />
+      <PrecastBlogSection />
       <AgencySlider />
       <ContentSection />
       <PegHero />

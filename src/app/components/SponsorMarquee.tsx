@@ -44,7 +44,7 @@ export default function SponsorMarquee() {
                             ease: "linear",
                             repeat: Infinity,
                         }}
-                        className="flex items-center gap-16 w-max pr-16 whitespace-nowrap will-change-transform"
+                        className="flex items-center w-max   whitespace-nowrap will-change-transform"
                     >
                         {infiniteLogos.map((logo, i) => (
                             <div
@@ -52,7 +52,7 @@ export default function SponsorMarquee() {
                                 className="shrink-0 flex items-center justify-center transition-all duration-300"
                             >
                                 {/* Fixed structural wrapper keeping all logo scales unified */}
-                                <div className="relative w-36 h-12 opacity-100 transition-all duration-500 cursor-crosshair">
+                                <div className="relative w-36 h-16 opacity-100 transition-all duration-500 cursor-crosshair">
                                     <Image
                                         src={logo.src}
                                         alt={logo.alt}

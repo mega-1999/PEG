@@ -23,14 +23,14 @@ const targetAudiences = [
     id: "03",
     title: "Contractors & Erectors",
     subtitle: "Field Logistics",
-    description: "For site teams dependent on flawless 3D erection sequencing, clash detection, and zero-rework installations on the job site.",
+    description: "For site teams dependent on flawless erection sequencing, form alignment, and zero-rework installations on the job site.",
     icon: <HardHat className="w-10 h-10" />
   },
   {
     id: "04",
     title: "Architects & Specifiers",
     subtitle: "Design Visionaries",
-    description: "For establishments needing early-stage feasibility consulting, structural detailing, and seamless integration into master BIM models.",
+    description: "For establishments needing early-stage feasibility consulting, structural detailing, and seamless integration into structural engineering submittals.",
     icon: <Building2 className="w-10 h-10" />
   }
 ];

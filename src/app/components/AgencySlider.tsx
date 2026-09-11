@@ -91,7 +91,7 @@ export default function ExtraordinaryAgencyCluster() {
 
       {/* A-Z ALPHABET SORT / FILTER TABS BAR (FULL LINE WITH HOVER COUNT TOOLTIPS) */}
       <div className="relative z-30 w-full px-10 md:px-20 mb-6">
-        <div className="bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-2xl border border-[#004aad]/10 shadow-[0_10px_30px_rgba(0,74,173,0.05)]">
+        <div className="bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-none border border-[#004aad]/10 shadow-[0_10px_30px_rgba(0,74,173,0.05)]">
           <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 w-full">
             {ALPHABET.map((char) => {
               const count = letterCounts[char] || 0;
@@ -103,13 +103,13 @@ export default function ExtraordinaryAgencyCluster() {
                   key={char}
                   onClick={() => setSelectedLetter(char)}
                   className={`
-                    group relative px-2.5 sm:px-3 py-1.5 rounded-lg text-xs md:text-sm font-black transition-all duration-200 flex items-center justify-center shrink-0
+                    group relative px-2.5 sm:px-3 py-1.5 rounded-none text-xs md:text-sm font-black transition-all duration-200 flex items-center justify-center shrink-0
                     ${
                       isActive
                         ? "bg-[#004aad] text-white shadow-md shadow-[#004aad]/20 scale-105"
                         : hasItems
-                        ? "text-slate-700 hover:text-[#1B79EE] hover:bg-[#1B79EE]/10 bg-slate-50 border border-slate-200/60"
-                        : "text-slate-300 hover:text-slate-400 bg-slate-50/40 border border-slate-100"
+                        ? "text-[#004aad] hover:text-[#1B79EE] hover:bg-[#1B79EE]/10 bg-blue-50/50 border border-[#004aad]/10"
+                        : "text-[#004aad]/30 hover:text-[#004aad]/50 bg-blue-50/20 border border-[#004aad]/5"
                     }
                   `}
                 >
@@ -117,7 +117,7 @@ export default function ExtraordinaryAgencyCluster() {
 
                   {/* FLOATING HOVER COUNT BADGE TOOLTIP */}
                   <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 transform translate-y-1 group-hover:translate-y-0">
-                    <div className="bg-[#004aad] text-white text-[10px] font-bold py-1 px-2.5 rounded-md shadow-xl whitespace-nowrap flex items-center gap-1 border border-[#1B79EE]/30">
+                    <div className="bg-[#004aad] text-white text-[10px] font-bold py-1 px-2.5 rounded-none shadow-xl whitespace-nowrap flex items-center gap-1 border border-[#1B79EE]/30">
                       <span className="text-white font-extrabold">{count}</span>
                       <span className="text-blue-100 text-[9px] uppercase font-medium">
                         {char === "ALL" ? "Total" : count === 1 ? "Agency" : "Agencies"}

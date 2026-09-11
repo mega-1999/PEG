@@ -83,7 +83,7 @@ export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
       {
         type: "video",
         url: "/assets/video/E24 v3 final blue bg.mp4",
-        caption: "3D Finite Element Analysis (FEA) Stress Simulation of Box Culvert Top Slab"
+        caption: "Finite Element Stress Simulation of Box Culvert Top Slab"
       },
       {
         type: "image",
@@ -117,11 +117,11 @@ export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
         }
       },
       {
-        heading: "2. Advanced Finite Element Analysis (FEA) & Load Distribution",
+        heading: "2. Advanced Finite Element Analysis & Load Distribution",
         subheading: "Resisting Dynamic Impact Loads and Extreme Earth Overburden",
         content: [
           "Underground precast structures must withstand both dead loads from deep soil cover and heavy live loads from passing freight trucks and locomotives.",
-          "Our engineering team uses advanced 3D FEA modeling to optimize rebar placement, minimizing slab thickness while maximizing shear resistance at corner haunches.",
+          "Our engineering team uses advanced structural modeling to optimize rebar placement, minimizing slab thickness while maximizing shear resistance at corner haunches.",
           "Integral corner haunches redistribute bending moments from top slabs into sidewalls, preventing localized stress cracking over decades of thermal expansion and contraction."
         ],
         image: {
@@ -217,7 +217,7 @@ export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     ],
     relatedSlugs: [
       "heavy-duty-precast-box-culverts-engineering",
-      "digital-precast-manufacturing-bim-integration",
+      "precast-mold-formwork-design-engineering",
       "ultra-high-performance-precast-concrete-structures"
     ]
   },
@@ -354,62 +354,71 @@ export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     ]
   },
   {
-    slug: "digital-precast-manufacturing-bim-integration",
-    title: "Digital Transformation & BIM Integration for Precast Concrete Manufacturers",
-    subtitle: "Bridging 3D CAD Parametric Design to Automated Plant Execution & Robotic Rebar Bending",
-    category: "Digital Precast",
+    slug: "precast-mold-formwork-design-engineering",
+    title: "Precast Mold & Formwork Design Engineering for Concrete Manufacturers",
+    subtitle: "Custom Heavy-Duty Steel Mold Design, Modular Formwork Systems & Hydraulic Shuttering Solutions",
+    category: "Mold & Form Design",
     coverImage: "/assets/images/2440 MANHOLE CUT VIEW.png",
     featuredVideo: "/assets/video/E20 V1 final.mp4",
     publishedDate: "August 04, 2026",
     readTime: "9 min read",
     author: {
       name: "Julian Thorne",
-      role: "Director of Digital Engineering",
+      role: "Director of Precast Formwork Engineering",
       avatar: "/PrecastIndustry Links/10.jpg"
     },
-    excerpt: "Discover how Building Information Modeling (BIM 5D), automated shop drawing generation, and IoT sensor monitoring are revolutionizing precast concrete production speed and quality control.",
+    excerpt: "Discover how custom steel mold engineering, modular formwork assemblies, and precision shuttering design optimize casting turnaround and structural tolerances for precast plants.",
     technicalSpecs: [
-      { label: "BIM Standard", value: "LOD 400 Fabrication Level Modeling" },
-      { label: "Data Format", value: "IFC4, Industry Foundation Classes & BVBS" },
-      { label: "Quality Assurance", value: "Laser Scanning ±1mm Tolerance Verification" },
-      { label: "Traceability", value: "RFID / QR Code Embedded Cast Tags" },
-      { label: "Curing Tech", value: "Wireless In-Concrete Maturity Sensors" }
+      { label: "Mold Material", value: "Heavy-Duty Structural Steel & Modular Aluminum" },
+      { label: "Form Tolerance", value: "AASHTO & NPCA Precision Formwork (±1/16\")" },
+      { label: "Shuttering System", value: "Hydraulic & Magnetic Modular Side Forms" },
+      { label: "Stripping Protocol", value: "Rapid-Release Tapered Core & Hinged Forms" },
+      { label: "Durability Rating", value: "1,000+ Pour Reusability Guarantee" }
     ],
     gallery: [
       {
         type: "image",
         url: "/assets/images/2440 MANHOLE CUT VIEW.png",
-        caption: "BIM 3D Model Cut-Section View of Precast Structural Component"
+        caption: "Heavy-Duty Precast Steel Formwork & Mold Assembly Blueprint"
       },
       {
         type: "image",
         url: "/assets/images/72 precast manhole Double Internal Drop.657.png",
-        caption: "Complex Internal Drop Precast Rebar & Wall CAD Analysis"
+        caption: "Custom Internal Core Mold Shuttering & Stripping Mechanism"
       }
     ],
     sections: [
       {
-        heading: "1. LOD 400 Parametric Modeling to Direct Plant Automation",
-        subheading: "Eliminating Manual Drafting Errors and Rebar Conflicts",
+        heading: "1. Heavy-Duty Steel Mold Engineering for High-Cycle Casting",
+        subheading: "Custom Modular Formwork Eliminates Casting Deflections",
         content: [
-          "Modern precast manufacturing begins long before concrete is poured. 3D BIM models developed to Level of Development (LOD) 400 capture every embedded lifting anchor, rebar bend radius, and conduit knockout with mathematical perfection.",
-          "Automated software exports BVBS data directly to CNC rebar benders and automated shuttering robots, reducing mold setup times from hours to minutes."
+          "Precision precast manufacturing begins with custom-engineered steel molds designed to withstand hydrostatic concrete pressure without deflection.",
+          "Hydraulic shuttering systems and magnetic side forms allow rapid setup, reducing form changeover timelines from hours to minutes while guaranteeing NPCA dimensional tolerances."
         ],
-        callout: "Zero Clash Execution: Clashes between rebar cages and internal blockouts are resolved digitally in BIM models before physical fabrication."
+        callout: "Zero Leakage Guarantee: Precision machining on mold sealing edges prevents slurry loss and honeycomb defects.",
+        specHighlight: {
+          title: "Formwork Design Parameters",
+          items: [
+            "Reinforced steel faceplates for 1,000+ pour durability",
+            "Hydraulic collapsing core molds for box culverts & manholes",
+            "Self-locating magnetic side shutters for slab production",
+            "Integrated high-frequency pneumatic vibrator mounting brackets"
+          ]
+        }
       },
       {
-        heading: "2. IoT Maturity Sensors & RFID Production Tracking",
-        subheading: "Real-Time Concrete Strength Verification for Faster Stripping",
+        heading: "2. Modular Form Systems & Rapid Stripping Mechanisms",
+        subheading: "Accelerating Daily Bed Turnover in Precast Plants",
         content: [
-          "Embedded wireless maturity sensors track internal heat of hydration and concrete compressive strength in real time. Plants stripping forms as soon as 2,500 PSI is reached double their daily bed turnover.",
-          "Cast-in RFID tags track every precast product through casting, yard storage, transport dispatch, and final jobsite placement."
+          "Engineered tapered draft angles and hinged side walls allow overhead cranes to strip cured precast units effortlessly without edge chipping.",
+          "Custom modular extension panels enable single mold assemblies to produce multiple product sizes with minimal re-tooling."
         ]
       }
     ],
     keyTakeaways: [
-      "LOD 400 BIM modeling automates rebar bending and formwork placement.",
-      "In-concrete wireless sensors optimize stripping schedules and cure management.",
-      "RFID tracking ensures complete quality control traceability from plant to jobsite."
+      "Custom heavy-duty steel molds guarantee precise dimensional tolerances over 1,000+ pours.",
+      "Hydraulic collapsible cores accelerate internal form stripping for culverts and vaults.",
+      "Modular formwork designs enable versatile product sizing with fast plant changeover."
     ],
     relatedSlugs: [
       "modular-precast-utility-trenching-systems",
@@ -477,7 +486,7 @@ export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     relatedSlugs: [
       "heavy-duty-precast-box-culverts-engineering",
       "marine-grade-precast-concrete-docks-seawalls",
-      "digital-precast-manufacturing-bim-integration"
+      "precast-mold-formwork-design-engineering"
     ]
   }
 ];

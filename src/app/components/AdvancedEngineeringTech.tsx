@@ -7,9 +7,9 @@ import { Cpu, Layers, ShieldCheck, Factory, ArrowRight } from 'lucide-react';
 const techPillars = [
   {
     id: "01",
-    title: "Parametric 3D Precision",
+    title: "Parametric Mold Precision",
     category: "Engineering & CAD",
-    description: "We eliminate field errors before concrete is ever poured. Our Specified-Tolerance shop drawings and 3D component isolation ensure flawless geometry and clash detection across every module.",
+    description: "We eliminate field errors before concrete is ever poured. Our Specified-Tolerance shop drawings and custom mold isolation ensure flawless geometry and formwork accuracy across every module.",
     icon: <Layers className="w-8 h-8" />
   },
   {

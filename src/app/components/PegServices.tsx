@@ -29,8 +29,8 @@ const services = [
   },
   {
     id: "03",
-    title: "BIM & 3D Modeling",
-    description: "Advanced parametric modeling and clash detection for complex precast assemblies.",
+    title: "Mold & Formwork Engineering",
+    description: "Custom heavy-duty formwork engineering, magnetic shuttering systems, and mold optimization for precast casting.",
     icon: <Box className="w-8 h-8" />
   },
   {

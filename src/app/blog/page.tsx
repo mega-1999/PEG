@@ -10,13 +10,13 @@ export const metadata = {
 
 export default function PrecastBlogListingPage() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800 selection:bg-[#1B79EE] selection:text-white pt-30">
+    <main className="min-h-screen bg-[#004aad]/5 text-[#004aad] selection:bg-[#1B79EE] selection:text-white pt-30">
       {/* TOP DIRECTORY HEADER BAR */}
-      <div className="bg-white border-b border-slate-200 py-6 px-4 sm:px-6 lg:px-8 shadow-sm">
+      <div className="bg-white border-b border-[#004aad]/10 py-6 px-4 sm:px-6 lg:px-8 shadow-sm">
         <div className="w-full px-10 md:px-20 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-[#004aad] uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#004aad]/70 hover:text-[#004aad] uppercase tracking-wider transition-colors"
           >
             <ArrowLeft className="w-4 h-4 text-[#1B79EE]" />
             <span>Return to Main Site</span>

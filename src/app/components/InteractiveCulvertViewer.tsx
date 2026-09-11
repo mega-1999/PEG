@@ -59,7 +59,7 @@ function Loader() {
       <div className="flex flex-col items-center gap-4">
         <div className="w-10 h-10 border-4 border-[#1B79EE] border-t-transparent rounded-full animate-spin" />
         <span className="font-mono text-xs font-black text-[#1B79EE] tracking-widest uppercase bg-[#004aad]/80 px-4 py-2 backdrop-blur-sm">
-          Compiling 3D Matrix...
+          Compiling Precast Matrix...
         </span>
       </div>
     </Html>

@@ -26,7 +26,7 @@ const CATEGORIES = [
   "Utility Trenches",
   "Retaining Walls",
   "Marine Systems",
-  "Digital Precast",
+  "Mold & Form Design",
   "UHPC Engineering"
 ];
 
@@ -44,7 +44,7 @@ export default function PrecastBlogSection() {
   const gridPosts = filteredPosts.length > 0 ? filteredPosts : PRECAST_BLOG_POSTS;
 
   return (
-    <section id="precast-engineering-insights" className="relative w-full bg-white text-slate-800 py-10 overflow-hidden select-none border-t border-slate-200">
+    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#004aad] py-10 overflow-hidden select-none border-t border-[#004aad]/10">
       
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div 
@@ -62,7 +62,7 @@ export default function PrecastBlogSection() {
       <div className="relative w-full px-10 md:px-20 z-10">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-slate-200 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-[#004aad]/10 pb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase rounded-full mb-4 border border-[#1B79EE]/20">
               <Box className="w-3.5 h-3.5" /> Precast Knowledge Vault
@@ -70,8 +70,8 @@ export default function PrecastBlogSection() {
             <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter leading-tight">
               Precast Product <span className="text-[#1B79EE]">& Technical Articles</span>
             </h2>
-            <p className="mt-3 text-slate-500 font-medium max-w-2xl text-sm md:text-base">
-              In-depth technical guides, 3D CAD breakdowns, video demonstrations, and structural load analysis for heavy precast concrete products.
+            <p className="mt-3 text-[#004aad]/70 font-medium max-w-2xl text-sm md:text-base">
+              In-depth technical guides, mold formwork blueprints, video demonstrations, and structural load analysis for heavy precast concrete products.
             </p>
           </div>
 
@@ -93,11 +93,11 @@ export default function PrecastBlogSection() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`
-                  px-4 py-2 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 shrink-0 flex items-center gap-2 border
+                  px-4 py-2 rounded-none text-xs md:text-sm font-bold transition-all duration-300 shrink-0 flex items-center gap-2 border
                   ${
                     isActive
                       ? "bg-[#004aad] text-white border-[#004aad] shadow-md shadow-[#004aad]/20 scale-105"
-                      : "bg-slate-50 text-slate-600 border-slate-200 hover:text-[#004aad] hover:bg-blue-50/50"
+                      : "bg-[#004aad]/5 text-[#004aad]/70 border-[#004aad]/10 hover:text-[#004aad] hover:bg-blue-50"
                   }
                 `}
               >
@@ -110,10 +110,10 @@ export default function PrecastBlogSection() {
         {/* FEATURED MAIN ARTICLE (SHOW ON "ALL PRODUCTS") */}
         {selectedCategory === "All Products" && (
           <div className="mb-14">
-            <div className="relative rounded-3xl bg-slate-50 border border-[#004aad]/10 overflow-hidden shadow-xl shadow-[0_15px_40px_rgba(0,74,173,0.06)] group grid grid-cols-1 lg:grid-cols-12 gap-0">
+            <div className="relative rounded-none bg-[#004aad]/5 border border-[#004aad]/10 overflow-hidden shadow-xl shadow-[0_15px_40px_rgba(0,74,173,0.06)] group grid grid-cols-1 lg:grid-cols-12 gap-0">
               
               {/* IMAGE & VIDEO SHOWCASE THUMBNAIL */}
-              <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[440px] overflow-hidden bg-slate-100">
+              <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[440px] overflow-hidden bg-[#004aad]/5">
                 <Image
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
@@ -122,17 +122,17 @@ export default function PrecastBlogSection() {
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/60 via-transparent to-transparent" />
                 
                 {/* VIDEO BADGE OVERLAY */}
                 {featuredPost.featuredVideo && (
-                  <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3.5 py-1.5 bg-white/95 backdrop-blur-md rounded-full border border-[#1B79EE]/30 text-xs font-black text-[#004aad] shadow-md">
+                  <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3.5 py-1.5 bg-white/95 backdrop-blur-md rounded-none border border-[#1B79EE]/30 text-xs font-black text-[#004aad] shadow-md">
                     <Play className="w-3.5 h-3.5 text-[#1B79EE] fill-[#1B79EE]" />
                     <span>Includes Video Showcase</span>
                   </div>
                 )}
 
-                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-lg text-xs font-bold text-slate-700 border border-slate-200 shadow-sm">
+                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1 bg-white/90 backdrop-blur-md rounded-none text-xs font-bold text-[#004aad] border border-[#1B79EE]/20 shadow-sm">
                   <Clock className="w-3.5 h-3.5 text-[#1B79EE]" />
                   <span>{featuredPost.readTime}</span>
                 </div>
@@ -142,10 +142,10 @@ export default function PrecastBlogSection() {
               <div className="lg:col-span-5 p-6 md:p-10 flex flex-col justify-between bg-white">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 rounded-md bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-extrabold tracking-wider uppercase border border-[#1B79EE]/20">
+                    <span className="px-3 py-1 rounded-none bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-extrabold tracking-wider uppercase border border-[#1B79EE]/20">
                       {featuredPost.category}
                     </span>
-                    <span className="text-xs text-slate-400 font-semibold">
+                    <span className="text-xs text-[#1B79EE]/80 font-semibold">
                       {featuredPost.publishedDate}
                     </span>
                   </div>
@@ -156,22 +156,22 @@ export default function PrecastBlogSection() {
                     </Link>
                   </h3>
 
-                  <p className="mt-3 text-slate-600 text-sm md:text-base font-medium line-clamp-3 leading-relaxed">
+                  <p className="mt-3 text-[#004aad]/80 text-sm md:text-base font-medium line-clamp-3 leading-relaxed">
                     {featuredPost.excerpt}
                   </p>
 
                   {/* KEY TECH SPEC BADGES */}
-                  <div className="mt-6 space-y-2 border-t border-slate-100 pt-4">
+                  <div className="mt-6 space-y-2 border-t border-[#004aad]/10 pt-4">
                     {featuredPost.technicalSpecs.slice(0, 3).map((spec, i) => (
                       <div key={i} className="flex items-center justify-between text-xs">
-                        <span className="text-slate-500 font-medium">{spec.label}:</span>
-                        <span className="text-[#004aad] font-extrabold bg-blue-50/80 px-2 py-0.5 rounded border border-[#1B79EE]/20">{spec.value}</span>
+                        <span className="text-[#004aad]/60 font-medium">{spec.label}:</span>
+                        <span className="text-[#004aad] font-extrabold bg-blue-50/80 px-2 py-0.5 rounded-none border border-[#1B79EE]/20">{spec.value}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-8 pt-4 border-t border-[#004aad]/10 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="relative w-8 h-8 rounded-full overflow-hidden border-2 border-[#1B79EE]">
                       <Image
@@ -182,8 +182,8 @@ export default function PrecastBlogSection() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-slate-800">{featuredPost.author.name}</p>
-                      <p className="text-[10px] text-slate-400 font-semibold">{featuredPost.author.role}</p>
+                      <p className="text-xs font-bold text-[#004aad]">{featuredPost.author.name}</p>
+                      <p className="text-[10px] text-[#004aad]/60 font-semibold">{featuredPost.author.role}</p>
                     </div>
                   </div>
 
@@ -212,10 +212,10 @@ export default function PrecastBlogSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group flex flex-col bg-white rounded-3xl border border-slate-200/90 overflow-hidden hover:border-[#1B79EE] hover:shadow-xl hover:shadow-[#1B79EE]/10 transition-all duration-500"
+                className="group flex flex-col bg-white rounded-none border border-[#004aad]/10 overflow-hidden hover:border-[#1B79EE] hover:shadow-xl hover:shadow-[#1B79EE]/10 transition-all duration-500"
               >
                 {/* COVER IMAGE & MEDIA INDICATOR */}
-                <div className="relative w-full h-56 overflow-hidden bg-slate-100">
+                <div className="relative w-full h-56 overflow-hidden bg-[#004aad]/5">
                   <Image
                     src={post.coverImage}
                     alt={post.title}
@@ -223,11 +223,11 @@ export default function PrecastBlogSection() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/50 via-transparent to-transparent" />
                   
                   {/* CATEGORY TAG */}
                   <div className="absolute top-4 left-4 z-10">
-                    <span className="px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-md text-[#004aad] text-[10px] font-black tracking-wider uppercase border border-slate-200 shadow-sm">
+                    <span className="px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-md text-[#004aad] text-[10px] font-black tracking-wider uppercase border border-[#1B79EE]/20 shadow-sm">
                       {post.category}
                     </span>
                   </div>
@@ -254,14 +254,14 @@ export default function PrecastBlogSection() {
                       </Link>
                     </h3>
 
-                    <p className="mt-3 text-slate-500 text-xs md:text-sm font-medium line-clamp-3 leading-relaxed">
+                    <p className="mt-3 text-[#004aad]/70 text-xs md:text-sm font-medium line-clamp-3 leading-relaxed">
                       {post.excerpt}
                     </p>
                   </div>
 
                   {/* BOTTOM FOOTER */}
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[11px] text-slate-400 font-semibold">
+                  <div className="mt-6 pt-4 border-t border-[#004aad]/10 flex items-center justify-between">
+                    <span className="text-[11px] text-[#1B79EE]/80 font-semibold">
                       {post.publishedDate}
                     </span>
 

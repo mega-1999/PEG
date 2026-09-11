@@ -18,7 +18,7 @@ const manifestoData = [
     title: "The What",
     subtitle: "Knowledge & Expertise",
     headline: "Vertical Integration of Structural Precision.",
-    description: "From structural submittals and stamped calculations to ultra-precise CAD shop drawings and 3D erection sequences, we engineer the complete precast lifecycle.",
+    description: "From structural submittals and stamped calculations to ultra-precise CAD shop drawings and precise erection sequences, we engineer the complete precast lifecycle.",
     icon: <LayoutTemplate className="w-10 h-10" />
   },
   {

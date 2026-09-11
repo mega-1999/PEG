@@ -21,7 +21,7 @@ const engineeringServices = [
     id: "01",
     title: "Engineering Drawings",
     subtitle: "Parametric Shop Models",
-    desc: "Specified-Tolerance 3D modeling and 2D drafting engineered for flawless factory casting and rapid on-site assembly.",
+    desc: "Specified-Tolerance CAD modeling and 2D drafting engineered for flawless factory casting and rapid on-site assembly.",
     icon: <DraftingCompass className="w-6 h-6" />,
     colSpan: "lg:col-span-2", // Wide block
     highlight: true

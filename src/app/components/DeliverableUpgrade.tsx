@@ -14,7 +14,7 @@ const upgradeFeatures = [
   {
     title: "Precision Illustrations",
     subtitle: "Multi-Dimensional Clarity",
-    description: "Eliminate site-level confusion. We deliver Specified-Tolerance shop drawings, 3D component isolation, and step-by-step erection sequencing.",
+    description: "Eliminate site-level confusion. We deliver Specified-Tolerance shop drawings, mold component detailing, and step-by-step erection sequencing.",
     icon: <PenTool className="w-8 h-8" />,
   },
   {

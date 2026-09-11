@@ -122,7 +122,7 @@ export default function SeamlessConnection() {
                 Phase 02: After Pouring
               </p>
               <p className="text-[#004aad]/70 group-hover:text-white/90 text-sm font-medium leading-relaxed transition-colors duration-500 max-w-sm">
-                Parametric formwork fabrication, Specified-Tolerance 3D component isolation, lifting inserts, and step-by-step erection sequencing deployed directly to the floor.
+                Parametric formwork fabrication, Specified-Tolerance component isolation, lifting inserts, and step-by-step erection sequencing deployed directly to the floor.
               </p>
             </motion.div>
 

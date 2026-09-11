@@ -19,7 +19,7 @@ export default function ShareArticleButton({ title }: { title: string }) {
   return (
     <button
       onClick={handleShare}
-      className="w-full flex items-center justify-center gap-2 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs uppercase tracking-wider rounded-xl border border-slate-200 transition-colors cursor-pointer"
+      className="w-full flex items-center justify-center gap-2 py-3 bg-blue-50 hover:bg-[#1B79EE]/15 text-[#004aad] font-bold text-xs uppercase tracking-wider rounded-none border border-[#1B79EE]/20 transition-colors cursor-pointer"
     >
       <Share2 className="w-4 h-4 text-[#1B79EE]" />
       <span>Share Technical Article</span>

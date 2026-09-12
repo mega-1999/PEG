@@ -138,7 +138,7 @@ export const ResourceDirectory = () => {
                   onEnded={playNextVideo}
                   className="w-full h-full object-contain"
                 >
-                  <source src={getAssetUrl(videoPlaylist[currentVideoIndex])} type="video/mp4" />
+                  <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
                 </video>
               </div>
 

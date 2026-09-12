@@ -12,22 +12,22 @@ import { getAssetUrl } from '@/lib/utils';
 const resourceColumns = [
   {
     links: [
-      { name: 'PROJECTS', href: '/projects', highlight: true, icon: <FolderKanban className="w-4 h-4" /> },
-      { name: 'VIDEOS', href: '/videos', icon: <Video className="w-4 h-4" /> },
-      { name: 'CATALOGS', href: '/catalogs', icon: <BookOpen className="w-4 h-4" /> },
-      { name: 'GREENREPORTS', href: '/sustainability', icon: <Leaf className="w-4 h-4" /> },
-      { name: 'NEWSLETTER', href: '/news', icon: <Mail className="w-4 h-4" /> },
-      { name: 'OUTLINE', href: '/outline-specs', icon: <FileText className="w-4 h-4" /> },
+      { name: 'PROJECTS', href: '#projects', highlight: true, icon: <FolderKanban className="w-4 h-4" /> },
+      { name: 'VIDEOS', href: '#videos', icon: <Video className="w-4 h-4" /> },
+      { name: 'CATALOGS', href: '#catalogs', icon: <BookOpen className="w-4 h-4" /> },
+      { name: 'GREENREPORTS', href: '#sustainability', icon: <Leaf className="w-4 h-4" /> },
+      { name: 'NEWSLETTER', href: '#news', icon: <Mail className="w-4 h-4" /> },
+      { name: 'OUTLINE', href: '#outline-specs', icon: <FileText className="w-4 h-4" /> },
     ]
   },
   {
     links: [
-      { name: 'CONTINUING ED', href: '/education', highlight: true, icon: <GraduationCap className="w-4 h-4" /> },
-      { name: 'WEBINARS', href: '/webinars', icon: <MonitorPlay className="w-4 h-4" /> },
-      { name: 'DETAILED PODCAST', href: '/podcasts', italic: true, icon: <Mic className="w-4 h-4" /> },
-      { name: 'CERTIFICATIONS', href: '/certs', icon: <Award className="w-4 h-4" /> },
-      { name: 'DATA SHEETS', href: '/data-sheets', icon: <FileDigit className="w-4 h-4" /> },
-      { name: 'ADA PRODUCTS', href: '/ada', icon: <Accessibility className="w-4 h-4" /> },
+      { name: 'CONTINUING ED', href: '#education', highlight: true, icon: <GraduationCap className="w-4 h-4" /> },
+      { name: 'WEBINARS', href: '#webinars', icon: <MonitorPlay className="w-4 h-4" /> },
+      { name: 'DETAILED PODCAST', href: '#podcasts', italic: true, icon: <Mic className="w-4 h-4" /> },
+      { name: 'CERTIFICATIONS', href: '#certs', icon: <Award className="w-4 h-4" /> },
+      { name: 'DATA SHEETS', href: '#data-sheets', icon: <FileDigit className="w-4 h-4" /> },
+      { name: 'ADA PRODUCTS', href: '#ada', icon: <Accessibility className="w-4 h-4" /> },
     ]
   }
 ];

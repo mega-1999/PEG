@@ -78,7 +78,7 @@ export default function FuturisticCTA() {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <Link 
-            href="/contact"
+            href="#contact"
             className="group relative inline-flex items-center justify-center gap-3 bg-white text-[#004aad] h-14 px-10 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)]"
           >
             {/* Hover Sweep Effect */}

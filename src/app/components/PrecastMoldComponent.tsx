@@ -111,6 +111,7 @@ export default function PrecastMoldComponent() {
               loop 
               muted 
               playsInline
+              preload="auto"
               suppressHydrationWarning
               className="w-full h-full object-cover"
             >

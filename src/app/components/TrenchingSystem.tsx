@@ -317,6 +317,7 @@ export default function TrenchingSystem() {
                     loop
                     muted
                     playsInline
+                    preload="auto"
                     suppressHydrationWarning
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   >

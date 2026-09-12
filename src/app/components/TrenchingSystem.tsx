@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Waypoints, Ruler, Shield, Zap } from "lucide-react";
+import { getAssetUrl } from "@/lib/utils";
 
 // Trench data remains the same for easy content management
 const trenchData = [
@@ -114,7 +115,7 @@ export default function StaticTrenchingGrid() {
               `}>
                 <div className="relative w-full h-full">
                   <Image
-                    src={item.img}
+                    src={getAssetUrl(item.img)}
                     alt={item.title}
                     fill
                     // No zoom on hover for a cleaner data-driven look
@@ -155,7 +156,10 @@ export default function StaticTrenchingGrid() {
         </div>
 
         <div className="w-full h-[250px] bg-slate-50 border-4 border-dashed border-[#1B79EE] p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden mt-12">
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('/assets/images/pre-trench/trench-grates-img-diagonal-view (11).jpeg')]" />
+          <div 
+            className="absolute inset-0 opacity-[0.03] pointer-events-none bg-cover bg-center" 
+            style={{ backgroundImage: `url('${getAssetUrl("/assets/images/pre-trench/trench-grates-img-diagonal-view (11).jpeg")}')` }}
+          />
 
           <div className="relative z-10 max-w-sm">
             <div className="flex items-center gap-3 text-[#1B79EE] mb-6">

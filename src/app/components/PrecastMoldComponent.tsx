@@ -14,6 +14,7 @@ import {
   Compass, 
   ArrowUpRight 
 } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
 
 const moldFeatures = [
   {
@@ -112,7 +113,7 @@ export default function PrecastMoldComponent() {
               playsInline
               className="w-full h-full object-cover"
             >
-              <source src="/assets/video/E25 V2 final.mp4" type="video/mp4" />
+              <source src={getAssetUrl("/assets/video/E25 V2 final.mp4")} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/80 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 z-10 text-white">

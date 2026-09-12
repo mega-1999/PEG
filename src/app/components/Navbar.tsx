@@ -8,6 +8,7 @@ import {
   ChevronDown, Search, Menu, X, FileText,
   ClipboardCheck, Wrench, Plus, Minus
 } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
 
 const navData = [
   {
@@ -153,7 +154,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center border-r border-[#004aad]/10 h-10">
             <Image
-              src="/PEG.png"
+              src={getAssetUrl("/PEG.png")}
               alt="PEG Precast Engineering Group"
               width={330} // Scaled down slightly to help fit on zoomed screens
               height={55}
@@ -307,7 +308,7 @@ export const Navbar = () => {
             className="fixed top-0 right-0 w-[300px] h-screen bg-white shadow-[-20px_0_50px_rgba(0,74,173,0.1)] z-[200] flex flex-col"
           >
             <div className="flex justify-between items-center p-6 border-b border-[#004aad]/10">
-              <Image src="/PEG.png" alt="PEG" width={100} height={30} className="object-contain" />
+              <Image src={getAssetUrl("/PEG.png")} alt="PEG" width={100} height={30} className="object-contain" />
               <button onClick={() => setIsMobileOpen(false)}>
                 <X className="w-6 h-6 text-[#004aad]" />
               </button>

@@ -7,6 +7,7 @@ import {
   GraduationCap, MonitorPlay, Mic, Award, FileDigit, Accessibility, Play,
   SkipForward, SkipBack, PlayCircle
 } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
 
 const resourceColumns = [
   {
@@ -135,7 +136,7 @@ export const ResourceDirectory = () => {
                   onEnded={playNextVideo}
                   className="w-full h-full object-contain"
                 >
-                  <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
+                  <source src={getAssetUrl(videoPlaylist[currentVideoIndex])} type="video/mp4" />
                 </video>
               </div>
 

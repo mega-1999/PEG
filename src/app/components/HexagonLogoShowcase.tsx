@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Globe2, ShieldCheck, Zap, Layers, Sparkles } from "lucide-react";
+import { getAssetUrl } from "@/lib/utils";
 
 const partnerLogos = [
   { id: "NODE_01", src: "/PrecastIndustry Links/1.jpg", alt: "PEG Precasters", category: "Precast Plant" },
@@ -132,7 +133,7 @@ function PartnerCard({ logo }: { logo: { id: string; src: string; alt: string; c
       {/* LOGO IMAGE CONTAINER */}
       <div className="relative w-full h-16 my-2 flex items-center justify-center">
         <Image
-          src={logo.src}
+          src={getAssetUrl(logo.src)}
           alt={logo.alt}
           fill
           className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"

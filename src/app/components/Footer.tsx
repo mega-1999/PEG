@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAssetUrl } from '@/lib/utils';
 import { Facebook, Instagram, Twitter, Linkedin, Youtube } from '@hugeicons/core-free-icons';
 import { FaFacebook, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import { BsTwitterX } from 'react-icons/bs';
@@ -55,7 +56,7 @@ export const Footer = () => {
                 width={170}
                 height={50}
                 loading='lazy'
-                src="/PEG.png" // Professional PEG logo
+                src={getAssetUrl("/PEG.png")} // Professional PEG logo
                 alt="PEG Logo"
                 className="object-contain"
               />

@@ -8,6 +8,7 @@ import { BsTwitter } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import { footerData } from "@/lib/data";
+import { getAssetUrl } from "@/lib/utils";
 
 const logos = [
     { src: "/assets/footer_logo/peg.jpeg", alt: "Partner 01" },
@@ -38,7 +39,7 @@ export default function ExtraordinaryFooter() {
                             {/* BIG LOGO CONTAINER: White Background, Rounded, Increased Size */}
                             <div className="bg-white p-4 rounded-md shadow-sm w-full max-w-[280px] flex items-center justify-center">
                                 <Image
-                                    src="/PEG.png"
+                                    src={getAssetUrl("/PEG.png")}
                                     alt="Precast Engineering Group"
                                     width={280} // Increased width for "Big Logo"
                                     height={100}
@@ -70,7 +71,7 @@ export default function ExtraordinaryFooter() {
                                             <div className="relative w-20 h-12 bg-white rounded-xl flex items-center justify-center p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                                                 <div className="relative w-full h-full">
                                                     <Image
-                                                        src={logo.src}
+                                                        src={getAssetUrl(logo.src)}
                                                         alt={logo.alt}
                                                         fill
                                                         className="object-contain p-1"

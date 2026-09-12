@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { getAssetUrl } from '@/lib/utils';
 
 const sponsorLogos = [
     { src: "/assets/sponsor/NEPCA.JPG", alt: "Sponsor 01" },
@@ -54,7 +55,7 @@ export default function SponsorMarquee() {
                                 {/* Fixed structural wrapper keeping all logo scales unified */}
                                 <div className="relative w-36 h-16 opacity-100 transition-all duration-500 cursor-crosshair">
                                     <Image
-                                        src={logo.src}
+                                        src={getAssetUrl(logo.src)}
                                         alt={logo.alt}
                                         fill
                                         className="object-contain"

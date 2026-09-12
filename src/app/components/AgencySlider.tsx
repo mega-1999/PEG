@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { getAssetUrl } from "@/lib/utils";
 
 export interface AgencyItem {
   src: string;
@@ -172,7 +173,7 @@ export default function ExtraordinaryAgencyCluster() {
               <div className="relative w-full h-full rounded-full border border-dashed border-[#004aad]/5 group-hover:border-[#1B79EE]/30 transition-colors flex items-center justify-center p-3">
                 <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-110">
                   <Image
-                    src={logo.src}
+                    src={getAssetUrl(logo.src)}
                     alt={logo.alt}
                     fill
                     className="object-contain"

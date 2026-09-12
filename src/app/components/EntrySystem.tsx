@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2, VolumeX, Power, Activity, HardHat, Hammer } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
 
 export default function EntrySystem() {
     const [isInitialized, setIsInitialized] = useState(false);
@@ -18,7 +19,7 @@ export default function EntrySystem() {
     }, [progress]);
 
     useEffect(() => {
-        audioRef.current = new Audio('/assets/audio/background.mpeg');
+        audioRef.current = new Audio(getAssetUrl('/assets/audio/background.mpeg'));
         audioRef.current.loop = true;
     }, []);
 
@@ -63,7 +64,7 @@ export default function EntrySystem() {
                                     playsInline
                                     className="absolute inset-0 w-full h-full object-cover"
                                 >
-                                    <source src="/assets/video/6029794_Lofoten Drone Ocean Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4" type="video/mp4" />
+                                    <source src={getAssetUrl("/assets/video/6029794_Lofoten Drone Ocean Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4")} type="video/mp4" />
                                 </video> 
  
                             </div>

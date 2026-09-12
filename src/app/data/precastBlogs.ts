@@ -1,3 +1,5 @@
+import { getAssetUrl } from "@/lib/utils";
+
 export interface TechnicalSpec {
   label: string;
   value: string;
@@ -47,7 +49,7 @@ export interface PrecastBlogPost {
   relatedSlugs: string[];
 }
 
-export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
+const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
   {
     slug: "heavy-duty-precast-box-culverts-engineering",
     title: "Structural Superiority of Heavy-Duty Precast Box Culverts",
@@ -490,6 +492,25 @@ export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     ]
   }
 ];
+
+export const PRECAST_BLOG_POSTS: PrecastBlogPost[] = RAW_PRECAST_BLOG_POSTS.map(post => ({
+  ...post,
+  coverImage: getAssetUrl(post.coverImage),
+  featuredVideo: post.featuredVideo ? getAssetUrl(post.featuredVideo) : undefined,
+  secondaryVideos: post.secondaryVideos?.map(getAssetUrl),
+  author: {
+    ...post.author,
+    avatar: getAssetUrl(post.author.avatar),
+  },
+  gallery: post.gallery.map(g => ({
+    ...g,
+    url: getAssetUrl(g.url),
+  })),
+  sections: post.sections.map(s => ({
+    ...s,
+    image: s.image ? { ...s.image, url: getAssetUrl(s.image.url) } : undefined,
+  }))
+}));
 
 export function getBlogPostBySlug(slug: string): PrecastBlogPost | undefined {
   return PRECAST_BLOG_POSTS.find((post) => post.slug === slug);

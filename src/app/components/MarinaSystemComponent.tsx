@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Waves, Anchor, Shield, Navigation, ArrowUpRight, Droplets, Activity } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
 
 const marinaSpecs = [
   {
@@ -80,7 +81,7 @@ export default function MarinaSystemComponent() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src="/assets/video/MARINE PRODUCT/E20 V1 final.mp4" type="video/mp4" />
+              <source src={getAssetUrl("/assets/video/MARINE PRODUCT/E20 V1 final.mp4")} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 

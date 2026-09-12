@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Leaf, Rabbit, Zap, ArrowRight, Activity } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
 
 // UPDATED DATA ARRAY: Now includes a specific 'img' path for each initiative
 const futureInitiatives = [
@@ -60,7 +61,7 @@ export default function FutureCulvertComponent() {
             {/* Background Image Container with established zoom-out effect */}
             <div className="absolute inset-0 z-0 transition-transform duration-[2000ms] scale-110 group-hover:scale-100 ease-[cubic-bezier(0.16,1,0.3,1)]">
                 <Image 
-                    src={item.img} // UPDATED: Pulling different image from the array
+                    src={getAssetUrl(item.img)} // UPDATED: Pulling different image from the array
                     alt={`PEG Future Culvert Concept - ${item.title}`}
                     fill
                     priority={idx === 0} // Prioritize first panel

@@ -8,6 +8,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
+import { getAssetUrl } from '@/lib/utils';
 
 const exhibitionData = [
   {
@@ -155,7 +156,7 @@ export default function MeetAtShows() {
               `}>
                 <div className="relative h-full w-full group-hover:scale-105 transition-transform duration-700 ease-out">
                   <Image
-                    src={show.img}
+                    src={getAssetUrl(show.img)}
                     alt={show.title}
                     fill
                     className="object-contain" // Changed to contain so logos aren't cropped

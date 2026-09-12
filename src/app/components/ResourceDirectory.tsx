@@ -32,8 +32,6 @@ const resourceColumns = [
   }
 ];
 
-import { getAssetUrl } from '@/lib/utils';
-
 const videoPlaylist = [
   getAssetUrl("/assets/video/72_precast_manhole_Doghouse.646.mp4"),
   getAssetUrl("/assets/video/E20_V1_final.mp4"),

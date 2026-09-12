@@ -14,17 +14,7 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
 
-  // In local development, serve all assets directly from public/ static directory
-  if (process.env.NODE_ENV === "development") {
-    return cleanPath;
-  }
-
-  // Videos are served directly from static application files (public/assets/video/)
-  if (cleanPath.startsWith("/assets/video/")) {
-    return cleanPath;
-  }
-
-  // Cloudflare R2 Public CDN domain (with fallback for Vercel deployment builds)
+  // Cloudflare R2 Public CDN domain (with environment variable & fallback)
   const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL 
     || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL 
     || "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev";

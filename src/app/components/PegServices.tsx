@@ -112,6 +112,8 @@ export default function PegServices() {
                   loop
                   muted
                   playsInline
+                  preload="metadata"
+                  poster={service.image}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 >
                   <source src={service.video} type="video/mp4" />

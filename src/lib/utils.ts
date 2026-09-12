@@ -14,8 +14,14 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
   
+  // Video files and specific assets not stored on R2 bucket serve directly from application static files
+  const fallbackToLocal = cleanPath.startsWith("/assets/video/") || cleanPath.includes("ppa.JPG");
+  if (fallbackToLocal) {
+    return cleanPath;
+  }
+
   const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL;
-  if (process.env.NODE_ENV === "production" && cdnUrl && cdnUrl.trim() !== "") {
+  if (cdnUrl && cdnUrl.trim() !== "") {
     return `${cdnUrl.replace(/\/$/, "")}${cleanPath}`;
   }
   

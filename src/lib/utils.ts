@@ -13,16 +13,16 @@ export function getAssetUrl(path?: string): string {
   // Automatically sanitize spaces to underscores for all asset paths
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
-  
-  // Video files are not currently hosted on Cloudflare R2, serve directly from application static files
+
+  // Video files are served directly from application static files
   if (cleanPath.startsWith("/assets/video/")) {
     return cleanPath;
   }
 
-  const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL;
-  if (cdnUrl && cdnUrl.trim() !== "") {
-    return `${cdnUrl.replace(/\/$/, "")}${cleanPath}`;
-  }
-  
-  return cleanPath;
+  // Cloudflare R2 Public CDN domain (with fallback for Vercel deployment builds)
+  const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL 
+    || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL 
+    || "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev";
+
+  return `${cdnUrl.replace(/\/$/, "")}${cleanPath}`;
 }

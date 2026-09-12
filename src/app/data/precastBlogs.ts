@@ -55,18 +55,18 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     title: "Structural Superiority of Heavy-Duty Precast Box_Culverts",
     subtitle: "High-Load Underground Drainage Solutions Engineered for Highway HS-20 & Railway E-80 Standards",
     category: "Box_Culverts",
-    coverImage: "/assets/images/Box_Culvert/13.jpeg",
-    featuredVideo: "/assets/video/E20_V1_final.mp4",
+    coverImage: getAssetUrl("/assets/images/Box_Culvert/13.jpeg"),
+    featuredVideo: getAssetUrl("/assets/video/E20_V1_final.mp4"),
     secondaryVideos: [
-      "/assets/video/72_precast_manhole_Doghouse.646.mp4",
-      "/assets/video/E24_v3_final_blue_bg.mp4"
+      getAssetUrl("/assets/video/72_precast_manhole_Doghouse.646.mp4"),
+      getAssetUrl("/assets/video/E24_v3_final_blue_bg.mp4")
     ],
     publishedDate: "August 28, 2026",
     readTime: "7 min read",
     author: {
       name: "Marcus Vance, PE",
       role: "Lead Structural Engineer",
-      avatar: "/PrecastIndustry_Links/1.jpg"
+      avatar: getAssetUrl("/PrecastIndustry_Links/1.jpg")
     },
     excerpt: "Discover how monolithically poured precast box culverts accelerate underground infrastructure projects while exceeding ASTM C1577 structural requirements under extreme axle loads.",
     technicalSpecs: [
@@ -79,22 +79,22 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     gallery: [
       {
         type: "image",
-        url: "/assets/images/Box_Culvert/11.jpeg",
+        url: getAssetUrl("/assets/images/Box_Culvert/11.jpeg"),
         caption: "Precast Single-Cell Box_Culvert Section ready for crane delivery"
       },
       {
         type: "video",
-        url: "/assets/video/E24_v3_final_blue_bg.mp4",
+        url: getAssetUrl("/assets/video/E24_v3_final_blue_bg.mp4"),
         caption: "Finite Element Stress Simulation of Box_Culvert Top Slab"
       },
       {
         type: "image",
-        url: "/assets/images/Box_Culvert/14.jpeg",
+        url: getAssetUrl("/assets/images/Box_Culvert/14.jpeg"),
         caption: "Multi-cell precast culvert installation for storm runoff detention"
       },
       {
         type: "image",
-        url: "/assets/images/Box_Culvert/15.jpeg",
+        url: getAssetUrl("/assets/images/Box_Culvert/15.jpeg"),
         caption: "Tongue and Groove Joint Seal Assembly Inspection"
       }
     ],
@@ -127,7 +127,7 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
           "Integral corner haunches redistribute bending moments from top slabs into sidewalls, preventing localized stress cracking over decades of thermal expansion and contraction."
         ],
         image: {
-          url: "/assets/images/Box_Culvert/12.jpeg",
+          url: getAssetUrl("/assets/images/Box_Culvert/12.jpeg"),
           caption: "Precision Engineered Corner Haunch Rebar Configuration"
         }
       },
@@ -156,17 +156,17 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     title: "Modular Precast Utility Trenching Systems for Subsurface Networks",
     subtitle: "Heavy-Duty Cable & Pipeline Protection with Removable Cover Slabs for Rapid Access",
     category: "Utility Trenches",
-    coverImage: "/assets/images/trench-forms-01-5001.JPG",
-    featuredVideo: "/assets/video/E25_V2_final.mp4",
+    coverImage: getAssetUrl("/assets/images/trench-forms-01-5001.JPG"),
+    featuredVideo: getAssetUrl("/assets/video/E25_V2_final.mp4"),
     secondaryVideos: [
-      "/assets/video/E34_V2_final.mp4"
+      getAssetUrl("/assets/video/E34_V2_final.mp4")
     ],
     publishedDate: "August 22, 2026",
     readTime: "6 min read",
     author: {
       name: "Elena Rostova, PE",
       role: "Infrastructure Systems Specialist",
-      avatar: "/PrecastIndustry_Links/3.jpg"
+      avatar: getAssetUrl("/PrecastIndustry_Links/3.jpg")
     },
     excerpt: "Explore how precast utility trenches safeguard high-voltage electrical, fiber optic, and industrial piping networks with H-20 loading capabilities and instant accessibility.",
     technicalSpecs: [
@@ -179,17 +179,17 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     gallery: [
       {
         type: "image",
-        url: "/assets/images/trench-forms-01-5001.JPG",
+        url: getAssetUrl("/assets/images/trench-forms-01-5001.JPG"),
         caption: "Precast Utility Trench Formwork Assembly"
       },
       {
         type: "video",
-        url: "/assets/video/E34_V2_final.mp4",
+        url: getAssetUrl("/assets/video/E34_V2_final.mp4"),
         caption: "Modular Trench Interlocking Connection & Lid Removal Video Showcase"
       },
       {
         type: "image",
-        url: "/assets/images/a04.JPG",
+        url: getAssetUrl("/assets/images/a04.JPG"),
         caption: "Substation Electrical Cable Raceway Trenching Installation"
       }
     ],
@@ -228,14 +228,14 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     title: "Engineered Precast Retaining Wall Systems & Soil Stabilization",
     subtitle: "Mechanically Stabilized Earth (MSE) & Cantilever Wall Panels for Extreme Topography",
     category: "Retaining Walls",
-    coverImage: "/assets/images/PAIPING.2_-_Copy.png",
-    featuredVideo: "/assets/video/E38_V3_final_blue_bg.mp4",
+    coverImage: getAssetUrl("/assets/images/PAIPING.2_-_Copy.png"),
+    featuredVideo: getAssetUrl("/assets/video/E38_V3_final_blue_bg.mp4"),
     publishedDate: "August 15, 2026",
     readTime: "8 min read",
     author: {
       name: "David Chen, SE",
       role: "Principal Geotechnical & Structural Engineer",
-      avatar: "/PrecastIndustry_Links/5.jpg"
+      avatar: getAssetUrl("/PrecastIndustry_Links/5.jpg")
     },
     excerpt: "An architectural and structural deep dive into precast MSE retaining walls, gravity block systems, and soil-nail facing panels designed for highway corridors and steep grades.",
     technicalSpecs: [
@@ -248,17 +248,17 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     gallery: [
       {
         type: "image",
-        url: "/assets/images/PAIPING.2_-_Copy.png",
+        url: getAssetUrl("/assets/images/PAIPING.2_-_Copy.png"),
         caption: "Precast Retaining Wall Infrastructure Section Analysis"
       },
       {
         type: "video",
-        url: "/assets/video/E38_V3_final_blue_bg.mp4",
+        url: getAssetUrl("/assets/video/E38_V3_final_blue_bg.mp4"),
         caption: "Structural Wall Panel Lifting & Placement Demonstration"
       },
       {
         type: "image",
-        url: "/assets/csd8.1_-_Copy.png",
+        url: getAssetUrl("/assets/csd8.1_-_Copy.png"),
         caption: "Precast Facing Panels with Geogrid Mechanical Connection"
       }
     ],
@@ -297,14 +297,14 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     title: "Marine-Grade Precast Concrete Docks & Coastal Infrastructure",
     subtitle: "Sulfate-Resistant Concrete Formulations for High-Salinity Environments and Wave Impact",
     category: "Marine Systems",
-    coverImage: "/assets/images/10_FT_LOW_DOME.117.png",
-    featuredVideo: "/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4",
+    coverImage: getAssetUrl("/assets/images/10_FT_LOW_DOME.117.png"),
+    featuredVideo: getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4"),
     publishedDate: "August 10, 2026",
     readTime: "7 min read",
     author: {
       name: "Captain Sarah Jenkins, PE",
       role: "Marine Infrastructure Engineer",
-      avatar: "/PrecastIndustry_Links/7.jpg"
+      avatar: getAssetUrl("/PrecastIndustry_Links/7.jpg")
     },
     excerpt: "Explore marine-grade precast concrete seawall panels, floating dock pontoons, and pile caps engineered with silica fume and epoxy-coated rebar to withstand harsh ocean environments.",
     technicalSpecs: [
@@ -317,12 +317,12 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     gallery: [
       {
         type: "image",
-        url: "/assets/images/10_FT_LOW_DOME.117.png",
+        url: getAssetUrl("/assets/images/10_FT_LOW_DOME.117.png"),
         caption: "Marine Heavy Precast Structure Section Rendering"
       },
       {
         type: "video",
-        url: "/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4",
+        url: getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4"),
         caption: "Coastal Precast Marine Structure Drone Site Inspection Video"
       }
     ],
@@ -360,14 +360,14 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     title: "Precast Mold & Formwork Design Engineering for Concrete Manufacturers",
     subtitle: "Custom Heavy-Duty Steel Mold Design, Modular Formwork Systems & Hydraulic Shuttering Solutions",
     category: "Mold & Form Design",
-    coverImage: "/assets/images/2440_MANHOLE_CUT_VIEW.png",
-    featuredVideo: "/assets/video/E20_V1_final.mp4",
+    coverImage: getAssetUrl("/assets/images/2440_MANHOLE_CUT_VIEW.png"),
+    featuredVideo: getAssetUrl("/assets/video/E20_V1_final.mp4"),
     publishedDate: "August 04, 2026",
     readTime: "9 min read",
     author: {
       name: "Julian Thorne",
       role: "Director of Precast Formwork Engineering",
-      avatar: "/PrecastIndustry_Links/10.jpg"
+      avatar: getAssetUrl("/PrecastIndustry_Links/10.jpg")
     },
     excerpt: "Discover how custom steel mold engineering, modular formwork assemblies, and precision shuttering design optimize casting turnaround and structural tolerances for precast plants.",
     technicalSpecs: [
@@ -380,12 +380,12 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     gallery: [
       {
         type: "image",
-        url: "/assets/images/2440_MANHOLE_CUT_VIEW.png",
+        url: getAssetUrl("/assets/images/2440_MANHOLE_CUT_VIEW.png"),
         caption: "Heavy-Duty Precast Steel Formwork & Mold Assembly Blueprint"
       },
       {
         type: "image",
-        url: "/assets/images/72_precast_manhole_Double_Internal_Drop.657.png",
+        url: getAssetUrl("/assets/images/72_precast_manhole_Double_Internal_Drop.657.png"),
         caption: "Custom Internal Core Mold Shuttering & Stripping Mechanism"
       }
     ],
@@ -433,14 +433,14 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     title: "Ultra-High-Performance Concrete (UHPC) Precast Structural Innovations",
     subtitle: "Pushing Limits with 25,000 PSI Compressive Strength & Steel Fiber Reinforced Matrix",
     category: "UHPC Engineering",
-    coverImage: "/assets/images/Manhole_Type_1.2.674.png",
-    featuredVideo: "/assets/video/E25_V2_final.mp4",
+    coverImage: getAssetUrl("/assets/images/Manhole_Type_1.2.674.png"),
+    featuredVideo: getAssetUrl("/assets/video/E25_V2_final.mp4"),
     publishedDate: "July 28, 2026",
     readTime: "8 min read",
     author: {
       name: "Dr. Aris Thorne, PhD",
       role: "Advanced Materials Scientist",
-      avatar: "/PrecastIndustry_Links/12.jpg"
+      avatar: getAssetUrl("/PrecastIndustry_Links/12.jpg")
     },
     excerpt: "An in-depth analysis of UHPC precast components—delivering unprecedented compressive strength, ductile flexural performance, and ultra-thin slender structural profiles.",
     technicalSpecs: [
@@ -453,12 +453,12 @@ const RAW_PRECAST_BLOG_POSTS: PrecastBlogPost[] = [
     gallery: [
       {
         type: "image",
-        url: "/assets/images/Manhole_Type_1.2.674.png",
+        url: getAssetUrl("/assets/images/Manhole_Type_1.2.674.png"),
         caption: "UHPC High-Strength Precast Component Cutaway Analysis"
       },
       {
         type: "video",
-        url: "/assets/video/E20_V1_final.mp4",
+        url: getAssetUrl("/assets/video/E20_V1_final.mp4"),
         caption: "UHPC Structural Load Testing & Flexural Ductility Video Showcase"
       }
     ],

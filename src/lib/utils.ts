@@ -14,11 +14,6 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
 
-  // Video files are served directly from application static files
-  if (cleanPath.startsWith("/assets/video/")) {
-    return cleanPath;
-  }
-
   // Cloudflare R2 Public CDN domain (with fallback for Vercel deployment builds)
   const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL 
     || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL 

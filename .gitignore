@@ -40,6 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# public assets
-/public/
-public/
+# public heavy assets
+public/peg.rar
+public/*.rar
+public/*.zip
+public/GLB/
+public/TRENCH/
+public/assets/video/

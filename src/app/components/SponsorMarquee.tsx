@@ -55,7 +55,7 @@ export default function SponsorMarquee() {
                                 {/* Fixed structural wrapper keeping all logo scales unified */}
                                 <div className="relative w-36 h-16 opacity-100 transition-all duration-500 cursor-crosshair">
                                     <Image
-                                        src={getAssetUrl(logo.src)}
+                                        src={logo.src}
                                         alt={logo.alt}
                                         fill
                                         sizes="144px"

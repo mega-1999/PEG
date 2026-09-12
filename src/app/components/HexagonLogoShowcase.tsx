@@ -3,124 +3,152 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Globe2, ShieldCheck, Zap, Layers, Sparkles } from "lucide-react";
 
 const partnerLogos = [
-  { id: "NODE_01", src: "/PrecastIndustry%20Links/1.jpg", alt: "PEG Precasters" },
-  { id: "NODE_02", src: "/PrecastIndustry%20Links/2.jpg", alt: "Precast Engineering" },
-  { id: "NODE_03", src: "/PrecastIndustry%20Links/3.jpg", alt: "P-Xchange" },
-  { id: "NODE_04", src: "/PrecastIndustry%20Links/4.jpg", alt: "Total Tech Solutions" },
-  { id: "NODE_05", src: "/PrecastIndustry%20Links/5.jpg", alt: "Trench Unlimited" },
-  { id: "NODE_06", src: "/PrecastIndustry%20Links/6.jpg", alt: "Alternative Alliance" },
-  { id: "NODE_07", src: "/PrecastIndustry%20Links/7.jpg", alt: "Global Mold Tech" },
-  { id: "NODE_08", src: "/PrecastIndustry%20Links/8.jpg", alt: "Parametric Vault" },
-  { id: "NODE_09", src: "/PrecastIndustry%20Links/9.jpg", alt: "Grid Infrastructure" },
-  { id: "NODE_10", src: "/PrecastIndustry%20Links/10.jpg", alt: "Hydro Systems" },
-  { id: "NODE_11", src: "/PrecastIndustry%20Links/11.jpg", alt: "PEG Precasters" },
-  { id: "NODE_12", src: "/PrecastIndustry%20Links/12.jpg", alt: "Precast Engineering" },
-  { id: "NODE_13", src: "/PrecastIndustry%20Links/13.jpg", alt: "P-Xchange" },
-  { id: "NODE_14", src: "/PrecastIndustry%20Links/14.jpg", alt: "Total Tech Solutions" },
-  { id: "NODE_15", src: "/PrecastIndustry%20Links/15.jpg", alt: "Trench Unlimited" },
-  { id: "NODE_16", src: "/PrecastIndustry%20Links/16.jpg", alt: "Alternative Alliance" },
-  { id: "NODE_17", src: "/PrecastIndustry%20Links/17.jpg", alt: "Global Mold Tech" },
-  { id: "NODE_18", src: "/PrecastIndustry%20Links/18.jpg", alt: "Parametric Vault" },
-  { id: "NODE_19", src: "/PrecastIndustry%20Links/19.jpg", alt: "Grid Infrastructure" },
-  { id: "NODE_20", src: "/PrecastIndustry%20Links/20.jpg", alt: "Hydro Systems" },
+  { id: "NODE_01", src: "/PrecastIndustry Links/1.jpg", alt: "PEG Precasters", category: "Precast Plant" },
+  { id: "NODE_02", src: "/PrecastIndustry Links/2.jpg", alt: "Precast Engineering", category: "Structural CAD" },
+  { id: "NODE_03", src: "/PrecastIndustry Links/3.jpg", alt: "P-Xchange", category: "Material Network" },
+  { id: "NODE_04", src: "/PrecastIndustry Links/4.jpg", alt: "Total Tech Solutions", category: "Automation" },
+  { id: "NODE_05", src: "/PrecastIndustry Links/5.jpg", alt: "Trench Unlimited", category: "Utility Systems" },
+  { id: "NODE_06", src: "/PrecastIndustry Links/6.jpg", alt: "Alternative Alliance", category: "Standards" },
+  { id: "NODE_07", src: "/PrecastIndustry Links/7.jpg", alt: "Global Mold Tech", category: "Mold Engineering" },
+  { id: "NODE_08", src: "/PrecastIndustry Links/8.jpg", alt: "Parametric Vault", category: "CAD Vault" },
+  { id: "NODE_09", src: "/PrecastIndustry Links/9.jpg", alt: "Grid Infrastructure", category: "Civil Works" },
+  { id: "NODE_10", src: "/PrecastIndustry Links/10.jpg", alt: "Hydro Systems", category: "Stormwater" },
+  { id: "NODE_11", src: "/PrecastIndustry Links/11.jpg", alt: "PEG Precasters", category: "Precast Plant" },
+  { id: "NODE_12", src: "/PrecastIndustry Links/12.jpg", alt: "Precast Engineering", category: "Structural CAD" },
+  { id: "NODE_13", src: "/PrecastIndustry Links/13.jpg", alt: "P-Xchange", category: "Material Network" },
+  { id: "NODE_14", src: "/PrecastIndustry Links/14.jpg", alt: "Total Tech Solutions", category: "Automation" },
+  { id: "NODE_15", src: "/PrecastIndustry Links/15.jpg", alt: "Trench Unlimited", category: "Utility Systems" },
+  { id: "NODE_16", src: "/PrecastIndustry Links/16.jpg", alt: "Alternative Alliance", category: "Standards" },
+  { id: "NODE_17", src: "/PrecastIndustry Links/17.jpg", alt: "Global Mold Tech", category: "Mold Engineering" },
+  { id: "NODE_18", src: "/PrecastIndustry Links/18.jpg", alt: "Parametric Vault", category: "CAD Vault" },
+  { id: "NODE_19", src: "/PrecastIndustry Links/19.jpg", alt: "Grid Infrastructure", category: "Civil Works" },
+  { id: "NODE_20", src: "/PrecastIndustry Links/20.jpg", alt: "Hydro Systems", category: "Stormwater" },
 ];
 
 export default function HexagonLogoShowcase() {
-  return (
-    <section className="w-full bg-[#004aad] text-white py-16 md:py-32 overflow-hidden relative font-sans">
-      {/* INTEGRATED ARCHITECTURAL GRID */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:30px_30px] md:bg-[size:40px_40px]" />
+  const row1 = partnerLogos.slice(0, 10);
+  const row2 = partnerLogos.slice(10, 20);
 
-      <div className="w-full relative z-10 space-y-12 md:space-y-16">
-        {/* HEADER SPECIFICATION */}
-        <div className="text-center max-w-2xl mx-auto space-y-4 px-6">
-          <div className="w-12 h-1 bg-[#1B79EE] mx-auto" />
-          <h2 className="text-xl md:text-3xl font-black uppercase tracking-tighter leading-none">
-            Global Ecosystem <br />
-            <span className="text-white">& Partner Alliances.</span>
-          </h2>
-          <p className="text-white font-mono text-[9px] md:text-[10px] tracking-[0.4em] uppercase font-bold">
-            Verified Precast Integration Nodes
+  return (
+    <section className="w-full bg-[#004aad]/5 text-[#004aad] py-20 overflow-hidden relative border-y border-[#004aad]/10">
+      
+      {/* CAD BLUEPRINT GRID BACKGROUND */}
+      <div 
+        className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+        style={{ 
+          backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px), linear-gradient(to right, #004aad 0.5px, transparent 0.5px), linear-gradient(to bottom, #004aad 0.5px, transparent 0.5px)`,
+          backgroundSize: '40px 40px, 200px 200px, 200px 200px'
+        }} 
+      />
+
+      <div className="w-full relative z-10 space-y-16">
+        
+        {/* HEADER SECTION */}
+        <div className="w-full px-10 md:px-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#004aad]/10 pb-8">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase rounded-none mb-3 border border-[#1B79EE]/20">
+              <Globe2 className="w-3.5 h-3.5" /> Industry Alliances
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
+              PRECAST INDUSTRY <span className="text-[#1B79EE]">& PARTNER NETWORK.</span>
+            </h2>
+          </div>
+          <p className="text-[#004aad]/70 font-medium text-sm md:text-base max-w-md">
+            Verified precast concrete manufacturers, formwork suppliers, structural software platforms, and DOT certified infrastructure partners.
           </p>
         </div>
 
-        {/* EDGE-TO-EDGE HONEYCOMB MATRIX (Strictly 2 lines) */}
-        <div className="flex flex-col items-center justify-center gap-1 w-full overflow-x-auto no-scrollbar py-4 px-4">
-          
-          {/* LINE 1 - First 10 items spanning edge-to-edge */}
-          <div className="flex flex-row gap-1 md:gap-1.5 min-w-max justify-center">
-            {partnerLogos.slice(0, 10).map((logo, idx) => (
-              <HexagonNode
-                key={`r1-${logo.id}`}
-                logo={logo}
-                delay={idx * 0.04}
-              />
+        {/* INFINITE TICKER MARQUEE - ROW 1 (LEFT TO RIGHT) */}
+        <div className="relative w-full overflow-hidden py-2">
+          <motion.div 
+            className="flex gap-6 min-w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
+          >
+            {[...row1, ...row1].map((logo, idx) => (
+              <PartnerCard key={`row1-${idx}`} logo={logo} />
             ))}
-          </div>
-
-          {/* LINE 2 - Last 10 items offset horizontally for interlocking honeycomb design */}
-          <div className="flex flex-row gap-1 md:gap-1.5 min-w-max justify-center translate-x-10 md:translate-x-14 lg:translate-x-16">
-            {partnerLogos.slice(10, 20).map((logo, idx) => (
-              <HexagonNode
-                key={`r2-${logo.id}`}
-                logo={logo}
-                delay={idx * 0.04}
-              />
-            ))}
-          </div>
-
+          </motion.div>
         </div>
+
+        {/* INFINITE TICKER MARQUEE - ROW 2 (RIGHT TO LEFT) */}
+        <div className="relative w-full overflow-hidden py-2">
+          <motion.div 
+            className="flex gap-6 min-w-max"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 38 }}
+          >
+            {[...row2, ...row2].map((logo, idx) => (
+              <PartnerCard key={`row2-${idx}`} logo={logo} />
+            ))}
+          </motion.div>
+        </div>
+
+        {/* BOTTOM METRIC BADGES BAR */}
+        <div className="w-full px-10 md:px-20 pt-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 border border-[#004aad]/10 shadow-sm">
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Global Partners</span>
+              <p className="text-xl md:text-2xl font-black text-[#004aad]">250+ Plants</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Integration</span>
+              <p className="text-xl md:text-2xl font-black text-[#004aad]">NPCA & PCI</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Formwork Tech</span>
+              <p className="text-xl md:text-2xl font-black text-[#004aad]">Steel & Magnetic</p>
+            </div>
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Compliance</span>
+              <p className="text-xl md:text-2xl font-black text-[#004aad]">50 State DOTs</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
 
-/* HEXAGON COMPONENT MODULE */
-function HexagonNode({
-  logo,
-  delay,
-}: {
-  logo: { src: string; alt: string; id: string };
-  delay: number;
-}) {
+/* PARTNER CARD COMPONENT */
+function PartnerCard({ logo }: { logo: { id: string; src: string; alt: string; category: string } }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.4 }}
-      whileHover={{ scale: 1.18, zIndex: 50 }}
-      className="group relative w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 lg:w-32 lg:h-36 shrink-0 cursor-crosshair filter drop-shadow-sm md:drop-shadow-md"
-    >
-      {/* SOLID WHITE EXTERIOR CONTAINER */}
-      <div
-        className="absolute inset-0 bg-white transition-all duration-300 flex items-center justify-center p-2.5 sm:p-3 md:p-4 shadow-inner"
-        style={{
-          clipPath:
-            "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-        }}
-      >
-        {/* LOGO IMAGE BOUNDARY WITH SHARP INTERIOR SCALE EFFECT */}
-        <div className="relative w-full h-full max-w-[75%] max-h-[75%] transition-transform duration-500 ease-out group-hover:scale-125">
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            fill
-            className="object-contain p-0.5 transition-all duration-300"
-          />
-        </div>
+    <div className="group relative w-64 h-36 bg-white border border-[#004aad]/10 hover:border-[#1B79EE] shadow-sm hover:shadow-xl hover:shadow-[#1B79EE]/15 transition-all duration-300 rounded-none overflow-hidden shrink-0 flex flex-col justify-between p-4 cursor-pointer">
+      
+      {/* CARD TOP HEADER */}
+      <div className="flex justify-between items-center text-[10px] font-mono font-bold">
+        <span className="text-[#1B79EE] bg-blue-50 px-2 py-0.5 border border-[#1B79EE]/20">
+          {logo.id}
+        </span>
+        <span className="text-[#004aad]/60 uppercase tracking-wider">
+          {logo.category}
+        </span>
+      </div>
 
-        {/* SUBTLE INNER TECH ACCENT BORDER */}
-        <div
-          className="absolute inset-[1px] md:inset-[2px] pointer-events-none border border-[#004aad]/5 group-hover:border-white/20 transition-colors"
-          style={{
-            clipPath:
-              "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-          }}
+      {/* LOGO IMAGE CONTAINER */}
+      <div className="relative w-full h-16 my-2 flex items-center justify-center">
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          fill
+          className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-    </motion.div>
+
+      {/* CARD FOOTER */}
+      <div className="flex justify-between items-center pt-2 border-t border-[#004aad]/5">
+        <span className="text-xs font-bold text-[#004aad] group-hover:text-[#1B79EE] transition-colors truncate">
+          {logo.alt}
+        </span>
+        <ShieldCheck className="w-3.5 h-3.5 text-[#1B79EE] shrink-0" />
+      </div>
+
+      {/* TOP ACCENT LINE ON HOVER */}
+      <div className="absolute top-0 left-0 w-0 h-1 bg-[#1B79EE] group-hover:w-full transition-all duration-500" />
+    </div>
   );
 }

@@ -11,14 +11,14 @@ const culvertModels = [
   {
     id: "MOD_01",
     name: "Standard Single-Cell",
-    type: "Box Culvert",
+    type: "Box_Culvert",
     specs: "3000mm x 3000mm x 2500mm",
     file: "/GLB/1.glb", // <-- Replace with your GLB path
   },
   {
     id: "MOD_02",
     name: "Multi-Cell Distributor",
-    type: "Twin Box Culvert",
+    type: "Twin Box_Culvert",
     specs: "6000mm x 3000mm x 2500mm",
     file: "/GLB/1.glb", // <-- Replace with your GLB path
   },

@@ -144,6 +144,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 src={post.coverImage}
                 alt={post.title}
                 fill
+                sizes="100vw"
                 className="object-cover"
                 priority
               />
@@ -213,6 +214,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                         src={section.image.url}
                         alt={section.image.caption}
                         fill
+                        sizes="(max-width: 768px) 100vw, 800px"
                         className="object-cover"
                       />
                     </div>
@@ -259,6 +261,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                             src={gItem.url}
                             alt={gItem.caption}
                             fill
+                            sizes="(max-width: 640px) 100vw, 400px"
                             className="object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         )}

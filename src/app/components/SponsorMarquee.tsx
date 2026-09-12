@@ -6,12 +6,12 @@ import Image from 'next/image';
 import { getAssetUrl } from '@/lib/utils';
 
 const sponsorLogos = [
-    { src: "/assets/sponsor/NEPCA.JPG", alt: "Sponsor 01" },
-    { src: "/assets/sponsor/njpca.jpg", alt: "Sponsor 02" },
-    { src: "/assets/sponsor/pcany.jpg", alt: "Sponsor 03" },
-    { src: "/assets/sponsor/pcav.jpg", alt: "Sponsor 04" },
-    { src: "/assets/sponsor/pcma.png", alt: "Sponsor 05" },
-    { src: "/assets/sponsor/ppa.JPG", alt: "Sponsor 06" },
+    { src: getAssetUrl("/assets/sponsor/NEPCA.JPG"), alt: "Sponsor 01" },
+    { src: getAssetUrl("/assets/sponsor/njpca.jpg"), alt: "Sponsor 02" },
+    { src: getAssetUrl("/assets/sponsor/pcany.jpg"), alt: "Sponsor 03" },
+    { src: getAssetUrl("/assets/sponsor/pcav.jpg"), alt: "Sponsor 04" },
+    { src: getAssetUrl("/assets/sponsor/pcma.png"), alt: "Sponsor 05" },
+    { src: getAssetUrl("/assets/sponsor/ppa.JPG"), alt: "Sponsor 06" },
 ];
 
 export default function SponsorMarquee() {
@@ -58,6 +58,7 @@ export default function SponsorMarquee() {
                                         src={getAssetUrl(logo.src)}
                                         alt={logo.alt}
                                         fill
+                                        sizes="144px"
                                         className="object-contain"
                                     />
                                 </div>

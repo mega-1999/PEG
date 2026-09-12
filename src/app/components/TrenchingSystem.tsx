@@ -1,182 +1,566 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowRight, Waypoints, Ruler, Shield, Zap } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  ArrowRight, 
+  Ruler, 
+  Shield, 
+  Zap, 
+  Box, 
+  Layers, 
+  Grid, 
+  CheckCircle2, 
+  Play, 
+  Maximize2, 
+  X,
+  Compass,
+  FileCode2,
+  Filter
+} from "lucide-react";
 import { getAssetUrl } from "@/lib/utils";
 
-// Trench data remains the same for easy content management
-const trenchData = [
+// 4 FEATURED VIDEO DEMONSTRATIONS FROM /public/TRENCH/TRENCH/
+const trenchVideos = [
   {
-    id: "01",
-    title: "Cable Trenching",
-    tagline: "The Arteries of Infrastructure.",
-    // The specific local image asset path provided by the user
-    img: "/assets/images/pre-trench/pre-trench-01.JPG",
-    isPrimary: true // This is the 'Cable Trench' to highlight
+    id: "VID-01",
+    title: "2-Side Interlocking 24-18 Assembly",
+    subtitle: "12ft Dual Male/Female Joint Demonstration",
+    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    tag: "2-SIDE INTERLOCK"
   },
   {
-    id: "02",
-    title: "H-20 Road Crossing",
-    tagline: "Unyielding Under Pressure.",
-    // A second image from the user's provided directory
-    img: "/assets/images/pre-trench/pre-trench-05.JPG",
-    isPrimary: false
+    id: "VID-02",
+    title: "3-Side Interlocking System",
+    subtitle: "Tri-Directional Branch Channel Placement",
+    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    tag: "3-SIDE INTERLOCK"
   },
   {
-    id: "03",
-    title: "Substation Vaults",
-    tagline: "Securing the Node.",
-    // The specific local image asset path provided by the user
-    img: "/assets/images/pre-trench/trench-grates-img-diagonal-view (1).jpg",
-    isPrimary: false
+    id: "VID-03",
+    title: "45° Tongue & Groove Junction",
+    subtitle: "Angled Utility Direction Change Loop",
+    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    tag: "45° ANGLED JUNCTION"
+  },
+  {
+    id: "VID-04",
+    title: "Chamfer Beveled Interlocking System",
+    subtitle: "Spall-Proof Beveled Edge Assembly",
+    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    tag: "CHAMFER BEVELED"
   }
 ];
 
-export default function StaticTrenchingGrid() {
+// ALL 13 TRENCH PRODUCTS DEFINED FROM /public/TRENCH/
+const trenchProducts = [
+  // 2-SIDE INTERLOCKING
+  {
+    id: "TR-2S-ADA",
+    category: "2-Side Interlocking",
+    title: "12ft 2-Side Interlocking Trench (ADA Grate)",
+    subtitle: "Heavy-Duty Utility Trench with Pedestrian ADA Compliance",
+    img: "/TRENCH/12_ft_2_side_interlocking_trench_with_ada_grate.1119.png",
+    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    grateType: "ADA Compliant Steel",
+    length: "12 FT Section",
+    jointType: "Dual-Side Male/Female Interlock",
+    loadClass: "H-20 / HS-25 Highway Rated",
+    description: "Engineered precast concrete utility channel with dual interlocking male-female side joints. Equipped with high-flow ADA compliant surface grates."
+  },
+  {
+    id: "TR-2S-HP",
+    category: "2-Side Interlocking",
+    title: "12ft 2-Side Interlocking Trench (Heel-Proof Grate)",
+    subtitle: "High-Traffic Pedestrian Channel with Heel-Proof Steel Grate",
+    img: "/TRENCH/12_ft_2_side_interlocking_trench_with_heel_proof_grate.1118.png",
+    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    grateType: "Heel-Proof Narrow Slot",
+    length: "12 FT Section",
+    jointType: "Dual-Side Male/Female Interlock",
+    loadClass: "H-20 Heavy Traffic",
+    description: "Designed for commercial plazas and industrial walkways requiring tight-aperture heel-proof grates without compromising drainage throughput."
+  },
+  {
+    id: "TR-2S-REG",
+    category: "2-Side Interlocking",
+    title: "12ft 2-Side Interlocking Trench (Regular Grate)",
+    subtitle: "Standard Industrial High-Capacity Utility Trench",
+    img: "/TRENCH/12_ft_2_side_interlocking_trench_with_regualar_grate.1120.png",
+    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    grateType: "Standard Cast Ductile Iron",
+    length: "12 FT Section",
+    jointType: "Dual-Side Male/Female Interlock",
+    loadClass: "AASHTO H-20 Heavy Commercial",
+    description: "Maximum hydraulic efficiency trench channel for substation cable management, industrial manufacturing facilities, and roadway crossings."
+  },
+
+  // 3-SIDE INTERLOCKING
+  {
+    id: "TR-3S-ADA",
+    category: "3-Side Interlocking",
+    title: "12ft 3-Side Interlocking Trench (ADA Grate)",
+    subtitle: "Tri-Directional Interlocking Trench with ADA Surface Cover",
+    img: "/TRENCH/12_ft_3_side_interlocking_trench_with_ada_grate.1111.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    grateType: "ADA Compliant Grating",
+    length: "12 FT Section",
+    jointType: "3-Side Keyed Interlock",
+    loadClass: "H-20 / HS-25 Rated",
+    description: "Features 3-sided interlocking tongue and groove alignment for complex utility junction nodes and multi-branch cable runs."
+  },
+  {
+    id: "TR-3S-HP",
+    category: "3-Side Interlocking",
+    title: "12ft 3-Side Interlocking Trench (Heel-Proof Grate)",
+    subtitle: "Tri-Directional Channel with Heel-Proof Security Grate",
+    img: "/TRENCH/12_ft_3_side_interlocking_trench_with_heel_proof_grate.1110.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    grateType: "Heel-Proof Mesh Steel",
+    length: "12 FT Section",
+    jointType: "3-Side Keyed Interlock",
+    loadClass: "Heavy Industrial H-20",
+    description: "Tri-directional interlocking concrete vault section engineered to withstand extreme static loadings with safety heel-proof top grate covers."
+  },
+  {
+    id: "TR-3S-REG",
+    category: "3-Side Interlocking",
+    title: "12ft 3-Side Interlocking Trench (Regular Grate)",
+    subtitle: "Heavy-Duty 3-Side Keyed Industrial Drainage Channel",
+    img: "/TRENCH/12_ft_3_side_interlocking_trench_with_regular_grate.1109.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    grateType: "Heavy Ductile Steel",
+    length: "12 FT Section",
+    jointType: "3-Side Keyed Interlock",
+    loadClass: "AASHTO HS-25 Highway",
+    description: "Robust 3-sided interlocking structural channel designed for rapid installation in electrical substations and industrial plants."
+  },
+
+  // 3-WAY 45° TONGUE INTERLOCKING
+  {
+    id: "TR-45-ADA",
+    category: "45° Tongue Interlocking",
+    title: "12ft 3-Way 45° Tongue Interlocking Trench (ADA Grate)",
+    subtitle: "Angled Junction Interlocking Trench with ADA Cover",
+    img: "/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_ada_grate.1116.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    grateType: "ADA Compliant Grating",
+    length: "12 FT Section",
+    jointType: "45° Angled Tongue & Groove",
+    loadClass: "H-20 Commercial",
+    description: "Precision-cast 45-degree angled tongue-and-groove joint system allowing smooth directional change in subterranean utility lines."
+  },
+  {
+    id: "TR-45-HP",
+    category: "45° Tongue Interlocking",
+    title: "12ft 3-Way 45° Tongue Interlocking Trench (Heel-Proof)",
+    subtitle: "45° Directional Branch Trench with Heel-Proof Grate",
+    img: "/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_heel_proof_grate.1117.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    grateType: "Heel-Proof Safety Grate",
+    length: "12 FT Section",
+    jointType: "45° Angled Tongue & Groove",
+    loadClass: "Heavy Industrial H-20",
+    description: "Angled 45-degree interlocking concrete channel engineered for seamless layout transitions around existing structures."
+  },
+  {
+    id: "TR-45-REG",
+    category: "45° Tongue Interlocking",
+    title: "12ft 3-Way 45° Tongue Interlocking Trench (Regular Grate)",
+    subtitle: "High-Capacity Angled Utility Junction Trench",
+    img: "/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_regualr_grate.1115.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    grateType: "Ductile Iron Heavy Grate",
+    length: "12 FT Section",
+    jointType: "45° Angled Tongue & Groove",
+    loadClass: "AASHTO HS-25 Highway",
+    description: "Angled 45° tongue-and-groove precast channel eliminating complex field miters and reducing installation labor."
+  },
+
+  // 3-WAY CHAMFER INTERLOCKING
+  {
+    id: "TR-CH-ADA",
+    category: "Chamfer Interlocking",
+    title: "12ft 3-Way Chamfer Interlocking Trench (ADA Grate)",
+    subtitle: "Beveled Edge Chamfer Interlocking Trench with ADA Cover",
+    img: "/TRENCH/12_ft_3_champher_interlocking_trench_with_ada_grate.1112.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    grateType: "ADA Compliant Surface",
+    length: "12 FT Section",
+    jointType: "Chamfer Beveled Interlock",
+    loadClass: "H-20 Highway Rated",
+    description: "Architectural chamfered-edge precast concrete trench channel featuring precision beveled joints for spall prevention."
+  },
+  {
+    id: "TR-CH-HP",
+    category: "Chamfer Interlocking",
+    title: "12ft 3-Way Chamfer Interlocking Trench (Heel-Proof)",
+    subtitle: "Chamfered Joint Channel with Heel-Proof Grate",
+    img: "/TRENCH/12_ft_3_champher_interlocking_trench_with_heel_proof_grate.1113.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    grateType: "Heel-Proof High-Security",
+    length: "12 FT Section",
+    jointType: "Chamfer Beveled Interlock",
+    loadClass: "Heavy Duty H-20",
+    description: "Chamfered edge design prevents edge chipping under heavy vehicle impacts while providing heel-proof walking surfaces."
+  },
+  {
+    id: "TR-CH-REG",
+    category: "Chamfer Interlocking",
+    title: "12ft 3-Way Chamfer Interlocking Trench (Regular Grate)",
+    subtitle: "Industrial Chamfer Beveled Utility Channel",
+    img: "/TRENCH/12_ft_3_champher_interlocking_trench_with_regualr_grate.1114.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    grateType: "Ductile Iron Grate",
+    length: "12 FT Section",
+    jointType: "Chamfer Beveled Interlock",
+    loadClass: "AASHTO HS-25 Highway",
+    description: "Chamfered heavy industrial precast trench channel engineered for intense load transfer and zero slurry seepage."
+  },
+
+  // COMPLETE MASTER ASSEMBLY
+  {
+    id: "TR-ALL-SYS",
+    category: "Master Assembly",
+    title: "12ft Complete Interlocking Trench Assembly",
+    subtitle: "Integrated Multi-Branch Precast Trench System Overview",
+    img: "/TRENCH/12'_all_trench.1083.png",
+    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    grateType: "Modular Interchangeable Grates",
+    length: "12 FT Master System",
+    jointType: "Universal Modular Interlock",
+    loadClass: "Multi-Rating H-20 / HS-25",
+    description: "Complete 12ft modular trench system displaying 2-side, 3-side, 45° tongue, and chamfer interlocking configurations."
+  }
+];
+
+const categories = [
+  "All Systems",
+  "2-Side Interlocking",
+  "3-Side Interlocking",
+  "45° Tongue Interlocking",
+  "Chamfer Interlocking",
+  "Master Assembly"
+];
+
+export default function TrenchingSystem() {
+  const [selectedCategory, setSelectedCategory] = useState("All Systems");
+  const [activeModalProduct, setActiveModalProduct] = useState<typeof trenchProducts[0] | null>(null);
+
+  const filteredProducts = selectedCategory === "All Systems" 
+    ? trenchProducts 
+    : trenchProducts.filter(p => p.category === selectedCategory);
+
   return (
-    // Reverted the section height from 300vh to h-auto. Removed refs and scroll logic.
-    <section className="relative h-auto bg-white py-4 border-t-2 border-[#004aad]/10 select-none">
+    <section className="relative w-full bg-white py-20 border-t border-[#004aad]/10 select-none">
+      
+      {/* CAD WATERMARK BACKGROUND */}
+      <div 
+        className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+        style={{ 
+          backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px), linear-gradient(to right, #004aad 0.5px, transparent 0.5px), linear-gradient(to bottom, #004aad 0.5px, transparent 0.5px)`,
+          backgroundSize: '40px 40px, 200px 200px, 200px 200px'
+        }} 
+      />
 
-      {/* MILES & MILES BACKGROUND WATERMARK
-         Statically positioned relative to the section, not fixed. 
-         Fades in on view for technical extraordinary detail effect.
-      */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1 }}
-        className="absolute top-10 md:top-20 right-10 md:right-24 pointer-events-none select-none"
-      >
-        <h2 className="text-[12vw] font-black text-[#004aad] opacity-[0.03] leading-none uppercase">
-          Miles & Miles
-        </h2>
-      </motion.div>
+      <div className="w-full px-10 md:px-20 relative z-10 space-y-16">
 
-      {/* MAIN CONTAINER WRAPPER
-         Centers the static row of cards, constrained to the standard max-width.
-      */}
-      <div className="px-10 md:px-20 relative z-10 space-y-4">
-
-        {/* SECTION HEADER: Title + Manifesto */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-[#004aad]/5 pb-16">
-          <div className="md:col-span-5">
-            <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
-              Trenching <br /> Systems.
-            </h3>
-          </div>
-          <div className="md:col-span-7 flex flex-col md:flex-row gap-8 items-start md:items-center">
-            <p className="text-[#004aad]/70 text-base leading-relaxed font-medium max-w-xl">
-              We have undertaken miles and miles of integrated trenching systems, delivering the unyielding backbone for global power and data networks.
+        {/* 1. HEADER SECTION */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#004aad]/10 pb-12">
+          <div className="lg:col-span-7 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+              <Layers className="w-3.5 h-3.5" /> Precast Interlocking Infrastructure
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
+              Trenching <span className="text-[#1B79EE]">Systems.</span>
+            </h2>
+            <p className="text-[#004aad]/70 text-sm md:text-base leading-relaxed font-medium max-w-2xl">
+              Engineered 12ft interlocking precast trench channels designed for power substations, industrial facilities, and roadway crossings. Complete with ADA, Heel-Proof, and Ductile Iron grates.
             </p>
-            <div className="flex items-center gap-3 text-white font-black text-[11px] uppercase tracking-widest bg-[#1B79EE] px-8 py-5 self-start shadow-lg whitespace-nowrap">
-              <Ruler className="w-5 h-5" /> 52,800+ Linear Feet
+          </div>
+
+          <div className="lg:col-span-5 flex flex-wrap lg:justify-end gap-4">
+            <div className="flex items-center gap-3 text-white font-black text-xs uppercase tracking-widest bg-[#004aad] px-6 py-4 border border-[#004aad] shadow-md">
+              <Ruler className="w-4 h-4 text-[#1B79EE]" /> 12 FT Section Modules
+            </div>
+            <div className="flex items-center gap-3 text-[#004aad] font-black text-xs uppercase tracking-widest bg-blue-50 px-6 py-4 border border-[#1B79EE]/20 shadow-sm">
+              <Shield className="w-4 h-4 text-[#1B79EE]" /> AASHTO H-20 & HS-25 Rated
             </div>
           </div>
         </div>
 
-        {/* STATIC ROW GRID (The User Request)
-           It is no longer a flex container that slides; it is a fixed grid.
-           - Triggering cards at 1024px (lg) instead of 1280px (xl) because there are only 4 items.
-           - Mobile: 1 column, LG+: 4 columns (Intro + 3 Data cards)
-        */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {/* REPURPOSED INTRO BLOCK as a STATIC CARD
-             Keeps the engineering scale and PEG authority text visible at all times.
-          */}
-          <div className="flex h-[500px] w-full flex-col justify-center p-12 bg-[#004aad] text-white relative shadow-xl col-span-1">
-            <div className="absolute top-0 left-0 w-3 h-full bg-[#1B79EE]" />
-            <Waypoints className="w-12 h-12 text-[#1B79EE] mb-10" />
-            <h4 className="text-2xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
-              Miles of <br /> Integration.
-            </h4>
-            <p className="text-white/70 text-sm leading-relaxed font-medium">
-              From initial desk-side engineering to final shop-floor fabrication.
-            </p>
+        {/* 2. FEATURED VIDEO DEMONSTRATIONS ROW */}
+        <div>
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              <Play className="w-4 h-4 text-[#1B79EE]" />
+              <h3 className="text-sm font-black uppercase tracking-widest text-[#004aad]">
+                Technical Video Demonstrations (4 Loops)
+              </h3>
+            </div>
+            <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-blue-50 px-2.5 py-1 border border-[#1B79EE]/20">
+              3D ANIMATED SIMULATIONS
+            </span>
           </div>
 
-          {/* THE TRENCH CARDS */}
-          {trenchData.map((item, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {trenchVideos.map((item) => (
+              <div 
+                key={item.id}
+                className="group relative bg-[#004aad] border border-[#004aad]/20 overflow-hidden shadow-md flex flex-col justify-between"
+              >
+                {/* VIDEO WRAPPER */}
+                <div className="relative w-full aspect-video bg-[#004aad] overflow-hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  >
+                    <source src={getAssetUrl(item.video)} type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/90 via-transparent to-transparent pointer-events-none" />
+                  
+                  <div className="absolute top-3 left-3 bg-[#1B79EE] text-white px-2 py-0.5 text-[9px] font-mono font-black uppercase tracking-wider">
+                    {item.tag}
+                  </div>
+                </div>
+
+                {/* TEXT CONTAINER */}
+                <div className="p-4 bg-[#004aad] text-white border-t border-white/10">
+                  <h4 className="text-xs font-black uppercase tracking-tight text-white group-hover:text-[#1B79EE] transition-colors leading-snug">
+                    {item.title}
+                  </h4>
+                  <p className="text-[10px] font-medium text-white/70 mt-1">
+                    {item.subtitle}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 3. CATEGORY FILTER TABS */}
+        <div className="space-y-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#004aad]/10 pb-4">
+            <div className="flex items-center gap-2 text-[#004aad]">
+              <Filter className="w-4 h-4 text-[#1B79EE]" />
+              <span className="text-xs font-black uppercase tracking-widest">Filter Trench Categories ({filteredProducts.length} Items)</span>
+            </div>
+
+            {/* TAB BUTTONS */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2 text-[11px] font-black uppercase tracking-wider transition-all duration-200 border ${
+                    selectedCategory === cat
+                      ? "bg-[#004aad] text-white border-[#004aad] shadow-md"
+                      : "bg-white text-[#004aad]/80 border-[#004aad]/20 hover:border-[#1B79EE] hover:text-[#1B79EE]"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 4. ALL 13 TRENCH PRODUCTS GRID */}
+          <motion.div 
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+          >
+            <AnimatePresence>
+              {filteredProducts.map((product) => (
+                <motion.div
+                  key={product.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="group bg-white border border-[#004aad]/15 hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(27,121,238,0.15)] transition-all duration-500 flex flex-col justify-between overflow-hidden"
+                >
+                  {/* IMAGE CONTAINER */}
+                  <div className="relative w-full aspect-[4/3] bg-white p-6 border-b border-[#004aad]/10 overflow-hidden flex items-center justify-center">
+                    <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
+                      <Image
+                        src={getAssetUrl(product.img)}
+                        alt={product.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 300px"
+                        className="object-contain"
+                      />
+                    </div>
+
+                    {/* BADGES */}
+                    <div className="absolute top-3 left-3 bg-[#004aad] text-white px-2 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest">
+                      {product.id}
+                    </div>
+
+                    <button 
+                      onClick={() => setActiveModalProduct(product)}
+                      className="absolute bottom-3 right-3 bg-white/90 hover:bg-[#1B79EE] text-[#004aad] hover:text-white p-2 border border-[#004aad]/20 shadow-sm transition-colors"
+                      title="Expand Specifications"
+                    >
+                      <Maximize2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+
+                  {/* DETAILS CONTENT */}
+                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                      <span className="text-[9px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest block mb-1">
+                        {product.category}
+                      </span>
+                      <h4 className="text-base font-black text-[#004aad] uppercase tracking-tight leading-tight group-hover:text-[#1B79EE] transition-colors">
+                        {product.title}
+                      </h4>
+                      <p className="text-xs font-medium text-[#004aad]/70 mt-2 line-clamp-2 leading-relaxed">
+                        {product.description}
+                      </p>
+                    </div>
+
+                    {/* SPEC TAGS */}
+                    <div className="space-y-2 pt-2 border-t border-[#004aad]/10">
+                      <div className="flex justify-between items-center text-[10px] font-mono">
+                        <span className="text-[#004aad]/60 font-bold uppercase">Grate:</span>
+                        <span className="font-black text-[#004aad]">{product.grateType}</span>
+                      </div>
+                      <div className="flex justify-between items-center text-[10px] font-mono">
+                        <span className="text-[#004aad]/60 font-bold uppercase">Joint:</span>
+                        <span className="font-black text-[#1B79EE]">{product.jointType}</span>
+                      </div>
+                    </div>
+
+                    {/* ACTION BUTTON */}
+                    <button
+                      onClick={() => setActiveModalProduct(product)}
+                      className="w-full py-3 bg-[#004aad]/5 hover:bg-[#004aad] text-[#004aad] hover:text-white border border-[#004aad]/20 text-[10px] font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2 group/btn mt-2"
+                    >
+                      <span>Technical Specs</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+
+        {/* 5. MODAL / DETAILED INSPECTOR DIALOG */}
+        <AnimatePresence>
+          {activeModalProduct && (
             <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              whileHover={{ y: -15 }}
-              className="group relative h-[500px] w-full border transition-all duration-500 overflow-hidden col-span-1 bg-white border-[#004aad]/10 text-[#004aad] hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(0,74,173,0.1)]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[300] bg-[#004aad]/80 backdrop-blur-md flex items-center justify-center p-4 md:p-10 select-none"
+              onClick={() => setActiveModalProduct(null)}
             >
-              {/* IMAGE CONTAINER */}
-              <div className={`relative h-56 w-full flex items-center justify-center p-10 transition-colors duration-500
-                ${item.isPrimary ? 'bg-white' : 'bg-[#004aad]/5 group-hover:bg-[#1B79EE]/5'}
-              `}>
-                <div className="relative w-full h-full">
-                  <Image
-                    src={getAssetUrl(item.img)}
-                    alt={item.title}
-                    fill
-                    // No zoom on hover for a cleaner data-driven look
-                    className="object-contain"
-                  />
-                </div>
-                {/* ID Tag */}
-                <div className="absolute top-4 left-4 bg-white px-2 py-0.5 border border-[#004aad]/10">
-                  <span className="text-[9px] font-black text-[#004aad] uppercase tracking-widest">{item.id}</span>
-                </div>
-              </div>
+              <motion.div
+                initial={{ scale: 0.95, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                exit={{ scale: 0.95, y: 20 }}
+                className="bg-white border-2 border-[#1B79EE] w-full max-w-4xl max-h-[90vh] overflow-y-auto shadow-2xl relative"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* CLOSE BUTTON */}
+                <button
+                  onClick={() => setActiveModalProduct(null)}
+                  className="absolute top-4 right-4 z-20 bg-[#004aad] text-white p-2.5 hover:bg-[#1B79EE] transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
 
-              {/* Content Area */}
-              <div className="p-10 flex flex-col flex-grow">
-                {/* Purged 'Specs' data point to satisfying 'smaller is better' feedback */}
-                <h4 className={`text-xl font-black uppercase tracking-tighter leading-tight mb-3 transition-colors group-hover:text-[#1B79EE]`}>
-                  {item.title}
-                </h4>
-                <p className="text-[#004aad] text-xs font-black uppercase tracking-tight opacity-80">
-                  {item.tagline}
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-12">
+                  {/* IMAGE & VIDEO PREVIEW SIDE */}
+                  <div className="md:col-span-6 bg-slate-50 p-8 border-b md:border-b-0 md:border-r border-[#004aad]/10 flex flex-col justify-between">
+                    <div className="relative w-full aspect-square bg-white border border-[#004aad]/10 p-4 mb-6">
+                      <Image
+                        src={getAssetUrl(activeModalProduct.img)}
+                        alt={activeModalProduct.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-contain"
+                      />
+                    </div>
 
-                {/* Footer Action */}
-                <div className="mt-auto pt-8 border-t border-[#004aad]/5 flex justify-between items-center">
-                  <button className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-[#004aad] hover:text-[#1B79EE] transition-all group-hover:gap-5">
-                    View Blueprint <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <Shield className="w-5 h-5 text-[#004aad]/20 group-hover:text-[#1B79EE] transition-colors" />
+                    {/* MINI VIDEO PLAYER */}
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-mono font-bold text-[#004aad] uppercase tracking-widest flex items-center gap-1.5">
+                        <Play className="w-3 h-3 text-[#1B79EE]" /> 3D Joint Simulation Loop
+                      </span>
+                      <div className="relative w-full aspect-video bg-[#004aad] border border-[#004aad]/20 overflow-hidden">
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        >
+                          <source src={getAssetUrl(activeModalProduct.video)} type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* TECHNICAL DATA SIDE */}
+                  <div className="md:col-span-6 p-8 flex flex-col justify-between space-y-6">
+                    <div>
+                      <span className="inline-block px-2.5 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-[10px] font-mono font-black uppercase tracking-widest border border-[#1B79EE]/20 mb-3">
+                        {activeModalProduct.id} • {activeModalProduct.category}
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-black text-[#004aad] uppercase tracking-tight leading-tight mb-2">
+                        {activeModalProduct.title}
+                      </h3>
+                      <p className="text-xs font-bold text-[#1B79EE] uppercase tracking-wide mb-4">
+                        {activeModalProduct.subtitle}
+                      </p>
+                      <p className="text-xs text-[#004aad]/70 leading-relaxed font-medium mb-6">
+                        {activeModalProduct.description}
+                      </p>
+
+                      {/* DETAILED SPEC TABLE */}
+                      <div className="space-y-2 border-t border-b border-[#004aad]/10 py-4 font-mono text-xs">
+                        <div className="flex justify-between py-1 border-b border-[#004aad]/5">
+                          <span className="text-[#004aad]/60 font-bold uppercase">Section Length:</span>
+                          <span className="font-black text-[#004aad]">{activeModalProduct.length}</span>
+                        </div>
+                        <div className="flex justify-between py-1 border-b border-[#004aad]/5">
+                          <span className="text-[#004aad]/60 font-bold uppercase">Grate Profile:</span>
+                          <span className="font-black text-[#004aad]">{activeModalProduct.grateType}</span>
+                        </div>
+                        <div className="flex justify-between py-1 border-b border-[#004aad]/5">
+                          <span className="text-[#004aad]/60 font-bold uppercase">Interlock Type:</span>
+                          <span className="font-black text-[#1B79EE]">{activeModalProduct.jointType}</span>
+                        </div>
+                        <div className="flex justify-between py-1">
+                          <span className="text-[#004aad]/60 font-bold uppercase">AASHTO Rating:</span>
+                          <span className="font-black text-[#004aad]">{activeModalProduct.loadClass}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-3 pt-4">
+                      <a
+                        href="#contact"
+                        onClick={() => setActiveModalProduct(null)}
+                        className="w-full py-4 bg-[#004aad] hover:bg-[#1B79EE] text-white text-xs font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-lg"
+                      >
+                        <span>Request Shop Drawing & Submittal</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Brutalist Top Accent Line only for non-primary cards */}
-              {!item.isPrimary && (
-                <div className="absolute top-0 left-0 w-0 h-1.5 bg-[#1B79EE] group-hover:w-full transition-all duration-700" />
-              )}
+              </motion.div>
             </motion.div>
-          ))}
-        </div>
-
-        <div className="w-full h-[250px] bg-slate-50 border-4 border-dashed border-[#1B79EE] p-12 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden mt-12">
-          <div 
-            className="absolute inset-0 opacity-[0.03] pointer-events-none bg-cover bg-center" 
-            style={{ backgroundImage: `url('${getAssetUrl("/assets/images/pre-trench/trench-grates-img-diagonal-view (11).jpeg")}')` }}
-          />
-
-          <div className="relative z-10 max-w-sm">
-            <div className="flex items-center gap-3 text-[#1B79EE] mb-6">
-              <Zap className="w-6 h-6 animate-spin-slow" />
-              <span className="font-mono text-xs font-black tracking-widest">DEPLOYMENT_PROTOCOL</span>
-            </div>
-            <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
-              Scalable. <br /> Secure.
-            </h3>
-            <p className="text-[#004aad]/60 text-sm leading-relaxed max-w-xs font-medium">
-              Seamlessly integrated from desk to shop floor. Action ready.
-            </p>
-          </div>
-          <button className="relative z-10 bg-[#004aad] hover:bg-[#1B79EE] text-white text-[11px] font-black uppercase tracking-widest transition-all shadow-xl whitespace-nowrap self-start md:self-center">
-            Initiate Protocol
-          </button>
-        </div>
+          )}
+        </AnimatePresence>
 
       </div>
     </section>

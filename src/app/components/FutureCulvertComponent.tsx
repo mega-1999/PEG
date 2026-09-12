@@ -13,21 +13,21 @@ const futureInitiatives = [
     subtitle: "Ecological Continuity",
     description: "Re-engineering culverts into subterranean bridges that restore natural migration paths and reduce vehicle-wildlife collisions.",
     icon: <Rabbit className="w-8 h-8" />,
-    img: "/assets/images/Box Culvert/11.jpeg", // IMAGE 1
+    img: getAssetUrl("/assets/images/Box_Culvert/11.jpeg"), // IMAGE 1
   },
   {
     title: "Utility Tunnels",
     subtitle: "Modular Smart-Cities",
     description: "Dual-purpose box culverts designed to house fiber optics, power, and water, allowing for maintenance without surface excavation.",
     icon: <Zap className="w-8 h-8" />,
-    img: "/assets/images/Box Culvert/12.jpeg", // IMAGE 1
+    img: getAssetUrl("/assets/images/Box_Culvert/12.jpeg"), // IMAGE 1
   },
   {
     title: "Eco-Friendly Concrete",
     subtitle: "Lower-Carbon Precast Solutions",
     description: "Implementing Pozzolanic admixtures and CO2 mineralization to create culverts that actively sequester carbon over their Designed for Long Service Life.",
     icon: <Leaf className="w-6 h-6" />,
-    img: "/assets/images/Box Culvert/13.jpeg", // IMAGE 1
+    img: getAssetUrl("/assets/images/Box_Culvert/13.jpeg"), // IMAGE 1
   }
 ];
 
@@ -64,6 +64,7 @@ export default function FutureCulvertComponent() {
                     src={getAssetUrl(item.img)} // UPDATED: Pulling different image from the array
                     alt={`PEG Future Culvert Concept - ${item.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     priority={idx === 0} // Prioritize first panel
                     className="object-cover object-center grayscale-0 brightness-[0.4] group-hover:brightness-[0.8] transition-all duration-700"
                 />

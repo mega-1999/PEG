@@ -17,7 +17,7 @@ const exhibitionData = [
     location: "Bombay Exhibition Centre, Mumbai",
     booth: "WoCI Expo",
     description: "The upcoming edition of World of Concrete India (WoCI) exhibition will bring together over 10,000 industry professionals and over 200 exhibitors from around the world, showcasing the latest products, technologies, and innovations in the concrete industry.",
-    img: "/assets/images/meet-show/woc-india.png",
+    img: getAssetUrl("/assets/images/meet-show/woc-india.png"),
     tag: "INDIA",
     link: "https://woc-india.com/"
   },
@@ -27,7 +27,7 @@ const exhibitionData = [
     location: "Paris-Nord Villepinte, France",
     booth: "Intermat",
     description: "Early Bird rates to exhibit ends in November - Book a stand now for the best rates!\n\nAfter the hugely successful second edition of World of Concrete Europe, held concurrently with INTERMAT 2018, the organisers of INTERMAT and World of Concrete have decided to join forces once again to produce World of Concrete Europe during INTERMAT.",
-    img: "/assets/images/meet-show/woc-europ.png",
+    img: getAssetUrl("/assets/images/meet-show/woc-europ.png"),
     tag: "EUROPE",
     link: "https://www.intermatconstruction.com/en/woce/presentation"
   },
@@ -37,7 +37,7 @@ const exhibitionData = [
     location: "Shanghai New International Expo Centre (E1-E4)",
     booth: "Shanghai WOCA",
     description: "Opening Hours: 9:00am – 5:00pm, Wed to Thu | 9:00am – 2:00pm, Fri\n\nWOCA will showcase the latest technologies and exhibits related to concrete general, concrete surface, mortar & related masonry, and non-concrete flooring.",
-    img: "/assets/images/meet-show/woc-asia.png",
+    img: getAssetUrl("/assets/images/meet-show/woc-asia.png"),
     tag: "ASIA",
     link: "https://en.wocasia.cn/"
   },
@@ -47,7 +47,7 @@ const exhibitionData = [
     location: "Sao Paolo Expo, Sao Paolo, Brazil",
     booth: "Sao Paolo Expo",
     description: "Bringing many experiences and innovations to the industry, Concrete Show 2026 promises three intense days of qualified content, networking and business.\n\nNational and international brands presenting their launches and new trends with the best solutions for your business.",
-    img: "/assets/images/meet-show/cs-informa.png",
+    img: getAssetUrl("/assets/images/meet-show/cs-informa.png"),
     tag: "SOUTH AMERICA",
     link: "https://www.concreteshow.com.br/en/"
   },
@@ -57,7 +57,7 @@ const exhibitionData = [
     location: "Citibanamex Center, Mexico City",
     booth: "Citibanamex",
     description: "Expo CIHAC is the leading construction, engineering, architecture and design event in Mexico and Latin America.\n\nWith a 34-year trajectory, Expo CIHAC continues to be the reference and single space that gathers all stages of the construction cycle.",
-    img: "/assets/images/meet-show/cihac.png",
+    img: getAssetUrl("/assets/images/meet-show/cihac.png"),
     tag: "LATIN AMERICA",
     link: "https://www.expocihac.com/en/"
   },
@@ -67,7 +67,7 @@ const exhibitionData = [
     location: "Toronto Concret Expo",
     booth: "Toronto",
     description: "Wednesday February 10 – 9:00am to 5:00pm Thursday February 11 – 9:00am to 3:00pm\n\nCanada’s ONLY National Trade Show Dedicated to the Concrete, Construction and Aggregates Industries.",
-    img: "/assets/images/meet-show/canadianconcreteexpo.png",
+    img: getAssetUrl("/assets/images/meet-show/canadianconcreteexpo.png"),
     tag: "TORONTO",
     link: "https://canadianconcreteexpo.com/"
   }
@@ -159,6 +159,7 @@ export default function MeetAtShows() {
                     src={getAssetUrl(show.img)}
                     alt={show.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 350px"
                     className="object-contain" // Changed to contain so logos aren't cropped
                   />
                 </div>

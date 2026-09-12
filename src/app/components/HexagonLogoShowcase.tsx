@@ -7,26 +7,26 @@ import { Globe2, ShieldCheck, Zap, Layers, Sparkles } from "lucide-react";
 import { getAssetUrl } from "@/lib/utils";
 
 const partnerLogos = [
-  { id: "NODE_01", src: "/PrecastIndustry Links/1.jpg", alt: "PEG Precasters", category: "Precast Plant" },
-  { id: "NODE_02", src: "/PrecastIndustry Links/2.jpg", alt: "Precast Engineering", category: "Structural CAD" },
-  { id: "NODE_03", src: "/PrecastIndustry Links/3.jpg", alt: "P-Xchange", category: "Material Network" },
-  { id: "NODE_04", src: "/PrecastIndustry Links/4.jpg", alt: "Total Tech Solutions", category: "Automation" },
-  { id: "NODE_05", src: "/PrecastIndustry Links/5.jpg", alt: "Trench Unlimited", category: "Utility Systems" },
-  { id: "NODE_06", src: "/PrecastIndustry Links/6.jpg", alt: "Alternative Alliance", category: "Standards" },
-  { id: "NODE_07", src: "/PrecastIndustry Links/7.jpg", alt: "Global Mold Tech", category: "Mold Engineering" },
-  { id: "NODE_08", src: "/PrecastIndustry Links/8.jpg", alt: "Parametric Vault", category: "CAD Vault" },
-  { id: "NODE_09", src: "/PrecastIndustry Links/9.jpg", alt: "Grid Infrastructure", category: "Civil Works" },
-  { id: "NODE_10", src: "/PrecastIndustry Links/10.jpg", alt: "Hydro Systems", category: "Stormwater" },
-  { id: "NODE_11", src: "/PrecastIndustry Links/11.jpg", alt: "PEG Precasters", category: "Precast Plant" },
-  { id: "NODE_12", src: "/PrecastIndustry Links/12.jpg", alt: "Precast Engineering", category: "Structural CAD" },
-  { id: "NODE_13", src: "/PrecastIndustry Links/13.jpg", alt: "P-Xchange", category: "Material Network" },
-  { id: "NODE_14", src: "/PrecastIndustry Links/14.jpg", alt: "Total Tech Solutions", category: "Automation" },
-  { id: "NODE_15", src: "/PrecastIndustry Links/15.jpg", alt: "Trench Unlimited", category: "Utility Systems" },
-  { id: "NODE_16", src: "/PrecastIndustry Links/16.jpg", alt: "Alternative Alliance", category: "Standards" },
-  { id: "NODE_17", src: "/PrecastIndustry Links/17.jpg", alt: "Global Mold Tech", category: "Mold Engineering" },
-  { id: "NODE_18", src: "/PrecastIndustry Links/18.jpg", alt: "Parametric Vault", category: "CAD Vault" },
-  { id: "NODE_19", src: "/PrecastIndustry Links/19.jpg", alt: "Grid Infrastructure", category: "Civil Works" },
-  { id: "NODE_20", src: "/PrecastIndustry Links/20.jpg", alt: "Hydro Systems", category: "Stormwater" },
+  { id: "NODE_01", src: "/PrecastIndustry_Links/1.jpg", alt: "PEG Precasters", category: "Precast Plant" },
+  { id: "NODE_02", src: "/PrecastIndustry_Links/2.jpg", alt: "Precast Engineering", category: "Structural CAD" },
+  { id: "NODE_03", src: "/PrecastIndustry_Links/3.jpg", alt: "P-Xchange", category: "Material Network" },
+  { id: "NODE_04", src: "/PrecastIndustry_Links/4.jpg", alt: "Total Tech Solutions", category: "Automation" },
+  { id: "NODE_05", src: "/PrecastIndustry_Links/5.jpg", alt: "Trench Unlimited", category: "Utility Systems" },
+  { id: "NODE_06", src: "/PrecastIndustry_Links/6.jpg", alt: "Alternative Alliance", category: "Standards" },
+  { id: "NODE_07", src: "/PrecastIndustry_Links/7.jpg", alt: "Global Mold Tech", category: "Mold Engineering" },
+  { id: "NODE_08", src: "/PrecastIndustry_Links/8.jpg", alt: "Parametric Vault", category: "CAD Vault" },
+  { id: "NODE_09", src: "/PrecastIndustry_Links/9.jpg", alt: "Grid Infrastructure", category: "Civil Works" },
+  { id: "NODE_10", src: "/PrecastIndustry_Links/10.jpg", alt: "Hydro Systems", category: "Stormwater" },
+  { id: "NODE_11", src: "/PrecastIndustry_Links/11.jpg", alt: "PEG Precasters", category: "Precast Plant" },
+  { id: "NODE_12", src: "/PrecastIndustry_Links/12.jpg", alt: "Precast Engineering", category: "Structural CAD" },
+  { id: "NODE_13", src: "/PrecastIndustry_Links/13.jpg", alt: "P-Xchange", category: "Material Network" },
+  { id: "NODE_14", src: "/PrecastIndustry_Links/14.jpg", alt: "Total Tech Solutions", category: "Automation" },
+  { id: "NODE_15", src: "/PrecastIndustry_Links/15.jpg", alt: "Trench Unlimited", category: "Utility Systems" },
+  { id: "NODE_16", src: "/PrecastIndustry_Links/16.jpg", alt: "Alternative Alliance", category: "Standards" },
+  { id: "NODE_17", src: "/PrecastIndustry_Links/17.jpg", alt: "Global Mold Tech", category: "Mold Engineering" },
+  { id: "NODE_18", src: "/PrecastIndustry_Links/18.jpg", alt: "Parametric Vault", category: "CAD Vault" },
+  { id: "NODE_19", src: "/PrecastIndustry_Links/19.jpg", alt: "Grid Infrastructure", category: "Civil Works" },
+  { id: "NODE_20", src: "/PrecastIndustry_Links/20.jpg", alt: "Hydro Systems", category: "Stormwater" },
 ];
 
 export default function HexagonLogoShowcase() {
@@ -136,6 +136,7 @@ function PartnerCard({ logo }: { logo: { id: string; src: string; alt: string; c
           src={getAssetUrl(logo.src)}
           alt={logo.alt}
           fill
+          sizes="150px"
           className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"
         />
       </div>

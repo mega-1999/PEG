@@ -22,56 +22,56 @@ const services = [
     title: "Structural Engineering",
     description: "Comprehensive engineering for precast structures, ensuring load-bearing integrity and code adherence.",
     icon: <Building2 className="w-6 h-6" />,
-    video: "/assets/video/E20 V1 final.mp4",
-    image: "/assets/images/PAIPING.2 - Copy.png"
+    video: getAssetUrl("/assets/video/E20_V1_final.mp4"),
+    image: getAssetUrl("/assets/images/PAIPING.2_-_Copy.png")
   },
   {
     id: "02",
     title: "Shop Drawings & CAD",
     description: "Highly accurate drafting to eliminate field errors and streamline production workflows.",
     icon: <PenTool className="w-6 h-6" />,
-    video: "/assets/video/E24 v3 final blue bg.mp4",
-    image: "/assets/images/2440 MANHOLE CUT VIEW.png"
+    video: getAssetUrl("/assets/video/E24_v3_final_blue_bg.mp4"),
+    image: getAssetUrl("/assets/images/2440_MANHOLE_CUT_VIEW.png")
   },
   {
     id: "03",
     title: "Mold & Formwork Engineering",
     description: "Custom heavy-duty formwork engineering, magnetic shuttering systems, and mold optimization for precast casting.",
     icon: <Box className="w-6 h-6" />,
-    video: "/assets/video/E25 V2 final.mp4",
-    image: "/assets/images/trench-forms-01-5001.JPG"
+    video: getAssetUrl("/assets/video/E25_V2_final.mp4"),
+    image: getAssetUrl("/assets/images/trench-forms-01-5001.JPG")
   },
   {
     id: "04",
     title: "Precast Detailing",
     description: "Meticulous detailing of connections, rebar, and hardware to specified tolerances.",
     icon: <PencilRuler className="w-6 h-6" />,
-    video: "/assets/video/72 precast manhole Doghouse.646.mp4",
-    image: "/assets/images/72 precast manhole Double Internal Drop.657.png"
+    video: getAssetUrl("/assets/video/72_precast_manhole_Doghouse.646.mp4"),
+    image: getAssetUrl("/assets/images/72_precast_manhole_Double_Internal_Drop.657.png")
   },
   {
     id: "05",
     title: "Product & Mold Design",
     description: "Custom formwork and component design tailored to your exact manufacturing capabilities.",
     icon: <Wrench className="w-6 h-6" />,
-    video: "/assets/video/E34 V2 final.mp4",
-    image: "/assets/images/Manhole Type 1.2.674.png"
+    video: getAssetUrl("/assets/video/E34_V2_final.mp4"),
+    image: getAssetUrl("/assets/images/Manhole_Type_1.2.674.png")
   },
   {
     id: "06",
     title: "Specifications & Compliance",
     description: "Rigorous standards compliance to secure Approval-Ready Documentation from all agencies.",
     icon: <ShieldCheck className="w-6 h-6" />,
-    video: "/assets/video/E38 V3 final blue bg.mp4",
-    image: "/assets/images/10 FT LOW DOME.117.png"
+    video: getAssetUrl("/assets/video/E38_V3_final_blue_bg.mp4"),
+    image: getAssetUrl("/assets/images/10_FT_LOW_DOME.117.png")
   },
   {
     id: "07",
     title: "Manufacturing Support",
     description: "On-site and off-site technical guidance to optimize your plant's production pipeline.",
     icon: <Factory className="w-6 h-6" />,
-    video: "/assets/video/6029794_Lofoten Drone Ocean Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4",
-    image: "/assets/images/a04.JPG"
+    video: getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4"),
+    image: getAssetUrl("/assets/images/a04.JPG")
   }
 ];
 

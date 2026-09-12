@@ -81,7 +81,7 @@ export default function MarinaSystemComponent() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
-              <source src={getAssetUrl("/assets/video/MARINE PRODUCT/E20 V1 final.mp4")} type="video/mp4" />
+              <source src={getAssetUrl("/assets/video/MARINE_PRODUCT/E20_V1_final.mp4")} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 

@@ -129,6 +129,28 @@ const tierColors = {
   }
 };
 
+// Helper component for State DOT badges
+function StateLogoBadge({ abbr, isActive, size = "sm" }: { abbr: string; isActive?: boolean; size?: "sm" | "lg" }) {
+  if (size === "lg") {
+    return (
+      <div className="relative w-14 h-14 bg-gradient-to-br from-[#004aad] to-[#1B79EE] rounded-xl p-1 shadow-md flex flex-col items-center justify-center overflow-hidden flex-shrink-0 text-white border border-blue-400/30">
+        <span className="text-base font-black tracking-wider leading-none uppercase">{abbr}</span>
+        <span className="text-[8px] font-mono font-bold tracking-widest text-blue-200 uppercase mt-1">DOT</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`w-8 h-8 rounded-lg flex flex-col items-center justify-center flex-shrink-0 border transition-all ${
+      isActive 
+        ? "bg-white/20 text-white border-white/30 shadow-inner font-black" 
+        : "bg-slate-100 text-[#004aad] border-slate-200 font-black"
+    }`}>
+      <span className="text-[10px] font-black tracking-tight leading-none uppercase">{abbr}</span>
+    </div>
+  );
+}
+
 export default function DotMatrixSlider() {
   const [activeState, setActiveState] = useState<StateData>(stateData[4] || stateData[0]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -140,15 +162,11 @@ export default function DotMatrixSlider() {
       const info = tierMap[item.state] || { tier: "Standard", spec: "AASHTO LRFD 9th Ed." };
       const abbr = stateAbbrs[item.state] || item.state.slice(0, 2).toUpperCase();
       
-      // Determine state primary logo favicon (use the logo of the first link if available)
-      const primaryLogo = item.links[0]?.logo || `https://www.google.com/s2/favicons?domain=dot.state.${abbr.toLowerCase()}.us&sz=64`;
-      
       return {
         ...item,
         abbr,
         tier: info.tier,
-        spec: info.spec,
-        primaryLogo
+        spec: info.spec
       };
     });
   }, []);
@@ -251,22 +269,8 @@ export default function DotMatrixSlider() {
                       </p>
                     </div>
 
-                    {/* DOT Logo Container */}
-                    <div className="relative w-14 h-14 bg-white border border-slate-100 rounded-xl p-1.5 shadow-sm flex items-center justify-center overflow-hidden flex-shrink-0">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={activeEnriched.primaryLogo}
-                        alt={`${activeEnriched.state} DOT Favicon`}
-                        className="w-10 h-10 object-contain rounded-md"
-                        onError={(e) => {
-                          // Fallback to building icon if domain favicon fails
-                          e.currentTarget.style.display = 'none';
-                          const sibling = e.currentTarget.nextElementSibling;
-                          if (sibling) sibling.classList.remove('hidden');
-                        }}
-                      />
-                      <Building2 className="w-7 h-7 text-slate-300 hidden" />
-                    </div>
+                    {/* DOT Logo Badge Container */}
+                    <StateLogoBadge abbr={activeEnriched.abbr} size="lg" />
                   </div>
 
                   {/* Core Matrix Metadata */}
@@ -314,20 +318,9 @@ export default function DotMatrixSlider() {
                             className="flex items-center justify-between p-3 bg-white border border-slate-100 hover:border-[#1B79EE] hover:bg-[#1B79EE]/5 rounded-xl group transition-all duration-150"
                           >
                             <div className="flex items-center gap-3 min-w-0">
-                              {/* Link-specific logo favicon */}
-                              <div className="w-8 h-8 bg-slate-50 group-hover:bg-white rounded-lg flex items-center justify-center p-1.5 border border-slate-100/50 flex-shrink-0 transition-colors">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={link.logo || activeEnriched.primaryLogo}
-                                  alt="Source Favicon"
-                                  className="w-5 h-5 object-contain"
-                                  onError={(e) => {
-                                    e.currentTarget.style.display = 'none';
-                                    const sibling = e.currentTarget.nextElementSibling;
-                                    if (sibling) sibling.classList.remove('hidden');
-                                  }}
-                                />
-                                <Globe className="w-4 h-4 text-slate-400 hidden" />
+                              {/* Resource Link Icon Badge */}
+                              <div className="w-8 h-8 bg-slate-50 group-hover:bg-[#004aad] group-hover:text-white text-[#004aad] rounded-lg flex items-center justify-center p-1.5 border border-slate-100 flex-shrink-0 transition-colors">
+                                <FileText className="w-4 h-4" />
                               </div>
                               <div className="min-w-0">
                                 <p className="text-xs font-black text-[#004aad] truncate" title={link.label}>
@@ -405,20 +398,7 @@ export default function DotMatrixSlider() {
                                   : "bg-white border-slate-200 hover:border-[#1B79EE] text-[#004aad] shadow-sm hover:shadow"
                               }`}
                             >
-                              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center p-1.5 flex-shrink-0 border border-slate-100 overflow-hidden">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={item.primaryLogo}
-                                  alt="DOT logo"
-                                  className="w-5 h-5 object-contain"
-                                  onError={(e) => {
-                                    e.currentTarget.style.display = 'none';
-                                    const sibling = e.currentTarget.nextElementSibling;
-                                    if (sibling) sibling.classList.remove('hidden');
-                                  }}
-                                />
-                                <Building2 className="w-4 h-4 text-slate-400 hidden" />
-                              </div>
+                              <StateLogoBadge abbr={item.abbr} isActive={isActive} size="sm" />
                               <div className="min-w-0">
                                 <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#004aad]"}`}>
                                   {item.state}
@@ -457,20 +437,7 @@ export default function DotMatrixSlider() {
                                   : "bg-white border-slate-200 hover:border-[#1B79EE] text-[#004aad] shadow-sm hover:shadow"
                               }`}
                             >
-                              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center p-1.5 flex-shrink-0 border border-slate-100 overflow-hidden">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={item.primaryLogo}
-                                  alt="DOT logo"
-                                  className="w-5 h-5 object-contain"
-                                  onError={(e) => {
-                                    e.currentTarget.style.display = 'none';
-                                    const sibling = e.currentTarget.nextElementSibling;
-                                    if (sibling) sibling.classList.remove('hidden');
-                                  }}
-                                />
-                                <Building2 className="w-4 h-4 text-slate-400 hidden" />
-                              </div>
+                              <StateLogoBadge abbr={item.abbr} isActive={isActive} size="sm" />
                               <div className="min-w-0">
                                 <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#004aad]"}`}>
                                   {item.state}
@@ -509,20 +476,7 @@ export default function DotMatrixSlider() {
                                   : "bg-white border-slate-200 hover:border-[#1B79EE] text-[#004aad] shadow-sm hover:shadow"
                               }`}
                             >
-                              <div className="w-8 h-8 rounded-lg bg-slate-50 flex items-center justify-center p-1.5 flex-shrink-0 border border-slate-100 overflow-hidden">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img
-                                  src={item.primaryLogo}
-                                  alt="DOT logo"
-                                  className="w-5 h-5 object-contain"
-                                  onError={(e) => {
-                                    e.currentTarget.style.display = 'none';
-                                    const sibling = e.currentTarget.nextElementSibling;
-                                    if (sibling) sibling.classList.remove('hidden');
-                                  }}
-                                />
-                                <Building2 className="w-4 h-4 text-slate-400 hidden" />
-                              </div>
+                              <StateLogoBadge abbr={item.abbr} isActive={isActive} size="sm" />
                               <div className="min-w-0">
                                 <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#004aad]"}`}>
                                   {item.state}

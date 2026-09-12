@@ -10,7 +10,14 @@ export function getAssetUrl(path?: string): string {
   if (path.startsWith("http://") || path.startsWith("https://")) {
     return path;
   }
-  const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL || "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev";
-  const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  return cdnUrl ? `${cdnUrl}${cleanPath}` : cleanPath;
+  // Automatically sanitize spaces to underscores for all asset paths
+  const sanitizedPath = path.replace(/ /g, "_");
+  const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
+  
+  const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL;
+  if (cdnUrl && cdnUrl.trim() !== "") {
+    return `${cdnUrl.replace(/\/$/, "")}${cleanPath}`;
+  }
+  
+  return cleanPath;
 }

@@ -22,7 +22,7 @@ import {
 
 const CATEGORIES = [
   "All Products",
-  "Box Culverts",
+  "Box_Culverts",
   "Utility Trenches",
   "Retaining Walls",
   "Marine Systems",
@@ -178,6 +178,7 @@ export default function PrecastBlogSection() {
                         src={featuredPost.author.avatar}
                         alt={featuredPost.author.name}
                         fill
+                        sizes="32px"
                         className="object-cover"
                       />
                     </div>

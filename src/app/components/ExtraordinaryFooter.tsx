@@ -11,11 +11,11 @@ import { footerData } from "@/lib/data";
 import { getAssetUrl } from "@/lib/utils";
 
 const logos = [
-    { src: "/assets/footer_logo/peg.jpeg", alt: "Partner 01" },
-    { src: "/assets/footer_logo/precasteng.jpeg", alt: "Partner 02" },
-    { src: "/assets/footer_logo/pxchange.jpeg", alt: "Partner 03" },
-    { src: "/assets/footer_logo/totaltech.jpeg", alt: "Partner 04" },
-    { src: "/assets/footer_logo/trench-unlimited.jpeg", alt: "Partner 05" },
+    { src: getAssetUrl("/assets/footer_logo/peg.jpeg"), alt: "Partner 01" },
+    { src: getAssetUrl("/assets/footer_logo/precasteng.jpeg"), alt: "Partner 02" },
+    { src: getAssetUrl("/assets/footer_logo/pxchange.jpeg"), alt: "Partner 03" },
+    { src: getAssetUrl("/assets/footer_logo/totaltech.jpeg"), alt: "Partner 04" },
+    { src: getAssetUrl("/assets/footer_logo/trench-unlimited.jpeg"), alt: "Partner 05" },
 ];
 const socialLinks = [
     { icon: FaFacebook, href: "#" },
@@ -74,6 +74,7 @@ export default function ExtraordinaryFooter() {
                                                         src={getAssetUrl(logo.src)}
                                                         alt={logo.alt}
                                                         fill
+                                                        sizes="80px"
                                                         className="object-contain p-1"
                                                     />
                                                 </div>

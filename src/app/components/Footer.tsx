@@ -58,7 +58,7 @@ export const Footer = () => {
                 loading='lazy'
                 src={getAssetUrl("/PEG.png")} // Professional PEG logo
                 alt="PEG Logo"
-                className="object-contain"
+                className="object-contain w-auto h-auto"
               />
             </div>
             <div>

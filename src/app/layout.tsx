@@ -43,12 +43,13 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", figtree.variable)}
     >
-      <Navbar/>
-      
-      <EntrySystem/>
-      <FloatingTelemetryHub/>
-      <body className="min-h-full flex flex-col">{children}</body>
-      <ExtraordinaryFooter/>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        <EntrySystem />
+        <FloatingTelemetryHub />
+        <div className="flex-grow">{children}</div>
+        <ExtraordinaryFooter />
+      </body>
     </html>
   );
 }

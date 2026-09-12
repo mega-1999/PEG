@@ -158,7 +158,7 @@ export const Navbar = () => {
               alt="PEG Precast Engineering Group"
               width={330} // Scaled down slightly to help fit on zoomed screens
               height={55}
-              className="object-contain"
+              className="object-contain w-auto h-auto"
               priority
             />
           </Link>

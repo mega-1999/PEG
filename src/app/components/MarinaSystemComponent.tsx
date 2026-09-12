@@ -79,6 +79,7 @@ export default function MarinaSystemComponent() {
               loop 
               muted 
               playsInline
+              suppressHydrationWarning
               className="absolute inset-0 w-full h-full object-cover z-0"
             >
               <source src={getAssetUrl("/assets/video/MARINE_PRODUCT/E20_V1_final.mp4")} type="video/mp4" />

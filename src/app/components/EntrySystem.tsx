@@ -62,6 +62,7 @@ export default function EntrySystem() {
                                     loop 
                                     muted 
                                     playsInline
+                                    suppressHydrationWarning
                                     className="absolute inset-0 w-full h-full object-cover"
                                 >
                                     <source src={getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4")} type="video/mp4" />

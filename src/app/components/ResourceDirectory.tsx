@@ -133,6 +133,8 @@ export const ResourceDirectory = () => {
                   autoPlay 
                   muted 
                   playsInline
+                  preload="auto"
+                  suppressHydrationWarning
                   onEnded={playNextVideo}
                   className="w-full h-full object-contain"
                 >

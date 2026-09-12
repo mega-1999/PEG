@@ -83,12 +83,7 @@ export default function UnchallengedResources() {
           <div className="lg:w-1/2 w-full relative">
             
             {/* Scrollable Container with Custom Blue Scrollbar */}
-            <div className="flex flex-col gap-6 h-[600px] overflow-y-auto pr-4 pb-10
-              [&::-webkit-scrollbar]:w-2 
-              [&::-webkit-scrollbar-track]:bg-[#004aad] 
-              [&::-webkit-scrollbar-thumb]:bg-[#1B79EE] 
-              [&::-webkit-scrollbar-thumb]:hover:bg-white"
-            >
+            <div className="flex flex-col gap-6 h-[600px] overflow-y-auto pr-4 pb-10 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-[#004aad] [&::-webkit-scrollbar-thumb]:bg-[#1B79EE] [&::-webkit-scrollbar-thumb]:hover:bg-white">
               {pegResources.map((resource, idx) => (
                 <motion.div
                   key={resource.id}

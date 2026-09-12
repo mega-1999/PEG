@@ -111,6 +111,7 @@ export default function PrecastMoldComponent() {
               loop 
               muted 
               playsInline
+              suppressHydrationWarning
               className="w-full h-full object-cover"
             >
               <source src={getAssetUrl("/assets/video/E25_V2_final.mp4")} type="video/mp4" />

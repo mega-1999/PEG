@@ -317,6 +317,7 @@ export default function TrenchingSystem() {
                     loop
                     muted
                     playsInline
+                    suppressHydrationWarning
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   >
                     <source src={getAssetUrl(item.video)} type="video/mp4" />

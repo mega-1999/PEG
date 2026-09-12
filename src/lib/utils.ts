@@ -14,9 +14,8 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
   
-  // Video files and specific assets not stored on R2 bucket serve directly from application static files
-  const fallbackToLocal = cleanPath.startsWith("/assets/video/") || cleanPath.includes("ppa.JPG");
-  if (fallbackToLocal) {
+  // Video files are not currently hosted on Cloudflare R2, serve directly from application static files
+  if (cleanPath.startsWith("/assets/video/")) {
     return cleanPath;
   }
 

@@ -33,11 +33,11 @@ const resourceColumns = [
 ];
 
 const videoPlaylist = [
-  getAssetUrl("/assets/video/72_precast_manhole_Doghouse.646.mp4"),
-  getAssetUrl("/assets/video/E20_V1_final.mp4"),
-  getAssetUrl("/assets/video/E24_v3_final_blue_bg.mp4"),
-  getAssetUrl("/assets/video/E25_V2_final.mp4"),
-  getAssetUrl("/assets/video/E38_V3_final_blue_bg.mp4"),
+  "/assets/video/72_precast_manhole_Doghouse.646.mp4",
+  "/assets/video/E20_V1_final.mp4",
+  "/assets/video/E24_v3_final_blue_bg.mp4",
+  "/assets/video/E25_V2_final.mp4",
+  "/assets/video/E38_V3_final_blue_bg.mp4",
 ];
 
 export const ResourceDirectory = () => {

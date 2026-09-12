@@ -51,14 +51,14 @@ export const Footer = () => {
 
           {/* Left Side: Branding & Mission */}
           <div className="lg:col-span-5">
-            <div className='bg-white flex justify-center w-48 p-4 rounded-sm shadow-lg'>
+            <div className='bg-white flex justify-center w-48 p-3 rounded-sm shadow-lg'>
               <Image
                 width={170}
                 height={50}
                 loading='lazy'
                 src={getAssetUrl("/PEG.png")} // Professional PEG logo
                 alt="PEG Logo"
-                className="object-contain w-auto h-auto"
+                className="h-10 w-auto object-contain"
               />
             </div>
             <div>

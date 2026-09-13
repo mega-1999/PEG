@@ -40,6 +40,7 @@ const videoPlaylist = [
   getAssetUrl("/assets/video/E38_V3_final_blue_bg.mp4"),
 ];
 
+
 export const ResourceDirectory = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);

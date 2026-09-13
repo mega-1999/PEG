@@ -34,21 +34,21 @@ const trenchVideos = [
     id: "VID-02",
     title: "3-Side Interlocking System",
     subtitle: "Tri-Directional Branch Channel Placement",
-    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.411.mp4"),
     tag: "3-SIDE INTERLOCK"
   },
   {
     id: "VID-03",
     title: "45° Tongue & Groove Junction",
     subtitle: "Angled Utility Direction Change Loop",
-    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.414.mp4"),
     tag: "45° ANGLED JUNCTION"
   },
   {
     id: "VID-04",
     title: "Chamfer Beveled Interlocking System",
     subtitle: "Spall-Proof Beveled Edge Assembly",
-    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.465.mp4"),
     tag: "CHAMFER BEVELED"
   }
 ];
@@ -103,7 +103,7 @@ const trenchProducts = [
     title: "12ft 3-Side Interlocking Trench (ADA Grate)",
     subtitle: "Tri-Directional Interlocking Trench with ADA Surface Cover",
     img: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_ada_grate.1111.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.411.mp4"),
     grateType: "ADA Compliant Grating",
     length: "12 FT Section",
     jointType: "3-Side Keyed Interlock",
@@ -116,7 +116,7 @@ const trenchProducts = [
     title: "12ft 3-Side Interlocking Trench (Heel-Proof Grate)",
     subtitle: "Tri-Directional Channel with Heel-Proof Security Grate",
     img: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_heel_proof_grate.1110.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.411.mp4"),
     grateType: "Heel-Proof Mesh Steel",
     length: "12 FT Section",
     jointType: "3-Side Keyed Interlock",
@@ -129,7 +129,7 @@ const trenchProducts = [
     title: "12ft 3-Side Interlocking Trench (Regular Grate)",
     subtitle: "Heavy-Duty 3-Side Keyed Industrial Drainage Channel",
     img: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_regular_grate.1109.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.411.mp4"),
     grateType: "Heavy Ductile Steel",
     length: "12 FT Section",
     jointType: "3-Side Keyed Interlock",
@@ -144,7 +144,7 @@ const trenchProducts = [
     title: "12ft 3-Way 45° Tongue Interlocking Trench (ADA Grate)",
     subtitle: "Angled Junction Interlocking Trench with ADA Cover",
     img: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_ada_grate.1116.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.414.mp4"),
     grateType: "ADA Compliant Grating",
     length: "12 FT Section",
     jointType: "45° Angled Tongue & Groove",
@@ -157,7 +157,7 @@ const trenchProducts = [
     title: "12ft 3-Way 45° Tongue Interlocking Trench (Heel-Proof)",
     subtitle: "45° Directional Branch Trench with Heel-Proof Grate",
     img: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_heel_proof_grate.1117.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.414.mp4"),
     grateType: "Heel-Proof Safety Grate",
     length: "12 FT Section",
     jointType: "45° Angled Tongue & Groove",
@@ -170,7 +170,7 @@ const trenchProducts = [
     title: "12ft 3-Way 45° Tongue Interlocking Trench (Regular Grate)",
     subtitle: "High-Capacity Angled Utility Junction Trench",
     img: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_regualr_grate.1115.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.414.mp4"),
     grateType: "Ductile Iron Heavy Grate",
     length: "12 FT Section",
     jointType: "45° Angled Tongue & Groove",
@@ -185,7 +185,7 @@ const trenchProducts = [
     title: "12ft 3-Way Chamfer Interlocking Trench (ADA Grate)",
     subtitle: "Beveled Edge Chamfer Interlocking Trench with ADA Cover",
     img: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_ada_grate.1112.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.465.mp4"),
     grateType: "ADA Compliant Surface",
     length: "12 FT Section",
     jointType: "Chamfer Beveled Interlock",
@@ -198,7 +198,7 @@ const trenchProducts = [
     title: "12ft 3-Way Chamfer Interlocking Trench (Heel-Proof)",
     subtitle: "Chamfered Joint Channel with Heel-Proof Grate",
     img: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_heel_proof_grate.1113.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.465.mp4"),
     grateType: "Heel-Proof High-Security",
     length: "12 FT Section",
     jointType: "Chamfer Beveled Interlock",
@@ -211,7 +211,7 @@ const trenchProducts = [
     title: "12ft 3-Way Chamfer Interlocking Trench (Regular Grate)",
     subtitle: "Industrial Chamfer Beveled Utility Channel",
     img: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_regualr_grate.1114.png"),
-    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.465.mp4"),
     grateType: "Ductile Iron Grate",
     length: "12 FT Section",
     jointType: "Chamfer Beveled Interlock",
@@ -225,8 +225,8 @@ const trenchProducts = [
     category: "Master Assembly",
     title: "12ft Complete Interlocking Trench Assembly",
     subtitle: "Integrated Multi-Branch Precast Trench System Overview",
-    img: "/TRENCH/12'_all_trench.1083.png",
-    video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
+    img: getAssetUrl("/TRENCH/12'_all_trench.1083.png"),
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.465.mp4"),
     grateType: "Modular Interchangeable Grates",
     length: "12 FT Master System",
     jointType: "Universal Modular Interlock",
@@ -293,12 +293,7 @@ export default function TrenchingSystem() {
         {/* 2. FEATURED VIDEO DEMONSTRATIONS ROW */}
         <div>
           <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-2">
-              <Play className="w-4 h-4 text-[#1B79EE]" />
-              <h3 className="text-sm font-black uppercase tracking-widest text-[#004aad]">
-                Technical Video Demonstrations (4 Loops)
-              </h3>
-            </div>
+ 
             <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-blue-50 px-2.5 py-1 border border-[#1B79EE]/20">
               3D ANIMATED SIMULATIONS
             </span>

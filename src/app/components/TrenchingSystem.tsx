@@ -27,7 +27,7 @@ const trenchVideos = [
     id: "VID-01",
     title: "2-Side Interlocking 24-18 Assembly",
     subtitle: "12ft Dual Male/Female Joint Demonstration",
-    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    video: getAssetUrl("/TRENCH/TRENCH/2_side_24-18.1027.mp4"),
     tag: "2-SIDE INTERLOCK"
   },
   {
@@ -61,8 +61,8 @@ const trenchProducts = [
     category: "2-Side Interlocking",
     title: "12ft 2-Side Interlocking Trench (ADA Grate)",
     subtitle: "Heavy-Duty Utility Trench with Pedestrian ADA Compliance",
-    img: "/TRENCH/12_ft_2_side_interlocking_trench_with_ada_grate.1119.png",
-    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    img: getAssetUrl("/TRENCH/12_ft_2_side_interlocking_trench_with_ada_grate.1119.png"),
+    video: getAssetUrl("/TRENCH/TRENCH/2_side_24-18.1027.mp4"),
     grateType: "ADA Compliant Steel",
     length: "12 FT Section",
     jointType: "Dual-Side Male/Female Interlock",
@@ -74,8 +74,8 @@ const trenchProducts = [
     category: "2-Side Interlocking",
     title: "12ft 2-Side Interlocking Trench (Heel-Proof Grate)",
     subtitle: "High-Traffic Pedestrian Channel with Heel-Proof Steel Grate",
-    img: "/TRENCH/12_ft_2_side_interlocking_trench_with_heel_proof_grate.1118.png",
-    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    img: getAssetUrl("/TRENCH/12_ft_2_side_interlocking_trench_with_heel_proof_grate.1118.png"),
+    video: getAssetUrl("/TRENCH/TRENCH/2_side_24-18.1027.mp4"),
     grateType: "Heel-Proof Narrow Slot",
     length: "12 FT Section",
     jointType: "Dual-Side Male/Female Interlock",
@@ -87,8 +87,8 @@ const trenchProducts = [
     category: "2-Side Interlocking",
     title: "12ft 2-Side Interlocking Trench (Regular Grate)",
     subtitle: "Standard Industrial High-Capacity Utility Trench",
-    img: "/TRENCH/12_ft_2_side_interlocking_trench_with_regualar_grate.1120.png",
-    video: "/TRENCH/TRENCH/2_side_24-18.1027.mp4",
+    img: getAssetUrl("/TRENCH/12_ft_2_side_interlocking_trench_with_regualar_grate.1120.png"),
+    video: getAssetUrl("/TRENCH/TRENCH/2_side_24-18.1027.mp4"),
     grateType: "Standard Cast Ductile Iron",
     length: "12 FT Section",
     jointType: "Dual-Side Male/Female Interlock",
@@ -102,7 +102,7 @@ const trenchProducts = [
     category: "3-Side Interlocking",
     title: "12ft 3-Side Interlocking Trench (ADA Grate)",
     subtitle: "Tri-Directional Interlocking Trench with ADA Surface Cover",
-    img: "/TRENCH/12_ft_3_side_interlocking_trench_with_ada_grate.1111.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_ada_grate.1111.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
     grateType: "ADA Compliant Grating",
     length: "12 FT Section",
@@ -115,7 +115,7 @@ const trenchProducts = [
     category: "3-Side Interlocking",
     title: "12ft 3-Side Interlocking Trench (Heel-Proof Grate)",
     subtitle: "Tri-Directional Channel with Heel-Proof Security Grate",
-    img: "/TRENCH/12_ft_3_side_interlocking_trench_with_heel_proof_grate.1110.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_heel_proof_grate.1110.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
     grateType: "Heel-Proof Mesh Steel",
     length: "12 FT Section",
@@ -128,7 +128,7 @@ const trenchProducts = [
     category: "3-Side Interlocking",
     title: "12ft 3-Side Interlocking Trench (Regular Grate)",
     subtitle: "Heavy-Duty 3-Side Keyed Industrial Drainage Channel",
-    img: "/TRENCH/12_ft_3_side_interlocking_trench_with_regular_grate.1109.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_regular_grate.1109.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.411.mp4",
     grateType: "Heavy Ductile Steel",
     length: "12 FT Section",
@@ -143,7 +143,7 @@ const trenchProducts = [
     category: "45° Tongue Interlocking",
     title: "12ft 3-Way 45° Tongue Interlocking Trench (ADA Grate)",
     subtitle: "Angled Junction Interlocking Trench with ADA Cover",
-    img: "/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_ada_grate.1116.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_ada_grate.1116.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
     grateType: "ADA Compliant Grating",
     length: "12 FT Section",
@@ -156,7 +156,7 @@ const trenchProducts = [
     category: "45° Tongue Interlocking",
     title: "12ft 3-Way 45° Tongue Interlocking Trench (Heel-Proof)",
     subtitle: "45° Directional Branch Trench with Heel-Proof Grate",
-    img: "/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_heel_proof_grate.1117.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_heel_proof_grate.1117.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
     grateType: "Heel-Proof Safety Grate",
     length: "12 FT Section",
@@ -169,7 +169,7 @@ const trenchProducts = [
     category: "45° Tongue Interlocking",
     title: "12ft 3-Way 45° Tongue Interlocking Trench (Regular Grate)",
     subtitle: "High-Capacity Angled Utility Junction Trench",
-    img: "/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_regualr_grate.1115.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_regualr_grate.1115.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.414.mp4",
     grateType: "Ductile Iron Heavy Grate",
     length: "12 FT Section",
@@ -184,7 +184,7 @@ const trenchProducts = [
     category: "Chamfer Interlocking",
     title: "12ft 3-Way Chamfer Interlocking Trench (ADA Grate)",
     subtitle: "Beveled Edge Chamfer Interlocking Trench with ADA Cover",
-    img: "/TRENCH/12_ft_3_champher_interlocking_trench_with_ada_grate.1112.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_ada_grate.1112.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
     grateType: "ADA Compliant Surface",
     length: "12 FT Section",
@@ -197,7 +197,7 @@ const trenchProducts = [
     category: "Chamfer Interlocking",
     title: "12ft 3-Way Chamfer Interlocking Trench (Heel-Proof)",
     subtitle: "Chamfered Joint Channel with Heel-Proof Grate",
-    img: "/TRENCH/12_ft_3_champher_interlocking_trench_with_heel_proof_grate.1113.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_heel_proof_grate.1113.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
     grateType: "Heel-Proof High-Security",
     length: "12 FT Section",
@@ -210,7 +210,7 @@ const trenchProducts = [
     category: "Chamfer Interlocking",
     title: "12ft 3-Way Chamfer Interlocking Trench (Regular Grate)",
     subtitle: "Industrial Chamfer Beveled Utility Channel",
-    img: "/TRENCH/12_ft_3_champher_interlocking_trench_with_regualr_grate.1114.png",
+    img: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_regualr_grate.1114.png"),
     video: "/TRENCH/TRENCH/12'_all_trench.465.mp4",
     grateType: "Ductile Iron Grate",
     length: "12 FT Section",
@@ -321,7 +321,7 @@ export default function TrenchingSystem() {
                     suppressHydrationWarning
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   >
-                    <source src={getAssetUrl(item.video)} type="video/mp4" />
+                    <source src={item.video} type="video/mp4" />
                   </video>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/90 via-transparent to-transparent pointer-events-none" />
                   
@@ -483,7 +483,7 @@ export default function TrenchingSystem() {
                   <div className="md:col-span-6 bg-slate-50 p-8 border-b md:border-b-0 md:border-r border-[#004aad]/10 flex flex-col justify-between">
                     <div className="relative w-full aspect-square bg-white border border-[#004aad]/10 p-4 mb-6">
                       <Image
-                        src={getAssetUrl(activeModalProduct.img)}
+                        src={activeModalProduct.img}
                         alt={activeModalProduct.title}
                         fill
                         sizes="(max-width: 768px) 100vw, 400px"
@@ -504,7 +504,7 @@ export default function TrenchingSystem() {
                           playsInline
                           className="w-full h-full object-cover"
                         >
-                          <source src={getAssetUrl(activeModalProduct.video)} type="video/mp4" />
+                          <source src={activeModalProduct.video} type="video/mp4" />
                         </video>
                       </div>
                     </div>

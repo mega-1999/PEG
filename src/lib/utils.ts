@@ -14,8 +14,8 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
 
-  // Video files and TRENCH media are served directly from application static files (public/)
-  if (cleanPath.startsWith("/assets/video/") || cleanPath.startsWith("/TRENCH/")) {
+  // Video files are served directly from application static files (public/assets/video/)
+  if (cleanPath.startsWith("/assets/video/")) {
     return cleanPath;
   }
 

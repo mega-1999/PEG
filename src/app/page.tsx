@@ -67,7 +67,7 @@ export default function Home() {
       </div>
       
       <FutureCulvertComponent />
-      {/* <TrenchingSystem /> */}
+      <TrenchingSystem />
       <RetainingWallComponent />
       <MarinaSystemComponent />
       <PrecastMoldComponent />

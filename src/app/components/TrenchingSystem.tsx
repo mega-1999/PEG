@@ -27,7 +27,7 @@ const trenchVideos = [
     id: "VID-01",
     title: "2-Side Interlocking 24-18 Assembly",
     subtitle: "12ft Dual Male/Female Joint Demonstration",
-    video: getAssetUrl("/TRENCH/TRENCH/2_side_24-18.1027.mp4"),
+    video: getAssetUrl("/TRENCH/TRENCH/GRATE_IMAGES.504.mp4"),
     tag: "2-SIDE INTERLOCK"
   },
   {

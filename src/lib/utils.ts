@@ -14,7 +14,12 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
 
-  // Cloudflare R2 Public CDN domain (with environment variable & fallback)
+  // Video files and TRENCH media are served directly from application static files (public/)
+  if (cleanPath.startsWith("/assets/video/") || cleanPath.startsWith("/TRENCH/")) {
+    return cleanPath;
+  }
+
+  // Cloudflare R2 Public CDN domain for images
   const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL 
     || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL 
     || "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev";

@@ -44,7 +44,11 @@ export async function fetchAllBlogPosts(): Promise<PrecastBlogPost[]> {
       relatedSlugs: item.related_slugs || item.relatedSlugs || [],
     }));
 
-    return mapped;
+    // Merge Supabase posts with default static posts (Supabase posts take priority)
+    const supabaseSlugs = new Set(mapped.map(p => p.slug));
+    const remainingStatic = PRECAST_BLOG_POSTS.filter(p => !supabaseSlugs.has(p.slug));
+
+    return [...mapped, ...remainingStatic];
   } catch (err) {
     console.error("Error fetching blogs from Supabase:", err);
     return PRECAST_BLOG_POSTS;

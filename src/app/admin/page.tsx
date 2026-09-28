@@ -344,10 +344,6 @@ export default function AdminPage() {
       <div className="bg-white border-b border-[#004aad]/10 py-6 shadow-sm">
         <div className="w-full px-10 md:px-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono font-black text-[#1B79EE] uppercase tracking-widest mb-1">
-              <Database className="w-4 h-4" />
-              <span>Supabase Connected • {process.env.NEXT_PUBLIC_SUPABASE_URL || "kdhqhocqudzwwreoebjd"}</span>
-            </div>
             <h1 className="text-2xl md:text-3xl font-black text-[#004aad] uppercase tracking-tight">
               Precast Technical Blog Admin
             </h1>

@@ -2,10 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { 
-  getBlogPostBySlug, 
-  getRelatedBlogPosts 
-} from "@/app/data/precastBlogs";
+import { getRelatedBlogPosts } from "@/app/data/precastBlogs";
+import { fetchBlogPostBySlug } from "@/lib/blogService";
 import ShareArticleButton from "@/app/components/ShareArticleButton";
 import { 
   ArrowLeft, 
@@ -28,7 +26,7 @@ interface BlogPageProps {
 
 export async function generateMetadata({ params }: BlogPageProps) {
   const resolvedParams = await params;
-  const post = getBlogPostBySlug(resolvedParams.slug);
+  const post = await fetchBlogPostBySlug(resolvedParams.slug);
 
   if (!post) {
     return {
@@ -44,7 +42,7 @@ export async function generateMetadata({ params }: BlogPageProps) {
 
 export default async function BlogSlugPage({ params }: BlogPageProps) {
   const resolvedParams = await params;
-  const post = getBlogPostBySlug(resolvedParams.slug);
+  const post = await fetchBlogPostBySlug(resolvedParams.slug);
 
   if (!post) {
     notFound();

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,6 +8,7 @@ import {
   PRECAST_BLOG_POSTS, 
   PrecastBlogPost 
 } from "../data/precastBlogs";
+import { fetchAllBlogPosts } from "@/lib/blogService";
 import { 
   Play, 
   ArrowRight, 
@@ -23,25 +24,37 @@ import {
 const CATEGORIES = [
   "All Products",
   "Box_Culverts",
-  "Utility Trenches",
-  "Retaining Walls",
-  "Marine Systems",
-  "Mold & Form Design",
-  "UHPC Engineering"
+  "Trenching",
+  "Piping",
+  "Structural",
+  "Manhole"
 ];
 
 export default function PrecastBlogSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All Products");
+  const [posts, setPosts] = useState<PrecastBlogPost[]>(PRECAST_BLOG_POSTS);
+
+  useEffect(() => {
+    let isMounted = true;
+    async function loadDynamicPosts() {
+      const livePosts = await fetchAllBlogPosts();
+      if (isMounted && livePosts && livePosts.length > 0) {
+        setPosts(livePosts);
+      }
+    }
+    loadDynamicPosts();
+    return () => { isMounted = false; };
+  }, []);
 
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "All Products") {
-      return PRECAST_BLOG_POSTS;
+      return posts;
     }
-    return PRECAST_BLOG_POSTS.filter((post) => post.category === selectedCategory);
-  }, [selectedCategory]);
+    return posts.filter((post) => post.category === selectedCategory);
+  }, [selectedCategory, posts]);
 
-  const featuredPost = PRECAST_BLOG_POSTS[0];
-  const gridPosts = filteredPosts.length > 0 ? filteredPosts : PRECAST_BLOG_POSTS;
+  const featuredPost = posts[0] || PRECAST_BLOG_POSTS[0];
+  const gridPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
     <section id="precast-engineering-insights" className="relative w-full bg-white text-[#004aad] py-10 overflow-hidden select-none border-t border-[#004aad]/10">

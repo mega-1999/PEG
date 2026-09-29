@@ -1,15 +1,27 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Volume2, VolumeX, Power, Activity, HardHat, Hammer } from 'lucide-react';
 import { getAssetUrl } from '@/lib/utils';
 
 export default function EntrySystem() {
+    const pathname = usePathname();
     const [isInitialized, setIsInitialized] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
     const [progress, setProgress] = useState(0);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    // Check session storage on mount
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const hasSeen = sessionStorage.getItem("peg_entry_seen");
+            if (hasSeen === "true") {
+                setIsInitialized(true);
+            }
+        }
+    }, []);
 
     useEffect(() => {
         if (progress < 100) {
@@ -25,11 +37,19 @@ export default function EntrySystem() {
 
     const handleStart = () => {
         setIsInitialized(true);
+        if (typeof window !== "undefined") {
+            sessionStorage.setItem("peg_entry_seen", "true");
+        }
         if (audioRef.current) {
             audioRef.current.play();
             audioRef.current.volume = 0.4;
         }
     };
+
+    // ONLY render EntrySystem on the Home Page ("/")
+    if (pathname !== "/") {
+        return null;
+    }
 
     const toggleMute = () => {
         if (audioRef.current) {

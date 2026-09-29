@@ -3,9 +3,12 @@ import PrecastBlogSection from "../components/PrecastBlogSection";
 import Link from "next/link";
 import { ArrowLeft, Box, ShieldCheck } from "lucide-react";
 
+import { ALL_SEO_KEYWORDS } from "../layout";
+
 export const metadata = {
-  title: "Precast Concrete Engineering Blog & Technical Directory | PEG",
-  description: "Explore technical articles, CAD blueprints, video demonstrations, and structural load analysis for heavy precast concrete products.",
+  title: "Precast Concrete Engineering Blog, Drawings & Drafting Vault | PEG",
+  description: "Technical articles, precast concrete drawings, culvert drawings, manhole drawings, catch basin drawings, trench drawings, septic tank drawings, and precast testing guides.",
+  keywords: ALL_SEO_KEYWORDS,
 };
 
 export default function PrecastBlogListingPage() {

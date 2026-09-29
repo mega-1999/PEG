@@ -35,8 +35,21 @@ export async function generateMetadata({ params }: BlogPageProps) {
   }
 
   return {
-    title: `${post.title} | PEG Precast Technical Vault`,
+    title: `${post.title} | PEG Precast Concrete Engineering & Drawings`,
     description: post.excerpt,
+    keywords: [
+      post.category,
+      "PRECAST ENGINEERS",
+      "PRECAST CONCRETE ENGINEERS",
+      "PRECAST ENGINEERING",
+      "PRECAST CONCRETE ENGINEERING",
+      "precast drawings",
+      "precast concrete drawings",
+      "precast drafting",
+      "design precast concrete",
+      "precast testing",
+      "precast certifications"
+    ]
   };
 }
 

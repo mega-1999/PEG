@@ -141,15 +141,57 @@ export default function ExtraordinaryFooter() {
                     ))}
                 </div>
 
+                {/* SEO KEYWORDS INDEX & CAPABILITIES DIRECTORY */}
+                <div className="border-b mb-8 border-slate-100/20 pb-8 pt-4">
+                    <h4 className="text-white text-[10px] font-mono font-black uppercase tracking-[0.25em] mb-4 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-[#1B79EE]" />
+                        <span>PRECAST ENGINEERING & DRAFTING CAPABILITIES DIRECTORY</span>
+                    </h4>
+                    <div className="flex flex-wrap gap-2 text-[10px] font-mono font-bold text-white/70 uppercase">
+                        {[
+                            "PRECAST ENGINEERS",
+                            "PRECAST CONCRETE ENGINEERS",
+                            "PRECAST ENGINEERING",
+                            "PRECAST CONCRETE ENGINEERING",
+                            "precast drawings",
+                            "precast concrete drawings",
+                            "precast drafting",
+                            "precast concrete drafting",
+                            "DESIGN PRECAST CONCRETE",
+                            "design precast",
+                            "PRECAST TESTING",
+                            "PRECAST CONCRETE TESTING",
+                            "PRECAST CERTIFICATIONS",
+                            "PRECAST CONCRETE CERTIFICATIONS",
+                            "drawings for precast",
+                            "drawings for precast concrete",
+                            "culvert drawings",
+                            "precast concrete culvert drawings",
+                            "d box drawings",
+                            "manhole drawings",
+                            "catch basin drawings",
+                            "trench drawings",
+                            "septic tank drawings",
+                            "grease trap drawings"
+                        ].map((kw, i) => (
+                            <span 
+                                key={i}
+                                className="px-2.5 py-1 bg-white/10 hover:bg-[#1B79EE] hover:text-white border border-white/15 transition-colors cursor-default"
+                            >
+                                {kw}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
                 {/* BOTTOM BAR: LEGAL & STATUS */}
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="font-mono text-[9px] text-white/80 font-bold tracking-widest flex items-center gap-8">
-                        <span>© 2026 PRECAST ENGINEERING GROUP</span>
+                        <span>© 2026 PRECAST ENGINEERING GROUP (PEG)</span>
                         <span className="hidden md:block w-[1px] h-3 bg-slate-200" />
                         <span className="hover:text-white cursor-pointer transition-colors uppercase">Privacy Policy</span>
                         <span className="hover:text-white cursor-pointer transition-colors uppercase">Terms of Service</span>
                     </div>
-
                 </div>
 
             </div>

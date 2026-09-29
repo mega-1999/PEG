@@ -14,8 +14,12 @@ export function getAssetUrl(path?: string): string {
   const sanitizedPath = path.replace(/ /g, "_");
   const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
 
-  // Video files are served directly from application static files (public/assets/video/)
-  if (cleanPath.startsWith("/assets/video/")) {
+  // Local assets under /assets/ or /PrecastIndustry_Links/ are served directly
+  if (
+    cleanPath.startsWith("/assets/") || 
+    cleanPath.startsWith("/PrecastIndustry_Links/") ||
+    cleanPath.startsWith("/uploads/")
+  ) {
     return cleanPath;
   }
 

@@ -48,6 +48,44 @@ export default function AdminPage() {
   const [editingSlug, setEditingSlug] = useState<string | null>(null);
   const [saveLoading, setSaveLoading] = useState<boolean>(false);
   const [feedbackMsg, setFeedbackMsg] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [uploadingCover, setUploadingCover] = useState<boolean>(false);
+  const [uploadingVideo, setUploadingVideo] = useState<boolean>(false);
+
+  // File Upload Handler (Cloudflare R2 / Local)
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, targetField: "coverImage" | "featuredVideo") => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (targetField === "coverImage") setUploadingCover(true);
+    if (targetField === "featuredVideo") setUploadingVideo(true);
+
+    try {
+      const data = new FormData();
+      data.append("file", file);
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: data,
+      });
+
+      const json = await res.json();
+      if (json.success) {
+        const finalUrl = json.url || json.cloudflareUrl;
+        setFormData((prev) => ({
+          ...prev,
+          [targetField]: finalUrl,
+        }));
+        setFeedbackMsg({ type: "success", text: `File "${file.name}" uploaded successfully!` });
+      } else {
+        alert(`Upload failed: ${json.error}`);
+      }
+    } catch (err: any) {
+      alert(`Upload error: ${err.message}`);
+    } finally {
+      if (targetField === "coverImage") setUploadingCover(false);
+      if (targetField === "featuredVideo") setUploadingVideo(false);
+    }
+  };
 
   // Form Fields
   const [formData, setFormData] = useState<Partial<PrecastBlogPost>>({
@@ -575,21 +613,21 @@ export default function AdminPage() {
 
       {/* CREATE / EDIT ARTICLE MODAL */}
       {isEditorOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 bg-[#004aad]/80 backdrop-blur-md">
-          <div className="bg-white border-2 border-[#1B79EE] shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
+        <div className="fixed inset-0 z-[9999] overflow-y-auto bg-[#004aad]/85 backdrop-blur-md p-4 sm:p-6 md:p-10 flex justify-center items-start pt-16 md:pt-24 pb-20">
+          <div className="bg-white border-2 border-[#1B79EE] shadow-2xl w-full max-w-4xl flex flex-col overflow-hidden relative my-auto">
             {/* MODAL HEADER */}
-            <div className="bg-[#004aad] text-white p-4 px-6 flex items-center justify-between">
+            <div className="bg-[#004aad] text-white p-4 px-6 flex items-center justify-between shrink-0 border-b border-[#1B79EE]/30">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest font-bold">
                 <Sparkles className="w-4 h-4 text-[#1B79EE]" />
                 <span>{editingSlug ? `Editing: ${editingSlug}` : "Create New Engineering Article"}</span>
               </div>
-              <button onClick={() => setIsEditorOpen(false)} className="hover:opacity-70">
+              <button onClick={() => setIsEditorOpen(false)} className="hover:opacity-70 p-1">
                 <X className="w-5 h-5 text-white" />
               </button>
             </div>
 
             {/* MODAL FORM */}
-            <form onSubmit={handleSavePost} className="p-6 overflow-y-auto space-y-6 text-xs text-[#004aad]">
+            <form onSubmit={handleSavePost} className="p-6 overflow-y-auto space-y-6 text-xs text-[#004aad] max-h-[80vh]">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
@@ -688,28 +726,88 @@ export default function AdminPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="font-mono font-bold uppercase">Cover Image URL *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.coverImage || ""}
-                    onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
-                    placeholder="/assets/images/Box_Culvert/13.jpeg"
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
-                  />
-                </div>
+              {/* MEDIA ASSETS: COVER IMAGE & FEATURED VIDEO WITH CLOUDFLARE UPLOADS */}
+              <div className="p-4 bg-blue-50/40 border border-[#1B79EE]/20 space-y-4">
+                <h3 className="font-mono font-black uppercase text-[10px] tracking-widest text-[#004aad] flex items-center justify-between">
+                  <span>Media Assets (Cloudflare R2 CDN Storage)</span>
+                  <span className="text-[#1B79EE] font-bold">Auto-Generates Cloudflare CDN URLs</span>
+                </h3>
 
-                <div className="space-y-1">
-                  <label className="font-mono font-bold uppercase">Featured Video URL (Optional)</label>
-                  <input
-                    type="text"
-                    value={formData.featuredVideo || ""}
-                    onChange={(e) => setFormData({ ...formData, featuredVideo: e.target.value })}
-                    placeholder="/assets/video/E20_V1_final.mp4"
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* COVER IMAGE INPUT + CLOUDFLARE UPLOAD BUTTON */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <label className="font-mono font-bold uppercase flex items-center gap-1.5">
+                        <ImageIcon className="w-3.5 h-3.5 text-[#1B79EE]" />
+                        <span>Cover Image URL *</span>
+                      </label>
+                    </div>
+                    <input
+                      type="text"
+                      required
+                      value={formData.coverImage || ""}
+                      onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
+                      placeholder="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/..."
+                      className="w-full p-2.5 bg-white border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    />
+                    <label className="inline-flex items-center gap-2 px-3 py-2 bg-[#004aad] hover:bg-[#1B79EE] text-white text-[11px] font-mono font-bold uppercase tracking-wider cursor-pointer transition-colors shadow-sm w-full justify-center">
+                      {uploadingCover ? (
+                        <>
+                          <RefreshCw className="w-3.5 h-3.5 animate-spin text-white" />
+                          <span>Uploading Cover to Cloudflare...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Upload className="w-3.5 h-3.5" />
+                          <span>Upload Image to Cloudflare R2</span>
+                        </>
+                      )}
+                      <input
+                        type="file"
+                        accept="image/*"
+                        disabled={uploadingCover}
+                        onChange={(e) => handleFileUpload(e, "coverImage")}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
+
+                  {/* FEATURED VIDEO INPUT + CLOUDFLARE UPLOAD BUTTON */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between">
+                      <label className="font-mono font-bold uppercase flex items-center gap-1.5">
+                        <Video className="w-3.5 h-3.5 text-[#1B79EE]" />
+                        <span>Featured Video URL (Optional)</span>
+                      </label>
+                    </div>
+                    <input
+                      type="text"
+                      value={formData.featuredVideo || ""}
+                      onChange={(e) => setFormData({ ...formData, featuredVideo: e.target.value })}
+                      placeholder="https://pub-2f3b9c4456934c568f5c9429715562aa.r2.dev/..."
+                      className="w-full p-2.5 bg-white border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    />
+                    <label className="inline-flex items-center gap-2 px-3 py-2 bg-[#004aad] hover:bg-[#1B79EE] text-white text-[11px] font-mono font-bold uppercase tracking-wider cursor-pointer transition-colors shadow-sm w-full justify-center">
+                      {uploadingVideo ? (
+                        <>
+                          <RefreshCw className="w-3.5 h-3.5 animate-spin text-white" />
+                          <span>Uploading Video to Cloudflare...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Upload className="w-3.5 h-3.5" />
+                          <span>Upload Video to Cloudflare R2</span>
+                        </>
+                      )}
+                      <input
+                        type="file"
+                        accept="video/*"
+                        disabled={uploadingVideo}
+                        onChange={(e) => handleFileUpload(e, "featuredVideo")}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
                 </div>
               </div>
 

@@ -37,7 +37,7 @@ export default function FutureCulvertComponent() {
     <section className="w-full bg-[#004aad] overflow-hidden flex flex-col select-none">
       
       {/* 1. HEADER STRIP */}
-      <div className="w-full px-10 md:px-20 py-8 flex justify-between items-end border-b border-white/10 relative z-30">
+      <div className="w-full px-10 md:px-20 pt-6 flex justify-between items-end border-b border-white/10 relative z-30">
         <div className="space-y-2">
           <h2 className="text-white text-3xl md:text-5xl font-black tracking-tighter leading-[0.9]">
             THE FUTURE OF <br />
@@ -48,14 +48,14 @@ export default function FutureCulvertComponent() {
       </div>
 
       {/* 2. TRIPTYCH GRID: The 3 vertical panels */}
-      <div className="w-full px-10 md:px-20 py-8 flex-grow grid grid-cols-1 md:grid-cols-3 h-full">
+      <div className="w-full px-10 md:px-20 py-4 flex-grow grid grid-cols-1 md:grid-cols-3 h-full gap-6">
         {futureInitiatives.map((item, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: idx * 0.2 }}
-            className="group relative flex flex-col justify-end p-12 overflow-hidden border-r border-white/10 last:border-r-0 min-h-[600px] cursor-pointer"
+            className="group relative flex flex-col justify-end p-6 overflow-hidden border-r border-white/10 last:border-r-0 min-h-[400px] cursor-pointer"
           >
             
             {/* Background Image Container with established zoom-out effect */}
@@ -64,7 +64,7 @@ export default function FutureCulvertComponent() {
                     src={getAssetUrl(item.img)} // UPDATED: Pulling different image from the array
                     alt={`PEG Future Culvert Concept - ${item.title}`}
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 80vw, 23vw"
                     priority={idx === 0} // Prioritize first panel
                     className="object-cover object-center grayscale-0 brightness-[0.4] group-hover:brightness-[0.8] transition-all duration-700"
                 />
@@ -74,7 +74,7 @@ export default function FutureCulvertComponent() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#004aad] via-[#004aad]/50 to-transparent z-10 transition-opacity duration-700 group-hover:opacity-20" />
 
             {/* MAIN CONTENT: Elevated above image and gradient */}
-            <div className="relative z-20 space-y-7">
+            <div className="relative z-20 space-y-3">
               <div className="flex justify-between items-center">
                 <div className="p-4 bg-white text-[#004aad] transition-transform duration-700 group-hover:rotate-[360deg]">
                   {item.icon}
@@ -107,7 +107,7 @@ export default function FutureCulvertComponent() {
             </div>
 
             {/* Decorative Column Number */}
-            <div className="absolute top-12 right-12 z-20 font-mono text-white/10 text-7xl font-black group-hover:text-[#1B79EE]/10 transition-colors cursor-default">
+            <div className="absolute top-8 right-12 z-20 font-mono text-white/10 text-7xl font-black group-hover:text-[#1B79EE]/10 transition-colors cursor-default">
               0{idx + 1}
             </div>
           </motion.div>

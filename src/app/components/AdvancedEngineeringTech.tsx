@@ -37,7 +37,7 @@ const techPillars = [
 
 export default function AdvancedEngineeringTech() {
   return (
-    <section className="w-full py-8 bg-white overflow-hidden relative">
+    <section className="w-full py-12 bg-white overflow-hidden relative">
       
       {/* Background Accent Lines */}
       <div className="absolute top-0 left-10 md:left-20 w-px h-full bg-[#004aad]/5 pointer-events-none" />
@@ -76,7 +76,7 @@ export default function AdvancedEngineeringTech() {
         </div>
 
         {/* STACKED HORIZONTAL GRID */}
-        <div className="border-t-4 border-[#004aad]">
+        <div className="border-t-4  mt-2 border-[#1B79EE]">
           {techPillars.map((pillar, idx) => (
             <motion.div
               key={pillar.id}

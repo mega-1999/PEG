@@ -142,7 +142,7 @@ export default function EngineeringExecuted() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className={`group relative p-8 md:p-10 border transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden
+              className={`group relative p-4 md:p-6 border transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden
                 ${service.highlight 
                   ? 'bg-[#004aad] text-white border-[#004aad] hover:bg-[#1B79EE] hover:border-[#1B79EE]' 
                   : 'bg-white text-[#004aad] border-slate-200 hover:border-[#1B79EE] hover:shadow-[15px_15px_0px_rgba(27,121,238,0.05)]'} 
@@ -150,7 +150,7 @@ export default function EngineeringExecuted() {
               `}
             >
               {/* Top Row: Icon & ID */}
-              <div className="flex justify-between items-start mb-12 relative z-10">
+              <div className="flex justify-between items-start mb-2 relative z-10">
                 <div className={`p-4 transition-colors duration-500 
                   ${service.highlight ? 'bg-white/10 text-white group-hover:bg-white group-hover:text-[#1B79EE]' : 'bg-slate-50 text-[#1B79EE] group-hover:bg-[#004aad] group-hover:text-white'}`}>
                   {service.icon}

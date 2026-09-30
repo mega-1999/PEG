@@ -151,13 +151,13 @@ export default function EntrySystem() {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={isInitialized ? { opacity: 1 } : {}}
-                className="fixed top-0.5 right-4 z-[100] flex items-center"
+                className="fixed bottom-80 right-8 z-[100] flex items-center"
             >
                 <button
                     onClick={toggleMute}
-                    className="text-white transition-colors"
+                    className=" transition-colors flex items-center justify-center cursor-pointer w-12 h-12 rounded-full bg-[#004aad] border border-[#1B79EE]/30 text-white "
                 >
-                    {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
+                    {isMuted ? <VolumeX className=' w-6 h-6 rounded-full flex items-center justify-center'  /> : <Volume2 className=" w-6 h-6 rounded-full flex items-center justify-center" />}
                 </button>
             </motion.div>
         </>

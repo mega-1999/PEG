@@ -115,7 +115,7 @@ export const Navbar = () => {
         <div className="h-full flex justify-end items-center gap-2 text-[11px] font-bold tracking-wider">
           <div className="uppercase hidden md:block">PEG</div>
           <div className="uppercase hidden md:block">|</div>
-          <div className="hidden md:block">peg.com</div>
+          <div className="hidden md:block">precastengineering.org</div>
         </div>
         <div className="h-full flex justify-end items-center gap-6 pr-14 xl:pr-0 text-[11px] font-bold tracking-wider">
 
@@ -123,7 +123,7 @@ export const Navbar = () => {
             BLOG
           </Link>
 
-          <Link href={'#portal'}>
+          <Link href={'/admin'}>
             <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
               PORTALS <ChevronDown className="w-3 h-3" />
             </button>
@@ -156,8 +156,8 @@ export const Navbar = () => {
               src={getAssetUrl("/PEG.png")}
               alt="PEG Precast Engineering Group"
               width={260}
-              height={44}
-              className="h-10 w-auto object-contain"
+              height={54}
+              className="h-14 w-auto object-contain"
               priority
             />
           </Link>

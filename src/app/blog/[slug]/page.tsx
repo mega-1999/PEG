@@ -87,7 +87,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
       <div className="w-full px-10 md:px-20 mt-8">
         
         {/* ARTICLE HEADER BLOCK */}
-        <div className="max-w-5xl mx-auto mb-10">
+        <div className=" mb-10">
           <div className="flex items-center gap-3 mb-4 flex-wrap">
             <span className="px-3.5 py-1 rounded-none bg-[#1B79EE] text-white text-xs font-black tracking-widest uppercase shadow-md shadow-[#1B79EE]/20">
               {post.category}
@@ -133,7 +133,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
         </div>
 
         {/* HERO MEDIA SHOWCASE (FEATURED VIDEO OR HIGH-RES COVER) */}
-        <div className="max-w-5xl mx-auto mb-14 rounded-none overflow-hidden bg-[#004aad] border-2 border-[#004aad]/20 shadow-2xl shadow-[#004aad]/10 relative">
+        <div className=" mb-14 rounded-none overflow-hidden bg-[#004aad] border-2 border-[#004aad]/20 shadow-2xl shadow-[#004aad]/10 relative">
           {post.featuredVideo ? (
             <div className="relative w-full aspect-video bg-[#004aad]">
               <video
@@ -164,7 +164,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
         </div>
 
         {/* MAIN TWO-COLUMN LAYOUT */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           
           {/* ARTICLE CONTENT (LEFT / MAIN) */}
           <div className="lg:col-span-8 space-y-12">
@@ -342,7 +342,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
         {/* RELATED ARTICLES */}
         {relatedPosts.length > 0 && (
-          <div className="max-w-5xl mx-auto mt-20 pt-12 border-t border-[#004aad]/10">
+          <div className=" mt-20 pt-12 border-t border-[#004aad]/10">
             <h2 className="text-2xl font-black text-[#004aad] uppercase tracking-tight mb-8">
               Related Structural Precast Articles
             </h2>

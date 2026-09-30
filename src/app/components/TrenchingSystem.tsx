@@ -253,7 +253,7 @@ export default function TrenchingSystem() {
     : trenchProducts.filter(p => p.category === selectedCategory);
 
   return (
-    <section className="relative w-full bg-white py-20 border-t border-[#004aad]/10 select-none">
+    <section className="relative w-full bg-white py-12 border-t border-[#004aad]/10 select-none">
       
       {/* CAD WATERMARK BACKGROUND */}
       <div 

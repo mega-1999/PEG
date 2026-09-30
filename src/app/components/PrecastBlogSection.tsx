@@ -57,7 +57,7 @@ export default function PrecastBlogSection() {
   const gridPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
-    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#004aad] py-10 overflow-hidden select-none border-t border-[#004aad]/10">
+    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#004aad] py-4 overflow-hidden select-none border-t border-[#004aad]/10">
       
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div 
@@ -75,7 +75,7 @@ export default function PrecastBlogSection() {
       <div className="relative w-full px-10 md:px-20 z-10">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-[#004aad]/10 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-4 border-b border-[#004aad]/10 pb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase rounded-full mb-4 border border-[#1B79EE]/20">
               <Box className="w-3.5 h-3.5" /> Precast Knowledge Vault

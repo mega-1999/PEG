@@ -33,7 +33,7 @@ const manifestoData = [
 
 export default function PrecasterManifesto() {
   return (
-    <section className="w-full py-4 bg-white overflow-hidden relative">
+    <section className="w-full pt-12 bg-white overflow-hidden relative">
       
       {/* STANDARDIZED CONTAINER */}
       <div className="w-full px-10 md:px-20  relative z-10">
@@ -42,8 +42,6 @@ export default function PrecasterManifesto() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-4 gap-12  ">
           
           <div className="space-y-2 max-w-4xl">
-
-            
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -15,14 +15,14 @@ export default function PrecastBlogListingPage() {
   return (
     <main className="min-h-screen bg-[#004aad]/5 text-[#004aad] selection:bg-[#1B79EE] selection:text-white pt-30">
       {/* TOP DIRECTORY HEADER BAR */}
-      <div className="bg-white border-b border-[#004aad]/10 py-6 px-4 sm:px-6 lg:px-8 shadow-sm">
+      <div className="bg-white border-b border-[#004aad]/10 py-1 shadow-sm">
         <div className="w-full px-10 md:px-20 flex items-center justify-between">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-xs font-bold text-[#004aad]/70 hover:text-[#004aad] uppercase tracking-wider transition-colors"
           >
             <ArrowLeft className="w-4 h-4 text-[#1B79EE]" />
-            <span>Return to Main Site</span>
+            <span>Return to Home Page</span>
           </Link>
 
           <div className="flex items-center gap-2 text-xs font-extrabold text-[#004aad] uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full border border-[#1B79EE]/20 shadow-sm">

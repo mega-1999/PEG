@@ -77,11 +77,11 @@ const services = [
 
 export default function PegServices() {
   return (
-    <section className="w-full bg-white py-16 border-b border-[#004aad]/10">
+    <section className="w-full bg-white py-4 border-b border-[#004aad]/10">
       <div className="w-full px-10 md:px-20">
         
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="mb-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#1B79EE]">
             Core Competencies
           </div>
@@ -103,7 +103,7 @@ export default function PegServices() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-[#004aad]/10 hover:border-[#1B79EE] hover:shadow-[0_15px_40px_-10px_rgba(27,121,238,0.2)] transition-all duration-500 group flex flex-col overflow-hidden"
+              className="bg-white border hover:border-[#004aad]/10 border-[#1B79EE] hover:shadow-[0_15px_40px_-10px_rgba(27,121,238,0.2)] transition-all duration-500 group flex flex-col overflow-hidden"
             >
               {/* VIDEO LOOP SHOWCASE THUMBNAIL */}
               <div className="relative w-full aspect-video bg-[#004aad] overflow-hidden shrink-0 border-b border-[#004aad]/10">
@@ -126,7 +126,7 @@ export default function PegServices() {
               </div>
 
               {/* CARD CONTENT */}
-              <div className="p-6 flex-grow flex flex-col justify-between">
+              <div className="p-2 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="w-10 h-10 bg-blue-50 border border-[#1B79EE]/20 flex items-center justify-center text-[#004aad] mb-4 group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
                     {service.icon}
@@ -136,7 +136,7 @@ export default function PegServices() {
                     {service.title}
                   </h3>
 
-                  <p className="text-[#004aad]/70 text-xs font-medium leading-relaxed mb-6">
+                  <p className="text-[#004aad]/70 text-xs font-medium leading-relaxed">
                     {service.description}
                   </p>
                 </div>

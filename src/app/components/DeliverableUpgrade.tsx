@@ -2,121 +2,103 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileSignature, PenTool, BookOpenCheck, ArrowRight } from 'lucide-react';
+import { FileSignature, PenTool, BookOpenCheck, ArrowRight, ShieldCheck } from 'lucide-react';
 
 const upgradeFeatures = [
   {
     title: "Powerful Submittals",
-    subtitle: "Streamlined Documentation & Approval Support",
-    description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for Approval-Ready Documentation.",
-    icon: <FileSignature className="w-8 h-8" />,
+    subtitle: "Streamlined Documentation",
+    description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for immediate agency approval.",
+    icon: <FileSignature className="w-6 h-6" />,
+    tag: "PE STAMPED"
   },
   {
     title: "Precision Illustrations",
     subtitle: "Multi-Dimensional Clarity",
-    description: "Eliminate site-level confusion. We deliver Specified-Tolerance shop drawings, mold component detailing, and step-by-step erection sequencing.",
-    icon: <PenTool className="w-8 h-8" />,
+    description: "Eliminate site-level confusion. We deliver specified-tolerance shop drawings, mold component detailing, and step-by-step erection sequencing.",
+    icon: <PenTool className="w-6 h-6" />,
+    tag: "SHOP DRAWINGS"
   },
   {
     title: "Dynamic Standards",
     subtitle: "Always Code-Compliant",
     description: "Never fall behind. Our drafting protocols are continuously synchronized with the latest PCI, AASHTO, ASTM, and state-specific DOT master specifications.",
-    icon: <BookOpenCheck className="w-8 h-8" />,
+    icon: <BookOpenCheck className="w-6 h-6" />,
+    tag: "AASHTO & PCI"
   }
 ];
 
 export default function DeliverableUpgrade() {
   return (
-    <section className="relative w-full bg-[#004aad] text-white overflow-hidden">
+    <section className="relative w-full bg-white text-[#004aad] py-16 px-6 md:px-16 lg:px-20 border-t border-[#004aad]/10 select-none">
       
-      {/* BACKGROUND BLUEPRINT GRID */}
-      <div 
-        className="absolute inset-0 z-0 opacity-10 pointer-events-none"
-        style={{ 
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px' 
-        }}
-      />
-
-      {/* GLOWING ACCENT (Behind the grid) */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1B79EE] rounded-full blur-[200px] opacity-30 pointer-events-none" />
-
-      <div className="w-full px-10 md:px-20 py-8 relative z-10 mx-auto">
-        
-        {/* 1. MASSIVE TYPOGRAPHY HEADER */}
-        <div className="max-w-5xl mb-8 space-y-6">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase">
-            Upgrade your <br />
-            {/* ONLY White and Bright Blue used here */}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#1B79EE]">
-              Precast Drawings.
-            </span>
+      {/* 1. HEADER */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#004aad]/10 pb-8">
+        <div className="space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+            <ShieldCheck className="w-3.5 h-3.5" /> Production Acceleration
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            Upgrade Your <span className="text-[#1B79EE]">Precast Drawings.</span>
           </h2>
-          
-          <p className="text-xl md:text-lg text-white/80 font-medium max-w-3xl leading-relaxed mt-2 border-l-4 border-[#1B79EE] pl-6">
-            Stop losing time on revisions. Elevate your production pipeline with Comprehensive Submittals, High-Accuracy illustrations, and non-stop code compliance.
+          <p className="text-[#004aad] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
+            Stop losing time on revisions. Elevate your production pipeline with comprehensive submittals, high-accuracy illustrations, and non-stop code compliance.
           </p>
         </div>
 
-        {/* 2. THE THREE-PILLAR UPGRADE GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {upgradeFeatures.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.15 }}
-              viewport={{ once: true }}
-              // CARD BACKGROUND: White -> Hovers to PEG Bright Blue
-              className="group relative bg-white border border-[#004aad]/10 px-10 py-6 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
-            >
-              
+        <div className="flex items-center gap-3">
+          <a
+            href="#contact"
+            className="px-5 py-3 bg-[#004aad] hover:bg-[#1B79EE] text-white text-xs font-mono font-black uppercase tracking-wider transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
+          >
+            <span>Request Sample Drawings</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </div>
+
+      {/* 2. THREE-COLUMN PILLAR GRID */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {upgradeFeatures.map((feature, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            viewport={{ once: true }}
+            className="group bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-xl transition-all duration-300 p-8 flex flex-col justify-between"
+          >
+            <div>
               {/* TOP STRIP */}
-              <div className="flex justify-between items-start mb-8 relative z-10">
-                {/* ICON BOX: Dark Blue -> Hovers to White */}
-                <div className="p-5 bg-[#004aad] text-white group-hover:bg-white group-hover:text-[#1B79EE] transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-6 group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)]">
+              <div className="flex justify-between items-start mb-6">
+                <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
+                <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-blue-50/70 px-2.5 py-1 border border-[#1B79EE]/20">
+                  {feature.tag}
+                </span>
               </div>
 
               {/* CONTENT */}
-              <div className="relative z-10 flex-grow">
-                {/* Subtitle: Bright Blue -> Hovers to White */}
-                <p className="text-[#1B79EE] group-hover:text-white font-black text-[10px] uppercase tracking-widest mb-3 transition-colors duration-500">
-                  {feature.subtitle}
-                </p>
-                {/* Title: Dark Blue -> Hovers to White */}
-                <h3 className="text-[#004aad] group-hover:text-white text-xl font-black uppercase tracking-tighter mb-3 leading-none transition-colors duration-500">
-                  {feature.title}
-                </h3>
-                {/* Description: Dark Blue faded -> Hovers to White faded */}
-                <p className="text-[#004aad]/80 group-hover:text-white/90 text-sm leading-relaxed font-medium transition-colors duration-500">
-                  {feature.description}
-                </p>
-              </div>
+              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest block mb-1">
+                {feature.subtitle}
+              </span>
+              <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight group-hover:text-[#1B79EE] transition-colors mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-[#004aad] font-semibold leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
 
-              {/* ACTION FOOTER */}
-              {/* Border: Dark Blue faded -> Hovers to White faded */}
-              <div className="mt-4 pt-4 border-t border-[#004aad]/10 group-hover:border-white/30 flex justify-between items-center relative z-10 transition-colors duration-500">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#004aad] group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  Initialize Upgrade
-                </span>
-                {/* Arrow: Dark Blue -> Hovers to White */}
-                <ArrowRight className="w-5 h-5 text-[#004aad]/30 group-hover:text-white transition-colors duration-500" />
-              </div>
-
-              {/* HOVER ACCENT: Large background watermark icon */}
-              {/* Dark Blue -> Hovers to White */}
-              <div className="absolute -bottom-10 -right-10 opacity-[0.03] group-hover:opacity-10 transition-opacity duration-700 pointer-events-none">
-                <div className="scale-[4] text-[#004aad] group-hover:text-white transition-colors duration-500">
-                  {feature.icon}
-                </div>
-              </div>
-              
-            </motion.div>
-          ))}
-        </div>
-
+            <div className="mt-6 pt-4 border-t border-[#004aad]/10 flex justify-between items-center">
+              <span className="text-[10px] font-mono font-bold text-[#004aad] uppercase">Professional Standard</span>
+              <span className="text-xs font-black text-[#1B79EE] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                Details <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

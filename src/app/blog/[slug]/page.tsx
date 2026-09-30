@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getRelatedBlogPosts } from "@/app/data/precastBlogs";
-import { fetchBlogPostBySlug } from "@/lib/blogService";
+import { fetchAllBlogPosts, fetchBlogPostBySlug } from "@/lib/blogService";
 import ShareArticleButton from "@/app/components/ShareArticleButton";
 import { 
   ArrowLeft, 
@@ -61,7 +60,10 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
     notFound();
   }
 
-  const relatedPosts = getRelatedBlogPosts(post.relatedSlugs);
+  const allPosts = await fetchAllBlogPosts();
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== post.slug && (post.relatedSlugs?.includes(p.slug) || p.category === post.category))
+    .slice(0, 3);
 
   return (
     <main className="min-h-screen bg-white text-[#004aad] selection:bg-[#1B79EE] selection:text-white pt-28 pb-20">

@@ -293,8 +293,8 @@ export default function AdminPage() {
   // Render Login UI
   if (!isAuthenticated) {
     return (
-      <main className="min-h-screen bg-[#004aad] flex items-center justify-center p-6 selection:bg-[#1B79EE] selection:text-white">
-        <div className="w-full max-w-md bg-white rounded-none border-2 border-[#1B79EE] shadow-2xl p-8 space-y-6">
+      <main className="min-h-screen bg-white flex items-center justify-center p-6 selection:bg-[#1B79EE] selection:text-white border-t border-[#004aad]/10">
+        <div className="w-full max-w-md bg-white rounded-none border-2 border-[#004aad]/20 shadow-xl p-8 space-y-6">
           <div className="text-center space-y-2">
             <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 text-[#004aad] border border-[#1B79EE]/20 mb-2">
               <ShieldCheck className="w-8 h-8 text-[#1B79EE]" />

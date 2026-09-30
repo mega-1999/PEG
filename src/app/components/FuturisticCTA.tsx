@@ -7,94 +7,44 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full px-10 md:px-20 py-12 bg-[#004aad] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full px-6 md:px-16 lg:px-20 py-16 bg-white border-t border-[#004aad]/10 select-none flex items-center justify-center">
       
-      {/* BACKGROUND: Futuristic CAD Grid & Glows */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-        
-      />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#004aad] rounded-full blur-[150px] opacity-30 z-0 pointer-events-none" />
-
-      {/* CONTENT CONTAINER */}
-      <div className="relative z-10 w-full flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-5xl bg-blue-50/50 border-2 border-[#004aad]/20 p-8 md:p-14 flex flex-col items-center text-center shadow-sm">
         
         {/* Eyebrow Label */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 bg-[#004aad]/20 border border-[#1B79EE]/70 px-6 py-2 mb-8 backdrop-blur-sm"
-        >
-          <Box className="w-4 h-4 text-white animate-pulse" />
-          <span className="font-mono text-[11px] font-black uppercase tracking-[0.4em] text-white">
-            Attention Precasters
-          </span>
-          <Box className="w-4 h-4 text-white animate-pulse" />
-        </motion.div>
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#004aad] text-white text-xs font-black tracking-[0.25em] uppercase mb-6 shadow-xs">
+          <Box className="w-3.5 h-3.5 text-[#1B79EE]" /> Attention Precasters
+        </div>
 
         {/* Main Headline */}
-        <motion.h2 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-6"
-        >
-          PEG YOUR 
-          <span className="text-transparent bg-clip-text pl-2 bg-gradient-to-r from-white to-[#1B79EE]">
-            IDEAS.
-          </span>
-        </motion.h2>
+        <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter leading-[0.9] mb-4">
+          PEG Your <span className="text-[#1B79EE]">Ideas.</span>
+        </h2>
 
-        {/* Sub-headline / Tagline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col items-center gap-4 mb-16"
-        >
-          <p className="text-lg md:text-2xl font-bold text-[#1B79EE] tracking-tight leading-snug">
-            Trust in us for <span className="text-white italic">futuristic</span> precasting.
-          </p>
-          <div className="flex items-center gap-6 mt-4 opacity-70">
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white">
-              <ShieldCheck className="w-4 h-4" /> Unwavering Trust
-            </div>
-            <div className="w-1 h-1 bg-white/30 rounded-full" />
-            <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white">
-              <Cpu className="w-4 h-4" /> Next-Gen Engineering
-            </div>
+        {/* Sub-headline */}
+        <p className="text-base md:text-xl font-bold text-[#004aad] tracking-tight leading-snug max-w-2xl mb-8">
+          Trust in our specialized engineering team for precision precast structural calculations, shop drawings, and turnkey submittals.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center gap-6 mb-8 text-xs font-mono font-bold text-[#004aad]">
+          <div className="flex items-center gap-2 bg-white px-3.5 py-1.5 border border-[#1B79EE]/20 shadow-xs">
+            <ShieldCheck className="w-4 h-4 text-[#1B79EE]" /> Stamped Submittals
           </div>
-        </motion.div>
+          <div className="flex items-center gap-2 bg-white px-3.5 py-1.5 border border-[#1B79EE]/20 shadow-xs">
+            <Cpu className="w-4 h-4 text-[#1B79EE]" /> Next-Gen Precast Tech
+          </div>
+        </div>
 
-        {/* Brutalist Action Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+        {/* Action Button */}
+        <Link 
+          href="#contact"
+          className="inline-flex items-center justify-center gap-3 bg-[#004aad] hover:bg-[#1B79EE] text-white h-13 px-8 text-xs font-mono font-black uppercase tracking-[0.2em] transition-all shadow-md cursor-pointer"
         >
-          <Link 
-            href="#contact"
-            className="group relative inline-flex items-center justify-center gap-3 bg-white text-[#004aad] h-14 px-10 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)]"
-          >
-            {/* Hover Sweep Effect */}
-            <div className="absolute inset-0 bg-[#1B79EE] translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
-            
-            <span className="relative z-10 font-mono text-sm font-black uppercase tracking-[0.2em] group-hover:text-white transition-colors">
-              Initiate Deployment
-            </span>
-            <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-white transition-transform" />
-          </Link>
-        </motion.div>
+          <span>Initiate Project Consultation</span>
+          <ArrowRight className="w-4 h-4" />
+        </Link>
 
       </div>
-
-      {/* Decorative Border Bottom */}
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#004aad] via-[#1B79EE] to-[#004aad]" />
     </section>
   );
 }

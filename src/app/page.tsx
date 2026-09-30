@@ -80,11 +80,11 @@ export default function Home() {
       <SeamlessConnection />
       
       {/* 6. PORTALS & RESOURCES */}
-      <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
+      <section id="portal" className="w-full bg-white text-[#004aad] overflow-hidden relative border-t border-[#004aad]/10">
         <LoginGateway />
       </section>
       
-      <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
+      <section id="technical-vault" className="w-full bg-white text-[#004aad] overflow-hidden relative border-t border-[#004aad]/10">
         <GridContent />
       </section>
       
@@ -100,7 +100,7 @@ export default function Home() {
       <MeetAtShows />
       <FuturisticCTA />
       
-      <section id="contact" className="w-full bg-[#004aad] text-white overflow-hidden relative">
+      <section id="contact" className="w-full bg-white text-[#004aad] overflow-hidden relative border-t border-[#004aad]/10">
         <ContactTerminal />
         <InnovativeContactComponent/>
       </section>

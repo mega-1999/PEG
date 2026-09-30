@@ -41,7 +41,7 @@ export default function SponsorMarquee() {
                     <motion.div
                         animate={{ x: ["0%", "-50%"] }}
                         transition={{
-                            duration: 25, // Adjust speed here (higher number = slower speed)
+                            duration: 45, // Reduced speed for relaxed, smooth loop
                             ease: "linear",
                             repeat: Infinity,
                         }}

@@ -7,7 +7,6 @@ import {
   TerminalSquare, Building2, UserCircle 
 } from 'lucide-react';
 
-// Using your exact corrected location data
 const globalNodes = {
   usa: [
     { region: "Northeast", address: "105 Maxess Road", city: "Melville, NY 11747", phone: "(631) 452-1111" },
@@ -39,7 +38,6 @@ export default function ContactTerminal() {
     e.preventDefault();
     setErrorMessage(null);
 
-    // Basic email format check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formState.email)) {
       setErrorMessage("Please provide a valid email address.");
@@ -48,8 +46,7 @@ export default function ContactTerminal() {
 
     setIsSubmitting(true);
     try {
-      // Simulate secure transmission handshake
-      await new Promise(resolve => setTimeout(resolve, 1200));
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitSuccess(true);
       setFormState({ name: '', company: '', email: '', phone: '', subject: '', message: '' });
       setTimeout(() => setSubmitSuccess(false), 6000);
@@ -61,73 +58,59 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section className="w-full py-32 bg-[#004aad] text-white overflow-hidden relative font-sans">
+    <section className="w-full py-16 md:py-24 bg-white text-[#004aad] overflow-hidden relative select-none">
       
-      {/* Background Tech Grid */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
-        style={{ backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`, backgroundSize: '50px 50px' }}
-      />
-
-      <div className="w-full px-10 md:px-20 relative z-10">
+      <div className="w-full px-6 md:px-16 lg:px-20 relative z-10">
         
         {/* TERMINAL HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-10">
-          <div className="space-y-4 max-w-4xl">
-            <div className="flex items-center gap-3 text-white font-mono text-[10px] font-black uppercase tracking-[0.5em]">
-              <Server className="w-4 h-4 text-[#1B79EE] animate-pulse" /> Global Communications Hub
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-[#004aad]/10 pb-8">
+          <div className="space-y-3 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+              <Server className="w-3.5 h-3.5" /> Direct Engineering Comms
             </div>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase">
-              INITIATE <br />
-              <span className="text-[#1B79EE]">
-                CONTACT.
-              </span>
+            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+              Initiate <span className="text-[#1B79EE]">Contact.</span>
             </h2>
-          </div>
-          <div className="hidden xl:block text-right max-w-sm">
-            <p className="text-white/80 font-mono text-[9px] uppercase tracking-widest leading-relaxed">
+            <p className="text-[#004aad] text-sm md:text-base font-semibold leading-relaxed">
               Connect directly with our engineering nodes across North America and International territories for immediate project telemetry.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-16 items-start">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-10 items-start">
           
           {/* LEFT PANEL: ACTIVE GLOBAL NODES (Spans 5 Columns) */}
-          <div className="xl:col-span-5 space-y-12">
+          <div className="xl:col-span-5 space-y-8">
             
             {/* USA Nodes */}
             <div>
-              <div className="flex items-center gap-3 border-b border-white/20 pb-4 mb-6">
-                <Globe className="w-5 h-5 text-[#1B79EE]" />
-                <h3 className="font-mono text-sm font-black uppercase tracking-widest text-white">United States Hubs</h3>
+              <div className="flex items-center gap-2 border-b border-[#004aad]/10 pb-3 mb-4">
+                <Globe className="w-4 h-4 text-[#1B79EE]" />
+                <h3 className="font-mono text-xs font-black uppercase tracking-widest text-[#004aad]">United States Hubs</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {globalNodes.usa.map((node, idx) => (
                   <motion.div 
                     key={idx}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="group flex gap-6 p-6 bg-white border border-[#004aad]/10 shadow-lg hover:border-[#1B79EE] hover:shadow-2xl transition-all duration-300"
+                    transition={{ delay: idx * 0.05 }}
+                    className="group flex gap-4 p-4 bg-white border border-[#004aad]/15 shadow-xs hover:border-[#1B79EE] hover:shadow-md transition-all duration-200"
                   >
-                    <div className="flex flex-col items-center gap-2 mt-1">
-                      <div className="w-2 h-2 rounded-full bg-[#1B79EE] group-hover:animate-ping absolute" />
-                      <div className="w-2 h-2 rounded-full bg-[#1B79EE] relative z-10" />
-                      <div className="w-px h-full bg-[#004aad]/10 group-hover:bg-[#1B79EE]/50 transition-colors" />
+                    <div className="flex flex-col items-center gap-1 mt-1">
+                      <div className="w-2 h-2 rounded-full bg-[#1B79EE]" />
+                      <div className="w-px h-full bg-[#004aad]/10 group-hover:bg-[#1B79EE]/40 transition-colors" />
                     </div>
-                    <div className="flex-1 space-y-3">
-                      <h4 className="text-lg font-black uppercase tracking-tighter text-[#004aad] group-hover:text-[#1B79EE] transition-colors">
+                    <div className="flex-1 space-y-1">
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#004aad] group-hover:text-[#1B79EE] transition-colors">
                         {node.region} Node
                       </h4>
-                      <div className="space-y-1.5">
-                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
-                          <MapPin className="w-3 h-3 text-[#1B79EE]" /> {node.address}, {node.city}
-                        </p>
-                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
-                          <Phone className="w-3 h-3 text-[#1B79EE]" /> {node.phone}
-                        </p>
-                      </div>
+                      <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-1.5 uppercase font-bold">
+                        <MapPin className="w-3 h-3 text-[#1B79EE]" /> {node.address}, {node.city}
+                      </p>
+                      <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-1.5 uppercase font-bold">
+                        <Phone className="w-3 h-3 text-[#1B79EE]" /> {node.phone}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -136,35 +119,33 @@ export default function ContactTerminal() {
 
             {/* International Nodes */}
             <div>
-              <div className="flex items-center gap-3 border-b border-white/20 pb-4 mb-6">
-                <Globe className="w-5 h-5 text-[#1B79EE]" />
-                <h3 className="font-mono text-sm font-black uppercase tracking-widest text-white">International Hubs</h3>
+              <div className="flex items-center gap-2 border-b border-[#004aad]/10 pb-3 mb-4">
+                <Globe className="w-4 h-4 text-[#1B79EE]" />
+                <h3 className="font-mono text-xs font-black uppercase tracking-widest text-[#004aad]">International Hubs</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {globalNodes.international.map((node, idx) => (
                   <motion.div 
                     key={idx}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (idx + 3) * 0.1 }}
-                    className="group flex gap-6 p-6 bg-white border border-[#004aad]/10 shadow-lg hover:border-[#1B79EE] hover:shadow-2xl transition-all duration-300"
+                    transition={{ delay: (idx + 3) * 0.05 }}
+                    className="group flex gap-4 p-4 bg-white border border-[#004aad]/15 shadow-xs hover:border-[#1B79EE] hover:shadow-md transition-all duration-200"
                   >
-                    <div className="flex flex-col items-center gap-2 mt-1">
-                      <div className="w-2 h-2 rounded-full bg-[#1B79EE] relative z-10 transition-colors" />
-                      <div className="w-px h-full bg-[#004aad]/10 group-hover:bg-[#1B79EE]/50 transition-colors" />
+                    <div className="flex flex-col items-center gap-1 mt-1">
+                      <div className="w-2 h-2 rounded-full bg-[#1B79EE]" />
+                      <div className="w-px h-full bg-[#004aad]/10 group-hover:bg-[#1B79EE]/40 transition-colors" />
                     </div>
-                    <div className="flex-1 space-y-3">
-                      <h4 className="text-lg font-black uppercase tracking-tighter text-[#004aad] group-hover:text-[#1B79EE] transition-colors">
+                    <div className="flex-1 space-y-1">
+                      <h4 className="text-sm font-black uppercase tracking-tight text-[#004aad] group-hover:text-[#1B79EE] transition-colors">
                         {node.region}
                       </h4>
-                      <div className="space-y-1.5">
-                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
-                          <MapPin className="w-3 h-3 text-[#1B79EE]" /> {node.address}, {node.city}
-                        </p>
-                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
-                          <Phone className="w-3 h-3 text-[#1B79EE]" /> {node.phone}
-                        </p>
-                      </div>
+                      <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-1.5 uppercase font-bold">
+                        <MapPin className="w-3 h-3 text-[#1B79EE]" /> {node.address}, {node.city}
+                      </p>
+                      <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-1.5 uppercase font-bold">
+                        <Phone className="w-3 h-3 text-[#1B79EE]" /> {node.phone}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -175,138 +156,126 @@ export default function ContactTerminal() {
 
           {/* RIGHT PANEL: TRANSMISSION FORM (Spans 7 Columns) */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="xl:col-span-7 bg-white border-2 border-[#004aad]/10 p-10 md:p-14 shadow-2xl relative"
+            transition={{ duration: 0.4 }}
+            className="xl:col-span-7 bg-white border border-[#004aad]/20 p-6 md:p-10 shadow-sm relative"
           >
-            {/* Form Decorative Accents */}
-            <div className="absolute top-0 left-0 w-full h-1 bg-[#1B79EE]" />
-            <div className="absolute -top-3 -right-3 w-6 h-6 border-t-2 border-r-2 border-[#1B79EE]" />
-            <div className="absolute -bottom-3 -left-3 w-6 h-6 border-b-2 border-l-2 border-[#1B79EE]" />
-
-            <div className="flex items-center justify-between mb-10">
-              <h3 className="text-xl font-black uppercase tracking-tighter text-[#004aad]">Project Telemetry Link</h3>
-              <TerminalSquare className="w-8 h-8 text-[#004aad]" />
+            <div className="flex items-center justify-between mb-8 pb-4 border-b border-[#004aad]/10">
+              <h3 className="text-lg md:text-xl font-black uppercase tracking-tight text-[#004aad]">
+                Direct Project Inquiry Form
+              </h3>
+              <TerminalSquare className="w-6 h-6 text-[#1B79EE]" />
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
               
-              {/* Row 1: Identity */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
-                    <UserCircle className="w-3 h-3 text-[#1B79EE]" /> Operative Name
+              {/* Row 1 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-1.5">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-1.5">
+                    <UserCircle className="w-3.5 h-3.5 text-[#1B79EE]" /> Contact Name
                   </label>
                   <input 
                     type="text" name="name" required
                     value={formState.name} onChange={handleChange}
                     placeholder="Enter Full Name"
-                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
+                    className="w-full bg-white border border-[#004aad]/20 p-3 text-sm text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
-                    <Building2 className="w-3 h-3 text-[#1B79EE]" /> Corporate Entity
+                <div className="space-y-1.5">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-1.5">
+                    <Building2 className="w-3.5 h-3.5 text-[#1B79EE]" /> Company / Organization
                   </label>
                   <input 
                     type="text" name="company"
                     value={formState.company} onChange={handleChange}
-                    placeholder="Organization or Firm"
-                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
+                    placeholder="Company Name"
+                    className="w-full bg-white border border-[#004aad]/20 p-3 text-sm text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
               </div>
 
-              {/* Row 2: Comms */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
-                    <Mail className="w-3 h-3 text-[#1B79EE]" /> Comms Protocol (Email)
+              {/* Row 2 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-1.5">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-[#1B79EE]" /> Email Address
                   </label>
                   <input 
                     type="email" name="email" required
                     value={formState.email} onChange={handleChange}
-                    placeholder="system@domain.com"
-                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
+                    placeholder="name@domain.com"
+                    className="w-full bg-white border border-[#004aad]/20 p-3 text-sm text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
-                    <Phone className="w-3 h-3 text-[#1B79EE]" /> Direct Telecom
+                <div className="space-y-1.5">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5 text-[#1B79EE]" /> Phone Number
                   </label>
                   <input 
                     type="tel" name="phone"
                     value={formState.phone} onChange={handleChange}
                     placeholder="(XXX) XXX-XXXX"
-                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
+                    className="w-full bg-white border border-[#004aad]/20 p-3 text-sm text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
               </div>
 
-              {/* Row 3: Subject Dropdown */}
-              <div className="space-y-2">
-                <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
-                  <Server className="w-3 h-3 text-[#1B79EE]" /> Routing Directive
+              {/* Row 3 */}
+              <div className="space-y-1.5">
+                <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-1.5">
+                  <Server className="w-3.5 h-3.5 text-[#1B79EE]" /> Service Requested
                 </label>
                 <select 
                   name="subject" required
                   value={formState.subject} onChange={handleChange}
-                  className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] focus:outline-none focus:border-[#1B79EE] transition-all font-semibold appearance-none cursor-pointer shadow-xs"
+                  className="w-full bg-white border border-[#004aad]/20 p-3 text-sm text-[#004aad] focus:outline-none focus:border-[#1B79EE] transition-all font-semibold appearance-none cursor-pointer shadow-xs"
                 >
-                  <option value="" className="bg-white text-[#004aad]">Select Primary Inquiry...</option>
-                  <option value="engineering" className="bg-white text-[#004aad]">Engineering & Drawings</option>
-                  <option value="manufacturing" className="bg-white text-[#004aad]">Manufacturing Capabilities</option>
-                  <option value="consulting" className="bg-white text-[#004aad]">Governmental Consulting</option>
-                  <option value="other" className="bg-white text-[#004aad]">General Information / Other</option>
+                  <option value="" className="bg-white text-[#004aad]">Select Inquiry Type...</option>
+                  <option value="engineering" className="bg-white text-[#004aad]">Precast Engineering & Shop Drawings</option>
+                  <option value="culverts" className="bg-white text-[#004aad]">Box Culvert Calculations & ASTM C1577</option>
+                  <option value="trenching" className="bg-white text-[#004aad]">Trenching Systems & Grate Submittals</option>
+                  <option value="retaining" className="bg-white text-[#004aad]">Retaining Wall Engineering</option>
+                  <option value="molds" className="bg-white text-[#004aad]">Steel Molds & Formwork Tooling</option>
+                  <option value="other" className="bg-white text-[#004aad]">General Inquiry / Hourly PE Consultation</option>
                 </select>
               </div>
 
-              {/* Row 4: Message */}
-              <div className="space-y-2">
-                <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
-                  <TerminalSquare className="w-3 h-3 text-[#1B79EE]" /> Transmission Data (Project Specs)
+              {/* Row 4 */}
+              <div className="space-y-1.5">
+                <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-1.5">
+                  <TerminalSquare className="w-3.5 h-3.5 text-[#1B79EE]" /> Project Details & Specifications
                 </label>
                 <textarea 
                   name="message" required rows={4}
                   value={formState.message} onChange={handleChange}
-                  placeholder="Detail your engineering requirements, constraints, and project parameters here..."
-                  className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold resize-none shadow-xs"
+                  placeholder="Describe your structure dimensions, project location, DOT requirements, or timeline..."
+                  className="w-full bg-white border border-[#004aad]/20 p-3 text-sm text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold resize-none shadow-xs"
                 />
               </div>
 
-              {/* Error Message Toast */}
               {errorMessage && (
-                <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs font-bold rounded-none flex items-center gap-2">
+                <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs font-bold flex items-center gap-2">
                   <span className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
                   {errorMessage}
                 </div>
               )}
 
-              {/* Success Confirmation Toast */}
               {submitSuccess && (
-                <div className="p-4 bg-emerald-50 border-2 border-emerald-500 text-emerald-800 text-xs font-black uppercase tracking-wider rounded-none flex items-center justify-between shadow-lg">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-emerald-600 rounded-full" />
-                    <span>Telemetry Transmitted &bull; Engineering Queue Active</span>
-                  </div>
-                  <span className="font-mono text-[10px] text-emerald-600">HANDSHAKE 200 OK</span>
+                <div className="p-4 bg-emerald-50 border border-emerald-400 text-emerald-800 text-xs font-black uppercase tracking-wider flex items-center justify-between shadow-xs">
+                  <span>Inquiry Transmitted Successfully &bull; PE Review Initiated</span>
+                  <span className="font-mono text-[10px] text-emerald-600">CONFIRMED</span>
                 </div>
               )}
 
-              {/* Submit Button */}
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full group relative bg-[#004aad] text-white flex items-center justify-center gap-3 overflow-hidden transition-all shadow-xl hover:shadow-[#1B79EE]/30 mt-6 py-4 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed`}
+                className="w-full bg-[#004aad] hover:bg-[#1B79EE] text-white flex items-center justify-center gap-3 py-4 text-xs font-mono font-black tracking-widest uppercase transition-all shadow-md cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {/* Button Hover Fill */}
-                <div className="absolute inset-0 bg-[#1B79EE] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
-                
-                <span className="relative z-10 font-mono text-[12px] font-black tracking-[0.3em] uppercase">
-                  {isSubmitting ? "Encrypting & Transmitting..." : "Transmit Project Telemetry"}
-                </span>
-                <Send className={`relative z-10 w-4 h-4 ${isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-1 group-hover:-translate-y-1'} transition-transform duration-300`} />
+                <span>{isSubmitting ? "Transmitting..." : "Submit Engineering Inquiry"}</span>
+                <Send className="w-4 h-4" />
               </button>
 
             </form>

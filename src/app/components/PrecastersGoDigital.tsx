@@ -7,116 +7,102 @@ import {
   BookOpen, 
   Share2, 
   Users, 
-  ArrowRight
+  ArrowRight,
+  Tv
 } from 'lucide-react';
 
 const digitalChannels = [
   {
     id: "CH_01",
-    title: "YouTube",
+    title: "YouTube Channel",
     subtitle: "PEG Broadcast Network",
     description: "High-fidelity video engineering breakdowns, installation timelapses, and structural tutorials delivered in 4K.",
-    icon: <PlayCircle className="w-8 h-8" />,
+    icon: <PlayCircle className="w-6 h-6" />,
     metric: "12K+ Subs"
   },
   {
     id: "CH_02",
-    title: "HyZine",
-    subtitle: "Digital Publication",
+    title: "HyZine Publication",
+    subtitle: "Digital Magazine",
     description: "Our interactive digital magazine. Deep-dive editorials, parametric case studies, and the future of precast tech.",
-    icon: <BookOpen className="w-8 h-8" />,
-    metric: "Read Now"
+    icon: <BookOpen className="w-6 h-6" />,
+    metric: "Quarterly Issue"
   },
   {
     id: "CH_03",
-    title: "Social Media",
-    subtitle: "Real-Time Infrastructure",
+    title: "Social Media Hub",
+    subtitle: "Real-Time Updates",
     description: "Join the daily conversation. Live updates from the factory floor, site deployments, and structural engineering insights.",
-    icon: <Share2 className="w-8 h-8" />,
+    icon: <Share2 className="w-6 h-6" />,
     metric: "@PEG_Global"
   },
   {
     id: "CH_04",
-    title: "Current Customers",
-    subtitle: "Client Success Portal",
-    description: "Exclusive digital tools, secured project portals, and direct-to-engineer communication for our active global partners.",
-    icon: <Users className="w-8 h-8" />,
-    metric: "Login Required"
+    title: "Client Portal",
+    subtitle: "Project Telemetry",
+    description: "Exclusive digital tools, secured project portals, and direct-to-engineer communication for active partners.",
+    icon: <Users className="w-6 h-6" />,
+    metric: "Direct Access"
   }
 ];
 
 export default function PrecastersGoDigital() {
   return (
-    <section className="w-full bg-[#004aad] text-white overflow-hidden relative">
+    <section className="w-full bg-white text-[#004aad] py-16 px-6 md:px-16 lg:px-20 border-t border-[#004aad]/10 select-none">
       
-      {/* BACKGROUND DIGITAL WAVES */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex flex-col justify-between py-20">
-        {[...Array(5)].map((_, i) => (
-          <div key={i} className="w-full h-[1px] bg-white transform -skew-y-3" />
-        ))}
+      {/* 1. BROADCAST HEADER */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#004aad]/10 pb-8">
+        <div className="space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+            <Tv className="w-3.5 h-3.5" /> Digital Media & Community
+          </div>
+          <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            Precasters <span className="text-[#1B79EE]">Go Digital.</span>
+          </h2>
+          <p className="text-[#004aad] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
+            Stay connected with the latest innovations, structural tutorials, technical articles, and direct client portal telemetry.
+          </p>
+        </div>
       </div>
 
-      <div className="w-full px-10 md:px-20 py-4 relative z-10">
-        
-        {/* 1. BROADCAST HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
-          <div className="space-y-6 max-w-4xl">
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase">
-              PRECASTERS <br />
-              <span style={{ WebkitTextStroke: "1px #ffffff", color: "transparent" }}>GO DIGITAL.</span>
-            </h2>
-          </div>
-        </div>
-
-        {/* 2. THE 4-COLUMN DIGITAL FEED GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-          {digitalChannels.map((channel, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.15 }}
-              viewport={{ once: true }}
-              // FIXED HOVER LOGIC: White default -> Bright Blue on hover
-              className="group relative flex flex-col h-[440px] bg-white hover:bg-[#1B79EE] border border-white/10 hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(27,121,238,0.5)] transition-all duration-700 cursor-pointer overflow-hidden"
-            >
-              
-              {/* Main Content Area */}
-              <div className="flex-grow px-8 py-2 flex flex-col justify-center relative z-10">
-                {/* ICON: Dark Blue -> White on hover */}
-                <div className="mb-8 text-[#004aad] group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2">
+      {/* 2. COMPACT 4-COLUMN DIGITAL GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {digitalChannels.map((channel, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: idx * 0.1 }}
+            viewport={{ once: true }}
+            className="group bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-xl transition-all duration-300 p-6 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex justify-between items-start mb-6">
+                <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
                   {channel.icon}
                 </div>
-                
-                {/* SUBTITLE: Bright Blue -> White on hover */}
-                <p className="text-[#1B79EE] group-hover:text-white font-black text-[10px] uppercase tracking-widest mb-2 transition-colors duration-500">
-                  {channel.subtitle}
-                </p>
-                {/* TITLE: Dark Blue -> White on hover */}
-                <h3 className="text-2xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
-                  {channel.title}
-                </h3>
-                {/* DESCRIPTION: Dark Blue -> Pure White on hover */}
-                <p className="text-[#004aad] group-hover:text-white text-sm font-semibold leading-relaxed transition-colors duration-500">
-                  {channel.description}
-                </p>
-              </div>
-
-              {/* Action Footer */}
-              {/* FOOTER BACKGROUND: Light Blue Tint -> Slightly Darker Tint on hover */}
-              <div className="px-8 py-2 bg-[#004aad]/5 group-hover:bg-[#004aad]/20 transition-colors duration-500 flex justify-between items-center mt-auto relative z-10">
-                <span className="font-mono text-[10px] font-black text-[#1B79EE] group-hover:text-white tracking-widest uppercase transition-colors duration-500">
+                <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-blue-50/70 px-2.5 py-1 border border-[#1B79EE]/20">
                   {channel.metric}
                 </span>
-                <ArrowRight className="w-5 h-5 text-[#1B79EE] group-hover:text-white transition-colors duration-500" />
               </div>
 
-              {/* Hover Top-Border Accent: Dark Blue -> White on hover */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-[#004aad] group-hover:bg-white group-hover:w-full transition-all duration-700 z-20" />
-            </motion.div>
-          ))}
-        </div>
+              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest block mb-1">
+                {channel.subtitle}
+              </span>
+              <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tight group-hover:text-[#1B79EE] transition-colors mb-2">
+                {channel.title}
+              </h3>
+              <p className="text-xs text-[#004aad] font-semibold leading-relaxed">
+                {channel.description}
+              </p>
+            </div>
 
+            <div className="mt-6 pt-4 border-t border-[#004aad]/10 flex justify-between items-center">
+              <span className="text-[10px] font-mono font-bold text-[#004aad] uppercase">Network Link</span>
+              <ArrowRight className="w-4 h-4 text-[#1B79EE] group-hover:translate-x-1 transition-transform" />
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

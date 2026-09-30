@@ -1,7 +1,43 @@
 import { supabase } from "@/lib/supabase";
-import { PRECAST_BLOG_POSTS, PrecastBlogPost } from "@/app/data/precastBlogs";
+import { PrecastBlogPost } from "@/app/data/precastBlogs";
 import { getAssetUrl } from "@/lib/utils";
 
+// Map database record to PrecastBlogPost interface
+function mapDbRecordToBlogPost(item: any): PrecastBlogPost {
+  return {
+    slug: item.slug,
+    title: item.title,
+    subtitle: item.subtitle || "",
+    category: item.category || "Engineering",
+    coverImage: getAssetUrl(item.cover_image || item.coverImage || ""),
+    featuredVideo: item.featured_video ? getAssetUrl(item.featured_video) : undefined,
+    secondaryVideos: item.secondary_videos ? item.secondary_videos.map(getAssetUrl) : [],
+    publishedDate: item.published_date || item.publishedDate || "Recently Published",
+    readTime: item.read_time || item.readTime || "5 min read",
+    author: {
+      name: item.author?.name || "Marcus Vance, PE",
+      role: item.author?.role || "Lead Structural Engineer",
+      avatar: getAssetUrl(item.author?.avatar || "/PrecastIndustry_Links/1.jpg"),
+    },
+    excerpt: item.excerpt || "",
+    technicalSpecs: item.technical_specs || item.technicalSpecs || [],
+    gallery: (item.gallery || []).map((g: any) => ({
+      ...g,
+      url: getAssetUrl(g.url),
+    })),
+    sections: (item.sections || []).map((s: any) => ({
+      ...s,
+      image: s.image ? { ...s.image, url: getAssetUrl(s.image.url) } : undefined,
+    })),
+    keyTakeaways: item.key_takeaways || item.keyTakeaways || [],
+    relatedSlugs: item.related_slugs || item.relatedSlugs || [],
+  };
+}
+
+/**
+ * Fetch ALL published blog posts EXCLUSIVELY from Supabase.
+ * No dummy or local fallback data.
+ */
 export async function fetchAllBlogPosts(): Promise<PrecastBlogPost[]> {
   try {
     const { data, error } = await supabase
@@ -9,52 +45,26 @@ export async function fetchAllBlogPosts(): Promise<PrecastBlogPost[]> {
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (error || !data || data.length === 0) {
-      console.warn("Supabase fetch fallback to static precast blogs:", error?.message);
-      return PRECAST_BLOG_POSTS;
+    if (error) {
+      console.error("Supabase fetchAllBlogPosts error:", error.message);
+      return [];
     }
 
-    // Map database snake_case columns to PrecastBlogPost interface
-    const mapped: PrecastBlogPost[] = data.map((item: any) => ({
-      slug: item.slug,
-      title: item.title,
-      subtitle: item.subtitle || "",
-      category: item.category || "General",
-      coverImage: getAssetUrl(item.cover_image || item.coverImage || ""),
-      featuredVideo: item.featured_video ? getAssetUrl(item.featured_video) : undefined,
-      secondaryVideos: item.secondary_videos ? item.secondary_videos.map(getAssetUrl) : [],
-      publishedDate: item.published_date || item.publishedDate || "Recently Published",
-      readTime: item.read_time || item.readTime || "5 min read",
-      author: {
-        name: item.author?.name || "Marcus Vance, PE",
-        role: item.author?.role || "Lead Structural Engineer",
-        avatar: getAssetUrl(item.author?.avatar || "/PrecastIndustry_Links/1.jpg"),
-      },
-      excerpt: item.excerpt || "",
-      technicalSpecs: item.technical_specs || item.technicalSpecs || [],
-      gallery: (item.gallery || []).map((g: any) => ({
-        ...g,
-        url: getAssetUrl(g.url),
-      })),
-      sections: (item.sections || []).map((s: any) => ({
-        ...s,
-        image: s.image ? { ...s.image, url: getAssetUrl(s.image.url) } : undefined,
-      })),
-      keyTakeaways: item.key_takeaways || item.keyTakeaways || [],
-      relatedSlugs: item.related_slugs || item.relatedSlugs || [],
-    }));
+    if (!data || data.length === 0) {
+      return [];
+    }
 
-    // Merge Supabase posts with default static posts (Supabase posts take priority)
-    const supabaseSlugs = new Set(mapped.map(p => p.slug));
-    const remainingStatic = PRECAST_BLOG_POSTS.filter(p => !supabaseSlugs.has(p.slug));
-
-    return [...mapped, ...remainingStatic];
+    return data.map(mapDbRecordToBlogPost);
   } catch (err) {
     console.error("Error fetching blogs from Supabase:", err);
-    return PRECAST_BLOG_POSTS;
+    return [];
   }
 }
 
+/**
+ * Fetch a single blog post EXCLUSIVELY from Supabase by slug.
+ * Returns undefined if not found in database.
+ */
 export async function fetchBlogPostBySlug(slug: string): Promise<PrecastBlogPost | undefined> {
   try {
     const { data, error } = await supabase
@@ -64,50 +74,30 @@ export async function fetchBlogPostBySlug(slug: string): Promise<PrecastBlogPost
       .single();
 
     if (error || !data) {
-      return PRECAST_BLOG_POSTS.find((p) => p.slug === slug);
+      console.error(`Supabase fetchBlogPostBySlug (${slug}) error:`, error?.message);
+      return undefined;
     }
 
-    return {
-      slug: data.slug,
-      title: data.title,
-      subtitle: data.subtitle || "",
-      category: data.category || "General",
-      coverImage: getAssetUrl(data.cover_image || data.coverImage || ""),
-      featuredVideo: data.featured_video ? getAssetUrl(data.featured_video) : undefined,
-      secondaryVideos: data.secondary_videos ? data.secondary_videos.map(getAssetUrl) : [],
-      publishedDate: data.published_date || "Recently Published",
-      readTime: data.read_time || "5 min read",
-      author: {
-        name: data.author?.name || "Marcus Vance, PE",
-        role: data.author?.role || "Lead Structural Engineer",
-        avatar: getAssetUrl(data.author?.avatar || "/PrecastIndustry_Links/1.jpg"),
-      },
-      excerpt: data.excerpt || "",
-      technicalSpecs: data.technical_specs || [],
-      gallery: (data.gallery || []).map((g: any) => ({
-        ...g,
-        url: getAssetUrl(g.url),
-      })),
-      sections: (data.sections || []).map((s: any) => ({
-        ...s,
-        image: s.image ? { ...s.image, url: getAssetUrl(s.image.url) } : undefined,
-      })),
-      keyTakeaways: data.key_takeaways || [],
-      relatedSlugs: data.related_slugs || [],
-    };
+    return mapDbRecordToBlogPost(data);
   } catch (err) {
-    return PRECAST_BLOG_POSTS.find((p) => p.slug === slug);
+    console.error(`Error fetching blog post (${slug}) from Supabase:`, err);
+    return undefined;
   }
 }
 
+/**
+ * Save / Create / Update a blog post directly in Supabase.
+ */
 export async function saveBlogPost(post: Partial<PrecastBlogPost>): Promise<{ success: boolean; error?: string }> {
   try {
+    const slug = post.slug?.trim() || post.title?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || `post-${Date.now()}`;
+
     const payload = {
-      slug: post.slug,
-      title: post.title,
+      slug,
+      title: post.title || "Untitled Precast Technical Article",
       subtitle: post.subtitle || "",
-      category: post.category || "Engineering",
-      cover_image: post.coverImage || "",
+      category: post.category || "Box_Culverts",
+      cover_image: post.coverImage || "/assets/images/Box_Culvert/13.jpeg",
       featured_video: post.featuredVideo || null,
       secondary_videos: post.secondaryVideos || [],
       published_date: post.publishedDate || new Date().toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }),
@@ -128,15 +118,20 @@ export async function saveBlogPost(post: Partial<PrecastBlogPost>): Promise<{ su
       .upsert(payload, { onConflict: "slug" });
 
     if (error) {
+      console.error("Supabase saveBlogPost error:", error);
       return { success: false, error: error.message };
     }
 
     return { success: true };
   } catch (err: any) {
+    console.error("Error saving blog post to Supabase:", err);
     return { success: false, error: err.message || "An unexpected error occurred." };
   }
 }
 
+/**
+ * Delete a blog post directly from Supabase.
+ */
 export async function deleteBlogPost(slug: string): Promise<{ success: boolean; error?: string }> {
   try {
     const { error } = await supabase
@@ -145,11 +140,13 @@ export async function deleteBlogPost(slug: string): Promise<{ success: boolean; 
       .eq("slug", slug);
 
     if (error) {
+      console.error("Supabase deleteBlogPost error:", error);
       return { success: false, error: error.message };
     }
 
     return { success: true };
   } catch (err: any) {
+    console.error("Error deleting blog post from Supabase:", err);
     return { success: false, error: err.message || "Failed to delete post." };
   }
 }

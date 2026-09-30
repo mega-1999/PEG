@@ -1,202 +1,201 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 import Image from "next/image";
+import { Building2, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { getAssetUrl } from "@/lib/utils";
 
 export interface AgencyItem {
   src: string;
-  alt: string;
-  size?: string;
-  x?: string;
-  y?: string;
-  delay?: number;
-  duration?: number;
+  name: string;
+  category: string;
+  badge: string;
 }
 
-const AGENCY_LOGOS: AgencyItem[] = [
-  { src: "/agency-Logos/NDOTLogo.webp", alt: "NDOT Logo", size: "w-28 h-28 md:w-36 md:h-36", x: "left-[5%]", y: "top-[10%]", delay: 0.1, duration: 4 },
-  { src: "/agency-Logos/arizona-water-company.jpg", alt: "Arizona Water Company", size: "w-20 h-20 md:w-24 md:h-24", x: "left-[25%]", y: "top-[25%]", delay: 0.3, duration: 5 },
-  { src: "/agency-Logos/att.webp", alt: "AT&T", size: "w-24 h-24 md:w-32 md:h-32", x: "left-[12%]", y: "bottom-[15%]", delay: 0.2, duration: 4.5 },
-  { src: "/agency-Logos/caltrans.webp", alt: "CalTrans", size: "w-32 h-32 md:w-44 md:h-44", x: "left-[40%]", y: "top-[5%]", delay: 0.4, duration: 6 },
-  { src: "/agency-Logos/edison.webp", alt: "Edison", size: "w-20 h-20 md:w-28 md:h-28", x: "right-[42%]", y: "bottom-[10%]", delay: 0.15, duration: 3.8 },
-  { src: "/agency-Logos/la-dwp.webp", alt: "LA DWP", size: "w-28 h-28 md:w-36 md:h-36", x: "right-[28%]", y: "top-[20%]", delay: 0.5, duration: 5.2 },
-  { src: "/agency-Logos/las-vegas-water-district-1.jpg", alt: "Las Vegas Water District", size: "w-20 h-20 md:w-24 md:h-24", x: "left-[32%]", y: "bottom-[30%]", delay: 0.25, duration: 4.2 },
-  { src: "/agency-Logos/nv-energy-1-1.webp", alt: "NV Energy", size: "w-28 h-28 md:w-40 md:h-40", x: "right-[10%]", y: "top-[8%]", delay: 0.35, duration: 5.8 },
-  { src: "/agency-Logos/sdge.webp", alt: "SDGE", size: "w-24 h-24 md:w-32 md:h-32", x: "right-[15%]", y: "bottom-[20%]", delay: 0.45, duration: 4.7 },
-  { src: "/agency-Logos/smud.png", alt: "SMUD", size: "w-20 h-20 md:w-26 md:h-26", x: "right-[30%]", y: "bottom-[40%]", delay: 0.12, duration: 3.5 },
-  { src: "/agency-Logos/verizon.jpg", alt: "Verizon", size: "w-24 h-24 md:w-32 md:h-32", x: "left-[55%]", y: "top-[35%]", delay: 0.55, duration: 4.9 },
+const AGENCIES: AgencyItem[] = [
+  { 
+    src: "/agency-Logos/caltrans.webp", 
+    name: "Caltrans", 
+    category: "Dept of Transportation", 
+    badge: "State DOT" 
+  },
+  { 
+    src: "/agency-Logos/NDOTLogo.webp", 
+    name: "Nevada DOT", 
+    category: "Dept of Transportation", 
+    badge: "State DOT" 
+  },
+  { 
+    src: "/agency-Logos/la-dwp.webp", 
+    name: "LA DWP", 
+    category: "Water & Power", 
+    badge: "Municipal Utility" 
+  },
+  { 
+    src: "/agency-Logos/edison.webp", 
+    name: "SoCal Edison", 
+    category: "Power & Energy", 
+    badge: "Power Grid" 
+  },
+  { 
+    src: "/agency-Logos/nv-energy-1-1.webp", 
+    name: "NV Energy", 
+    category: "Electric Utility", 
+    badge: "Energy Grid" 
+  },
+  { 
+    src: "/agency-Logos/sdge.webp", 
+    name: "SDG&E", 
+    category: "Gas & Electric", 
+    badge: "Regional Utility" 
+  },
+  { 
+    src: "/agency-Logos/las-vegas-water-district-1.jpg", 
+    name: "LV Water District", 
+    category: "Water Authority", 
+    badge: "Water & Sewer" 
+  },
+  { 
+    src: "/agency-Logos/arizona-water-company.jpg", 
+    name: "Arizona Water Co", 
+    category: "Water Utility", 
+    badge: "Water Authority" 
+  },
+  { 
+    src: "/agency-Logos/smud.png", 
+    name: "SMUD", 
+    category: "Municipal Utility", 
+    badge: "Electric Utility" 
+  },
+  { 
+    src: "/agency-Logos/att.webp", 
+    name: "AT&T", 
+    category: "Telecom Network", 
+    badge: "Telecom Standard" 
+  },
+  { 
+    src: "/agency-Logos/verizon.jpg", 
+    name: "Verizon", 
+    category: "Communications", 
+    badge: "Telecom Infrastructure" 
+  },
 ];
 
-const ALPHABET = [
-  "ALL", "#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
-  "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-];
-
-export default function ExtraordinaryAgencyCluster() {
-  const [selectedLetter, setSelectedLetter] = useState<string>("ALL");
-
-  // Helper to extract clean first letter for matching
-  const getFirstChar = (name: string): string => {
-    const cleaned = name.trim().toUpperCase();
-    if (!cleaned) return "#";
-    const first = cleaned[0];
-    return /[A-Z]/.test(first) ? first : "#";
-  };
-
-  // Compute agency counts per letter tab
-  const letterCounts = useMemo(() => {
-    const counts: Record<string, number> = { ALL: AGENCY_LOGOS.length, "#": 0 };
-    ALPHABET.slice(2).forEach((char) => {
-      counts[char] = 0;
-    });
-
-    AGENCY_LOGOS.forEach((logo) => {
-      const char = getFirstChar(logo.alt);
-      if (counts[char] !== undefined) {
-        counts[char] += 1;
-      } else {
-        counts["#"] += 1;
-      }
-    });
-
-    return counts;
-  }, []);
-
-  // Filter agencies by selected letter
-  const filteredAgencies = useMemo(() => {
-    if (selectedLetter === "ALL") return AGENCY_LOGOS;
-
-    if (selectedLetter === "#") {
-      return AGENCY_LOGOS.filter((logo) => !/[A-Z]/.test(getFirstChar(logo.alt)));
-    }
-
-    return AGENCY_LOGOS.filter((logo) => getFirstChar(logo.alt) === selectedLetter);
-  }, [selectedLetter]);
+export default function AgencySlider() {
+  // Duplicate list to create seamless infinite loop animation
+  const loopAgenciesRow1 = [...AGENCIES, ...AGENCIES, ...AGENCIES];
+  const loopAgenciesRow2 = [...AGENCIES.slice(5), ...AGENCIES.slice(0, 5), ...AGENCIES, ...AGENCIES];
 
   return (
-    <section className="relative w-full min-h-[90vh] md:min-h-screen bg-white overflow-hidden select-none py-12 md:py-16">
+    <section className="relative w-full bg-white py-14 border-t border-[#004aad]/10 select-none overflow-hidden">
       
-      {/* CAD BLUEPRINT GRID PATTERN BACKGROUND */}
+      {/* CAD WATERMARK BACKGROUND */}
       <div 
-        className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+        className="absolute inset-0 opacity-[0.02] pointer-events-none" 
         style={{ 
           backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px), linear-gradient(to right, #004aad 0.5px, transparent 0.5px), linear-gradient(to bottom, #004aad 0.5px, transparent 0.5px)`,
           backgroundSize: '40px 40px, 200px 200px, 200px 200px'
         }} 
       />
 
-      {/* BACKGROUND BRAND ACCENT RING */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] rounded-full border-2 border-dashed border-[#1B79EE]/10 pointer-events-none hidden md:block" />
+      <div className="w-full px-6 md:px-16 lg:px-20 relative z-10 space-y-8">
+        
+        {/* HEADER */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#004aad]/10 pb-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+              <Building2 className="w-3.5 h-3.5" /> Agency & Utility Approvals
+            </div>
+            <h2 className="text-2xl md:text-4xl font-black text-[#004aad] uppercase tracking-tight leading-tight">
+              Approved & Specified <span className="text-[#1B79EE]">By Leading Agencies.</span>
+            </h2>
+          </div>
 
-      {/* A-Z ALPHABET SORT / FILTER TABS BAR (FULL LINE WITH HOVER COUNT TOOLTIPS) */}
-      <div className="relative z-30 w-full px-10 md:px-20 mb-6">
-        <div className="bg-white/90 backdrop-blur-md p-3 md:p-4 rounded-none border border-[#004aad]/10 shadow-[0_10px_30px_rgba(0,74,173,0.05)]">
-          <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-1.5 w-full">
-            {ALPHABET.map((char) => {
-              const count = letterCounts[char] || 0;
-              const isActive = selectedLetter === char;
-              const hasItems = char === "ALL" || count > 0;
-
-              return (
-                <button
-                  key={char}
-                  onClick={() => setSelectedLetter(char)}
-                  className={`
-                    group relative px-2.5 sm:px-3 py-1.5 rounded-none text-xs md:text-sm font-black transition-all duration-200 flex items-center justify-center shrink-0
-                    ${
-                      isActive
-                        ? "bg-[#004aad] text-white shadow-md shadow-[#004aad]/20 scale-105"
-                        : hasItems
-                        ? "text-[#004aad] hover:text-[#1B79EE] hover:bg-[#1B79EE]/10 bg-blue-50/50 border border-[#004aad]/10"
-                        : "text-[#004aad]/30 hover:text-[#004aad]/50 bg-blue-50/20 border border-[#004aad]/5"
-                    }
-                  `}
-                >
-                  <span>{char}</span>
-
-                  {/* FLOATING HOVER COUNT BADGE TOOLTIP */}
-                  <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 transform translate-y-1 group-hover:translate-y-0">
-                    <div className="bg-[#004aad] text-white text-[10px] font-bold py-1 px-2.5 rounded-none shadow-xl whitespace-nowrap flex items-center gap-1 border border-[#1B79EE]/30">
-                      <span className="text-white font-extrabold">{count}</span>
-                      <span className="text-blue-100 text-[9px] uppercase font-medium">
-                        {char === "ALL" ? "Total" : count === 1 ? "Agency" : "Agencies"}
-                      </span>
-                    </div>
-                    <div className="w-1.5 h-1.5 bg-[#004aad] rotate-45 mx-auto -mt-1" />
-                  </div>
-                </button>
-              );
-            })}
+          <div className="flex items-center gap-2 text-[#004aad] text-xs font-mono font-bold bg-blue-50/70 px-4 py-2 border border-[#1B79EE]/20 shadow-xs">
+            <ShieldCheck className="w-4 h-4 text-[#1B79EE]" />
+            <span>DOT, Municipal & Utility Standard Compliant</span>
           </div>
         </div>
-      </div>
 
-      {/* CORE FRAMEWORK ELEMENT LAYER (ORIGINAL CLUSTER LAYOUT) */}
-      <div className="w-full h-full min-h-[70vh] md:min-h-[80vh] relative px-6 md:px-10 mt-6 flex flex-wrap gap-6 justify-center md:block">
-        
-        {/* INTERLOCKING LOGO MATRIX NODES */}
-        <AnimatePresence>
-          {filteredAgencies.map((logo) => (
-            <motion.div
-              key={logo.alt}
-              initial={{ opacity: 0, scale: 0.7 }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, -10, 0],
-              }}
-              exit={{ opacity: 0, scale: 0.4 }}
-              viewport={{ once: true }}
-              transition={{
-                delay: logo.delay || 0.1,
-                duration: 0.5,
-                y: {
-                  duration: logo.duration || 4,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  ease: "easeInOut",
-                },
-              }}
-              style={{ originX: 0.5, originY: 0.5 }}
-              className={`
-                relative md:absolute ${logo.size || "w-28 h-28 md:w-36 md:h-36"} ${logo.x || ""} ${logo.y || ""}
-                shrink-0 flex items-center justify-center p-4 rounded-full bg-white 
-                border border-[#004aad]/10 shadow-[0_10px_30px_rgba(0,74,173,0.05)]
-                hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(27,121,238,0.2)]
-                transition-all duration-500 cursor-crosshair group z-10 hover:z-30
-              `}
-              title={logo.alt}
-            >
-              {/* INNER HIGH-TECH ENCLOSURE PROTOCOL */}
-              <div className="relative w-full h-full rounded-full border border-dashed border-[#004aad]/5 group-hover:border-[#1B79EE]/30 transition-colors flex items-center justify-center p-3">
-                <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-110">
+        {/* INFINITE SLIDING CARDS CONTAINER */}
+        <div className="relative w-full overflow-hidden py-2 group/slider">
+          
+          {/* Gradient Edge Masks */}
+          <div className="absolute top-0 left-0 bottom-0 w-16 md:w-28 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute top-0 right-0 bottom-0 w-16 md:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
+
+          {/* SLIDER ROW 1 (Left Sliding) */}
+          <div className="flex gap-4 w-max animate-marquee group-hover/slider:[animation-play-state:paused]">
+            {loopAgenciesRow1.map((agency, idx) => (
+              <div
+                key={`row1-${agency.name}-${idx}`}
+                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
+              >
+                {/* LOGO BOX */}
+                <div className="relative w-14 h-14 bg-white border border-[#004aad]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
                   <Image
-                    src={getAssetUrl(logo.src)}
-                    alt={logo.alt}
+                    src={getAssetUrl(agency.src)}
+                    alt={agency.name}
                     fill
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100px, 200px"
+                    sizes="56px"
+                    className="object-contain p-1"
                   />
                 </div>
-              </div>
 
-              {/* NODE CONNECTION GRAPHICS (Only on Large Screens) */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border border-[#1B79EE]/0 group-hover:border-[#1B79EE]/10 scale-70 group-hover:scale-100 transition-all duration-700 pointer-events-none rounded-full" />
-
-              {/* HOVER AGENCY NAME TOOLTIP */}
-              <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 z-50 transform translate-y-1 group-hover:translate-y-0">
-                <div className="bg-[#004aad] text-white text-[11px] font-extrabold py-1.5 px-3 rounded-xl shadow-2xl whitespace-nowrap border border-[#1B79EE]/40 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#1B79EE] animate-pulse" />
-                  <span>{logo.alt}</span>
+                {/* INFO */}
+                <div className="flex-1 min-w-0">
+                  <span className="text-[9px] font-mono font-black text-[#1B79EE] uppercase tracking-wider block truncate">
+                    {agency.badge}
+                  </span>
+                  <h3 className="text-xs font-black text-[#004aad] uppercase tracking-tight truncate group-hover/card:text-[#1B79EE] transition-colors">
+                    {agency.name}
+                  </h3>
+                  <p className="text-[10px] text-[#004aad]/70 font-semibold truncate mt-0.5">
+                    {agency.category}
+                  </p>
                 </div>
-                <div className="w-2 h-2 bg-[#004aad] rotate-45 mx-auto -mt-1 border-r border-b border-[#1B79EE]/40" />
               </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+            ))}
+          </div>
+
+          {/* SLIDER ROW 2 (Right Sliding - Reverse) */}
+          <div className="flex gap-4 w-max mt-4 animate-marquee-reverse group-hover/slider:[animation-play-state:paused]">
+            {loopAgenciesRow2.map((agency, idx) => (
+              <div
+                key={`row2-${agency.name}-${idx}`}
+                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
+              >
+                {/* LOGO BOX */}
+                <div className="relative w-14 h-14 bg-white border border-[#004aad]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
+                  <Image
+                    src={getAssetUrl(agency.src)}
+                    alt={agency.name}
+                    fill
+                    sizes="56px"
+                    className="object-contain p-1"
+                  />
+                </div>
+
+                {/* INFO */}
+                <div className="flex-1 min-w-0">
+                  <span className="text-[9px] font-mono font-black text-[#1B79EE] uppercase tracking-wider block truncate">
+                    {agency.badge}
+                  </span>
+                  <h3 className="text-xs font-black text-[#004aad] uppercase tracking-tight truncate group-hover/card:text-[#1B79EE] transition-colors">
+                    {agency.name}
+                  </h3>
+                  <p className="text-[10px] text-[#004aad]/70 font-semibold truncate mt-0.5">
+                    {agency.category}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+
       </div>
+
     </section>
   );
 }

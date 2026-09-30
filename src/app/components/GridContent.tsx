@@ -160,14 +160,11 @@ const GridContent = () => {
                     ))}
                 </div>
                 {/* INNOVATION FOOTER */}
-                <div className="mt-24 relative">
- 
-                    <div className="relative flex justify-center">
-                        <span className="bg-white px-6">
-                            <Zap className="w-8 h-8 text-[#1B79EE] animate-pulse" />
-                        </span>
+                <div className="mt-12 relative border-t border-[#004aad]/10 pt-8 text-center">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE] mb-4">
+                        <Zap className="w-3.5 h-3.5" /> Forward Engineering
                     </div>
-                    <h2 className='text-2xl md:text-4xl text-center mt-10 font-black text-[#004aad] tracking-tighter uppercase'>
+                    <h2 className='text-2xl md:text-4xl text-center font-black text-[#004aad] tracking-tighter uppercase'>
                         Innovations, More Innovations <br />
                         <span className="text-[#1B79EE]">& Non-Stop Innovations.</span>
                     </h2>
@@ -175,7 +172,7 @@ const GridContent = () => {
 
             </div>
 
-        </section >
+        </section>
     )
 }
 

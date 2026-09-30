@@ -77,25 +77,26 @@ export default function PegPortalDashboard() {
   ];
 
   return (
-    <section className="min-h-screen w-full px-10 md:px-20 py-16 bg-[#F8F9FA] flex flex-col items-center justify-center overflow-hidden">
+    <section className="w-full px-6 md:px-16 lg:px-20 py-16 bg-white flex flex-col items-center justify-center select-none">
       
       {/* 1. DYNAMIC TYPING HEADER */}
-      <div className="w-full mb-20 text-center">
- 
-        
-        <h1 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter flex flex-wrap justify-center items-center gap-x-5">
-          <span>PORTAL</span>
-          <span className="relative min-w-[320px] text-left inline-flex items-center">
-            <span style={{ WebkitTextStroke: "2px #1B79EE", color: "transparent" }}>
+      <div className="w-full mb-10 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE] mb-4">
+          Direct Stakeholder Access
+        </div>
+        <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter flex flex-wrap justify-center items-center gap-x-4">
+          <span>PORTAL:</span>
+          <span className="relative min-w-[280px] text-left inline-flex items-center text-[#1B79EE]">
+            <span>
               {words[index].substring(0, subIndex)}
             </span>
             <motion.span 
               animate={{ opacity: [1, 0] }}
               transition={{ repeat: Infinity, duration: 0.8 }}
-              className="w-2 h-14 md:h-20 bg-[#1B79EE] ml-2"
+              className="w-1.5 h-10 md:h-12 bg-[#1B79EE] ml-1.5"
             />
           </span>
-        </h1>
+        </h2>
       </div>
 
       {/* 2. STAKEHOLDER BENTO GRID */}

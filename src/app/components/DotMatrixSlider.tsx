@@ -208,7 +208,7 @@ export default function DotMatrixSlider() {
   const activeColors = tierColors[activeEnriched.tier] || tierColors.Standard;
 
   return (
-    <section className="w-full bg-[#F8FAFC] border-t-2 border-slate-100 overflow-hidden relative">
+    <section id="standards" className="w-full bg-[#F8FAFC] border-t-2 border-slate-100 overflow-hidden relative">
       {/* Visual background details */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#1B79EE]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#004aad]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 -translate-x-1/3 translate-y-1/3" />

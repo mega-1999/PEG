@@ -12,6 +12,8 @@ import {
   ChevronRight
 } from "lucide-react";
 
+import Link from "next/link";
+
 // --- Dynamic Typing Logic ---
 const words = ["ENGINEERS.", "AGENCIES.", "CUSTOMERS.", "VENDORS.", "TEAM.", "ENTRY."];
 
@@ -106,31 +108,33 @@ export default function PegPortalDashboard() {
             transition={{ delay: i * 0.1 + 0.5 }}
             className={`group relative p-8 border border-slate-200 bg-white transition-all duration-500 hover:border-[#1B79EE] hover:shadow-[30px_30px_0px_-10px_rgba(27,121,238,0.05)] cursor-pointer ${s.span}`}
           >
-            <div className="flex justify-between items-start mb-12">
-              <div 
-                className="p-4 bg-[#F8F9FA] transition-colors group-hover:bg-[#004aad]"
-                style={{ border: `1px solid ${s.color}30` }}
-              >
-                <div className="group-hover:text-white transition-colors" style={{ color: s.color }}>
-                  {s.icon}
+            <Link href="/admin" className="block w-full h-full">
+              <div className="flex justify-between items-start mb-12">
+                <div 
+                  className="p-4 bg-[#F8F9FA] transition-colors group-hover:bg-[#004aad]"
+                  style={{ border: `1px solid ${s.color}30` }}
+                >
+                  <div className="group-hover:text-white transition-colors" style={{ color: s.color }}>
+                    {s.icon}
+                  </div>
                 </div>
+                <span className="text-xs font-mono text-[#1B79EE]">0{i + 1}</span>
               </div>
-              <span className="text-xs font-mono text-[#1B79EE]">0{i + 1}</span>
-            </div>
 
-            <div>
-              <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight mb-2">
-                {s.role}
-              </h3>
-              <p className="text-xs font-medium text-[#1B79EE] uppercase tracking-widest leading-relaxed">
-                {s.desc}
-              </p>
-            </div>
+              <div>
+                <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight mb-2">
+                  {s.role}
+                </h3>
+                <p className="text-xs font-medium text-[#1B79EE] uppercase tracking-widest leading-relaxed">
+                  {s.desc}
+                </p>
+              </div>
 
-            <div className="mt-10 flex items-center gap-2 text-[#1B79EE] opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">
-              <span className="text-[10px] font-black tracking-widest uppercase">Authorized Access</span>
-              <ChevronRight className="w-4 h-4" />
-            </div>
+              <div className="mt-10 flex items-center gap-2 text-[#1B79EE] opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">
+                <span className="text-[10px] font-black tracking-widest uppercase">Authorized Access</span>
+                <ChevronRight className="w-4 h-4" />
+              </div>
+            </Link>
 
             {/* Corner Accent for Apple/Engineering style */}
             <div className="absolute bottom-4 right-4 w-2 h-2 border-r border-b border-slate-200 group-hover:border-[#1B79EE]" />

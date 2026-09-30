@@ -71,7 +71,7 @@ export default function UnchallengedResources() {
               transition={{ delay: 0.2 }}
               className="border-l-4 border-[#1B79EE] pl-6 py-2 mt-8"
             >
-              <p className="text-xl md:text-xl font-black text-white/90 uppercase tracking-tight leading-snug">
+              <p className="text-xl md:text-xl font-black text-white uppercase tracking-tight leading-snug">
                 At the snap of your fingers. <br />
                 <span className="text-[#1B79EE]">Seamlessly integrated.</span> <br />
                 Action ready.
@@ -112,7 +112,7 @@ export default function UnchallengedResources() {
                       {resource.title}
                     </h3>
                     {/* DESCRIPTION: Dark Blue -> Hovers to White */}
-                    <p className="text-[#004aad]/80 group-hover:text-white/90 text-sm leading-relaxed font-medium transition-colors duration-500">
+                    <p className="text-[#004aad] group-hover:text-white text-sm leading-relaxed font-semibold transition-colors duration-500">
                       {resource.description}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export default function UnchallengedResources() {
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#004aad] group-hover:text-white transition-colors duration-500">
                       Access Resource
                     </span>
-                    <ArrowRight className="w-5 h-5 text-[#004aad]/30 group-hover:text-white transform group-hover:translate-x-2 transition-all duration-500" />
+                    <ArrowRight className="w-5 h-5 text-[#1B79EE] group-hover:text-white transform group-hover:translate-x-2 transition-all duration-500" />
                   </div>
 
                   {/* BACKGROUND WATERMARK */}

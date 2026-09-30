@@ -34,7 +34,7 @@ export default function HexagonLogoShowcase() {
   const row2 = partnerLogos.slice(10, 20);
 
   return (
-    <section className="w-full bg-[#004aad]/5 text-[#004aad] py-20 overflow-hidden relative border-y border-[#004aad]/10">
+    <section className="w-full bg-white text-[#004aad] py-20 overflow-hidden relative border-y border-[#004aad]/10">
       
       {/* CAD BLUEPRINT GRID BACKGROUND */}
       <div 
@@ -57,7 +57,7 @@ export default function HexagonLogoShowcase() {
               PRECAST INDUSTRY <span className="text-[#1B79EE]">& PARTNER NETWORK.</span>
             </h2>
           </div>
-          <p className="text-[#004aad]/70 font-medium text-sm md:text-base max-w-md">
+          <p className="text-[#004aad] font-semibold text-sm md:text-base max-w-md">
             Verified precast concrete manufacturers, formwork suppliers, structural software platforms, and DOT certified infrastructure partners.
           </p>
         </div>
@@ -125,7 +125,7 @@ function PartnerCard({ logo }: { logo: { id: string; src: string; alt: string; c
         <span className="text-[#1B79EE] bg-blue-50 px-2 py-0.5 border border-[#1B79EE]/20">
           {logo.id}
         </span>
-        <span className="text-[#004aad]/60 uppercase tracking-wider">
+        <span className="text-[#004aad] uppercase tracking-wider font-bold">
           {logo.category}
         </span>
       </div>

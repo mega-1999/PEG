@@ -76,13 +76,13 @@ export default function PrecastMoldComponent() {
               PRECAST MOLD <span className="text-[#1B79EE]">& FORMWORK SYSTEMS.</span>
             </h2>
           </div>
-          <p className="text-[#004aad]/70 font-medium text-sm md:text-base max-w-md">
+          <p className="text-[#004aad] font-semibold text-sm md:text-base max-w-md">
             Custom heavy-duty steel mold design, magnetic shuttering systems, and hydraulic collapsing cores engineered for maximum casting bed turnover.
           </p>
         </div>
 
         {/* TOP FEATURE SHOWCASE GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16 bg-[#004aad]/5 p-8 md:p-12 border border-[#004aad]/10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16 bg-white p-6 md:p-10 border border-[#004aad]/15 shadow-sm">
           
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#004aad] text-white text-xs font-black tracking-widest uppercase">
@@ -91,21 +91,21 @@ export default function PrecastMoldComponent() {
             <h3 className="text-2xl md:text-4xl font-black text-[#004aad] uppercase tracking-tight leading-tight">
               Tailored Formwork Engineering for Any Precast Element
             </h3>
-            <p className="text-[#004aad]/80 text-sm md:text-base font-medium leading-relaxed">
+            <p className="text-[#004aad] text-sm md:text-base font-semibold leading-relaxed">
               We design custom steel molds that withstand continuous high-pressure pours while maintaining tight NPCA tolerances. From multi-cell box culverts to architectural wall panels, our formwork guarantees rapid stripping and zero slurry leakage.
             </p>
             <div className="pt-2 flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#004aad] bg-white px-3.5 py-2 border border-[#1B79EE]/20 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#004aad] bg-blue-50/50 px-3.5 py-2 border border-[#1B79EE]/20 shadow-xs">
                 <ShieldCheck className="w-4 h-4 text-[#1B79EE]" /> NPCA & AASHTO Form Tolerances
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-[#004aad] bg-white px-3.5 py-2 border border-[#1B79EE]/20 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#004aad] bg-blue-50/50 px-3.5 py-2 border border-[#1B79EE]/20 shadow-xs">
                 <Settings className="w-4 h-4 text-[#1B79EE]" /> Fast Hydraulic Stripping
               </div>
             </div>
           </div>
 
-          {/* VIDEO / VISUAL CONTAINER */}
-          <div className="lg:col-span-6 relative aspect-video bg-[#004aad] shadow-xl border border-[#1B79EE]/30 group">
+          {/* VIDEO / VISUAL CONTAINER - CRYSTAL CLEAR */}
+          <div className="lg:col-span-6 relative aspect-video bg-white shadow-xl border border-[#1B79EE]/30 group overflow-hidden">
             <video 
               autoPlay 
               loop 
@@ -117,12 +117,11 @@ export default function PrecastMoldComponent() {
             >
               <source src={getAssetUrl("/assets/video/E25_V2_final.mp4")} type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/80 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 z-10 text-white">
-              <span className="text-[10px] font-mono uppercase tracking-widest bg-[#1B79EE] px-2.5 py-1 font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-widest bg-[#1B79EE] px-2.5 py-1 font-bold shadow-md">
                 Automated Formwork Operation
               </span>
-              <h4 className="text-sm font-black uppercase tracking-wider mt-1">Hydraulic Core & Mold Assembly</h4>
+              <h4 className="text-sm font-black uppercase tracking-wider mt-1.5 drop-shadow-md">Hydraulic Core & Mold Assembly</h4>
             </div>
           </div>
 
@@ -136,42 +135,40 @@ export default function PrecastMoldComponent() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative flex bg-white border border-[#004aad]/10 overflow-hidden shadow-sm hover:border-[#1B79EE] hover:shadow-xl hover:shadow-[#1B79EE]/10 transition-all duration-500"
+              className="group relative flex bg-white border border-[#004aad]/15 overflow-hidden shadow-xs hover:border-[#1B79EE] hover:shadow-lg transition-all duration-300"
             >
-              {/* Vertical Side Tag */}
-              <div className="hidden md:flex items-center justify-center w-14 bg-[#004aad] text-white/20 select-none shrink-0">
-                <span className="rotate-[-90deg] font-black text-xs tracking-[0.3em] whitespace-nowrap uppercase">
-                  {mold.tag}
-                </span>
-              </div>
-
               {/* Card Content */}
               <div className="flex-1 p-8 md:p-10 relative flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-start mb-6">
-                    <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#1B79EE] group-hover:text-white transition-colors duration-500">
+                    <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
                       {mold.icon}
                     </div>
-                    <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-blue-50 px-2.5 py-1 border border-[#1B79EE]/20">
-                      {mold.id}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-mono font-bold text-[#004aad] uppercase tracking-wider bg-blue-50 px-2.5 py-1">
+                        {mold.tag}
+                      </span>
+                      <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-white px-2.5 py-1 border border-[#1B79EE]/30">
+                        {mold.id}
+                      </span>
+                    </div>
                   </div>
 
                   <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight mb-3 group-hover:text-[#1B79EE] transition-colors">
                     {mold.title}
                   </h3>
 
-                  <p className="text-[#004aad]/70 text-xs md:text-sm leading-relaxed mb-6 font-medium">
+                  <p className="text-[#004aad] text-xs md:text-sm leading-relaxed mb-6 font-semibold">
                     {mold.description}
                   </p>
                 </div>
 
                 {/* Technical Specifications Bar */}
                 <div>
-                  <div className="grid grid-cols-3 gap-2 border-t border-[#004aad]/10 pt-6 mb-6">
+                  <div className="grid grid-cols-3 gap-3 border-t border-[#004aad]/10 pt-5 mb-5">
                     {mold.specs.map((spec, i) => (
                       <div key={i} className="space-y-1">
-                        <div className="h-0.5 w-3 bg-[#1B79EE]/40 group-hover:w-full transition-all duration-500" />
+                        <div className="h-0.5 w-3 bg-[#1B79EE] group-hover:w-full transition-all duration-300" />
                         <p className="text-[9px] font-mono font-bold text-[#1B79EE] uppercase tracking-tighter">
                           {spec.split(":")[0]}
                         </p>

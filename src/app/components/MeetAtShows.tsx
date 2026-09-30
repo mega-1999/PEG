@@ -79,7 +79,7 @@ export default function MeetAtShows() {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
 
   return (
-    <section className="w-full py-24 bg-slate-50 px-10 md:px-20 overflow-hidden">
+    <section id="shows" className="w-full py-24 bg-slate-50 px-10 md:px-20 overflow-hidden">
       <div className="">
 
         {/* HEADER & CONTROLS */}

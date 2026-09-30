@@ -104,40 +104,40 @@ export default function ManufacturingHub() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-slate-50/50 border border-slate-100 p-8 flex flex-col justify-between h-[520px] hover:bg-white hover:border-[#1B79EE] hover:shadow-[30px_30px_0px_-15px_rgba(27,121,238,0.04)] transition-all duration-500"
+              className="group relative bg-white border border-[#004aad]/15 p-7 flex flex-col justify-between h-[480px] hover:border-[#1B79EE] hover:shadow-lg transition-all duration-300"
             >
               {/* TOP READOUT */}
               <div>
-                <div className="flex justify-between items-center mb-12">
-                  <span className="font-mono text-[10px] font-black text-[#1B79EE] group-hover:text-[#1B79EE] transition-colors">
+                <div className="flex justify-between items-center mb-8">
+                  <span className="font-mono text-[10px] font-black text-[#1B79EE] bg-blue-50 px-2 py-0.5 border border-[#1B79EE]/20">
                     {cell.id}
                   </span>
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
                 </div>
 
-                <div className="mb-6 text-[#004aad] group-hover:text-[#1B79EE] transition-colors duration-300">
+                <div className="mb-5 text-[#004aad] group-hover:text-[#1B79EE] transition-colors duration-300">
                   {cell.icon}
                 </div>
 
-                <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest font-black mb-2">
+                <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest font-black mb-1.5">
                   {cell.subtitle}
                 </p>
-                <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter leading-tight mb-4">
+                <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter leading-tight mb-3">
                   {cell.title}
                 </h3>
-                <p className="text-[#1B79EE] text-xs font-medium leading-relaxed">
+                <p className="text-[#004aad] text-xs font-semibold leading-relaxed">
                   {cell.description}
                 </p>
               </div>
 
               {/* BOTTOM TELEMETRY METRICS */}
               <div className="mt-auto">
-                <div className="border-t border-slate-100 pt-6 mb-2 flex flex-col gap-1">
-                  <span className="text-sm font-bold text-[#004aad] uppercase tracking-tight">{cell.metric}</span>
+                <div className="border-t border-[#004aad]/10 pt-4 mb-2 flex flex-col gap-1">
+                  <span className="text-xs font-black text-[#004aad] uppercase tracking-tight">{cell.metric}</span>
                 </div>
 
-                <div className="flex justify-between items-center pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="font-mono text-[8px] text-[#1B79EE] uppercase tracking-widest">{cell.tag}</span>
+                <div className="flex justify-between items-center pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="font-mono text-[8px] font-bold text-[#1B79EE] uppercase tracking-widest">{cell.tag}</span>
                   <ArrowUpRight className="w-4 h-4 text-[#1B79EE]" />
                 </div>
               </div>

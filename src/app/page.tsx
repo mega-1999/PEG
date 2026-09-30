@@ -61,7 +61,7 @@ export default function Home() {
         <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter">
           Precast Applications <span className="text-[#1B79EE]">& Products</span>
         </h2>
-        <p className="mt-6 text-[#004aad]/70 font-medium max-w-2xl mx-auto px-6">
+        <p className="mt-6 text-[#004aad] font-semibold max-w-2xl mx-auto px-6">
           Explore examples of our structural engineering, from underground infrastructure to marine systems. We design products for real-world performance.
         </p>
       </div>

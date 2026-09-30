@@ -77,7 +77,7 @@ const services = [
 
 export default function PegServices() {
   return (
-    <section className="w-full bg-white py-4 border-b border-[#004aad]/10">
+    <section id="services" className="w-full bg-white py-4 border-b border-[#004aad]/10">
       <div className="w-full px-10 md:px-20">
         
         {/* Section Header */}
@@ -89,7 +89,7 @@ export default function PegServices() {
             Precast Engineering & <br />
             <span className="text-[#1B79EE]">Technical Services.</span>
           </h2>
-          <p className="mt-4 text-[#004aad]/70 font-medium max-w-2xl text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-[#004aad] font-semibold max-w-2xl text-sm md:text-base leading-relaxed">
             We provide specialized, end-to-end engineering support exclusively for the precast concrete industry. Each service includes technical video demonstrations and CAD execution blueprints.
           </p>
         </div>
@@ -103,10 +103,10 @@ export default function PegServices() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border hover:border-[#004aad]/10 border-[#1B79EE] hover:shadow-[0_15px_40px_-10px_rgba(27,121,238,0.2)] transition-all duration-500 group flex flex-col overflow-hidden"
+              className="bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-lg transition-all duration-300 group flex flex-col overflow-hidden"
             >
-              {/* VIDEO LOOP SHOWCASE THUMBNAIL */}
-              <div className="relative w-full aspect-video bg-[#004aad] overflow-hidden shrink-0 border-b border-[#004aad]/10">
+              {/* VIDEO LOOP SHOWCASE THUMBNAIL - CRYSTAL CLEAR */}
+              <div className="relative w-full aspect-video bg-white overflow-hidden shrink-0 border-b border-[#004aad]/10">
                 <video
                   autoPlay
                   loop
@@ -114,29 +114,28 @@ export default function PegServices() {
                   playsInline
                   preload="metadata"
                   poster={service.image}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 >
                   <source src={service.video} type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#004aad]/80 via-[#004aad]/20 to-transparent pointer-events-none" />
 
-                <div className="absolute bottom-2 right-3 z-10 font-mono text-[10px] font-black text-white/80 tracking-widest uppercase">
+                <div className="absolute top-2 right-2 z-10 font-mono text-[9px] font-black text-white bg-[#004aad] px-2 py-0.5 tracking-widest uppercase shadow-xs">
                   {service.id}
                 </div>
               </div>
 
               {/* CARD CONTENT */}
-              <div className="p-2 flex-grow flex flex-col justify-between">
+              <div className="p-5 flex-grow flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 bg-blue-50 border border-[#1B79EE]/20 flex items-center justify-center text-[#004aad] mb-4 group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
+                  <div className="w-10 h-10 bg-blue-50 border border-[#1B79EE]/20 flex items-center justify-center text-[#004aad] mb-3 group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
                     {service.icon}
                   </div>
 
-                  <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter mb-2 leading-tight group-hover:text-[#1B79EE] transition-colors">
+                  <h3 className="text-base font-black text-[#004aad] uppercase tracking-tight mb-2 leading-tight group-hover:text-[#1B79EE] transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-[#004aad]/70 text-xs font-medium leading-relaxed">
+                  <p className="text-[#004aad] text-xs font-semibold leading-relaxed">
                     {service.description}
                   </p>
                 </div>

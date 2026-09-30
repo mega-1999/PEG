@@ -54,7 +54,7 @@ const locations = {
 
 export default function PegLocations() {
   return (
-    <section className="w-full px-10 md:px-20 pt-10 bg-white overflow-hidden">
+    <section id="locations" className="w-full px-10 md:px-20 pt-10 bg-white overflow-hidden">
       <div className="w-full">
 
         {/* SECTION HEADER */}

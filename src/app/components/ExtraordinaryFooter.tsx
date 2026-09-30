@@ -18,11 +18,11 @@ const logos = [
     { src: getAssetUrl("/assets/footer_logo/trench-unlimited.jpeg"), alt: "Partner 05" },
 ];
 const socialLinks = [
-    { icon: FaFacebook, href: "#" },
-    { icon: BsTwitter, href: "#" },
-    { icon: FaYoutube, href: "#" },
-    { icon: FaInstagram, href: "#" },
-    { icon: FaLinkedinIn, href: "#" },
+    { icon: FaFacebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: BsTwitter, href: "https://x.com", label: "X Network" },
+    { icon: FaYoutube, href: "https://youtube.com", label: "YouTube" },
+    { icon: FaInstagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: FaLinkedinIn, href: "https://linkedin.com", label: "LinkedIn" },
 ];
 export default function ExtraordinaryFooter() {
     return (
@@ -95,6 +95,9 @@ export default function ExtraordinaryFooter() {
                                         <motion.a
                                             key={i}
                                             href={social.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={social.label}
                                             // Same lift effect as the logos
                                             whileHover={{ y: -4 }}
                                             className="group relative"

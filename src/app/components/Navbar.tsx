@@ -14,10 +14,10 @@ const navData = [
   {
     title: 'ENGINEERING & CAD',
     links: [
-      { name: 'CAD Drawings', href: '/products/cad-drawings' },
-      { name: 'Structural Submittals', href: '/structural-submittals' },
-      { name: 'Engineering Services', href: '/engineering-servics' },
-      { name: 'Consulting', href: '/consulting' }
+      { name: 'CAD Drawings', href: '/#services' },
+      { name: 'Structural Submittals', href: '/#services' },
+      { name: 'Engineering Services', href: '/#services' },
+      { name: 'Technical Consultation', href: '/#contact' }
     ]
   },
   {
@@ -27,19 +27,19 @@ const navData = [
         heading: 'SPECIFICATIONS',
         icon: FileText,
         links: [
-          { name: 'Master Specifications', href: '#' },
-          { name: 'SpecWizard', href: '#' },
-          { name: 'Outline & Short Form Specs', href: '#' },
-          { name: 'State DOT Standards Matrix', href: '#' },
+          { name: 'Master Specifications', href: '/#standards' },
+          { name: 'SpecWizard Matrix', href: '/#standards' },
+          { name: 'Outline & Short Form Specs', href: '/#standards' },
+          { name: 'State DOT Standards Matrix', href: '/#standards' },
         ]
       },
       {
         heading: 'COMPLIANCE & STANDARDS',
         icon: ClipboardCheck,
         links: [
-          { name: 'AASHTO & ACI Standards', href: '#' },
-          { name: 'Compliance Certifications', href: '#' },
-          { name: 'Technical Bulletins', href: '#' },
+          { name: 'AASHTO & ACI Standards', href: '/#standards' },
+          { name: 'Compliance Certifications', href: '/#standards' },
+          { name: 'Technical Bulletins & Blogs', href: '/blog' },
         ]
       }
     ],
@@ -48,35 +48,34 @@ const navData = [
       description: 'Instantly find and access up-to-date compliance requirements for your state.',
       buttonText: 'START COMPLIANCE SEARCH',
       icon: Wrench,
-      href: '#'
+      href: '/#standards'
     }
   },
   {
     title: 'PRODUCTS & SOLUTIONS',
     links: [
-      { name: 'Product Categories', href: '/products/product-categories' },
-      { name: 'Certifications', href: '/products/certifications' },
-      { name: 'Data Sheets', href: '/products/data-sheet' },
-      { name: 'Materials', href: '/products/materials' },
+      { name: 'Product Categories', href: '/#products' },
+      { name: 'Culvert & Trench Systems', href: '/#products' },
+      { name: 'State DOT Drawings', href: '/#standards' },
+      { name: 'Engineering Applications', href: '/#products' },
     ]
   },
   {
     title: 'RESOURCES & KNOWLEDGE',
     links: [
       { name: 'Precast Engineering Blog', href: '/blog' },
-      { name: 'Catalogs & Brochures', href: '/resources/catalogs-brochures' },
-      { name: 'Technical Videos', href: '/resources/technical-videos' },
-      { name: 'Project Gallery', href: '/resources/project-gallery' },
-      { name: 'Global Events/Shows', href: '/resources/global-shows' },
+      { name: 'Precast Knowledge Vault', href: '/#technical-vault' },
+      { name: 'Technical Media Library', href: '/#resources' },
+      { name: 'Industry Shows & Expos', href: '/#shows' },
     ]
   },
   {
     title: 'COMPANY',
     links: [
-      { name: 'About PEG', href: '/about' },
-      { name: 'Precast Blog', href: '/blog' },
-      { name: 'Global Locations', href: '/global-location' },
-      { name: 'Contacts', href: '#contact' }
+      { name: 'About PEG', href: '/#about' },
+      { name: 'Precast Articles', href: '/blog' },
+      { name: 'Global Locations', href: '/#locations' },
+      { name: 'Initiate Contact', href: '/#contact' }
     ]
   }
 ];
@@ -129,18 +128,28 @@ export const Navbar = () => {
             </button>
           </Link>
 
-          {/* Integrated Search Bar - Hidden on very small screens to save space */}
-          <div className="hidden sm:flex items-center bg-white/10 rounded px-3 py-1.5 w-48 md:w-64 border border-white/20 focus-within:border-[#1B79EE] transition-colors">
+          {/* Integrated Search Bar */}
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const term = (e.currentTarget.elements.namedItem("search") as HTMLInputElement)?.value;
+              if (term) {
+                window.location.href = `/blog?search=${encodeURIComponent(term)}`;
+              }
+            }}
+            className="hidden sm:flex items-center bg-white/10 rounded px-3 py-1.5 w-48 md:w-64 border border-white/20 focus-within:border-[#1B79EE] transition-colors"
+          >
             <Search className="w-3.5 h-3.5 text-white/70 mr-2 shrink-0" />
             <input
               type="text"
-              placeholder="Search..."
+              name="search"
+              placeholder="Search drawings, specs..."
               className="bg-transparent border-0 text-[11px] w-full text-white placeholder:text-white/60 focus:outline-none focus:ring-0"
             />
-          </div>
+          </form>
 
-          <div className="uppercase hidden lg:block">
-            CONTACT: +1 631 452-1111
+          <div className="uppercase hidden lg:block font-mono text-[10px]">
+            TEL: +1 631 452-1111
           </div>
 
         </div>
@@ -177,11 +186,11 @@ export const Navbar = () => {
                     onClick={() => toggleMenu(item.title)}
                     // Added whitespace-nowrap and slightly smaller horizontal padding (px-3) for zoom tolerance
                     className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-[12px] font-black uppercase tracking-tight transition-all duration-200 border-t-4
-                      ${isOpen ? 'text-[#004aad] border-[#004aad] bg-[#004aad]/5' : 'text-[#004aad]/70 border-transparent hover:text-[#1B79EE]'}
+                      ${isOpen ? 'text-[#004aad] border-[#004aad] bg-[#004aad]/5' : 'text-[#004aad] border-transparent hover:text-[#1B79EE]'}
                     `}
                   >
                     {item.title}
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#004aad]' : 'text-[#004aad]/50'}`} />
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#004aad]' : 'text-[#004aad]'}`} />
                   </button>
 
                   {/* DROP DOWN / MEGA MENU RENDERER */}
@@ -204,7 +213,7 @@ export const Navbar = () => {
                                 <Link
                                   href={link.href}
                                   onClick={() => setActiveMenu(null)}
-                                  className="block px-6 py-3 text-xs font-bold text-[#004aad]/70 hover:bg-[#004aad]/5 hover:text-[#004aad] transition-colors"
+                                  className="block px-6 py-3 text-xs font-bold text-[#004aad] hover:bg-[#004aad]/5 hover:text-[#1B79EE] transition-colors"
                                 >
                                   {link.name}
                                 </Link>
@@ -230,7 +239,7 @@ export const Navbar = () => {
                                         <Link
                                           href={link.href}
                                           onClick={() => setActiveMenu(null)}
-                                          className="text-xs font-medium text-[#004aad]/70 hover:text-[#1B79EE] transition-colors"
+                                          className="text-xs font-bold text-[#004aad] hover:text-[#1B79EE] transition-colors"
                                         >
                                           {link.name}
                                         </Link>
@@ -248,12 +257,12 @@ export const Navbar = () => {
                                 <h4 className="font-black text-xs uppercase tracking-widest">Featured Tool</h4>
                               </div>
 
-                              <div className="w-full h-24 bg-white border border-[#1B79EE]/20 rounded mb-4 flex items-center justify-center text-[#1B79EE]/40">
+                              <div className="w-full h-24 bg-white border border-[#1B79EE]/20 rounded mb-4 flex items-center justify-center text-[#1B79EE]">
                                 [Illustration]
                               </div>
 
-                              <h5 className="font-bold text-xs text-[#004aad] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
-                              <p className="text-xs text-[#004aad]/60 mb-6 leading-relaxed">{item.featured?.description}</p>
+                              <h5 className="font-black text-xs text-[#004aad] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
+                              <p className="text-xs text-[#004aad] font-semibold mb-6 leading-relaxed">{item.featured?.description}</p>
 
                               <Link
                                 href={item.featured?.href || "#"}
@@ -343,7 +352,7 @@ export const Navbar = () => {
                                 <Link
                                   href={link.href}
                                   onClick={() => setIsMobileOpen(false)}
-                                  className="text-sm font-medium text-[#004aad]/70 pl-4 border-l-2 border-[#1B79EE]/30 hover:border-[#1B79EE] hover:text-[#004aad] block py-1 transition-all"
+                                  className="text-sm font-bold text-[#004aad] pl-4 border-l-2 border-[#1B79EE] hover:border-[#004aad] hover:text-[#1B79EE] block py-1 transition-all"
                                 >
                                   {link.name}
                                 </Link>

@@ -11,29 +11,29 @@ const footerLinks = [
   {
     category: "Solutions",
     links: [
-      { name: "CAD", href: "#" },
-      { name: "Specs", href: "#" },
-      { name: "Building Products", href: "#" },
-      { name: "Catalogs/Videos", href: "#" },
-      { name: "Resources", href: "#" },
-      { name: "Manufacturers", href: "#" },
+      { name: "CAD Drawings", href: "/#services" },
+      { name: "State DOT Specs", href: "/#standards" },
+      { name: "Precast Products", href: "/#products" },
+      { name: "Technical Vault", href: "/#technical-vault" },
+      { name: "Knowledge Hub", href: "/#resources" },
+      { name: "Manufacturing Hub", href: "/#services" },
     ],
   },
   {
     category: "Insights",
     links: [
-      { name: "Detailed Podcast", href: "#" },
-      { name: "Blogs", href: "#" },
-      { name: "PEG Resources", href: "#" },
-      { name: "About PEG", href: "#" },
+      { name: "Precast Engineering Blog", href: "/blog" },
+      { name: "DOT Compliance Databank", href: "/#standards" },
+      { name: "PEG Resources", href: "/#resources" },
+      { name: "About PEG", href: "/#about" },
     ],
   },
   {
     category: "BPM Services",
     links: [
-      { name: "List Your Products", href: "#" },
-      { name: "Get Specified More", href: "#" },
-      { name: "Earn More Bids", href: "#" },
+      { name: "Engineering Inquiries", href: "/#contact" },
+      { name: "Admin Portal", href: "/admin" },
+      { name: "Global Offices", href: "/#locations" },
     ],
   },
 ];
@@ -77,11 +77,11 @@ export const Footer = () => {
           <div className="lg:col-span-7 flex flex-col justify-between">
             {/* Social Icons - Outlined Box Style */}
             <div className="flex justify-start lg:justify-end gap-3 mb-12">
-              <SocialIcon icon={<FaFacebook className="w-5 h-5" />} />
-              <SocialIcon icon={<BsTwitterX className="w-5 h-5" />} />
-              <SocialIcon icon={<FaYoutube className="w-5 h-5" />} />
-              <SocialIcon icon={<FaInstagram className="w-5 h-5" />} />
-              <SocialIcon icon={<FaLinkedinIn className="w-5 h-5" />} />
+              <SocialIcon icon={<FaFacebook className="w-5 h-5" />} href="https://facebook.com" />
+              <SocialIcon icon={<BsTwitterX className="w-5 h-5" />} href="https://x.com" />
+              <SocialIcon icon={<FaYoutube className="w-5 h-5" />} href="https://youtube.com" />
+              <SocialIcon icon={<FaInstagram className="w-5 h-5" />} href="https://instagram.com" />
+              <SocialIcon icon={<FaLinkedinIn className="w-5 h-5" />} href="https://linkedin.com" />
             </div>
 
             {/* Link Columns */}
@@ -110,11 +110,14 @@ export const Footer = () => {
   );
 };
 
-const SocialIcon = ({ icon }: { icon: React.ReactNode }) => (
-  <Link
-    href="#"
-    className="p-2 border border-white/40 hover:border-white hover:bg-white/10 transition-all text-white"
+const SocialIcon = ({ icon, href = "https://linkedin.com" }: { icon: React.ReactNode; href?: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Social Link"
+    className="p-2 border border-white/40 hover:border-white hover:bg-white/10 transition-all text-white inline-block"
   >
     {icon}
-  </Link>
+  </a>
 );

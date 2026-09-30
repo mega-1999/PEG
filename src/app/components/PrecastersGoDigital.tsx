@@ -96,8 +96,8 @@ export default function PrecastersGoDigital() {
                 <h3 className="text-2xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                   {channel.title}
                 </h3>
-                {/* DESCRIPTION: Faded Dark Blue -> Faded White on hover */}
-                <p className="text-[#004aad]/80 group-hover:text-white/90 text-sm font-medium leading-relaxed transition-colors duration-500">
+                {/* DESCRIPTION: Dark Blue -> Pure White on hover */}
+                <p className="text-[#004aad] group-hover:text-white text-sm font-semibold leading-relaxed transition-colors duration-500">
                   {channel.description}
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function PrecastersGoDigital() {
                 <span className="font-mono text-[10px] font-black text-[#1B79EE] group-hover:text-white tracking-widest uppercase transition-colors duration-500">
                   {channel.metric}
                 </span>
-                <ArrowRight className="w-5 h-5 text-[#004aad]/30 group-hover:text-white transition-colors duration-500" />
+                <ArrowRight className="w-5 h-5 text-[#1B79EE] group-hover:text-white transition-colors duration-500" />
               </div>
 
               {/* Hover Top-Border Accent: Dark Blue -> White on hover */}

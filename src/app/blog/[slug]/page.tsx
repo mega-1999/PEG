@@ -64,14 +64,14 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
   const relatedPosts = getRelatedBlogPosts(post.relatedSlugs);
 
   return (
-    <main className="min-h-screen bg-[#004aad]/5 text-[#004aad] selection:bg-[#1B79EE] selection:text-white pt-28 pb-20">
+    <main className="min-h-screen bg-white text-[#004aad] selection:bg-[#1B79EE] selection:text-white pt-28 pb-20">
       
       {/* TOP NAVIGATION BAR */}
       <div className="bg-white border-b border-[#004aad]/10 py-4 shadow-sm">
         <div className="w-full px-10 md:px-20 flex items-center justify-between">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#004aad]/70 hover:text-[#004aad] uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#004aad] hover:text-[#1B79EE] uppercase tracking-wider transition-colors"
           >
             <ArrowLeft className="w-4 h-4 text-[#1B79EE]" />
             <span>Back to All Precast Articles</span>
@@ -92,11 +92,11 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
             <span className="px-3.5 py-1 rounded-none bg-[#1B79EE] text-white text-xs font-black tracking-widest uppercase shadow-md shadow-[#1B79EE]/20">
               {post.category}
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-[#004aad]/70 font-bold bg-white px-3 py-1 rounded-none border border-[#1B79EE]/20">
+            <span className="flex items-center gap-1.5 text-xs text-[#004aad] font-bold bg-white px-3 py-1 rounded-none border border-[#1B79EE]/20">
               <Clock className="w-3.5 h-3.5 text-[#1B79EE]" />
               {post.readTime}
             </span>
-            <span className="text-xs text-[#1B79EE]/80 font-medium">
+            <span className="text-xs text-[#1B79EE] font-bold">
               Published: {post.publishedDate}
             </span>
           </div>
@@ -105,7 +105,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
             {post.title}
           </h1>
 
-          <p className="mt-4 text-[#004aad]/80 font-semibold text-lg md:text-xl leading-relaxed">
+          <p className="mt-4 text-[#004aad] font-semibold text-lg md:text-xl leading-relaxed">
             {post.subtitle}
           </p>
 
@@ -122,7 +122,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
               </div>
               <div>
                 <p className="text-sm font-black text-[#004aad] uppercase">{post.author.name}</p>
-                <p className="text-xs text-[#004aad]/60 font-bold">{post.author.role}</p>
+                <p className="text-xs text-[#1B79EE] font-bold">{post.author.role}</p>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                   </h3>
                 )}
 
-                <div className="space-y-4 text-[#004aad]/80 font-medium leading-relaxed">
+                <div className="space-y-4 text-[#004aad] font-semibold leading-relaxed">
                   {section.content.map((paragraph, pIdx) => (
                     <p key={pIdx}>{paragraph}</p>
                   ))}
@@ -195,20 +195,20 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
                 {/* CALLOUT BOX */}
                 {section.callout && (
-                  <div className="my-6 p-5 bg-white rounded-none border-l-4 border-[#004aad] shadow-sm text-[#004aad] font-bold text-sm md:text-base border border-[#1B79EE]/20">
+                  <div className="my-6 p-5 bg-blue-50/50 rounded-none border-l-4 border-[#004aad] shadow-sm text-[#004aad] font-bold text-sm md:text-base border border-[#1B79EE]/20">
                     <p>{section.callout}</p>
                   </div>
                 )}
 
                 {/* SPEC HIGHLIGHT */}
                 {section.specHighlight && (
-                  <div className="my-6 p-6 bg-[#004aad]/5 rounded-none border border-[#004aad]/10">
+                  <div className="my-6 p-6 bg-white rounded-none border border-[#004aad]/15 shadow-sm">
                     <h4 className="text-xs font-black text-[#004aad] uppercase tracking-widest mb-3">
                       {section.specHighlight.title}
                     </h4>
                     <ul className="space-y-2">
                       {section.specHighlight.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-center gap-2 text-sm font-semibold text-[#004aad]/80">
+                        <li key={itemIdx} className="flex items-center gap-2 text-sm font-bold text-[#004aad]">
                           <CheckCircle2 className="w-4 h-4 text-[#1B79EE] shrink-0" />
                           <span>{item}</span>
                         </li>
@@ -219,8 +219,8 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
                 {/* SECTION IMAGE */}
                 {section.image && (
-                  <div className="my-6 rounded-none overflow-hidden border border-[#004aad]/10 shadow-md">
-                    <div className="relative w-full h-72 md:h-96 bg-[#004aad]/5">
+                  <div className="my-6 rounded-none overflow-hidden border border-[#004aad]/15 shadow-sm">
+                    <div className="relative w-full h-72 md:h-96 bg-white">
                       <Image
                         src={section.image.url}
                         alt={section.image.caption}
@@ -229,7 +229,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                         className="object-cover"
                       />
                     </div>
-                    <div className="bg-white p-3 text-xs font-bold text-[#004aad]/60 text-center border-t border-[#004aad]/5">
+                    <div className="bg-white p-3 text-xs font-bold text-[#004aad] text-center border-t border-[#004aad]/10">
                       {section.image.caption}
                     </div>
                   </div>
@@ -246,7 +246,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {post.secondaryVideos.map((vUrl, vIdx) => (
-                    <div key={vIdx} className="rounded-none overflow-hidden bg-[#004aad] border border-[#1B79EE]/30 aspect-video shadow-md">
+                    <div key={vIdx} className="rounded-none overflow-hidden bg-white border border-[#1B79EE]/30 aspect-video shadow-md">
                       <video src={vUrl} controls className="w-full h-full object-cover" />
                     </div>
                   ))}
@@ -263,8 +263,8 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {post.gallery.map((gItem, gIdx) => (
-                    <div key={gIdx} className="bg-white rounded-none overflow-hidden border border-[#004aad]/10 shadow-sm group">
-                      <div className="relative w-full h-52 bg-[#004aad]/5">
+                    <div key={gIdx} className="bg-white rounded-none overflow-hidden border border-[#004aad]/15 shadow-xs group">
+                      <div className="relative w-full h-52 bg-white">
                         {gItem.type === "video" ? (
                           <video src={gItem.url} controls className="w-full h-full object-cover" />
                         ) : (
@@ -273,11 +273,11 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                             alt={gItem.caption}
                             fill
                             sizes="(max-width: 640px) 100vw, 400px"
-                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         )}
                       </div>
-                      <div className="p-3.5 bg-white text-xs font-bold text-[#004aad]/70 border-t border-[#004aad]/5">
+                      <div className="p-3.5 bg-white text-xs font-bold text-[#004aad] border-t border-[#004aad]/10">
                         {gItem.caption}
                       </div>
                     </div>
@@ -310,7 +310,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
           <div className="lg:col-span-4 space-y-8">
             
             {/* TECHNICAL SPECS TABLE CARD */}
-            <div className="bg-white p-6 rounded-none border border-[#004aad]/10 shadow-lg sticky top-28">
+            <div className="bg-white p-6 rounded-none border border-[#004aad]/15 shadow-sm sticky top-28">
               <div className="flex items-center gap-2 text-[#004aad] mb-4 pb-3 border-b border-[#004aad]/10">
                 <FileText className="w-5 h-5 text-[#1B79EE]" />
                 <h3 className="font-black text-sm uppercase tracking-wider">Product Technical Specs</h3>
@@ -318,7 +318,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
               <div className="space-y-3">
                 {post.technicalSpecs.map((spec, sIdx) => (
-                  <div key={sIdx} className="bg-[#004aad]/5 p-3 rounded-none border border-[#004aad]/10 flex flex-col gap-1">
+                  <div key={sIdx} className="bg-white p-3 rounded-none border border-[#004aad]/15 flex flex-col gap-1">
                     <span className="text-[11px] font-bold text-[#1B79EE] uppercase tracking-wider">{spec.label}</span>
                     <span className="text-xs font-black text-[#004aad]">{spec.value}</span>
                   </div>

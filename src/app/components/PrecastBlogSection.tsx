@@ -83,7 +83,7 @@ export default function PrecastBlogSection() {
             <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter leading-tight">
               Precast Product <span className="text-[#1B79EE]">& Technical Articles</span>
             </h2>
-            <p className="mt-3 text-[#004aad]/70 font-medium max-w-2xl text-sm md:text-base">
+            <p className="mt-3 text-[#004aad] font-semibold max-w-2xl text-sm md:text-base">
               In-depth technical guides, mold formwork blueprints, video demonstrations, and structural load analysis for heavy precast concrete products.
             </p>
           </div>
@@ -106,11 +106,11 @@ export default function PrecastBlogSection() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`
-                  px-4 py-2 rounded-none text-xs md:text-sm font-bold transition-all duration-300 shrink-0 flex items-center gap-2 border
+                  px-4 py-2 rounded-none text-xs md:text-sm font-bold transition-all duration-300 shrink-0 flex items-center gap-2 border cursor-pointer
                   ${
                     isActive
                       ? "bg-[#004aad] text-white border-[#004aad] shadow-md shadow-[#004aad]/20 scale-105"
-                      : "bg-[#004aad]/5 text-[#004aad]/70 border-[#004aad]/10 hover:text-[#004aad] hover:bg-blue-50"
+                      : "bg-white text-[#004aad] font-bold border-[#004aad]/20 hover:text-white hover:bg-[#004aad]"
                   }
                 `}
               >
@@ -123,10 +123,10 @@ export default function PrecastBlogSection() {
         {/* FEATURED MAIN ARTICLE (SHOW ON "ALL PRODUCTS") */}
         {selectedCategory === "All Products" && (
           <div className="mb-14">
-            <div className="relative rounded-none bg-[#004aad]/5 border border-[#004aad]/10 overflow-hidden shadow-xl shadow-[0_15px_40px_rgba(0,74,173,0.06)] group grid grid-cols-1 lg:grid-cols-12 gap-0">
+            <div className="relative rounded-none bg-white border border-[#004aad]/15 overflow-hidden shadow-md group grid grid-cols-1 lg:grid-cols-12 gap-0">
               
               {/* IMAGE & VIDEO SHOWCASE THUMBNAIL */}
-              <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[440px] overflow-hidden bg-[#004aad]/5">
+              <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[440px] overflow-hidden bg-white">
                 <Image
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
@@ -155,10 +155,10 @@ export default function PrecastBlogSection() {
               <div className="lg:col-span-5 p-6 md:p-10 flex flex-col justify-between bg-white">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 rounded-none bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-extrabold tracking-wider uppercase border border-[#1B79EE]/20">
+                    <span className="px-3 py-1 rounded-none bg-[#1B79EE] text-white text-xs font-black tracking-wider uppercase">
                       {featuredPost.category}
                     </span>
-                    <span className="text-xs text-[#1B79EE]/80 font-semibold">
+                    <span className="text-xs text-[#1B79EE] font-bold">
                       {featuredPost.publishedDate}
                     </span>
                   </div>
@@ -169,7 +169,7 @@ export default function PrecastBlogSection() {
                     </Link>
                   </h3>
 
-                  <p className="mt-3 text-[#004aad]/80 text-sm md:text-base font-medium line-clamp-3 leading-relaxed">
+                  <p className="mt-3 text-[#004aad] text-sm md:text-base font-semibold line-clamp-3 leading-relaxed">
                     {featuredPost.excerpt}
                   </p>
 
@@ -177,8 +177,8 @@ export default function PrecastBlogSection() {
                   <div className="mt-6 space-y-2 border-t border-[#004aad]/10 pt-4">
                     {featuredPost.technicalSpecs.slice(0, 3).map((spec, i) => (
                       <div key={i} className="flex items-center justify-between text-xs">
-                        <span className="text-[#004aad]/60 font-medium">{spec.label}:</span>
-                        <span className="text-[#004aad] font-extrabold bg-blue-50/80 px-2 py-0.5 rounded-none border border-[#1B79EE]/20">{spec.value}</span>
+                        <span className="text-[#004aad] font-bold">{spec.label}:</span>
+                        <span className="text-[#004aad] font-black bg-blue-50 px-2 py-0.5 rounded-none border border-[#1B79EE]/20">{spec.value}</span>
                       </div>
                     ))}
                   </div>
@@ -197,7 +197,7 @@ export default function PrecastBlogSection() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-[#004aad]">{featuredPost.author.name}</p>
-                      <p className="text-[10px] text-[#004aad]/60 font-semibold">{featuredPost.author.role}</p>
+                      <p className="text-[10px] text-[#004aad] font-semibold">{featuredPost.author.role}</p>
                     </div>
                   </div>
 
@@ -229,7 +229,7 @@ export default function PrecastBlogSection() {
                 className="group flex flex-col bg-white rounded-none border border-[#004aad]/10 overflow-hidden hover:border-[#1B79EE] hover:shadow-xl hover:shadow-[#1B79EE]/10 transition-all duration-500"
               >
                 {/* COVER IMAGE & MEDIA INDICATOR */}
-                <div className="relative w-full h-56 overflow-hidden bg-[#004aad]/5">
+                <div className="relative w-full h-56 overflow-hidden bg-white">
                   <Image
                     src={post.coverImage}
                     alt={post.title}
@@ -268,14 +268,14 @@ export default function PrecastBlogSection() {
                       </Link>
                     </h3>
 
-                    <p className="mt-3 text-[#004aad]/70 text-xs md:text-sm font-medium line-clamp-3 leading-relaxed">
+                    <p className="mt-3 text-[#004aad] text-xs md:text-sm font-semibold line-clamp-3 leading-relaxed">
                       {post.excerpt}
                     </p>
                   </div>
 
                   {/* BOTTOM FOOTER */}
                   <div className="mt-6 pt-4 border-t border-[#004aad]/10 flex items-center justify-between">
-                    <span className="text-[11px] text-[#1B79EE]/80 font-semibold">
+                    <span className="text-[11px] text-[#1B79EE] font-bold">
                       {post.publishedDate}
                     </span>
 

@@ -7,10 +7,10 @@ import Link from 'next/link';
 import { FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const socialLinks = [
-  { id: "LINKEDIN", icon: <FaLinkedinIn className="w-5 h-5" />, href: "#" },
-  { id: "X_NETWORK", icon: <FaTwitter className="w-5 h-5" />, href: "#" },
-  { id: "YOUTUBE", icon: <FaYoutube className="w-5 h-5" />, href: "#" },
-  { id: "CONTACT", icon: <Mail className="w-5 h-5" />, href: "#" }
+  { id: "LINKEDIN", icon: <FaLinkedinIn className="w-5 h-5" />, href: "https://linkedin.com", isExternal: true },
+  { id: "X_NETWORK", icon: <FaTwitter className="w-5 h-5" />, href: "https://x.com", isExternal: true },
+  { id: "YOUTUBE", icon: <FaYoutube className="w-5 h-5" />, href: "https://youtube.com", isExternal: true },
+  { id: "CONTACT", icon: <Mail className="w-5 h-5" />, href: "/#contact", isExternal: false }
 ];
 
 export default function FloatingTelemetryHub() {
@@ -42,8 +42,15 @@ export default function FloatingTelemetryHub() {
       {/* 1. SOCIAL MEDIA QUICK LINKS */}
       <div className="flex flex-col items-end gap-2 pointer-events-auto">
         {socialLinks.map((social, idx) => (
-          <Link key={idx} href={social.href} className="group relative flex justify-end">
-            <div className="flex items-center w-12 h-12 rounded-full bg-[#004aad] border border-[#1B79EE]/30 text-white group-hover:w-36 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all duration-500 overflow-hidden shadow-[0_8px_20px_rgba(0,74,173,0.2)]">
+          <Link 
+            key={idx} 
+            href={social.href} 
+            target={social.isExternal ? "_blank" : undefined}
+            rel={social.isExternal ? "noopener noreferrer" : undefined}
+            aria-label={social.id}
+            className="group relative flex justify-end"
+          >
+            <div className="flex items-center w-12 h-12 rounded-full bg-[#004aad] border border-white text-white group-hover:w-36 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all duration-500 overflow-hidden shadow-[0_8px_20px_rgba(0,74,173,0.2)]">
               <span className="absolute left-5 opacity-0 group-hover:opacity-100 font-mono text-[10px] font-black tracking-widest whitespace-nowrap transition-opacity duration-300 delay-100">
                 {social.id}
               </span>

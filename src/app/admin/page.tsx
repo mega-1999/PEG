@@ -855,13 +855,18 @@ export default function AdminPage() {
 
                 <button
                   type="submit"
-                  disabled={saveLoading}
-                  className="px-6 py-2.5 bg-[#1B79EE] hover:bg-[#004aad] text-white font-mono font-black uppercase tracking-widest shadow-md transition-colors flex items-center gap-2"
+                  disabled={saveLoading || uploadingCover || uploadingVideo}
+                  className="px-6 py-2.5 bg-[#1B79EE] hover:bg-[#004aad] text-white font-mono font-black uppercase tracking-widest shadow-md transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {saveLoading ? (
                     <>
                       <RefreshCw className="w-4 h-4 animate-spin text-white" />
                       <span>Publishing to Supabase...</span>
+                    </>
+                  ) : uploadingCover || uploadingVideo ? (
+                    <>
+                      <RefreshCw className="w-4 h-4 animate-spin text-white" />
+                      <span>Uploading Media to CDN...</span>
                     </>
                   ) : (
                     <>

@@ -26,15 +26,38 @@ export default function ContactTerminal() {
   const [formState, setFormState] = useState({
     name: '', company: '', email: '', phone: '', subject: '', message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
+    if (errorMessage) setErrorMessage(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Transmitting Data:", formState);
-    // Add your form submission logic here
+    setErrorMessage(null);
+
+    // Basic email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formState.email)) {
+      setErrorMessage("Please provide a valid email address.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      // Simulate secure transmission handshake
+      await new Promise(resolve => setTimeout(resolve, 1200));
+      setSubmitSuccess(true);
+      setFormState({ name: '', company: '', email: '', phone: '', subject: '', message: '' });
+      setTimeout(() => setSubmitSuccess(false), 6000);
+    } catch (err: any) {
+      setErrorMessage(err?.message || "Failed to transmit telemetry. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -98,10 +121,10 @@ export default function ContactTerminal() {
                         {node.region} Node
                       </h4>
                       <div className="space-y-1.5">
-                        <p className="font-mono text-[10px] text-[#004aad]/70 flex items-center gap-2 uppercase tracking-wider font-bold">
+                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
                           <MapPin className="w-3 h-3 text-[#1B79EE]" /> {node.address}, {node.city}
                         </p>
-                        <p className="font-mono text-[10px] text-[#004aad]/70 flex items-center gap-2 uppercase tracking-wider font-bold">
+                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
                           <Phone className="w-3 h-3 text-[#1B79EE]" /> {node.phone}
                         </p>
                       </div>
@@ -135,10 +158,10 @@ export default function ContactTerminal() {
                         {node.region}
                       </h4>
                       <div className="space-y-1.5">
-                        <p className="font-mono text-[10px] text-[#004aad]/70 flex items-center gap-2 uppercase tracking-wider font-bold">
+                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
                           <MapPin className="w-3 h-3 text-[#1B79EE]" /> {node.address}, {node.city}
                         </p>
-                        <p className="font-mono text-[10px] text-[#004aad]/70 flex items-center gap-2 uppercase tracking-wider font-bold">
+                        <p className="font-mono text-[10px] text-[#004aad] flex items-center gap-2 uppercase tracking-wider font-bold">
                           <Phone className="w-3 h-3 text-[#1B79EE]" /> {node.phone}
                         </p>
                       </div>
@@ -164,7 +187,7 @@ export default function ContactTerminal() {
 
             <div className="flex items-center justify-between mb-10">
               <h3 className="text-xl font-black uppercase tracking-tighter text-[#004aad]">Project Telemetry Link</h3>
-              <TerminalSquare className="w-8 h-8 text-[#004aad]/20" />
+              <TerminalSquare className="w-8 h-8 text-[#004aad]" />
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
@@ -172,25 +195,25 @@ export default function ContactTerminal() {
               {/* Row 1: Identity */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#004aad]/50 flex items-center gap-2">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
                     <UserCircle className="w-3 h-3 text-[#1B79EE]" /> Operative Name
                   </label>
                   <input 
                     type="text" name="name" required
                     value={formState.name} onChange={handleChange}
                     placeholder="Enter Full Name"
-                    className="w-full bg-[#004aad]/5 border-b-2 border-[#004aad]/10 px-4 py-3 text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] focus:bg-[#004aad]/[0.02] transition-all font-semibold"
+                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#004aad]/50 flex items-center gap-2">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
                     <Building2 className="w-3 h-3 text-[#1B79EE]" /> Corporate Entity
                   </label>
                   <input 
                     type="text" name="company"
                     value={formState.company} onChange={handleChange}
                     placeholder="Organization or Firm"
-                    className="w-full bg-[#004aad]/5 border-b-2 border-[#004aad]/10 px-4 py-3 text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] focus:bg-[#004aad]/[0.02] transition-all font-semibold"
+                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
               </div>
@@ -198,38 +221,38 @@ export default function ContactTerminal() {
               {/* Row 2: Comms */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#004aad]/50 flex items-center gap-2">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
                     <Mail className="w-3 h-3 text-[#1B79EE]" /> Comms Protocol (Email)
                   </label>
                   <input 
                     type="email" name="email" required
                     value={formState.email} onChange={handleChange}
                     placeholder="system@domain.com"
-                    className="w-full bg-[#004aad]/5 border-b-2 border-[#004aad]/10 px-4 py-3 text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] focus:bg-[#004aad]/[0.02] transition-all font-semibold"
+                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#004aad]/50 flex items-center gap-2">
+                  <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
                     <Phone className="w-3 h-3 text-[#1B79EE]" /> Direct Telecom
                   </label>
                   <input 
                     type="tel" name="phone"
                     value={formState.phone} onChange={handleChange}
                     placeholder="(XXX) XXX-XXXX"
-                    className="w-full bg-[#004aad]/5 border-b-2 border-[#004aad]/10 px-4 py-3 text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] focus:bg-[#004aad]/[0.02] transition-all font-semibold"
+                    className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold shadow-xs"
                   />
                 </div>
               </div>
 
               {/* Row 3: Subject Dropdown */}
               <div className="space-y-2">
-                <label className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#004aad]/50 flex items-center gap-2">
+                <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
                   <Server className="w-3 h-3 text-[#1B79EE]" /> Routing Directive
                 </label>
                 <select 
                   name="subject" required
                   value={formState.subject} onChange={handleChange}
-                  className="w-full bg-[#004aad]/5 border-b-2 border-[#004aad]/10 px-4 py-3 text-[#004aad] focus:outline-none focus:border-[#1B79EE] focus:bg-[#004aad]/[0.02] transition-all font-semibold appearance-none cursor-pointer"
+                  className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] focus:outline-none focus:border-[#1B79EE] transition-all font-semibold appearance-none cursor-pointer shadow-xs"
                 >
                   <option value="" className="bg-white text-[#004aad]">Select Primary Inquiry...</option>
                   <option value="engineering" className="bg-white text-[#004aad]">Engineering & Drawings</option>
@@ -241,29 +264,49 @@ export default function ContactTerminal() {
 
               {/* Row 4: Message */}
               <div className="space-y-2">
-                <label className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#004aad]/50 flex items-center gap-2">
+                <label className="font-mono text-[10px] font-black uppercase tracking-widest text-[#004aad] flex items-center gap-2">
                   <TerminalSquare className="w-3 h-3 text-[#1B79EE]" /> Transmission Data (Project Specs)
                 </label>
                 <textarea 
-                  name="message" required rows={5}
+                  name="message" required rows={4}
                   value={formState.message} onChange={handleChange}
                   placeholder="Detail your engineering requirements, constraints, and project parameters here..."
-                  className="w-full bg-[#004aad]/5 border-b-2 border-[#004aad]/10 px-4 py-3 text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] focus:bg-[#004aad]/[0.02] transition-all font-semibold resize-none"
+                  className="w-full bg-white border border-[#004aad]/20 p-3.5 text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-all font-semibold resize-none shadow-xs"
                 />
               </div>
+
+              {/* Error Message Toast */}
+              {errorMessage && (
+                <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs font-bold rounded-none flex items-center gap-2">
+                  <span className="w-2 h-2 bg-red-600 rounded-full animate-ping" />
+                  {errorMessage}
+                </div>
+              )}
+
+              {/* Success Confirmation Toast */}
+              {submitSuccess && (
+                <div className="p-4 bg-emerald-50 border-2 border-emerald-500 text-emerald-800 text-xs font-black uppercase tracking-wider rounded-none flex items-center justify-between shadow-lg">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-emerald-600 rounded-full" />
+                    <span>Telemetry Transmitted &bull; Engineering Queue Active</span>
+                  </div>
+                  <span className="font-mono text-[10px] text-emerald-600">HANDSHAKE 200 OK</span>
+                </div>
+              )}
 
               {/* Submit Button */}
               <button 
                 type="submit"
-                className="w-full group relative bg-[#004aad] text-white flex items-center justify-center gap-3 overflow-hidden transition-all shadow-xl hover:shadow-[#1B79EE]/30 mt-6"
+                disabled={isSubmitting}
+                className={`w-full group relative bg-[#004aad] text-white flex items-center justify-center gap-3 overflow-hidden transition-all shadow-xl hover:shadow-[#1B79EE]/30 mt-6 py-4 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed`}
               >
                 {/* Button Hover Fill */}
                 <div className="absolute inset-0 bg-[#1B79EE] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
                 
                 <span className="relative z-10 font-mono text-[12px] font-black tracking-[0.3em] uppercase">
-                  Transmit Data
+                  {isSubmitting ? "Encrypting & Transmitting..." : "Transmit Project Telemetry"}
                 </span>
-                <Send className="relative z-10 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                <Send className={`relative z-10 w-4 h-4 ${isSubmitting ? 'animate-pulse' : 'group-hover:translate-x-1 group-hover:-translate-y-1'} transition-transform duration-300`} />
               </button>
 
             </form>

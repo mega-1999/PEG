@@ -51,7 +51,7 @@ export default function SeamlessConnection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-xl font-black text-[#004aad]/80 tracking-tight leading-snug max-w-3xl"
+            className="text-xl md:text-xl font-black text-[#004aad] tracking-tight leading-snug max-w-3xl"
           >
             How do we assist from your desk back to your shop seamlessly?
           </motion.p>
@@ -99,7 +99,7 @@ export default function SeamlessConnection() {
               <p className="text-[#1B79EE] group-hover:text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] mb-6 transition-colors duration-500">
                 Phase 01: Before Pouring
               </p>
-              <p className="text-[#004aad]/70 group-hover:text-white/90 text-sm font-medium leading-relaxed transition-colors duration-500 max-w-sm">
+              <p className="text-[#004aad] group-hover:text-white text-sm font-semibold leading-relaxed transition-colors duration-500 max-w-sm">
                 Advanced CAD drafting, structural calculations, clash detection, and state-specific DOT submittals engineered to perfection before a single drop of concrete is poured.
               </p>
             </motion.div>
@@ -121,7 +121,7 @@ export default function SeamlessConnection() {
               <p className="text-[#1B79EE] group-hover:text-white font-mono text-[10px] font-black uppercase tracking-[0.2em] mb-6 transition-colors duration-500">
                 Phase 02: After Pouring
               </p>
-              <p className="text-[#004aad]/70 group-hover:text-white/90 text-sm font-medium leading-relaxed transition-colors duration-500 max-w-sm">
+              <p className="text-[#004aad] group-hover:text-white text-sm font-semibold leading-relaxed transition-colors duration-500 max-w-sm">
                 Parametric formwork fabrication, Specified-Tolerance component isolation, lifting inserts, and step-by-step erection sequencing deployed directly to the floor.
               </p>
             </motion.div>

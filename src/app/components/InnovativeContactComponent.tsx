@@ -73,15 +73,13 @@ export default function InnovativeContactComponent() {
               Initialize <br />
               <span className="text-[#1B79EE]">Connection.</span>
             </h2>
-            <p className="text-[#004aad]/70 text-sm md:text-base font-medium leading-relaxed max-w-md">
+            <p className="text-[#004aad] text-sm md:text-base font-semibold leading-relaxed max-w-md">
               Route your structural criteria directly into our parametric workflow queue. Select a pipeline node to initialize the diagnostic handshake.
             </p>
           </div>
 
           {/* THE NODE SELECTOR SWITCHBOARD */}
           <div className="space-y-4 w-full max-w-md">
- 
-            
             {routingNodes.map((node) => {
               const isActive = selectedNode === node.id;
               return (
@@ -89,29 +87,29 @@ export default function InnovativeContactComponent() {
                   key={node.id}
                   type="button"
                   onClick={() => setSelectedNode(node.id)}
-                  className={`w-full p-5 border text-left flex items-center justify-between transition-all duration-300 relative overflow-hidden group
+                  className={`w-full p-4 border text-left flex items-center justify-between transition-all duration-300 relative overflow-hidden group cursor-pointer
                     ${isActive 
-                      ? "bg-[#004aad] border-[#004aad] text-white shadow-xl" 
-                      : "bg-white border-[#004aad]/10 hover:border-[#1B79EE]/40 hover:bg-[#1B79EE]/5"
+                      ? "bg-[#004aad] border-[#004aad] text-white shadow-md" 
+                      : "bg-white border-[#004aad]/15 hover:border-[#1B79EE] hover:shadow-xs"
                     }
                   `}
                 >
                   <div className="flex gap-4 items-center relative z-10">
-                    <div className={`p-3 border transition-colors duration-300
-                      ${isActive ? "bg-[#1B79EE] border-transparent text-white" : "bg-[#004aad]/5 border-[#004aad]/10 text-[#004aad] group-hover:text-[#1B79EE]"}
+                    <div className={`p-2.5 border transition-colors duration-300
+                      ${isActive ? "bg-[#1B79EE] border-transparent text-white" : "bg-blue-50 border-[#1B79EE]/20 text-[#004aad] group-hover:text-[#1B79EE]"}
                     `}>
                       {node.icon}
                     </div>
                     <div>
                       <h4 className="font-black text-sm uppercase tracking-tight">{node.title}</h4>
-                      <p className={`text-[10px] font-medium tracking-tight ${isActive ? "text-white/60" : "text-[#004aad]/50"}`}>
+                      <p className={`text-[10px] font-bold tracking-tight ${isActive ? "text-blue-100" : "text-[#1B79EE]"}`}>
                         {node.subtitle}
                       </p>
                     </div>
                   </div>
 
                   <ArrowRight className={`w-4 h-4 transition-all duration-300 relative z-10
-                    ${isActive ? "text-[#1B79EE] translate-x-0" : "text-[#004aad]/20 group-hover:translate-x-1 group-hover:text-[#1B79EE]"}
+                    ${isActive ? "text-white translate-x-0" : "text-[#1B79EE] group-hover:translate-x-1"}
                   `} />
 
                   {/* High-Tech Active Bar Indicator */}
@@ -127,8 +125,8 @@ export default function InnovativeContactComponent() {
           </div>
 
           {/* LIVE DATA READOUT TELEMETRY BOX */}
-          <div className="bg-[#004aad]/5 border border-[#004aad]/10 p-6 w-full max-w-md h-28 flex flex-col justify-between relative overflow-hidden rounded-xs">
-             <Terminal className="absolute top-4 right-4 w-4 h-4 text-[#004aad]/20" />
+          <div className="bg-white border border-[#004aad]/15 p-5 w-full max-w-md h-24 flex flex-col justify-between relative overflow-hidden shadow-xs">
+             <Terminal className="absolute top-4 right-4 w-4 h-4 text-[#004aad]/30" />
              <div className="flex items-center gap-2">
                 <Activity className="w-3 h-3 text-[#1B79EE] animate-pulse" />
                 <span className="font-mono text-[8px] font-black text-[#1B79EE] tracking-widest uppercase">Target Pipeline Locked</span>
@@ -139,16 +137,17 @@ export default function InnovativeContactComponent() {
                  initial={{ opacity: 0, x: -10 }}
                  animate={{ opacity: 1, x: 0 }}
                  exit={{ opacity: 0, x: 10 }}
-                 className="font-mono text-[11px] text-[#004aad] font-bold uppercase tracking-wide"
-               > 
+                 className="font-mono text-[11px] text-[#004aad] font-black uppercase tracking-wide"
+               >
+                 NODE // {selectedNode} : ACTIVE DISPATCH
                </motion.div>
              </AnimatePresence>
           </div>
 
         </div>
 
-        {/* RIGHT COLUMN: THE BRUTALIST DISPATCH FORM (Spans 7 Columns) */}
-        <div className="lg:col-span-7 bg-white border-2 border-[#004aad] shadow-2xl relative p-8 md:p-12 flex flex-col justify-center min-h-[550px]">
+        {/* RIGHT COLUMN: CLEAN MODERN DISPATCH FORM (Spans 7 Columns) */}
+        <div className="lg:col-span-7 bg-white border border-[#004aad]/20 shadow-md relative p-8 md:p-12 flex flex-col justify-center min-h-[520px]">
           
           {/* Accent Matrix Corners */}
           <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-[#1B79EE] m-3" />
@@ -166,48 +165,51 @@ export default function InnovativeContactComponent() {
               >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]/50">Authorized Engineer Name *</label>
+                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]">Authorized Engineer Name *</label>
                     <input 
                       type="text" 
                       required 
-                      className="w-full bg-[#004aad]/5 border border-[#004aad]/10 p-4 font-sans text-sm font-semibold text-[#004aad] focus:outline-none focus:border-[#1B79EE] transition-colors rounded-xs" 
+                      placeholder="e.g. John Doe, PE"
+                      className="w-full bg-white border border-[#004aad]/20 p-3.5 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-colors shadow-xs" 
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]/50">Corporate Secure Email *</label>
+                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]">Corporate Secure Email *</label>
                     <input 
                       type="email" 
                       required 
-                      className="w-full bg-[#004aad]/5 border border-[#004aad]/10 p-4 font-sans text-sm font-semibold text-[#004aad] focus:outline-none focus:border-[#1B79EE] transition-colors rounded-xs" 
+                      placeholder="engineer@company.com"
+                      className="w-full bg-white border border-[#004aad]/20 p-3.5 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-colors shadow-xs" 
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]/50">Project Location / Coordinates</label>
+                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]">Project Location / State DOT</label>
                     <input 
                       type="text" 
-                      className="w-full bg-[#004aad]/5 border border-[#004aad]/10 p-4 font-sans text-sm font-semibold text-[#004aad] focus:outline-none focus:border-[#1B79EE] transition-colors rounded-xs" 
+                      placeholder="e.g. Austin, TX (TxDOT)"
+                      className="w-full bg-white border border-[#004aad]/20 p-3.5 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-colors shadow-xs" 
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]/50">Linear Footage Estimate</label>
+                    <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]">Linear Footage / Volume Estimate</label>
                     <input 
                       type="text" 
-                      placeholder="e.g., 10,000 LF"
-                      className="w-full bg-[#004aad]/5 border border-[#004aad]/10 p-4 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] transition-colors rounded-xs" 
+                      placeholder="e.g. 10,000 LF"
+                      className="w-full bg-white border border-[#004aad]/20 p-3.5 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-colors shadow-xs" 
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]/50">Structural Criteria / Project Parameters *</label>
+                  <label className="font-mono text-[9px] font-black uppercase tracking-widest text-[#004aad]">Structural Criteria / Project Parameters *</label>
                   <textarea 
-                    rows={5} 
+                    rows={4} 
                     required
-                    placeholder="Provide depth profiles, vehicle loading expectations (e.g. H-20), or specialized parametric requirements..."
-                    className="w-full bg-[#004aad]/5 border border-[#004aad]/10 p-4 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/30 focus:outline-none focus:border-[#1B79EE] transition-colors resize-none rounded-xs"
+                    placeholder="Provide depth profiles, vehicle loading expectations (e.g. HS-20/HL-93), or specialized parametric requirements..."
+                    className="w-full bg-white border border-[#004aad]/20 p-3.5 font-sans text-sm font-semibold text-[#004aad] placeholder:text-[#004aad]/40 focus:outline-none focus:border-[#1B79EE] transition-colors resize-none shadow-xs"
                   />
                 </div>
 
@@ -215,7 +217,7 @@ export default function InnovativeContactComponent() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-12 bg-[#004aad] hover:bg-[#1B79EE] text-white font-mono text-[11px] font-black uppercase tracking-[0.3em] shadow-xl transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group mt-4 disabled:opacity-70"
+                  className="w-full h-12 bg-[#004aad] hover:bg-[#1B79EE] text-white font-mono text-[11px] font-black uppercase tracking-[0.3em] shadow-md transition-all duration-300 flex items-center justify-center gap-3 relative overflow-hidden group mt-4 disabled:opacity-70 cursor-pointer"
                 >
                   {loading ? (
                     <>
@@ -245,8 +247,8 @@ export default function InnovativeContactComponent() {
                   Packet Transmitted <br />
                   <span className="text-[#1B79EE]">Successfully.</span>
                 </h3>
-                <p className="text-[#004aad]/70 text-sm font-medium max-w-sm mx-auto leading-relaxed">
-                  Your project configuration has been routed into line node <strong className="text-[#004aad]">{selectedNode}</strong>. The system has initialized diagnostic sorting.
+                <p className="text-[#004aad] text-sm font-semibold max-w-sm mx-auto leading-relaxed">
+                  Your project configuration has been routed into line node <strong className="text-[#1B79EE]">{selectedNode}</strong>. The system has initialized diagnostic sorting.
                 </p>
                 <button
                   type="button"

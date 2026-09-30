@@ -45,20 +45,20 @@ export default function MarinaSystemComponent() {
               FLOATING <br />
               <span className="text-[#1B79EE]">MARINAS.</span>
             </h2>
-            <p className="text-[#004aad]/70 font-medium text-lg leading-relaxed max-w-md">
+            <p className="text-[#004aad] font-semibold text-lg leading-relaxed max-w-md">
               Engineered for the harshest marine environments. Our precast floating docks redefine durability through hydro-dynamic design and carbon-fiber reinforcement.
             </p>
           </div>
 
-          <div className="space-y-8 bg-[#004aad]/5 p-10 border-l-8 border-[#004aad]">
+          <div className="space-y-6 bg-white p-6 md:p-8 border-l-4 border-[#1B79EE] shadow-sm">
             {marinaSpecs.map((spec, i) => (
-              <div key={i} className="flex gap-6 group">
-                <div className="text-[#1B79EE] shrink-0">{spec.icon}</div>
+              <div key={i} className="flex gap-5 group">
+                <div className="text-[#1B79EE] shrink-0 p-2 bg-blue-50/80 rounded-sm">{spec.icon}</div>
                 <div>
-                  <h4 className="text-[#004aad] font-black text-xs uppercase tracking-[0.2em] mb-2 flex items-center gap-3">
+                  <h4 className="text-[#004aad] font-black text-xs uppercase tracking-[0.2em] mb-1.5 flex items-center gap-3">
                     {spec.title}
                   </h4>
-                  <p className="text-[#004aad]/70 text-sm leading-relaxed">{spec.detail}</p>
+                  <p className="text-[#004aad] font-semibold text-sm leading-relaxed">{spec.detail}</p>
                 </div>
               </div>
             ))}
@@ -68,12 +68,12 @@ export default function MarinaSystemComponent() {
         {/* RIGHT COLUMN: The "Visual Component Hub" (Occupies 7/12 columns) */}
         <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
           
-          {/* Main Visual Card - Embedded Video System */}
+          {/* Main Visual Card - Embedded Video System without grey tints */}
           <motion.div 
-            whileHover={{ y: -10 }}
-            className="md:col-span-2 relative aspect-video bg-[#004aad] overflow-hidden group border border-[#004aad]/10"
+            whileHover={{ y: -6 }}
+            className="md:col-span-2 relative aspect-video bg-white overflow-hidden group shadow-lg border border-[#004aad]/10"
           >
-            {/* BACKGROUND VIDEO INTERFACE */}
+            {/* BACKGROUND VIDEO INTERFACE - CRYSTAL CLEAR */}
             <video 
               autoPlay 
               loop 
@@ -87,35 +87,48 @@ export default function MarinaSystemComponent() {
               Your browser does not support the video tag.
             </video>
 
-            {/* Overlapping Identity Tint Matrix */}
-            <div className="absolute inset-0 bg-[#004aad]/40 mix-blend-multiply z-10 group-hover:opacity-30 transition-opacity duration-500" />
-            
-            {/* Content Layers */}
-            <div className="absolute inset-0 flex flex-col justify-end p-12 text-white z-20">
+            {/* Bottom Title Bar with Clear High Contrast */}
+            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#004aad]/90 via-transparent to-transparent text-white z-20">
               <div className="flex justify-between items-end">
                 <div>
-                  <h3 className="text-2xl font-black uppercase tracking-tighter">Monolithic Concrete Pontoons</h3>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest bg-[#1B79EE] px-2.5 py-1 text-white inline-block mb-2">
+                    Marine Engineering
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">Monolithic Concrete Pontoons</h3>
                 </div>
-                <div className="p-4 rounded-full border border-white/20 bg-[#004aad]/40 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all">
-                  <ArrowUpRight className="w-6 h-6" />
+                <div className="p-3.5 rounded-full bg-[#004aad] border border-[#1B79EE] text-white group-hover:bg-[#1B79EE] transition-all shadow-md">
+                  <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
             </div>
-            
-            {/* Decorative waves overlaying video depth */}
-            <Waves className="absolute top-10 right-10 w-32 h-32 text-white/5 opacity-20 rotate-12 z-10" />
           </motion.div>
 
-          {/* Secondary Sub-Modules */}
-          <div className="bg-white border-2 border-[#004aad] p-8 flex justify-between hover:bg-[#004aad]/5 transition-colors group">
-             <Anchor className="w-8 h-8 text-[#1B79EE]" />
-             <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tighter">Anchoring <br />Systems</h4>
+          {/* Secondary Feature Card */}
+          <div className="bg-white border border-[#004aad]/15 p-6 flex items-center justify-between hover:border-[#1B79EE] hover:shadow-md transition-all group">
+             <div className="flex items-center gap-4">
+               <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#1B79EE] group-hover:text-white transition-colors">
+                 <Anchor className="w-6 h-6" />
+               </div>
+               <div>
+                 <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tight">Anchoring Systems</h4>
+                 <p className="text-xs font-semibold text-[#1B79EE]">Flexible High-Load Mooring</p>
+               </div>
+             </div>
+             <ArrowUpRight className="w-5 h-5 text-[#1B79EE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
 
-          {/* <div className="bg-[#1B79EE] p-8 flex justify-between text-white hover:bg-[#004aad] transition-colors group">
-             <Navigation className="w-10 h-10 text-white mb-6" />
-             <h4 className="text-sm font-black uppercase tracking-tighter">Modular <br />Expansion</h4>
-          </div> */}
+          <div className="bg-white border border-[#004aad]/15 p-6 flex items-center justify-between hover:border-[#1B79EE] hover:shadow-md transition-all group">
+             <div className="flex items-center gap-4">
+               <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#1B79EE] group-hover:text-white transition-colors">
+                 <Waves className="w-6 h-6" />
+               </div>
+               <div>
+                 <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tight">Hydrodynamics</h4>
+                 <p className="text-xs font-semibold text-[#1B79EE]">Wave Dampening Geometry</p>
+               </div>
+             </div>
+             <ArrowUpRight className="w-5 h-5 text-[#1B79EE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </div>
 
         </div>
 

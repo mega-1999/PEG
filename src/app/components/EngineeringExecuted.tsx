@@ -128,7 +128,7 @@ export default function EngineeringExecuted() {
             </h2>
           </div>
           <div className="hidden lg:block max-w-sm text-right">
-             <p className="text-slate-500 font-mono text-[10px] uppercase tracking-[0.2em] leading-relaxed font-bold">
+             <p className="text-[#1B79EE] font-mono text-[10px] uppercase tracking-[0.2em] leading-relaxed font-bold">
                A comprehensive suite of precast engineering protocols, tailored to your manufacturing constraints and project parameters.
              </p>
           </div>
@@ -156,7 +156,7 @@ export default function EngineeringExecuted() {
                   {service.icon}
                 </div>
                 <span className={`font-mono text-[12px] font-black tracking-widest uppercase
-                  ${service.highlight ? 'text-white/30 group-hover:text-white' : 'text-slate-300 group-hover:text-[#1B79EE]'}`}>
+                  ${service.highlight ? 'text-white/30 group-hover:text-white' : 'text-[#1B79EE] group-hover:text-[#1B79EE]'}`}>
                   {service.id}
                 </span>
               </div>
@@ -164,7 +164,7 @@ export default function EngineeringExecuted() {
               {/* Main Content */}
               <div className="relative z-10">
                 <p className={`font-mono text-[9px] uppercase tracking-[0.2em] mb-3 font-bold
-                  ${service.highlight ? 'text-[#1B79EE] group-hover:text-white' : 'text-slate-400'}`}>
+                  ${service.highlight ? 'text-[#1B79EE] group-hover:text-white' : 'text-[#1B79EE]'}`}>
                   {service.subtitle}
                 </p>
                 <h3 className={`text-xl font-black uppercase tracking-tighter mb-4 leading-none
@@ -172,7 +172,7 @@ export default function EngineeringExecuted() {
                   {service.title}
                 </h3>
                 <p className={`text-sm font-medium leading-relaxed
-                  ${service.highlight ? 'text-white/70 group-hover:text-white/90' : 'text-slate-500'}`}>
+                  ${service.highlight ? 'text-white/70 group-hover:text-white/90' : 'text-[#1B79EE]'}`}>
                   {service.desc}
                 </p>
               </div>

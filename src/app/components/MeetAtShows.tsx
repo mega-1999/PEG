@@ -103,7 +103,7 @@ export default function MeetAtShows() {
               <div className="flex justify-end items-center gap-3 text-[#004aad] font-black text-xs tracking-widest uppercase mb-2">
                 <Globe className="w-4 h-4 text-[#1B79EE] animate-pulse" /> Worldwide Presence
               </div>
-              <p className="text-slate-400 font-mono text-[9px] uppercase tracking-widest">Connect with our PE's live on the floor.</p>
+              <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest">Connect with our PE's live on the floor.</p>
             </div>
 
             <div className="flex items-center gap-6">
@@ -117,7 +117,7 @@ export default function MeetAtShows() {
                     <button
                       key={item.mode}
                       onClick={() => setViewMode(item.mode as ViewMode)}
-                      className={`p-2.5 transition-all duration-300 ${viewMode === item.mode ? 'bg-[#004aad]/5 text-[#004aad] shadow-inner border border-[#004aad]/10' : 'text-slate-400 hover:text-[#1B79EE]'}`}
+                      className={`p-2.5 transition-all duration-300 ${viewMode === item.mode ? 'bg-[#004aad]/5 text-[#004aad] shadow-inner border border-[#004aad]/10' : 'text-[#1B79EE] hover:text-[#1B79EE]'}`}
                       title={item.title}
                     >
                       <Icon className="w-5 h-5" />
@@ -174,7 +174,7 @@ export default function MeetAtShows() {
                 <div className="absolute bottom-0 right-4 z-10 text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
                   <div className="flex items-start gap-3">
                     <Calendar className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
-                    <span className="font-bold text-slate-700 text-[13px]">{show.date}</span>
+                    <span className="font-bold text-[#1B79EE] text-[13px]">{show.date}</span>
                   </div>
                 </div>
               </div>
@@ -190,16 +190,16 @@ export default function MeetAtShows() {
                 {/* <div className="bg-slate-50 border border-slate-100 p-4 space-y-3 mb-6 group-hover:bg-[#004aad]/5 group-hover:border-[#004aad]/10 transition-colors duration-300">
                   <div className="flex items-start gap-3">
                     <Calendar className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
-                    <span className="font-bold text-slate-700 text-[13px]">{show.date}</span>
+                    <span className="font-bold text-[#1B79EE] text-[13px]">{show.date}</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
-                    <span className="font-medium text-slate-600 text-[13px]">{show.location}</span>
+                    <span className="font-medium text-[#1B79EE] text-[13px]">{show.location}</span>
                   </div>
                 </div> */}
 
                 {/* Multiline Description */}
-                {/* <div className="text-slate-500 text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
+                {/* <div className="text-[#1B79EE] text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
                   {show.description.split('\n\n').map((paragraph, pIdx) => {
                     const isBold = paragraph.includes("Early Bird") || paragraph.includes("Opening Hours");
                     return (

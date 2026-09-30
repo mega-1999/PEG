@@ -155,7 +155,7 @@ export default function EntrySystem() {
             >
                 <button
                     onClick={toggleMute}
-                    className=" transition-colors flex items-center justify-center cursor-pointer w-12 h-12 rounded-full bg-[#004aad] border border-[#1B79EE]/30 text-white "
+                    className=" transition-colors flex items-center justify-center cursor-pointer w-12 h-12 rounded-full bg-[#004aad] border border-white text-white "
                 >
                     {isMuted ? <VolumeX className=' w-6 h-6 rounded-full flex items-center justify-center'  /> : <Volume2 className=" w-6 h-6 rounded-full flex items-center justify-center" />}
                 </button>

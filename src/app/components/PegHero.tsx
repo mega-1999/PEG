@@ -108,7 +108,7 @@ export default function PegHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
-          className="max-w-2xl text-slate-500 italic text-lg md:text-xl font-medium leading-relaxed mt-4"
+          className="max-w-2xl text-[#1B79EE] italic text-lg md:text-xl font-medium leading-relaxed mt-4"
         >
           "From municipal streets to international airport runways,
           we provide the vertical precision required for the world's toughest environments."

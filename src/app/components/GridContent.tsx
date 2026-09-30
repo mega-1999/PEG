@@ -88,7 +88,7 @@ const GridContent = () => {
                             <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight mb-4">
                                 What is Precast Engineering?
                             </h3>
-                            <p className="text-slate-500 font-medium text-lg leading-relaxed">
+                            <p className="text-[#1B79EE] font-medium text-lg leading-relaxed">
                                 It is the vertical integration of structural precision and manufacturing speed.
                                 We provide the calculations, and hourly expertise to turn complex
                                 infrastructure into rapid-assembly reality.
@@ -143,7 +143,7 @@ const GridContent = () => {
                                                 <p className="text-sm font-black uppercase tracking-wider mb-1 text-[#004aad] group-hover:text-white transition-colors">
                                                     {item.label}
                                                 </p>
-                                                <p className="text-[11px] font-medium leading-relaxed text-slate-500 group-hover:text-white/70 transition-colors">
+                                                <p className="text-[11px] font-medium leading-relaxed text-[#1B79EE] group-hover:text-white/70 transition-colors">
                                                     {item.sub}
                                                 </p>
                                             </div>
@@ -196,7 +196,7 @@ function QuickLinkCard({ icon, title, description, href, count, tag }: {
                     <div className="text-[#1B79EE] scale-125 group-hover:rotate-12 transition-transform duration-500">
                         {icon}
                     </div>
-                    <span className="font-mono text-[9px] font-bold text-slate-300 tracking-[0.3em] uppercase">
+                    <span className="font-mono text-[9px] font-bold text-[#1B79EE] tracking-[0.3em] uppercase">
                         {tag}
                     </span>
                 </div>
@@ -205,13 +205,13 @@ function QuickLinkCard({ icon, title, description, href, count, tag }: {
                     <h3 className="text-lg font-black text-[#004aad] mb-4 tracking-tight group-hover:text-[#1B79EE] transition-colors">
                         {title}
                     </h3>
-                    <p className="text-sm font-medium text-slate-500 leading-relaxed mb-8">
+                    <p className="text-sm font-medium text-[#1B79EE] leading-relaxed mb-8">
                         {description}
                     </p>
                 </div>
 
                 <div className="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1B79EE]">
                         {count}
                     </span>
                     <ArrowRight className="w-5 h-5 text-[#1B79EE] -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />

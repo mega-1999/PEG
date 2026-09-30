@@ -40,7 +40,7 @@ const HeroEngineering = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-lg text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium"
+            className="text-xl md:text-lg text-[#1B79EE] max-w-3xl mx-auto leading-relaxed font-medium"
           >
             Providing specialized engineering, CAD, and technical support exclusively for the precast concrete industry.
           </motion.p>
@@ -59,7 +59,7 @@ const HeroEngineering = () => {
           <Input
             type="text"
             placeholder="Search structural precast, or technical specs..."
-            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base py-6 placeholder:text-slate-300 font-medium"
+            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base py-6 placeholder:text-[#1B79EE] font-medium"
           />
           <Button className="rounded-none bg-[#004aad] hover:bg-[#1B79EE] text-white font-black transition-all tracking-widest">
             INITIALIZE SEARCH
@@ -69,10 +69,10 @@ const HeroEngineering = () => {
         {/* 4. POPULAR TAGS: Technical styling */}
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[10px] font-black text-[#004aad] uppercase tracking-[0.2em]">
           <span className="hover:text-[#1B79EE] cursor-pointer transition-colors">Popular_Nodes:</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Wall Panels</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Hollow-Core Slabs</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Bridge Girders</span>
-          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-slate-500">Culvert Systems</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-[#1B79EE]">Wall Panels</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-[#1B79EE]">Hollow-Core Slabs</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-[#1B79EE]">Bridge Girders</span>
+          <span className="hover:text-[#004aad] cursor-pointer transition-colors text-[#1B79EE]">Culvert Systems</span>
         </div>
 
       </div>

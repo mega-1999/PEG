@@ -20,8 +20,8 @@ export const BusinessPodcastSection = () => {
           <h2 className="text-xl font-bold text-[#004aad] tracking-tight">
             Solutions for BPM's
           </h2>
-          <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
-            <p className="font-semibold text-slate-800">Want to be seen when and where your audience is searching?</p>
+          <div className="space-y-4 text-[#1B79EE] text-sm leading-relaxed">
+            <p className="font-semibold text-[#1B79EE]">Want to be seen when and where your audience is searching?</p>
             <p>Don’t miss out on the opportunity to be considered at the beginning stages of product selection. Find out how PEG can augment your outreach, even before architects, engineers, and specifiers are ready to connect you directly.</p>
             <p>Don’t take our word for it, see what some of our happy customers have to say:</p>
           </div>
@@ -31,7 +31,7 @@ export const BusinessPodcastSection = () => {
             <p className="italic text-[#004aad] font-medium mb-4">
               "Specifiers rely on PEG as a trusted resource, and being present there ensures our products are discovered at the right time in their design process... Maintaining a steady presence on PEG builds familiarity and trust, and ultimately helps turn early interest into specification."
             </p>
-            <p className="text-sm font-bold text-slate-700">Trish B, Sales Manager at Fire Trol Fireproof</p>
+            <p className="text-sm font-bold text-[#1B79EE]">Trish B, Sales Manager at Fire Trol Fireproof</p>
             <Button variant="outline" className="mt-6 border-[#004aad] text-[#004aad] hover:bg-[#004aad] hover:text-white rounded-none uppercase font-bold tracking-widest">
               More Testimonials <ArrowRight className="ml-2 w-3 h-3" />
             </Button>

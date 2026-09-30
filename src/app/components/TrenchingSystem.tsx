@@ -382,7 +382,7 @@ export default function TrenchingSystem() {
                   className="group bg-white border border-[#004aad]/15 hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(27,121,238,0.15)] transition-all duration-500 flex flex-col justify-between overflow-hidden"
                 >
                   {/* IMAGE CONTAINER */}
-                  <div className="relative w-full aspect-[4/3] bg-white p-6 border-b border-[#004aad]/10 overflow-hidden flex items-center justify-center">
+                  <div className="relative w-full aspect-16/9 bg-white p-6 border-b border-[#004aad]/10 overflow-hidden flex items-center justify-center">
                     <div className="relative w-full h-full group-hover:scale-105 transition-transform duration-700 ease-out">
                       <Image
                         src={getAssetUrl(product.img)}

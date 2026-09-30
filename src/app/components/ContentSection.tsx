@@ -67,7 +67,7 @@ export const ContentSection = () => {
                         <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
                             Full-Spectrum Lifecycle Support
                         </h3>
-                        <p className="text-slate-500 font-medium leading-relaxed">
+                        <p className="text-[#1B79EE] font-medium leading-relaxed">
                             From conceptual design to on-site construction and facility management, we are integrated into every phase. Browse our engineering directory to extract the exact data, architecture details, and construction specs you require to execute flawlessly.
                         </p>
                     </div>
@@ -85,7 +85,7 @@ export const ContentSection = () => {
                 >
                     <div>
                         <Database className="w-8 h-8 text-[#1B79EE] mb-6" />
-                        <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                        <p className="text-[#1B79EE] text-sm font-medium leading-relaxed">
                             Stop paying agencies to build content. We engineer high-performance CAD with minimal geometry and maximum data logic—ready for immediate download.
                         </p>
                     </div>

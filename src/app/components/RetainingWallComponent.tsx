@@ -35,7 +35,7 @@ export default function RetainingWallComponent() {
               Retaining <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>Walls.</span>
             </p>
           </div>
-          <p className="text-slate-400 font-mono text-[10px] max-w-[300px] text-right uppercase tracking-widest leading-relaxed">
+          <p className="text-[#1B79EE] font-mono text-[10px] max-w-[300px] text-right uppercase tracking-widest leading-relaxed">
             High-performance precast solutions for grade separation and structural earth stabilization.
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function RetainingWallComponent() {
                   {wall.title}
                 </h3>
 
-                <p className="text-slate-500 text-sm leading-relaxed mb-10 max-w-md font-medium">
+                <p className="text-[#1B79EE] text-sm leading-relaxed mb-10 max-w-md font-medium">
                   {wall.description}
                 </p>
 
@@ -78,7 +78,7 @@ export default function RetainingWallComponent() {
                   {wall.specs.map((spec, i) => (
                     <div key={i} className="space-y-1">
                       <div className="h-1 w-4 bg-[#1B79EE]/20 group-hover:w-full transition-all duration-700" />
-                      <p className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-tighter">
+                      <p className="text-[9px] font-mono font-black text-[#1B79EE] uppercase tracking-tighter">
                         {spec.split(":")[0]}
                       </p>
                       <p className="text-[11px] font-bold text-[#004aad]">

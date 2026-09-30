@@ -12,7 +12,7 @@ export default function InternationalCreditManager() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-200 pb-6">
         <div>
           <h2 className="text-lg font-bold text-[#004aad]">Global Communication Credits</h2>
-          <p className="text-slate-500 text-sm font-medium uppercase tracking-tight">Mega Foundries US | Project ID: 2026-MF</p>
+          <p className="text-[#1B79EE] text-sm font-medium uppercase tracking-tight">Mega Foundries US | Project ID: 2026-MF</p>
         </div>
         <Badge variant="outline" className="bg-[#1B79EE]/10 text-[#1B79EE] border-[#1B79EE] px-4 py-1 text-sm font-bold">
           Active Plan: Regular + Int'l
@@ -30,9 +30,9 @@ export default function InternationalCreditManager() {
           </CardHeader>
           <CardContent className="pt-6 space-y-4">
             <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase text-slate-400">Recharge Amount (INR)</label>
+              <label className="text-[10px] font-black uppercase text-[#1B79EE]">Recharge Amount (INR)</label>
               <div className="relative">
-                <span className="absolute left-3 top-2.5 text-slate-400 font-bold">₹</span>
+                <span className="absolute left-3 top-2.5 text-[#1B79EE] font-bold">₹</span>
                 <Input defaultValue="30" className="pl-8 border-slate-200 focus-visible:ring-[#1B79EE]" />
               </div>
             </div>
@@ -52,8 +52,8 @@ export default function InternationalCreditManager() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="p-3 bg-slate-100 border-l-4 border-[#1B79EE]">
-              <p className="text-xs font-bold text-slate-700">60 Minutes Pack</p>
-              <p className="text-[10px] text-slate-500 uppercase">Valid for 30 Days</p>
+              <p className="text-xs font-bold text-[#1B79EE]">60 Minutes Pack</p>
+              <p className="text-[10px] text-[#1B79EE] uppercase">Valid for 30 Days</p>
             </div>
             <Button variant="outline" className="w-full border-[#004aad] text-[#004aad] hover:bg-slate-50 font-bold rounded-none uppercase">
               Activate One HR
@@ -82,24 +82,24 @@ export default function InternationalCreditManager() {
         <table className="w-full text-left">
           <thead className="bg-slate-50 border-y border-slate-100">
             <tr>
-              <th className="py-3 px-4 text-[10px] font-black text-slate-400 uppercase">Date</th>
-              <th className="py-3 px-4 text-[10px] font-black text-slate-400 uppercase">Description</th>
-              <th className="py-3 px-4 text-[10px] font-black text-slate-400 uppercase">Amount</th>
-              <th className="py-3 px-4 text-[10px] font-black text-slate-400 uppercase">Status</th>
+              <th className="py-3 px-4 text-[10px] font-black text-[#1B79EE] uppercase">Date</th>
+              <th className="py-3 px-4 text-[10px] font-black text-[#1B79EE] uppercase">Description</th>
+              <th className="py-3 px-4 text-[10px] font-black text-[#1B79EE] uppercase">Amount</th>
+              <th className="py-3 px-4 text-[10px] font-black text-[#1B79EE] uppercase">Status</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
             <tr className="text-xs">
-              <td className="py-4 px-4 font-bold text-slate-600 italic">May 01, 2026</td>
-              <td className="py-4 px-4 text-slate-500">Regular GIO Add-on (Ben MF US)</td>
+              <td className="py-4 px-4 font-bold text-[#1B79EE] italic">May 01, 2026</td>
+              <td className="py-4 px-4 text-[#1B79EE]">Regular GIO Add-on (Ben MF US)</td>
               <td className="py-4 px-4 font-bold text-[#004aad]">₹30.00</td>
               <td className="py-4 px-4"><Badge className="bg-green-100 text-green-700 hover:bg-green-100 border-none rounded-none text-[9px]">COMPLETED</Badge></td>
             </tr>
             <tr className="text-xs">
-              <td className="py-4 px-4 font-bold text-slate-600 italic">Apr 28, 2026</td>
-              <td className="py-4 px-4 text-slate-500">International One HR Pack</td>
+              <td className="py-4 px-4 font-bold text-[#1B79EE] italic">Apr 28, 2026</td>
+              <td className="py-4 px-4 text-[#1B79EE]">International One HR Pack</td>
               <td className="py-4 px-4 font-bold text-[#004aad]">₹---</td>
-              <td className="py-4 px-4"><Badge className="bg-slate-100 text-slate-500 hover:bg-slate-100 border-none rounded-none text-[9px]">PENDING</Badge></td>
+              <td className="py-4 px-4"><Badge className="bg-slate-100 text-[#1B79EE] hover:bg-slate-100 border-none rounded-none text-[9px]">PENDING</Badge></td>
             </tr>
           </tbody>
         </table>

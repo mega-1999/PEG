@@ -90,7 +90,7 @@ export default function ManufacturingHub() {
             </h2>
           </div>
           <div className="hidden xl:block text-right">
-            <p className="text-slate-400 font-mono text-[9px] uppercase tracking-widest leading-relaxed max-w-xs">
+            <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest leading-relaxed max-w-xs">
               Monitored plant operations processing high-performance material infrastructure to exact specification matrixes.
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function ManufacturingHub() {
               {/* TOP READOUT */}
               <div>
                 <div className="flex justify-between items-center mb-12">
-                  <span className="font-mono text-[10px] font-black text-slate-300 group-hover:text-[#1B79EE] transition-colors">
+                  <span className="font-mono text-[10px] font-black text-[#1B79EE] group-hover:text-[#1B79EE] transition-colors">
                     {cell.id}
                   </span>
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
@@ -125,7 +125,7 @@ export default function ManufacturingHub() {
                 <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter leading-tight mb-4">
                   {cell.title}
                 </h3>
-                <p className="text-slate-500 text-xs font-medium leading-relaxed">
+                <p className="text-[#1B79EE] text-xs font-medium leading-relaxed">
                   {cell.description}
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function ManufacturingHub() {
                 </div>
 
                 <div className="flex justify-between items-center pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="font-mono text-[8px] text-slate-300 uppercase tracking-widest">{cell.tag}</span>
+                  <span className="font-mono text-[8px] text-[#1B79EE] uppercase tracking-widest">{cell.tag}</span>
                   <ArrowUpRight className="w-4 h-4 text-[#1B79EE]" />
                 </div>
               </div>

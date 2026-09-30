@@ -117,7 +117,7 @@ function LocationCard({ loc, isWide = false }: { loc: any, isWide?: boolean }) {
       <div className="space-y-4">
         <div className="flex items-start gap-3">
           <MapPin className="w-4 h-4 text-[#1B79EE] mt-1 shrink-0" />
-          <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider leading-relaxed">
+          <div className="text-[11px] font-bold text-[#1B79EE] uppercase tracking-wider leading-relaxed">
             {loc.address}<br />
             {loc.city}
           </div>

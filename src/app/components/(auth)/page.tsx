@@ -115,14 +115,14 @@ export default function PegPortalDashboard() {
                   {s.icon}
                 </div>
               </div>
-              <span className="text-xs font-mono text-slate-300">0{i + 1}</span>
+              <span className="text-xs font-mono text-[#1B79EE]">0{i + 1}</span>
             </div>
 
             <div>
               <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight mb-2">
                 {s.role}
               </h3>
-              <p className="text-xs font-medium text-slate-500 uppercase tracking-widest leading-relaxed">
+              <p className="text-xs font-medium text-[#1B79EE] uppercase tracking-widest leading-relaxed">
                 {s.desc}
               </p>
             </div>

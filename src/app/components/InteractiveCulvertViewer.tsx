@@ -90,7 +90,7 @@ export default function InteractiveCulvertViewer() {
                 TELEMETRY.
               </span>
             </h2>
-            <p className="mt-4 text-slate-400 font-medium leading-relaxed text-sm">
+            <p className="mt-4 text-[#1B79EE] font-medium leading-relaxed text-sm">
               Inspect our precast box culvert dimensions and structural geometries in real-time. Drag to rotate, scroll to zoom.
             </p>
           </div>
@@ -108,11 +108,11 @@ export default function InteractiveCulvertViewer() {
                   }`}
               >
                 <div className="flex items-center gap-4">
-                  <div className={`p-2 border transition-colors ${activeModel.id === model.id ? 'bg-[#1B79EE]/20 border-[#1B79EE] text-[#1B79EE]' : 'bg-transparent border-white/20 text-slate-400 group-hover:text-white'}`}>
+                  <div className={`p-2 border transition-colors ${activeModel.id === model.id ? 'bg-[#1B79EE]/20 border-[#1B79EE] text-[#1B79EE]' : 'bg-transparent border-white/20 text-[#1B79EE] group-hover:text-white'}`}>
                     <Box className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className={`font-black uppercase tracking-tight ${activeModel.id === model.id ? 'text-white' : 'text-slate-300'}`}>
+                    <h4 className={`font-black uppercase tracking-tight ${activeModel.id === model.id ? 'text-white' : 'text-[#1B79EE]'}`}>
                       {model.name}
                     </h4>
                     <p className="font-mono text-[10px] text-[#1B79EE] tracking-widest">{model.type}</p>
@@ -143,7 +143,7 @@ export default function InteractiveCulvertViewer() {
               >
                 <div className="font-mono text-[9px] text-[#1B79EE] uppercase tracking-widest mb-1">{activeModel.id}</div>
                 <div className="text-xl font-black text-white uppercase tracking-tighter">{activeModel.name}</div>
-                <div className="font-mono text-xs text-slate-400 mt-2 flex items-center gap-2">
+                <div className="font-mono text-xs text-[#1B79EE] mt-2 flex items-center gap-2">
                   <Layers className="w-3 h-3" /> {activeModel.specs}
                 </div>
               </motion.div>

@@ -56,7 +56,7 @@ export default function FuturisticCTA() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-col items-center gap-4 mb-16"
         >
-          <p className="text-lg md:text-2xl font-bold text-slate-300 tracking-tight leading-snug">
+          <p className="text-lg md:text-2xl font-bold text-[#1B79EE] tracking-tight leading-snug">
             Trust in us for <span className="text-white italic">futuristic</span> precasting.
           </p>
           <div className="flex items-center gap-6 mt-4 opacity-70">

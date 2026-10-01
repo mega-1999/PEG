@@ -111,7 +111,7 @@ export const Navbar = () => {
       {/* 1. TOP UTILITY BAR */}
       {/* Adjusted padding for smaller screens */}
       <div className="bg-[#023380] text-white h-10 w-full px-6 xl:px-20 flex justify-between items-center">
-        <div className="h-full flex items-center gap-2 text-[11px] font-black tracking-widest uppercase">
+        <div className="h-full flex items-center gap-2 text-[11px] font-black tracking-widest">
           <span className="w-2 h-2 bg-[#0271f1] shrink-0" />
           <span>PRECAST ENGINEERING GROUP</span>
           <span className="hidden md:inline text-[#0271f1]">&bull;</span>

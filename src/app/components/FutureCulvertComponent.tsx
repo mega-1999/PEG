@@ -12,7 +12,7 @@ const futureInitiatives = [
     subtitle: "Ecological Continuity",
     description: "Re-engineering culverts into subterranean bridges that restore natural migration paths and reduce vehicle-wildlife collisions.",
     icon: <Rabbit className="w-5 h-5" />,
-    img: getAssetUrl("/assets/images/Box_Culvert/11.jpeg"),
+    img: getAssetUrl("/assets/images/Box_Culvert/10_FT_Culvert_box__-_PEG.1243.png"),
     specs: "AASHTO HS-25 • Multi-Cell • Custom Inverts"
   },
   {
@@ -20,7 +20,7 @@ const futureInitiatives = [
     subtitle: "Modular Smart-Cities",
     description: "Dual-purpose box culverts designed to house fiber optics, power, and water, allowing for maintenance without surface excavation.",
     icon: <Zap className="w-5 h-5" />,
-    img: getAssetUrl("/assets/images/Box_Culvert/12.jpeg"),
+    img: getAssetUrl("/assets/images/Box_Culvert/Culvert_box_full_assembly_-_PEG.1241.png"),
     specs: "H-20 Highway • Integrated Cable Trays • Watertight"
   },
   {
@@ -28,7 +28,7 @@ const futureInitiatives = [
     subtitle: "Lower-Carbon Precast Solutions",
     description: "Implementing Pozzolanic admixtures and CO2 mineralization to create culverts that actively sequester carbon over their 100+ year service life.",
     icon: <Leaf className="w-5 h-5" />,
-    img: getAssetUrl("/assets/images/Box_Culvert/13.jpeg"),
+    img: getAssetUrl("/assets/images/Box_Culvert/new_one.28.png"),
     specs: "ASTM C1577 • Low Clinker • 100+ Yr Durability"
   }
 ];
@@ -70,18 +70,18 @@ export default function FutureCulvertComponent() {
             className="group bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
           >
             {/* Image Preview Container */}
-            <div className="relative w-full aspect-16/10 bg-slate-50 border-b border-[#023380]/10 overflow-hidden">
+            <div className="relative w-full h-64 sm:h-72 bg-gradient-to-b from-slate-50 to-blue-50/20 border-b border-[#023380]/10 overflow-hidden flex items-center justify-center p-4">
               <Image 
                 src={item.img}
                 alt={`PEG Culvert - ${item.title}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                className="object-contain p-4 group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <div className="absolute top-3 left-3 bg-[#023380] text-white p-2 shadow-xs">
+              <div className="absolute top-3 left-3 bg-[#023380] text-white p-2 shadow-xs z-10">
                 {item.icon}
               </div>
-              <div className="absolute top-3 right-3 bg-white/95 text-[#023380] px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest border border-[#023380]/20">
+              <div className="absolute top-3 right-3 bg-white/95 text-[#023380] px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest border border-[#023380]/20 z-10">
                 INITIATIVE 0{idx + 1}
               </div>
             </div>

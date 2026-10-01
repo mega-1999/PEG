@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { getAssetUrl } from "@/lib/utils";
 
-// 5 CORE TRENCHING CATEGORIES
+// 4 CORE TRENCHING CATEGORIES BASED ON PRE-TRENCH SPECIFICATIONS
 const categories = [
   {
     id: "2-side",
@@ -31,19 +31,19 @@ const categories = [
     grates: [
       {
         name: "ADA Grate",
-        image: getAssetUrl("/TRENCH/12_ft_2_side_interlocking_trench_with_ada_grate.1119.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_2_side_interlocking_trench_with_ada_grate.1221.png"),
         badge: "ADA COMPLIANT STEEL",
         spec: "AASHTO H-20 / HS-25 Rated"
       },
       {
         name: "Heel-Proof Grate",
-        image: getAssetUrl("/TRENCH/12_ft_2_side_interlocking_trench_with_heel_proof_grate.1118.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_2_side_interlocking_trench_with_heel_proof_grate.1222.png"),
         badge: "HEEL-PROOF NARROW SLOT",
         spec: "Pedestrian & Heavy Commercial"
       },
       {
         name: "Regular Grate",
-        image: getAssetUrl("/TRENCH/12_ft_2_side_interlocking_trench_with_regualar_grate.1120.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_2_side_interlocking_trench_with_regualar_grate.1220.png"),
         badge: "CAST DUCTILE IRON",
         spec: "Maximum Hydraulic Flow"
       }
@@ -63,27 +63,27 @@ const categories = [
     grates: [
       {
         name: "ADA Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_ada_grate.1111.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_3_side_interlocking_trench_with_heel_ADA_grate.1224.png"),
         badge: "ADA COMPLIANT",
         spec: "H-20 / HS-25 Rated"
       },
       {
         name: "Heel-Proof Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_heel_proof_grate.1110.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_3_side_interlocking_trench_with_heel_proof_grate.1223.png"),
         badge: "HEEL-PROOF MESH",
         spec: "Heavy Industrial H-20"
       },
       {
         name: "Regular Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_side_interlocking_trench_with_regular_grate.1109.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_3_side_interlocking_trench_with_heel_regualr_grate.1225.png"),
         badge: "HEAVY DUCTILE STEEL",
         spec: "AASHTO HS-25 Highway"
       }
     ]
   },
   {
-    id: "45-tongue",
-    name: "45° TONGUE INTERLOCKING",
+    id: "45-degree",
+    name: "45° INTERLOCKING",
     countText: "3 VARIANTS",
     subtitle: "Angled Utility Direction Change Loop",
     tag: "45° ANGLED JUNCTION",
@@ -95,19 +95,19 @@ const categories = [
     grates: [
       {
         name: "ADA Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_ada_grate.1116.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_45_degree_interlocking_trench_with_ADA_grate.1229.png"),
         badge: "ADA COMPLIANT",
         spec: "H-20 Commercial"
       },
       {
         name: "Heel-Proof Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_heel_proof_grate.1117.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_45_degree_interlocking_trench_with_heel_proof_grate.1230.png"),
         badge: "HEEL-PROOF SAFETY",
         spec: "Heavy Industrial H-20"
       },
       {
         name: "Regular Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_45_degree_toungue_interlocking_trench_with_regualr_grate.1115.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_45_degree_interlocking_trench_with_regular_grate.1231.png"),
         badge: "DUCTILE IRON HEAVY",
         spec: "AASHTO HS-25 Highway"
       }
@@ -127,41 +127,21 @@ const categories = [
     grates: [
       {
         name: "ADA Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_ada_grate.1112.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_chamfer_interlocking_trench_with_ADA_grate.1228.png"),
         badge: "ADA COMPLIANT",
         spec: "H-20 Highway Rated"
       },
       {
         name: "Heel-Proof Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_heel_proof_grate.1113.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_chamfer_interlocking_trench_with_heel_proof_grate.1227.png"),
         badge: "HEEL-PROOF SECURITY",
         spec: "Heavy Duty H-20"
       },
       {
         name: "Regular Grate",
-        image: getAssetUrl("/TRENCH/12_ft_3_champher_interlocking_trench_with_regualr_grate.1114.png"),
+        image: getAssetUrl("/assets/images/pre-trench/12_ft_chamfer_interlocking_trench_with_regualr_grate.1226.png"),
         badge: "DUCTILE IRON GRATE",
         spec: "AASHTO HS-25 Highway"
-      }
-    ]
-  },
-  {
-    id: "master-assembly",
-    name: "MASTER ASSEMBLY",
-    countText: "1 SYSTEM",
-    subtitle: "Integrated Multi-Branch Precast Network",
-    tag: "UNIVERSAL MODULAR",
-    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.465.mp4"),
-    desc: "Complete 12ft modular trench system displaying 2-side, 3-side, 45° tongue, and chamfer interlocking configurations unified into one continuous assembly.",
-    jointType: "Universal Modular Interlock",
-    loadClass: "Multi-Rating H-20 / HS-25",
-    length: "12 FT Master System",
-    grates: [
-      {
-        name: "Complete Master Trench System",
-        image: getAssetUrl("/TRENCH/12'_all_trench.1083.png"),
-        badge: "UNIVERSAL MODULAR ASSEMBLY",
-        spec: "Multi-Rating H-20 / HS-25"
       }
     ]
   }
@@ -214,7 +194,7 @@ export default function TrenchingSystem() {
 
         {/* 2. SINGLE-LINE CATEGORY SELECTOR BAR */}
         <div className="w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-3 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-2 md:gap-3 w-full">
             {categories.map((cat, idx) => {
               const isSelected = activeCategoryIndex === idx;
               return (

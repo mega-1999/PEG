@@ -157,19 +157,22 @@ export const Navbar = () => {
       </div>
 
       {/* 2. MAIN NAVIGATION BAR */}
-      <div className="bg-white border-b border-[#023380]/10 h-18 w-full relative">
+      <div className="bg-white border-b border-[#023380]/10 h-20 md:h-26 w-full relative">
         {/* Adjusted padding to flow nicely when zoomed in */}
         <div className="w-full px-6 xl:px-20 h-full flex justify-between items-center relative">
 
-          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center gap-3.5 h-16 pr-4 group">
+          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex flex-col justify-center items-start group">
             <Image
               src={getAssetUrl("/peg_logo.png")}
               alt="PEG Precast Engineering Group"
-              width={200}
-              height={48}
-              className="h-12 md:h-14 w-auto object-contain"
+              width={260}
+              height={80}
+              className="h-14 md:h-20 w-auto object-contain"
               priority
             />
+            <span className="text-[10px] md:text-[11.5px] font-bold tracking-wider text-[#023380] uppercase group-hover:text-[#0271f1] transition-colors leading-tight mt-0.5 font-mono">
+              Advanced Precast Engineering..
+            </span>
           </Link>
 
           {/* Desktop Navigation Links - Shifted to xl breakpoint (1280px) */}
@@ -317,7 +320,12 @@ export const Navbar = () => {
             className="fixed top-0 right-0 w-[300px] h-screen bg-white shadow-[-20px_0_50px_rgba(2,51,128,0.1)] z-[200] flex flex-col"
           >
             <div className="flex justify-between items-center p-6 border-b border-[#023380]/10">
-              <Image src={getAssetUrl("/peg_logo.png")} alt="PEG" width={100} height={30} className="object-contain" />
+              <div className="flex flex-col">
+                <Image src={getAssetUrl("/peg_logo.png")} alt="PEG" width={150} height={42} className="h-9 w-auto object-contain" />
+                <span className="text-[9.5px] font-bold tracking-wider text-[#023380] uppercase font-mono leading-none mt-1.5">
+                  Advanced Precast Engineering..
+                </span>
+              </div>
               <button onClick={() => setIsMobileOpen(false)}>
                 <X className="w-6 h-6 text-[#023380]" />
               </button>

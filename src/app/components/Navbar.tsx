@@ -161,23 +161,15 @@ export const Navbar = () => {
         {/* Adjusted padding to flow nicely when zoomed in */}
         <div className="w-full px-6 xl:px-20 h-full flex justify-between items-center relative">
 
-          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center gap-3.5 h-14 pr-4 group">
+          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center gap-3.5 h-16 pr-4 group">
             <Image
-              src={getAssetUrl("/PEG.png")}
+              src={getAssetUrl("/peg_logo.png")}
               alt="PEG Precast Engineering Group"
-              width={160}
+              width={200}
               height={48}
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-12 md:h-14 w-auto object-contain"
               priority
             />
-            <div className="flex flex-col justify-center border-l-2 border-[#023380]/20 pl-3">
-              <span className="text-xs md:text-sm font-black tracking-tight text-[#023380] uppercase leading-none">
-                PRECAST ENGINEERING GROUP
-              </span>
-              <span className="text-[9px] md:text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-wider leading-tight mt-1">
-                Structural & CAD Services
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation Links - Shifted to xl breakpoint (1280px) */}

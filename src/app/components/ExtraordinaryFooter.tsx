@@ -466,7 +466,7 @@ export default function ExtraordinaryFooter() {
                 <span>HEAD OFFICE</span>
               </div>
               <p className="text-xs font-bold text-white/80 leading-tight">
-                1420 Foundry Road, Suite 300, Columbus, OH 43215
+                105 Maxess Road, Melville, NY 11747
               </p>
             </div>
 

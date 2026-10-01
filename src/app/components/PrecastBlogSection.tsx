@@ -169,12 +169,12 @@ export default function PrecastBlogSection() {
             <div className="relative bg-white border border-[#023380]/15 overflow-hidden shadow-xs hover:border-[#0271f1] transition-all duration-300 group grid grid-cols-1 lg:grid-cols-12 gap-0">
               
               {/* IMAGE & VIDEO SHOWCASE THUMBNAIL */}
-              <div className="lg:col-span-7 relative min-h-[280px] lg:min-h-[380px] overflow-hidden bg-slate-50">
+              <div className="lg:col-span-7 relative min-h-[280px] lg:min-h-[380px] overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-4">
                 <Image
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-700 ease-out"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   priority
                 />
@@ -274,12 +274,12 @@ export default function PrecastBlogSection() {
                   className="group flex flex-col bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   {/* COVER IMAGE & MEDIA INDICATOR */}
-                  <div className="relative w-full h-52 overflow-hidden bg-slate-50 border-b border-[#023380]/10">
+                  <div className="relative w-full h-60 overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20 border-b border-[#023380]/10 flex items-center justify-center p-3">
                     <Image
                       src={post.coverImage}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                      className="object-contain p-3 group-hover:scale-105 transition-transform duration-500 ease-out"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     

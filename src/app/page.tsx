@@ -39,20 +39,22 @@ export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-white">
       <ResourceDirectory />
-      
+
       {/* 1. HERO */}
       <HeroEngineering />
       <SponsorMarquee />
-      
+
       {/* 2. CORE SERVICES */}
       <PegServices />
-      
+      <section id="technical-vault" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
+        <GridContent />
+      </section>
       {/* 3. TECHNICAL EXPERTISE & ENGINEERING */}
       <PrecasterManifesto />
       <AdvancedEngineeringTech />
       <EngineeringExecuted />
       <DeliverableUpgrade />
-      
+
       {/* 4. PRODUCTS & APPLICATIONS */}
       <div className="w-full bg-white py-10 text-center relative z-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/20 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#0271f1]">
@@ -65,7 +67,7 @@ export default function Home() {
           Explore examples of our structural engineering, from underground infrastructure to marine systems. We design products for real-world performance.
         </p>
       </div>
-      
+
       <FutureCulvertComponent />
       <TrenchingSystem />
       <RetainingWallComponent />
@@ -75,19 +77,17 @@ export default function Home() {
       {/* 5. MANUFACTURING & OPERATIONS SUPPORT */}
       <ManufacturingHub />
       <TargetAudience />
-      <MembershipBox/>
+      <MembershipBox />
       <UnchallengedResources />
       <SeamlessConnection />
-      
+
       {/* 6. PORTALS & RESOURCES */}
       <section id="portal" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
         <LoginGateway />
       </section>
-      
-      <section id="technical-vault" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
-        <GridContent />
-      </section>
-      
+
+
+
       <PegResourceGrid />
       <PrecastBlogSection />
       <AgencySlider />
@@ -99,10 +99,10 @@ export default function Home() {
       <PrecastersGoDigital />
       <MeetAtShows />
       <FuturisticCTA />
-      
+
       <section id="contact" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
         <ContactTerminal />
-        <InnovativeContactComponent/>
+        <InnovativeContactComponent />
       </section>
     </main>
   );

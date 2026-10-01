@@ -152,13 +152,13 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
               </div>
             </div>
           ) : (
-            <div className="relative w-full h-[400px] md:h-[500px]">
+            <div className="relative w-full h-[380px] md:h-[480px] bg-gradient-to-b from-[#023380] to-[#012255] flex items-center justify-center p-6">
               <Image
                 src={post.coverImage}
                 alt={post.title}
                 fill
                 sizes="100vw"
-                className="object-cover"
+                className="object-contain p-4"
                 priority
               />
             </div>
@@ -222,13 +222,13 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 {/* SECTION IMAGE */}
                 {section.image && (
                   <div className="my-6 rounded-none overflow-hidden border border-[#023380]/15 shadow-sm">
-                    <div className="relative w-full h-72 md:h-96 bg-white">
+                    <div className="relative w-full h-80 md:h-[420px] bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-4">
                       <Image
                         src={section.image.url}
                         alt={section.image.caption}
                         fill
                         sizes="(max-width: 768px) 100vw, 800px"
-                        className="object-cover"
+                        className="object-contain p-4"
                       />
                     </div>
                     <div className="bg-white p-3 text-xs font-bold text-[#023380] text-center border-t border-[#023380]/10">
@@ -266,7 +266,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {post.gallery.map((gItem, gIdx) => (
                     <div key={gIdx} className="bg-white rounded-none overflow-hidden border border-[#023380]/15 shadow-xs group">
-                      <div className="relative w-full h-52 bg-white">
+                      <div className="relative w-full h-60 bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-3">
                         {gItem.type === "video" ? (
                           <video src={gItem.url} controls className="w-full h-full object-cover" />
                         ) : (
@@ -275,7 +275,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                             alt={gItem.caption}
                             fill
                             sizes="(max-width: 640px) 100vw, 400px"
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                            className="object-contain p-3 group-hover:scale-105 transition-transform duration-300"
                           />
                         )}
                       </div>

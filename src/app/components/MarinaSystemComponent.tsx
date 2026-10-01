@@ -29,7 +29,7 @@ export default function MarinaSystemComponent() {
       
       {/* BACKGROUND DECORATION: Nautical Grid */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(#1B79EE 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+           style={{ backgroundImage: `radial-gradient(#0271f1 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start relative z-10">
         
@@ -39,26 +39,26 @@ export default function MarinaSystemComponent() {
             <motion.div 
               initial={{ width: 0 }}
               whileInView={{ width: '80px' }}
-              className="h-1 bg-[#1B79EE]"
+              className="h-1 bg-[#0271f1]"
             />
-            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-none">
+            <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter leading-none">
               FLOATING <br />
-              <span className="text-[#1B79EE]">MARINAS.</span>
+              <span className="text-[#0271f1]">MARINAS.</span>
             </h2>
-            <p className="text-[#004aad] font-semibold text-lg leading-relaxed max-w-md">
+            <p className="text-[#023380] font-semibold text-lg leading-relaxed max-w-md">
               Engineered for the harshest marine environments. Our precast floating docks redefine durability through hydro-dynamic design and carbon-fiber reinforcement.
             </p>
           </div>
 
-          <div className="space-y-6 bg-white p-6 md:p-8 border-l-4 border-[#1B79EE] shadow-sm">
+          <div className="space-y-6 bg-white p-6 md:p-8 border-l-4 border-[#0271f1] shadow-sm">
             {marinaSpecs.map((spec, i) => (
               <div key={i} className="flex gap-5 group">
-                <div className="text-[#1B79EE] shrink-0 p-2 bg-blue-50/80 rounded-sm">{spec.icon}</div>
+                <div className="text-[#0271f1] shrink-0 p-2 bg-blue-50/80 rounded-sm">{spec.icon}</div>
                 <div>
-                  <h4 className="text-[#004aad] font-black text-xs uppercase tracking-[0.2em] mb-1.5 flex items-center gap-3">
+                  <h4 className="text-[#023380] font-black text-xs uppercase tracking-[0.2em] mb-1.5 flex items-center gap-3">
                     {spec.title}
                   </h4>
-                  <p className="text-[#004aad] font-semibold text-sm leading-relaxed">{spec.detail}</p>
+                  <p className="text-[#023380] font-semibold text-sm leading-relaxed">{spec.detail}</p>
                 </div>
               </div>
             ))}
@@ -71,7 +71,7 @@ export default function MarinaSystemComponent() {
           {/* Main Visual Card - Embedded Video System without grey tints */}
           <motion.div 
             whileHover={{ y: -6 }}
-            className="md:col-span-2 relative aspect-video bg-white overflow-hidden group shadow-lg border border-[#004aad]/10"
+            className="md:col-span-2 relative aspect-video bg-white overflow-hidden group shadow-lg border border-[#023380]/10"
           >
             {/* BACKGROUND VIDEO INTERFACE - CRYSTAL CLEAR */}
             <video 
@@ -88,15 +88,15 @@ export default function MarinaSystemComponent() {
             </video>
 
             {/* Bottom Title Bar with Clear High Contrast */}
-            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#004aad]/90 via-transparent to-transparent text-white z-20">
+            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-[#023380]/90 via-transparent to-transparent text-white z-20">
               <div className="flex justify-between items-end">
                 <div>
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest bg-[#1B79EE] px-2.5 py-1 text-white inline-block mb-2">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-widest bg-[#0271f1] px-2.5 py-1 text-white inline-block mb-2">
                     Marine Engineering
                   </span>
                   <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">Monolithic Concrete Pontoons</h3>
                 </div>
-                <div className="p-3.5 rounded-full bg-[#004aad] border border-[#1B79EE] text-white group-hover:bg-[#1B79EE] transition-all shadow-md">
+                <div className="p-3.5 rounded-full bg-[#023380] border border-[#0271f1] text-white group-hover:bg-[#0271f1] transition-all shadow-md">
                   <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
@@ -104,30 +104,30 @@ export default function MarinaSystemComponent() {
           </motion.div>
 
           {/* Secondary Feature Card */}
-          <div className="bg-white border border-[#004aad]/15 p-6 flex items-center justify-between hover:border-[#1B79EE] hover:shadow-md transition-all group">
+          <div className="bg-white border border-[#023380]/15 p-6 flex items-center justify-between hover:border-[#0271f1] hover:shadow-md transition-all group">
              <div className="flex items-center gap-4">
-               <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#1B79EE] group-hover:text-white transition-colors">
+               <div className="p-3 bg-blue-50 text-[#0271f1] group-hover:bg-[#0271f1] group-hover:text-white transition-colors">
                  <Anchor className="w-6 h-6" />
                </div>
                <div>
-                 <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tight">Anchoring Systems</h4>
-                 <p className="text-xs font-semibold text-[#1B79EE]">Flexible High-Load Mooring</p>
+                 <h4 className="text-sm font-black text-[#023380] uppercase tracking-tight">Anchoring Systems</h4>
+                 <p className="text-xs font-semibold text-[#0271f1]">Flexible High-Load Mooring</p>
                </div>
              </div>
-             <ArrowUpRight className="w-5 h-5 text-[#1B79EE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+             <ArrowUpRight className="w-5 h-5 text-[#0271f1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
 
-          <div className="bg-white border border-[#004aad]/15 p-6 flex items-center justify-between hover:border-[#1B79EE] hover:shadow-md transition-all group">
+          <div className="bg-white border border-[#023380]/15 p-6 flex items-center justify-between hover:border-[#0271f1] hover:shadow-md transition-all group">
              <div className="flex items-center gap-4">
-               <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#1B79EE] group-hover:text-white transition-colors">
+               <div className="p-3 bg-blue-50 text-[#0271f1] group-hover:bg-[#0271f1] group-hover:text-white transition-colors">
                  <Waves className="w-6 h-6" />
                </div>
                <div>
-                 <h4 className="text-sm font-black text-[#004aad] uppercase tracking-tight">Hydrodynamics</h4>
-                 <p className="text-xs font-semibold text-[#1B79EE]">Wave Dampening Geometry</p>
+                 <h4 className="text-sm font-black text-[#023380] uppercase tracking-tight">Hydrodynamics</h4>
+                 <p className="text-xs font-semibold text-[#0271f1]">Wave Dampening Geometry</p>
                </div>
              </div>
-             <ArrowUpRight className="w-5 h-5 text-[#1B79EE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+             <ArrowUpRight className="w-5 h-5 text-[#0271f1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </div>
 
         </div>

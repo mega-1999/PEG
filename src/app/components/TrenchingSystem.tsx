@@ -175,13 +175,13 @@ export default function TrenchingSystem() {
   const currentGrate = currentCategory.grates[selectedGrateIndex] || currentCategory.grates[0];
 
   return (
-    <section id="products" className="relative w-full bg-white py-16 border-t border-[#004aad]/10 select-none">
+    <section id="products" className="relative w-full bg-white py-16 border-t border-[#023380]/10 select-none">
       
       {/* CAD WATERMARK BACKGROUND */}
       <div 
         className="absolute inset-0 opacity-[0.02] pointer-events-none" 
         style={{ 
-          backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px), linear-gradient(to right, #004aad 0.5px, transparent 0.5px), linear-gradient(to bottom, #004aad 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(#023380 1.5px, transparent 1.5px), linear-gradient(to right, #023380 0.5px, transparent 0.5px), linear-gradient(to bottom, #023380 0.5px, transparent 0.5px)`,
           backgroundSize: '40px 40px, 200px 200px, 200px 200px'
         }} 
       />
@@ -189,25 +189,25 @@ export default function TrenchingSystem() {
       <div className="w-full px-6 md:px-16 lg:px-20 relative z-10 space-y-10">
 
         {/* 1. HEADER SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#004aad]/10 pb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end border-b border-[#023380]/10 pb-8">
           <div className="lg:col-span-7 space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/10 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#0271f1]">
               <Layers className="w-3.5 h-3.5" /> Precast Interlocking Infrastructure
             </div>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
-              Trenching <span className="text-[#1B79EE]">Systems.</span>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-[0.9] text-[#023380]">
+              Trenching <span className="text-[#0271f1]">Systems.</span>
             </h2>
-            <p className="text-[#004aad] text-sm md:text-base leading-relaxed font-semibold max-w-2xl">
+            <p className="text-[#023380] text-sm md:text-base leading-relaxed font-semibold max-w-2xl">
               Engineered 12ft interlocking precast trench channels designed for power substations, industrial facilities, and roadway crossings.
             </p>
           </div>
 
           <div className="lg:col-span-5 flex flex-wrap lg:justify-end gap-3">
-            <div className="flex items-center gap-2.5 text-white font-black text-xs uppercase tracking-wider bg-[#004aad] px-5 py-3 shadow-xs">
-              <Ruler className="w-4 h-4 text-[#1B79EE]" /> 12 FT Section Modules
+            <div className="flex items-center gap-2.5 text-white font-black text-xs uppercase tracking-wider bg-[#023380] px-5 py-3 shadow-xs">
+              <Ruler className="w-4 h-4 text-[#0271f1]" /> 12 FT Section Modules
             </div>
-            <div className="flex items-center gap-2.5 text-[#004aad] font-black text-xs uppercase tracking-wider bg-blue-50 px-5 py-3 border border-[#1B79EE]/20 shadow-xs">
-              <Shield className="w-4 h-4 text-[#1B79EE]" /> AASHTO H-20 & HS-25 Rated
+            <div className="flex items-center gap-2.5 text-[#023380] font-black text-xs uppercase tracking-wider bg-blue-50 px-5 py-3 border border-[#0271f1]/20 shadow-xs">
+              <Shield className="w-4 h-4 text-[#0271f1]" /> AASHTO H-20 & HS-25 Rated
             </div>
           </div>
         </div>
@@ -226,15 +226,15 @@ export default function TrenchingSystem() {
                   }}
                   className={`p-3 md:py-4 md:px-3 text-center transition-all border flex flex-col items-center justify-center cursor-pointer shadow-xs ${
                     isSelected
-                      ? "bg-[#004aad] text-white border-[#004aad] shadow-md ring-2 ring-[#1B79EE]"
-                      : "bg-white text-[#004aad] border-[#004aad]/20 hover:border-[#1B79EE] hover:bg-blue-50/60"
+                      ? "bg-[#023380] text-white border-[#023380] shadow-md ring-2 ring-[#0271f1]"
+                      : "bg-white text-[#023380] border-[#023380]/20 hover:border-[#0271f1] hover:bg-blue-50/60"
                   }`}
                 >
                   <span className="text-[11px] sm:text-xs font-black uppercase tracking-wider line-clamp-1">
                     {cat.name}
                   </span>
                   <span className={`text-[10px] font-mono font-bold mt-1 uppercase ${
-                    isSelected ? "text-blue-200" : "text-[#1B79EE]"
+                    isSelected ? "text-blue-200" : "text-[#0271f1]"
                   }`}>
                     {cat.countText}
                   </span>
@@ -252,23 +252,23 @@ export default function TrenchingSystem() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
             transition={{ duration: 0.25 }}
-            className="bg-white border border-[#004aad]/15 shadow-sm p-6 md:p-8"
+            className="bg-white border border-[#023380]/15 shadow-sm p-6 md:p-8"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               {/* LEFT: TECHNICAL RENDERING & GRATE TOGGLES */}
               <div className="lg:col-span-6 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="px-3 py-1 bg-[#1B79EE] text-white text-[10px] font-mono font-black uppercase tracking-widest">
+                  <span className="px-3 py-1 bg-[#0271f1] text-white text-[10px] font-mono font-black uppercase tracking-widest">
                     {currentCategory.tag}
                   </span>
-                  <span className="text-xs font-mono font-bold text-[#1B79EE]">
+                  <span className="text-xs font-mono font-bold text-[#0271f1]">
                     {currentCategory.countText}
                   </span>
                 </div>
 
                 {/* HIGH-RES IMAGE CONTAINER */}
-                <div className="relative w-full aspect-16/10 bg-white border border-[#004aad]/15 p-6 flex items-center justify-center overflow-hidden">
+                <div className="relative w-full aspect-16/10 bg-white border border-[#023380]/15 p-6 flex items-center justify-center overflow-hidden">
                   <Image
                     src={currentGrate.image}
                     alt={`${currentCategory.name} - ${currentGrate.name}`}
@@ -277,7 +277,7 @@ export default function TrenchingSystem() {
                     className="object-contain p-4"
                     priority
                   />
-                  <div className="absolute top-3 left-3 bg-[#004aad] text-white px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest">
+                  <div className="absolute top-3 left-3 bg-[#023380] text-white px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest">
                     {currentGrate.badge}
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export default function TrenchingSystem() {
                 {/* GRATE SELECTION PILLS (IF MULTIPLE VARIANTS) */}
                 {currentCategory.grates.length > 1 && (
                   <div className="pt-1">
-                    <div className="text-[10px] font-mono font-bold text-[#004aad] uppercase tracking-wider mb-2">
+                    <div className="text-[10px] font-mono font-bold text-[#023380] uppercase tracking-wider mb-2">
                       Select Grate Configuration:
                     </div>
                     <div className="grid grid-cols-3 gap-2">
@@ -297,8 +297,8 @@ export default function TrenchingSystem() {
                             onClick={() => setSelectedGrateIndex(gIdx)}
                             className={`py-2 px-2 text-[10px] font-mono font-black uppercase tracking-wider transition-all border text-center cursor-pointer ${
                               isGrateSelected
-                                ? "bg-[#004aad] text-white border-[#004aad] shadow-xs"
-                                : "bg-white text-[#004aad] border-[#004aad]/20 hover:border-[#1B79EE] hover:bg-blue-50/50"
+                                ? "bg-[#023380] text-white border-[#023380] shadow-xs"
+                                : "bg-white text-[#023380] border-[#023380]/20 hover:border-[#0271f1] hover:bg-blue-50/50"
                             }`}
                           >
                             {g.name}
@@ -313,19 +313,19 @@ export default function TrenchingSystem() {
               {/* RIGHT: 3D VIDEO SIMULATION & ENGINEERING SPECS */}
               <div className="lg:col-span-6 space-y-6">
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-black text-[#004aad] uppercase tracking-tight">
+                  <h3 className="text-2xl md:text-3xl font-black text-[#023380] uppercase tracking-tight">
                     {currentCategory.name}
                   </h3>
-                  <p className="text-sm font-bold text-[#1B79EE] uppercase tracking-wide mt-1">
+                  <p className="text-sm font-bold text-[#0271f1] uppercase tracking-wide mt-1">
                     {currentCategory.subtitle}
                   </p>
-                  <p className="text-xs sm:text-sm text-[#004aad] font-semibold leading-relaxed mt-3">
+                  <p className="text-xs sm:text-sm text-[#023380] font-semibold leading-relaxed mt-3">
                     {currentCategory.desc}
                   </p>
                 </div>
 
                 {/* 3D VIDEO SIMULATION */}
-                <div className="relative aspect-video bg-[#004aad] border border-[#1B79EE]/30 overflow-hidden shadow-md">
+                <div className="relative aspect-video bg-[#023380] border border-[#0271f1]/30 overflow-hidden shadow-md">
                   <video
                     autoPlay
                     loop
@@ -338,31 +338,31 @@ export default function TrenchingSystem() {
                   >
                     <source src={currentCategory.video} type="video/mp4" />
                   </video>
-                  <div className="absolute top-2 left-2 z-10 bg-[#1B79EE] text-white px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-wider shadow-xs flex items-center gap-1.5">
+                  <div className="absolute top-2 left-2 z-10 bg-[#0271f1] text-white px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-wider shadow-xs flex items-center gap-1.5">
                     <Play className="w-2.5 h-2.5" /> 3D Joint Simulation
                   </div>
-                  <div className="absolute bottom-2 right-2 z-10 bg-[#004aad]/90 text-white px-2.5 py-1 text-[10px] font-mono font-bold uppercase backdrop-blur-xs">
+                  <div className="absolute bottom-2 right-2 z-10 bg-[#023380]/90 text-white px-2.5 py-1 text-[10px] font-mono font-bold uppercase backdrop-blur-xs">
                     12FT Module Jointing
                   </div>
                 </div>
 
                 {/* SPECIFICATIONS GRID */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="bg-blue-50/60 p-3 border border-[#1B79EE]/20">
-                    <span className="text-[9px] font-mono font-bold text-[#004aad] uppercase block">Section Length</span>
-                    <span className="text-xs font-mono font-black text-[#004aad]">{currentCategory.length}</span>
+                  <div className="bg-blue-50/60 p-3 border border-[#0271f1]/20">
+                    <span className="text-[9px] font-mono font-bold text-[#023380] uppercase block">Section Length</span>
+                    <span className="text-xs font-mono font-black text-[#023380]">{currentCategory.length}</span>
                   </div>
-                  <div className="bg-blue-50/60 p-3 border border-[#1B79EE]/20">
-                    <span className="text-[9px] font-mono font-bold text-[#004aad] uppercase block">Joint Geometry</span>
-                    <span className="text-xs font-mono font-black text-[#1B79EE] truncate block">{currentCategory.jointType}</span>
+                  <div className="bg-blue-50/60 p-3 border border-[#0271f1]/20">
+                    <span className="text-[9px] font-mono font-bold text-[#023380] uppercase block">Joint Geometry</span>
+                    <span className="text-xs font-mono font-black text-[#0271f1] truncate block">{currentCategory.jointType}</span>
                   </div>
-                  <div className="bg-blue-50/60 p-3 border border-[#1B79EE]/20">
-                    <span className="text-[9px] font-mono font-bold text-[#004aad] uppercase block">Load Class</span>
-                    <span className="text-xs font-mono font-black text-[#004aad]">{currentCategory.loadClass}</span>
+                  <div className="bg-blue-50/60 p-3 border border-[#0271f1]/20">
+                    <span className="text-[9px] font-mono font-bold text-[#023380] uppercase block">Load Class</span>
+                    <span className="text-xs font-mono font-black text-[#023380]">{currentCategory.loadClass}</span>
                   </div>
-                  <div className="bg-blue-50/60 p-3 border border-[#1B79EE]/20">
-                    <span className="text-[9px] font-mono font-bold text-[#004aad] uppercase block">Active Grate</span>
-                    <span className="text-xs font-mono font-black text-[#004aad] truncate block">{currentGrate.name}</span>
+                  <div className="bg-blue-50/60 p-3 border border-[#0271f1]/20">
+                    <span className="text-[9px] font-mono font-bold text-[#023380] uppercase block">Active Grate</span>
+                    <span className="text-xs font-mono font-black text-[#023380] truncate block">{currentGrate.name}</span>
                   </div>
                 </div>
 
@@ -370,7 +370,7 @@ export default function TrenchingSystem() {
                 <div className="pt-2">
                   <a
                     href="#contact"
-                    className="w-full py-3.5 bg-[#004aad] hover:bg-[#1B79EE] text-white text-xs font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+                    className="w-full py-3.5 bg-[#023380] hover:bg-[#0271f1] text-white text-xs font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
                   >
                     <FileText className="w-4 h-4" />
                     <span>Request Shop Drawing & Submittal</span>

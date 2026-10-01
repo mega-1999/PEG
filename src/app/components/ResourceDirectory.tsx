@@ -64,7 +64,7 @@ export const ResourceDirectory = () => {
   };
 
   return (
-    <section className="w-full bg-[#004aad] text-white overflow-hidden">
+    <section className="w-full bg-[#023380] text-white overflow-hidden">
       <div className="w-full px-10 md:px-20 pt-36 mb-16">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-stretch">
@@ -74,11 +74,11 @@ export const ResourceDirectory = () => {
             
             {/* Title Block */}
             <div className="max-w-xl">
-              <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
+              <div className="flex items-center gap-3 text-[#0271f1] font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
               </div>
               <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
                 BEYOND <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B79EE] to-[#1B79EE]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0271f1] to-[#0271f1]">
                   SPECIFICATIONS.
                 </span>
               </h2>
@@ -88,7 +88,7 @@ export const ResourceDirectory = () => {
             </div>
 
             {/* Frosted Glass Link Directory Box */}
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-10 shadow-[0_20px_50px_rgba(0,74,173,0.3)] flex-grow">
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-10 shadow-[0_20px_50px_rgba(2,51,128,0.3)] flex-grow">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center">
                 {resourceColumns.map((col, idx) => (
                   <ul key={idx} className="space-y-4">
@@ -96,9 +96,9 @@ export const ResourceDirectory = () => {
                       <li key={link.name}>
                         <Link 
                           href={link.href}
-                          className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-[#1B79EE] transition-colors"
+                          className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-[#0271f1] transition-colors"
                         >
-                          <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-[#1B79EE]/20 group-hover:border-[#1B79EE] transition-all duration-300 shrink-0">
+                          <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-[#0271f1]/20 group-hover:border-[#0271f1] transition-all duration-300 shrink-0">
                             {link.icon}
                           </div>
                           
@@ -107,7 +107,7 @@ export const ResourceDirectory = () => {
                           </span>
 
                           {link.highlight && (
-                            <span className="ml-auto text-[8px] font-mono font-bold bg-white text-[#004aad] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
+                            <span className="ml-auto text-[8px] font-mono font-bold bg-white text-[#023380] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
                               NEW_NODE
                             </span>
                           )}
@@ -150,7 +150,7 @@ export const ResourceDirectory = () => {
                 
                 {/* Playlist Counter - Replaced black with frosted white glass */}
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 border border-white/20 shadow-sm">
-                  <PlayCircle className="w-3 h-3 text-[#1B79EE]" />
+                  <PlayCircle className="w-3 h-3 text-[#0271f1]" />
                   <span className="font-mono text-[9px] tracking-widest text-white uppercase font-bold">
                     {currentVideoIndex + 1} / {videoPlaylist.length}
                   </span>
@@ -160,7 +160,7 @@ export const ResourceDirectory = () => {
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={playPrevVideo}
-                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#0271f1] backdrop-blur-md border border-white/20 hover:border-[#0271f1] text-white hover:text-[#023380] transition-all duration-300 group/btn shadow-sm"
                     aria-label="Previous Video"
                   >
                     <SkipBack className="w-4 h-4 group-hover/btn:-translate-x-0.5 transition-transform" />
@@ -168,7 +168,7 @@ export const ResourceDirectory = () => {
 
                   <button 
                     onClick={playNextVideo}
-                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#0271f1] backdrop-blur-md border border-white/20 hover:border-[#0271f1] text-white hover:text-[#023380] transition-all duration-300 group/btn shadow-sm"
                     aria-label="Next Video"
                   >
                     <SkipForward className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />

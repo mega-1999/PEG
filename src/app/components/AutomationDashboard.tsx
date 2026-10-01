@@ -63,28 +63,28 @@ export default function AutomationDashboard() {
   }, []);
 
   return (
-    <section className="w-full bg-[#004aad] text-white py-32 px-10 md:px-20 overflow-hidden relative font-sans">
+    <section className="w-full bg-[#023380] text-white py-32 px-10 md:px-20 overflow-hidden relative font-sans">
       
       {/* ANIMATED BRAND CIRCUIT BACKGROUND */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#1B79EE" strokeWidth="0.5" />
+              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#0271f1" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
           
           <motion.line 
             x1="0" y1="200" x2="2000" y2="200" 
-            stroke="#1B79EE" strokeWidth="2" 
+            stroke="#0271f1" strokeWidth="2" 
             animate={{ strokeDashoffset: [1000, 0] }} 
             transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
             strokeDasharray="20 1000"
           />
           <motion.line 
             x1="400" y1="0" x2="400" y2="2000" 
-            stroke="#1B79EE" strokeWidth="2" 
+            stroke="#0271f1" strokeWidth="2" 
             animate={{ strokeDashoffset: [0, 1000] }} 
             transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
             strokeDasharray="50 800"
@@ -97,7 +97,7 @@ export default function AutomationDashboard() {
         {/* TOP COMMAND STRIP */}
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-10">
           <div className="space-y-6 max-w-4xl">
-            <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
+            <div className="flex items-center gap-3 text-[#0271f1] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
               <ScanLine className="w-5 h-5 animate-pulse" /> Digital Engineering & Manufacturing Workflows
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-none uppercase text-white">
@@ -107,19 +107,19 @@ export default function AutomationDashboard() {
           </div>
 
           {/* BRANDED TERMINAL BOX */}
-          <div className="bg-white border border-[#1B79EE]/30 p-6 w-full max-w-md h-32 flex flex-col justify-end relative overflow-hidden rounded-sm shadow-[0_0_20px_rgba(27,121,238,0.1)]">
+          <div className="bg-white border border-[#0271f1]/30 p-6 w-full max-w-md h-32 flex flex-col justify-end relative overflow-hidden rounded-sm shadow-[0_0_20px_rgba(2,113,241,0.1)]">
              <div className="absolute top-4 left-4 flex gap-2">
-                <div className="w-2 h-2 rounded-full bg-[#1B79EE]" />
-                <div className="w-2 h-2 rounded-full bg-[#1B79EE]/60" />
-                <div className="w-2 h-2 rounded-full bg-[#1B79EE]/30" />
+                <div className="w-2 h-2 rounded-full bg-[#0271f1]" />
+                <div className="w-2 h-2 rounded-full bg-[#0271f1]/60" />
+                <div className="w-2 h-2 rounded-full bg-[#0271f1]/30" />
              </div>
-             <Terminal className="absolute top-4 right-4 w-5 h-5 text-[#1B79EE]/40" />
-             <p className="font-mono text-xs text-[#1B79EE] font-bold uppercase tracking-widest mt-4">
+             <Terminal className="absolute top-4 right-4 w-5 h-5 text-[#0271f1]/40" />
+             <p className="font-mono text-xs text-[#0271f1] font-bold uppercase tracking-widest mt-4">
                {terminalText}
                <motion.span 
                  animate={{ opacity: [0, 1, 0] }} 
                  transition={{ repeat: Infinity, duration: 0.8 }}
-                 className="inline-block w-2 h-3 bg-[#1B79EE] ml-1 translate-y-[2px]" 
+                 className="inline-block w-2 h-3 bg-[#0271f1] ml-1 translate-y-[2px]" 
                />
              </p>
           </div>
@@ -134,39 +134,39 @@ export default function AutomationDashboard() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.15 }}
               // Modified hover behavior: changes from clean white background to full bright blue framework matrix
-              className={`group relative bg-white border border-[#1B79EE]/20 p-10 hover:bg-[#1B79EE] transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden ${node.colSpan}`}
+              className={`group relative bg-white border border-[#0271f1]/20 p-10 hover:bg-[#0271f1] transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden ${node.colSpan}`}
             >
               
               {/* Top Row: Branded Icon Unit */}
               <div className="flex justify-between items-start mb-12 relative z-10">
-                <div className="p-4 border backdrop-blur-sm transition-all duration-500 group-hover:scale-110 bg-[#004aad]/5 text-[#004aad] border-[#004aad]/10 group-hover:bg-white group-hover:text-[#1B79EE] group-hover:border-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <div className="p-4 border backdrop-blur-sm transition-all duration-500 group-hover:scale-110 bg-[#023380]/5 text-[#023380] border-[#023380]/10 group-hover:bg-white group-hover:text-[#0271f1] group-hover:border-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
                   {node.icon}
                 </div>
                 <div className="text-right">
-                  <div className="w-2 h-2 rounded-full mb-2 ml-auto bg-[#1B79EE] group-hover:bg-white transition-colors" />
+                  <div className="w-2 h-2 rounded-full mb-2 ml-auto bg-[#0271f1] group-hover:bg-white transition-colors" />
          
                 </div>
               </div>
 
               {/* Data Content Block */}
               <div className="relative z-10 mb-10">
-                <p className="font-mono text-[9px] uppercase tracking-widest font-black mb-3 text-[#1B79EE] group-hover:text-white/80 transition-colors">
+                <p className="font-mono text-[9px] uppercase tracking-widest font-black mb-3 text-[#0271f1] group-hover:text-white/80 transition-colors">
                   {node.subtitle}
                 </p>
-                <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tighter mb-4 text-[#004aad] group-hover:text-white transition-colors">
+                <h3 className="text-xl lg:text-2xl font-black uppercase tracking-tighter mb-4 text-[#023380] group-hover:text-white transition-colors">
                   {node.title}
                 </h3>
-                <p className="text-[#004aad]/70 group-hover:text-white/90 text-sm font-medium leading-relaxed md:max-w-[85%] transition-colors">
+                <p className="text-[#023380]/70 group-hover:text-white/90 text-sm font-medium leading-relaxed md:max-w-[85%] transition-colors">
                   {node.description}
                 </p>
               </div>
 
               {/* Functional Bottom Bar */}
-              <div className="mt-auto pt-6 border-t flex justify-between items-center relative z-10 border-[#004aad]/10 group-hover:border-white/20 transition-colors duration-500">
-                <span className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-[#1B79EE] group-hover:text-white transition-colors">
+              <div className="mt-auto pt-6 border-t flex justify-between items-center relative z-10 border-[#023380]/10 group-hover:border-white/20 transition-colors duration-500">
+                <span className="font-mono text-[10px] font-black uppercase tracking-[0.2em] text-[#0271f1] group-hover:text-white transition-colors">
                   {node.metric}
                 </span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 text-[#1B79EE] group-hover:text-white" />
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2 text-[#0271f1] group-hover:text-white" />
               </div>
 
               {/* Ambient Micro-Glow inside the container architecture */}

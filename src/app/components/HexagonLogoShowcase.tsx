@@ -34,13 +34,13 @@ export default function HexagonLogoShowcase() {
   const row2 = partnerLogos.slice(10, 20);
 
   return (
-    <section className="w-full bg-white text-[#004aad] py-20 overflow-hidden relative border-y border-[#004aad]/10">
+    <section className="w-full bg-white text-[#023380] py-20 overflow-hidden relative border-y border-[#023380]/10">
       
       {/* CAD BLUEPRINT GRID BACKGROUND */}
       <div 
         className="absolute inset-0 opacity-[0.04] pointer-events-none" 
         style={{ 
-          backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px), linear-gradient(to right, #004aad 0.5px, transparent 0.5px), linear-gradient(to bottom, #004aad 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(#023380 1.5px, transparent 1.5px), linear-gradient(to right, #023380 0.5px, transparent 0.5px), linear-gradient(to bottom, #023380 0.5px, transparent 0.5px)`,
           backgroundSize: '40px 40px, 200px 200px, 200px 200px'
         }} 
       />
@@ -48,16 +48,16 @@ export default function HexagonLogoShowcase() {
       <div className="w-full relative z-10 space-y-16">
         
         {/* HEADER SECTION */}
-        <div className="w-full px-10 md:px-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#004aad]/10 pb-8">
+        <div className="w-full px-10 md:px-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#023380]/10 pb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase rounded-none mb-3 border border-[#1B79EE]/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/10 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase rounded-none mb-3 border border-[#0271f1]/20">
               <Globe2 className="w-3.5 h-3.5" /> Industry Alliances
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
-              PRECAST INDUSTRY <span className="text-[#1B79EE]">& PARTNER NETWORK.</span>
+            <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter uppercase leading-none">
+              PRECAST INDUSTRY <span className="text-[#0271f1]">& PARTNER NETWORK.</span>
             </h2>
           </div>
-          <p className="text-[#004aad] font-semibold text-sm md:text-base max-w-md">
+          <p className="text-[#023380] font-semibold text-sm md:text-base max-w-md">
             Verified precast concrete manufacturers, formwork suppliers, structural software platforms, and DOT certified infrastructure partners.
           </p>
         </div>
@@ -90,22 +90,22 @@ export default function HexagonLogoShowcase() {
 
         {/* BOTTOM METRIC BADGES BAR */}
         <div className="w-full px-10 md:px-20 pt-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 border border-[#004aad]/10 shadow-sm">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 border border-[#023380]/10 shadow-sm">
             <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Global Partners</span>
-              <p className="text-xl md:text-2xl font-black text-[#004aad]">250+ Plants</p>
+              <span className="text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-widest">Global Partners</span>
+              <p className="text-xl md:text-2xl font-black text-[#023380]">250+ Plants</p>
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Integration</span>
-              <p className="text-xl md:text-2xl font-black text-[#004aad]">NPCA & PCI</p>
+              <span className="text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-widest">Integration</span>
+              <p className="text-xl md:text-2xl font-black text-[#023380]">NPCA & PCI</p>
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Formwork Tech</span>
-              <p className="text-xl md:text-2xl font-black text-[#004aad]">Steel & Magnetic</p>
+              <span className="text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-widest">Formwork Tech</span>
+              <p className="text-xl md:text-2xl font-black text-[#023380]">Steel & Magnetic</p>
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest">Compliance</span>
-              <p className="text-xl md:text-2xl font-black text-[#004aad]">50 State DOTs</p>
+              <span className="text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-widest">Compliance</span>
+              <p className="text-xl md:text-2xl font-black text-[#023380]">50 State DOTs</p>
             </div>
           </div>
         </div>
@@ -118,14 +118,14 @@ export default function HexagonLogoShowcase() {
 /* PARTNER CARD COMPONENT */
 function PartnerCard({ logo }: { logo: { id: string; src: string; alt: string; category: string } }) {
   return (
-    <div className="group relative w-64 h-36 bg-white border border-[#004aad]/10 hover:border-[#1B79EE] shadow-sm hover:shadow-xl hover:shadow-[#1B79EE]/15 transition-all duration-300 rounded-none overflow-hidden shrink-0 flex flex-col justify-between p-4 cursor-pointer">
+    <div className="group relative w-64 h-36 bg-white border border-[#023380]/10 hover:border-[#0271f1] shadow-sm hover:shadow-xl hover:shadow-[#0271f1]/15 transition-all duration-300 rounded-none overflow-hidden shrink-0 flex flex-col justify-between p-4 cursor-pointer">
       
       {/* CARD TOP HEADER */}
       <div className="flex justify-between items-center text-[10px] font-mono font-bold">
-        <span className="text-[#1B79EE] bg-blue-50 px-2 py-0.5 border border-[#1B79EE]/20">
+        <span className="text-[#0271f1] bg-blue-50 px-2 py-0.5 border border-[#0271f1]/20">
           {logo.id}
         </span>
-        <span className="text-[#004aad] uppercase tracking-wider font-bold">
+        <span className="text-[#023380] uppercase tracking-wider font-bold">
           {logo.category}
         </span>
       </div>
@@ -142,15 +142,15 @@ function PartnerCard({ logo }: { logo: { id: string; src: string; alt: string; c
       </div>
 
       {/* CARD FOOTER */}
-      <div className="flex justify-between items-center pt-2 border-t border-[#004aad]/5">
-        <span className="text-xs font-bold text-[#004aad] group-hover:text-[#1B79EE] transition-colors truncate">
+      <div className="flex justify-between items-center pt-2 border-t border-[#023380]/5">
+        <span className="text-xs font-bold text-[#023380] group-hover:text-[#0271f1] transition-colors truncate">
           {logo.alt}
         </span>
-        <ShieldCheck className="w-3.5 h-3.5 text-[#1B79EE] shrink-0" />
+        <ShieldCheck className="w-3.5 h-3.5 text-[#0271f1] shrink-0" />
       </div>
 
       {/* TOP ACCENT LINE ON HOVER */}
-      <div className="absolute top-0 left-0 w-0 h-1 bg-[#1B79EE] group-hover:w-full transition-all duration-500" />
+      <div className="absolute top-0 left-0 w-0 h-1 bg-[#0271f1] group-hover:w-full transition-all duration-500" />
     </div>
   );
 }

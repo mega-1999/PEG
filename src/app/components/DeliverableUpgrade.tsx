@@ -30,18 +30,18 @@ const upgradeFeatures = [
 
 export default function DeliverableUpgrade() {
   return (
-    <section className="relative w-full bg-white text-[#004aad] py-16 px-6 md:px-16 lg:px-20 border-t border-[#004aad]/10 select-none">
+    <section className="relative w-full bg-white text-[#023380] py-16 px-6 md:px-16 lg:px-20 border-t border-[#023380]/10 select-none">
       
       {/* 1. HEADER */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#004aad]/10 pb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#023380]/10 pb-8">
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/10 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#0271f1]">
             <ShieldCheck className="w-3.5 h-3.5" /> Production Acceleration
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
-            Upgrade Your <span className="text-[#1B79EE]">Precast Drawings.</span>
+          <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter leading-[0.9] uppercase">
+            Upgrade Your <span className="text-[#0271f1]">Precast Drawings.</span>
           </h2>
-          <p className="text-[#004aad] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
+          <p className="text-[#023380] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
             Stop losing time on revisions. Elevate your production pipeline with comprehensive submittals, high-accuracy illustrations, and non-stop code compliance.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function DeliverableUpgrade() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="px-5 py-3 bg-[#004aad] hover:bg-[#1B79EE] text-white text-xs font-mono font-black uppercase tracking-wider transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
+            className="px-5 py-3 bg-[#023380] hover:bg-[#0271f1] text-white text-xs font-mono font-black uppercase tracking-wider transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
           >
             <span>Request Sample Drawings</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -66,34 +66,34 @@ export default function DeliverableUpgrade() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
             viewport={{ once: true }}
-            className="group bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-xl transition-all duration-300 p-8 flex flex-col justify-between"
+            className="group bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-xl transition-all duration-300 p-8 flex flex-col justify-between"
           >
             <div>
               {/* TOP STRIP */}
               <div className="flex justify-between items-start mb-6">
-                <div className="p-3 bg-blue-50 text-[#1B79EE] group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
+                <div className="p-3 bg-blue-50 text-[#0271f1] group-hover:bg-[#023380] group-hover:text-white transition-colors duration-300">
                   {feature.icon}
                 </div>
-                <span className="text-[10px] font-mono font-bold text-[#1B79EE] bg-blue-50/70 px-2.5 py-1 border border-[#1B79EE]/20">
+                <span className="text-[10px] font-mono font-bold text-[#0271f1] bg-blue-50/70 px-2.5 py-1 border border-[#0271f1]/20">
                   {feature.tag}
                 </span>
               </div>
 
               {/* CONTENT */}
-              <span className="text-[10px] font-mono font-bold text-[#1B79EE] uppercase tracking-widest block mb-1">
+              <span className="text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-widest block mb-1">
                 {feature.subtitle}
               </span>
-              <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tight group-hover:text-[#1B79EE] transition-colors mb-3">
+              <h3 className="text-xl font-black text-[#023380] uppercase tracking-tight group-hover:text-[#0271f1] transition-colors mb-3">
                 {feature.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#004aad] font-semibold leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#023380] font-semibold leading-relaxed">
                 {feature.description}
               </p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#004aad]/10 flex justify-between items-center">
-              <span className="text-[10px] font-mono font-bold text-[#004aad] uppercase">Professional Standard</span>
-              <span className="text-xs font-black text-[#1B79EE] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+            <div className="mt-6 pt-4 border-t border-[#023380]/10 flex justify-between items-center">
+              <span className="text-[10px] font-mono font-bold text-[#023380] uppercase">Professional Standard</span>
+              <span className="text-xs font-black text-[#0271f1] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                 Details <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </div>

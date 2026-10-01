@@ -47,10 +47,10 @@ export default function PrecasterManifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#004aad]"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#023380]"
             >
               By Precasters. <br />
-              <span className="text-[#1B79EE]">For Precasters.</span>
+              <span className="text-[#0271f1]">For Precasters.</span>
             </motion.h2>
           </div>
 
@@ -61,7 +61,7 @@ export default function PrecasterManifesto() {
             transition={{ delay: 0.2 }}
             className="hidden lg:block text-right pb-2"
           >
-            <p className="text-[#004aad] font-black text-lg uppercase tracking-tighter">
+            <p className="text-[#023380] font-black text-lg uppercase tracking-tighter">
               Why, What & Who?
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ export default function PrecasterManifesto() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // DEFAULT: PEG Dark Blue -> HOVER: PEG Bright Blue
-              className="group relative bg-[#004aad] hover:bg-[#1B79EE] px-12 py-6 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#1B79EE] hover:shadow-[15px_15px_0px_#004aad]"
+              className="group relative bg-[#023380] hover:bg-[#0271f1] px-12 py-6 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#0271f1] hover:shadow-[15px_15px_0px_#023380]"
             >
               
               {/* LARGE BACKGROUND WATERMARK */}
@@ -91,7 +91,7 @@ export default function PrecasterManifesto() {
                   {item.icon}
                 </div>
                 <div className="bg-white px-4 py-1">
-                  <span className="text-[#004aad] group-hover:text-[#1B79EE] font-black text-[10px] uppercase tracking-widest transition-colors duration-500">
+                  <span className="text-[#023380] group-hover:text-[#0271f1] font-black text-[10px] uppercase tracking-widest transition-colors duration-500">
                     {item.title}
                   </span>
                 </div>

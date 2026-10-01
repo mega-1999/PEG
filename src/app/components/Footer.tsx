@@ -40,7 +40,7 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="relative w-full bg-[#004aad] text-white overflow-hidden">
+    <footer className="relative w-full bg-[#023380] text-white overflow-hidden">
       {/* Geometric Background Overlay (Mirroring the ARCAT style) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-0 left-1/2 w-full h-full bg-gradient-to-br from-white/20 to-transparent skew-x-[-20deg] transform origin-top"></div>
@@ -56,7 +56,7 @@ export const Footer = () => {
                 width={170}
                 height={50}
                 loading='lazy'
-                src={getAssetUrl("/PEG.png")} // Professional PEG logo
+                src={getAssetUrl("/peg_logo.png")} // Professional PEG logo
                 alt="PEG Logo"
                 className="h-10 w-auto object-contain"
               />
@@ -72,7 +72,7 @@ export const Footer = () => {
               </p>
             </div>
           </div>
-          
+
           {/* Right Side: Navigation & Socials */}
           <div className="lg:col-span-7 flex flex-col justify-between">
             {/* Social Icons - Outlined Box Style */}

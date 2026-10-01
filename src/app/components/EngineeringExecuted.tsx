@@ -120,15 +120,15 @@ export default function EngineeringExecuted() {
             <motion.div 
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: '80px' }}
-              className="h-1 bg-[#1B79EE]"
+              className="h-1 bg-[#0271f1]"
             />
-            <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter leading-[0.9] uppercase">
               ENGINEERING <br />
-              <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THAT FITS YOUR PRODUCTION.</span>
+              <span style={{ WebkitTextStroke: "1.5px #0271f1", color: "transparent" }}>THAT FITS YOUR PRODUCTION.</span>
             </h2>
           </div>
           <div className="hidden lg:block max-w-sm text-right">
-             <p className="text-[#1B79EE] font-mono text-[10px] uppercase tracking-[0.2em] leading-relaxed font-bold">
+             <p className="text-[#0271f1] font-mono text-[10px] uppercase tracking-[0.2em] leading-relaxed font-bold">
                A comprehensive suite of precast engineering protocols, tailored to your manufacturing constraints and project parameters.
              </p>
           </div>
@@ -144,19 +144,19 @@ export default function EngineeringExecuted() {
               transition={{ delay: idx * 0.05 }}
               className={`group relative p-4 md:p-6 border transition-all duration-500 cursor-pointer flex flex-col justify-between overflow-hidden
                 ${service.highlight 
-                  ? 'bg-[#004aad] text-white border-[#004aad] hover:bg-[#1B79EE] hover:border-[#1B79EE]' 
-                  : 'bg-white text-[#004aad] border-slate-200 hover:border-[#1B79EE] hover:shadow-[15px_15px_0px_rgba(27,121,238,0.05)]'} 
+                  ? 'bg-[#023380] text-white border-[#023380] hover:bg-[#0271f1] hover:border-[#0271f1]' 
+                  : 'bg-white text-[#023380] border-slate-200 hover:border-[#0271f1] hover:shadow-[15px_15px_0px_rgba(2,113,241,0.05)]'} 
                 ${service.colSpan}
               `}
             >
               {/* Top Row: Icon & ID */}
               <div className="flex justify-between items-start mb-2 relative z-10">
                 <div className={`p-4 transition-colors duration-500 
-                  ${service.highlight ? 'bg-white/10 text-white group-hover:bg-white group-hover:text-[#1B79EE]' : 'bg-slate-50 text-[#1B79EE] group-hover:bg-[#004aad] group-hover:text-white'}`}>
+                  ${service.highlight ? 'bg-white/10 text-white group-hover:bg-white group-hover:text-[#0271f1]' : 'bg-slate-50 text-[#0271f1] group-hover:bg-[#023380] group-hover:text-white'}`}>
                   {service.icon}
                 </div>
                 <span className={`font-mono text-[12px] font-black tracking-widest uppercase
-                  ${service.highlight ? 'text-white/30 group-hover:text-white' : 'text-[#1B79EE] group-hover:text-[#1B79EE]'}`}>
+                  ${service.highlight ? 'text-white/30 group-hover:text-white' : 'text-[#0271f1] group-hover:text-[#0271f1]'}`}>
                   {service.id}
                 </span>
               </div>
@@ -164,27 +164,27 @@ export default function EngineeringExecuted() {
               {/* Main Content */}
               <div className="relative z-10">
                 <p className={`font-mono text-[9px] uppercase tracking-[0.2em] mb-3 font-bold
-                  ${service.highlight ? 'text-[#1B79EE] group-hover:text-white' : 'text-[#1B79EE]'}`}>
+                  ${service.highlight ? 'text-[#0271f1] group-hover:text-white' : 'text-[#0271f1]'}`}>
                   {service.subtitle}
                 </p>
                 <h3 className={`text-xl font-black uppercase tracking-tighter mb-4 leading-none
-                  ${service.highlight ? 'text-white' : 'text-[#004aad]'}`}>
+                  ${service.highlight ? 'text-white' : 'text-[#023380]'}`}>
                   {service.title}
                 </h3>
                 <p className={`text-sm font-medium leading-relaxed
-                  ${service.highlight ? 'text-white/70 group-hover:text-white/90' : 'text-[#1B79EE]'}`}>
+                  ${service.highlight ? 'text-white/70 group-hover:text-white/90' : 'text-[#0271f1]'}`}>
                   {service.desc}
                 </p>
               </div>
 
               {/* Decorative Accent Line on Hover */}
               {!service.highlight && (
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#1B79EE] group-hover:w-full transition-all duration-700 z-0" />
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#0271f1] group-hover:w-full transition-all duration-700 z-0" />
               )}
               
               {/* Subtle Arrow Indicator */}
               <div className={`absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0
-                  ${service.highlight ? 'text-white' : 'text-[#1B79EE]'}`}>
+                  ${service.highlight ? 'text-white' : 'text-[#0271f1]'}`}>
                   <ArrowRight className="w-5 h-5" />
               </div>
             </motion.div>

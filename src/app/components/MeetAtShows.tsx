@@ -87,23 +87,23 @@ export default function MeetAtShows() {
 
           <div className="space-y-6">
             <div className="space-y-2">
-              <p className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
-                Meet at <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>the Shows.</span>
+              <p className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter uppercase leading-none">
+                Meet at <span style={{ WebkitTextStroke: "1px #0271f1", color: "transparent" }}>the Shows.</span>
               </p>
             </div>
 
             {/* NEW TAGLINE ADDED HERE */}
-            <p className="text-xl md:text-lg font-black text-[#004aad]/80 tracking-tight uppercase border-l-4 border-[#1B79EE] pl-4">
+            <p className="text-xl md:text-lg font-black text-[#023380]/80 tracking-tight uppercase border-l-4 border-[#0271f1] pl-4">
               Make Your Presence Count.
             </p>
           </div>
 
           <div className="flex flex-col items-end gap-6">
             <div className="hidden md:block text-right">
-              <div className="flex justify-end items-center gap-3 text-[#004aad] font-black text-xs tracking-widest uppercase mb-2">
-                <Globe className="w-4 h-4 text-[#1B79EE] animate-pulse" /> Worldwide Presence
+              <div className="flex justify-end items-center gap-3 text-[#023380] font-black text-xs tracking-widest uppercase mb-2">
+                <Globe className="w-4 h-4 text-[#0271f1] animate-pulse" /> Worldwide Presence
               </div>
-              <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest">Connect with our PE's live on the floor.</p>
+              <p className="text-[#0271f1] font-mono text-[9px] uppercase tracking-widest">Connect with our PE's live on the floor.</p>
             </div>
 
             <div className="flex items-center gap-6">
@@ -117,7 +117,7 @@ export default function MeetAtShows() {
                     <button
                       key={item.mode}
                       onClick={() => setViewMode(item.mode as ViewMode)}
-                      className={`p-2.5 transition-all duration-300 ${viewMode === item.mode ? 'bg-[#004aad]/5 text-[#004aad] shadow-inner border border-[#004aad]/10' : 'text-[#1B79EE] hover:text-[#1B79EE]'}`}
+                      className={`p-2.5 transition-all duration-300 ${viewMode === item.mode ? 'bg-[#023380]/5 text-[#023380] shadow-inner border border-[#023380]/10' : 'text-[#0271f1] hover:text-[#0271f1]'}`}
                       title={item.title}
                     >
                       <Icon className="w-5 h-5" />
@@ -144,7 +144,7 @@ export default function MeetAtShows() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className={`
-                group relative bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0,74,173,0.1)] hover:border-slate-300 transition-all duration-500
+                group relative bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(2,51,128,0.1)] hover:border-slate-300 transition-all duration-500
                 ${viewMode === 'grid' ? 'flex flex-col h-full' : ''}
                 ${viewMode === 'stack' ? 'flex flex-col md:flex-row h-auto w-full' : ''}
               `}
@@ -163,18 +163,18 @@ export default function MeetAtShows() {
                     className="object-contain" // Changed to contain so logos aren't cropped
                   />
                 </div>
-                <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-white border border-slate-200 text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
+                <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-white border border-slate-200 text-[#023380] text-[8px] font-black tracking-widest uppercase shadow-sm">
                   {show.tag}
                 </div>
-                <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-white border border-slate-200 cursor-pointer text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
+                <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-white border border-slate-200 cursor-pointer text-[#023380] text-[8px] font-black tracking-widest uppercase shadow-sm">
                   <Link href={show.link}>
                     <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-                <div className="absolute bottom-0 right-4 z-10 text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
+                <div className="absolute bottom-0 right-4 z-10 text-[#023380] text-[8px] font-black tracking-widest uppercase shadow-sm">
                   <div className="flex items-start gap-3">
-                    <Calendar className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#1B79EE] text-[13px]">{show.date}</span>
+                    <Calendar className="w-3.5 h-3.5 text-[#0271f1] shrink-0 mt-0.5" />
+                    <span className="font-bold text-[#0271f1] text-[13px]">{show.date}</span>
                   </div>
                 </div>
               </div>
@@ -182,28 +182,28 @@ export default function MeetAtShows() {
               {/* DETAILED CONTENT AREA */}
               <div className="relative px-8 pt-2 flex flex-col flex-1 bg-white z-10">
 
-                <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter group-hover:text-[#1B79EE] transition-colors duration-300 leading-tight mb-6">
+                <h3 className="text-lg font-black text-[#023380] uppercase tracking-tighter group-hover:text-[#0271f1] transition-colors duration-300 leading-tight mb-6">
                   {show.title}
                 </h3>
 
                 {/* Telemetry Data Box */}
-                {/* <div className="bg-slate-50 border border-slate-100 p-4 space-y-3 mb-6 group-hover:bg-[#004aad]/5 group-hover:border-[#004aad]/10 transition-colors duration-300">
+                {/* <div className="bg-slate-50 border border-slate-100 p-4 space-y-3 mb-6 group-hover:bg-[#023380]/5 group-hover:border-[#023380]/10 transition-colors duration-300">
                   <div className="flex items-start gap-3">
-                    <Calendar className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#1B79EE] text-[13px]">{show.date}</span>
+                    <Calendar className="w-3.5 h-3.5 text-[#0271f1] shrink-0 mt-0.5" />
+                    <span className="font-bold text-[#0271f1] text-[13px]">{show.date}</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <MapPin className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
-                    <span className="font-medium text-[#1B79EE] text-[13px]">{show.location}</span>
+                    <MapPin className="w-3.5 h-3.5 text-[#0271f1] shrink-0 mt-0.5" />
+                    <span className="font-medium text-[#0271f1] text-[13px]">{show.location}</span>
                   </div>
                 </div> */}
 
                 {/* Multiline Description */}
-                {/* <div className="text-[#1B79EE] text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
+                {/* <div className="text-[#0271f1] text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
                   {show.description.split('\n\n').map((paragraph, pIdx) => {
                     const isBold = paragraph.includes("Early Bird") || paragraph.includes("Opening Hours");
                     return (
-                      <p key={pIdx} className={isBold ? "font-bold text-[#004aad]" : ""}>
+                      <p key={pIdx} className={isBold ? "font-bold text-[#023380]" : ""}>
                         {paragraph}
                       </p>
                     )
@@ -213,7 +213,7 @@ export default function MeetAtShows() {
                 {/* <div className="mt-auto">
                   <a
                     href={show.link}
-                    className="group/btn flex items-center justify-center gap-3 bg-[#004aad] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#1B79EE] transition-all duration-300 shadow-lg shadow-[#004aad]/20"
+                    className="group/btn flex items-center justify-center gap-3 bg-[#023380] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#0271f1] transition-all duration-300 shadow-lg shadow-[#023380]/20"
                   >
                     <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
@@ -222,7 +222,7 @@ export default function MeetAtShows() {
               </div>
 
               {/* ACCENT LINE LOGIC */}
-              <div className={`absolute bg-[#1B79EE] transition-all duration-700 z-20 
+              <div className={`absolute bg-[#0271f1] transition-all duration-700 z-20 
                 ${viewMode === 'stack'
                   ? 'left-0 top-0 h-full w-1 group-hover:w-2'
                   : 'top-0 left-0 h-1 w-0 group-hover:w-full'

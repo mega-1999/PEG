@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Leading Precast Concrete Engineers, Certified Drawings, Testing & Specifications Vault",
     start_url: "/",
     display: "standalone",
-    background_color: "#004aad",
-    theme_color: "#004aad",
+    background_color: "#023380",
+    theme_color: "#023380",
     icons: [
       {
         src: "/favicon.png",

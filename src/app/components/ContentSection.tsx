@@ -12,9 +12,9 @@ export const ContentSection = () => {
         {/* HEADER: Massive Structural Typography */}
         <div className="mb-4 space-y-6">
  
-          <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+          <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter leading-[0.9] uppercase">
             SOLUTIONS FOR <br />
-            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THE CRITICAL PATH.</span>
+            <span style={{ WebkitTextStroke: "1.5px #0271f1", color: "transparent" }}>THE CRITICAL PATH.</span>
           </h2>
         </div>
 
@@ -25,7 +25,7 @@ export const ContentSection = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="lg:col-span-5 bg-[#004aad] text-white px-12 py-6 md:px-16 md:py-8 flex flex-col justify-between relative overflow-hidden group"
+            className="lg:col-span-5 bg-[#023380] text-white px-12 py-6 md:px-16 md:py-8 flex flex-col justify-between relative overflow-hidden group"
           >
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`, backgroundSize: '24px 24px' }} />
@@ -36,7 +36,7 @@ export const ContentSection = () => {
                     01:00 HRS.<br />The Midnight<br />Submittal.
                 </h3>
                 
-                <div className="space-y-6 text-white/70 font-medium leading-relaxed text-lg border-l-2 border-[#1B79EE] pl-6">
+                <div className="space-y-6 text-white/70 font-medium leading-relaxed text-lg border-l-2 border-[#0271f1] pl-6">
                     <p>
                         The manufacturers are offline. Time is evaporating. You need to select, document, and integrate four complex precast products before the dawn deadline. 
                     </p>
@@ -57,17 +57,17 @@ export const ContentSection = () => {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="bg-white border border-slate-200 p-12 group hover:border-[#1B79EE] hover:shadow-2xl transition-all duration-500 flex flex-col justify-center"
+              className="bg-white border border-slate-200 p-12 group hover:border-[#0271f1] hover:shadow-2xl transition-all duration-500 flex flex-col justify-center"
             >
                 <div className="flex items-start gap-8">
-                    <div className="p-5 bg-slate-50 text-[#004aad] group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-500">
+                    <div className="p-5 bg-slate-50 text-[#023380] group-hover:bg-[#023380] group-hover:text-white transition-colors duration-500">
                         <Workflow className="w-8 h-8" />
                     </div>
                     <div>
-                        <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
+                        <h3 className="text-xl font-black text-[#023380] uppercase tracking-tighter mb-4">
                             Full-Spectrum Lifecycle Support
                         </h3>
-                        <p className="text-[#1B79EE] font-medium leading-relaxed">
+                        <p className="text-[#0271f1] font-medium leading-relaxed">
                             From conceptual design to on-site construction and facility management, we are integrated into every phase. Browse our engineering directory to extract the exact data, architecture details, and construction specs you require to execute flawlessly.
                         </p>
                     </div>
@@ -81,15 +81,15 @@ export const ContentSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="bg-white border border-slate-200 p-10 group hover:border-[#1B79EE] transition-all flex flex-col justify-between"
+                  className="bg-white border border-slate-200 p-10 group hover:border-[#0271f1] transition-all flex flex-col justify-between"
                 >
                     <div>
-                        <Database className="w-8 h-8 text-[#1B79EE] mb-6" />
-                        <p className="text-[#1B79EE] text-sm font-medium leading-relaxed">
+                        <Database className="w-8 h-8 text-[#0271f1] mb-6" />
+                        <p className="text-[#0271f1] text-sm font-medium leading-relaxed">
                             Stop paying agencies to build content. We engineer high-performance CAD with minimal geometry and maximum data logic—ready for immediate download.
                         </p>
                     </div>
-                    <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-4 text-[#1B79EE] font-black text-[10px] uppercase tracking-widest cursor-pointer">
+                    <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-4 text-[#0271f1] font-black text-[10px] uppercase tracking-widest cursor-pointer">
                         Access Models <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                     </div>
                 </motion.div>
@@ -99,7 +99,7 @@ export const ContentSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="bg-[#1B79EE] text-white p-10 hover:bg-[#004aad] transition-colors duration-500 flex flex-col justify-between"
+                  className="bg-[#0271f1] text-white p-10 hover:bg-[#023380] transition-colors duration-500 flex flex-col justify-between"
                 >
                     <div>
                         <Unlock className="w-8 h-8 text-white mb-6" />

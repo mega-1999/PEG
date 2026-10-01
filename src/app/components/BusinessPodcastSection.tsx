@@ -17,30 +17,30 @@ export const BusinessPodcastSection = () => {
       {/* LEFT: BPM Solutions & Testimonial */}
       <div className="bg-white p-8 md:p-16 flex flex-col justify-center">
         <div className="max-w-xl space-y-6">
-          <h2 className="text-xl font-bold text-[#004aad] tracking-tight">
+          <h2 className="text-xl font-bold text-[#023380] tracking-tight">
             Solutions for BPM's
           </h2>
-          <div className="space-y-4 text-[#1B79EE] text-sm leading-relaxed">
-            <p className="font-semibold text-[#1B79EE]">Want to be seen when and where your audience is searching?</p>
+          <div className="space-y-4 text-[#0271f1] text-sm leading-relaxed">
+            <p className="font-semibold text-[#0271f1]">Want to be seen when and where your audience is searching?</p>
             <p>Don’t miss out on the opportunity to be considered at the beginning stages of product selection. Find out how PEG can augment your outreach, even before architects, engineers, and specifiers are ready to connect you directly.</p>
             <p>Don’t take our word for it, see what some of our happy customers have to say:</p>
           </div>
 
           {/* Light Blue Testimonial Box */}
-          <div className="bg-[#1B79EE]/20 p-8 border-l-4 border-[#1B79EE] mt-8">
-            <p className="italic text-[#004aad] font-medium mb-4">
+          <div className="bg-[#0271f1]/20 p-8 border-l-4 border-[#0271f1] mt-8">
+            <p className="italic text-[#023380] font-medium mb-4">
               "Specifiers rely on PEG as a trusted resource, and being present there ensures our products are discovered at the right time in their design process... Maintaining a steady presence on PEG builds familiarity and trust, and ultimately helps turn early interest into specification."
             </p>
-            <p className="text-sm font-bold text-[#1B79EE]">Trish B, Sales Manager at Fire Trol Fireproof</p>
+            <p className="text-sm font-bold text-[#0271f1]">Trish B, Sales Manager at Fire Trol Fireproof</p>
             <Link href="/#about">
-              <Button variant="outline" className="mt-6 border-[#004aad] text-[#004aad] hover:bg-[#004aad] hover:text-white rounded-none uppercase font-bold tracking-widest cursor-pointer">
+              <Button variant="outline" className="mt-6 border-[#023380] text-[#023380] hover:bg-[#023380] hover:text-white rounded-none uppercase font-bold tracking-widest cursor-pointer">
                 More Testimonials <ArrowRight className="ml-2 w-3 h-3" />
               </Button>
             </Link>
           </div>
 
           <Link href="/#services">
-            <Button className="w-full md:w-auto bg-[#004aad] hover:bg-[#1B79EE] text-white rounded-none uppercase font-bold tracking-tighter mt-8 cursor-pointer">
+            <Button className="w-full md:w-auto bg-[#023380] hover:bg-[#0271f1] text-white rounded-none uppercase font-bold tracking-tighter mt-8 cursor-pointer">
               Discover all the benefits of PEG
             </Button>
           </Link>
@@ -48,7 +48,7 @@ export const BusinessPodcastSection = () => {
       </div>
 
       {/* RIGHT: Podcast Sidebar */}
-      <div className="bg-[#004aad] p-8 md:p-16 text-white relative overflow-hidden">
+      <div className="bg-[#023380] p-8 md:p-16 text-white relative overflow-hidden">
         {/* Decorative architectural background element */}
         <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('/building-bg.jpg')] bg-cover bg-center"></div>
         
@@ -75,7 +75,7 @@ export const BusinessPodcastSection = () => {
           </div>
 
           <Link href="/blog">
-            <Button variant="outline" className="mt-12 border-white text-white hover:bg-white hover:text-[#004aad] rounded-none uppercase font-bold tracking-widest bg-transparent cursor-pointer">
+            <Button variant="outline" className="mt-12 border-white text-white hover:bg-white hover:text-[#023380] rounded-none uppercase font-bold tracking-widest bg-transparent cursor-pointer">
               More Episodes & Articles <ArrowRight className="ml-2 w-3 h-3" />
             </Button>
           </Link>

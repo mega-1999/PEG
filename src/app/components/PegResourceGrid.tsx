@@ -59,7 +59,7 @@ const pegResourceNodes = [
 
 export default function PegResourceGrid() {
   return (
-    <section id="resources" className="w-full bg-[#004aad] text-white py-24 px-10 md:px-20 relative overflow-hidden font-sans">
+    <section id="resources" className="w-full bg-[#023380] text-white py-24 px-10 md:px-20 relative overflow-hidden font-sans">
       
       {/* BRAND ARCHITECTURE BACKGROUND GRID */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]" />
@@ -68,7 +68,7 @@ export default function PegResourceGrid() {
         
         {/* STRUCTURAL HEADER SECTION */}
         <div className="max-w-3xl space-y-4">
-          <div className="w-16 h-1 bg-[#1B79EE]" />
+          <div className="w-16 h-1 bg-[#0271f1]" />
           <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none">
             Knowledge Hub <br />
             <span className="text-white">& Infrastructure Ecosystem.</span>
@@ -88,42 +88,42 @@ export default function PegResourceGrid() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.4 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-white border border-[#1B79EE]/20 p-10 flex flex-col justify-between items-center text-center transition-all duration-300 shadow-xl"
+              className="group relative bg-white border border-[#0271f1]/20 p-10 flex flex-col justify-between items-center text-center transition-all duration-300 shadow-xl"
             >
               {/* TOP BRAND ACCENT LINE */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-[#1B79EE] group-hover:w-full transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-0 h-1 bg-[#0271f1] group-hover:w-full transition-all duration-500" />
 
               {/* CARD CORE CONTENT */}
               <div className="flex flex-col items-center space-y-6 w-full">
                 
                 {/* ICON BOX */}
-                <div className="p-4 bg-[#004aad]/5 border border-[#004aad]/10 text-[#004aad] transition-all duration-300 group-hover:bg-[#1B79EE] group-hover:text-white group-hover:border-[#1B79EE] group-hover:shadow-lg">
+                <div className="p-4 bg-[#023380]/5 border border-[#023380]/10 text-[#023380] transition-all duration-300 group-hover:bg-[#0271f1] group-hover:text-white group-hover:border-[#0271f1] group-hover:shadow-lg">
                   {node.icon}
                 </div>
 
                 {/* METADATA IDENTIFIER */}
                 <div className="space-y-3">
-                  <h3 className="text-lg font-black uppercase tracking-tighter text-[#004aad]">
+                  <h3 className="text-lg font-black uppercase tracking-tighter text-[#023380]">
                     {node.title}
                   </h3>
-                  <p className="text-[#004aad]/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs mx-auto">
+                  <p className="text-[#023380]/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs mx-auto">
                     {node.description}
                   </p>
                 </div>
               </div>
 
               {/* CLEAN ACTION PROMPT BUTTON */}
-              <div className="w-full pt-8 mt-8 border-t border-[#004aad]/5">
+              <div className="w-full pt-8 mt-8 border-t border-[#023380]/5">
                 <a 
                   href={node.href}
-                  className="inline-flex items-center gap-2 bg-[#004aad] hover:bg-[#1B79EE] text-white px-5 py-2.5 font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-[#023380] hover:bg-[#0271f1] text-white px-5 py-2.5 font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105"
                 >
                   {node.linkText} <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
 
               {/* CORNER BACKGROUND WATERMARK */}
-              <div className="absolute bottom-2 right-4 font-mono text-[50px] font-black text-[#004aad] opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.05] transition-opacity">
+              <div className="absolute bottom-2 right-4 font-mono text-[50px] font-black text-[#023380] opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.05] transition-opacity">
                 0{idx + 1}
               </div>
 

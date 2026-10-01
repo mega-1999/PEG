@@ -28,10 +28,10 @@ const socialLinks = [
 
 export default function ExtraordinaryFooter() {
   return (
-    <footer className="relative w-full bg-[#004aad] text-white border-t-2 border-slate-100 overflow-hidden select-none">
+    <footer className="relative w-full bg-[#023380] text-white border-t-2 border-slate-100 overflow-hidden select-none">
 
       <div className="w-full px-10 md:px-20 py-16">
-        
+
         {/* 1. TOP BRANDING, GROUP NETWORK & SOCIALS */}
         <div className="w-full pb-10 border-b border-white/10 mb-12">
           <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -40,7 +40,7 @@ export default function ExtraordinaryFooter() {
             <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-6">
               <div className="bg-white p-4 rounded-md shadow-sm w-full max-w-[280px] flex items-center justify-center">
                 <Image
-                  src={getAssetUrl("/PEG.png")}
+                  src={getAssetUrl("/peg_logo.png")}
                   alt="Precast Engineering Group"
                   width={280}
                   height={100}
@@ -94,9 +94,9 @@ export default function ExtraordinaryFooter() {
                       rel="noopener noreferrer"
                       aria-label={social.label}
                       whileHover={{ y: -4 }}
-                      className="w-12 h-12 bg-white flex items-center justify-center shadow-sm transition-all duration-300 group hover:bg-[#1B79EE] cursor-pointer"
+                      className="w-12 h-12 bg-white flex items-center justify-center shadow-sm transition-all duration-300 group hover:bg-[#0271f1] cursor-pointer"
                     >
-                      <Icon className="w-5 h-5 text-[#004aad] group-hover:text-white transition-colors duration-300" />
+                      <Icon className="w-5 h-5 text-[#023380] group-hover:text-white transition-colors duration-300" />
                     </motion.a>
                   );
                 })}
@@ -111,7 +111,7 @@ export default function ExtraordinaryFooter() {
           {footerData.map((section, idx) => (
             <div key={idx} className="flex flex-col gap-6">
               <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#1B79EE]" />
+                <span className="w-2 h-2 bg-[#0271f1]" />
                 {section.title}
               </h3>
 
@@ -136,7 +136,7 @@ export default function ExtraordinaryFooter() {
         {/* 3. SEO CAPABILITIES DIRECTORY */}
         <div className="border-b border-white/10 pb-8 mb-8">
           <h4 className="text-white text-[10px] font-mono font-black uppercase tracking-[0.25em] mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#1B79EE]" />
+            <span className="w-2 h-2 bg-[#0271f1]" />
             <span>PRECAST ENGINEERING & DRAFTING CAPABILITIES DIRECTORY</span>
           </h4>
           <div className="flex flex-wrap gap-2 text-[10px] font-mono font-bold text-white/70 uppercase">
@@ -166,9 +166,9 @@ export default function ExtraordinaryFooter() {
               "septic tank drawings",
               "grease trap drawings"
             ].map((kw, i) => (
-              <span 
+              <span
                 key={i}
-                className="px-2.5 py-1 bg-white/10 hover:bg-[#1B79EE] hover:text-white border border-white/15 transition-colors cursor-default"
+                className="px-2.5 py-1 bg-white/10 hover:bg-[#0271f1] hover:text-white border border-white/15 transition-colors cursor-default"
               >
                 {kw}
               </span>

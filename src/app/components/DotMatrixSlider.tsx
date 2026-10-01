@@ -123,7 +123,7 @@ const tierColors = {
   },
   Standard: {
     bg: "bg-slate-50 dark:bg-slate-900/40",
-    text: "text-[#1B79EE] dark:text-[#1B79EE]",
+    text: "text-[#0271f1] dark:text-[#0271f1]",
     border: "border-slate-200 dark:border-slate-800/80",
     accent: "#64748B"
   }
@@ -133,7 +133,7 @@ const tierColors = {
 function StateLogoBadge({ abbr, isActive, size = "sm" }: { abbr: string; isActive?: boolean; size?: "sm" | "lg" }) {
   if (size === "lg") {
     return (
-      <div className="relative w-14 h-14 bg-gradient-to-br from-[#004aad] to-[#1B79EE] rounded-xl p-1 shadow-md flex flex-col items-center justify-center overflow-hidden flex-shrink-0 text-white border border-blue-400/30">
+      <div className="relative w-14 h-14 bg-gradient-to-br from-[#023380] to-[#0271f1] rounded-xl p-1 shadow-md flex flex-col items-center justify-center overflow-hidden flex-shrink-0 text-white border border-blue-400/30">
         <span className="text-base font-black tracking-wider leading-none uppercase">{abbr}</span>
         <span className="text-[8px] font-mono font-bold tracking-widest text-blue-200 uppercase mt-1">DOT</span>
       </div>
@@ -144,7 +144,7 @@ function StateLogoBadge({ abbr, isActive, size = "sm" }: { abbr: string; isActiv
     <div className={`w-8 h-8 rounded-lg flex flex-col items-center justify-center flex-shrink-0 border transition-all ${
       isActive 
         ? "bg-white/20 text-white border-white/30 shadow-inner font-black" 
-        : "bg-slate-100 text-[#004aad] border-slate-200 font-black"
+        : "bg-slate-100 text-[#023380] border-slate-200 font-black"
     }`}>
       <span className="text-[10px] font-black tracking-tight leading-none uppercase">{abbr}</span>
     </div>
@@ -210,19 +210,19 @@ export default function DotMatrixSlider() {
   return (
     <section id="standards" className="w-full bg-[#F8FAFC] border-t-2 border-slate-100 overflow-hidden relative">
       {/* Visual background details */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#1B79EE]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#004aad]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 -translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#0271f1]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#023380]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 -translate-x-1/3 translate-y-1/3" />
 
       <div className="w-full px-10 md:px-20 py-16 relative z-10">
         
         {/* HEADER AREA */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12 border-b border-slate-200 pb-8">
           <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-black text-[#004aad] tracking-tight leading-none uppercase">
+            <h2 className="text-2xl md:text-3xl font-black text-[#023380] tracking-tight leading-none uppercase">
               State DOT Drawings <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004aad] to-[#1B79EE]">Compliance Databank</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#023380] to-[#0271f1]">Compliance Databank</span>
             </h2>
-            <p className="text-[#1B79EE] font-medium text-sm md:text-base max-w-2xl leading-relaxed">
+            <p className="text-[#0271f1] font-medium text-sm md:text-base max-w-2xl leading-relaxed">
               Verify precast concrete standard drawings, roadway plans, and bridge structural details across all 50+ United States jurisdictions in real-time.
             </p>
           </div>
@@ -257,14 +257,14 @@ export default function DotMatrixSlider() {
                         <span className={`px-2.5 py-0.5 rounded text-xs font-black tracking-widest border uppercase ${activeColors.bg} ${activeColors.text} ${activeColors.border}`}>
                           {activeEnriched.abbr}
                         </span>
-                        <span className="text-[10px] font-mono font-black text-[#1B79EE] uppercase tracking-widest">
+                        <span className="text-[10px] font-mono font-black text-[#0271f1] uppercase tracking-widest">
                           DOT Jurisdiction
                         </span>
                       </div>
-                      <h3 className="text-xl font-black text-[#004aad] tracking-tight mt-1">
+                      <h3 className="text-xl font-black text-[#023380] tracking-tight mt-1">
                         {activeEnriched.state}
                       </h3>
-                      <p className="text-[#1B79EE] font-bold text-xs uppercase tracking-widest flex items-center gap-1.5 mt-0.5">
+                      <p className="text-[#0271f1] font-bold text-xs uppercase tracking-widest flex items-center gap-1.5 mt-0.5">
                         <MapPin className="w-3.5 h-3.5" /> Regional DOT Portal
                       </p>
                     </div>
@@ -277,21 +277,21 @@ export default function DotMatrixSlider() {
                   <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
                     
                     <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-100">
-                      <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest mb-1.5 flex items-center gap-1">
+                      <p className="text-[#0271f1] font-mono text-[9px] uppercase tracking-widest mb-1.5 flex items-center gap-1">
                         <FileCode2 className="w-3.5 h-3.5" /> Specification
                       </p>
-                      <p className="font-extrabold text-xs text-[#1B79EE] truncate uppercase" title={activeEnriched.spec}>
+                      <p className="font-extrabold text-xs text-[#0271f1] truncate uppercase" title={activeEnriched.spec}>
                         {activeEnriched.spec.split(" ")[0]} Series
                       </p>
                     </div>
                   </div>
 
                   {/* Specifications and provisions details */}
-                  <div className="bg-[#1B79EE]/5 rounded-xl p-4 border border-[#1B79EE]/10 flex gap-3">
-                    <Info className="w-5 h-5 text-[#1B79EE] flex-shrink-0 mt-0.5" />
+                  <div className="bg-[#0271f1]/5 rounded-xl p-4 border border-[#0271f1]/10 flex gap-3">
+                    <Info className="w-5 h-5 text-[#0271f1] flex-shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <p className="font-mono text-[9px] uppercase tracking-widest text-[#1b79ee] font-black">Spec Provision</p>
-                      <p className="text-xs text-[#1B79EE] font-semibold leading-relaxed">
+                      <p className="font-mono text-[9px] uppercase tracking-widest text-[#0271f1] font-black">Spec Provision</p>
+                      <p className="text-xs text-[#0271f1] font-semibold leading-relaxed">
                         {activeEnriched.spec}. All precast structural components must satisfy regional requirements.
                       </p>
                     </div>
@@ -299,12 +299,12 @@ export default function DotMatrixSlider() {
 
                   {/* Links / Resources List */}
                   <div className="space-y-3 pt-2">
-                    <p className="text-[#1B79EE] font-mono text-[9px] uppercase tracking-widest flex items-center gap-1.5">
-                      <FileText className="w-3.5 h-3.5 text-[#1B79EE]" /> Compiled Resources ({activeEnriched.links.length})
+                    <p className="text-[#0271f1] font-mono text-[9px] uppercase tracking-widest flex items-center gap-1.5">
+                      <FileText className="w-3.5 h-3.5 text-[#0271f1]" /> Compiled Resources ({activeEnriched.links.length})
                     </p>
                     
                     {activeEnriched.links.length === 0 ? (
-                      <div className="flex items-center gap-2 p-3 text-xs bg-slate-50 border border-slate-100 text-[#1B79EE] rounded-xl font-bold">
+                      <div className="flex items-center gap-2 p-3 text-xs bg-slate-50 border border-slate-100 text-[#0271f1] rounded-xl font-bold">
                         <HelpCircle className="w-4 h-4" /> No specific drawing links registered
                       </div>
                     ) : (
@@ -315,23 +315,23 @@ export default function DotMatrixSlider() {
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-between p-3 bg-white border border-slate-100 hover:border-[#1B79EE] hover:bg-[#1B79EE]/5 rounded-xl group transition-all duration-150"
+                            className="flex items-center justify-between p-3 bg-white border border-slate-100 hover:border-[#0271f1] hover:bg-[#0271f1]/5 rounded-xl group transition-all duration-150"
                           >
                             <div className="flex items-center gap-3 min-w-0">
                               {/* Resource Link Icon Badge */}
-                              <div className="w-8 h-8 bg-slate-50 group-hover:bg-[#004aad] group-hover:text-white text-[#004aad] rounded-lg flex items-center justify-center p-1.5 border border-slate-100 flex-shrink-0 transition-colors">
+                              <div className="w-8 h-8 bg-slate-50 group-hover:bg-[#023380] group-hover:text-white text-[#023380] rounded-lg flex items-center justify-center p-1.5 border border-slate-100 flex-shrink-0 transition-colors">
                                 <FileText className="w-4 h-4" />
                               </div>
                               <div className="min-w-0">
-                                <p className="text-xs font-black text-[#004aad] truncate" title={link.label}>
+                                <p className="text-xs font-black text-[#023380] truncate" title={link.label}>
                                   {link.label}
                                 </p>
-                                <p className="text-[10px] text-[#1B79EE] font-semibold truncate">
+                                <p className="text-[10px] text-[#0271f1] font-semibold truncate">
                                   {link.tooltip || "Click to open official drawing portal"}
                                 </p>
                               </div>
                             </div>
-                            <ArrowUpRight className="w-4 h-4 text-[#1B79EE] group-hover:text-[#1B79EE] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-150 flex-shrink-0 ml-2" />
+                            <ArrowUpRight className="w-4 h-4 text-[#0271f1] group-hover:text-[#0271f1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-150 flex-shrink-0 ml-2" />
                           </a>
                         ))}
                       </div>
@@ -340,7 +340,7 @@ export default function DotMatrixSlider() {
                 </div>
 
                 {/* Verification Checkmark */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-[#1B79EE]">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-[#0271f1]">
                   <span className="flex items-center gap-1.5 text-emerald-600 bg-emerald-50 px-2 py-1 rounded">
                     <CheckCircle className="w-3.5 h-3.5 text-emerald-600" />
                     PEG VERIFIED
@@ -362,12 +362,12 @@ export default function DotMatrixSlider() {
 
               {filteredStates.length === 0 ? (
                 <div className="h-[280px] bg-white border border-slate-200 rounded-2xl flex flex-col items-center justify-center text-center p-8">
-                  <Building2 className="w-12 h-12 text-[#1B79EE] mb-3" />
-                  <p className="text-[#1B79EE] font-extrabold">No state DOT portals match search criteria</p>
-                  <p className="text-[#1B79EE] text-xs mt-1">Try resetting the filter tier or search string.</p>
+                  <Building2 className="w-12 h-12 text-[#0271f1] mb-3" />
+                  <p className="text-[#0271f1] font-extrabold">No state DOT portals match search criteria</p>
+                  <p className="text-[#0271f1] text-xs mt-1">Try resetting the filter tier or search string.</p>
                   <button 
                     onClick={() => { setSearchQuery(""); setSelectedTier("All"); }}
-                    className="mt-4 px-4 py-2 bg-[#004aad] text-white text-xs font-black rounded-lg uppercase tracking-wider hover:bg-[#1B79EE] transition-all cursor-pointer"
+                    className="mt-4 px-4 py-2 bg-[#023380] text-white text-xs font-black rounded-lg uppercase tracking-wider hover:bg-[#0271f1] transition-all cursor-pointer"
                   >
                     Clear Filter
                   </button>
@@ -394,13 +394,13 @@ export default function DotMatrixSlider() {
                               onClick={() => setActiveState(item)}
                               className={`cursor-pointer px-6 py-4 border rounded-xl flex items-center gap-3 transition-all duration-200 select-none min-w-[210px] max-w-[250px] ${
                                 isActive
-                                  ? "bg-[#004aad] border-[#004aad] text-white shadow-lg shadow-blue-900/10 scale-105"
-                                  : "bg-white border-slate-200 hover:border-[#1B79EE] text-[#004aad] shadow-sm hover:shadow"
+                                  ? "bg-[#023380] border-[#023380] text-white shadow-lg shadow-blue-900/10 scale-105"
+                                  : "bg-white border-slate-200 hover:border-[#0271f1] text-[#023380] shadow-sm hover:shadow"
                               }`}
                             >
                               <StateLogoBadge abbr={item.abbr} isActive={isActive} size="sm" />
                               <div className="min-w-0">
-                                <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#004aad]"}`}>
+                                <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#023380]"}`}>
                                   {item.state}
                                 </p>
                                 <span className={`text-[9px] font-mono font-bold tracking-widest uppercase ${isActive ? "text-blue-200" : colors.text}`}>
@@ -433,13 +433,13 @@ export default function DotMatrixSlider() {
                               onClick={() => setActiveState(item)}
                               className={`cursor-pointer px-6 py-4 border rounded-xl flex items-center gap-3 transition-all duration-200 select-none min-w-[210px] max-w-[250px] ${
                                 isActive
-                                  ? "bg-[#004aad] border-[#004aad] text-white shadow-lg shadow-blue-900/10 scale-105"
-                                  : "bg-white border-slate-200 hover:border-[#1B79EE] text-[#004aad] shadow-sm hover:shadow"
+                                  ? "bg-[#023380] border-[#023380] text-white shadow-lg shadow-blue-900/10 scale-105"
+                                  : "bg-white border-slate-200 hover:border-[#0271f1] text-[#023380] shadow-sm hover:shadow"
                               }`}
                             >
                               <StateLogoBadge abbr={item.abbr} isActive={isActive} size="sm" />
                               <div className="min-w-0">
-                                <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#004aad]"}`}>
+                                <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#023380]"}`}>
                                   {item.state}
                                 </p>
                                 <span className={`text-[9px] font-mono font-bold tracking-widest uppercase ${isActive ? "text-blue-200" : colors.text}`}>
@@ -472,13 +472,13 @@ export default function DotMatrixSlider() {
                               onClick={() => setActiveState(item)}
                               className={`cursor-pointer px-6 py-4 border rounded-xl flex items-center gap-3 transition-all duration-200 select-none min-w-[210px] max-w-[250px] ${
                                 isActive
-                                  ? "bg-[#004aad] border-[#004aad] text-white shadow-lg shadow-blue-900/10 scale-105"
-                                  : "bg-white border-slate-200 hover:border-[#1B79EE] text-[#004aad] shadow-sm hover:shadow"
+                                  ? "bg-[#023380] border-[#023380] text-white shadow-lg shadow-blue-900/10 scale-105"
+                                  : "bg-white border-slate-200 hover:border-[#0271f1] text-[#023380] shadow-sm hover:shadow"
                               }`}
                             >
                               <StateLogoBadge abbr={item.abbr} isActive={isActive} size="sm" />
                               <div className="min-w-0">
-                                <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#004aad]"}`}>
+                                <p className={`text-sm font-black truncate ${isActive ? "text-white" : "text-[#023380]"}`}>
                                   {item.state}
                                 </p>
                                 <span className={`text-[9px] font-mono font-bold tracking-widest uppercase ${isActive ? "text-blue-200" : colors.text}`}>
@@ -500,11 +500,11 @@ export default function DotMatrixSlider() {
             <div className="mt-8 bg-white border border-slate-200 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
               <div className="flex items-center gap-3">
                 <div className="bg-slate-100 p-2 rounded-lg flex items-center justify-center">
-                  <Layers className="w-5 h-5 text-[#1B79EE]" />
+                  <Layers className="w-5 h-5 text-[#0271f1]" />
                 </div>
                 <div>
-                  <p className="text-xs font-black text-[#004aad] uppercase tracking-wider">Design Standards Legend</p>
-                  <p className="text-[11px] text-[#1B79EE] font-semibold">Tiers indicate specific environmental hazards or structural classifications.</p>
+                  <p className="text-xs font-black text-[#023380] uppercase tracking-wider">Design Standards Legend</p>
+                  <p className="text-[11px] text-[#0271f1] font-semibold">Tiers indicate specific environmental hazards or structural classifications.</p>
                 </div>
               </div>
               
@@ -512,7 +512,7 @@ export default function DotMatrixSlider() {
                 {Object.entries(tierColors).map(([name, val]) => (
                   <div key={name} className="flex items-center gap-1.5">
                     <span className={`w-3 h-3 rounded border ${val.bg} ${val.border}`} />
-                    <span className="text-[10px] font-mono font-black text-[#1B79EE] uppercase tracking-wider">{name}</span>
+                    <span className="text-[10px] font-mono font-black text-[#0271f1] uppercase tracking-wider">{name}</span>
                   </div>
                 ))}
               </div>

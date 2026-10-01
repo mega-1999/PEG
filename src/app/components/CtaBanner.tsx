@@ -8,7 +8,7 @@ interface RegistrationBannerProps {
 
 export const RegistrationBanner = ({ txtSrc, btSrc }: RegistrationBannerProps) => {
   return (
-    <section className="w-full bg-[#004aad] py-6 px-4">
+    <section className="w-full bg-[#023380] py-6 px-4">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
 
         {/* The Text Content */}
@@ -20,7 +20,7 @@ export const RegistrationBanner = ({ txtSrc, btSrc }: RegistrationBannerProps) =
         {btSrc && (
           <Button
             variant="outline"
-            className="rounded-none border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#004aad] font-bold uppercase tracking-[0.15em] transition-all duration-300"
+            className="rounded-none border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#023380] font-bold uppercase tracking-[0.15em] transition-all duration-300"
           >
             {btSrc}
           </Button>

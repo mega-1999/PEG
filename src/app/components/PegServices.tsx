@@ -70,26 +70,26 @@ const services = [
     title: "Manufacturing Support",
     description: "On-site and off-site technical guidance to optimize your plant's production pipeline.",
     icon: <Factory className="w-6 h-6" />,
-    video: getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4"),
+    video: getAssetUrl("/assets/video/MARINE_PRODUCT/E20_V1_final.mp4"),
     image: getAssetUrl("/assets/images/a04.JPG")
   }
 ];
 
 export default function PegServices() {
   return (
-    <section id="services" className="w-full bg-white py-4 border-b border-[#004aad]/10">
+    <section id="services" className="w-full bg-white py-4 border-b border-[#023380]/10">
       <div className="w-full px-10 md:px-20">
         
         {/* Section Header */}
         <div className="mb-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#1B79EE]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/10 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#0271f1]">
             Core Competencies
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#004aad] tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter uppercase leading-[0.9]">
             Precast Engineering & <br />
-            <span className="text-[#1B79EE]">Technical Services.</span>
+            <span className="text-[#0271f1]">Technical Services.</span>
           </h2>
-          <p className="mt-4 text-[#004aad] font-semibold max-w-2xl text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-[#023380] font-semibold max-w-2xl text-sm md:text-base leading-relaxed">
             We provide specialized, end-to-end engineering support exclusively for the precast concrete industry. Each service includes technical video demonstrations and CAD execution blueprints.
           </p>
         </div>
@@ -103,10 +103,10 @@ export default function PegServices() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-lg transition-all duration-300 group flex flex-col overflow-hidden"
+              className="bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-lg transition-all duration-300 group flex flex-col overflow-hidden"
             >
               {/* VIDEO LOOP SHOWCASE THUMBNAIL - CRYSTAL CLEAR */}
-              <div className="relative w-full aspect-video bg-white overflow-hidden shrink-0 border-b border-[#004aad]/10">
+              <div className="relative w-full aspect-video bg-white overflow-hidden shrink-0 border-b border-[#023380]/10">
                 <video
                   autoPlay
                   loop
@@ -119,7 +119,7 @@ export default function PegServices() {
                   <source src={service.video} type="video/mp4" />
                 </video>
 
-                <div className="absolute top-2 right-2 z-10 font-mono text-[9px] font-black text-white bg-[#004aad] px-2 py-0.5 tracking-widest uppercase shadow-xs">
+                <div className="absolute top-2 right-2 z-10 font-mono text-[9px] font-black text-white bg-[#023380] px-2 py-0.5 tracking-widest uppercase shadow-xs">
                   {service.id}
                 </div>
               </div>
@@ -127,22 +127,22 @@ export default function PegServices() {
               {/* CARD CONTENT */}
               <div className="p-5 flex-grow flex flex-col justify-between">
                 <div>
-                  <div className="w-10 h-10 bg-blue-50 border border-[#1B79EE]/20 flex items-center justify-center text-[#004aad] mb-3 group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-300">
+                  <div className="w-10 h-10 bg-blue-50 border border-[#0271f1]/20 flex items-center justify-center text-[#023380] mb-3 group-hover:bg-[#023380] group-hover:text-white transition-colors duration-300">
                     {service.icon}
                   </div>
 
-                  <h3 className="text-base font-black text-[#004aad] uppercase tracking-tight mb-2 leading-tight group-hover:text-[#1B79EE] transition-colors">
+                  <h3 className="text-base font-black text-[#023380] uppercase tracking-tight mb-2 leading-tight group-hover:text-[#0271f1] transition-colors">
                     {service.title}
                   </h3>
 
-                  <p className="text-[#004aad] text-xs font-semibold leading-relaxed">
+                  <p className="text-[#023380] text-xs font-semibold leading-relaxed">
                     {service.description}
                   </p>
                 </div>
 
                 <Link 
                   href="#contact" 
-                  className="inline-flex items-center gap-2 text-[#1B79EE] text-xs font-bold uppercase tracking-widest group/link mt-auto pt-4 border-t border-[#004aad]/10"
+                  className="inline-flex items-center gap-2 text-[#0271f1] text-xs font-bold uppercase tracking-widest group/link mt-auto pt-4 border-t border-[#023380]/10"
                 >
                   <span>Request Technical Guide</span>
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
@@ -157,9 +157,9 @@ export default function PegServices() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: services.length * 0.1 }}
-            className="bg-[#004aad] text-white p-6 border border-[#004aad] flex flex-col justify-between items-start group relative overflow-hidden shrink-0"
+            className="bg-[#023380] text-white p-6 border border-[#023380] flex flex-col justify-between items-start group relative overflow-hidden shrink-0"
           >
-            <div className="absolute inset-0 bg-[#1B79EE] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
+            <div className="absolute inset-0 bg-[#0271f1] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
             
             <div className="relative z-10 my-auto w-full">
               <span className="inline-block px-2.5 py-1 bg-white/10 text-blue-100 font-mono text-[10px] font-black uppercase tracking-widest mb-4 border border-white/20">
@@ -173,7 +173,7 @@ export default function PegServices() {
               </p>
               <Link 
                 href="#contact"
-                className="w-full inline-flex items-center justify-center bg-white text-[#004aad] h-11 font-mono text-xs font-black uppercase tracking-widest hover:bg-blue-50 transition-colors"
+                className="w-full inline-flex items-center justify-center bg-white text-[#023380] h-11 font-mono text-xs font-black uppercase tracking-widest hover:bg-blue-50 transition-colors"
               >
                 Contact Engineers
               </Link>

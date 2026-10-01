@@ -87,13 +87,13 @@ export default function AgencySlider() {
   const loopAgenciesRow2 = [...AGENCIES.slice(5), ...AGENCIES.slice(0, 5), ...AGENCIES, ...AGENCIES];
 
   return (
-    <section className="relative w-full bg-white py-14 border-t border-[#004aad]/10 select-none overflow-hidden">
+    <section className="relative w-full bg-white py-14 border-t border-[#023380]/10 select-none overflow-hidden">
       
       {/* CAD WATERMARK BACKGROUND */}
       <div 
         className="absolute inset-0 opacity-[0.02] pointer-events-none" 
         style={{ 
-          backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px), linear-gradient(to right, #004aad 0.5px, transparent 0.5px), linear-gradient(to bottom, #004aad 0.5px, transparent 0.5px)`,
+          backgroundImage: `radial-gradient(#023380 1.5px, transparent 1.5px), linear-gradient(to right, #023380 0.5px, transparent 0.5px), linear-gradient(to bottom, #023380 0.5px, transparent 0.5px)`,
           backgroundSize: '40px 40px, 200px 200px, 200px 200px'
         }} 
       />
@@ -101,18 +101,18 @@ export default function AgencySlider() {
       <div className="w-full px-6 md:px-16 lg:px-20 relative z-10 space-y-8">
         
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#004aad]/10 pb-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#023380]/10 pb-6">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/10 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#1B79EE]">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/10 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#0271f1]">
               <Building2 className="w-3.5 h-3.5" /> Agency & Utility Approvals
             </div>
-            <h2 className="text-2xl md:text-4xl font-black text-[#004aad] uppercase tracking-tight leading-tight">
-              Approved & Specified <span className="text-[#1B79EE]">By Leading Agencies.</span>
+            <h2 className="text-2xl md:text-4xl font-black text-[#023380] uppercase tracking-tight leading-tight">
+              Approved & Specified <span className="text-[#0271f1]">By Leading Agencies.</span>
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 text-[#004aad] text-xs font-mono font-bold bg-blue-50/70 px-4 py-2 border border-[#1B79EE]/20 shadow-xs">
-            <ShieldCheck className="w-4 h-4 text-[#1B79EE]" />
+          <div className="flex items-center gap-2 text-[#023380] text-xs font-mono font-bold bg-blue-50/70 px-4 py-2 border border-[#0271f1]/20 shadow-xs">
+            <ShieldCheck className="w-4 h-4 text-[#0271f1]" />
             <span>DOT, Municipal & Utility Standard Compliant</span>
           </div>
         </div>
@@ -129,10 +129,10 @@ export default function AgencySlider() {
             {loopAgenciesRow1.map((agency, idx) => (
               <div
                 key={`row1-${agency.name}-${idx}`}
-                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
+                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
               >
                 {/* LOGO BOX */}
-                <div className="relative w-14 h-14 bg-white border border-[#004aad]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
+                <div className="relative w-14 h-14 bg-white border border-[#023380]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
                   <Image
                     src={getAssetUrl(agency.src)}
                     alt={agency.name}
@@ -144,13 +144,13 @@ export default function AgencySlider() {
 
                 {/* INFO */}
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-mono font-black text-[#1B79EE] uppercase tracking-wider block truncate">
+                  <span className="text-[9px] font-mono font-black text-[#0271f1] uppercase tracking-wider block truncate">
                     {agency.badge}
                   </span>
-                  <h3 className="text-xs font-black text-[#004aad] uppercase tracking-tight truncate group-hover/card:text-[#1B79EE] transition-colors">
+                  <h3 className="text-xs font-black text-[#023380] uppercase tracking-tight truncate group-hover/card:text-[#0271f1] transition-colors">
                     {agency.name}
                   </h3>
-                  <p className="text-[10px] text-[#004aad]/70 font-semibold truncate mt-0.5">
+                  <p className="text-[10px] text-[#023380]/70 font-semibold truncate mt-0.5">
                     {agency.category}
                   </p>
                 </div>
@@ -163,10 +163,10 @@ export default function AgencySlider() {
             {loopAgenciesRow2.map((agency, idx) => (
               <div
                 key={`row2-${agency.name}-${idx}`}
-                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#004aad]/15 hover:border-[#1B79EE] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
+                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
               >
                 {/* LOGO BOX */}
-                <div className="relative w-14 h-14 bg-white border border-[#004aad]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
+                <div className="relative w-14 h-14 bg-white border border-[#023380]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
                   <Image
                     src={getAssetUrl(agency.src)}
                     alt={agency.name}
@@ -178,13 +178,13 @@ export default function AgencySlider() {
 
                 {/* INFO */}
                 <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-mono font-black text-[#1B79EE] uppercase tracking-wider block truncate">
+                  <span className="text-[9px] font-mono font-black text-[#0271f1] uppercase tracking-wider block truncate">
                     {agency.badge}
                   </span>
-                  <h3 className="text-xs font-black text-[#004aad] uppercase tracking-tight truncate group-hover/card:text-[#1B79EE] transition-colors">
+                  <h3 className="text-xs font-black text-[#023380] uppercase tracking-tight truncate group-hover/card:text-[#0271f1] transition-colors">
                     {agency.name}
                   </h3>
-                  <p className="text-[10px] text-[#004aad]/70 font-semibold truncate mt-0.5">
+                  <p className="text-[10px] text-[#023380]/70 font-semibold truncate mt-0.5">
                     {agency.category}
                   </p>
                 </div>

@@ -293,16 +293,16 @@ export default function AdminPage() {
   // Render Login UI
   if (!isAuthenticated) {
     return (
-      <main className="min-h-screen bg-white flex items-center justify-center p-6 selection:bg-[#1B79EE] selection:text-white border-t border-[#004aad]/10">
-        <div className="w-full max-w-md bg-white rounded-none border-2 border-[#004aad]/20 shadow-xl p-8 space-y-6">
+      <main className="min-h-screen bg-white flex items-center justify-center p-6 selection:bg-[#0271f1] selection:text-white border-t border-[#023380]/10">
+        <div className="w-full max-w-md bg-white rounded-none border-2 border-[#023380]/20 shadow-xl p-8 space-y-6">
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 text-[#004aad] border border-[#1B79EE]/20 mb-2">
-              <ShieldCheck className="w-8 h-8 text-[#1B79EE]" />
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-50 text-[#023380] border border-[#0271f1]/20 mb-2">
+              <ShieldCheck className="w-8 h-8 text-[#0271f1]" />
             </div>
-            <h1 className="text-2xl font-black text-[#004aad] uppercase tracking-tight">
+            <h1 className="text-2xl font-black text-[#023380] uppercase tracking-tight">
               PEG Blog Admin Portal
             </h1>
-            <p className="text-xs text-[#004aad]/60 font-bold uppercase tracking-wider">
+            <p className="text-xs text-[#023380]/60 font-bold uppercase tracking-wider">
               Precast Engineering Vault Authentication
             </p>
           </div>
@@ -316,32 +316,32 @@ export default function AdminPage() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-[#004aad] uppercase tracking-wider">
+              <label className="text-xs font-mono font-bold text-[#023380] uppercase tracking-wider">
                 Admin Email
               </label>
               <div className="relative">
-                <Mail className="w-4 h-4 absolute left-3 top-3.5 text-[#004aad]/40" />
+                <Mail className="w-4 h-4 absolute left-3 top-3.5 text-[#023380]/40" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-blue-50/50 border border-[#004aad]/20 text-[#004aad] font-semibold text-sm focus:outline-none focus:border-[#1B79EE] rounded-none"
+                  className="w-full pl-9 pr-4 py-2.5 bg-blue-50/50 border border-[#023380]/20 text-[#023380] font-semibold text-sm focus:outline-none focus:border-[#0271f1] rounded-none"
                   required
                 />
               </div>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono font-bold text-[#004aad] uppercase tracking-wider">
+              <label className="text-xs font-mono font-bold text-[#023380] uppercase tracking-wider">
                 Security Password
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 absolute left-3 top-3.5 text-[#004aad]/40" />
+                <Lock className="w-4 h-4 absolute left-3 top-3.5 text-[#023380]/40" />
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 bg-blue-50/50 border border-[#004aad]/20 text-[#004aad] font-semibold text-sm focus:outline-none focus:border-[#1B79EE] rounded-none"
+                  className="w-full pl-9 pr-4 py-2.5 bg-blue-50/50 border border-[#023380]/20 text-[#023380] font-semibold text-sm focus:outline-none focus:border-[#0271f1] rounded-none"
                   required
                 />
               </div>
@@ -350,7 +350,7 @@ export default function AdminPage() {
             <button
               type="submit"
               disabled={loginLoading}
-              className="w-full py-3.5 bg-[#004aad] hover:bg-[#1B79EE] text-white text-xs font-mono font-black uppercase tracking-widest transition-colors shadow-md flex items-center justify-center gap-2 border border-white/10"
+              className="w-full py-3.5 bg-[#023380] hover:bg-[#0271f1] text-white text-xs font-mono font-black uppercase tracking-widest transition-colors shadow-md flex items-center justify-center gap-2 border border-white/10"
             >
               {loginLoading ? (
                 <>
@@ -366,8 +366,8 @@ export default function AdminPage() {
             </button>
           </form>
 
-          <div className="pt-4 border-t border-[#004aad]/10 text-center">
-            <p className="text-[10px] font-mono text-[#004aad]/60 font-bold uppercase tracking-widest">
+          <div className="pt-4 border-t border-[#023380]/10 text-center">
+            <p className="text-[10px] font-mono text-[#023380]/60 font-bold uppercase tracking-widest">
               Authorized Engineer Access Only
             </p>
           </div>
@@ -378,12 +378,12 @@ export default function AdminPage() {
 
   // Render Admin Dashboard UI
   return (
-    <main className="min-h-screen bg-[#004aad]/5 text-[#004aad] pt-24 pb-20 selection:bg-[#1B79EE] selection:text-white">
+    <main className="min-h-screen bg-[#023380]/5 text-[#023380] pt-24 pb-20 selection:bg-[#0271f1] selection:text-white">
       {/* ADMIN HEADER */}
-      <div className="bg-white border-b border-[#004aad]/10 py-6 shadow-sm">
+      <div className="bg-white border-b border-[#023380]/10 py-6 shadow-sm">
         <div className="w-full px-10 md:px-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-black text-[#004aad] uppercase tracking-tight">
+            <h1 className="text-2xl md:text-3xl font-black text-[#023380] uppercase tracking-tight">
               Precast Technical Blog Admin
             </h1>
           </div>
@@ -391,7 +391,7 @@ export default function AdminPage() {
           <div className="flex items-center gap-3">
             <button
               onClick={loadPosts}
-              className="px-4 py-2 bg-[#004aad]/5 hover:bg-[#004aad]/10 border border-[#004aad]/20 text-[#004aad] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2"
+              className="px-4 py-2 bg-[#023380]/5 hover:bg-[#023380]/10 border border-[#023380]/20 text-[#023380] text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2"
               title="Refresh Database"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${loadingPosts ? "animate-spin" : ""}`} />
@@ -400,7 +400,7 @@ export default function AdminPage() {
 
             <button
               onClick={handleOpenCreateModal}
-              className="px-5 py-2.5 bg-[#1B79EE] hover:bg-[#004aad] text-white text-xs font-mono font-black uppercase tracking-widest shadow-md transition-colors flex items-center gap-2"
+              className="px-5 py-2.5 bg-[#0271f1] hover:bg-[#023380] text-white text-xs font-mono font-black uppercase tracking-widest shadow-md transition-colors flex items-center gap-2"
             >
               <Plus className="w-4 h-4" />
               <span>Create New Article</span>
@@ -408,7 +408,7 @@ export default function AdminPage() {
 
             <button
               onClick={handleLogout}
-              className="px-3.5 py-2.5 bg-white hover:bg-red-100 text-[#004aad] border border-[#1B79EE] text-xs font-mono font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5"
+              className="px-3.5 py-2.5 bg-white hover:bg-red-100 text-[#023380] border border-[#0271f1] text-xs font-mono font-bold uppercase tracking-wider transition-colors flex items-center gap-1.5"
               title="Sign Out"
             >
               <LogOut className="w-3.5 h-3.5" />
@@ -442,27 +442,27 @@ export default function AdminPage() {
 
         {/* METRICS & SEARCH BAR */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div className="bg-white p-5 border border-[#004aad]/10 shadow-sm flex items-center justify-between">
+          <div className="bg-white p-5 border border-[#023380]/10 shadow-sm flex items-center justify-between">
             <div>
-              <p className="text-[10px] font-mono text-[#004aad]/60 font-bold uppercase tracking-widest">Total Articles</p>
-              <p className="text-2xl font-black text-[#004aad]">{posts.length}</p>
+              <p className="text-[10px] font-mono text-[#023380]/60 font-bold uppercase tracking-widest">Total Articles</p>
+              <p className="text-2xl font-black text-[#023380]">{posts.length}</p>
             </div>
-            <FileText className="w-8 h-8 text-[#1B79EE]/40" />
+            <FileText className="w-8 h-8 text-[#0271f1]/40" />
           </div>
 
-          <div className="bg-white p-5 border border-[#004aad]/10 shadow-sm flex items-center justify-between">
+          <div className="bg-white p-5 border border-[#023380]/10 shadow-sm flex items-center justify-between">
             <div>
-              <p className="text-[10px] font-mono text-[#004aad]/60 font-bold uppercase tracking-widest">Active Categories</p>
-              <p className="text-2xl font-black text-[#004aad]">
+              <p className="text-[10px] font-mono text-[#023380]/60 font-bold uppercase tracking-widest">Active Categories</p>
+              <p className="text-2xl font-black text-[#023380]">
                 {Array.from(new Set(posts.map(p => p.category))).length}
               </p>
             </div>
-            <Layers className="w-8 h-8 text-[#1B79EE]/40" />
+            <Layers className="w-8 h-8 text-[#0271f1]/40" />
           </div>
 
-          <div className="bg-white p-5 border border-[#004aad]/10 shadow-sm flex items-center justify-between">
+          <div className="bg-white p-5 border border-[#023380]/10 shadow-sm flex items-center justify-between">
             <div>
-              <p className="text-[10px] font-mono text-[#004aad]/60 font-bold uppercase tracking-widest">Supabase Database</p>
+              <p className="text-[10px] font-mono text-[#023380]/60 font-bold uppercase tracking-widest">Supabase Database</p>
               <p className="text-sm font-black text-emerald-600 uppercase flex items-center gap-1 mt-1">
                 <CheckCircle2 className="w-4 h-4" /> Live Sync
               </p>
@@ -470,38 +470,38 @@ export default function AdminPage() {
             <Database className="w-8 h-8 text-emerald-500/40" />
           </div>
 
-          <div className="bg-white p-5 border border-[#004aad]/10 shadow-sm flex items-center justify-between">
+          <div className="bg-white p-5 border border-[#023380]/10 shadow-sm flex items-center justify-between">
             <div>
-              <p className="text-[10px] font-mono text-[#004aad]/60 font-bold uppercase tracking-widest">Logged Account</p>
-              <p className="text-xs font-black text-[#004aad] truncate max-w-[180px]">admin@precastengineering.org</p>
+              <p className="text-[10px] font-mono text-[#023380]/60 font-bold uppercase tracking-widest">Logged Account</p>
+              <p className="text-xs font-black text-[#023380] truncate max-w-[180px]">admin@precastengineering.org</p>
             </div>
-            <ShieldCheck className="w-8 h-8 text-[#1B79EE]/40" />
+            <ShieldCheck className="w-8 h-8 text-[#0271f1]/40" />
           </div>
         </div>
 
         {/* SEARCH & FILTER CONTROLS */}
-        <div className="bg-white p-4 border border-[#004aad]/10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-white p-4 border border-[#023380]/10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="relative w-full md:w-96">
-            <Search className="w-4 h-4 absolute left-3 top-3 text-[#004aad]/40" />
+            <Search className="w-4 h-4 absolute left-3 top-3 text-[#023380]/40" />
             <input
               type="text"
               placeholder="Search by title, slug, category..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-blue-50/50 border border-[#004aad]/20 text-xs font-semibold text-[#004aad] focus:outline-none focus:border-[#1B79EE]"
+              className="w-full pl-9 pr-4 py-2 bg-blue-50/50 border border-[#023380]/20 text-xs font-semibold text-[#023380] focus:outline-none focus:border-[#0271f1]"
             />
           </div>
 
           <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
-            <span className="text-[10px] font-mono font-bold text-[#004aad]/60 uppercase tracking-widest shrink-0">Category:</span>
+            <span className="text-[10px] font-mono font-bold text-[#023380]/60 uppercase tracking-widest shrink-0">Category:</span>
             {["All", "Box_Culverts", "Trenching", "Piping", "Structural", "Manhole"].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3 py-1 text-xs font-bold uppercase tracking-wider whitespace-nowrap transition-colors ${
                   selectedCategory === cat 
-                    ? "bg-[#004aad] text-white" 
-                    : "bg-blue-50 text-[#004aad]/70 hover:bg-blue-100"
+                    ? "bg-[#023380] text-white" 
+                    : "bg-blue-50 text-[#023380]/70 hover:bg-blue-100"
                 }`}
               >
                 {cat}
@@ -511,29 +511,29 @@ export default function AdminPage() {
         </div>
 
         {/* BLOG POSTS TABLE */}
-        <div className="bg-white border border-[#004aad]/10 shadow-sm overflow-hidden">
-          <div className="px-6 py-4 bg-blue-50/60 border-b border-[#004aad]/10 flex items-center justify-between">
-            <h2 className="text-xs font-mono font-black text-[#004aad] uppercase tracking-widest">
+        <div className="bg-white border border-[#023380]/10 shadow-sm overflow-hidden">
+          <div className="px-6 py-4 bg-blue-50/60 border-b border-[#023380]/10 flex items-center justify-between">
+            <h2 className="text-xs font-mono font-black text-[#023380] uppercase tracking-widest">
               Published Technical Articles ({filteredPosts.length})
             </h2>
-            <span className="text-[10px] font-mono font-bold text-[#004aad]/50 uppercase">
+            <span className="text-[10px] font-mono font-bold text-[#023380]/50 uppercase">
               Supabase Storage
             </span>
           </div>
 
           {loadingPosts ? (
-            <div className="p-12 text-center text-xs font-mono font-bold text-[#004aad]/60 flex items-center justify-center gap-2">
-              <RefreshCw className="w-4 h-4 animate-spin text-[#1B79EE]" />
+            <div className="p-12 text-center text-xs font-mono font-bold text-[#023380]/60 flex items-center justify-center gap-2">
+              <RefreshCw className="w-4 h-4 animate-spin text-[#0271f1]" />
               <span>Fetching articles from Supabase database...</span>
             </div>
           ) : filteredPosts.length === 0 ? (
-            <div className="p-12 text-center text-xs font-mono font-bold text-[#004aad]/60">
+            <div className="p-12 text-center text-xs font-mono font-bold text-[#023380]/60">
               No blog posts match your criteria. Click "Create New Article" to publish your first post!
             </div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-full text-left text-xs text-[#004aad]">
-                <thead className="bg-[#004aad]/5 text-[10px] font-mono font-black uppercase tracking-widest border-b border-[#004aad]/10">
+              <table className="w-full text-left text-xs text-[#023380]">
+                <thead className="bg-[#023380]/5 text-[10px] font-mono font-black uppercase tracking-widest border-b border-[#023380]/10">
                   <tr>
                     <th className="py-3 px-6">Article</th>
                     <th className="py-3 px-4">Category</th>
@@ -542,12 +542,12 @@ export default function AdminPage() {
                     <th className="py-3 px-6 text-right">Actions</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#004aad]/10 font-medium">
+                <tbody className="divide-y divide-[#023380]/10 font-medium">
                   {filteredPosts.map((post) => (
                     <tr key={post.slug} className="hover:bg-blue-50/40 transition-colors">
                       <td className="py-4 px-6">
                         <div className="flex items-center gap-3">
-                          <div className="w-12 h-12 relative bg-[#004aad] shrink-0 border border-[#004aad]/20 overflow-hidden">
+                          <div className="w-12 h-12 relative bg-[#023380] shrink-0 border border-[#023380]/20 overflow-hidden">
                             <Image
                               src={getAssetUrl(post.coverImage)}
                               alt={post.title}
@@ -556,14 +556,14 @@ export default function AdminPage() {
                             />
                           </div>
                           <div>
-                            <p className="font-black text-sm text-[#004aad] uppercase line-clamp-1">{post.title}</p>
-                            <p className="font-mono text-[10px] text-[#004aad]/60">/blog/{post.slug}</p>
+                            <p className="font-black text-sm text-[#023380] uppercase line-clamp-1">{post.title}</p>
+                            <p className="font-mono text-[10px] text-[#023380]/60">/blog/{post.slug}</p>
                           </div>
                         </div>
                       </td>
 
                       <td className="py-4 px-4 whitespace-nowrap">
-                        <span className="px-2.5 py-1 bg-blue-100 text-[#004aad] font-mono text-[10px] font-black uppercase tracking-wider">
+                        <span className="px-2.5 py-1 bg-blue-100 text-[#023380] font-mono text-[10px] font-black uppercase tracking-wider">
                           {post.category}
                         </span>
                       </td>
@@ -581,7 +581,7 @@ export default function AdminPage() {
                           <Link
                             href={`/blog/${post.slug}`}
                             target="_blank"
-                            className="p-1.5 bg-blue-50 hover:bg-blue-100 text-[#004aad] border border-[#004aad]/20"
+                            className="p-1.5 bg-blue-50 hover:bg-blue-100 text-[#023380] border border-[#023380]/20"
                             title="Preview Post"
                           >
                             <Eye className="w-3.5 h-3.5" />
@@ -589,7 +589,7 @@ export default function AdminPage() {
 
                           <button
                             onClick={() => handleEditModal(post)}
-                            className="p-1.5 bg-blue-50 hover:bg-[#1B79EE] hover:text-white text-[#004aad] border border-[#004aad]/20 transition-colors"
+                            className="p-1.5 bg-blue-50 hover:bg-[#0271f1] hover:text-white text-[#023380] border border-[#023380]/20 transition-colors"
                             title="Edit Post"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
@@ -615,12 +615,12 @@ export default function AdminPage() {
 
       {/* CREATE / EDIT ARTICLE MODAL */}
       {isEditorOpen && (
-        <div className="fixed inset-0 z-[9999] overflow-y-auto bg-[#004aad]/85 backdrop-blur-md p-4 sm:p-6 md:p-10 flex justify-center items-start pt-16 md:pt-24 pb-20">
-          <div className="bg-white border-2 border-[#1B79EE] shadow-2xl w-full max-w-4xl flex flex-col overflow-hidden relative my-auto">
+        <div className="fixed inset-0 z-[9999] overflow-y-auto bg-[#023380]/85 backdrop-blur-md p-4 sm:p-6 md:p-10 flex justify-center items-start pt-16 md:pt-24 pb-20">
+          <div className="bg-white border-2 border-[#0271f1] shadow-2xl w-full max-w-4xl flex flex-col overflow-hidden relative my-auto">
             {/* MODAL HEADER */}
-            <div className="bg-[#004aad] text-white p-4 px-6 flex items-center justify-between shrink-0 border-b border-[#1B79EE]/30">
+            <div className="bg-[#023380] text-white p-4 px-6 flex items-center justify-between shrink-0 border-b border-[#0271f1]/30">
               <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest font-bold">
-                <Sparkles className="w-4 h-4 text-[#1B79EE]" />
+                <Sparkles className="w-4 h-4 text-[#0271f1]" />
                 <span>{editingSlug ? `Editing: ${editingSlug}` : "Create New Engineering Article"}</span>
               </div>
               <button onClick={() => setIsEditorOpen(false)} className="hover:opacity-70 p-1">
@@ -629,7 +629,7 @@ export default function AdminPage() {
             </div>
 
             {/* MODAL FORM */}
-            <form onSubmit={handleSavePost} className="p-6 overflow-y-auto space-y-6 text-xs text-[#004aad] max-h-[80vh]">
+            <form onSubmit={handleSavePost} className="p-6 overflow-y-auto space-y-6 text-xs text-[#023380] max-h-[80vh]">
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
@@ -648,7 +648,7 @@ export default function AdminPage() {
                       });
                     }}
                     placeholder="e.g. Structural Superiority of Precast Box Culverts"
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                   />
                 </div>
 
@@ -660,7 +660,7 @@ export default function AdminPage() {
                     value={formData.slug || ""}
                     onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
                     placeholder="heavy-duty-precast-box-culverts"
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                   />
                 </div>
               </div>
@@ -671,7 +671,7 @@ export default function AdminPage() {
                   <select
                     value={formData.category || "Box_Culverts"}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                   >
                     <option value="Box_Culverts">Box_Culverts</option>
                     <option value="Trenching">Trenching</option>
@@ -689,7 +689,7 @@ export default function AdminPage() {
                     value={formData.publishedDate || ""}
                     onChange={(e) => setFormData({ ...formData, publishedDate: e.target.value })}
                     placeholder="September 28, 2026"
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                   />
                 </div>
 
@@ -700,7 +700,7 @@ export default function AdminPage() {
                     value={formData.readTime || "5 min read"}
                     onChange={(e) => setFormData({ ...formData, readTime: e.target.value })}
                     placeholder="7 min read"
-                    className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                    className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                   />
                 </div>
               </div>
@@ -712,7 +712,7 @@ export default function AdminPage() {
                   value={formData.subtitle || ""}
                   onChange={(e) => setFormData({ ...formData, subtitle: e.target.value })}
                   placeholder="High-Load Underground Drainage Solutions Engineered for Highway HS-20 & Railway E-80 Standards"
-                  className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                  className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                 />
               </div>
 
@@ -724,15 +724,15 @@ export default function AdminPage() {
                   value={formData.excerpt || ""}
                   onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
                   placeholder="Discover how monolithically poured precast box culverts accelerate underground infrastructure projects..."
-                  className="w-full p-2.5 bg-blue-50/50 border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                  className="w-full p-2.5 bg-blue-50/50 border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                 />
               </div>
 
               {/* MEDIA ASSETS: COVER IMAGE & FEATURED VIDEO WITH CLOUDFLARE UPLOADS */}
-              <div className="p-4 bg-blue-50/40 border border-[#1B79EE]/20 space-y-4">
-                <h3 className="font-mono font-black uppercase text-[10px] tracking-widest text-[#004aad] flex items-center justify-between">
+              <div className="p-4 bg-blue-50/40 border border-[#0271f1]/20 space-y-4">
+                <h3 className="font-mono font-black uppercase text-[10px] tracking-widest text-[#023380] flex items-center justify-between">
                   <span>Media Assets (Cloudflare R2 CDN Storage)</span>
-                  <span className="text-[#1B79EE] font-bold">Auto-Generates Cloudflare CDN URLs</span>
+                  <span className="text-[#0271f1] font-bold">Auto-Generates Cloudflare CDN URLs</span>
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -740,7 +740,7 @@ export default function AdminPage() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <label className="font-mono font-bold uppercase flex items-center gap-1.5">
-                        <ImageIcon className="w-3.5 h-3.5 text-[#1B79EE]" />
+                        <ImageIcon className="w-3.5 h-3.5 text-[#0271f1]" />
                         <span>Cover Image URL *</span>
                       </label>
                     </div>
@@ -750,9 +750,9 @@ export default function AdminPage() {
                       value={formData.coverImage || ""}
                       onChange={(e) => setFormData({ ...formData, coverImage: e.target.value })}
                       placeholder="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/..."
-                      className="w-full p-2.5 bg-white border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                      className="w-full p-2.5 bg-white border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                     />
-                    <label className="inline-flex items-center gap-2 px-3 py-2 bg-[#004aad] hover:bg-[#1B79EE] text-white text-[11px] font-mono font-bold uppercase tracking-wider cursor-pointer transition-colors shadow-sm w-full justify-center">
+                    <label className="inline-flex items-center gap-2 px-3 py-2 bg-[#023380] hover:bg-[#0271f1] text-white text-[11px] font-mono font-bold uppercase tracking-wider cursor-pointer transition-colors shadow-sm w-full justify-center">
                       {uploadingCover ? (
                         <>
                           <RefreshCw className="w-3.5 h-3.5 animate-spin text-white" />
@@ -778,7 +778,7 @@ export default function AdminPage() {
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
                       <label className="font-mono font-bold uppercase flex items-center gap-1.5">
-                        <Video className="w-3.5 h-3.5 text-[#1B79EE]" />
+                        <Video className="w-3.5 h-3.5 text-[#0271f1]" />
                         <span>Featured Video URL (Optional)</span>
                       </label>
                     </div>
@@ -787,9 +787,9 @@ export default function AdminPage() {
                       value={formData.featuredVideo || ""}
                       onChange={(e) => setFormData({ ...formData, featuredVideo: e.target.value })}
                       placeholder="https://pub-2f3b9c4456934c568f5c9429715562aa.r2.dev/..."
-                      className="w-full p-2.5 bg-white border border-[#004aad]/20 font-semibold focus:outline-none focus:border-[#1B79EE]"
+                      className="w-full p-2.5 bg-white border border-[#023380]/20 font-semibold focus:outline-none focus:border-[#0271f1]"
                     />
-                    <label className="inline-flex items-center gap-2 px-3 py-2 bg-[#004aad] hover:bg-[#1B79EE] text-white text-[11px] font-mono font-bold uppercase tracking-wider cursor-pointer transition-colors shadow-sm w-full justify-center">
+                    <label className="inline-flex items-center gap-2 px-3 py-2 bg-[#023380] hover:bg-[#0271f1] text-white text-[11px] font-mono font-bold uppercase tracking-wider cursor-pointer transition-colors shadow-sm w-full justify-center">
                       {uploadingVideo ? (
                         <>
                           <RefreshCw className="w-3.5 h-3.5 animate-spin text-white" />
@@ -814,8 +814,8 @@ export default function AdminPage() {
               </div>
 
               {/* AUTHOR INFORMATION */}
-              <div className="p-4 bg-blue-50/40 border border-[#004aad]/10 space-y-3">
-                <h3 className="font-mono font-black uppercase text-[10px] tracking-widest text-[#004aad]">
+              <div className="p-4 bg-blue-50/40 border border-[#023380]/10 space-y-3">
+                <h3 className="font-mono font-black uppercase text-[10px] tracking-widest text-[#023380]">
                   Author Profile Details
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -824,31 +824,31 @@ export default function AdminPage() {
                     placeholder="Author Name"
                     value={formData.author?.name || ""}
                     onChange={(e) => setFormData({ ...formData, author: { ...formData.author!, name: e.target.value } })}
-                    className="p-2 bg-white border border-[#004aad]/20 font-semibold"
+                    className="p-2 bg-white border border-[#023380]/20 font-semibold"
                   />
                   <input
                     type="text"
                     placeholder="Author Role"
                     value={formData.author?.role || ""}
                     onChange={(e) => setFormData({ ...formData, author: { ...formData.author!, role: e.target.value } })}
-                    className="p-2 bg-white border border-[#004aad]/20 font-semibold"
+                    className="p-2 bg-white border border-[#023380]/20 font-semibold"
                   />
                   <input
                     type="text"
                     placeholder="Avatar Image URL"
                     value={formData.author?.avatar || ""}
                     onChange={(e) => setFormData({ ...formData, author: { ...formData.author!, avatar: e.target.value } })}
-                    className="p-2 bg-white border border-[#004aad]/20 font-semibold"
+                    className="p-2 bg-white border border-[#023380]/20 font-semibold"
                   />
                 </div>
               </div>
 
               {/* MODAL FOOTER */}
-              <div className="pt-4 border-t border-[#004aad]/10 flex items-center justify-between">
+              <div className="pt-4 border-t border-[#023380]/10 flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => setIsEditorOpen(false)}
-                  className="px-4 py-2 bg-[#004aad]/5 hover:bg-[#004aad]/10 text-[#004aad] font-mono font-bold uppercase tracking-wider"
+                  className="px-4 py-2 bg-[#023380]/5 hover:bg-[#023380]/10 text-[#023380] font-mono font-bold uppercase tracking-wider"
                 >
                   Cancel
                 </button>
@@ -856,7 +856,7 @@ export default function AdminPage() {
                 <button
                   type="submit"
                   disabled={saveLoading || uploadingCover || uploadingVideo}
-                  className="px-6 py-2.5 bg-[#1B79EE] hover:bg-[#004aad] text-white font-mono font-black uppercase tracking-widest shadow-md transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                  className="px-6 py-2.5 bg-[#0271f1] hover:bg-[#023380] text-white font-mono font-black uppercase tracking-widest shadow-md transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
                 >
                   {saveLoading ? (
                     <>

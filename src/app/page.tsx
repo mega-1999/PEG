@@ -55,13 +55,13 @@ export default function Home() {
       
       {/* 4. PRODUCTS & APPLICATIONS */}
       <div className="w-full bg-white py-10 text-center relative z-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#1B79EE]/20 text-[#1B79EE] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#1B79EE]">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/20 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#0271f1]">
           Engineered Portfolios
         </div>
-        <h2 className="text-3xl md:text-5xl font-black text-[#004aad] uppercase tracking-tighter">
-          Precast Applications <span className="text-[#1B79EE]">& Products</span>
+        <h2 className="text-3xl md:text-5xl font-black text-[#023380] uppercase tracking-tighter">
+          Precast Applications <span className="text-[#0271f1]">& Products</span>
         </h2>
-        <p className="mt-6 text-[#004aad] font-semibold max-w-2xl mx-auto px-6">
+        <p className="mt-6 text-[#023380] font-semibold max-w-2xl mx-auto px-6">
           Explore examples of our structural engineering, from underground infrastructure to marine systems. We design products for real-world performance.
         </p>
       </div>
@@ -80,11 +80,11 @@ export default function Home() {
       <SeamlessConnection />
       
       {/* 6. PORTALS & RESOURCES */}
-      <section id="portal" className="w-full bg-white text-[#004aad] overflow-hidden relative border-t border-[#004aad]/10">
+      <section id="portal" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
         <LoginGateway />
       </section>
       
-      <section id="technical-vault" className="w-full bg-white text-[#004aad] overflow-hidden relative border-t border-[#004aad]/10">
+      <section id="technical-vault" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
         <GridContent />
       </section>
       
@@ -100,7 +100,7 @@ export default function Home() {
       <MeetAtShows />
       <FuturisticCTA />
       
-      <section id="contact" className="w-full bg-white text-[#004aad] overflow-hidden relative border-t border-[#004aad]/10">
+      <section id="contact" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
         <ContactTerminal />
         <InnovativeContactComponent/>
       </section>

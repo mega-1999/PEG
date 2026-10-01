@@ -19,15 +19,15 @@ export default function SponsorMarquee() {
     const infiniteLogos = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
 
     return (
-        <section className="w-full bg-white py-4 border-t border-b border-[#004aad]/10 overflow-hidden select-none">
+        <section className="w-full bg-white py-4 border-t border-b border-[#023380]/10 overflow-hidden select-none">
             <div className="">
 
                 {/* STRUCTURAL ENGINEERING HEADER */}
                 <div className="flex flex-col items-center text-center mb-12 px-6">
-                    <h2 className="text-xl md:text-3xl font-black text-[#004aad] uppercase tracking-tighter leading-none">
-                        Proudly Supporting <span className="text-[#1B79EE]">& Sponsoring</span>
+                    <h2 className="text-xl md:text-3xl font-black text-[#023380] uppercase tracking-tighter leading-none">
+                        Proudly Supporting <span className="text-[#0271f1]">& Sponsoring</span>
                     </h2>
-                    <div className="w-12 h-1 bg-[#1B79EE] mt-4" />
+                    <div className="w-12 h-1 bg-[#0271f1] mt-4" />
                 </div>
 
                 {/* MARQUEE RUNWAY WRAPPER */}

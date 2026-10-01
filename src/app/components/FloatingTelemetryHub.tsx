@@ -50,7 +50,7 @@ export default function FloatingTelemetryHub() {
             aria-label={social.id}
             className="group relative flex justify-end"
           >
-            <div className="flex items-center w-12 h-12 rounded-full bg-[#004aad] border border-white text-white group-hover:w-36 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all duration-500 overflow-hidden shadow-[0_8px_20px_rgba(0,74,173,0.2)]">
+            <div className="flex items-center w-12 h-12 rounded-full bg-[#023380] border border-white text-white group-hover:w-36 group-hover:bg-[#0271f1] group-hover:border-[#0271f1] transition-all duration-500 overflow-hidden shadow-[0_8px_20px_rgba(2,51,128,0.2)]">
               <span className="absolute left-5 opacity-0 group-hover:opacity-100 font-mono text-[10px] font-black tracking-widest whitespace-nowrap transition-opacity duration-300 delay-100">
                 {social.id}
               </span>
@@ -76,10 +76,10 @@ export default function FloatingTelemetryHub() {
               onClick={scrollToTop}
               aria-label="Scroll to top"
               title="Back to Top"
-              className="relative w-12 h-12 rounded-full bg-[#004aad] text-white border-2 border-[#1B79EE]/40 flex items-center justify-center overflow-hidden shadow-[0_8px_25px_rgba(0,74,173,0.3)] hover:shadow-[0_0_30px_rgba(27,121,238,0.6)] hover:bg-[#1B79EE] hover:border-[#1B79EE] transition-all duration-300 cursor-pointer"
+              className="relative w-12 h-12 rounded-full bg-[#023380] text-white border-2 border-[#0271f1]/40 flex items-center justify-center overflow-hidden shadow-[0_8px_25px_rgba(2,51,128,0.3)] hover:shadow-[0_0_30px_rgba(2,113,241,0.6)] hover:bg-[#0271f1] hover:border-[#0271f1] transition-all duration-300 cursor-pointer"
             >
               {/* GRADIENT HOVER OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1B79EE] to-[#004aad] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0271f1] to-[#023380] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* ARROW UP ICON WITH MICRO-ANIMATION */}
               <ArrowUp className="w-5 h-5 relative z-10 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -87,7 +87,7 @@ export default function FloatingTelemetryHub() {
 
             {/* HOVER TOOLTIP */}
             <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 z-50 transform translate-x-1 group-hover:translate-x-0">
-              <div className="bg-[#004aad] text-white text-[10px] font-black py-1.5 px-3 rounded-lg shadow-xl whitespace-nowrap border border-[#1B79EE]/40 uppercase tracking-widest">
+              <div className="bg-[#023380] text-white text-[10px] font-black py-1.5 px-3 rounded-lg shadow-xl whitespace-nowrap border border-[#0271f1]/40 uppercase tracking-widest">
                 Back to Top
               </div>
             </div>

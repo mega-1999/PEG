@@ -26,11 +26,11 @@ import { getAssetUrl } from "@/lib/utils";
 // 1. ORIGINAL FOOTER DATA & ASSETS
 // ==========================================
 const logos = [
-  { src: getAssetUrl("/assets/footer_logo/peg.jpeg"), alt: "Partner 01" },
-  { src: getAssetUrl("/assets/footer_logo/precasteng.jpeg"), alt: "Partner 02" },
-  { src: getAssetUrl("/assets/footer_logo/pxchange.jpeg"), alt: "Partner 03" },
-  { src: getAssetUrl("/assets/footer_logo/totaltech.jpeg"), alt: "Partner 04" },
-  { src: getAssetUrl("/assets/footer_logo/trench-unlimited.jpeg"), alt: "Partner 05" },
+  { src: getAssetUrl("/assets/footer_logo/PEX.png"), alt: "Partner 02" },
+  { src: getAssetUrl("/assets/footer_logo/PI_darkblue.png"), alt: "Partner 03" },
+  { src: getAssetUrl("/assets/footer_logo/PEG_T.png"), alt: "Partner 01" },
+  { src: getAssetUrl("/assets/footer_logo/PIM.png"), alt: "Partner 04" },
+  { src: getAssetUrl("/assets/footer_logo/PM.png"), alt: "Partner 05" },
 ];
 
 const socialLinks = [

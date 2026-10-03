@@ -59,7 +59,7 @@ const pegResourceNodes = [
 
 export default function PegResourceGrid() {
   return (
-    <section id="resources" className="w-full bg-[#002f7a] text-white py-24 px-10 md:px-20 relative overflow-hidden font-sans">
+    <section id="resources" className="w-full bg-[#002f7a] text-white py-16 md:py-20 px-10 md:px-20 relative overflow-hidden font-sans">
 
       {/* BRAND ARCHITECTURE BACKGROUND GRID */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]" />

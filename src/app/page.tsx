@@ -68,6 +68,7 @@ export default function Home() {
       <FutureCulvertComponent />
       <UnchallengedResources />
       <DeliverableUpgrade />
+      <PegHero />
       <TrenchingSystem />
       <RetainingWallComponent />
       <MarinaSystemComponent />
@@ -90,7 +91,6 @@ export default function Home() {
       <PrecastBlogSection />
       <AgencySlider />
       <ContentSection />
-      <PegHero />
       <DotMatrixSlider />
       <PegLocations />
       <HexagonLogoShowcase />

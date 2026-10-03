@@ -48,7 +48,7 @@ const digitalChannels = [
 
 export default function PrecastersGoDigital() {
   return (
-    <section className="w-full bg-white text-[#002f7a] py-16 px-6 md:px-16 lg:px-20 border-t border-[#002f7a]/10 select-none">
+    <section className="w-full bg-white text-[#002f7a] py-16 md:py-20 px-6 md:px-16 lg:px-20 border-t border-[#002f7a]/10 select-none">
 
       {/* 1. BROADCAST HEADER */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#002f7a]/10 pb-8">

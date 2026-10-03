@@ -63,7 +63,7 @@ export default function PrecastBlogSection() {
   const gridPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
-    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#002f7a] py-14 overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#002f7a] py-16 md:py-20 overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div

@@ -24,7 +24,7 @@ const membershipPerks = [
 
 export default function MembershipBox() {
   return (
-    <section className="w-full bg-[#002f7a] py-4 my-2 px-6 md:px-10 lg:px-20 flex justify-center font-sans">
+    <section className="w-full bg-[#002f7a] py-16 md:py-20 my-2 px-6 md:px-10 lg:px-20 flex justify-center font-sans">
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}

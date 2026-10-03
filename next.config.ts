@@ -20,15 +20,37 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: "/assets/:path*",
+        headers: [
+          {
+            key: "Accept-Ranges",
+            value: "bytes",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/TRENCH/:path*",
+        headers: [
+          {
+            key: "Accept-Ranges",
+            value: "bytes",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/:path*",
         headers: [
           {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
           },
           {
             key: "Referrer-Policy",

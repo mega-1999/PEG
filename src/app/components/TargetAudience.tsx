@@ -37,7 +37,7 @@ const targetAudiences = [
 
 export default function TargetAudience() {
   return (
-    <section className="w-full bg-white overflow-hidden relative">
+    <section className="w-full py-16 md:py-20 bg-white overflow-hidden relative">
 
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#002f7a]/5 rounded-full blur-[120px] pointer-events-none" />

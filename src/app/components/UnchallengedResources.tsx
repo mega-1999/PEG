@@ -92,7 +92,7 @@ export default function UnchallengedResources() {
                 suppressHydrationWarning
                 className="w-full h-full object-contain"
               >
-                <source src={getAssetUrl("/assets/video/Specifications_&_Compliance.mp4")} type="video/mp4" />
+                <source src={getAssetUrl("/assets/video/Specifications_and_Compliance.mp4")} type="video/mp4" />
               </video>
               <div className="absolute top-3 left-3 bg-[#002f7a]/85 backdrop-blur-md px-2.5 py-1 border border-white/20">
                 <span className="font-mono text-[9px] font-black tracking-widest text-[#006def] uppercase flex items-center gap-1.5">

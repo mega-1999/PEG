@@ -14,6 +14,7 @@ import {
   FileText
 } from "lucide-react";
 import { getAssetUrl } from "@/lib/utils";
+import Link from "next/link";
 
 // 4 CORE TRENCHING CATEGORIES BASED ON PRE-TRENCH SPECIFICATIONS
 const categories = [
@@ -23,7 +24,7 @@ const categories = [
     countText: "3 VARIANTS",
     subtitle: "Linear Substation & Industrial Utility Runs",
     tag: "2-SIDE INTERLOCK",
-    video: getAssetUrl("/TRENCH/TRENCH/GRATE_IMAGES.504.mp4"),
+    video: getAssetUrl("/TRENCH/TRENCH/12'_all_trench.414.mp4"),
     desc: "Engineered 12ft precast concrete utility channel with dual interlocking male-female side joints. Built for continuous straight alignments with rapid drop-in grate seating.",
     jointType: "Dual-Side Male/Female Interlock",
     loadClass: "AASHTO H-20 / HS-25 Highway Rated",
@@ -155,7 +156,7 @@ export default function TrenchingSystem() {
   const currentGrate = currentCategory.grates[selectedGrateIndex] || currentCategory.grates[0];
 
   return (
-    <section id="products" className="relative w-full bg-white py-16 border-t border-[#002f7a]/10 select-none">
+    <section id="products" className="relative w-full bg-white py-16 md:py-20 border-t border-[#002f7a]/10 select-none">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div
@@ -316,9 +317,7 @@ export default function TrenchingSystem() {
                   >
                     <source src={currentCategory.video} type="video/mp4" />
                   </video>
-                  <div className="absolute top-2 left-2 z-10 bg-[#006def] text-white px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-wider shadow-xs flex items-center gap-1.5">
-                    <Play className="w-2.5 h-2.5" /> 3D Joint Simulation
-                  </div>
+
                   <div className="absolute bottom-2 right-2 z-10 bg-[#002f7a]/90 text-white px-2.5 py-1 text-[10px] font-mono font-bold uppercase backdrop-blur-xs">
                     12FT Module Jointing
                   </div>
@@ -343,14 +342,14 @@ export default function TrenchingSystem() {
 
                 {/* CTA */}
                 <div className="pt-2">
-                  <a
+                  <Link
                     href="#contact"
                     className="w-full py-3.5 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2 shadow-xs cursor-pointer"
                   >
                     <FileText className="w-4 h-4" />
                     <span>Request Shop Drawing & Submittal</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  </Link>
                 </div>
 
               </div>

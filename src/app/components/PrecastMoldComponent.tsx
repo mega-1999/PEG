@@ -53,7 +53,7 @@ const moldFeatures = [
 
 export default function PrecastMoldComponent() {
   return (
-    <section className="w-full bg-white py-20 px-10 md:px-20 relative overflow-hidden border-t border-[#002f7a]/10">
+    <section className="w-full bg-white py-16 md:py-20 px-10 md:px-20 relative overflow-hidden border-t border-[#002f7a]/10">
 
       {/* CAD BLUEPRINT GRID PATTERN */}
       <div
@@ -111,7 +111,7 @@ export default function PrecastMoldComponent() {
               loop
               muted
               playsInline
-              preload="auto"
+              preload="metadata"
               suppressHydrationWarning
               className="w-full h-full object-cover"
             >

@@ -6,7 +6,7 @@ import { Clock, Database, Workflow, Unlock, ArrowRight, Activity } from 'lucide-
 
 export const ContentSection = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-10 md:px-20 py-16 overflow-hidden">
+    <section className="w-full bg-[#f8fafc] px-10 md:px-20 py-16 md:py-20 overflow-hidden">
       <div className="">
 
         {/* HEADER: Massive Structural Typography */}

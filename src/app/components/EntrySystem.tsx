@@ -69,7 +69,7 @@ export default function EntrySystem() {
                                 loop
                                 muted
                                 playsInline
-                                preload="auto"
+                                preload="metadata"
                                 suppressHydrationWarning
                                 className="absolute inset-0 w-full h-full object-cover"
                             >

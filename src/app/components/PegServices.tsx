@@ -67,7 +67,7 @@ const services = [
     title: "Specifications & Compliance",
     description: "Rigorous standards compliance to secure Approval-Ready Documentation from all agencies.",
     icon: <ShieldCheck className="w-6 h-6" />,
-    video: getAssetUrl("/assets/video/Specifications_&_Compliance.mp4"),
+    video: getAssetUrl("/assets/video/Specifications_and_Compliance.mp4"),
     image: getAssetUrl("/assets/images/10_FT_LOW_DOME.117.png"),
     videoBg: "bg-white" // Changeable: "bg-white" | "bg-[#002f7a]" | "bg-slate-900"
   },

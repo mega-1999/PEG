@@ -65,7 +65,7 @@ const manufacturingSectors: MfgItem[] = [
 
 export default function ManufacturingHub() {
   return (
-    <section className="w-full bg-white py-32 px-10 md:px-20 overflow-hidden relative">
+    <section className="w-full bg-white py-16 md:py-20 px-10 md:px-20 overflow-hidden relative">
 
       {/* TECH BACKGROUND MATRIX */}
       <div
@@ -79,7 +79,7 @@ export default function ManufacturingHub() {
       <div className="relative z-10">
 
         {/* LINE SYSTEM HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 border-b-2 border-slate-100 pb-12 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-2 border-b-2 border-slate-100 pb-2 gap-8">
           <div className="space-y-4 max-w-4xl">
             <div className="flex items-center gap-3 text-[#006def] font-mono text-[10px] font-black uppercase tracking-[0.5em]">
               <Settings2 className="w-4 h-4 animate-spin-slow" /> Fabrication & Casting Complexes
@@ -104,17 +104,10 @@ export default function ManufacturingHub() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group relative bg-white border border-[#002f7a]/15 p-7 flex flex-col justify-between h-[480px] hover:border-[#006def] hover:shadow-lg transition-all duration-300"
+              className="group relative bg-white border border-[#006def] p-6 flex flex-col justify-between h-[300px] hover:border-[#006def] hover:shadow-lg transition-all duration-300"
             >
               {/* TOP READOUT */}
               <div>
-                <div className="flex justify-between items-center mb-8">
-                  <span className="font-mono text-[10px] font-black text-[#006def] bg-blue-50 px-2 py-0.5 border border-[#006def]/20">
-                    {cell.id}
-                  </span>
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
-                </div>
-
                 <div className="mb-5 text-[#002f7a] group-hover:text-[#006def] transition-colors duration-300">
                   {cell.icon}
                 </div>

@@ -6,7 +6,7 @@ import { Monitor, Factory, Waypoints, ArrowRight, ChevronRight } from 'lucide-re
 
 export default function SeamlessConnection() {
   return (
-    <section className="w-full bg-white overflow-hidden relative font-sans">
+    <section className="w-full bg-white py-16 md:py-20 overflow-hidden relative font-sans">
 
       {/* BACKGROUND ACCENT: Clean, subtle blueprint grid */}
       <div

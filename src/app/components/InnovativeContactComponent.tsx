@@ -55,7 +55,7 @@ export default function InnovativeContactComponent() {
   };
 
   return (
-    <section className="w-full bg-white text-[#002f7a] py-24 px-6 md:px-10 lg:px-20 relative overflow-hidden font-sans">
+    <section className="w-full bg-white text-[#002f7a] py-16 md:py-20 px-6 md:px-10 lg:px-20 relative overflow-hidden font-sans">
 
       {/* TECHNICAL MATHEMATICAL SYSTEM GRID */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#002f7a_1px,transparent_1px),linear-gradient(to_bottom,#002f7a_1px,transparent_1px)] bg-[size:40px_40px]" />

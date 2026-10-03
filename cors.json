@@ -2,6 +2,8 @@
   {
     "AllowedOrigins": [
       "http://localhost:3000",
+      "https://www.precastengineering.org",
+      "https://precastengineering.org",
       "https://pegvds.vercel.app"
     ],
     "AllowedMethods": [

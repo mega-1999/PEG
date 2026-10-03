@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.precastengineering.org",
-    title: "Precast Concrete Engineering, Drawings | PEG",
+    title: "Precast Concrete Engineering & Drawings | PEG",
     description:
       "Certified Precast Concrete Engineers offering structural design, drafting, testing, NPCA certifications, and engineering drawings for culverts, manholes, catch basins, trenches, septic tanks, and grease traps.",
     siteName: "Precast Engineering Group",
@@ -110,7 +110,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // JSON-LD Structured Data Schema for Google Search Indexing
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "EngineeringService",

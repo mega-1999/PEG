@@ -58,7 +58,7 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 bg-white text-[#002f7a] overflow-hidden relative select-none">
+    <section className="w-full py-16 md:py-20 bg-white text-[#002f7a] overflow-hidden relative select-none">
 
       <div className="w-full px-6 md:px-16 lg:px-20 relative z-10">
 

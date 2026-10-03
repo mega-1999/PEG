@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full px-6 md:px-16 lg:px-20 py-16 bg-white border-t border-[#002f7a]/10 select-none flex items-center justify-center">
+    <section className="relative w-full px-6 md:px-16 lg:px-20 py-16 md:py-20 bg-white border-t border-[#002f7a]/10 select-none flex items-center justify-center">
 
       <div className="relative z-10 w-full max-w-5xl bg-blue-50/50 border-2 border-[#002f7a]/20 p-8 md:p-14 flex flex-col items-center text-center shadow-sm">
 

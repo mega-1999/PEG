@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronDown, Search, Menu, X, FileText,
-  ClipboardCheck, Wrench, Plus, Minus
+  ClipboardCheck, Wrench, Plus, Minus, Mail, Phone
 } from 'lucide-react';
 import { getAssetUrl } from '@/lib/utils';
 
@@ -80,10 +80,18 @@ const navData = [
   }
 ];
 
+const countries = [
+  { code: "US", name: "United States", flag: "🇺🇸", spec: "AASHTO / ACI Standards" },
+  { code: "CA", name: "Canada", flag: "🇨🇦", spec: "CSA / ASTM Standards" },
+  { code: "MX", name: "Mexico", flag: "🇲🇽", spec: "NMX / IMT Standards" },
+];
+
 export const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [mobileExpandedNode, setMobileExpandedNode] = useState<string | null>(null);
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [isCountryOpen, setIsCountryOpen] = useState(false);
 
   const navRef = useRef<HTMLElement>(null);
 
@@ -99,6 +107,7 @@ export const Navbar = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setActiveMenu(null);
+        setIsCountryOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -109,15 +118,27 @@ export const Navbar = () => {
     <header ref={navRef} className="fixed top-0 left-0 w-full z-[100] flex flex-col shadow-sm">
 
       {/* 1. TOP UTILITY BAR */}
-      {/* Adjusted padding for smaller screens */}
-      <div className="bg-[#023380] text-white h-10 w-full px-6 xl:px-20 flex justify-between items-center">
-        <div className="h-full flex items-center gap-2 text-[11px] font-black tracking-widest">
-          <span className="w-2 h-2 bg-[#0271f1] shrink-0" />
-          <span>PRECAST ENGINEERING GROUP</span>
-          <span className="hidden md:inline text-[#0271f1]">&bull;</span>
-          <span className="hidden md:inline text-white/80 font-mono text-[10px]">PRECASTENGINEERING.ORG</span>
+      <div className="bg-[#002f7a] text-white h-10 w-full px-6 xl:px-20 flex justify-between items-center">
+        {/* EMAIL & MOBILE WITH ICONS */}
+        <div className="h-full flex items-center gap-4 text-[11px] font-bold tracking-wider">
+          <a
+            href="mailto:contact@precastengineering.org"
+            className="flex items-center gap-1.5 hover:text-blue-200 transition-colors"
+          >
+            <Mail className="w-3.5 h-3.5 text-white" />
+            <span className="font-mono text-[10.5px]">contact@precastengineering.org</span>
+          </a>
+          <span className="hidden sm:inline text-white/30">&bull;</span>
+          <a
+            href="tel:+16314521111"
+            className="flex items-center gap-1.5 hover:text-blue-200 transition-colors"
+          >
+            <Phone className="w-3.5 h-3.5 text-white" />
+            <span className="font-mono text-[10.5px]">+1 (631) 452-1111</span>
+          </a>
         </div>
-        <div className="h-full flex justify-end items-center gap-6 pr-14 xl:pr-0 text-[11px] font-bold tracking-wider">
+
+        <div className="h-full flex justify-end items-center gap-3 sm:gap-6 pr-14 xl:pr-0 text-[11px] font-bold tracking-wider">
 
           <Link href={'/admin'}>
             <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
@@ -134,7 +155,7 @@ export const Navbar = () => {
                 window.location.href = `/blog?search=${encodeURIComponent(term)}`;
               }
             }}
-            className="hidden sm:flex items-center bg-white/10 rounded px-3 py-1.5 w-48 md:w-64 border border-white/20 focus-within:border-[#0271f1] transition-colors"
+            className="hidden sm:flex items-center bg-white/10 rounded px-3 py-1.5 w-44 md:w-60 border border-white/20 focus-within:border-[#006def] transition-colors"
           >
             <Search className="w-3.5 h-3.5 text-white/70 mr-2 shrink-0" />
             <input
@@ -145,15 +166,63 @@ export const Navbar = () => {
             />
           </form>
 
-          <div className="uppercase hidden lg:block font-mono text-[10px]">
-            TEL: +1 631 452-1111
+          {/* Country / Region Selector Menu with Flag Icons */}
+          <div className="relative">
+            <button
+              onClick={() => setIsCountryOpen(!isCountryOpen)}
+              className="flex items-center gap-1.5 px-2.5 py-1 bg-white/10 hover:bg-white/20 border border-white/20 rounded transition-colors text-[11px] font-bold tracking-wider cursor-pointer"
+            >
+              <span className="text-sm leading-none">{selectedCountry.flag}</span>
+              <span className="hidden md:inline uppercase">{selectedCountry.name}</span>
+              <span className="md:hidden uppercase">{selectedCountry.code}</span>
+              <ChevronDown className={`w-3 h-3 text-white/80 transition-transform duration-200 ${isCountryOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <AnimatePresence>
+              {isCountryOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 4 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute right-0 top-full mt-1.5 w-56 bg-white text-[#002f7a] border border-[#002f7a]/15 shadow-xl rounded-sm overflow-hidden z-50 py-1"
+                >
+                  <div className="px-3 py-1.5 border-b border-[#002f7a]/10 text-[9px] font-mono font-black uppercase text-[#006def] tracking-widest bg-blue-50/50">
+                    Select Region & Standards
+                  </div>
+                  {countries.map((c) => {
+                    const isSelected = selectedCountry.code === c.code;
+                    return (
+                      <button
+                        key={c.code}
+                        onClick={() => {
+                          setSelectedCountry(c);
+                          setIsCountryOpen(false);
+                        }}
+                        className={`w-full px-3 py-2 text-left flex items-center justify-between hover:bg-blue-50/80 transition-colors cursor-pointer text-xs ${isSelected ? "bg-blue-50/60 font-black text-[#006def]" : "font-bold text-[#002f7a]"
+                          }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-lg leading-none">{c.flag}</span>
+                          <div className="flex flex-col">
+                            <span className="uppercase text-[11px] leading-tight font-bold">{c.name}</span>
+                            <span className="text-[9px] font-mono text-slate-500 font-semibold">{c.spec}</span>
+                          </div>
+                        </div>
+                        {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-[#006def]" />}
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
         </div>
       </div>
 
       {/* 2. MAIN NAVIGATION BAR */}
-      <div className="bg-white border-b border-[#023380]/10 h-20 md:h-26 w-full relative">
+      <div className="bg-white border-b border-[#002f7a]/10 h-20 md:h-26 w-full relative">
         {/* Adjusted padding to flow nicely when zoomed in */}
         <div className="w-full px-6 xl:px-20 h-full flex justify-between items-center relative">
 
@@ -166,8 +235,8 @@ export const Navbar = () => {
               className="h-14 md:h-20 w-auto object-contain"
               priority
             />
-            <span className="text-[10px] md:text-[11.5px] font-bold tracking-wider text-[#023380] uppercase group-hover:text-[#0271f1] transition-colors leading-tight mt-0.5 font-mono">
-              Advanced Precast Engineering..
+            <span className="text-[10px] md:text-[11.5px] font-bold tracking-wider text-[#002f7a] uppercase group-hover:text-[#006def] transition-colors leading-tight mt-0.5 font-mono">
+              Advanced Precast Engineering...
             </span>
           </Link>
 
@@ -185,12 +254,12 @@ export const Navbar = () => {
                   <button
                     onClick={() => toggleMenu(item.title)}
                     // Added whitespace-nowrap and slightly smaller horizontal padding (px-3) for zoom tolerance
-                    className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-[12px] font-black uppercase tracking-tight transition-all duration-200 border-t-4
-                      ${isOpen ? 'text-[#023380] border-[#023380] bg-[#023380]/5' : 'text-[#023380] border-transparent hover:text-[#0271f1]'}
+                    className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-sm font-black uppercase tracking-tight transition-all duration-200 border-t-4
+                      ${isOpen ? 'text-[#002f7a] border-[#002f7a] bg-[#002f7a]/5' : 'text-[#002f7a] border-transparent hover:text-[#006def]'}
                     `}
                   >
                     {item.title}
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#023380]' : 'text-[#023380]'}`} />
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#002f7a]' : 'text-[#002f7a]'}`} />
                   </button>
 
                   {/* DROP DOWN / MEGA MENU RENDERER */}
@@ -201,19 +270,19 @@ export const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 5 }}
                         transition={{ duration: 0.2 }}
-                        className={`absolute top-full left-1/2 -translate-x-1/2 bg-white border border-[#023380]/10 shadow-[0_20px_50px_rgba(2,51,128,0.1)] rounded-b-md overflow-hidden z-50
+                        className={`absolute top-full left-1/2 -translate-x-1/2 bg-white border border-[#002f7a]/10 shadow-[0_20px_50px_rgba(0, 47, 122,0.1)] rounded-b-md overflow-hidden z-50
                           ${hasMegaMenu ? 'w-[800px]' : 'w-[280px]'}
                         `}
                       >
                         {/* Standard Link Dropdown */}
                         {!hasMegaMenu && item.links && (
-                          <ul className="flex flex-col py-2 border-t-2 border-[#0271f1]">
+                          <ul className="flex flex-col py-2 border-t-2 border-[#006def]">
                             {item.links.map((link) => (
                               <li key={link.name}>
                                 <Link
                                   href={link.href}
                                   onClick={() => setActiveMenu(null)}
-                                  className="block px-6 py-3 text-xs font-bold text-[#023380] hover:bg-[#023380]/5 hover:text-[#0271f1] transition-colors"
+                                  className="block px-6 py-3 text-xs font-bold text-[#002f7a] hover:bg-[#002f7a]/5 hover:text-[#006def] transition-colors"
                                 >
                                   {link.name}
                                 </Link>
@@ -224,12 +293,12 @@ export const Navbar = () => {
 
                         {/* Mega Menu */}
                         {hasMegaMenu && (
-                          <div className="flex h-[320px] border-t-2 border-[#0271f1]">
+                          <div className="flex h-[320px] border-t-2 border-[#006def]">
                             {item.megaMenu?.map((col, idx) => {
                               const Icon = col.icon;
                               return (
-                                <div key={idx} className="flex-1 p-8 border-r border-[#023380]/5">
-                                  <div className="flex items-center gap-2 text-[#023380] mb-6">
+                                <div key={idx} className="flex-1 p-8 border-r border-[#002f7a]/5">
+                                  <div className="flex items-center gap-2 text-[#002f7a] mb-6">
                                     <Icon className="w-5 h-5" />
                                     <h4 className="font-black text-xs uppercase tracking-widest">{col.heading}</h4>
                                   </div>
@@ -239,7 +308,7 @@ export const Navbar = () => {
                                         <Link
                                           href={link.href}
                                           onClick={() => setActiveMenu(null)}
-                                          className="text-xs font-bold text-[#023380] hover:text-[#0271f1] transition-colors"
+                                          className="text-xs font-bold text-[#002f7a] hover:text-[#006def] transition-colors"
                                         >
                                           {link.name}
                                         </Link>
@@ -251,23 +320,23 @@ export const Navbar = () => {
                             })}
 
                             {/* Featured Tool Box */}
-                            <div className="w-[280px] p-8 bg-[#023380]/5 flex flex-col">
-                              <div className="flex items-center gap-2 text-[#023380] mb-6">
+                            <div className="w-[280px] p-8 bg-[#002f7a]/5 flex flex-col">
+                              <div className="flex items-center gap-2 text-[#002f7a] mb-6">
                                 <Wrench className="w-5 h-5" />
                                 <h4 className="font-black text-xs uppercase tracking-widest">Featured Tool</h4>
                               </div>
 
-                              <div className="w-full h-24 bg-white border border-[#0271f1]/20 rounded mb-4 flex items-center justify-center text-[#0271f1]">
+                              <div className="w-full h-24 bg-white border border-[#006def]/20 rounded mb-4 flex items-center justify-center text-[#006def]">
                                 [Illustration]
                               </div>
 
-                              <h5 className="font-black text-xs text-[#023380] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
-                              <p className="text-xs text-[#023380] font-semibold mb-6 leading-relaxed">{item.featured?.description}</p>
+                              <h5 className="font-black text-xs text-[#002f7a] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
+                              <p className="text-xs text-[#002f7a] font-semibold mb-6 leading-relaxed">{item.featured?.description}</p>
 
                               <Link
                                 href={item.featured?.href || "#"}
                                 onClick={() => setActiveMenu(null)}
-                                className="mt-auto block text-center w-full border-2 border-[#023380] text-[#023380] py-2 text-[10px] font-black uppercase tracking-wider hover:bg-[#023380] hover:text-white transition-colors"
+                                className="mt-auto block text-center w-full border-2 border-[#002f7a] text-[#002f7a] py-2 text-[10px] font-black uppercase tracking-wider hover:bg-[#002f7a] hover:text-white transition-colors"
                               >
                                 {item.featured?.buttonText}
                               </Link>
@@ -285,17 +354,17 @@ export const Navbar = () => {
             <Link
               href="/blog"
               onClick={() => setActiveMenu(null)}
-              className="h-full px-3 2xl:px-4 whitespace-nowrap flex items-center text-[12px] font-black uppercase tracking-tight text-[#023380] border-t-4 border-transparent hover:text-[#0271f1] hover:border-[#0271f1] transition-all duration-200"
+              className="h-full px-3 2xl:px-4 whitespace-nowrap flex items-center text-[12px] font-black uppercase tracking-tight text-[#002f7a] border-t-4 border-transparent hover:text-[#006def] hover:border-[#006def] transition-all duration-200"
             >
               BLOG
             </Link>
           </nav>
 
           {/* Desktop CTA Button - Shifted to xl breakpoint */}
-          <div className="hidden xl:flex shrink-0 pl-4 xl:pl-8 border-l border-[#023380]/10 h-10 items-center">
+          <div className="hidden xl:flex shrink-0 pl-4 xl:pl-8 border-l border-[#002f7a]/10 h-10 items-center">
             <Link
               href="#technical-vault"
-              className="bg-[#023380] whitespace-nowrap hover:bg-[#0271f1] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+              className="bg-[#002f7a] whitespace-nowrap hover:bg-[#006def] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
             >
               Access Vault
             </Link>
@@ -305,7 +374,7 @@ export const Navbar = () => {
           <div className="xl:hidden flex items-center gap-4">
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="bg-[#023380] hover:bg-[#0271f1] transition-colors p-2 rounded text-white"
+              className="bg-[#002f7a] hover:bg-[#006def] transition-colors p-2 rounded text-white"
             >
               {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -322,17 +391,17 @@ export const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed top-0 right-0 w-[300px] h-screen bg-white shadow-[-20px_0_50px_rgba(2,51,128,0.1)] z-[200] flex flex-col"
+            className="fixed top-0 right-0 w-[300px] h-screen bg-white shadow-[-20px_0_50px_rgba(0, 47, 122,0.1)] z-[200] flex flex-col"
           >
-            <div className="flex justify-between items-center p-6 border-b border-[#023380]/10">
+            <div className="flex justify-between items-center p-6 border-b border-[#002f7a]/10">
               <div className="flex flex-col">
                 <Image src={getAssetUrl("/peg_logo.png")} alt="PEG" width={150} height={42} className="h-9 w-auto object-contain" />
-                <span className="text-[9.5px] font-bold tracking-wider text-[#023380] uppercase font-mono leading-none mt-1.5">
+                <span className="text-[9.5px] font-bold tracking-wider text-[#002f7a] uppercase font-mono leading-none mt-1.5">
                   Advanced Precast Engineering..
                 </span>
               </div>
               <button onClick={() => setIsMobileOpen(false)}>
-                <X className="w-6 h-6 text-[#023380]" />
+                <X className="w-6 h-6 text-[#002f7a]" />
               </button>
             </div>
 
@@ -341,11 +410,11 @@ export const Navbar = () => {
                 const isExpanded = mobileExpandedNode === item.title;
 
                 return (
-                  <div key={item.title} className="border-b border-[#023380]/5">
+                  <div key={item.title} className="border-b border-[#002f7a]/5">
                     <button
                       onClick={() => setMobileExpandedNode(isExpanded ? null : item.title)}
                       className={`w-full flex justify-between items-center px-6 py-4 text-xs font-black uppercase tracking-wider transition-colors
-                        ${isExpanded ? 'bg-[#023380]/5 text-[#0271f1]' : 'text-[#023380]'}
+                        ${isExpanded ? 'bg-[#002f7a]/5 text-[#006def]' : 'text-[#002f7a]'}
                       `}
                     >
                       {item.title}
@@ -358,7 +427,7 @@ export const Navbar = () => {
                           initial={{ height: 0 }}
                           animate={{ height: 'auto' }}
                           exit={{ height: 0 }}
-                          className="overflow-hidden bg-[#023380]/5 border-t border-[#0271f1]/10"
+                          className="overflow-hidden bg-[#002f7a]/5 border-t border-[#006def]/10"
                         >
                           <ul className="px-6 py-2 pb-6 space-y-3">
                             {(item.links || item.megaMenu?.flatMap(m => m.links))?.map((link: any, i) => (
@@ -366,7 +435,7 @@ export const Navbar = () => {
                                 <Link
                                   href={link.href}
                                   onClick={() => setIsMobileOpen(false)}
-                                  className="text-sm font-bold text-[#023380] pl-4 border-l-2 border-[#0271f1] hover:border-[#023380] hover:text-[#0271f1] block py-1 transition-all"
+                                  className="text-sm font-bold text-[#002f7a] pl-4 border-l-2 border-[#006def] hover:border-[#002f7a] hover:text-[#006def] block py-1 transition-all"
                                 >
                                   {link.name}
                                 </Link>
@@ -381,22 +450,22 @@ export const Navbar = () => {
               })}
 
               {/* DIRECT BLOG LINK IN MOBILE DRAWER */}
-              <div className="border-b border-[#023380]/5">
+              <div className="border-b border-[#002f7a]/5">
                 <Link
                   href="/blog"
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-xs font-black uppercase tracking-wider text-[#023380] hover:text-[#0271f1] hover:bg-[#023380]/5 transition-colors"
+                  className="w-full flex justify-between items-center px-6 py-4 text-sm font-black uppercase tracking-wider text-[#002f7a] hover:text-[#006def] hover:bg-[#002f7a]/5 transition-colors"
                 >
                   <span>BLOG</span>
                 </Link>
               </div>
             </div>
 
-            <div className="p-6 border-t border-[#023380]/10">
+            <div className="p-6 border-t border-[#002f7a]/10">
               <Link
                 href="#technical-vault"
                 onClick={() => setIsMobileOpen(false)}
-                className="block text-center w-full bg-[#023380] hover:bg-[#0271f1] text-white py-4 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+                className="block text-center w-full bg-[#002f7a] hover:bg-[#006def] text-white py-4 text-xs font-bold uppercase tracking-wider rounded transition-colors"
               >
                 Access Vault
               </Link>

@@ -4,15 +4,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { fetchAllBlogPosts, fetchBlogPostBySlug } from "@/lib/blogService";
 import ShareArticleButton from "@/app/components/ShareArticleButton";
-import { 
-  ArrowLeft, 
-  Clock, 
-  FileText, 
-  CheckCircle2, 
-  Play, 
-  Layers, 
-  Box, 
-  ShieldCheck, 
+import {
+  ArrowLeft,
+  Clock,
+  FileText,
+  CheckCircle2,
+  Play,
+  Layers,
+  Box,
+  ShieldCheck,
   Download,
   ArrowRight
 } from "lucide-react";
@@ -66,55 +66,55 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-white text-[#023380] selection:bg-[#0271f1] selection:text-white pt-28 pb-20">
-      
+    <main className="min-h-screen bg-white text-[#002f7a] selection:bg-[#006def] selection:text-white pt-28 pb-20">
+
       {/* TOP NAVIGATION BAR */}
-      <div className="bg-white border-b border-[#023380]/10 py-4 shadow-sm">
+      <div className="bg-white border-b border-[#002f7a]/10 py-4 shadow-sm">
         <div className="w-full px-10 md:px-20 flex items-center justify-between">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#023380] hover:text-[#0271f1] uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#002f7a] hover:text-[#006def] uppercase tracking-wider transition-colors"
           >
-            <ArrowLeft className="w-4 h-4 text-[#0271f1]" />
+            <ArrowLeft className="w-4 h-4 text-[#006def]" />
             <span>Back to All Precast Articles</span>
           </Link>
 
-          <div className="flex items-center gap-2 text-xs font-extrabold text-[#023380] uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-[#0271f1]/20">
-            <ShieldCheck className="w-4 h-4 text-[#0271f1]" />
+          <div className="flex items-center gap-2 text-xs font-extrabold text-[#002f7a] uppercase tracking-wider bg-blue-50 px-3 py-1 rounded-full border border-[#006def]/20">
+            <ShieldCheck className="w-4 h-4 text-[#006def]" />
             <span>Verified Precast Technical Specification</span>
           </div>
         </div>
       </div>
 
       <div className="w-full px-10 md:px-20 mt-8">
-        
+
         {/* ARTICLE HEADER BLOCK */}
         <div className=" mb-10">
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="px-3.5 py-1 rounded-none bg-[#0271f1] text-white text-xs font-black tracking-widest uppercase shadow-md shadow-[#0271f1]/20">
+            <span className="px-3.5 py-1 rounded-none bg-[#006def] text-white text-xs font-black tracking-widest uppercase shadow-md shadow-[#006def]/20">
               {post.category}
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-[#023380] font-bold bg-white px-3 py-1 rounded-none border border-[#0271f1]/20">
-              <Clock className="w-3.5 h-3.5 text-[#0271f1]" />
+            <span className="flex items-center gap-1.5 text-xs text-[#002f7a] font-bold bg-white px-3 py-1 rounded-none border border-[#006def]/20">
+              <Clock className="w-3.5 h-3.5 text-[#006def]" />
               {post.readTime}
             </span>
-            <span className="text-xs text-[#0271f1] font-bold">
+            <span className="text-xs text-[#006def] font-bold">
               Published: {post.publishedDate}
             </span>
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-black text-[#023380] uppercase tracking-tight leading-tight">
+          <h1 className="text-3xl md:text-5xl font-black text-[#002f7a] uppercase tracking-tight leading-tight">
             {post.title}
           </h1>
 
-          <p className="mt-4 text-[#023380] font-semibold text-lg md:text-xl leading-relaxed">
+          <p className="mt-4 text-[#002f7a] font-semibold text-lg md:text-xl leading-relaxed">
             {post.subtitle}
           </p>
 
           {/* AUTHOR BAR */}
-          <div className="mt-6 pt-6 border-t border-[#023380]/10 flex items-center justify-between flex-wrap gap-4">
+          <div className="mt-6 pt-6 border-t border-[#002f7a]/10 flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#0271f1] shadow-sm">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#006def] shadow-sm">
                 <Image
                   src={post.author.avatar}
                   alt={post.author.name}
@@ -123,8 +123,8 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 />
               </div>
               <div>
-                <p className="text-sm font-black text-[#023380] uppercase">{post.author.name}</p>
-                <p className="text-xs text-[#0271f1] font-bold">{post.author.role}</p>
+                <p className="text-sm font-black text-[#002f7a] uppercase">{post.author.name}</p>
+                <p className="text-xs text-[#006def] font-bold">{post.author.role}</p>
               </div>
             </div>
 
@@ -135,9 +135,9 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
         </div>
 
         {/* HERO MEDIA SHOWCASE (FEATURED VIDEO OR HIGH-RES COVER) */}
-        <div className=" mb-14 rounded-none overflow-hidden bg-[#023380] border-2 border-[#023380]/20 shadow-2xl shadow-[#023380]/10 relative">
+        <div className=" mb-14 rounded-none overflow-hidden bg-[#002f7a] border-2 border-[#002f7a]/20 shadow-2xl shadow-[#002f7a]/10 relative">
           {post.featuredVideo ? (
-            <div className="relative w-full aspect-video bg-[#023380]">
+            <div className="relative w-full aspect-video bg-[#002f7a]">
               <video
                 src={post.featuredVideo}
                 controls
@@ -146,13 +146,13 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 loop
                 className="w-full h-full object-cover"
               />
-              <div className="absolute top-4 left-4 bg-[#023380]/90 backdrop-blur-md px-3.5 py-1.5 rounded-none text-white text-xs font-bold flex items-center gap-2 border border-white/20">
-                <Play className="w-3.5 h-3.5 text-[#0271f1] fill-[#0271f1]" />
+              <div className="absolute top-4 left-4 bg-[#002f7a]/90 backdrop-blur-md px-3.5 py-1.5 rounded-none text-white text-xs font-bold flex items-center gap-2 border border-white/20">
+                <Play className="w-3.5 h-3.5 text-[#006def] fill-[#006def]" />
                 <span>Product Demonstration & FEA Video</span>
               </div>
             </div>
           ) : (
-            <div className="relative w-full h-[380px] md:h-[480px] bg-gradient-to-b from-[#023380] to-[#012255] flex items-center justify-center p-6">
+            <div className="relative w-full h-[380px] md:h-[480px] bg-gradient-to-b from-[#002f7a] to-[#012255] flex items-center justify-center p-6">
               <Image
                 src={post.coverImage}
                 alt={post.title}
@@ -167,29 +167,29 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
         {/* MAIN TWO-COLUMN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          
+
           {/* ARTICLE CONTENT (LEFT / MAIN) */}
           <div className="lg:col-span-8 space-y-12">
-            
+
             {/* EXCERPT SUMMARY CARD */}
-            <div className="bg-blue-50/60 p-6 md:p-8 rounded-none border border-[#0271f1]/20 text-[#023380] font-semibold leading-relaxed text-base md:text-lg shadow-sm">
+            <div className="bg-blue-50/60 p-6 md:p-8 rounded-none border border-[#006def]/20 text-[#002f7a] font-semibold leading-relaxed text-base md:text-lg shadow-sm">
               <p>{post.excerpt}</p>
             </div>
 
             {/* SECTIONS LOOP */}
             {post.sections.map((section, idx) => (
               <section key={idx} className="space-y-4">
-                <h2 className="text-2xl md:text-3xl font-black text-[#023380] uppercase tracking-tight border-b-2 border-[#0271f1]/30 pb-2">
+                <h2 className="text-2xl md:text-3xl font-black text-[#002f7a] uppercase tracking-tight border-b-2 border-[#006def]/30 pb-2">
                   {section.heading}
                 </h2>
-                
+
                 {section.subheading && (
-                  <h3 className="text-lg font-bold text-[#0271f1] uppercase tracking-wide">
+                  <h3 className="text-lg font-bold text-[#006def] uppercase tracking-wide">
                     {section.subheading}
                   </h3>
                 )}
 
-                <div className="space-y-4 text-[#023380] font-semibold leading-relaxed">
+                <div className="space-y-4 text-[#002f7a] font-semibold leading-relaxed">
                   {section.content.map((paragraph, pIdx) => (
                     <p key={pIdx}>{paragraph}</p>
                   ))}
@@ -197,21 +197,21 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
                 {/* CALLOUT BOX */}
                 {section.callout && (
-                  <div className="my-6 p-5 bg-blue-50/50 rounded-none border-l-4 border-[#023380] shadow-sm text-[#023380] font-bold text-sm md:text-base border border-[#0271f1]/20">
+                  <div className="my-6 p-5 bg-blue-50/50 rounded-none border-l-4 border-[#002f7a] shadow-sm text-[#002f7a] font-bold text-sm md:text-base border border-[#006def]/20">
                     <p>{section.callout}</p>
                   </div>
                 )}
 
                 {/* SPEC HIGHLIGHT */}
                 {section.specHighlight && (
-                  <div className="my-6 p-6 bg-white rounded-none border border-[#023380]/15 shadow-sm">
-                    <h4 className="text-xs font-black text-[#023380] uppercase tracking-widest mb-3">
+                  <div className="my-6 p-6 bg-white rounded-none border border-[#002f7a]/15 shadow-sm">
+                    <h4 className="text-xs font-black text-[#002f7a] uppercase tracking-widest mb-3">
                       {section.specHighlight.title}
                     </h4>
                     <ul className="space-y-2">
                       {section.specHighlight.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex items-center gap-2 text-sm font-bold text-[#023380]">
-                          <CheckCircle2 className="w-4 h-4 text-[#0271f1] shrink-0" />
+                        <li key={itemIdx} className="flex items-center gap-2 text-sm font-bold text-[#002f7a]">
+                          <CheckCircle2 className="w-4 h-4 text-[#006def] shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -221,7 +221,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
                 {/* SECTION IMAGE */}
                 {section.image && (
-                  <div className="my-6 rounded-none overflow-hidden border border-[#023380]/15 shadow-sm">
+                  <div className="my-6 rounded-none overflow-hidden border border-[#002f7a]/15 shadow-sm">
                     <div className="relative w-full h-80 md:h-[420px] bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-4">
                       <Image
                         src={section.image.url}
@@ -231,7 +231,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                         className="object-contain p-4"
                       />
                     </div>
-                    <div className="bg-white p-3 text-xs font-bold text-[#023380] text-center border-t border-[#023380]/10">
+                    <div className="bg-white p-3 text-xs font-bold text-[#002f7a] text-center border-t border-[#002f7a]/10">
                       {section.image.caption}
                     </div>
                   </div>
@@ -242,13 +242,13 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
             {/* SECONDARY VIDEOS (IF ANY) */}
             {post.secondaryVideos && post.secondaryVideos.length > 0 && (
               <div className="pt-6">
-                <h3 className="text-xl font-black text-[#023380] uppercase tracking-tight mb-4 flex items-center gap-2">
-                  <Play className="w-5 h-5 text-[#0271f1] fill-[#0271f1]" />
+                <h3 className="text-xl font-black text-[#002f7a] uppercase tracking-tight mb-4 flex items-center gap-2">
+                  <Play className="w-5 h-5 text-[#006def] fill-[#006def]" />
                   <span>Additional Video Footage & Installation Clips</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {post.secondaryVideos.map((vUrl, vIdx) => (
-                    <div key={vIdx} className="rounded-none overflow-hidden bg-white border border-[#0271f1]/30 aspect-video shadow-md">
+                    <div key={vIdx} className="rounded-none overflow-hidden bg-white border border-[#006def]/30 aspect-video shadow-md">
                       <video src={vUrl} controls className="w-full h-full object-cover" />
                     </div>
                   ))}
@@ -259,13 +259,13 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
             {/* GALLERY SHOWCASE */}
             {post.gallery && post.gallery.length > 0 && (
               <div className="pt-6">
-                <h3 className="text-xl font-black text-[#023380] uppercase tracking-tight mb-6 flex items-center gap-2">
-                  <Layers className="w-5 h-5 text-[#0271f1]" />
+                <h3 className="text-xl font-black text-[#002f7a] uppercase tracking-tight mb-6 flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-[#006def]" />
                   <span>Technical Visual Gallery & Blueprints</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {post.gallery.map((gItem, gIdx) => (
-                    <div key={gIdx} className="bg-white rounded-none overflow-hidden border border-[#023380]/15 shadow-xs group">
+                    <div key={gIdx} className="bg-white rounded-none overflow-hidden border border-[#002f7a]/15 shadow-xs group">
                       <div className="relative w-full h-60 bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-3">
                         {gItem.type === "video" ? (
                           <video src={gItem.url} controls className="w-full h-full object-cover" />
@@ -279,7 +279,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                           />
                         )}
                       </div>
-                      <div className="p-3.5 bg-white text-xs font-bold text-[#023380] border-t border-[#023380]/10">
+                      <div className="p-3.5 bg-white text-xs font-bold text-[#002f7a] border-t border-[#002f7a]/10">
                         {gItem.caption}
                       </div>
                     </div>
@@ -289,9 +289,9 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
             )}
 
             {/* KEY TAKEAWAYS */}
-            <div className="p-6 md:p-8 bg-[#023380] text-white rounded-none shadow-xl space-y-4">
+            <div className="p-6 md:p-8 bg-[#002f7a] text-white rounded-none shadow-xl space-y-4">
               <div className="flex items-center gap-2 text-blue-200 text-xs font-black tracking-widest uppercase">
-                <Box className="w-4 h-4 text-[#0271f1]" /> Key Engineering Takeaways
+                <Box className="w-4 h-4 text-[#006def]" /> Key Engineering Takeaways
               </div>
               <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white">
                 Summary Specification
@@ -299,7 +299,7 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
               <ul className="space-y-3 pt-2">
                 {post.keyTakeaways.map((takeaway, tIdx) => (
                   <li key={tIdx} className="flex items-start gap-3 text-sm md:text-base font-semibold text-blue-50">
-                    <CheckCircle2 className="w-5 h-5 text-[#0271f1] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-5 h-5 text-[#006def] shrink-0 mt-0.5" />
                     <span>{takeaway}</span>
                   </li>
                 ))}
@@ -310,27 +310,27 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
           {/* SIDEBAR (RIGHT) */}
           <div className="lg:col-span-4 space-y-8">
-            
+
             {/* TECHNICAL SPECS TABLE CARD */}
-            <div className="bg-white p-6 rounded-none border border-[#023380]/15 shadow-sm sticky top-28">
-              <div className="flex items-center gap-2 text-[#023380] mb-4 pb-3 border-b border-[#023380]/10">
-                <FileText className="w-5 h-5 text-[#0271f1]" />
+            <div className="bg-white p-6 rounded-none border border-[#002f7a]/15 shadow-sm sticky top-28">
+              <div className="flex items-center gap-2 text-[#002f7a] mb-4 pb-3 border-b border-[#002f7a]/10">
+                <FileText className="w-5 h-5 text-[#006def]" />
                 <h3 className="font-black text-sm uppercase tracking-wider">Product Technical Specs</h3>
               </div>
 
               <div className="space-y-3">
                 {post.technicalSpecs.map((spec, sIdx) => (
-                  <div key={sIdx} className="bg-white p-3 rounded-none border border-[#023380]/15 flex flex-col gap-1">
-                    <span className="text-[11px] font-bold text-[#0271f1] uppercase tracking-wider">{spec.label}</span>
-                    <span className="text-xs font-black text-[#023380]">{spec.value}</span>
+                  <div key={sIdx} className="bg-white p-3 rounded-none border border-[#002f7a]/15 flex flex-col gap-1">
+                    <span className="text-[11px] font-bold text-[#006def] uppercase tracking-wider">{spec.label}</span>
+                    <span className="text-xs font-black text-[#002f7a]">{spec.value}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#023380]/10 space-y-3">
+              <div className="mt-6 pt-4 border-t border-[#002f7a]/10 space-y-3">
                 <a
                   href="#contact"
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#023380] hover:bg-[#0271f1] text-white text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-md"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-black uppercase tracking-wider rounded-none transition-all shadow-md"
                 >
                   <Download className="w-4 h-4" />
                   <span>Request Formwork / CAD Submittal</span>
@@ -344,8 +344,8 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
         {/* RELATED ARTICLES */}
         {relatedPosts.length > 0 && (
-          <div className=" mt-20 pt-12 border-t border-[#023380]/10">
-            <h2 className="text-2xl font-black text-[#023380] uppercase tracking-tight mb-8">
+          <div className=" mt-20 pt-12 border-t border-[#002f7a]/10">
+            <h2 className="text-2xl font-black text-[#002f7a] uppercase tracking-tight mb-8">
               Related Structural Precast Articles
             </h2>
 
@@ -354,18 +354,18 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 <Link
                   key={rPost.slug}
                   href={`/blog/${rPost.slug}`}
-                  className="group bg-white p-5 rounded-none border border-[#023380]/10 hover:border-[#0271f1] hover:shadow-lg transition-all flex flex-col justify-between"
+                  className="group bg-white p-5 rounded-none border border-[#002f7a]/10 hover:border-[#006def] hover:shadow-lg transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] font-black text-[#0271f1] uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded-none border border-[#0271f1]/20">
+                    <span className="text-[10px] font-black text-[#006def] uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded-none border border-[#006def]/20">
                       {rPost.category}
                     </span>
-                    <h3 className="mt-3 text-base font-bold text-[#023380] group-hover:text-[#0271f1] transition-colors line-clamp-2 uppercase leading-snug">
+                    <h3 className="mt-3 text-base font-bold text-[#002f7a] group-hover:text-[#006def] transition-colors line-clamp-2 uppercase leading-snug">
                       {rPost.title}
                     </h3>
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between text-xs font-bold text-[#0271f1]">
+                  <div className="mt-6 flex items-center justify-between text-xs font-bold text-[#006def]">
                     <span>Read Guide</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>

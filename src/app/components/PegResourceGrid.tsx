@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Settings, 
-  GraduationCap, 
-  MapPin, 
-  Cpu, 
-  Calendar, 
-  Newspaper, 
-  ArrowRight 
+import {
+  Settings,
+  GraduationCap,
+  MapPin,
+  Cpu,
+  Calendar,
+  Newspaper,
+  ArrowRight
 } from 'lucide-react';
 
 const pegResourceNodes = [
@@ -59,16 +59,16 @@ const pegResourceNodes = [
 
 export default function PegResourceGrid() {
   return (
-    <section id="resources" className="w-full bg-[#023380] text-white py-24 px-10 md:px-20 relative overflow-hidden font-sans">
-      
+    <section id="resources" className="w-full bg-[#002f7a] text-white py-24 px-10 md:px-20 relative overflow-hidden font-sans">
+
       {/* BRAND ARCHITECTURE BACKGROUND GRID */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]" />
 
       <div className="relative z-10 space-y-16">
-        
+
         {/* STRUCTURAL HEADER SECTION */}
         <div className="max-w-3xl space-y-4">
-          <div className="w-16 h-1 bg-[#0271f1]" />
+          <div className="w-16 h-1 bg-[#006def]" />
           <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none">
             Knowledge Hub <br />
             <span className="text-white">& Infrastructure Ecosystem.</span>
@@ -88,42 +88,42 @@ export default function PegResourceGrid() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.4 }}
               whileHover={{ y: -8 }}
-              className="group relative bg-white border border-[#0271f1]/20 p-10 flex flex-col justify-between items-center text-center transition-all duration-300 shadow-xl"
+              className="group relative bg-white border border-[#006def]/20 p-10 flex flex-col justify-between items-center text-center transition-all duration-300 shadow-xl"
             >
               {/* TOP BRAND ACCENT LINE */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-[#0271f1] group-hover:w-full transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-500" />
 
               {/* CARD CORE CONTENT */}
               <div className="flex flex-col items-center space-y-6 w-full">
-                
+
                 {/* ICON BOX */}
-                <div className="p-4 bg-[#023380]/5 border border-[#023380]/10 text-[#023380] transition-all duration-300 group-hover:bg-[#0271f1] group-hover:text-white group-hover:border-[#0271f1] group-hover:shadow-lg">
+                <div className="p-4 bg-[#002f7a]/5 border border-[#002f7a]/10 text-[#002f7a] transition-all duration-300 group-hover:bg-[#006def] group-hover:text-white group-hover:border-[#006def] group-hover:shadow-lg">
                   {node.icon}
                 </div>
 
                 {/* METADATA IDENTIFIER */}
                 <div className="space-y-3">
-                  <h3 className="text-lg font-black uppercase tracking-tighter text-[#023380]">
+                  <h3 className="text-lg font-black uppercase tracking-tighter text-[#002f7a]">
                     {node.title}
                   </h3>
-                  <p className="text-[#023380]/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs mx-auto">
+                  <p className="text-[#002f7a]/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs mx-auto">
                     {node.description}
                   </p>
                 </div>
               </div>
 
               {/* CLEAN ACTION PROMPT BUTTON */}
-              <div className="w-full pt-8 mt-8 border-t border-[#023380]/5">
-                <a 
+              <div className="w-full pt-8 mt-8 border-t border-[#002f7a]/5">
+                <a
                   href={node.href}
-                  className="inline-flex items-center gap-2 bg-[#023380] hover:bg-[#0271f1] text-white px-5 py-2.5 font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105"
+                  className="inline-flex items-center gap-2 bg-[#002f7a] hover:bg-[#006def] text-white px-5 py-2.5 font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105"
                 >
                   {node.linkText} <ArrowRight className="w-3 h-3" />
                 </a>
               </div>
 
               {/* CORNER BACKGROUND WATERMARK */}
-              <div className="absolute bottom-2 right-4 font-mono text-[50px] font-black text-[#023380] opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.05] transition-opacity">
+              <div className="absolute bottom-2 right-4 font-mono text-[50px] font-black text-[#002f7a] opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.05] transition-opacity">
                 0{idx + 1}
               </div>
 

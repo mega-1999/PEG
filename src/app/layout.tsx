@@ -50,7 +50,7 @@ export const ALL_SEO_KEYWORDS = [
 // COMPREHENSIVE SEO METADATA
 export const metadata: Metadata = {
   title: {
-    default: "Precast Concrete Engineers & Drawings | PEG Precast Engineering Group",
+    default: "Precast Concrete Engineering & Drawings | PEG",
     template: "%s | PEG Precast Engineering Group",
   },
   description:
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Precast Concrete Engineers & Drawings | PEG",
+    title: "Precast Concrete Engineering & Drawings | PEG",
     description:
       "Certified Precast Concrete Engineers delivering structural calculations, drafting, testing, certifications, and drawings for precast concrete structures.",
     images: ["https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/images/Box_Culvert/13.jpeg"],
@@ -99,9 +99,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/PEG_Fevicon.png",
+    shortcut: "/PEG_Fevicon.png",
+    apple: "/PEG_Fevicon.png",
   },
 };
 
@@ -116,7 +116,7 @@ export default function RootLayout({
     "@type": "EngineeringService",
     "name": "Precast Engineering Group (PEG)",
     "url": "https://www.precastengineering.org",
-    "logo": "https://www.precastengineering.org/favicon.png",
+    "logo": "https://www.precastengineering.org/PEG_Fevicon.png",
     "description":
       "Professional Precast Concrete Engineers offering structural precast engineering, design precast concrete, precast drafting, precast concrete testing, certifications, and production drawings for culverts, d-boxes, manholes, catch basins, trenches, septic tanks, and grease traps.",
     "serviceType": ALL_SEO_KEYWORDS,

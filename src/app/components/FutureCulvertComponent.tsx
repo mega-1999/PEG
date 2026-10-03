@@ -35,25 +35,28 @@ const futureInitiatives = [
 
 export default function FutureCulvertComponent() {
   return (
-    <section className="w-full bg-white py-16 px-6 md:px-16 lg:px-20 border-t border-[#023380]/10 select-none">
-      
-      {/* 1. HEADER STRIP */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#023380]/10 pb-8">
+    <section className="w-full bg-white py-16 md:py-20 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
+
+      {/* STANDARDIZED CONTAINER */}
+      <div className="w-full px-10 md:px-20 relative z-10">
+
+        {/* 1. HEADER STRIP */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#002f7a]/10 pb-8">
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/10 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#0271f1]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
             <Box className="w-3.5 h-3.5" /> Engineered Precast Infrastructure
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#023380] tracking-tighter leading-[0.9] uppercase">
-            The Future of <span className="text-[#0271f1]">Box Culverts.</span>
+          <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-[0.9] uppercase">
+            The Future of <span className="text-[#006def]">Box Culverts.</span>
           </h2>
-          <p className="text-[#023380] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
+          <p className="text-[#002f7a] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
             Standard and custom ASTM C1577 precast box culverts engineered for stream crossings, underground detention, and multi-utility corridors.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 bg-blue-50 px-4 py-2.5 border border-[#0271f1]/20 text-[#023380] font-mono text-xs font-bold uppercase">
-            <ShieldCheck className="w-4 h-4 text-[#0271f1]" /> ASTM C1577 & AASHTO
+          <div className="flex items-center gap-2 bg-blue-50 px-4 py-2.5 border border-[#006def]/20 text-[#002f7a] font-mono text-xs font-bold uppercase">
+            <ShieldCheck className="w-4 h-4 text-[#006def]" /> ASTM C1577 & AASHTO
           </div>
         </div>
       </div>
@@ -67,21 +70,21 @@ export default function FutureCulvertComponent() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.1 }}
             viewport={{ once: true }}
-            className="group bg-white border border-[#023380]/15 hover:border-[#0271f1] shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+            className="group bg-[#002f7a] text-white border border-white/15 hover:border-[#006def] shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
           >
-            {/* Image Preview Container */}
-            <div className="relative w-full h-64 sm:h-72 bg-gradient-to-b from-slate-50 to-blue-50/20 border-b border-[#023380]/10 overflow-hidden flex items-center justify-center p-4">
-              <Image 
+            {/* Image Preview Container with White Background */}
+            <div className="relative w-full h-64 sm:h-72 bg-white border-b border-[#002f7a]/15 overflow-hidden flex items-center justify-center p-4">
+              <Image
                 src={item.img}
                 alt={`PEG Culvert - ${item.title}`}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-contain p-4 group-hover:scale-105 transition-transform duration-500 ease-out"
               />
-              <div className="absolute top-3 left-3 bg-[#023380] text-white p-2 shadow-xs z-10">
+              <div className="absolute top-3 left-3 bg-[#002f7a] text-white p-2 shadow-xs z-10">
                 {item.icon}
               </div>
-              <div className="absolute top-3 right-3 bg-white/95 text-[#023380] px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest border border-[#023380]/20 z-10">
+              <div className="absolute top-3 right-3 bg-[#002f7a] text-white px-2.5 py-0.5 text-[9px] font-mono font-black uppercase tracking-widest border border-white/20 z-10 shadow-xs">
                 INITIATIVE 0{idx + 1}
               </div>
             </div>
@@ -89,25 +92,25 @@ export default function FutureCulvertComponent() {
             {/* Content Area */}
             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
               <div>
-                <span className="text-[10px] font-mono font-bold text-[#0271f1] uppercase tracking-widest block mb-1">
+                <span className="text-[10px] font-mono font-bold text-[#006def] group-hover:text-white uppercase tracking-widest block mb-1 transition-colors">
                   {item.subtitle}
                 </span>
-                <h3 className="text-xl font-black text-[#023380] uppercase tracking-tight group-hover:text-[#0271f1] transition-colors">
+                <h3 className="text-xl font-black text-white uppercase tracking-tight group-hover:text-[#006def] transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#023380] font-semibold mt-2 leading-relaxed">
+                <p className="text-xs sm:text-sm text-white/80 font-medium mt-2 leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-[#023380]/10 space-y-3">
-                <div className="text-[10px] font-mono font-bold text-[#0271f1] bg-blue-50/70 px-2.5 py-1 border border-[#0271f1]/20">
+              <div className="pt-3 border-t border-white/10 space-y-3">
+                <div className="text-[10px] font-mono font-bold text-white bg-white/10 px-2.5 py-1.5 border border-white/15">
                   {item.specs}
                 </div>
 
                 <a
                   href="#contact"
-                  className="w-full py-2.5 bg-white group-hover:bg-[#023380] text-[#023380] group-hover:text-white border border-[#023380]/20 text-[10px] font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
+                  className="w-full py-2.5 bg-white group-hover:bg-[#006def] text-[#002f7a] group-hover:text-white border border-white/20 text-[10px] font-mono font-black uppercase tracking-widest transition-colors flex items-center justify-center gap-2"
                 >
                   <span>Explore Culvert Specs</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -117,6 +120,7 @@ export default function FutureCulvertComponent() {
           </motion.div>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
   );
 }

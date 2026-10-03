@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { uploadToCloudflareR2 } from "@/lib/r2";
 
 // Allowed MIME types and max size configurations
 const MAX_IMAGE_SIZE = 15 * 1024 * 1024; // 15MB
@@ -123,40 +124,83 @@ export async function POST(request: Request) {
       );
     }
 
+    // Parse blog title / slug for hierarchical repository structure
+    const rawBlogTitle =
+      (formData.get("blogTitle") as string) ||
+      (formData.get("blogSlug") as string) ||
+      "general-article";
+
+    const sanitizedBlogTitle = rawBlogTitle
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "") || "general-article";
+
+    // Current date format: YYYY-MM-DD
+    const currentDate = new Date().toISOString().split("T")[0];
+
+    // Media subfolder: "videos" or "images"
+    const mediaFolder = isVideo ? "videos" : "images";
+
     // Safe extension determination
     const originalExt = path.extname(file.name).toLowerCase().replace(/[^a-z0-9]/g, "");
     const safeExt = originalExt || (isVideo ? "mp4" : "jpeg");
-    
-    // Cryptographically secure UUID filename (prevents collision & directory traversal)
-    const uniqueId = crypto.randomUUID().replace(/-/g, "");
-    const filename = `${Date.now()}_${uniqueId}.${safeExt}`;
 
-    // Target upload subfolder
-    const subFolder = isVideo ? "video" : "images";
-    const uploadDir = path.join(process.cwd(), "public", "assets", subFolder);
-    await mkdir(uploadDir, { recursive: true });
+    // Clean, unique filename
+    const cleanBaseName = path
+      .basename(file.name, path.extname(file.name))
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "_")
+      .replace(/(^_|_$)/g, "")
+      .slice(0, 30);
+    const uniqueId = crypto.randomUUID().replace(/-/g, "").slice(0, 8);
+    const filename = `${cleanBaseName || (isVideo ? "video" : "image")}_${Date.now()}_${uniqueId}.${safeExt}`;
 
-    const filePath = path.join(uploadDir, filename);
-    await writeFile(filePath, buffer);
+    // Target bucket key structure: blog/title_of_blog/current_date/media/filename
+    const bucketKey = `blog/${sanitizedBlogTitle}/${currentDate}/${mediaFolder}/${filename}`;
 
-    // Cloudflare R2 Bucket Domain for images & videos
-    const cdnUrl =
-      process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL ||
-      (isVideo
-        ? "https://pub-2f3b9c4456934c568f5c9429715562aa.r2.dev"
-        : "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev");
+    // 1. Push directly to Cloudflare R2 Cloud Storage Bucket
+    const r2Result = await uploadToCloudflareR2({
+      buffer,
+      key: bucketKey,
+      contentType: mimeType,
+      isVideo,
+    });
 
-    const relativeUrl = `/assets/${subFolder}/${filename}`;
-    const cloudflareUrl = `${cdnUrl.replace(/\/$/, "")}/${filename}`;
+    // 2. Save local backup copy under public/assets/
+    try {
+      const uploadDir = path.join(
+        process.cwd(),
+        "public",
+        "assets",
+        "blog",
+        sanitizedBlogTitle,
+        currentDate,
+        mediaFolder
+      );
+      await mkdir(uploadDir, { recursive: true });
+      const filePath = path.join(uploadDir, filename);
+      await writeFile(filePath, buffer);
+    } catch (fsErr) {
+      console.warn("Local filesystem write skipped/warning:", fsErr);
+    }
+
+    const relativeUrl = `/assets/${bucketKey}`;
+    const cloudflareUrl = r2Result.url;
 
     return NextResponse.json(
       {
         success: true,
         url: relativeUrl,
         cloudflareUrl: cloudflareUrl,
+        bucketKey: bucketKey,
+        uploadedToCloud: r2Result.uploadedToCloud,
         filename: filename,
         size: file.size,
         mimeType: mimeType,
+        cloudStatus: r2Result.uploadedToCloud
+          ? "Directly Pushed to Cloudflare R2 Bucket"
+          : "Mapped with Cloudflare CDN URL (Add R2 API keys to .env to push live)",
       },
       {
         status: 201,

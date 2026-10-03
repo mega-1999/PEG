@@ -7,6 +7,13 @@ export function cn(...inputs: ClassValue[]) {
 
 export function getAssetUrl(path?: string): string {
   if (!path) return "";
+
+  // If path is a blog asset referencing r2.dev/blog/, map to local /assets/blog/ for direct display
+  if (path.includes(".r2.dev/blog/")) {
+    const blogPart = path.split(".r2.dev/blog/")[1];
+    return `/assets/blog/${blogPart}`;
+  }
+
   if (path.startsWith("http://") || path.startsWith("https://")) {
     return path;
   }

@@ -33,35 +33,35 @@ const manifestoData = [
 
 export default function PrecasterManifesto() {
   return (
-    <section id="about" className="w-full pt-12 bg-white overflow-hidden relative">
-      
+    <section id="about" className="w-full py-16 md:py-20 bg-white overflow-hidden relative border-b border-[#002f7a]/10">
+
       {/* STANDARDIZED CONTAINER */}
-      <div className="w-full px-10 md:px-20  relative z-10">
-        
+      <div className="w-full px-10 md:px-20 relative z-10">
+
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-4 gap-12  ">
-          
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+
           <div className="space-y-2 max-w-4xl">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#023380]"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#002f7a]"
             >
               By Precasters. <br />
-              <span className="text-[#0271f1]">For Precasters.</span>
+              <span className="text-[#006def]">For Precasters.</span>
             </motion.h2>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="hidden lg:block text-right pb-2"
           >
-            <p className="text-[#023380] font-black text-lg uppercase tracking-tighter">
+            <p className="text-[#002f7a] font-black text-lg uppercase tracking-tighter">
               Why, What & Who?
             </p>
           </motion.div>
@@ -77,21 +77,21 @@ export default function PrecasterManifesto() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // DEFAULT: PEG Dark Blue -> HOVER: PEG Bright Blue
-              className="group relative bg-[#023380] hover:bg-[#0271f1] px-12 py-6 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#0271f1] hover:shadow-[15px_15px_0px_#023380]"
+              className="group relative bg-[#002f7a] hover:bg-[#006def] p-8 md:p-10 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#006def] hover:shadow-[15px_15px_0px_#002f7a]"
             >
-              
+
               {/* LARGE BACKGROUND WATERMARK */}
               <div className="absolute -top-10 -right-10 font-black text-[150px] leading-none text-white opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none select-none">
                 {item.id}
               </div>
 
               {/* TOP HEADER: Icon & Label */}
-              <div className="flex justify-between items-start mb-4 relative z-10">
+              <div className="flex justify-between items-start mb-6 relative z-10">
                 <div className="text-white">
                   {item.icon}
                 </div>
                 <div className="bg-white px-4 py-1">
-                  <span className="text-[#023380] group-hover:text-[#0271f1] font-black text-[10px] uppercase tracking-widest transition-colors duration-500">
+                  <span className="text-[#002f7a] group-hover:text-[#006def] font-black text-[10px] uppercase tracking-widest transition-colors duration-500">
                     {item.title}
                   </span>
                 </div>
@@ -99,10 +99,10 @@ export default function PrecasterManifesto() {
 
               {/* CONTENT AREA */}
               <div className="relative z-10 flex-grow">
-                <p className="text-white/70 group-hover:text-white font-black text-[11px] uppercase tracking-[0.2em] mb-4 transition-colors duration-500">
+                <p className="text-white/70 group-hover:text-white font-black text-[11px] uppercase tracking-[0.2em] mb-3 transition-colors duration-500">
                   {item.subtitle}
                 </p>
-                <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter leading-tight mb-6">
+                <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-tighter leading-tight mb-4">
                   {item.headline}
                 </h3>
                 <p className="text-white/80 group-hover:text-white text-sm leading-relaxed font-medium transition-colors duration-500">
@@ -111,13 +111,13 @@ export default function PrecasterManifesto() {
               </div>
 
               {/* ACTION FOOTER */}
-              <div className="mt-2 pt-4 border-t border-white/20 group-hover:border-white/40 flex justify-between items-center relative z-10 transition-colors duration-500">
+              <div className="mt-8 pt-4 border-t border-white/20 group-hover:border-white/40 flex justify-between items-center relative z-10 transition-colors duration-500">
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
                   Explore {item.title}
                 </span>
-                <ArrowRight className="w-6 h-6 text-white transform group-hover:translate-x-2 transition-transform duration-500" />
+                <ArrowRight className="w-5 h-5 text-white transform group-hover:translate-x-2 transition-transform duration-500" />
               </div>
-              
+
             </motion.div>
           ))}
         </div>

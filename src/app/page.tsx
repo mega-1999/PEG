@@ -37,38 +37,37 @@ import PrecastBlogSection from "./components/PrecastBlogSection";
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col items-center bg-white">
+    <main className="flex-1 flex flex-col items-center bg-white pt-28 md:pt-36">
       <ResourceDirectory />
 
       {/* 1. HERO */}
-      <HeroEngineering />
       <SponsorMarquee />
-
-      {/* 2. CORE SERVICES */}
+      <HeroEngineering />
       <PegServices />
-      <section id="technical-vault" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
-        <GridContent />
-      </section>
-      {/* 3. TECHNICAL EXPERTISE & ENGINEERING */}
+      <GridContent />
       <PrecasterManifesto />
+
+      {/* 2. TECHNICAL SPECS & VAULT */}
+      {/* 3. TECHNICAL EXPERTISE & ENGINEERING */}
       <AdvancedEngineeringTech />
       <EngineeringExecuted />
-      <DeliverableUpgrade />
 
       {/* 4. PRODUCTS & APPLICATIONS */}
-      <div className="w-full bg-white py-10 text-center relative z-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0271f1]/20 text-[#0271f1] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#0271f1]">
+      <div className="w-full bg-[#002f7a] py-16 md:py-20 border-b border-[#002f7a]/10  text-center relative z-20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#006def] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#006def]">
           Engineered Portfolios
         </div>
-        <h2 className="text-3xl md:text-5xl font-black text-[#023380] uppercase tracking-tighter">
-          Precast Applications <span className="text-[#0271f1]">& Products</span>
+        <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">
+          Precast Applications <span className="text-[#006def]">& Products</span>
         </h2>
-        <p className="mt-6 text-[#023380] font-semibold max-w-2xl mx-auto px-6">
-          Explore examples of our structural engineering, from underground infrastructure to marine systems. We design products for real-world performance.
+        <p className="mt-6 text-white font-semibold max-w-2xl mx-auto px-6">
+          Explore examples of our structural engineering, from underground infrastructure and utility vaults to modular civil systems. We design products for real-world performance.
         </p>
       </div>
 
       <FutureCulvertComponent />
+      <UnchallengedResources />
+      <DeliverableUpgrade />
       <TrenchingSystem />
       <RetainingWallComponent />
       <MarinaSystemComponent />
@@ -78,11 +77,10 @@ export default function Home() {
       <ManufacturingHub />
       <TargetAudience />
       <MembershipBox />
-      <UnchallengedResources />
       <SeamlessConnection />
 
       {/* 6. PORTALS & RESOURCES */}
-      <section id="portal" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
+      <section id="portal" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
         <LoginGateway />
       </section>
 
@@ -100,7 +98,7 @@ export default function Home() {
       <MeetAtShows />
       <FuturisticCTA />
 
-      <section id="contact" className="w-full bg-white text-[#023380] overflow-hidden relative border-t border-[#023380]/10">
+      <section id="contact" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
         <ContactTerminal />
         <InnovativeContactComponent />
       </section>

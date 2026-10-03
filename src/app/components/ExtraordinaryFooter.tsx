@@ -232,7 +232,7 @@ const socialLinksNew = [
 
 export default function ExtraordinaryFooter() {
   return (
-    <footer className="relative w-full bg-[#023380] text-white border-t-2 border-slate-100 overflow-hidden select-none">
+    <footer className="relative w-full bg-[#002f7a] text-white border-t-2 border-slate-100 overflow-hidden select-none">
 
       {/* ========================================================================= */}
       {/* SECTION A: EXACT ORIGINAL PEG FOOTER                                      */}
@@ -301,9 +301,9 @@ export default function ExtraordinaryFooter() {
                       rel="noopener noreferrer"
                       aria-label={social.label}
                       whileHover={{ y: -4 }}
-                      className="w-12 h-12 bg-white flex items-center justify-center shadow-sm transition-all duration-300 group hover:bg-[#0271f1] cursor-pointer"
+                      className="w-12 h-12 bg-white flex items-center justify-center shadow-sm transition-all duration-300 group hover:bg-[#006def] cursor-pointer"
                     >
-                      <Icon className="w-5 h-5 text-[#023380] group-hover:text-white transition-colors duration-300" />
+                      <Icon className="w-5 h-5 text-[#002f7a] group-hover:text-white transition-colors duration-300" />
                     </motion.a>
                   );
                 })}
@@ -318,7 +318,7 @@ export default function ExtraordinaryFooter() {
           {footerData.map((section, idx) => (
             <div key={idx} className="flex flex-col gap-6">
               <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#0271f1]" />
+                <span className="w-2 h-2 bg-[#006def]" />
                 {section.title}
               </h3>
 
@@ -343,14 +343,14 @@ export default function ExtraordinaryFooter() {
         {/* 3. SEO CAPABILITIES DIRECTORY */}
         <div className="border-b border-white/10 pb-8 mb-8">
           <h4 className="text-white text-[10px] font-mono font-black uppercase tracking-[0.25em] mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#0271f1]" />
+            <span className="w-2 h-2 bg-[#006def]" />
             <span>PRECAST ENGINEERING & DRAFTING CAPABILITIES DIRECTORY</span>
           </h4>
           <div className="flex flex-wrap gap-2 text-[10px] font-mono font-bold text-white/70 uppercase">
             {originalSeoKeywords.map((kw, i) => (
               <span
                 key={i}
-                className="px-2.5 py-1 bg-white/10 hover:bg-[#0271f1] hover:text-white border border-white/15 transition-colors cursor-default"
+                className="px-2.5 py-1 bg-white/10 hover:bg-[#006def] hover:text-white border border-white/15 transition-colors cursor-default"
               >
                 {kw}
               </span>
@@ -368,14 +368,14 @@ export default function ExtraordinaryFooter() {
       {/* ========================================================================= */}
       {/* SECTION B: NEW PRECASTTECH OPERATING SYSTEM FOOTER (FROM SCREENSHOT)       */}
       {/* ========================================================================= */}
-      <div className="w-full bg-[#023380] px-6 sm:px-10 md:px-14 lg:px-20 py-12 space-y-9">
+      <div className="w-full bg-[#002f7a] px-6 sm:px-10 md:px-14 lg:px-20 py-12 space-y-9">
 
         {/* 1. SEVEN DIRECTORY COLUMNS */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 border-b border-white/10 pb-9">
           {newFooterColumns.map((col) => (
             <div key={col.title} className="space-y-4">
               <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
-                <span className="w-2 h-2 bg-[#0271f1]" />
+                <span className="w-2 h-2 bg-[#006def]" />
                 <span>{col.title}</span>
               </h3>
               <ul className="space-y-2">
@@ -419,8 +419,8 @@ export default function ExtraordinaryFooter() {
 
             {/* GENERAL */}
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#0271f1]">
-                <Mail className="w-3 h-3 text-[#0271f1]" />
+              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#006def]">
+                <Mail className="w-3 h-3 text-[#006def]" />
                 <span>GENERAL</span>
               </div>
               <a
@@ -433,8 +433,8 @@ export default function ExtraordinaryFooter() {
 
             {/* SALES */}
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#0271f1]">
-                <Mail className="w-3 h-3 text-[#0271f1]" />
+              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#006def]">
+                <Mail className="w-3 h-3 text-[#006def]" />
                 <span>SALES</span>
               </div>
               <a
@@ -447,8 +447,8 @@ export default function ExtraordinaryFooter() {
 
             {/* PHONE */}
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#0271f1]">
-                <Phone className="w-3 h-3 text-[#0271f1]" />
+              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#006def]">
+                <Phone className="w-3 h-3 text-[#006def]" />
                 <span>PHONE</span>
               </div>
               <a
@@ -461,8 +461,8 @@ export default function ExtraordinaryFooter() {
 
             {/* HEAD OFFICE */}
             <div className="space-y-1">
-              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#0271f1]">
-                <MapPin className="w-3 h-3 text-[#0271f1]" />
+              <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#006def]">
+                <MapPin className="w-3 h-3 text-[#006def]" />
                 <span>HEAD OFFICE</span>
               </div>
               <p className="text-xs font-bold text-white/80 leading-tight">
@@ -478,7 +478,7 @@ export default function ExtraordinaryFooter() {
         <div className="space-y-4 border-b border-white/10 pb-4">
           <div className="space-y-1">
             <h4 className="text-white text-[10px] font-mono font-black uppercase tracking-[0.25em] flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#0271f1]" />
+              <span className="w-2 h-2 bg-[#006def]" />
               <span>WHERE WE OPERATE</span>
             </h4>
             <p className="text-white/80 font-medium text-sm leading-relaxed max-w-4xl">
@@ -513,7 +513,7 @@ export default function ExtraordinaryFooter() {
                   href={item.href}
                   className="flex items-center gap-1.5 text-[11px] font-bold text-white/80 hover:text-white uppercase tracking-wider transition-colors"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#0271f1]" />
+                  <Icon className="w-3.5 h-3.5 text-[#006def]" />
                   <span>{item.label}</span>
                 </Link>
               );
@@ -536,14 +536,14 @@ export default function ExtraordinaryFooter() {
 
         {/* 5. BUILT TO INDUSTRY STANDARDS STRIP */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-white/10 pb-2 text-white/80">
-          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#0271f1] shrink-0">
+          <span className="text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#006def] shrink-0">
             BUILT TO
           </span>
           <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             {builtToStandards.map((std) => (
               <span
                 key={std}
-                className="text-[10px] font-mono font-bold tracking-wider text-white hover:text-[#0271f1] transition-colors"
+                className="text-[10px] font-mono font-bold tracking-wider text-white hover:text-[#006def] transition-colors"
               >
                 {std}
               </span>
@@ -589,7 +589,7 @@ export default function ExtraordinaryFooter() {
                     href={soc.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#0271f1] transition-colors"
+                    className="hover:text-[#006def] transition-colors"
                   >
                     {soc.name}
                   </a>

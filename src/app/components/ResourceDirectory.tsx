@@ -2,8 +2,8 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { 
-  FolderKanban, Video, BookOpen, Leaf, Mail, FileText, 
+import {
+  FolderKanban, Video, BookOpen, Leaf, Mail, FileText,
   GraduationCap, MonitorPlay, Mic, Award, FileDigit, Accessibility, Play,
   SkipForward, SkipBack, PlayCircle
 } from 'lucide-react';
@@ -12,7 +12,7 @@ import { getAssetUrl } from '@/lib/utils';
 const resourceColumns = [
   {
     links: [
-      { name: 'PROJECTS', href: '#projects', highlight: true, icon: <FolderKanban className="w-4 h-4" /> },
+      { name: 'PROJECTS', href: '#projects', badge: 'PORTFOLIO', icon: <FolderKanban className="w-4 h-4" /> },
       { name: 'VIDEOS', href: '#videos', icon: <Video className="w-4 h-4" /> },
       { name: 'CATALOGS', href: '#catalogs', icon: <BookOpen className="w-4 h-4" /> },
       { name: 'GREENREPORTS', href: '#sustainability', icon: <Leaf className="w-4 h-4" /> },
@@ -22,7 +22,7 @@ const resourceColumns = [
   },
   {
     links: [
-      { name: 'CONTINUING ED', href: '#education', highlight: true, icon: <GraduationCap className="w-4 h-4" /> },
+      { name: 'CONTINUING ED', href: '#education', badge: 'PE CREDITS', icon: <GraduationCap className="w-4 h-4" /> },
       { name: 'WEBINARS', href: '#webinars', icon: <MonitorPlay className="w-4 h-4" /> },
       { name: 'DETAILED PODCAST', href: '#podcasts', italic: true, icon: <Mic className="w-4 h-4" /> },
       { name: 'CERTIFICATIONS', href: '#certs', icon: <Award className="w-4 h-4" /> },
@@ -64,119 +64,103 @@ export const ResourceDirectory = () => {
   };
 
   return (
-    <section className="w-full bg-[#023380] text-white overflow-hidden">
-      <div className="w-full px-10 md:px-20 pt-36 mb-16">
-        
-        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-stretch">
-          
-          {/* LEFT PANEL: HEADING + DIRECTORY (Spans 7 Columns) */}
-          <div className="xl:col-span-7 flex flex-col justify-between space-y-10">
-            
-            {/* Title Block */}
-            <div className="max-w-xl">
-              <div className="flex items-center gap-3 text-[#0271f1] font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
-              </div>
-              <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
-                BEYOND <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0271f1] to-[#0271f1]">
-                  SPECIFICATIONS.
-                </span>
-              </h2>
-              <p className="mt-4 text-white/80 font-medium leading-relaxed text-sm md:text-base">
-                Access our master library of engineering reports, structural videos, and technical podcasts.
-              </p>
-            </div>
+    <section className="w-full bg-[#002f7a] text-white overflow-hidden pt-8 md:pt-10 pb-16 md:pb-20">
+      <div className="w-full px-10 md:px-20">
 
-            {/* Frosted Glass Link Directory Box */}
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-10 shadow-[0_20px_50px_rgba(2,51,128,0.3)] flex-grow">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center">
-                {resourceColumns.map((col, idx) => (
-                  <ul key={idx} className="space-y-4">
-                    {col.links.map((link) => (
-                      <li key={link.name}>
-                        <Link 
-                          href={link.href}
-                          className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-[#0271f1] transition-colors"
-                        >
-                          <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-[#0271f1]/20 group-hover:border-[#0271f1] transition-all duration-300 shrink-0">
-                            {link.icon}
-                          </div>
-                          
-                          <span className={`uppercase truncate ${link.italic ? 'italic' : ''}`}>
-                            {link.name}
+        {/* Title Block */}
+        <div className="max-w-2xl mb-10">
+          <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
+            BEYOND
+            <span className="text-transparent pl-1 bg-clip-text bg-gradient-to-r from-[#006def] to-[#006def]">
+              SPECIFICATIONS...
+            </span>
+          </h2>
+          <p className="mt-4 text-white/80 font-medium leading-relaxed text-[14px] md:text-base">
+            Access our master library of engineering reports, structural calculations, CAD blueprints, and technical podcasts.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-stretch">
+
+          {/* LEFT PANEL: FROSTED GLASS DIRECTORY BOX (Spans 7 Columns) */}
+          <div className="xl:col-span-7 bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-10 shadow-[0_20px_50px_rgba(0,47,122,0.3)] flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center">
+              {resourceColumns.map((col, idx) => (
+                <ul key={idx} className="space-y-4">
+                  {col.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-sm"
+                      >
+                        <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-[#006def]/20 group-hover:border-[#006def] transition-all duration-300 shrink-0">
+                          {link.icon}
+                        </div>
+
+                        <span className={`uppercase truncate ${link.italic ? 'italic' : ''}`}>
+                          {link.name}
+                        </span>
+
+                        {link.badge && (
+                          <span className="ml-auto text-[8px] font-mono font-bold bg-white text-[#002f7a] px-2 py-0.5 tracking-widest shadow-sm shrink-0">
+                            {link.badge}
                           </span>
-
-                          {link.highlight && (
-                            <span className="ml-auto text-[8px] font-mono font-bold bg-white text-[#023380] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
-                              NEW_NODE
-                            </span>
-                          )}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ))}
-              </div>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ))}
             </div>
-
           </div>
 
-          {/* RIGHT PANEL: PLAYLIST VIDEO PLAYER (Spans 5 Columns) */}
-          <div className="xl:col-span-5 w-full h-full min-h-[400px]">
-            {/* FIXED: Removed ALL black. Now using a pure translucent glass layer (bg-white/5) over the deep blue background */}
-            <div className="relative w-full h-full overflow-hidden group 0">
-              
-              {/* Absolute Positioning Wrapper */}
-              <div className="absolute inset-0 p-1.5">
-                <video 
-                  key={currentVideoIndex}
-                  ref={videoRef}
-                  autoPlay 
-                  muted 
-                  playsInline
-                  preload="auto"
-                  suppressHydrationWarning
-                  onEnded={playNextVideo}
-                  className="w-full h-full object-contain"
+          {/* RIGHT PANEL: PLAYLIST VIDEO PLAYER & CONTROLS (Spans 5 Columns) */}
+          <div className="xl:col-span-5 flex flex-col justify-between">
+            {/* FIXED SIZE VIDEO CONTAINER */}
+            <div className="relative w-full aspect-video bg-white/5 backdrop-blur-md border border-white/20 overflow-hidden flex items-center justify-center shadow-[0_20px_50px_rgba(0,47,122,0.3)] flex-1 min-h-[260px]">
+              <video
+                key={currentVideoIndex}
+                ref={videoRef}
+                autoPlay
+                muted
+                playsInline
+                preload="metadata"
+                suppressHydrationWarning
+                onEnded={playNextVideo}
+                className="w-full h-full object-contain"
+              >
+                <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
+              </video>
+            </div>
+
+            {/* INTERACTIVE CONTROLS BAR (OUTSIDE OF VIDEO) */}
+            <div className="mt-4 flex items-center justify-between p-3.5 bg-white/10 backdrop-blur-xl border border-white/20">
+              {/* Playlist Counter */}
+              <div className="flex items-center gap-2.5 px-3 py-1 bg-white/10 border border-white/15">
+                <PlayCircle className="w-4 h-4 text-[#006def]" />
+                <span className="font-mono text-xs tracking-widest text-white uppercase font-bold">
+                  VIDEO {currentVideoIndex + 1} / {videoPlaylist.length}
+                </span>
+              </div>
+
+              {/* Prev / Next Navigation Buttons */}
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={playPrevVideo}
+                  className="flex justify-center items-center h-9 w-10 bg-white/10 hover:bg-[#006def] border border-white/20 hover:border-[#006def] text-white transition-all duration-300 group/btn"
+                  aria-label="Previous Video"
                 >
-                  <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
-                </video>
+                  <SkipBack className="w-4 h-4 group-hover/btn:-translate-x-0.5 transition-transform" />
+                </button>
+
+                <button
+                  onClick={playNextVideo}
+                  className="flex justify-center items-center h-9 w-10 bg-white/10 hover:bg-[#006def] border border-white/20 hover:border-[#006def] text-white transition-all duration-300 group/btn"
+                  aria-label="Next Video"
+                >
+                  <SkipForward className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                </button>
               </div>
-
-        
-
-              {/* BOTTOM HUD: Playlist Tracker & Prev/Next Icons */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                
-                {/* Playlist Counter - Replaced black with frosted white glass */}
-                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 border border-white/20 shadow-sm">
-                  <PlayCircle className="w-3 h-3 text-[#0271f1]" />
-                  <span className="font-mono text-[9px] tracking-widest text-white uppercase font-bold">
-                    {currentVideoIndex + 1} / {videoPlaylist.length}
-                  </span>
-                </div>
-
-                {/* Icon-only Navigation Buttons - Replaced black with frosted white glass */}
-                <div className="flex items-center gap-2">
-                  <button 
-                    onClick={playPrevVideo}
-                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#0271f1] backdrop-blur-md border border-white/20 hover:border-[#0271f1] text-white hover:text-[#023380] transition-all duration-300 group/btn shadow-sm"
-                    aria-label="Previous Video"
-                  >
-                    <SkipBack className="w-4 h-4 group-hover/btn:-translate-x-0.5 transition-transform" />
-                  </button>
-
-                  <button 
-                    onClick={playNextVideo}
-                    className="flex justify-center items-center w-10 bg-white/10 hover:bg-[#0271f1] backdrop-blur-md border border-white/20 hover:border-[#0271f1] text-white hover:text-[#023380] transition-all duration-300 group/btn shadow-sm"
-                    aria-label="Next Video"
-                  >
-                    <SkipForward className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
-                  </button>
-                </div>
-
-              </div>
-
             </div>
           </div>
 

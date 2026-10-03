@@ -38,39 +38,39 @@ const targetAudiences = [
 export default function TargetAudience() {
   return (
     <section className="w-full bg-white overflow-hidden relative">
-      
+
       {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#023380]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#0271f1]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#002f7a]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#006def]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="w-full px-10 md:px-20 py-4 relative z-10">
-        
+
         {/* 1. HEADER SECTION (Using your exact phrasing) */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 gap-12">
-          
+
           <div className="space-y-6 max-w-4xl">
- 
-            
-            <motion.h2 
+
+
+            <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#023380]"
+              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#002f7a]"
             >
               Precisely who <br className="hidden md:block" />
-              <span className="text-[#0271f1]">is PEG for?</span>
+              <span className="text-[#006def]">is PEG for?</span>
             </motion.h2>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="lg:max-w-md border-l-4 border-[#0271f1] pl-6"
+            className="lg:max-w-md border-l-4 border-[#006def] pl-6"
           >
-            <p className="text-[#023380] font-black text-xl md:text-lg uppercase tracking-tight leading-snug">
+            <p className="text-[#002f7a] font-black text-xl md:text-lg uppercase tracking-tight leading-snug">
               Individuals or establishments associated with Precast & Concrete for further advancement seamlessly & effectively.
             </p>
           </motion.div>
@@ -86,9 +86,9 @@ export default function TargetAudience() {
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
               // CARD HOVER STATE: Default Dark Blue -> Hovers to Bright Blue
-              className="group relative bg-[#023380] hover:bg-[#0271f1] px-10 py-6 transition-all duration-500 cursor-pointer flex flex-col h-[380px] overflow-hidden shadow-lg shadow-[#023380]/10 hover:shadow-[0_20px_50px_rgba(2,113,241,0.4)]"
+              className="group relative bg-[#002f7a] hover:bg-[#006def] px-10 py-6 transition-all duration-500 cursor-pointer flex flex-col h-[380px] overflow-hidden shadow-lg shadow-[#002f7a]/10 hover:shadow-[0_20px_50px_rgba(0, 109, 239,0.4)]"
             >
-              
+
               {/* LARGE BACKGROUND NUMBER */}
               <div className="absolute -top-6 -right-6 font-black text-[120px] text-white opacity-5 group-hover:opacity-10 transition-opacity duration-500 pointer-events-none select-none">
                 {audience.id}
@@ -99,7 +99,7 @@ export default function TargetAudience() {
                 <div className="text-white mb-6 transform group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500">
                   {audience.icon}
                 </div>
-                <p className="text-[#0271f1] bg-white inline-block px-3 py-1 font-black text-[10px] uppercase tracking-widest transition-colors duration-500">
+                <p className="text-[#006def] bg-white inline-block px-3 py-1 font-black text-[10px] uppercase tracking-widest transition-colors duration-500">
                   {audience.subtitle}
                 </p>
               </div>
@@ -113,7 +113,7 @@ export default function TargetAudience() {
                   {audience.description}
                 </p>
               </div>
-              
+
             </motion.div>
           ))}
         </div>

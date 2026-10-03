@@ -13,20 +13,20 @@ export const metadata = {
 
 export default function PrecastBlogListingPage() {
   return (
-    <main className="min-h-screen bg-white text-[#023380] selection:bg-[#0271f1] selection:text-white pt-30">
+    <main className="min-h-screen bg-white text-[#002f7a] selection:bg-[#006def] selection:text-white pt-30">
       {/* TOP DIRECTORY HEADER BAR */}
-      <div className="bg-white border-b border-[#023380]/10 py-1 shadow-sm">
+      <div className="bg-white border-b border-[#002f7a]/10 py-1 shadow-sm">
         <div className="w-full px-10 md:px-20 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#023380] hover:text-[#0271f1] uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-[#002f7a] hover:text-[#006def] uppercase tracking-wider transition-colors"
           >
-            <ArrowLeft className="w-4 h-4 text-[#0271f1]" />
+            <ArrowLeft className="w-4 h-4 text-[#006def]" />
             <span>Return to Home Page</span>
           </Link>
 
-          <div className="flex items-center gap-2 text-xs font-extrabold text-[#023380] uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full border border-[#0271f1]/20 shadow-sm">
-            <ShieldCheck className="w-4 h-4 text-[#0271f1]" />
+          <div className="flex items-center gap-2 text-xs font-extrabold text-[#002f7a] uppercase tracking-widest bg-blue-50 px-3.5 py-1.5 rounded-full border border-[#006def]/20 shadow-sm">
+            <ShieldCheck className="w-4 h-4 text-[#006def]" />
             <span>Precast Knowledge Directory</span>
           </div>
         </div>

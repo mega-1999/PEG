@@ -19,15 +19,15 @@ export default function SponsorMarquee() {
     const infiniteLogos = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
 
     return (
-        <section className="w-full bg-white py-4 border-t border-b border-[#023380]/10 overflow-hidden select-none">
-            <div className="">
+        <section className="w-full bg-white py-16 md:py-20 border-t border-b border-[#002f7a]/10 overflow-hidden select-none">
+            <div className="w-full">
 
                 {/* STRUCTURAL ENGINEERING HEADER */}
-                <div className="flex flex-col items-center text-center mb-12 px-6">
-                    <h2 className="text-xl md:text-3xl font-black text-[#023380] uppercase tracking-tighter leading-none">
-                        Proudly Supporting <span className="text-[#0271f1]">& Sponsoring</span>
+                <div className="flex flex-col items-center text-center mb-2 px-6">
+                    <h2 className="text-xl md:text-3xl font-black text-[#002f7a] uppercase tracking-tighter leading-none">
+                        Proudly Supporting <span className="text-[#006def]">& Sponsoring</span>
                     </h2>
-                    <div className="w-12 h-1 bg-[#0271f1] mt-4" />
+                    <div className="w-12 h-1 bg-[#006def] mt-2" />
                 </div>
 
                 {/* MARQUEE RUNWAY WRAPPER */}
@@ -45,7 +45,7 @@ export default function SponsorMarquee() {
                             ease: "linear",
                             repeat: Infinity,
                         }}
-                        className="flex items-center w-max   whitespace-nowrap will-change-transform"
+                        className="flex items-center w-max gap-8 md:gap-14 whitespace-nowrap will-change-transform"
                     >
                         {infiniteLogos.map((logo, i) => (
                             <div

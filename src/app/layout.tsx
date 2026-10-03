@@ -67,13 +67,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.precastengineering.org",
-    title: "Precast Concrete Engineering, Drawings & Drafting Services | PEG",
+    title: "Precast Concrete Engineering, Drawings | PEG",
     description:
       "Certified Precast Concrete Engineers offering structural design, drafting, testing, NPCA certifications, and engineering drawings for culverts, manholes, catch basins, trenches, septic tanks, and grease traps.",
     siteName: "Precast Engineering Group",
     images: [
       {
-        url: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/images/Box_Culvert/13.jpeg",
+        url: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/peg_logo.png",
         width: 1200,
         height: 630,
         alt: "PEG Precast Engineering & Drawings",

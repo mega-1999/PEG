@@ -119,10 +119,6 @@ export const Navbar = () => {
         </div>
         <div className="h-full flex justify-end items-center gap-6 pr-14 xl:pr-0 text-[11px] font-bold tracking-wider">
 
-          <Link href={'/blog'} className="hover:text-blue-200 transition-colors uppercase font-black text-[11px] tracking-wider px-2.5 py-1 bg-white/15 hover:bg-white/25 rounded border border-white/25 flex items-center gap-1 shadow-sm">
-            BLOG
-          </Link>
-
           <Link href={'/admin'}>
             <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
               PORTALS <ChevronDown className="w-3 h-3" />
@@ -284,6 +280,15 @@ export const Navbar = () => {
                 </div>
               );
             })}
+
+            {/* BLOG LINK DIRECTLY IN MAIN NAVBAR AFTER ALL MENUS */}
+            <Link
+              href="/blog"
+              onClick={() => setActiveMenu(null)}
+              className="h-full px-3 2xl:px-4 whitespace-nowrap flex items-center text-[12px] font-black uppercase tracking-tight text-[#023380] border-t-4 border-transparent hover:text-[#0271f1] hover:border-[#0271f1] transition-all duration-200"
+            >
+              BLOG
+            </Link>
           </nav>
 
           {/* Desktop CTA Button - Shifted to xl breakpoint */}
@@ -374,6 +379,17 @@ export const Navbar = () => {
                   </div>
                 );
               })}
+
+              {/* DIRECT BLOG LINK IN MOBILE DRAWER */}
+              <div className="border-b border-[#023380]/5">
+                <Link
+                  href="/blog"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="w-full flex justify-between items-center px-6 py-4 text-xs font-black uppercase tracking-wider text-[#023380] hover:text-[#0271f1] hover:bg-[#023380]/5 transition-colors"
+                >
+                  <span>BLOG</span>
+                </Link>
+              </div>
             </div>
 
             <div className="p-6 border-t border-[#023380]/10">

@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Mail } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
-import { FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 
-const socialLinks = [
-  { id: "LINKEDIN", icon: <FaLinkedinIn className="w-5 h-5" />, href: "https://linkedin.com", isExternal: true },
-  { id: "X_NETWORK", icon: <FaTwitter className="w-5 h-5" />, href: "https://x.com", isExternal: true },
+const quickActions = [
+  { id: "CALL", icon: <Phone className="w-5 h-5" />, href: "tel:+16314521111", isExternal: false },
   { id: "YOUTUBE", icon: <FaYoutube className="w-5 h-5" />, href: "https://youtube.com", isExternal: true },
   { id: "CONTACT", icon: <Mail className="w-5 h-5" />, href: "/#contact", isExternal: false }
 ];
@@ -41,7 +40,7 @@ export default function FloatingTelemetryHub() {
 
       {/* 1. SOCIAL MEDIA QUICK LINKS */}
       <div className="flex flex-col items-end gap-2 pointer-events-auto">
-        {socialLinks.map((social, idx) => (
+        {quickActions.map((social, idx) => (
           <Link 
             key={idx} 
             href={social.href} 

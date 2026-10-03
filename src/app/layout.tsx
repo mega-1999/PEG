@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     title: "Precast Concrete Engineering & Drawings | PEG",
     description:
       "Certified Precast Concrete Engineers delivering structural calculations, drafting, testing, certifications, and drawings for precast concrete structures.",
-    images: ["https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/images/Box_Culvert/13.jpeg"],
+    images: ["https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/peg_logo.png"],
   },
   robots: {
     index: true,

@@ -233,6 +233,7 @@ export const Navbar = () => {
               width={260}
               height={80}
               className="h-14 md:h-20 w-auto object-contain"
+              style={{ width: "auto" }}
               priority
             />
             <span className="text-[10px] md:text-[11.5px] font-bold tracking-wider text-[#002f7a] uppercase group-hover:text-[#006def] transition-colors leading-tight mt-0.5 font-mono">
@@ -395,7 +396,14 @@ export const Navbar = () => {
           >
             <div className="flex justify-between items-center p-6 border-b border-[#002f7a]/10">
               <div className="flex flex-col">
-                <Image src={getAssetUrl("/peg_logo.png")} alt="PEG" width={150} height={42} className="h-9 w-auto object-contain" />
+                <Image
+                  src={getAssetUrl("/peg_logo.png")}
+                  alt="PEG"
+                  width={150}
+                  height={42}
+                  className="h-9 w-auto object-contain"
+                  style={{ width: "auto" }}
+                />
                 <span className="text-[9.5px] font-bold tracking-wider text-[#002f7a] uppercase font-mono leading-none mt-1.5">
                   Advanced Precast Engineering..
                 </span>

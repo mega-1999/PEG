@@ -19,7 +19,7 @@ export default function SponsorMarquee() {
     const infiniteLogos = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
 
     return (
-        <section className="w-full bg-white py-10 md:py-14 border-t border-b border-[#002f7a]/10 overflow-hidden select-none">
+        <section className="w-full bg-white py-8 md:py-10 border-t border-b border-[#002f7a]/10 overflow-hidden select-none">
             <div className="w-full">
 
                 {/* STRUCTURAL ENGINEERING HEADER */}

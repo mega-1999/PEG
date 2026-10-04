@@ -73,166 +73,141 @@ const exhibitionData = [
   }
 ];
 
-type ViewMode = 'grid' | 'stack';
-
 export default function MeetAtShows() {
-  const [viewMode, setViewMode] = useState<ViewMode>('grid');
+  // 4x duplication ensures perfect seamless -50% loop translation
+  const loopExhibitions = [
+    ...exhibitionData,
+    ...exhibitionData,
+    ...exhibitionData,
+    ...exhibitionData
+  ];
 
   return (
-    <section id="shows" className="w-full py-16 md:py-20 bg-slate-50 px-10 md:px-20 overflow-hidden">
-      <div className="">
+    <section id="shows" className="w-full py-8 md:py-10 bg-white border-t border-[#002f7a]/10 overflow-hidden relative select-none">
 
-        {/* HEADER & CONTROLS */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-slate-200 pb-10 gap-8">
+      {/* CAD WATERMARK BACKGROUND */}
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(#002f7a 1.5px, transparent 1.5px), linear-gradient(to right, #002f7a 0.5px, transparent 0.5px), linear-gradient(to bottom, #002f7a 0.5px, transparent 0.5px)`,
+          backgroundSize: '40px 40px, 200px 200px, 200px 200px'
+        }}
+      />
 
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <p className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter uppercase leading-none">
-                Meet at <span style={{ WebkitTextStroke: "1px #006def", color: "transparent" }}>the Shows.</span>
-              </p>
+      {/* HEADER SECTION */}
+      <div className="w-full px-10 md:px-20 relative z-10 mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#002f7a]/10 pb-8">
+
+          <div className="space-y-3 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
+              <Globe className="w-3.5 h-3.5" /> Worldwide Industry Presence
             </div>
+            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter uppercase leading-[0.9]">
+              Meet At <span className="text-[#006def]">The Shows.</span>
+            </h2>
+            <p className="text-[#002f7a] font-semibold text-sm md:text-base max-w-2xl leading-relaxed">
+              Connect with our licensed precast structural engineers live on the exhibition floor across major international expos.
+            </p>
+          </div>
 
-            {/* NEW TAGLINE ADDED HERE */}
-            <p className="text-xl md:text-lg font-black text-[#002f7a]/80 tracking-tight uppercase border-l-4 border-[#006def] pl-4">
+          <div className="border-l-4 border-[#006def] pl-5 py-1">
+            <p className="text-[#002f7a] font-black text-sm md:text-base uppercase tracking-tight leading-snug">
               Make Your Presence Count.
             </p>
           </div>
 
-          <div className="flex flex-col items-end gap-6">
-            <div className="hidden md:block text-right">
-              <div className="flex justify-end items-center gap-3 text-[#002f7a] font-black text-xs tracking-widest uppercase mb-2">
-                <Globe className="w-4 h-4 text-[#006def] animate-pulse" /> Worldwide Presence
-              </div>
-              <p className="text-[#006def] font-mono text-[9px] uppercase tracking-widest">Connect with our PE's live on the floor.</p>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <div className="flex bg-white border border-slate-200 p-1 shadow-sm">
-                {[
-                  { mode: 'grid', icon: LayoutGrid, title: 'Column View' },
-                  { mode: 'stack', icon: Rows3, title: 'List View' }
-                ].map(item => {
-                  const Icon = item.icon;
-                  return (
-                    <button
-                      key={item.mode}
-                      onClick={() => setViewMode(item.mode as ViewMode)}
-                      className={`p-2.5 transition-all duration-300 ${viewMode === item.mode ? 'bg-[#002f7a]/5 text-[#002f7a] shadow-inner border border-[#002f7a]/10' : 'text-[#006def] hover:text-[#006def]'}`}
-                      title={item.title}
-                    >
-                      <Icon className="w-5 h-5" />
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
 
-        {/* DYNAMIC LAYOUT CONTAINER */}
-        <div className={`
-            transition-all duration-500 ease-in-out
-            ${viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-4' : ''}
-            ${viewMode === 'stack' ? 'flex flex-col gap-10 pt-4 max-w-5xl mx-auto' : ''}
-          `}
+      {/* ONE-ROW INFINITE SLIDING MARQUEE RUNWAY */}
+      <div className="relative w-full overflow-hidden py-2 group/marquee">
+
+        {/* High-density gradient masks for clean entry and exit fading */}
+        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
+
+        {/* INFINITE LOOP RUNWAY */}
+        <motion.div
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 60, // Slow, elegant gliding speed
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          className="flex items-stretch gap-6 w-max whitespace-nowrap will-change-transform px-4"
         >
-          {exhibitionData.map((show, idx) => (
-            <motion.div
-              key={idx}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className={`
-                group relative bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-[0_20px_50px_rgba(0, 47, 122,0.1)] hover:border-slate-300 transition-all duration-500
-                ${viewMode === 'grid' ? 'flex flex-col h-full' : ''}
-                ${viewMode === 'stack' ? 'flex flex-col md:flex-row h-auto w-full' : ''}
-              `}
+          {loopExhibitions.map((show, idx) => (
+            <div
+              key={`show-${show.tag}-${idx}`}
+              className="w-[290px] sm:w-[330px] bg-blue-50/80 hover:bg-[#002f7a] border border-[#006def]/20 hover:border-[#002f7a] text-[#002f7a] hover:text-white shadow-xs hover:shadow-2xl transition-all duration-500 flex flex-col justify-between shrink-0 group/card overflow-hidden cursor-pointer"
             >
-
-              {/* THE IMAGE/LOGO CONTAINER - Adjusted for smaller logo with padding */}
-              <div className={`relative overflow-hidden bg-slate-50 shrink-0 transition-all duration-500 border-b border-slate-100
-                ${viewMode === 'stack' ? 'w-full md:w-87.5 h-55 md:h-auto p-12' : 'w-full h-40 p-10'}
-              `}>
-                <div className="relative h-full w-full group-hover:scale-105 transition-transform duration-700 ease-out">
+              {/* TOP IMAGE / LOGO CONTAINER (Solid white for crisp logo clarity) */}
+              <div className="relative w-full h-36 bg-white p-6 flex items-center justify-center border-b border-[#002f7a]/10 transition-colors">
+                <div className="relative w-full h-full group-hover/card:scale-105 transition-transform duration-500">
                   <Image
                     src={getAssetUrl(show.img)}
                     alt={show.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 350px"
-                    className="object-contain" // Changed to contain so logos aren't cropped
+                    sizes="330px"
+                    className="object-contain p-2"
                   />
                 </div>
-                <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-white border border-slate-200 text-[#002f7a] text-[8px] font-black tracking-widest uppercase shadow-sm">
+
+                <span className="absolute top-3 left-3 px-2 py-0.5 bg-white border border-[#002f7a]/15 text-[#002f7a] text-[8px] font-mono font-bold tracking-widest uppercase shadow-xs">
                   {show.tag}
-                </div>
-                <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-white border border-slate-200 cursor-pointer text-[#002f7a] text-[8px] font-black tracking-widest uppercase shadow-sm">
-                  <Link href={show.link}>
-                    <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-                <div className="absolute bottom-0 right-4 z-10 text-[#002f7a] text-[8px] font-black tracking-widest uppercase shadow-sm">
-                  <div className="flex items-start gap-3">
-                    <Calendar className="w-3.5 h-3.5 text-[#006def] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#006def] text-[13px]">{show.date}</span>
-                  </div>
-                </div>
+                </span>
+
+                <a
+                  href={show.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-3 right-3 p-1.5 bg-white border border-[#002f7a]/15 text-[#002f7a] hover:text-[#006def] hover:border-[#006def] transition-colors shadow-xs"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                </a>
               </div>
 
               {/* DETAILED CONTENT AREA */}
-              <div className="relative px-8 pt-2 flex flex-col flex-1 bg-white z-10">
-
-                <h3 className="text-lg font-black text-[#002f7a] uppercase tracking-tighter group-hover:text-[#006def] transition-colors duration-300 leading-tight mb-6">
-                  {show.title}
-                </h3>
-
-                {/* Telemetry Data Box */}
-                {/* <div className="bg-slate-50 border border-slate-100 p-4 space-y-3 mb-6 group-hover:bg-[#002f7a]/5 group-hover:border-[#002f7a]/10 transition-colors duration-300">
-                  <div className="flex items-start gap-3">
-                    <Calendar className="w-3.5 h-3.5 text-[#006def] shrink-0 mt-0.5" />
-                    <span className="font-bold text-[#006def] text-[13px]">{show.date}</span>
+              <div className="p-4 flex flex-col justify-between flex-1 space-y-3 whitespace-normal">
+                <div>
+                  <div className="flex items-center gap-2 text-[#006def] group-hover/card:text-blue-200 text-[11px] font-mono font-bold mb-1.5 transition-colors">
+                    <Calendar className="w-3.5 h-3.5 shrink-0" />
+                    <span>{show.date}</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-3.5 h-3.5 text-[#006def] shrink-0 mt-0.5" />
-                    <span className="font-medium text-[#006def] text-[13px]">{show.location}</span>
+
+                  <h3 className="text-sm sm:text-base font-black text-[#002f7a] group-hover/card:text-white uppercase tracking-tight line-clamp-2 leading-snug transition-colors">
+                    {show.title}
+                  </h3>
+
+                  <div className="flex items-center gap-1.5 text-[#002f7a]/70 group-hover/card:text-white/80 text-[11px] font-semibold mt-1 transition-colors">
+                    <MapPin className="w-3 h-3 text-[#006def] group-hover/card:text-blue-200 shrink-0 transition-colors" />
+                    <span className="truncate">{show.location}</span>
                   </div>
-                </div> */}
+                </div>
 
-                {/* Multiline Description */}
-                {/* <div className="text-[#006def] text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
-                  {show.description.split('\n\n').map((paragraph, pIdx) => {
-                    const isBold = paragraph.includes("Early Bird") || paragraph.includes("Opening Hours");
-                    return (
-                      <p key={pIdx} className={isBold ? "font-bold text-[#002f7a]" : ""}>
-                        {paragraph}
-                      </p>
-                    )
-                  })}
-                </div> */}
-
-                {/* <div className="mt-auto">
+                <div className="pt-3 border-t border-[#002f7a]/10 group-hover/card:border-white/20 flex items-center justify-between transition-colors">
+                  <span className="text-[10px] font-mono font-bold text-[#002f7a]/60 group-hover/card:text-white/70 uppercase transition-colors">
+                    Official Expo
+                  </span>
                   <a
                     href={show.link}
-                    className="group/btn flex items-center justify-center gap-3 bg-[#002f7a] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#006def] transition-all duration-300 shadow-lg shadow-[#002f7a]/20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#006def] group-hover/card:text-blue-200 font-bold text-xs inline-flex items-center gap-1 group-hover/card:translate-x-0.5 transition-all"
                   >
-                    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    Event Info <ArrowRight className="w-3 h-3" />
                   </a>
-                </div> */}
-
+                </div>
               </div>
 
-              {/* ACCENT LINE LOGIC */}
-              <div className={`absolute bg-[#006def] transition-all duration-700 z-20 
-                ${viewMode === 'stack'
-                  ? 'left-0 top-0 h-full w-1 group-hover:w-2'
-                  : 'top-0 left-0 h-1 w-0 group-hover:w-full'
-                }
-              `} />
-            </motion.div>
+              {/* Top Accent Line */}
+              <div className="h-0.5 w-full bg-[#006def] group-hover/card:bg-white opacity-0 group-hover/card:opacity-100 transition-all duration-300" />
+            </div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
+
     </section>
   );
 }

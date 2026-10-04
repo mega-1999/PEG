@@ -111,7 +111,7 @@ const engineeringServices = [
 
 export default function EngineeringExecuted() {
   return (
-    <section className="w-full bg-white py-16 md:py-20 border-b border-[#002f7a]/10 overflow-hidden">
+    <section className="w-full bg-white py-8 md:py-10 border-b border-[#002f7a]/10 overflow-hidden">
       <div className="w-full px-10 md:px-20">
 
         {/* HEADER: Massive Brand Statement */}

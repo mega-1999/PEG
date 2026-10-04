@@ -127,6 +127,7 @@ export default function PegServices() {
                     muted
                     playsInline
                     preload="metadata"
+                    suppressHydrationWarning
                     poster={service.image}
                     className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                   >

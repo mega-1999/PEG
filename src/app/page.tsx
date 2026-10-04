@@ -29,7 +29,6 @@ import PegResourceGrid from "./components/PegResourceGrid";
 import HexagonLogoShowcase from "./components/HexagonLogoShowcase";
 import ManufacturingHub from "./components/ManufacturingHub";
 import EngineeringExecuted from "./components/EngineeringExecuted";
-import InnovativeContactComponent from "./components/InnovativeContactComponent";
 import ContactTerminal from "./components/ContactTerminal";
 import MembershipBox from "./components/MembershipBox";
 import PegServices from "./components/PegServices";
@@ -53,7 +52,7 @@ export default function Home() {
       <EngineeringExecuted />
 
       {/* 4. PRODUCTS & APPLICATIONS */}
-      <div className="w-full bg-[#002f7a] py-16 md:py-20 border-b border-[#002f7a]/10  text-center relative z-20">
+      <div className="w-full bg-[#002f7a] py-8 md:py-10 border-b border-[#002f7a]/10  text-center relative z-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#006def] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#006def]">
           Engineered Portfolios
         </div>
@@ -73,6 +72,10 @@ export default function Home() {
       <section id="portal" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
         <LoginGateway />
       </section>
+      <TargetAudience />
+      <MeetAtShows />
+      <MembershipBox />
+      <PrecastersGoDigital />
       <TrenchingSystem />
       <RetainingWallComponent />
       <MarinaSystemComponent />
@@ -80,29 +83,17 @@ export default function Home() {
 
       {/* 5. MANUFACTURING & OPERATIONS SUPPORT */}
       <ManufacturingHub />
-      <TargetAudience />
-      <MembershipBox />
       <SeamlessConnection />
-
-
-
-
-
-      <PegResourceGrid />
       <PrecastBlogSection />
       <AgencySlider />
       <ContentSection />
       <DotMatrixSlider />
-      <PegLocations />
       <HexagonLogoShowcase />
-      <PrecastersGoDigital />
-      <MeetAtShows />
       <FuturisticCTA />
 
-      <section id="contact" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
-        <ContactTerminal />
-        <InnovativeContactComponent />
-      </section>
+      <PegLocations />
+      <PegResourceGrid />
+      <ContactTerminal />
     </main>
   );
 }

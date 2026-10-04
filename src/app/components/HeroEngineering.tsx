@@ -52,7 +52,7 @@ const HeroEngineering = () => {
   };
 
   return (
-    <section className="relative w-full py-8 md:py-10 flex flex-col items-center justify-center border-b border-white/10 bg-[#002f7a] text-white overflow-hidden">
+    <section className="relative w-full py-16 md:py-20 flex flex-col items-center justify-center border-b border-white/10 bg-[#002f7a] text-white overflow-hidden">
 
       {/* 1. THE GRID SYSTEM */}
       <div className="absolute inset-0 -z-10 opacity-[0.04] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>

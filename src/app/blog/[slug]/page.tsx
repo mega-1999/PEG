@@ -144,6 +144,9 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
                 autoPlay
                 muted
                 loop
+                playsInline
+                preload="metadata"
+                suppressHydrationWarning
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4 bg-[#002f7a]/90 backdrop-blur-md px-3.5 py-1.5 rounded-none text-white text-xs font-bold flex items-center gap-2 border border-white/20">

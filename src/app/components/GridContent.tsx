@@ -69,7 +69,7 @@ const technicalData = [
 
 const GridContent = () => {
     return (
-        <section id="technical-vault" className="w-full bg-[#002f7a] text-white overflow-hidden py-8 md:py-10 border-b border-white/10">
+        <section id="technical-vault" className="w-full bg-[#002f7a] text-white overflow-hidden py-16 md:py-20 border-b border-white/10">
             <div className="w-full px-10 md:px-20">
 
                 {/* HEADER: Brutalist Style */}

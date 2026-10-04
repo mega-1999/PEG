@@ -30,13 +30,13 @@ const upgradeFeatures = [
 
 export default function DeliverableUpgrade() {
   return (
-    <section className="w-full bg-white text-[#002f7a] py-16 md:py-20 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
+    <section className="w-full bg-white text-[#002f7a] py-8 md:py-10 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
 
       {/* STANDARDIZED CONTAINER */}
       <div className="w-full px-10 md:px-20 relative z-10">
 
         {/* 1. HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 border-b border-[#002f7a]/10 pb-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 gap-6 border-b border-[#002f7a]/10">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               <ShieldCheck className="w-3.5 h-3.5" /> Production Acceleration

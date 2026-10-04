@@ -1,57 +1,70 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import {
-  Settings,
+  PenTool,
   GraduationCap,
   MapPin,
-  Cpu,
+  Calculator,
   Calendar,
   Newspaper,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+  Database
+} from "lucide-react";
 
 const pegResourceNodes = [
   {
-    title: "Technical Resources",
-    description: "Access engineering schematics, product specifications, load tables, and compliance standards for your structural project.",
-    icon: <Settings className="w-8 h-8" />,
-    linkText: "Access Blueprints",
+    id: "01",
+    title: "Shop Drawings",
+    subtitle: "Drafting & Detailing",
+    description: "Production-ready shop drawings, automated rebar layouts, and precast manufacturing detailing.",
+    icon: <PenTool className="w-5 h-5" />,
+    linkText: "View Drawings",
     href: "/#standards"
   },
   {
+    id: "02",
     title: "Learning Center",
-    description: "Expand your expertise with professional articles, engineering guides, technical specifications, and verified precast know-how.",
-    icon: <GraduationCap className="w-8 h-8" />,
+    subtitle: "Knowledge Vault",
+    description: "Expert engineering articles, technical guides, and verified precast know-how.",
+    icon: <GraduationCap className="w-5 h-5" />,
     linkText: "Explore Vault",
     href: "/blog"
   },
   {
-    title: "Regional Operations",
-    description: "Locate regional production plants, state engineering contacts, and localized logistical hubs for just-in-time delivery.",
-    icon: <MapPin className="w-8 h-8" />,
+    id: "03",
+    title: "Regional Hubs",
+    subtitle: "Offices & Plants",
+    description: "Production plants, state engineering contacts, and localized logistical hubs.",
+    icon: <MapPin className="w-5 h-5" />,
     linkText: "Find Facility",
     href: "/#locations"
   },
   {
-    title: "PEG Sync Platform",
-    description: "Deploy our proprietary engineering portal to access shop-floor drawings, product catalogs, and automated parametric calculators.",
-    icon: <Cpu className="w-8 h-8" />,
-    linkText: "Launch Portal",
-    href: "/admin"
+    id: "04",
+    title: "Structural Calcs",
+    subtitle: "PE Stamped Analysis",
+    description: "Certified engineering calculations, load-bearing verification, and finite element modeling.",
+    icon: <Calculator className="w-5 h-5" />,
+    linkText: "View Packages",
+    href: "/#standards"
   },
   {
+    id: "05",
     title: "Industry Events",
-    description: "Stay connected with the precast sector. Track upcoming technical webinars, live shop-floor exhibitions, and global code-compliance summits.",
-    icon: <Calendar className="w-8 h-8" />,
+    subtitle: "Summits & Shows",
+    description: "Upcoming technical webinars, live shop-floor exhibitions, and code summits.",
+    icon: <Calendar className="w-5 h-5" />,
     linkText: "View Schedule",
     href: "/#shows"
   },
   {
-    title: "Engineering Telemetry",
-    description: "Transmit your project criteria directly to our parametric workflow queue for instant engineering coordination.",
-    icon: <Newspaper className="w-8 h-8" />,
+    id: "06",
+    title: "Project Intake",
+    subtitle: "Telemetry Queue",
+    description: "Transmit your project criteria directly to our parametric workflow queue.",
+    icon: <Newspaper className="w-5 h-5" />,
     linkText: "Connect Now",
     href: "/#contact"
   }
@@ -59,77 +72,83 @@ const pegResourceNodes = [
 
 export default function PegResourceGrid() {
   return (
-    <section id="resources" className="w-full bg-[#002f7a] text-white py-16 md:py-20 px-10 md:px-20 relative overflow-hidden font-sans">
+    <section id="resources" className="w-full bg-[#002f7a] text-white py-8 md:py-10 px-10 md:px-20 relative overflow-hidden font-sans select-none border-t border-white/10">
 
       {/* BRAND ARCHITECTURE BACKGROUND GRID */}
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-      <div className="relative z-10 space-y-16">
+      <div className="relative z-10 space-y-6">
 
         {/* STRUCTURAL HEADER SECTION */}
-        <div className="max-w-3xl space-y-4">
-          <div className="w-16 h-1 bg-[#006def]" />
-          <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none">
-            Knowledge Hub <br />
-            <span className="text-white">& Infrastructure Ecosystem.</span>
-          </h2>
-          <p className="text-white/60 text-sm font-medium tracking-wide uppercase">
-            Precast Engineering Group Central Repositories
-          </p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-white/10 pb-4">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
+              <Database className="w-3.5 h-3.5 text-[#006def]" /> Central Repositories & Hub
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none text-white">
+              Knowledge Hub <span className="text-[#006def]">& Ecosystem.</span>
+            </h2>
+            <p className="text-white/80 text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
+              Precast Engineering Group digital repositories, state jurisdictions, telemetry queues, and verified know-how.
+            </p>
+          </div>
         </div>
 
-        {/* 6-CARD CORE GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* ALL 6 CARDS IN ONE ROW */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 md:gap-4">
           {pegResourceNodes.map((node, idx) => (
-            <motion.div
+            <motion.a
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              href={node.href}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.05, duration: 0.4 }}
-              whileHover={{ y: -8 }}
-              className="group relative bg-white border border-[#006def]/20 p-10 flex flex-col justify-between items-center text-center transition-all duration-300 shadow-xl"
+              transition={{ delay: idx * 0.05, duration: 0.3 }}
+              whileHover={{ y: -4 }}
+              className="group relative bg-white hover:bg-slate-50 text-[#002f7a] border border-white/20 hover:border-[#006def] p-4 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer rounded-sm overflow-hidden min-w-0"
             >
               {/* TOP BRAND ACCENT LINE */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
 
-              {/* CARD CORE CONTENT */}
-              <div className="flex flex-col items-center space-y-6 w-full">
+              <div>
+                {/* ICON LEFT + TITLE & SUBTITLE RIGHT */}
+                <div className="flex items-start gap-2.5 mb-3">
+                  <div className="p-2 bg-blue-50 text-[#006def] group-hover:bg-[#002f7a] group-hover:text-white transition-colors duration-300 shrink-0 border border-[#006def]/20 rounded-sm mt-0.5">
+                    {node.icon}
+                  </div>
 
-                {/* ICON BOX */}
-                <div className="p-4 bg-[#002f7a]/5 border border-[#002f7a]/10 text-[#002f7a] transition-all duration-300 group-hover:bg-[#006def] group-hover:text-white group-hover:border-[#006def] group-hover:shadow-lg">
-                  {node.icon}
+                  <div className="flex-1 min-w-0">
+                    <span className="text-[9px] font-mono font-bold text-[#006def] uppercase tracking-wider block">
+                      {node.subtitle}
+                    </span>
+                    <h3 className="text-xs sm:text-[13px] font-black uppercase tracking-tight text-[#002f7a] group-hover:text-[#006def] transition-colors leading-tight break-words">
+                      {node.title}
+                    </h3>
+                  </div>
                 </div>
 
-                {/* METADATA IDENTIFIER */}
-                <div className="space-y-3">
-                  <h3 className="text-lg font-black uppercase tracking-tighter text-[#002f7a]">
-                    {node.title}
-                  </h3>
-                  <p className="text-[#002f7a]/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs mx-auto">
-                    {node.description}
-                  </p>
-                </div>
+                {/* DESCRIPTION */}
+                <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                  {node.description}
+                </p>
               </div>
 
-              {/* CLEAN ACTION PROMPT BUTTON */}
-              <div className="w-full pt-8 mt-8 border-t border-[#002f7a]/5">
-                <a
-                  href={node.href}
-                  className="inline-flex items-center gap-2 bg-[#002f7a] hover:bg-[#006def] text-white px-5 py-2.5 font-mono text-[10px] font-black uppercase tracking-widest shadow-md transition-all duration-300 group-hover:scale-105"
-                >
-                  {node.linkText} <ArrowRight className="w-3 h-3" />
-                </a>
+              {/* ACTION PROMPT */}
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-[10px] font-mono font-bold text-[#002f7a] group-hover:text-[#006def] uppercase tracking-wider">
+                  {node.linkText}
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#006def] group-hover:translate-x-1 transition-transform" />
               </div>
 
-              {/* CORNER BACKGROUND WATERMARK */}
-              <div className="absolute bottom-2 right-4 font-mono text-[50px] font-black text-[#002f7a] opacity-[0.02] select-none pointer-events-none group-hover:opacity-[0.05] transition-opacity">
-                0{idx + 1}
+              {/* CORNER NUMBER WATERMARK */}
+              <div className="absolute bottom-1 right-2 font-mono text-[24px] font-black text-[#002f7a] opacity-[0.04] pointer-events-none select-none group-hover:opacity-[0.08] transition-opacity">
+                {node.id}
               </div>
-
-            </motion.div>
+            </motion.a>
           ))}
         </div>
+
       </div>
     </section>
   );

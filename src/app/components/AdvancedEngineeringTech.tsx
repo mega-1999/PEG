@@ -37,7 +37,7 @@ const techPillars = [
 
 export default function AdvancedEngineeringTech() {
   return (
-    <section className="w-full py-8 md:py-10 bg-[#002f7a] text-white overflow-hidden relative border-b border-white/10">
+    <section className="w-full py-16 md:py-20 bg-[#002f7a] text-white overflow-hidden relative border-b border-white/10">
 
       {/* Background Accent Lines */}
       <div className="absolute top-0 left-10 md:left-20 w-px h-full bg-white/5 pointer-events-none" />

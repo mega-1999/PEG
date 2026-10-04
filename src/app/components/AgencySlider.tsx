@@ -87,7 +87,7 @@ export default function AgencySlider() {
   const loopAgenciesRow2 = [...AGENCIES.slice(5), ...AGENCIES.slice(0, 5), ...AGENCIES, ...AGENCIES];
 
   return (
-    <section className="relative w-full bg-white py-16 py-20 border-t border-[#002f7a]/10 select-none overflow-hidden">
+    <section className="relative w-full bg-white py-16 md:py-20 border-t border-[#002f7a]/10 select-none overflow-hidden">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div
@@ -98,7 +98,7 @@ export default function AgencySlider() {
         }}
       />
 
-      <div className="w-full px-6 md:px-16 lg:px-20 relative z-10 space-y-8">
+      <div className="w-full px-10 md:px-20 relative z-10 space-y-8">
 
         {/* HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#002f7a]/10 pb-6">
@@ -125,32 +125,32 @@ export default function AgencySlider() {
           <div className="absolute top-0 right-0 bottom-0 w-16 md:w-28 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
 
           {/* SLIDER ROW 1 (Left Sliding) */}
-          <div className="flex gap-4 w-max animate-marquee group-hover/slider:[animation-play-state:paused]">
+          <div className="flex gap-3 w-max animate-marquee group-hover/slider:[animation-play-state:paused]">
             {loopAgenciesRow1.map((agency, idx) => (
               <div
                 key={`row1-${agency.name}-${idx}`}
-                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
+                className="w-[170px] sm:w-[195px] h-[64px] sm:h-[68px] bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-md transition-all duration-200 p-2.5 flex items-center gap-2.5 shrink-0 group/card cursor-pointer"
               >
-                {/* LOGO BOX */}
-                <div className="relative w-14 h-14 bg-white border border-[#002f7a]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
+                {/* LEFT LOGO ICON */}
+                <div className="relative w-11 h-11 sm:w-12 sm:h-12 bg-white border border-[#002f7a]/10 p-1 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
                   <Image
                     src={getAssetUrl(agency.src)}
                     alt={agency.name}
                     fill
-                    sizes="56px"
-                    className="object-contain p-1"
+                    sizes="48px"
+                    className="object-contain p-0.5"
                   />
                 </div>
 
-                {/* INFO */}
-                <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-mono font-black text-[#006def] uppercase tracking-wider block truncate">
+                {/* RIGHT TEXT CONTENT */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                  <span className="text-[8px] font-mono font-black text-[#006def] uppercase tracking-wider block truncate leading-none mb-0.5">
                     {agency.badge}
                   </span>
-                  <h3 className="text-xs font-black text-[#002f7a] uppercase tracking-tight truncate group-hover/card:text-[#006def] transition-colors">
+                  <h3 className="text-[11px] sm:text-xs font-black text-[#002f7a] uppercase tracking-tight truncate leading-tight group-hover/card:text-[#006def] transition-colors">
                     {agency.name}
                   </h3>
-                  <p className="text-[10px] text-[#002f7a]/70 font-semibold truncate mt-0.5">
+                  <p className="text-[9px] text-[#002f7a]/70 font-semibold truncate leading-tight mt-0.5">
                     {agency.category}
                   </p>
                 </div>
@@ -159,32 +159,32 @@ export default function AgencySlider() {
           </div>
 
           {/* SLIDER ROW 2 (Right Sliding - Reverse) */}
-          <div className="flex gap-4 w-max mt-4 animate-marquee-reverse group-hover/slider:[animation-play-state:paused]">
+          <div className="flex gap-3 w-max mt-3 animate-marquee-reverse group-hover/slider:[animation-play-state:paused]">
             {loopAgenciesRow2.map((agency, idx) => (
               <div
                 key={`row2-${agency.name}-${idx}`}
-                className="w-[200px] sm:w-[230px] h-[90px] sm:h-[95px] bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-md transition-all duration-200 p-3.5 flex items-center gap-3.5 shrink-0 group/card cursor-pointer"
+                className="w-[170px] sm:w-[195px] h-[64px] sm:h-[68px] bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-md transition-all duration-200 p-2.5 flex items-center gap-2.5 shrink-0 group/card cursor-pointer"
               >
-                {/* LOGO BOX */}
-                <div className="relative w-14 h-14 bg-white border border-[#002f7a]/10 p-1.5 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
+                {/* LEFT LOGO ICON */}
+                <div className="relative w-11 h-11 sm:w-12 sm:h-12 bg-white border border-[#002f7a]/10 p-1 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-transform">
                   <Image
                     src={getAssetUrl(agency.src)}
                     alt={agency.name}
                     fill
-                    sizes="56px"
-                    className="object-contain p-1"
+                    sizes="48px"
+                    className="object-contain p-0.5"
                   />
                 </div>
 
-                {/* INFO */}
-                <div className="flex-1 min-w-0">
-                  <span className="text-[9px] font-mono font-black text-[#006def] uppercase tracking-wider block truncate">
+                {/* RIGHT TEXT CONTENT */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                  <span className="text-[8px] font-mono font-black text-[#006def] uppercase tracking-wider block truncate leading-none mb-0.5">
                     {agency.badge}
                   </span>
-                  <h3 className="text-xs font-black text-[#002f7a] uppercase tracking-tight truncate group-hover/card:text-[#006def] transition-colors">
+                  <h3 className="text-[11px] sm:text-xs font-black text-[#002f7a] uppercase tracking-tight truncate leading-tight group-hover/card:text-[#006def] transition-colors">
                     {agency.name}
                   </h3>
-                  <p className="text-[10px] text-[#002f7a]/70 font-semibold truncate mt-0.5">
+                  <p className="text-[9px] text-[#002f7a]/70 font-semibold truncate leading-tight mt-0.5">
                     {agency.category}
                   </p>
                 </div>

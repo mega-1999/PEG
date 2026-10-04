@@ -22,7 +22,7 @@ const digitalChannels = [
   },
   {
     id: "CH_02",
-    title: "HyZine Publication",
+    title: "HeyZine Publication",
     subtitle: "Digital Magazine",
     description: "Our interactive digital magazine. Deep-dive editorials, parametric case studies, and the future of precast tech.",
     icon: <BookOpen className="w-6 h-6" />,

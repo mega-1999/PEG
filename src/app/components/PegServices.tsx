@@ -84,7 +84,7 @@ const services = [
 
 export default function PegServices() {
   return (
-    <section id="services" className="w-full bg-white py-16 md:py-20 border-b border-[#002f7a]/10">
+    <section id="services" className="w-full bg-white py-8 md:py-10 border-b border-[#002f7a]/10">
       <div className="w-full px-10 md:px-20">
 
         {/* Section Header */}

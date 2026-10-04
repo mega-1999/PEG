@@ -69,6 +69,10 @@ export default function Home() {
       <UnchallengedResources />
       <DeliverableUpgrade />
       <PegHero />
+            {/* 6. PORTALS & RESOURCES */}
+      <section id="portal" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
+        <LoginGateway />
+      </section>
       <TrenchingSystem />
       <RetainingWallComponent />
       <MarinaSystemComponent />
@@ -80,10 +84,7 @@ export default function Home() {
       <MembershipBox />
       <SeamlessConnection />
 
-      {/* 6. PORTALS & RESOURCES */}
-      <section id="portal" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
-        <LoginGateway />
-      </section>
+
 
 
 

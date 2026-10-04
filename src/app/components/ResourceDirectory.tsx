@@ -24,7 +24,7 @@ const resourceColumns = [
     links: [
       { name: 'CONTINUING ED', href: '#education', badge: 'PE CREDITS', icon: <GraduationCap className="w-4 h-4" /> },
       { name: 'WEBINARS', href: '#webinars', icon: <MonitorPlay className="w-4 h-4" /> },
-      { name: 'DETAILED PODCAST', href: '#podcasts', italic: true, icon: <Mic className="w-4 h-4" /> },
+      { name: 'DETAILED PODCAST', href: '#podcasts', icon: <Mic className="w-4 h-4" /> },
       { name: 'CERTIFICATIONS', href: '#certs', icon: <Award className="w-4 h-4" /> },
       { name: 'DATA SHEETS', href: '#data-sheets', icon: <FileDigit className="w-4 h-4" /> },
       { name: 'ADA PRODUCTS', href: '#ada', icon: <Accessibility className="w-4 h-4" /> },
@@ -97,7 +97,7 @@ export const ResourceDirectory = () => {
                           {link.icon}
                         </div>
 
-                        <span className={`uppercase truncate ${link.italic ? 'italic' : ''}`}>
+                        <span>
                           {link.name}
                         </span>
 

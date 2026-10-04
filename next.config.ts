@@ -33,6 +33,32 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/assets/video/:path*",
+        headers: [
+          {
+            key: "Accept-Ranges",
+            value: "bytes",
+          },
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+        ],
+      },
+      {
+        source: "/assets/blog/:slug*/videos/:path*",
+        headers: [
+          {
+            key: "Accept-Ranges",
+            value: "bytes",
+          },
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
+          },
+        ],
+      },
+      {
         source: "/TRENCH/:path*",
         headers: [
           {
@@ -41,7 +67,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Cache-Control",
-            value: "public, max-age=3600, must-revalidate",
+            value: "no-cache, no-store, must-revalidate",
           },
         ],
       },

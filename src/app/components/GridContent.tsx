@@ -69,7 +69,7 @@ const technicalData = [
 
 const GridContent = () => {
     return (
-        <section id="technical-vault" className="w-full bg-[#002f7a] text-white overflow-hidden py-16 md:py-20 border-b border-white/10">
+        <section id="technical-vault" className="w-full bg-[#002f7a] text-white overflow-hidden py-8 md:py-10 border-b border-white/10">
             <div className="w-full px-10 md:px-20">
 
                 {/* HEADER: Brutalist Style */}
@@ -135,7 +135,7 @@ const GridContent = () => {
                 </div>
 
                 {/* INNOVATION FOOTER */}
-                <div className="mt-14 relative border-t border-white/15 pt-10 text-center">
+                <div className="mt-6 relative border-t border-white/15 pt-6 text-center">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def] mb-4">
                         <Zap className="w-3.5 h-3.5 text-[#006def]" /> Forward Engineering
                     </div>

@@ -10,7 +10,12 @@ export function getAssetUrl(path?: string): string {
 
   let cleanPath = path.trim();
 
-  // If path is a Cloudflare R2 URL, strip domain and map to local repository asset
+  // Heavy video files not tracked in Git (>100MB) are served from R2 CDN
+  if (cleanPath.includes("Shop_Drawings_CAD.mp4")) {
+    return "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Shop_Drawings_CAD.mp4";
+  }
+
+  // If path is a Cloudflare R2 URL, strip domain and map to latest local repository asset
   if (cleanPath.includes(".r2.dev/")) {
     const afterDomain = cleanPath.split(".r2.dev/")[1];
     if (afterDomain.startsWith("blog/")) {

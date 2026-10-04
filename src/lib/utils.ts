@@ -8,32 +8,28 @@ export function cn(...inputs: ClassValue[]) {
 export function getAssetUrl(path?: string): string {
   if (!path) return "";
 
-  // If path is a blog asset referencing r2.dev/blog/, map to local /assets/blog/ for direct display
-  if (path.includes(".r2.dev/blog/")) {
-    const blogPart = path.split(".r2.dev/blog/")[1];
-    return `/assets/blog/${blogPart}`;
+  let cleanPath = path.trim();
+
+  // If path is a Cloudflare R2 URL, strip domain and map to local repository asset
+  if (cleanPath.includes(".r2.dev/")) {
+    const afterDomain = cleanPath.split(".r2.dev/")[1];
+    if (afterDomain.startsWith("blog/")) {
+      cleanPath = `/assets/${afterDomain}`;
+    } else {
+      cleanPath = `/${afterDomain}`;
+    }
   }
 
-  if (path.startsWith("http://") || path.startsWith("https://")) {
-    return path;
-  }
-  // Automatically sanitize spaces to underscores for all asset paths
-  const sanitizedPath = path.replace(/ /g, "_");
-  const cleanPath = sanitizedPath.startsWith("/") ? sanitizedPath : `/${sanitizedPath}`;
-
-  // Local assets under /assets/ or /PrecastIndustry_Links/ are served directly
-  if (
-    cleanPath.startsWith("/assets/") || 
-    cleanPath.startsWith("/PrecastIndustry_Links/") ||
-    cleanPath.startsWith("/uploads/")
-  ) {
+  // If external non-R2 URL, return as is
+  if (cleanPath.startsWith("http://") || cleanPath.startsWith("https://")) {
     return cleanPath;
   }
 
-  // Cloudflare R2 Public CDN domain for images
-  const cdnUrl = process.env.NEXT_PUBLIC_CLOUDFLARE_R2_URL 
-    || process.env.NEXT_PUBLIC_PUBLIC_BUCKET_URL 
-    || "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev";
+  // Automatically sanitize spaces to underscores for all asset paths
+  cleanPath = cleanPath.replace(/ /g, "_");
+  if (!cleanPath.startsWith("/")) {
+    cleanPath = `/${cleanPath}`;
+  }
 
-  return `${cdnUrl.replace(/\/$/, "")}${cleanPath}`;
+  return cleanPath;
 }

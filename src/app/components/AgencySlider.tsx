@@ -107,7 +107,7 @@ export default function AgencySlider() {
               <Building2 className="w-3.5 h-3.5" /> Agency & Utility Approvals
             </div>
             <h2 className="text-2xl md:text-4xl font-black text-[#002f7a] uppercase tracking-tight leading-tight">
-              Approved & Specified <span className="text-[#006def]">By Leading Agencies.</span>
+              Get Approved & Specified <span className="text-[#006def]">By Leading Agencies.</span>
             </h2>
           </div>
 

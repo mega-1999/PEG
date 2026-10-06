@@ -84,10 +84,10 @@ export default function Home() {
       <PrecastBlogSection />
       <PrecastMoldComponent />
       <HexagonLogoShowcase />
+      <RetainingWallComponent />
       <ContentSection />
 
       <TrenchingSystem />
-      <RetainingWallComponent />
       <DotMatrixSlider />
 
       <PegLocations />

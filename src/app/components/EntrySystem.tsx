@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -24,6 +24,11 @@ export default function EntrySystem() {
   const [isInitialized, setIsInitialized] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const tabletVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+
   // Check session storage on mount
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -33,6 +38,61 @@ export default function EntrySystem() {
       }
     }
   }, []);
+
+  // Guarantee automatic playback and infinite looping on all video elements
+  useEffect(() => {
+    const videoRefs = [bgVideoRef, desktopVideoRef, tabletVideoRef, mobileVideoRef];
+    
+    const ensurePlayback = () => {
+      videoRefs.forEach(ref => {
+        const video = ref.current;
+        if (video) {
+          video.muted = true;
+          video.defaultMuted = true;
+          video.playsInline = true;
+          video.loop = true;
+          if (video.paused) {
+            video.play().catch(() => {});
+          }
+        }
+      });
+    };
+
+    // Initial trigger
+    ensurePlayback();
+
+    // Re-verify on document visibility change (e.g. user switching tabs)
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        ensurePlayback();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    // Continuous interval watchdog to ensure seamless infinite looping without stalling
+    const interval = setInterval(ensurePlayback, 1200);
+
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
+  }, [isInitialized]);
+
+  // Handler for video events to ensure loop continuity
+  const handleVideoSetup = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    const video = e.currentTarget;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.loop = true;
+    video.play().catch(() => {});
+  };
+
+  const handleVideoEnded = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    const video = e.currentTarget;
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  };
 
   // Initialization progress ticker
   useEffect(() => {
@@ -64,12 +124,16 @@ export default function EntrySystem() {
           {/* 1. CINEMATIC BRIDGE / OCEAN DRONE VIDEO BACKGROUND LAYER */}
           <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
             <video
+              ref={bgVideoRef}
               src={getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4")}
               autoPlay
               loop
               muted
               playsInline
               preload="auto"
+              onCanPlay={handleVideoSetup}
+              onLoadedMetadata={handleVideoSetup}
+              onEnded={handleVideoEnded}
               suppressHydrationWarning
               className="absolute inset-0 w-full h-full object-cover scale-100"
             >
@@ -153,12 +217,16 @@ export default function EntrySystem() {
                   {/* VIDEO FRAME */}
                   <div className="relative aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
+                      ref={desktopVideoRef}
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
                       autoPlay
                       loop
                       muted
                       playsInline
                       preload="auto"
+                      onCanPlay={handleVideoSetup}
+                      onLoadedMetadata={handleVideoSetup}
+                      onEnded={handleVideoEnded}
                       suppressHydrationWarning
                       className="w-full h-full object-contain"
                     >
@@ -201,12 +269,16 @@ export default function EntrySystem() {
 
                   <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
+                      ref={tabletVideoRef}
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
                       autoPlay
                       loop
                       muted
                       playsInline
                       preload="auto"
+                      onCanPlay={handleVideoSetup}
+                      onLoadedMetadata={handleVideoSetup}
+                      onEnded={handleVideoEnded}
                       suppressHydrationWarning
                       className="w-full h-full object-contain"
                     >
@@ -244,12 +316,16 @@ export default function EntrySystem() {
 
                   <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
+                      ref={mobileVideoRef}
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
                       autoPlay
                       loop
                       muted
                       playsInline
                       preload="auto"
+                      onCanPlay={handleVideoSetup}
+                      onLoadedMetadata={handleVideoSetup}
+                      onEnded={handleVideoEnded}
                       suppressHydrationWarning
                       className="w-full h-full object-contain"
                     >

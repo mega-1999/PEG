@@ -257,12 +257,12 @@ export const Navbar = () => {
                   <button
                     onClick={() => toggleMenu(item.title)}
                     // Added whitespace-nowrap and slightly smaller horizontal padding (px-3) for zoom tolerance
-                    className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-sm font-black uppercase tracking-tight transition-all duration-200 border-t-4
-                      ${isOpen ? 'text-[#002f7a] border-[#002f7a] bg-[#002f7a]/5' : 'text-[#002f7a] border-transparent hover:text-[#006def]'}
+                    className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-sm font-black uppercase tracking-tight transition-all duration-200 border-t-4 cursor-pointer
+                      ${isOpen ? 'text-[#002f7a] border-[#002f7a] bg-[#002f7a]/5' : 'text-[#006def] border-transparent hover:text-[#002f7a] hover:border-[#002f7a]'}
                     `}
                   >
                     {item.title}
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#002f7a]' : 'text-[#002f7a]'}`} />
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#002f7a]' : 'text-[#006def]'}`} />
                   </button>
 
                   {/* DROP DOWN / MEGA MENU RENDERER */}
@@ -285,7 +285,7 @@ export const Navbar = () => {
                                 <Link
                                   href={link.href}
                                   onClick={() => setActiveMenu(null)}
-                                  className="block px-6 py-3 text-xs font-bold text-[#002f7a] hover:bg-[#002f7a]/5 hover:text-[#006def] transition-colors"
+                                  className="block px-6 py-3 text-xs font-bold text-[#006def] hover:bg-[#002f7a]/5 hover:text-[#002f7a] transition-colors"
                                 >
                                   {link.name}
                                 </Link>
@@ -302,7 +302,7 @@ export const Navbar = () => {
                               return (
                                 <div key={idx} className="flex-1 p-8 border-r border-[#002f7a]/5">
                                   <div className="flex items-center gap-2 text-[#002f7a] mb-6">
-                                    <Icon className="w-5 h-5" />
+                                    <Icon className="w-5 h-5 text-[#006def]" />
                                     <h4 className="font-black text-xs uppercase tracking-widest">{col.heading}</h4>
                                   </div>
                                   <ul className="space-y-4">
@@ -311,7 +311,7 @@ export const Navbar = () => {
                                         <Link
                                           href={link.href}
                                           onClick={() => setActiveMenu(null)}
-                                          className="text-xs font-bold text-[#002f7a] hover:text-[#006def] transition-colors"
+                                          className="text-xs font-bold text-[#006def] hover:text-[#002f7a] transition-colors"
                                         >
                                           {link.name}
                                         </Link>
@@ -325,7 +325,7 @@ export const Navbar = () => {
                             {/* Featured Tool Box */}
                             <div className="w-[280px] p-8 bg-[#002f7a]/5 flex flex-col">
                               <div className="flex items-center gap-2 text-[#002f7a] mb-6">
-                                <Wrench className="w-5 h-5" />
+                                <Wrench className="w-5 h-5 text-[#006def]" />
                                 <h4 className="font-black text-xs uppercase tracking-widest">Featured Tool</h4>
                               </div>
 
@@ -357,7 +357,7 @@ export const Navbar = () => {
             <Link
               href="/blog"
               onClick={() => setActiveMenu(null)}
-              className="h-full px-3 2xl:px-4 whitespace-nowrap flex items-center text-[12px] font-black uppercase tracking-tight text-[#002f7a] border-t-4 border-transparent hover:text-[#006def] hover:border-[#006def] transition-all duration-200"
+              className="h-full px-3 2xl:px-4 whitespace-nowrap flex items-center text-sm font-black uppercase tracking-tight text-[#006def] border-t-4 border-transparent hover:text-[#002f7a] hover:border-[#002f7a] transition-all duration-200"
             >
               BLOG
             </Link>
@@ -377,7 +377,7 @@ export const Navbar = () => {
           <div className="xl:hidden flex items-center gap-4">
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="bg-[#002f7a] hover:bg-[#006def] transition-colors p-2 rounded text-white"
+              className="bg-[#002f7a] hover:bg-[#006def] transition-colors p-2 rounded text-white cursor-pointer"
             >
               {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -410,7 +410,7 @@ export const Navbar = () => {
                   Advanced Precast Engineering..
                 </span>
               </div>
-              <button onClick={() => setIsMobileOpen(false)}>
+              <button onClick={() => setIsMobileOpen(false)} className="cursor-pointer">
                 <X className="w-6 h-6 text-[#002f7a]" />
               </button>
             </div>
@@ -423,12 +423,12 @@ export const Navbar = () => {
                   <div key={item.title} className="border-b border-[#002f7a]/5">
                     <button
                       onClick={() => setMobileExpandedNode(isExpanded ? null : item.title)}
-                      className={`w-full flex justify-between items-center px-6 py-4 text-xs font-black uppercase tracking-wider transition-colors
-                        ${isExpanded ? 'bg-[#002f7a]/5 text-[#006def]' : 'text-[#002f7a]'}
+                      className={`w-full flex justify-between items-center px-6 py-4 text-xs font-black uppercase tracking-wider transition-colors cursor-pointer
+                        ${isExpanded ? 'bg-[#002f7a]/5 text-[#002f7a]' : 'text-[#006def] hover:text-[#002f7a]'}
                       `}
                     >
                       {item.title}
-                      {isExpanded ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                      {isExpanded ? <Minus className="w-4 h-4 text-[#002f7a]" /> : <Plus className="w-4 h-4 text-[#006def]" />}
                     </button>
 
                     <AnimatePresence>
@@ -445,7 +445,7 @@ export const Navbar = () => {
                                 <Link
                                   href={link.href}
                                   onClick={() => setIsMobileOpen(false)}
-                                  className="text-sm font-bold text-[#002f7a] pl-4 border-l-2 border-[#006def] hover:border-[#002f7a] hover:text-[#006def] block py-1 transition-all"
+                                  className="text-sm font-bold text-[#006def] pl-4 border-l-2 border-[#006def] hover:border-[#002f7a] hover:text-[#002f7a] block py-1 transition-all"
                                 >
                                   {link.name}
                                 </Link>
@@ -464,7 +464,7 @@ export const Navbar = () => {
                 <Link
                   href="/blog"
                   onClick={() => setIsMobileOpen(false)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-sm font-black uppercase tracking-wider text-[#002f7a] hover:text-[#006def] hover:bg-[#002f7a]/5 transition-colors"
+                  className="w-full flex justify-between items-center px-6 py-4 text-sm font-black uppercase tracking-wider text-[#006def] hover:text-[#002f7a] hover:bg-[#002f7a]/5 transition-colors"
                 >
                   <span>BLOG</span>
                 </Link>

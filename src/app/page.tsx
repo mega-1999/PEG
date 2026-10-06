@@ -77,15 +77,14 @@ export default function Home() {
       <MembershipBox />
       <PrecastersGoDigital />
       <UtilityVaultSystem />
+      <ManufacturingHub />
+      <SeamlessConnection />
+      <AgencySlider />
+
       <TrenchingSystem />
       <RetainingWallComponent />
       <PrecastMoldComponent />
-
-      {/* 5. MANUFACTURING & OPERATIONS SUPPORT */}
-      <ManufacturingHub />
-      <SeamlessConnection />
       <PrecastBlogSection />
-      <AgencySlider />
       <ContentSection />
       <DotMatrixSlider />
       <HexagonLogoShowcase />

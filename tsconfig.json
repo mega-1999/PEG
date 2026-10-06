@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +23,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -28,7 +34,31 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "src/app/components/FutureCulvertComponent.tsx", "../../(submenu)/pg/MarinaSystemComponent.tsx", "../../(submenu)/pg/RetainingWallComponent.tsx", "../../(submenu)/pg/UtilityPrecastComponent.tsx", "../../(submenu)/pg/TrenchingSystem.tsx", "../../(submenu)/pg/AffiliationNetwork.tsx", "src/app/components/MeetAtShows.tsx", "../../(submenu)/pg/MarketingShowcase.tsx", "../../(submenu)/pg/AgencyShowcase.tsx", "src/app/components/DotMatrixSlider.tsx", "src/app/components/AgencySlider.tsx", "../../(submenu)/pg/EngineeringExecuted.tsx", "../../(submenu)/pg/MarketingShowcaseGallery.tsx", "../../(submenu)/pg/DotMatrixSlider copy.tsx", "../../(submenu)/pg/DotMatrixSlider copy1.tsx", "src/app/page.tsx", "../../(submenu)/pg/FuturisticPrecastingNodes.tsx", "src/app/components/FuturisticCTA.tsx", "../../(submenu)/pg/UnchallengedResources.tsx", "src/app/components/TargetAudience.tsx", "src/app/components/SeamlessConnection.tsx", "src/app/components/MarinaSystemComponent.tsx"  ],
-  "exclude": ["node_modules"]
+    "**/*.mts",
+    "src/app/components/FutureCulvertComponent.tsx",
+    "../../(submenu)/pg/MarinaSystemComponent.tsx",
+    "../../(submenu)/pg/RetainingWallComponent.tsx",
+    "../../(submenu)/pg/UtilityPrecastComponent.tsx",
+    "../../(submenu)/pg/TrenchingSystem.tsx",
+    "../../(submenu)/pg/AffiliationNetwork.tsx",
+    "src/app/components/MeetAtShows.tsx",
+    "../../(submenu)/pg/MarketingShowcase.tsx",
+    "../../(submenu)/pg/AgencyShowcase.tsx",
+    "src/app/components/DotMatrixSlider.tsx",
+    "src/app/components/AgencySlider.tsx",
+    "../../(submenu)/pg/EngineeringExecuted.tsx",
+    "../../(submenu)/pg/MarketingShowcaseGallery.tsx",
+    "../../(submenu)/pg/DotMatrixSlider copy.tsx",
+    "../../(submenu)/pg/DotMatrixSlider copy1.tsx",
+    "src/app/page.tsx",
+    "../../(submenu)/pg/FuturisticPrecastingNodes.tsx",
+    "src/app/components/FuturisticCTA.tsx",
+    "../../(submenu)/pg/UnchallengedResources.tsx",
+    "src/app/components/TargetAudience.tsx",
+    "src/app/components/SeamlessConnection.tsx",
+    "src/app/components/UtilityVaultSystem.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -22,7 +22,7 @@ import UnchallengedResources from "./components/UnchallengedResources";
 import SeamlessConnection from "./components/SeamlessConnection";
 import TrenchingSystem from "./components/TrenchingSystem";
 import RetainingWallComponent from "./components/RetainingWallComponent";
-import MarinaSystemComponent from "./components/MarinaSystemComponent";
+import UtilityVaultSystem from "./components/UtilityVaultSystem";
 import PrecastMoldComponent from "./components/PrecastMoldComponent";
 import SponsorMarquee from "./components/SponsorMarquee";
 import PegResourceGrid from "./components/PegResourceGrid";
@@ -68,7 +68,7 @@ export default function Home() {
       <UnchallengedResources />
       <DeliverableUpgrade />
       <PegHero />
-            {/* 6. PORTALS & RESOURCES */}
+      {/* 6. PORTALS & RESOURCES */}
       <section id="portal" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
         <LoginGateway />
       </section>
@@ -76,9 +76,9 @@ export default function Home() {
       <MeetAtShows />
       <MembershipBox />
       <PrecastersGoDigital />
+      <UtilityVaultSystem />
       <TrenchingSystem />
       <RetainingWallComponent />
-      <MarinaSystemComponent />
       <PrecastMoldComponent />
 
       {/* 5. MANUFACTURING & OPERATIONS SUPPORT */}

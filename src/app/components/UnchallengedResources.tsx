@@ -134,7 +134,7 @@ export default function UnchallengedResources() {
                     </div>
                   </div>
 
-                  <p className="text-slate-600 group-hover:text-white text-sm leading-relaxed font-semibold transition-colors duration-300 relative z-10 mb-4">
+                  <p className="text-[#006def] group-hover:text-white text-sm leading-relaxed font-semibold transition-colors duration-300 relative z-10 mb-4">
                     {resource.description}
                   </p>
 

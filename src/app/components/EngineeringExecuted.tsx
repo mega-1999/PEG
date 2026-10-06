@@ -176,7 +176,7 @@ export default function EngineeringExecuted() {
 
               {/* Main Description */}
               <p className={`text-sm font-medium leading-relaxed relative z-10
-                ${service.highlight ? 'text-white/80 group-hover:text-white/95' : 'text-slate-600'}`}>
+                ${service.highlight ? 'text-white/80 group-hover:text-white/95' : 'text-[#006def]'}`}>
                 {service.desc}
               </p>
 

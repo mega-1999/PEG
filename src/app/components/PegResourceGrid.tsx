@@ -128,7 +128,7 @@ export default function PegResourceGrid() {
                 </div>
 
                 {/* DESCRIPTION */}
-                <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                <p className="text-xs text-[#006def] font-medium leading-relaxed">
                   {node.description}
                 </p>
               </div>

@@ -248,11 +248,12 @@ export default function PrecastersGoDigital() {
             <div className="lg:col-span-6 relative aspect-[4/3] sm:aspect-video lg:aspect-[16/10] min-h-[240px] sm:min-h-[300px] lg:min-h-[360px] bg-slate-950 rounded-sm overflow-hidden shadow-2xl border border-[#002f7a]/20 group-hover:border-[#006def] transition-colors flex items-center justify-center p-1.5 sm:p-3">
               <video
                 key={currentMockup.videoSrc}
+                src={getAssetUrl(currentMockup.videoSrc)}
                 autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="auto"
                 suppressHydrationWarning
                 className="w-full h-full object-contain"
               >

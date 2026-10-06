@@ -83,7 +83,9 @@ const navData = [
 const countries = [
   { code: "US", name: "United States", flag: "🇺🇸", spec: "AASHTO / ACI Standards" },
   { code: "CA", name: "Canada", flag: "🇨🇦", spec: "CSA / ASTM Standards" },
-  { code: "MX", name: "Mexico", flag: "🇲🇽", spec: "NMX / IMT Standards" },
+  { code: "LATAM", name: "Latin America", flag: "🌎", spec: "ACI / Pan-American Codes" },
+  { code: "EU", name: "Europe (EU)", flag: "🇪🇺", spec: "Eurocode 2 / EN 13369" },
+  { code: "CARIB", name: "Caribbean", flag: "🏝️", spec: "CUBiC / ASTM Standards" },
 ];
 
 export const Navbar = () => {
@@ -206,7 +208,7 @@ export const Navbar = () => {
                           <span className="text-lg leading-none">{c.flag}</span>
                           <div className="flex flex-col">
                             <span className="uppercase text-[11px] leading-tight font-bold">{c.name}</span>
-                            <span className="text-[9px] font-mono text-slate-500 font-semibold">{c.spec}</span>
+                            <span className="text-[9px] font-mono text-[#006def] font-semibold">{c.spec}</span>
                           </div>
                         </div>
                         {isSelected && <span className="w-1.5 h-1.5 rounded-full bg-[#006def]" />}

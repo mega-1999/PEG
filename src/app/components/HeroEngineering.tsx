@@ -108,7 +108,7 @@ const HeroEngineering = () => {
             value={searchVal}
             onChange={(e) => setSearchVal(e.target.value)}
             placeholder={currentText || "search Box Culverts..."}
-            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base py-6 text-[#002f7a] placeholder:text-slate-400 font-semibold"
+            className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base py-6 text-[#002f7a] placeholder:text-[#006def] font-semibold"
           />
           <Button
             type="submit"

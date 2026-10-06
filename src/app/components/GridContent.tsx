@@ -116,7 +116,7 @@ const GridContent = () => {
                                                     <p className="text-sm font-black uppercase tracking-wider mb-1 text-[#002f7a] group-hover:text-white transition-colors">
                                                         {item.label}
                                                     </p>
-                                                    <p className="text-xs font-semibold leading-relaxed text-slate-600 group-hover:text-white/90 transition-colors">
+                                                    <p className="text-xs font-semibold leading-relaxed text-[#006def] group-hover:text-white/90 transition-colors">
                                                         {item.sub}
                                                     </p>
                                                 </div>

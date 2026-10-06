@@ -42,7 +42,7 @@ const deviceMockups: DeviceMockup[] = [
     role: "Engineering Office & CAD Center",
     badge: "DESKTOP PORTAL",
     icon: <Monitor className="w-4 h-4" />,
-    videoSrc: "/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4",
+    videoSrc: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4",
     headline: "Full-Scale Structural FEA & Shop Drawing Automation",
     description: "Designed for structural engineers, project managers, and estimators. Perform multi-cell box culvert calculations, generate full fabrication submittal packages, and review PE stamped shop drawings in high resolution.",
     features: [
@@ -62,7 +62,7 @@ const deviceMockups: DeviceMockup[] = [
     role: "Plant Floor & Quality Assurance",
     badge: "SHOP FLOOR QA/QC",
     icon: <Tablet className="w-4 h-4" />,
-    videoSrc: "/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4",
+    videoSrc: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4",
     headline: "Real-Time Casting Bed QC & Crane Stripping Telemetry",
     description: "Built for plant managers and QA inspectors on the precast production floor. Verify rebar cage clearances, log concrete cylinder pour times, inspect hydraulic mold forms, and sign off NPCA plant certifications.",
     features: [
@@ -82,7 +82,7 @@ const deviceMockups: DeviceMockup[] = [
     role: "Jobsite Superintendent & Field Dispatch",
     badge: "JOBSITE DISPATCH",
     icon: <Smartphone className="w-4 h-4" />,
-    videoSrc: "/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4",
+    videoSrc: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4",
     headline: "On-Site Delivery Verification & Instant Spec Lookup",
     description: "Engineered for field superintendents, crane riggers, and DOT inspectors. Scan QR codes on delivered precast vaults, pull up certified lifting diagrams, inspect joint sealant specs, and request instant engineering field revisions.",
     features: [

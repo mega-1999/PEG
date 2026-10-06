@@ -14,53 +14,10 @@ import {
   CheckCircle2,
   ArrowRight,
   Zap,
-  Radio
+  Radio,
+  Maximize2
 } from 'lucide-react';
 import { getAssetUrl } from '@/lib/utils';
-
-interface MockupNode {
-  id: string;
-  name: string;
-  role: string;
-  badge: string;
-  icon: React.ReactNode;
-  videoSrc: string;
-  tagline: string;
-  spec: string;
-}
-
-const mockupNodes: MockupNode[] = [
-  {
-    id: "desktop",
-    name: "Desktop Workstation",
-    role: "Engineering CAD & FEA",
-    badge: "DESKTOP PORTAL",
-    icon: <Monitor className="w-3.5 h-3.5" />,
-    videoSrc: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4",
-    tagline: "Parametric Structural Automation",
-    spec: "AASHTO H-20 / HL-93"
-  },
-  {
-    id: "tablet",
-    name: "Tablet & iPad Live",
-    role: "Plant Floor QC & Stripping",
-    badge: "PLANT QA/QC",
-    icon: <Tablet className="w-3.5 h-3.5" />,
-    videoSrc: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4",
-    tagline: "Hydraulic Mold & Pour Telemetry",
-    spec: "NPCA / PCI Ready"
-  },
-  {
-    id: "mobile",
-    name: "Mobile Companion",
-    role: "Jobsite Dispatch & Field",
-    badge: "JOBSITE DISPATCH",
-    icon: <Smartphone className="w-3.5 h-3.5" />,
-    videoSrc: "https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4",
-    tagline: "1-Tap Rigging Diagrams & QR",
-    spec: "iOS & Android Cloud"
-  }
-];
 
 export default function EntrySystem() {
   const pathname = usePathname();
@@ -101,102 +58,100 @@ export default function EntrySystem() {
     <AnimatePresence>
       {!isInitialized && (
         <motion.div
-          exit={{ opacity: 0, scale: 1.02, transition: { duration: 0.35 } }}
-          className="fixed inset-0 z-[999] bg-[#00183f] flex items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto select-none backdrop-blur-md"
+          exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.4 } }}
+          className="fixed inset-0 z-[999] bg-[#001433] flex flex-col justify-between overflow-x-hidden overflow-y-auto select-none"
         >
-          {/* HIGH-TECH BLUEPRINT GRID BACKGROUND */}
-          <div
-            className="absolute inset-0 opacity-[0.05] pointer-events-none"
-            style={{
-              backgroundImage: `linear-gradient(to right, #006def 1px, transparent 1px), linear-gradient(to bottom, #006def 1px, transparent 1px)`,
-              backgroundSize: '40px 40px'
-            }}
-          />
+          {/* 1. CINEMATIC DRONE VIDEO BACKGROUND LAYER (PRESERVED OLD VIDEO) */}
+          <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              suppressHydrationWarning
+              className="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-50 contrast-125"
+            >
+              <source
+                src={getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4")}
+                type="video/mp4"
+              />
+            </video>
 
-          {/* GLOWING AMBIENT CORE */}
-          <div className="absolute w-[600px] h-[600px] rounded-full bg-[#006def]/15 blur-[140px] pointer-events-none" />
+            {/* HIGH-TECH BLUEPRINT MATRIX OVERLAYS */}
+            <div className="absolute inset-0 bg-[#00183f]/75 mix-blend-multiply" />
+            <div
+              className="absolute inset-0 opacity-[0.06]"
+              style={{
+                backgroundImage: `linear-gradient(to right, #006def 1px, transparent 1px), linear-gradient(to bottom, #006def 1px, transparent 1px)`,
+                backgroundSize: '50px 50px'
+              }}
+            />
+            {/* AMBIENT GLOW RADIAL GRADIENT */}
+            <div className="absolute inset-0 bg-radial from-transparent via-[#00183f]/60 to-[#00102b]/95" />
+          </div>
 
-          {/* MAIN MODAL CONTAINER */}
-          <motion.div
-            initial={{ opacity: 0, y: 25, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="w-full max-w-6xl bg-[#002f7a] border border-white/20 rounded-sm shadow-[0_25px_80px_rgba(0,0,0,0.7)] relative z-10 overflow-hidden my-auto"
-          >
-            {/* TOP STATUS HEADER BAR */}
-            <div className="bg-[#00183f] px-4 sm:px-6 py-2.5 border-b border-white/15 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex items-center gap-2.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#006def] animate-ping" />
-                <div className="flex items-center gap-1.5 font-mono text-xs font-black text-white uppercase tracking-widest">
-                  <Layers className="w-3.5 h-3.5 text-[#006def]" />
-                  <span>PEG Digital Ecosystem</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4">
-                <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#006def]/20 border border-[#006def]/40 text-[#006def] text-[10px] font-mono font-bold uppercase rounded-xs">
-                  <Radio className="w-3 h-3 text-[#006def] animate-pulse" /> Live Multi-Device Video Stream
-                </span>
-                <button
-                  onClick={handleStart}
-                  className="text-white/60 hover:text-white text-[11px] font-mono font-bold uppercase tracking-wider transition-colors cursor-pointer"
-                >
-                  Skip Intro &rarr;
-                </button>
+          {/* 2. TOP HUD BAR */}
+          <header className="relative z-20 w-full px-6 md:px-12 py-4 flex items-center justify-between border-b border-white/10 bg-[#00183f]/60 backdrop-blur-md">
+            <div className="flex items-center gap-3">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#006def] animate-ping" />
+              <div className="flex items-center gap-2 font-mono text-xs font-black text-white uppercase tracking-widest">
+                <Layers className="w-4 h-4 text-[#006def]" />
+                <span>Precast Engineering Group</span>
               </div>
             </div>
 
-            {/* TITLE BAR */}
-            <div className="px-5 sm:px-8 pt-4 pb-2 flex flex-col md:flex-row md:items-end justify-between gap-2 border-b border-white/10 bg-[#002868]">
-              <div>
-                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#006def]/20 text-[#006def] text-[9px] font-mono font-black tracking-widest uppercase border-l-2 border-[#006def] mb-1">
-                  <Zap className="w-3 h-3" /> Certified Precast Engineering Suite
-                </div>
-                <h2 className="text-white text-xl sm:text-2xl md:text-3xl font-black uppercase tracking-tight leading-tight">
-                  Bridging <span className="text-[#006def]">Precasters.</span>
-                </h2>
+            <div className="flex items-center gap-4">
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-[#006def]/20 border border-[#006def]/40 text-[#006def] text-[10px] font-mono font-bold uppercase rounded-xs">
+                <Radio className="w-3.5 h-3.5 animate-pulse" /> Live Multi-Stream Matrix
               </div>
-              <p className="text-white/80 text-[11px] sm:text-xs font-medium max-w-md leading-relaxed">
-                Autonomous multi-device workflow spanning office engineering, plant floor QA, and field jobsite dispatch.
-              </p>
+              <button
+                onClick={handleStart}
+                className="px-4 py-1.5 bg-white/10 hover:bg-[#006def] text-white text-xs font-mono font-bold uppercase tracking-wider border border-white/20 transition-all rounded-xs cursor-pointer"
+              >
+                Skip Intro &rarr;
+              </button>
             </div>
+          </header>
 
-            {/* ALL 3 VIDEOS SIMULTANEOUSLY PLAYING IN 3-COLUMN GRID */}
-            <div className="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-4 bg-[#001f54]/60">
-              {mockupNodes.map((node) => (
-                <div
-                  key={node.id}
-                  className="bg-[#002f7a] border border-white/15 hover:border-[#006def] transition-all rounded-xs overflow-hidden flex flex-col shadow-lg group relative"
-                >
-                  {/* TOP ACCENT LINE */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#006def] to-transparent" />
+          {/* 3. MAIN SPATIAL CANVAS: ASYMMETRICAL & FLOATING MOCKUP VIDEOS */}
+          <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-10 flex flex-col justify-center">
 
-                  {/* VIDEO CARD HEADER */}
-                  <div className="p-2.5 sm:p-3 bg-[#00183f]/90 border-b border-white/10 flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <div className="w-6 h-6 rounded-xs bg-[#006def]/20 text-[#006def] flex items-center justify-center shrink-0 border border-[#006def]/30">
-                        {node.icon}
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="text-white text-[11px] sm:text-xs font-black uppercase tracking-wide truncate">
-                          {node.name}
-                        </h4>
-                        <p className="text-[9px] font-mono text-[#006def] font-bold uppercase truncate">
-                          {node.role}
-                        </p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+
+              {/* LEFT FLOATING NODE: DESKTOP WORKSTATION (LARGE) */}
+              <motion.div
+                initial={{ opacity: 0, x: -30, y: 15 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="lg:col-span-6 space-y-3"
+              >
+                {/* FLOATING CARD */}
+                <div className="relative bg-[#002868]/90 border-2 border-[#006def]/60 hover:border-[#006def] rounded-sm p-3.5 backdrop-blur-md shadow-[0_20px_60px_rgba(0,0,0,0.6)] group transition-all">
+                  
+                  {/* TOP CARD BAR */}
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <span className="p-1 bg-[#006def] text-white rounded-xs">
+                        <Monitor className="w-3.5 h-3.5" />
+                      </span>
+                      <div>
+                        <h3 className="text-white text-xs font-black uppercase tracking-wider leading-none">
+                          Desktop Workstation
+                        </h3>
+                        <span className="text-[9px] font-mono text-[#006def] font-bold">
+                          Parametric CAD & FEA Automation
+                        </span>
                       </div>
                     </div>
-
-                    <span className="px-1.5 py-0.5 bg-[#006def] text-white text-[8px] font-mono font-black uppercase tracking-wider rounded-xs shrink-0">
-                      {node.badge}
+                    <span className="px-2 py-0.5 bg-[#006def]/20 border border-[#006def]/40 text-[#006def] text-[9px] font-mono font-bold uppercase rounded-xs">
+                      AASHTO H-20 / HL-93
                     </span>
                   </div>
 
-                  {/* CONTINUOUS LIVE VIDEO PLAYER */}
-                  <div className="relative aspect-[16/10] w-full bg-slate-950 flex items-center justify-center p-1 overflow-hidden">
+                  {/* VIDEO FRAME */}
+                  <div className="relative aspect-[16/10] w-full bg-black rounded-xs overflow-hidden border border-white/10 flex items-center justify-center">
                     <video
-                      key={node.videoSrc}
-                      src={getAssetUrl(node.videoSrc)}
                       autoPlay
                       loop
                       muted
@@ -205,83 +160,168 @@ export default function EntrySystem() {
                       suppressHydrationWarning
                       className="w-full h-full object-contain"
                     >
-                      <source src={getAssetUrl(node.videoSrc)} type="video/mp4" />
+                      <source
+                        src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
+                        type="video/mp4"
+                      />
                     </video>
 
-                    {/* LIVE STATUS INDICATOR */}
-                    <div className="absolute top-2 left-2 z-10">
-                      <span className="px-1.5 py-0.5 bg-black/80 backdrop-blur-xs text-white text-[8px] font-mono font-bold uppercase tracking-wider rounded-xs border border-white/20 flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        Live
-                      </span>
+                    <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-black/80 backdrop-blur-xs text-white text-[8px] font-mono font-bold uppercase rounded-xs border border-white/20 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live CAD Portal
                     </div>
-
-                    {/* BOTTOM SPEC TAG */}
-                    <div className="absolute bottom-2 right-2 z-10">
-                      <span className="px-1.5 py-0.5 bg-[#002f7a]/90 backdrop-blur-xs text-white text-[8px] font-mono font-bold uppercase tracking-wider rounded-xs border border-[#006def]/50">
-                        {node.spec}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* VIDEO FOOTER CAPABILITY */}
-                  <div className="p-2.5 bg-[#002868] border-t border-white/10 mt-auto">
-                    <p className="text-white/80 text-[10px] font-medium leading-tight line-clamp-2">
-                      {node.tagline}
-                    </p>
                   </div>
                 </div>
-              ))}
+              </motion.div>
+
+              {/* RIGHT ASYMMETRIC COLUMN: IPAD TOP-RIGHT + MOBILE BOTTOM-RIGHT */}
+              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                {/* TOP-RIGHT NODE: TABLET & IPAD LIVE */}
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="bg-[#002868]/90 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-1.5">
+                      <span className="p-1 bg-[#006def] text-white rounded-xs">
+                        <Tablet className="w-3.5 h-3.5" />
+                      </span>
+                      <h3 className="text-white text-[11px] font-black uppercase tracking-wider leading-none">
+                        Tablet & iPad Live
+                      </h3>
+                    </div>
+                    <span className="px-1.5 py-0.5 bg-blue-500/20 text-blue-300 text-[8px] font-mono font-bold uppercase rounded-xs">
+                      Plant QA/QC
+                    </span>
+                  </div>
+
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-black rounded-xs overflow-hidden border border-white/10 flex items-center justify-center">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      suppressHydrationWarning
+                      className="w-full h-full object-contain"
+                    >
+                      <source
+                        src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 bg-[#002f7a]/90 text-white text-[8px] font-mono font-bold uppercase rounded-xs">
+                      NPCA Ready
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* BOTTOM-RIGHT NODE: MOBILE COMPANION */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="bg-[#002868]/90 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-1.5">
+                      <span className="p-1 bg-[#006def] text-white rounded-xs">
+                        <Smartphone className="w-3.5 h-3.5" />
+                      </span>
+                      <h3 className="text-white text-[11px] font-black uppercase tracking-wider leading-none">
+                        Mobile Companion
+                      </h3>
+                    </div>
+                    <span className="px-1.5 py-0.5 bg-blue-500/20 text-blue-300 text-[8px] font-mono font-bold uppercase rounded-xs">
+                      Jobsite Field
+                    </span>
+                  </div>
+
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-black rounded-xs overflow-hidden border border-white/10 flex items-center justify-center">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="auto"
+                      suppressHydrationWarning
+                      className="w-full h-full object-contain"
+                    >
+                      <source
+                        src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div className="absolute bottom-1.5 right-1.5 px-1.5 py-0.5 bg-[#002f7a]/90 text-white text-[8px] font-mono font-bold uppercase rounded-xs">
+                      iOS / Android
+                    </div>
+                  </div>
+                </motion.div>
+
+              </div>
+
             </div>
 
-            {/* BOTTOM HUD CONTROLS & ENTER BUTTON */}
-            <div className="px-5 sm:px-8 py-3.5 bg-[#00183f] border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4">
-              
-              {/* PROGRESS SYSTEM */}
-              <div className="w-full sm:max-w-md space-y-1.5">
-                <div className="flex justify-between font-mono text-[9px] sm:text-[10px] text-white/70 uppercase tracking-widest font-bold">
-                  <span className="flex items-center gap-1.5">
-                    <Activity className="w-3.5 h-3.5 text-[#006def] animate-pulse" />
-                    {progress < 100 ? "Syncing 3-Node Architecture..." : "All 3 Nodes Connected & Stamped"}
-                  </span>
-                  <span className="text-[#006def] font-black">{progress}%</span>
-                </div>
+          </main>
 
-                {/* PROGRESS BAR */}
-                <div className="h-1.5 w-full bg-white/10 relative overflow-hidden rounded-full">
-                  <motion.div
-                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-blue-400 via-[#006def] to-cyan-400"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    transition={{ ease: "easeOut" }}
-                  />
+          {/* 4. BOTTOM COMMAND HUD & ENTER PLATFORM BAR */}
+          <footer className="relative z-20 w-full px-6 md:px-12 py-4 bg-[#00183f]/80 border-t border-white/10 backdrop-blur-md">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+              
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-1.5 text-white text-xs font-black uppercase tracking-wider">
+                  <Zap className="w-3.5 h-3.5 text-[#006def]" /> Bridging Precasters &bull; Certified Multi-Platform Architecture
+                </div>
+                <div className="flex items-center gap-4 text-[11px] font-mono text-white/70">
+                  <span>50 States PE Stamped</span>
+                  <span>&bull;</span>
+                  <span>AASHTO H-20 & HL-93</span>
+                  <span>&bull;</span>
+                  <span>NPCA & PCI Ready</span>
                 </div>
               </div>
 
-              {/* ENTER BUTTON */}
-              <div className="w-full sm:w-auto shrink-0">
+              {/* PROGRESS & INITIALIZATION BUTTON */}
+              <div className="flex items-center gap-4 w-full md:w-auto">
+                <div className="w-40 space-y-1">
+                  <div className="flex justify-between font-mono text-[9px] text-white/70 uppercase">
+                    <span>Syncing Nodes</span>
+                    <span className="text-[#006def] font-bold">{progress}%</span>
+                  </div>
+                  <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-gradient-to-r from-blue-400 via-[#006def] to-cyan-400"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${progress}%` }}
+                      transition={{ ease: "easeOut" }}
+                    />
+                  </div>
+                </div>
+
                 {progress === 100 ? (
                   <motion.button
-                    initial={{ opacity: 0, scale: 0.96 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     onClick={handleStart}
-                    className="group relative w-full sm:w-auto px-8 py-2.5 bg-[#006def] hover:bg-white text-white hover:text-[#002f7a] transition-all duration-300 font-mono font-black text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2 rounded-xs shadow-lg shadow-[#006def]/30 cursor-pointer"
+                    className="px-8 py-3 bg-[#006def] hover:bg-white text-white hover:text-[#002f7a] font-mono font-black text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 rounded-xs shadow-lg shadow-[#006def]/30 transition-all duration-300 cursor-pointer"
                   >
-                    <Power className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <Power className="w-4 h-4" />
                     <span>Enter Platform</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </motion.button>
                 ) : (
-                  <div className="px-6 py-2.5 bg-white/5 border border-white/10 text-center text-white/50 font-mono text-[10px] uppercase tracking-widest flex items-center justify-center gap-2 rounded-xs">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#006def] animate-pulse" />
-                    <span>Authorizing System...</span>
+                  <div className="px-6 py-3 bg-white/5 border border-white/10 text-center text-white/50 font-mono text-xs uppercase tracking-wider flex items-center gap-2 rounded-xs">
+                    <ShieldCheck className="w-4 h-4 text-[#006def] animate-pulse" />
+                    <span>Connecting Ecosystem...</span>
                   </div>
                 )}
               </div>
 
             </div>
+          </footer>
 
-          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

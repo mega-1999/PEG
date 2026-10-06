@@ -61,16 +61,17 @@ export default function EntrySystem() {
           exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.4 } }}
           className="fixed inset-0 z-[999] bg-[#001433] flex flex-col justify-between overflow-x-hidden overflow-y-auto select-none"
         >
-          {/* 1. CINEMATIC DRONE VIDEO BACKGROUND LAYER (PRESERVED OLD VIDEO) */}
+          {/* 1. CINEMATIC BRIDGE / OCEAN DRONE VIDEO BACKGROUND LAYER */}
           <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
             <video
+              src={getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4")}
               autoPlay
               loop
               muted
               playsInline
               preload="auto"
               suppressHydrationWarning
-              className="absolute inset-0 w-full h-full object-cover scale-105 filter brightness-50 contrast-125"
+              className="absolute inset-0 w-full h-full object-cover scale-100"
             >
               <source
                 src={getAssetUrl("/assets/video/6029794_Lofoten_Drone_Ocean_Sea_By_Kristian_Ozer_Kettner_Artlist_HD.mp4")}
@@ -78,17 +79,17 @@ export default function EntrySystem() {
               />
             </video>
 
-            {/* HIGH-TECH BLUEPRINT MATRIX OVERLAYS */}
-            <div className="absolute inset-0 bg-[#00183f]/75 mix-blend-multiply" />
+            {/* LIGHT TRANSLUCENT BLUEPRINT TINT - ENSURES FULL BRIDGE VISIBILITY */}
+            <div className="absolute inset-0 bg-[#00183f]/30" />
             <div
-              className="absolute inset-0 opacity-[0.06]"
+              className="absolute inset-0 opacity-[0.04]"
               style={{
                 backgroundImage: `linear-gradient(to right, #006def 1px, transparent 1px), linear-gradient(to bottom, #006def 1px, transparent 1px)`,
-                backgroundSize: '50px 50px'
+                backgroundSize: '60px 60px'
               }}
             />
-            {/* AMBIENT GLOW RADIAL GRADIENT */}
-            <div className="absolute inset-0 bg-radial from-transparent via-[#00183f]/60 to-[#00102b]/95" />
+            {/* SUBTLE VIGNETTE AT EDGES ONLY */}
+            <div className="absolute inset-0 bg-radial from-transparent via-transparent to-black/60" />
           </div>
 
           {/* 2. TOP HUD BAR */}
@@ -150,8 +151,9 @@ export default function EntrySystem() {
                   </div>
 
                   {/* VIDEO FRAME */}
-                  <div className="relative aspect-[16/10] w-full bg-black rounded-xs overflow-hidden border border-white/10 flex items-center justify-center">
+                  <div className="relative aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
+                      src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
                       autoPlay
                       loop
                       muted
@@ -181,7 +183,7 @@ export default function EntrySystem() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-[#002868]/90 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
+                  className="bg-[#001f54]/85 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-1.5">
@@ -197,8 +199,9 @@ export default function EntrySystem() {
                     </span>
                   </div>
 
-                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-black rounded-xs overflow-hidden border border-white/10 flex items-center justify-center">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
+                      src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
                       autoPlay
                       loop
                       muted
@@ -223,7 +226,7 @@ export default function EntrySystem() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="bg-[#002868]/90 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
+                  className="bg-[#001f54]/85 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-1.5">
@@ -239,8 +242,9 @@ export default function EntrySystem() {
                     </span>
                   </div>
 
-                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-black rounded-xs overflow-hidden border border-white/10 flex items-center justify-center">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
+                      src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
                       autoPlay
                       loop
                       muted

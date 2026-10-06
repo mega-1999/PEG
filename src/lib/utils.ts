@@ -17,12 +17,19 @@ export function getAssetUrl(path?: string): string {
 
   // If path is a Cloudflare R2 URL, strip domain and map to latest local repository asset
   if (cleanPath.includes(".r2.dev/")) {
+    if (cleanPath.includes("u_drain_mold_animation")) {
+      return "/assets/images/PAIPING.2_-_Copy.png";
+    }
     const afterDomain = cleanPath.split(".r2.dev/")[1];
     if (afterDomain.startsWith("blog/")) {
       cleanPath = `/assets/${afterDomain}`;
     } else {
       cleanPath = `/${afterDomain}`;
     }
+  }
+
+  if (cleanPath.includes("u_drain_mold_animation")) {
+    return "/assets/images/PAIPING.2_-_Copy.png";
   }
 
   // If external non-R2 URL, return as is

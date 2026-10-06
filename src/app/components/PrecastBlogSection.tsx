@@ -63,26 +63,26 @@ export default function PrecastBlogSection() {
   const gridPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
-    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#002f7a] py-16 md:py-20 overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#002f7a] py-8 md:py-10 px-10 md:px-20 overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{
-          backgroundImage: `radial-gradient(#002f7a 1.5px, transparent 1.5px), linear-gradient(to right, #002f7a 0.5px, transparent 0.5px), linear-gradient(to bottom, #002f7a 0.5px, transparent 0.5px)`,
-          backgroundSize: '40px 40px, 200px 200px, 200px 200px'
+          backgroundImage: `linear-gradient(to right, #002f7a 1px, transparent 1px), linear-gradient(to bottom, #002f7a 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
         }}
       />
 
-      <div className="relative w-full px-6 md:px-16 lg:px-20 z-10 space-y-8">
+      <div className="relative w-full z-10 space-y-6 md:space-y-8">
 
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#002f7a]/10 pb-6">
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
-              <Box className="w-3.5 h-3.5" /> Precast Knowledge Vault
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#002f7a]/10 pb-4">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
+              <Box className="w-3.5 h-3.5 text-[#006def]" /> Precast Knowledge Vault
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] uppercase tracking-tighter leading-tight">
+            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] uppercase tracking-tighter leading-none">
               Precast Product <span className="text-[#006def]">& Technical Articles</span>
             </h2>
             <p className="text-[#002f7a] font-semibold max-w-2xl text-sm md:text-base leading-relaxed">
@@ -90,17 +90,17 @@ export default function PrecastBlogSection() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/admin"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-blue-50 hover:bg-blue-100 text-[#002f7a] text-xs font-bold uppercase tracking-wider border border-[#006def]/20 transition-all shadow-xs"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-[#002f7a] text-xs font-bold uppercase tracking-wider border border-[#006def]/20 transition-all rounded-sm shadow-xs"
             >
               <PlusCircle className="w-4 h-4 text-[#006def]" />
               <span>Admin Manage Blogs</span>
             </Link>
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-xs shrink-0"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-bold uppercase tracking-wider transition-all rounded-sm shadow-xs shrink-0"
             >
               <span>View All Articles</span>
               <ArrowRight className="w-4 h-4" />
@@ -110,7 +110,7 @@ export default function PrecastBlogSection() {
 
         {/* LOADING STATE */}
         {loading && (
-          <div className="py-20 flex flex-col items-center justify-center space-y-4">
+          <div className="py-16 flex flex-col items-center justify-center space-y-4">
             <Loader2 className="w-8 h-8 text-[#006def] animate-spin" />
             <p className="font-mono text-xs font-bold text-[#002f7a] uppercase tracking-widest">
               Connecting to Supabase Database & Loading Articles...
@@ -120,7 +120,7 @@ export default function PrecastBlogSection() {
 
         {/* EMPTY STATE (IF NO BLOGS IN SUPABASE) */}
         {!loading && posts.length === 0 && (
-          <div className="py-16 px-6 bg-blue-50/40 border border-[#002f7a]/15 text-center space-y-4 max-w-xl mx-auto">
+          <div className="py-12 px-6 bg-blue-50/40 border border-[#002f7a]/15 text-center space-y-4 max-w-xl mx-auto rounded-sm">
             <FileText className="w-10 h-10 text-[#006def] mx-auto opacity-70" />
             <h3 className="text-lg font-black uppercase tracking-tight text-[#002f7a]">
               No Blog Posts in Supabase Database
@@ -130,7 +130,7 @@ export default function PrecastBlogSection() {
             </p>
             <Link
               href="/admin"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-mono font-black uppercase tracking-wider transition-all shadow-xs"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-mono font-black uppercase tracking-wider transition-all rounded-sm shadow-xs"
             >
               <PlusCircle className="w-4 h-4" />
               <span>Add First Blog in Admin</span>
@@ -140,7 +140,7 @@ export default function PrecastBlogSection() {
 
         {/* CATEGORY FILTER TABS */}
         {!loading && posts.length > 0 && categories.length > 1 && (
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
               return (
@@ -148,10 +148,10 @@ export default function PrecastBlogSection() {
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   className={`
-                    px-4 py-2 text-xs md:text-sm font-bold transition-all duration-200 shrink-0 flex items-center gap-2 border cursor-pointer shadow-xs
+                    px-3.5 py-1.5 text-xs font-bold transition-all duration-200 shrink-0 flex items-center gap-2 border cursor-pointer rounded-sm shadow-xs
                     ${isActive
-                      ? "bg-[#002f7a] text-white border-[#002f7a] shadow-md scale-102"
-                      : "bg-white text-[#002f7a] font-bold border-[#002f7a]/20 hover:text-white hover:bg-[#002f7a]"
+                      ? "bg-[#002f7a] text-white border-[#002f7a] shadow-sm"
+                      : "bg-white text-[#002f7a] border-[#002f7a]/20 hover:text-white hover:bg-[#002f7a]"
                     }
                   `}
                 >
@@ -165,10 +165,13 @@ export default function PrecastBlogSection() {
         {/* FEATURED MAIN ARTICLE (SHOW ON "ALL PRODUCTS" IF AVAILABLE) */}
         {!loading && posts.length > 0 && selectedCategory === "All Products" && featuredPost && (
           <div>
-            <div className="relative bg-white border border-[#002f7a]/15 overflow-hidden shadow-xs hover:border-[#006def] transition-all duration-300 group grid grid-cols-1 lg:grid-cols-12 gap-0">
+            <div className="relative bg-white border border-[#002f7a]/15 rounded-sm overflow-hidden shadow-xs hover:border-[#006def] hover:shadow-xl transition-all duration-300 group grid grid-cols-1 lg:grid-cols-12 gap-0">
+
+              {/* TOP ACCENT LINE */}
+              <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300 z-30" />
 
               {/* IMAGE & VIDEO SHOWCASE THUMBNAIL */}
-              <div className="lg:col-span-7 relative min-h-[280px] lg:min-h-[380px] overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-4">
+              <div className="lg:col-span-7 relative min-h-[260px] lg:min-h-[340px] overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20 flex items-center justify-center p-4">
                 <Image
                   src={featuredPost.coverImage}
                   alt={featuredPost.title}
@@ -178,25 +181,17 @@ export default function PrecastBlogSection() {
                   priority
                 />
 
-                {/* VIDEO BADGE OVERLAY */}
-                {/* {featuredPost.featuredVideo && (
-                  <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1 bg-white/95 text-xs font-black text-[#002f7a] shadow-xs border border-[#006def]/20">
-                    <Play className="w-3.5 h-3.5 text-[#006def] fill-[#006def]" />
-                    <span>Includes 3D Simulation</span>
-                  </div>
-                )} */}
-
-                <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1 bg-white/95 text-xs font-bold text-[#002f7a] border border-[#006def]/20 shadow-xs">
+                <div className="absolute bottom-3 left-3 z-20 flex items-center gap-2 px-2.5 py-1 bg-white/95 text-xs font-bold text-[#002f7a] border border-[#006def]/20 shadow-xs rounded-sm">
                   <Clock className="w-3.5 h-3.5 text-[#006def]" />
                   <span>{featuredPost.readTime}</span>
                 </div>
               </div>
 
               {/* ARTICLE METADATA & SUMMARY */}
-              <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-between bg-white space-y-4">
+              <div className="lg:col-span-5 p-6 flex flex-col justify-between bg-white space-y-4">
                 <div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="px-2.5 py-0.5 bg-[#006def] text-white text-[10px] font-mono font-black tracking-wider uppercase">
+                  <div className="flex items-center gap-3 mb-2.5">
+                    <span className="px-2 py-0.5 bg-[#006def] text-white text-[10px] font-mono font-black tracking-wider uppercase rounded-xs">
                       {featuredPost.category}
                     </span>
                     <span className="text-xs text-[#006def] font-bold">
@@ -204,43 +199,43 @@ export default function PrecastBlogSection() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl md:text-2xl font-black text-[#002f7a] tracking-tight uppercase leading-snug group-hover:text-[#006def] transition-colors">
+                  <h3 className="text-lg md:text-xl font-black text-[#002f7a] tracking-tight uppercase leading-snug group-hover:text-[#006def] transition-colors">
                     <Link href={`/blog/${featuredPost.slug}`}>
                       {featuredPost.title}
                     </Link>
                   </h3>
 
-                  <p className="mt-2 text-[#002f7a] text-xs sm:text-sm font-semibold line-clamp-3 leading-relaxed">
+                  <p className="mt-2 text-[#002f7a]/85 text-xs sm:text-sm font-semibold line-clamp-3 leading-relaxed">
                     {featuredPost.excerpt}
                   </p>
 
                   {/* KEY TECH SPEC BADGES */}
                   {featuredPost.technicalSpecs && featuredPost.technicalSpecs.length > 0 && (
-                    <div className="mt-4 space-y-1.5 border-t border-[#002f7a]/10 pt-3">
+                    <div className="mt-3.5 space-y-1.5 border-t border-[#002f7a]/10 pt-3">
                       {featuredPost.technicalSpecs.slice(0, 3).map((spec, i) => (
                         <div key={i} className="flex items-center justify-between text-xs font-mono">
                           <span className="text-[#002f7a] font-bold">{spec.label}:</span>
-                          <span className="text-[#002f7a] font-black bg-blue-50 px-2 py-0.5 border border-[#006def]/20">{spec.value}</span>
+                          <span className="text-[#002f7a] font-black bg-blue-50 px-2 py-0.5 border border-[#006def]/20 rounded-xs">{spec.value}</span>
                         </div>
                       ))}
                     </div>
                   )}
                 </div>
 
-                <div className="pt-4 border-t border-[#002f7a]/10 flex items-center justify-between">
+                <div className="pt-3 border-t border-[#002f7a]/10 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#006def]">
+                    <div className="relative w-7 h-7 rounded-full overflow-hidden border border-[#006def]">
                       <Image
                         src={featuredPost.author.avatar}
                         alt={featuredPost.author.name}
                         fill
-                        sizes="32px"
+                        sizes="28px"
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-[#002f7a]">{featuredPost.author.name}</p>
-                      <p className="text-[10px] text-[#006def] font-semibold">{featuredPost.author.role}</p>
+                      <p className="text-xs font-bold text-[#002f7a] leading-tight">{featuredPost.author.name}</p>
+                      <p className="text-[10px] text-[#006def] font-semibold leading-tight">{featuredPost.author.role}</p>
                     </div>
                   </div>
 
@@ -249,7 +244,7 @@ export default function PrecastBlogSection() {
                     className="inline-flex items-center gap-1.5 text-xs font-black text-[#006def] hover:text-[#002f7a] uppercase tracking-wider transition-colors"
                   >
                     <span>Read Article</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>
@@ -260,7 +255,7 @@ export default function PrecastBlogSection() {
 
         {/* PRECAST PRODUCT ARTICLES GRID */}
         {!loading && posts.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             <AnimatePresence mode="popLayout">
               {gridPosts.map((post, idx) => (
                 <motion.article
@@ -270,10 +265,13 @@ export default function PrecastBlogSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className="group flex flex-col bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="group relative flex flex-col bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden rounded-sm cursor-pointer"
                 >
+                  {/* TOP ACCENT LINE */}
+                  <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300 z-20" />
+
                   {/* COVER IMAGE & MEDIA INDICATOR */}
-                  <div className="relative w-full h-60 overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20 border-b border-[#002f7a]/10 flex items-center justify-center p-3">
+                  <div className="relative w-full h-52 overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20 border-b border-[#002f7a]/10 flex items-center justify-center p-3">
                     <Image
                       src={post.coverImage}
                       alt={post.title}
@@ -284,34 +282,34 @@ export default function PrecastBlogSection() {
 
                     {/* CATEGORY TAG */}
                     <div className="absolute top-3 left-3 z-10">
-                      <span className="px-2.5 py-0.5 bg-white text-[#002f7a] text-[9px] font-mono font-black tracking-wider uppercase border border-[#002f7a]/20 shadow-xs">
+                      <span className="px-2 py-0.5 bg-white text-[#002f7a] text-[9px] font-mono font-black tracking-wider uppercase border border-[#002f7a]/20 shadow-xs rounded-xs">
                         {post.category}
                       </span>
                     </div>
 
                     {/* MEDIA CONTENT BADGE */}
                     {post.featuredVideo && (
-                      <div className="absolute top-3 right-3 z-10 bg-[#002f7a] text-white p-1.5 shadow-xs group-hover:bg-[#006def] transition-colors">
+                      <div className="absolute top-3 right-3 z-10 bg-[#002f7a] text-white p-1.5 shadow-xs group-hover:bg-[#006def] transition-colors rounded-xs">
                         <Play className="w-3 h-3 fill-white" />
                       </div>
                     )}
 
-                    <div className="absolute bottom-3 left-3 z-10 flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#002f7a] bg-white/90 px-2 py-0.5 border border-[#002f7a]/10">
+                    <div className="absolute bottom-3 left-3 z-10 flex items-center gap-1.5 text-[10px] font-mono font-bold text-[#002f7a] bg-white/95 px-2 py-0.5 border border-[#002f7a]/15 rounded-xs">
                       <Clock className="w-3 h-3 text-[#006def]" />
                       <span>{post.readTime}</span>
                     </div>
                   </div>
 
                   {/* CONTENT AREA */}
-                  <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
                     <div>
-                      <h3 className="text-base font-black text-[#002f7a] tracking-tight uppercase leading-snug group-hover:text-[#006def] transition-colors line-clamp-2">
+                      <h3 className="text-sm sm:text-[15px] font-black text-[#002f7a] tracking-tight uppercase leading-snug group-hover:text-[#006def] transition-colors line-clamp-2">
                         <Link href={`/blog/${post.slug}`}>
                           {post.title}
                         </Link>
                       </h3>
 
-                      <p className="mt-2 text-[#002f7a] text-xs font-semibold line-clamp-3 leading-relaxed">
+                      <p className="mt-2 text-[#002f7a]/85 text-xs font-semibold line-clamp-3 leading-relaxed">
                         {post.excerpt}
                       </p>
                     </div>

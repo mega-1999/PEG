@@ -80,15 +80,15 @@ export default function Home() {
       <ManufacturingHub />
       <SeamlessConnection />
       <AgencySlider />
+      <FuturisticCTA />
+      <PrecastBlogSection />
+      <PrecastMoldComponent />
+      <HexagonLogoShowcase />
 
       <TrenchingSystem />
       <RetainingWallComponent />
-      <PrecastMoldComponent />
-      <PrecastBlogSection />
       <ContentSection />
       <DotMatrixSlider />
-      <HexagonLogoShowcase />
-      <FuturisticCTA />
 
       <PegLocations />
       <PegResourceGrid />

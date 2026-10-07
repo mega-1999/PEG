@@ -74,18 +74,19 @@ export const LATAMFlag = ({ className = "w-5 h-3.5" }: { className?: string }) =
 export const EUFlag = ({ className = "w-5 h-3.5" }: { className?: string }) => (
   <svg className={cn("rounded-[2px] shadow-xs shrink-0 inline-block overflow-hidden", className)} viewBox="0 0 810 540" xmlns="http://www.w3.org/2000/svg">
     <rect width="810" height="540" fill="#003399"/>
-    <g fill="#FFCC00" transform="translate(405,270)">
+    <g fill="#FFCC00" transform="translate(405, 270)">
       {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => {
         const rad = (angle * Math.PI) / 180;
         const r = 160;
         const x = r * Math.sin(rad);
         const y = -r * Math.cos(rad);
         return (
-          <polygon
-            key={`eu-star-${i}`}
-            transform={`translate(${x},${y}) scale(15)`}
-            points="0,-1 0.588,0.809 -0.951,-0.309 0.951,-0.309 -0.588,0.809"
-          />
+          <g key={`eu-star-${i}`} transform={`translate(${x}, ${y}) scale(28)`}>
+            <polygon
+              points="0,-1 0.2245,-0.309 0.9511,-0.309 0.3633,0.118 0.5878,0.809 0,0.382 -0.5878,0.809 -0.3633,0.118 -0.9511,-0.309 -0.2245,-0.309"
+              fill="#FFD700"
+            />
+          </g>
         );
       })}
     </g>

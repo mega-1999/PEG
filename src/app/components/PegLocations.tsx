@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MapPin,
@@ -16,6 +17,7 @@ import {
   ShieldCheck,
   ChevronRight,
 } from "lucide-react";
+import { getAssetUrl } from "@/lib/utils";
 
 interface LocationItem {
   id: string;
@@ -32,6 +34,7 @@ interface LocationItem {
   timezone: string;
   hours: string;
   mapQuery: string;
+  image?: string;
   capabilities: string[];
 }
 
@@ -50,6 +53,7 @@ const locationData: LocationItem[] = [
     timezone: "Eastern Time (ET • UTC-5)",
     hours: "Mon – Fri: 08:00 AM – 06:00 PM EST",
     mapQuery: "105 Maxess Road, Melville, NY 11747, USA",
+    image: "/assets/northeast.webp",
     capabilities: [
       "DOT Precast Certifications",
       "Structural Engineering Analysis",
@@ -502,39 +506,68 @@ export default function PegLocations() {
                     </div>
                   </div>
 
-                  {/* 3. INTERACTIVE EMBEDDED GOOGLE MAP */}
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <Navigation className="w-4 h-4 text-[#006def]" />
-                        <h4 className="text-xs font-black uppercase tracking-wider text-[#002f7a]">
-                          Interactive Facility Map
-                        </h4>
+                  {/* 3. LOCATION & REGIONAL VISUAL + INTERACTIVE EMBEDDED GOOGLE MAP */}
+                  <div className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {/* Regional Coverage / Facility Visual */}
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <Globe2 className="w-4 h-4 text-[#006def]" />
+                          <h4 className="text-xs font-black uppercase tracking-wider text-[#002f7a]">
+                            Regional Coverage & Territory Map
+                          </h4>
+                        </div>
+                        <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-900/5 relative group">
+                          <Image
+                            src={getAssetUrl(selectedLocation.image || "/assets/northeast.webp")}
+                            alt={`${selectedLocation.region} territory map`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+                            priority={selectedLocation.id === "ny-hq"}
+                          />
+                          <div className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider text-[#002f7a] shadow-sm border border-slate-200/60 flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                            <span>{selectedLocation.region}</span>
+                          </div>
+                        </div>
                       </div>
 
-                      <a
-                        href={googleMapsDirectionsUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-black text-[#006def] hover:text-[#002f7a] uppercase tracking-wider transition-colors"
-                      >
-                        <span>Open in Google Maps</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
+                      {/* Interactive Live Google Map */}
+                      <div className="space-y-2">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <Navigation className="w-4 h-4 text-[#006def]" />
+                            <h4 className="text-xs font-black uppercase tracking-wider text-[#002f7a]">
+                              Interactive Facility Map
+                            </h4>
+                          </div>
 
-                    <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative group">
-                      <iframe
-                        title={`${selectedLocation.region} Google Map`}
-                        src={mapEmbedUrl}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        loading="lazy"
-                        allowFullScreen
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="w-full h-full grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
-                      />
+                          <a
+                            href={googleMapsDirectionsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-black text-[#006def] hover:text-[#002f7a] uppercase tracking-wider transition-colors"
+                          >
+                            <span>Google Maps</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+
+                        <div className="w-full h-64 sm:h-72 rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 relative group">
+                          <iframe
+                            title={`${selectedLocation.region} Google Map`}
+                            src={mapEmbedUrl}
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="w-full h-full grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
 

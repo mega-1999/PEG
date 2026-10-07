@@ -86,9 +86,7 @@ export default function Home() {
       <HexagonLogoShowcase />
       <RetainingWallComponent />
       <ContentSection />
-
       <TrenchingSystem />
-
       <PegLocations />
       <PegResourceGrid />
       <ContactTerminal />

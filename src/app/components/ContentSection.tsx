@@ -6,7 +6,7 @@ import { Database, Workflow, Unlock, ArrowRight, Activity, Clock } from 'lucide-
 
 export const ContentSection = () => {
   return (
-    <section className="w-full bg-[#f8fafc] px-10 md:px-20 py-8 md:py-10 border-t border-[#002f7a]/10 relative overflow-hidden select-none">
+    <section className="w-full bg-[#f8fafc] py-8 sm:py-10 md:py-12 lg:py-16 border-t border-[#002f7a]/10 relative overflow-hidden select-none">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div
@@ -17,7 +17,7 @@ export const ContentSection = () => {
         }}
       />
 
-      <div className="relative z-10 space-y-6">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-6">
 
         {/* HEADER SECTION */}
         <div className="flex flex-col justify-between items-start border-b border-[#002f7a]/10 pb-4">

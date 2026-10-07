@@ -84,25 +84,25 @@ const services = [
 
 export default function PegServices() {
   return (
-    <section id="services" className="w-full bg-white py-8 md:py-10 border-b border-[#002f7a]/10">
-      <div className="w-full px-10 md:px-20">
+    <section id="services" className="w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 border-b border-[#002f7a]/10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
         {/* Section Header */}
-        <div className="mb-10">
+        <div className="mb-8 md:mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#006def]">
             Core Competencies
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter uppercase leading-[0.9]">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter uppercase leading-[0.9]">
             Precast Engineering & <br />
             <span className="text-[#006def]">Technical Services.</span>
           </h2>
-          <p className="mt-4 text-[#002f7a] font-semibold max-w-2xl text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-[#002f7a] font-semibold max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
             We provide specialized, end-to-end engineering support exclusively for the precast concrete industry. Each service includes technical video demonstrations and CAD execution blueprints.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 items-stretch">
           {services.map((service, index) => {
             const isWhiteVideo = service.videoBg === "bg-white" || service.videoBg?.includes("white");
 

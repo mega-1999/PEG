@@ -41,7 +41,7 @@ export default function HexagonLogoShowcase() {
   const row2 = partnerLogos.slice(10, 20);
 
   return (
-    <section className="w-full bg-white text-[#002f7a] py-8 md:py-10 overflow-hidden relative select-none border-t border-[#002f7a]/10">
+    <section className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative select-none border-t border-[#002f7a]/10">
 
       {/* CAD BLUEPRINT GRID BACKGROUND */}
       <div
@@ -55,7 +55,7 @@ export default function HexagonLogoShowcase() {
       <div className="w-full relative z-10 space-y-6 md:space-y-8">
 
         {/* HEADER SECTION - CENTERED */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-2.5 px-6 md:px-10 border-b border-[#002f7a]/10 pb-4">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-2.5 px-4 sm:px-6 md:px-10 border-b border-[#002f7a]/10 pb-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
             <Globe2 className="w-3.5 h-3.5 text-[#006def]" /> Industry Alliances
           </div>
@@ -94,7 +94,7 @@ export default function HexagonLogoShowcase() {
         </div>
 
         {/* BOTTOM METRIC BADGES BAR */}
-        <div className="w-full px-10 md:px-20">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5 bg-slate-50/70 p-4 border border-[#002f7a]/15 rounded-sm shadow-xs text-center">
             <div className="space-y-0.5 flex flex-col items-center justify-center">
               <span className="text-[10px] font-mono font-bold text-[#006def] uppercase tracking-widest">Industry Links</span>

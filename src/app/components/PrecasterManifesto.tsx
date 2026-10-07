@@ -33,13 +33,13 @@ const manifestoData = [
 
 export default function PrecasterManifesto() {
   return (
-    <section id="about" className="w-full py-8 md:py-10 md:mb-8 bg-white overflow-hidden relative border-b border-[#002f7a]/10">
+    <section id="about" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-white overflow-hidden relative border-b border-[#002f7a]/10">
 
       {/* STANDARDIZED CONTAINER */}
-      <div className="w-full px-10 md:px-20 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
         {/* HEADER SECTION */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-6">
 
           <div className="space-y-2 max-w-4xl">
             <motion.h2
@@ -47,7 +47,7 @@ export default function PrecasterManifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#002f7a]"
+              className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-[#002f7a]"
             >
               By Precasters. <br />
               <span className="text-[#006def]">For Precasters.</span>
@@ -68,7 +68,7 @@ export default function PrecasterManifesto() {
         </div>
 
         {/* 3-COLUMN MANIFESTO GRID */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {manifestoData.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -77,7 +77,7 @@ export default function PrecasterManifesto() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // DEFAULT: PEG Dark Blue -> HOVER: PEG Bright Blue
-              className="group relative bg-[#002f7a] hover:bg-[#006def] p-8 md:p-10 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#006def] hover:shadow-[15px_15px_0px_#002f7a]"
+              className="group relative bg-[#002f7a] hover:bg-[#006def] p-6 sm:p-8 md:p-10 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#006def] hover:shadow-[15px_15px_0px_#002f7a]"
             >
 
               {/* LARGE BACKGROUND WATERMARK */}

@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full bg-[#002f7a] text-white py-8 md:py-10 px-10 md:px-20 border-t border-white/10 select-none overflow-hidden flex items-center justify-center">
+    <section className="relative w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 border-t border-white/10 select-none overflow-hidden flex items-center justify-center">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div
@@ -18,7 +18,7 @@ export default function FuturisticCTA() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-5xl bg-white/5 border border-white/15 hover:border-[#006def] p-6 md:p-10 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition-all duration-300 rounded-sm group overflow-hidden">
+      <div className="relative z-10 w-full max-w-5xl bg-white/5 border border-white/15 hover:border-[#006def] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col items-center text-center shadow-lg hover:shadow-2xl transition-all duration-300 rounded-sm group overflow-hidden">
 
         {/* TOP ACCENT LINE */}
         <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300 z-20" />

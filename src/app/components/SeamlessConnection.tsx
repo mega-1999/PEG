@@ -6,14 +6,14 @@ import { Monitor, Factory, Waypoints, ChevronRight } from "lucide-react";
 
 export default function SeamlessConnection() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-8 md:py-10 px-10 md:px-20 overflow-hidden relative font-sans select-none border-t border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative font-sans select-none border-t border-white/10">
 
       {/* BACKGROUND ACCENT: Clean, subtle blueprint grid */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]"
       />
 
-      <div className="relative z-10 space-y-8">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-6 md:space-y-8">
 
         {/* HEADER SECTION */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-3">
@@ -32,7 +32,7 @@ export default function SeamlessConnection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase"
+            className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase"
           >
             One Unique Connection <br />
             For All Your Precast Concrete <br />

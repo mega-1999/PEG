@@ -63,7 +63,7 @@ export default function PrecastBlogSection() {
   const gridPosts = filteredPosts.length > 0 ? filteredPosts : posts;
 
   return (
-    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#002f7a] py-8 md:py-10 px-10 md:px-20 overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section id="precast-engineering-insights" className="relative w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div
@@ -74,7 +74,7 @@ export default function PrecastBlogSection() {
         }}
       />
 
-      <div className="relative w-full z-10 space-y-6 md:space-y-8">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-6 md:space-y-8">
 
         {/* HEADER SECTION */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#002f7a]/10 pb-4">
@@ -82,10 +82,10 @@ export default function PrecastBlogSection() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               <Box className="w-3.5 h-3.5 text-[#006def]" /> Precast Knowledge Vault
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] uppercase tracking-tighter leading-none">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] uppercase tracking-tighter leading-none">
               Precast Product <span className="text-[#006def]">& Technical Articles</span>
             </h2>
-            <p className="text-[#002f7a] font-semibold max-w-2xl text-sm md:text-base leading-relaxed">
+            <p className="text-[#002f7a] font-semibold max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
               In-depth technical guides, mold formwork blueprints, video demonstrations, and structural load analysis for heavy precast concrete products.
             </p>
           </div>

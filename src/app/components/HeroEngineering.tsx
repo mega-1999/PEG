@@ -52,25 +52,25 @@ const HeroEngineering = () => {
   };
 
   return (
-    <section className="relative w-full py-16 md:py-20 flex flex-col items-center justify-center border-b border-white/10 bg-[#002f7a] text-white overflow-hidden">
+    <section className="relative w-full py-10 sm:py-12 md:py-16 lg:py-20 flex flex-col items-center justify-center border-b border-white/10 bg-[#002f7a] text-white overflow-hidden">
 
       {/* 1. THE GRID SYSTEM */}
       <div className="absolute inset-0 -z-10 opacity-[0.04] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>
 
-      <div className="w-full px-10 md:px-20 flex flex-col items-center text-center space-y-8 z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 flex flex-col items-center text-center space-y-6 md:space-y-8 z-10">
         <div className="space-y-6 w-full">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className='text-3xl md:text-5xl font-black text-white tracking-tighter leading-none'
+            className='text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter leading-none'
           >
             PEG SOLUTIONS{" "}
             <span className="text-[#006def]">FOR THE WHOLE TEAM.</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 text-left w-full">
-            <div className="p-8 md:p-10 bg-white/10 backdrop-blur-md border border-white/20 border-l-4 border-l-white space-y-2 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-4 text-left w-full">
+            <div className="p-6 sm:p-8 md:p-10 bg-white/10 backdrop-blur-md border border-white/20 border-l-4 border-l-white space-y-2 text-left">
               <h3 className="text-base md:text-lg font-black text-white uppercase tracking-tight flex items-center gap-2">
                 <span className="w-2 h-2 bg-white shrink-0" />
                 What is Precast Engineering Group (PEG)?
@@ -80,7 +80,7 @@ const HeroEngineering = () => {
               </p>
             </div>
 
-            <div className="p-8 md:p-10 bg-white/10 backdrop-blur-md border border-white/20 border-l-4 border-l-[#006def] space-y-2 text-left">
+            <div className="p-6 sm:p-8 md:p-10 bg-white/10 backdrop-blur-md border border-white/20 border-l-4 border-l-[#006def] space-y-2 text-left">
               <h3 className="text-base md:text-lg font-black text-white uppercase tracking-tight flex items-center gap-2">
                 <span className="w-2 h-2 bg-[#006def] shrink-0" />
                 Why PEG?

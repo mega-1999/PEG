@@ -74,7 +74,7 @@ const manufacturingSectors: MfgItem[] = [
 
 export default function ManufacturingHub() {
   return (
-    <section className="w-full bg-white text-[#002f7a] py-8 md:py-10 px-10 md:px-20 overflow-hidden relative select-none border-t border-[#002f7a]/10">
+    <section className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative select-none border-t border-[#002f7a]/10">
 
       {/* TECH BACKGROUND MATRIX */}
       <div
@@ -85,7 +85,7 @@ export default function ManufacturingHub() {
         }}
       />
 
-      <div className="relative z-10 space-y-6">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-6">
 
         {/* LINE SYSTEM HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#002f7a]/10 pb-4">
@@ -93,10 +93,10 @@ export default function ManufacturingHub() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               <Factory className="w-3.5 h-3.5 text-[#006def]" /> Fabrication & Casting Complexes
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-none uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-none uppercase">
               Heavy Industrial <span className="text-[#006def]">Production Line.</span>
             </h2>
-            <p className="text-[#002f7a] font-semibold text-sm md:text-base leading-relaxed max-w-2xl">
+            <p className="text-[#002f7a] font-semibold text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl">
               Monitored plant operations processing high-performance material infrastructure to exact specification matrixes.
             </p>
           </div>

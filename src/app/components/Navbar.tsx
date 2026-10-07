@@ -120,7 +120,8 @@ export const Navbar = () => {
     <header ref={navRef} className="fixed top-0 left-0 w-full z-[100] flex flex-col shadow-sm">
 
       {/* 1. TOP UTILITY BAR */}
-      <div className="bg-[#002f7a] text-white h-10 w-full px-6 xl:px-20 flex justify-between items-center">
+      <div className="bg-[#002f7a] text-white h-10 w-full">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 h-full flex justify-between items-center">
         {/* EMAIL & MOBILE WITH ICONS */}
         <div className="h-full flex items-center gap-4 text-[11px] font-bold tracking-wider">
           <a
@@ -222,11 +223,11 @@ export const Navbar = () => {
 
         </div>
       </div>
+    </div>
 
       {/* 2. MAIN NAVIGATION BAR */}
       <div className="bg-white border-b border-[#002f7a]/10 h-20 md:h-26 w-full relative">
-        {/* Adjusted padding to flow nicely when zoomed in */}
-        <div className="w-full px-6 xl:px-20 h-full flex justify-between items-center relative">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 w-full h-full flex justify-between items-center relative">
 
           <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex flex-col justify-center items-start group">
             <Image

@@ -187,9 +187,10 @@ const socialLinksNew = [
 
 export default function PrecastTechFooter() {
   return (
-    <div className="w-full bg-[#002f7a] px-6 sm:px-10 md:px-14 lg:px-20 py-12 space-y-9">
-      {/* 1. SEVEN DIRECTORY COLUMNS */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 border-b border-white/10 pb-9">
+    <footer className="w-full bg-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 space-y-9">
+        {/* 1. SEVEN DIRECTORY COLUMNS */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 border-b border-white/10 pb-9">
         {newFooterColumns.map((col) => (
           <div key={col.title} className="space-y-4">
             <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
@@ -441,6 +442,7 @@ export default function PrecastTechFooter() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </footer>
   );
 }

@@ -111,18 +111,18 @@ const engineeringServices = [
 
 export default function EngineeringExecuted() {
   return (
-    <section className="w-full bg-white py-8 md:py-10 border-b border-[#002f7a]/10 overflow-hidden">
-      <div className="w-full px-10 md:px-20">
+    <section className="w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 border-b border-[#002f7a]/10 overflow-hidden">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
         {/* HEADER: Massive Brand Statement */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-6 md:gap-10">
           <div className="space-y-4 max-w-5xl">
             <motion.div
               initial={{ opacity: 0, width: 0 }}
               whileInView={{ opacity: 1, width: '80px' }}
               className="h-1 bg-[#006def]"
             />
-            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-[0.9] uppercase">
               ENGINEERING <br />
               <span className="text-[#006def]">THAT FITS YOUR PRODUCTION.</span>
             </h2>

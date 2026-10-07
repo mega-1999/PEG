@@ -38,28 +38,28 @@ const pegResources = [
 
 export default function UnchallengedResources() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-16 md:py-20 relative overflow-hidden border-b border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden border-b border-white/10">
 
       {/* BACKGROUND: Technical Data Stream */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none flex justify-between px-20">
+      <div className="absolute inset-0 opacity-10 pointer-events-none flex justify-between px-6 md:px-20">
         {[...Array(8)].map((_, i) => (
           <div key={i} className="w-px h-full bg-gradient-to-b from-transparent via-white to-transparent opacity-20" />
         ))}
       </div>
 
-      <div className="w-full px-10 md:px-20 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
           {/* LEFT COLUMN: Fixed Headline + Bottom Looping Video */}
-          <div className="lg:col-span-6 flex flex-col justify-between h-full min-h-[500px] lg:min-h-[580px] space-y-6">
-            <div className="space-y-6">
+          <div className="lg:col-span-6 flex flex-col justify-between h-full min-h-[450px] lg:min-h-[580px] space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white"
+                className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white"
               >
                 Unchallenged <br />
                 <span className="text-[#006def]">Resources</span> <br />

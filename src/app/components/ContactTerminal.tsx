@@ -108,7 +108,7 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section id="contact" className="w-full bg-white text-[#002f7a] py-8 md:py-10 px-10 md:px-20 relative overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section id="contact" className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div
@@ -119,7 +119,7 @@ export default function ContactTerminal() {
         }}
       />
 
-      <div className="relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
         {/* 1. SECTION HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-8 gap-6 border-b border-[#002f7a]/10 pb-4 md:pb-6">

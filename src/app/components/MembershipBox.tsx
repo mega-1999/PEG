@@ -34,7 +34,7 @@ const telemetryStats = [
 
 export default function MembershipBox() {
   return (
-    <section className="w-full bg-white  px-10 md:px-20 relative overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section className="w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div
@@ -50,7 +50,7 @@ export default function MembershipBox() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full bg-[#002f7a] text-white relative overflow-hidden shadow-xl border border-[#002f7a]"
+        className="max-w-[1600px] mx-auto w-full bg-[#002f7a] text-white relative overflow-hidden shadow-xl border border-[#002f7a]"
       >
         {/* INTERNAL BLUEPRINT GRID BACKGROUND */}
         <div
@@ -68,7 +68,7 @@ export default function MembershipBox() {
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12">
 
           {/* LEFT SIDE: HEAVY CTA */}
-          <div className="lg:col-span-6 p-8 md:p-12 lg:p-14 flex flex-col justify-between">
+          <div className="lg:col-span-6 p-6 sm:p-8 md:p-12 lg:p-14 flex flex-col justify-between">
             <div>
               <div className="inline-flex items-center gap-2 bg-[#006def] px-3.5 py-1 mb-6 self-start shadow-sm">
                 <Zap className="w-3.5 h-3.5 text-white animate-pulse" />
@@ -113,7 +113,7 @@ export default function MembershipBox() {
           </div>
 
           {/* RIGHT SIDE: PERKS MATRIX */}
-          <div className="lg:col-span-6 bg-[#002663] p-8 md:p-12 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 relative">
+          <div className="lg:col-span-6 bg-[#002663] p-6 sm:p-8 md:p-12 lg:p-14 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 relative">
 
             {/* Status Header */}
             <div className="flex items-center justify-between gap-2 mb-8 pb-4 border-b border-white/10">

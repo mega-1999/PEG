@@ -37,7 +37,7 @@ const targetAudiences = [
 
 export default function TargetAudience() {
   return (
-    <section className="w-full py-8 md:py-10 bg-[#002f7a] text-white border-t border-white/10 overflow-hidden relative select-none">
+    <section className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-[#002f7a] text-white border-t border-white/10 overflow-hidden relative select-none">
 
       {/* TECHNICAL MATRIX GRID OVERLAY */}
       <div
@@ -48,15 +48,15 @@ export default function TargetAudience() {
         }}
       />
 
-      <div className="w-full px-10 md:px-20 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
         {/* 1. HEADER SECTION */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-10 gap-6 border-b border-white/10 pb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 md:mb-10 gap-4 sm:gap-6 border-b border-white/10 pb-6 md:pb-8">
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-blue-200 text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               Target Demographics & Industry Scope
             </div>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white">
               Precisely Who <span className="text-[#006def]">is PEG For?</span>
             </h2>
             <p className="text-white/80 text-sm md:text-base font-medium max-w-2xl leading-relaxed">

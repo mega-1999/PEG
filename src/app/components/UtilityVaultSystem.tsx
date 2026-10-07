@@ -25,14 +25,15 @@ const utilitySpecs = [
 
 export default function UtilityVaultSystem() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-16 md:py-20 px-10 md:px-20 relative overflow-hidden select-none border-b border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden select-none border-b border-white/10">
 
       {/* BACKGROUND DECORATION: Technical Dot Grid */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:50px_50px]"
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 items-start relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
 
         {/* LEFT COLUMN: The "Master Specs" (Occupies 5/12 columns) */}
         <div className="lg:col-span-5 space-y-6">
@@ -42,7 +43,7 @@ export default function UtilityVaultSystem() {
               whileInView={{ width: '80px' }}
               className="h-1 bg-[#006def]"
             />
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase">
               PRECAST <br />
               <span className="text-[#006def]">UTILITY VAULTS.</span>
             </h2>
@@ -140,6 +141,7 @@ export default function UtilityVaultSystem() {
 
         </div>
 
+        </div>
       </div>
 
     </section>

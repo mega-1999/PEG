@@ -63,7 +63,7 @@ export default function AutomationDashboard() {
   }, []);
 
   return (
-    <section className="w-full bg-[#002f7a] text-white py-32 px-10 md:px-20 overflow-hidden relative font-sans">
+    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative font-sans">
 
       {/* ANIMATED BRAND CIRCUIT BACKGROUND */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
@@ -92,7 +92,7 @@ export default function AutomationDashboard() {
         </svg>
       </div>
 
-      <div className="relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
         {/* TOP COMMAND STRIP */}
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-10">

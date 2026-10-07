@@ -156,7 +156,7 @@ export default function TrenchingSystem() {
   const currentGrate = currentCategory.grates[selectedGrateIndex] || currentCategory.grates[0];
 
   return (
-    <section id="products" className="relative w-full bg-white text-[#002f7a] py-8 md:py-10 px-10 md:px-20 border-t border-[#002f7a]/10 select-none overflow-hidden">
+    <section id="products" className="relative w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 border-t border-[#002f7a]/10 select-none overflow-hidden">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div
@@ -167,7 +167,7 @@ export default function TrenchingSystem() {
         }}
       />
 
-      <div className="w-full relative z-10 space-y-6 md:space-y-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 w-full relative z-10 space-y-6 md:space-y-8">
 
         {/* 1. HEADER SECTION */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4 border-b border-[#002f7a]/10 pb-4">

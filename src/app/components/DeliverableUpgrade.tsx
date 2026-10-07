@@ -30,21 +30,21 @@ const upgradeFeatures = [
 
 export default function DeliverableUpgrade() {
   return (
-    <section className="w-full bg-white text-[#002f7a] py-8 md:py-10 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
+    <section className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
 
       {/* STANDARDIZED CONTAINER */}
-      <div className="w-full px-10 md:px-20 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
         {/* 1. HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 gap-6 border-b border-[#002f7a]/10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 md:mb-6 gap-4 sm:gap-6 border-b border-[#002f7a]/10 pb-4">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               <ShieldCheck className="w-3.5 h-3.5" /> Production Acceleration
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-[0.9] uppercase">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter leading-[0.9] uppercase">
               Upgrade Your <span className="text-[#006def]">Precast Drawings.</span>
             </h2>
-            <p className="text-[#002f7a] text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
+            <p className="text-[#002f7a] text-xs sm:text-sm md:text-base font-semibold max-w-2xl leading-relaxed">
               Stop losing time on revisions. Elevate your production pipeline with comprehensive submittals, high-accuracy illustrations, and non-stop code compliance.
             </p>
           </div>

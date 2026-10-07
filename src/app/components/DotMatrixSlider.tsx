@@ -207,21 +207,21 @@ export default function DotMatrixSlider() {
   const activeColors = tierColors[activeEnriched.tier] || tierColors.Standard;
 
   return (
-    <section id="standards" className="w-full bg-[#F8FAFC] py-16 md:py-20 border-t-2 border-slate-100 overflow-hidden relative">
+    <section id="standards" className="w-full bg-[#F8FAFC] py-8 md:py-12 border-t border-slate-200/80 overflow-hidden relative select-none">
       {/* Visual background details */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#006def]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#002f7a]/5 rounded-full filter blur-3xl pointer-events-none opacity-40 -translate-x-1/3 translate-y-1/3" />
 
-      <div className="w-full px-10 md:px-20 py-16 relative z-10">
+      <div className="w-full px-6 sm:px-10 lg:px-20 relative z-10">
 
         {/* HEADER AREA */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-12 border-b border-slate-200 pb-8">
-          <div className="space-y-4">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-4 mb-6 md:mb-8 border-b border-slate-200 pb-4 md:pb-6">
+          <div className="space-y-2">
             <h2 className="text-2xl md:text-3xl font-black text-[#002f7a] tracking-tight leading-none uppercase">
               State DOT Drawings <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#002f7a] to-[#006def]">Compliance Databank</span>
             </h2>
-            <p className="text-[#006def] font-medium text-sm md:text-base max-w-2xl leading-relaxed">
+            <p className="text-[#006def] font-medium text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed">
               Verify precast concrete standard drawings, roadway plans, and bridge structural details across all 50+ United States jurisdictions in real-time.
             </p>
           </div>
@@ -229,7 +229,7 @@ export default function DotMatrixSlider() {
         </div>
 
         {/* INTERACTIVE WORKSPACE */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 
           {/* LEFT INSPECT PANEL (4 Columns) */}
           <div className="lg:col-span-5 xl:col-span-4 h-full flex flex-col justify-start">

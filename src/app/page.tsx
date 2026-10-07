@@ -36,7 +36,7 @@ import PrecastBlogSection from "./components/PrecastBlogSection";
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col items-center bg-white pt-28 md:pt-36">
+    <main className="flex-1 flex flex-col items-center bg-white pt-18 md:pt-24">
       <ResourceDirectory />
 
       {/* 1. HERO */}
@@ -88,11 +88,11 @@ export default function Home() {
       <ContentSection />
 
       <TrenchingSystem />
-      <DotMatrixSlider />
 
       <PegLocations />
       <PegResourceGrid />
       <ContactTerminal />
+      <DotMatrixSlider />
     </main>
   );
 }

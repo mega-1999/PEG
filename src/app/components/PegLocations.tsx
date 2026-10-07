@@ -216,9 +216,9 @@ export default function PegLocations() {
   return (
     <section
       id="locations"
-      className="w-full py-8 md:py-10 px-10 md:px-20 bg-slate-50/60 border-t border-slate-200/80 overflow-hidden select-none"
+      className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-slate-50/60 border-t border-slate-200/80 overflow-hidden select-none"
     >
-      <div className="w-full space-y-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 space-y-8">
         {/* SECTION HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b-2 border-slate-200">
           <div className="space-y-2">
@@ -243,7 +243,7 @@ export default function PegLocations() {
           </div>
 
           {/* FILTER CHIPS */}
-          <div className="flex items-center bg-white p-1 rounded-xl border border-slate-200 shadow-xs">
+          <div className="flex items-center bg-white p-1 rounded-xl border border-slate-200 shadow-xs overflow-x-auto max-w-full">
             <button
               onClick={() => setFilter("all")}
               className={`px-4 py-2 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${filter === "all"

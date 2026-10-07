@@ -37,23 +37,23 @@ const techPillars = [
 
 export default function AdvancedEngineeringTech() {
   return (
-    <section className="w-full py-16 md:py-20 bg-[#002f7a] text-white overflow-hidden relative border-b border-white/10">
+    <section className="w-full py-10 sm:py-12 md:py-16 lg:py-20 bg-[#002f7a] text-white overflow-hidden relative border-b border-white/10">
 
       {/* Background Accent Lines */}
       <div className="absolute top-0 left-10 md:left-20 w-px h-full bg-white/5 pointer-events-none" />
       <div className="absolute top-0 right-10 md:right-20 w-px h-full bg-white/5 pointer-events-none" />
 
-      <div className="w-full px-10 md:px-20 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
 
         {/* HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-10 gap-6 md:gap-10">
           <div className="space-y-4 max-w-4xl">
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white"
+              className="text-2xl sm:text-3xl md:text-5xl font-black tracking-tighter leading-[0.9] uppercase text-white"
             >
               Advanced Engineering <br />
               <span className="text-[#006def]">& Technologies.</span>

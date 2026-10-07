@@ -51,7 +51,7 @@ const moldFeatures = [
 
 export default function PrecastMoldComponent() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-8 md:py-10 px-10 md:px-20 relative overflow-hidden select-none border-t border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden select-none border-t border-white/10">
 
       {/* CAD BLUEPRINT GRID PATTERN */}
       <div
@@ -62,7 +62,7 @@ export default function PrecastMoldComponent() {
         }}
       />
 
-      <div className="relative z-10 w-full space-y-6 md:space-y-8">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-6 md:space-y-8">
 
         {/* HEADER SECTION */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-white/10 pb-4">
@@ -70,10 +70,10 @@ export default function PrecastMoldComponent() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               <Wrench className="w-3.5 h-3.5 text-[#006def]" /> High-Precision Tooling
             </div>
-            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-none">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-none">
               PRECAST MOLD <span className="text-[#006def]">& FORMWORK SYSTEMS.</span>
             </h2>
-            <p className="text-white/80 font-semibold text-sm md:text-base max-w-2xl leading-relaxed">
+            <p className="text-white/80 font-semibold text-xs sm:text-sm md:text-base max-w-2xl leading-relaxed">
               Custom heavy-duty steel mold design, magnetic shuttering systems, and hydraulic collapsing cores engineered for maximum casting bed turnover.
             </p>
           </div>

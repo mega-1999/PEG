@@ -71,12 +71,12 @@ export default function InteractiveCulvertViewer() {
   const [autoRotate, setAutoRotate] = useState(true);
 
   return (
-    <section className="w-full min-h-[900px] py-20 bg-[#071324] text-white overflow-hidden relative">
+    <section className="w-full min-h-[800px] py-8 sm:py-10 md:py-12 lg:py-16 bg-[#071324] text-white overflow-hidden relative">
 
       {/* Background Matrix Grid */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: `linear-gradient(#006def 1px, transparent 1px), linear-gradient(90deg, #006def 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />
 
-      <div className="px-6 md:px-12 lg:px-20 relative z-10 h-full flex flex-col xl:flex-row gap-12">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 h-full flex flex-col xl:flex-row gap-8 lg:gap-12">
 
         {/* LEFT PANEL: UI & SELECTOR HUD */}
         <div className="xl:w-1/3 flex flex-col justify-center space-y-10">

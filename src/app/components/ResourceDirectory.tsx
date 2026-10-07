@@ -64,11 +64,11 @@ export const ResourceDirectory = () => {
   };
 
   return (
-    <section className="w-full bg-[#002f7a] text-white overflow-hidden pt-8 md:pt-10 pb-16 md:pb-20">
-      <div className="w-full px-10 md:px-20">
+    <section className="w-full bg-[#002f7a] text-white overflow-hidden py-4 sm:py-6 md:py-8 lg:py-16">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
         {/* Title Block */}
-        <div className="max-w-2xl mb-10">
+        <div className="max-w-2xl mb-4">
           <h2 className="text-2xl md:text-4xl font-black tracking-tighter leading-[0.95] uppercase">
             BEYOND
             <span className="text-transparent pl-1 bg-clip-text bg-gradient-to-r from-[#006def] to-[#006def]">

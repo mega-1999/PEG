@@ -83,7 +83,7 @@ export default function MeetAtShows() {
   ];
 
   return (
-    <section id="shows" className="w-full py-8 md:py-10 bg-white border-t border-[#002f7a]/10 overflow-hidden relative select-none">
+    <section id="shows" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-white border-t border-[#002f7a]/10 overflow-hidden relative select-none">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div
@@ -95,7 +95,7 @@ export default function MeetAtShows() {
       />
 
       {/* HEADER SECTION */}
-      <div className="w-full px-10 md:px-20 relative z-10 mb-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 w-full relative z-10 mb-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-[#002f7a]/10 pb-8">
 
           <div className="space-y-3 max-w-3xl">

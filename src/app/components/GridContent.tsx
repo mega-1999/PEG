@@ -69,17 +69,17 @@ const technicalData = [
 
 const GridContent = () => {
     return (
-        <section id="technical-vault" className="w-full bg-[#002f7a] text-white overflow-hidden py-16 md:py-20 border-b border-white/10">
-            <div className="w-full px-10 md:px-20">
+        <section id="technical-vault" className="w-full bg-[#002f7a] text-white overflow-hidden py-10 sm:py-12 md:py-16 lg:py-20 border-b border-white/10">
+            <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
                 {/* HEADER: Brutalist Style */}
-                <div className="mb-10 border-l-8 border-[#006def] pl-6 md:pl-8">
-                    <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">
+                <div className="mb-8 md:mb-10 border-l-8 border-[#006def] pl-4 sm:pl-6 md:pl-8">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter uppercase">
                         TECHNICAL <span className="text-[#006def]">SPECS.</span>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
                     {technicalData.map((spec, idx) => (
                         <motion.div
                             key={idx}
@@ -90,7 +90,7 @@ const GridContent = () => {
                                 transition: { duration: 0.3, ease: "circOut" }
                             }}
                             viewport={{ once: true }}
-                            className="relative bg-white text-[#002f7a] hover:text-white p-8 md:p-10 flex flex-col justify-between h-full group cursor-pointer overflow-hidden shadow-lg transition-colors duration-300"
+                            className="relative bg-white text-[#002f7a] hover:text-white p-6 sm:p-8 md:p-10 flex flex-col justify-between h-full group cursor-pointer overflow-hidden shadow-lg transition-colors duration-300"
                         >
                             <div>
                                 {/* Module Header */}

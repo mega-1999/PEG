@@ -77,7 +77,7 @@ export default function PegPortalDashboard() {
   ];
 
   return (
-    <section className="w-full px-10 md:px-20 py-8 md:py-10 bg-white select-none border-t border-[#002f7a]/10 relative overflow-hidden">
+    <section className="w-full px-10 md:px-20 py-2 sm:py-4 md:py-6 bg-white select-none border-t border-[#002f7a]/10 relative overflow-hidden">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div

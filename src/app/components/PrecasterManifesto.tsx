@@ -33,7 +33,7 @@ const manifestoData = [
 
 export default function PrecasterManifesto() {
   return (
-    <section id="about" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-white overflow-hidden relative border-b border-[#002f7a]/10">
+    <section id="about" className="w-full py-2 sm:py-4 md:py-6 bg-white overflow-hidden relative border-b border-[#002f7a]/10">
 
       {/* STANDARDIZED CONTAINER */}
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">

@@ -83,7 +83,7 @@ export default function MeetAtShows() {
   ];
 
   return (
-    <section id="shows" className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-white border-t border-[#002f7a]/10 overflow-hidden relative select-none">
+    <section id="shows" className="w-full py-2 sm:py-4 md:py-6 bg-white border-t border-[#002f7a]/10 overflow-hidden relative select-none">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div

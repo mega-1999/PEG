@@ -8,7 +8,7 @@ interface RegistrationBannerProps {
 
 export const RegistrationBanner = ({ txtSrc, btSrc }: RegistrationBannerProps) => {
   return (
-    <section className="w-full bg-[#002f7a] py-6 px-4">
+    <section className="w-full bg-[#002f7a] py-2 sm:py-4 md:py-6 px-4">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
 
         {/* The Text Content */}

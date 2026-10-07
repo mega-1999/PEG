@@ -28,7 +28,7 @@ const wallSystems = [
 
 export default function RetainingWallComponent() {
   return (
-    <section className="relative w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 border-t border-white/10 select-none overflow-hidden">
+    <section className="relative w-full bg-[#002f7a] text-white py-2 sm:py-4 md:py-6 border-t border-white/10 select-none overflow-hidden">
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"

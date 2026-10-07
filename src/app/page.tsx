@@ -36,7 +36,7 @@ import PrecastBlogSection from "./components/PrecastBlogSection";
 
 export default function Home() {
   return (
-    <main className="flex-1 flex flex-col items-center bg-white pt-18 md:pt-24">
+    <main className="flex-1 flex flex-col items-center bg-white pt-24 md:pt-32">
       <ResourceDirectory />
 
       {/* 1. HERO */}
@@ -52,7 +52,7 @@ export default function Home() {
       <EngineeringExecuted />
 
       {/* 4. PRODUCTS & APPLICATIONS */}
-      <div className="w-full bg-[#002f7a] py-8 md:py-10 border-b border-[#002f7a]/10  text-center relative z-20">
+      <div className="w-full bg-[#002f7a] py-2 sm:py-4 md:py-6 border-b border-[#002f7a]/10 text-center relative z-20">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#006def] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#006def]">
           Engineered Portfolios
         </div>
@@ -86,11 +86,12 @@ export default function Home() {
       <HexagonLogoShowcase />
       <RetainingWallComponent />
       <ContentSection />
+
+      <DotMatrixSlider />
       <TrenchingSystem />
       <PegLocations />
       <PegResourceGrid />
       <ContactTerminal />
-      <DotMatrixSlider />
     </main>
   );
 }

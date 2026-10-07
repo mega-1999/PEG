@@ -38,7 +38,7 @@ const pegResources = [
 
 export default function UnchallengedResources() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-10 sm:py-12 md:py-16 lg:py-20 relative overflow-hidden border-b border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-2 sm:py-4 md:py-6 relative overflow-hidden border-b border-white/10">
 
       {/* BACKGROUND: Technical Data Stream */}
       <div className="absolute inset-0 opacity-10 pointer-events-none flex justify-between px-6 md:px-20">

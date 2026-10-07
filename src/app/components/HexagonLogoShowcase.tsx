@@ -41,7 +41,7 @@ export default function HexagonLogoShowcase() {
   const row2 = partnerLogos.slice(10, 20);
 
   return (
-    <section className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative select-none border-t border-[#002f7a]/10">
+    <section className="w-full bg-white text-[#002f7a] py-2 sm:py-4 md:py-6 overflow-hidden relative select-none border-t border-[#002f7a]/10">
 
       {/* CAD BLUEPRINT GRID BACKGROUND */}
       <div

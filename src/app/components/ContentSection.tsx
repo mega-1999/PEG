@@ -6,7 +6,7 @@ import { Database, Workflow, Unlock, ArrowRight, Activity, Clock } from 'lucide-
 
 export const ContentSection = () => {
   return (
-    <section className="w-full bg-[#f8fafc] py-8 sm:py-10 md:py-12 lg:py-16 border-t border-[#002f7a]/10 relative overflow-hidden select-none">
+    <section className="w-full bg-[#f8fafc] py-2 sm:py-4 md:py-6 border-t border-[#002f7a]/10 relative overflow-hidden select-none">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div

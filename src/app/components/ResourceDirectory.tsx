@@ -64,7 +64,7 @@ export const ResourceDirectory = () => {
   };
 
   return (
-    <section className="w-full bg-[#002f7a] text-white overflow-hidden py-4 sm:py-6 md:py-8 lg:py-16">
+    <section className="w-full bg-[#002f7a] text-white overflow-hidden py-2 sm:py-4 md:py-6">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
         {/* Title Block */}

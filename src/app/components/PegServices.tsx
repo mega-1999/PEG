@@ -84,25 +84,59 @@ const services = [
 
 export default function PegServices() {
   return (
-    <section id="services" className="w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 border-b border-[#002f7a]/10">
+    <section id="services" className="w-full bg-white py-2 sm:py-4 md:py-6 border-b border-[#002f7a]/10">
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20">
 
-        {/* Section Header */}
-        <div className="mb-8 md:mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase mb-4 border-l-2 border-[#006def]">
-            Core Competencies
+        {/* Section Header: Left Text, Right Mockup */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-center mb-4 md:mb-6 border-b border-[#002f7a]/10 pb-4 md:pb-5">
+          {/* Left Text */}
+          <div className="lg:col-span-8 space-y-2">
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-[#006def]/10 text-[#006def] text-[11px] font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
+              Core Competencies
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter uppercase leading-[0.9]">
+              Precast Engineering & <br />
+              <span className="text-[#006def]">Technical Services.</span>
+            </h2>
+            <p className="text-[#002f7a] font-semibold max-w-2xl text-xs sm:text-sm leading-relaxed">
+              We provide specialized, end-to-end engineering support exclusively for the precast concrete industry. Each service includes technical video demonstrations and CAD execution blueprints.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-[#002f7a] tracking-tighter uppercase leading-[0.9]">
-            Precast Engineering & <br />
-            <span className="text-[#006def]">Technical Services.</span>
-          </h2>
-          <p className="mt-4 text-[#002f7a] font-semibold max-w-2xl text-xs sm:text-sm md:text-base leading-relaxed">
-            We provide specialized, end-to-end engineering support exclusively for the precast concrete industry. Each service includes technical video demonstrations and CAD execution blueprints.
-          </p>
+
+          {/* Right Mockup Graphic - Compact with Fast 2px Auto-Jump Infinite Loop */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              animate={{
+                y: [0, -3, 0, 1.5, 0],
+              }}
+              transition={{
+                y: {
+                  repeat: Infinity,
+                  duration: 1.0,
+                  ease: "easeInOut",
+                },
+                opacity: { duration: 0.4 },
+                scale: { duration: 0.4 },
+              }}
+              className="relative w-full max-w-[260px] sm:max-w-[300px] h-32 sm:h-36 md:h-40 group cursor-pointer"
+            >
+              <Image
+                src={getAssetUrl("/assets/Precast_Engineering_Group_catalog_mockup.png")}
+                alt="Precast Engineering Group Catalog Mockup"
+                fill
+                sizes="(max-width: 768px) 100vw, 30vw"
+                className="object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                priority
+              />
+            </motion.div>
+          </div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 items-stretch">
           {services.map((service, index) => {
             const isWhiteVideo = service.videoBg === "bg-white" || service.videoBg?.includes("white");
 

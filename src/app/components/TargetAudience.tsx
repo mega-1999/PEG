@@ -37,7 +37,7 @@ const targetAudiences = [
 
 export default function TargetAudience() {
   return (
-    <section className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-[#002f7a] text-white border-t border-white/10 overflow-hidden relative select-none">
+    <section className="w-full py-2 sm:py-4 md:py-6 bg-[#002f7a] text-white border-t border-white/10 overflow-hidden relative select-none">
 
       {/* TECHNICAL MATRIX GRID OVERLAY */}
       <div

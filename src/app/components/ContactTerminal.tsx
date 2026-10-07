@@ -108,7 +108,7 @@ export default function ContactTerminal() {
   };
 
   return (
-    <section id="contact" className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section id="contact" className="w-full bg-white text-[#002f7a] py-2 sm:py-4 md:py-6 relative overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div

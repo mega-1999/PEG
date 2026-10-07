@@ -30,7 +30,7 @@ const upgradeFeatures = [
 
 export default function DeliverableUpgrade() {
   return (
-    <section className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
+    <section className="w-full bg-white text-[#002f7a] py-2 sm:py-4 md:py-6 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
 
       {/* STANDARDIZED CONTAINER */}
       <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">

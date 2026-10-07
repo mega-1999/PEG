@@ -79,7 +79,7 @@ const digitalChannels = [
 
 export default function PrecastersGoDigital() {
   return (
-    <section className="w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden select-none border-t border-[#002f7a]/10 relative">
+    <section className="w-full bg-white py-2 sm:py-4 md:py-6 overflow-hidden select-none border-t border-[#002f7a]/10 relative">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND */}
       <div

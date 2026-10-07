@@ -63,7 +63,7 @@ export default function AutomationDashboard() {
   }, []);
 
   return (
-    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative font-sans">
+    <section className="w-full bg-[#002f7a] text-white py-2 sm:py-4 md:py-6 overflow-hidden relative font-sans">
 
       {/* ANIMATED BRAND CIRCUIT BACKGROUND */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">

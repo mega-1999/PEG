@@ -220,7 +220,7 @@ export default function PegLocations() {
   return (
     <section
       id="locations"
-      className="w-full py-8 sm:py-10 md:py-12 lg:py-16 bg-slate-50/60 border-t border-slate-200/80 overflow-hidden select-none"
+      className="w-full py-2 sm:py-4 md:py-6 bg-slate-50/60 border-t border-slate-200/80 overflow-hidden select-none"
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 space-y-8">
         {/* SECTION HEADER */}

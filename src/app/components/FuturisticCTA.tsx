@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 border-t border-white/10 select-none overflow-hidden flex items-center justify-center">
+    <section className="relative w-full bg-[#002f7a] text-white py-2 sm:py-4 md:py-6 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 border-t border-white/10 select-none overflow-hidden flex items-center justify-center">
 
       {/* CAD BLUEPRINT HIGH-TECH BACKGROUND GRID */}
       <div

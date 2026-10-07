@@ -34,7 +34,7 @@ const telemetryStats = [
 
 export default function MembershipBox() {
   return (
-    <section className="w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative overflow-hidden select-none border-t border-[#002f7a]/10">
+    <section className="w-full bg-white py-2 sm:py-4 md:py-6 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative overflow-hidden select-none border-t border-[#002f7a]/10">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div

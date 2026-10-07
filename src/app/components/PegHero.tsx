@@ -76,7 +76,7 @@ export default function PegHero() {
       />
 
       {/* 2. MAIN SPLIT CONTENT GRID */}
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-8 sm:py-12 md:py-16 z-10 flex-grow flex flex-col justify-center">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 py-2 sm:py-4 md:py-6 z-10 flex-grow flex flex-col justify-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* LEFT COLUMN: HERO HEADLINE & ACTIONS (7 COLS) */}

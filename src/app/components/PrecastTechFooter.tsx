@@ -187,7 +187,7 @@ const socialLinksNew = [
 
 export default function PrecastTechFooter() {
   return (
-    <footer className="w-full bg-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16">
+    <footer className="w-full bg-[#002f7a] py-2 sm:py-4 md:py-6">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 space-y-9">
         {/* 1. SEVEN DIRECTORY COLUMNS */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 border-b border-white/10 pb-9">

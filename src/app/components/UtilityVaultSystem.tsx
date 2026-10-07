@@ -25,7 +25,7 @@ const utilitySpecs = [
 
 export default function UtilityVaultSystem() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 relative overflow-hidden select-none border-b border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-2 sm:py-4 md:py-6 relative overflow-hidden select-none border-b border-white/10">
 
       {/* BACKGROUND DECORATION: Technical Dot Grid */}
       <div

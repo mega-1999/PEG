@@ -74,7 +74,7 @@ const manufacturingSectors: MfgItem[] = [
 
 export default function ManufacturingHub() {
   return (
-    <section className="w-full bg-white text-[#002f7a] py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative select-none border-t border-[#002f7a]/10">
+    <section className="w-full bg-white text-[#002f7a] py-2 sm:py-4 md:py-6 overflow-hidden relative select-none border-t border-[#002f7a]/10">
 
       {/* TECH BACKGROUND MATRIX */}
       <div

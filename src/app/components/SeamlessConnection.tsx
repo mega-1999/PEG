@@ -6,7 +6,7 @@ import { Monitor, Factory, Waypoints, ChevronRight } from "lucide-react";
 
 export default function SeamlessConnection() {
   return (
-    <section className="w-full bg-[#002f7a] text-white py-8 sm:py-10 md:py-12 lg:py-16 overflow-hidden relative font-sans select-none border-t border-white/10">
+    <section className="w-full bg-[#002f7a] text-white py-2 sm:py-4 md:py-6 overflow-hidden relative font-sans select-none border-t border-white/10">
 
       {/* BACKGROUND ACCENT: Clean, subtle blueprint grid */}
       <div

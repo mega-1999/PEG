@@ -87,7 +87,7 @@ export default function AgencySlider() {
   const loopAgenciesRow2 = [...AGENCIES.slice(5), ...AGENCIES.slice(0, 5), ...AGENCIES, ...AGENCIES];
 
   return (
-    <section className="relative w-full bg-white py-8 sm:py-10 md:py-12 lg:py-16 border-t border-[#002f7a]/10 select-none overflow-hidden">
+    <section className="relative w-full bg-white py-2 sm:py-4 md:py-6 border-t border-[#002f7a]/10 select-none overflow-hidden">
 
       {/* CAD WATERMARK BACKGROUND */}
       <div

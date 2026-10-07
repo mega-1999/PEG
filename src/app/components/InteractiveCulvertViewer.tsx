@@ -71,7 +71,7 @@ export default function InteractiveCulvertViewer() {
   const [autoRotate, setAutoRotate] = useState(true);
 
   return (
-    <section className="w-full min-h-[800px] py-8 sm:py-10 md:py-12 lg:py-16 bg-[#071324] text-white overflow-hidden relative">
+    <section className="w-full min-h-[800px] py-2 sm:py-4 md:py-6 bg-[#071324] text-white overflow-hidden relative">
 
       {/* Background Matrix Grid */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: `linear-gradient(#006def 1px, transparent 1px), linear-gradient(90deg, #006def 1px, transparent 1px)`, backgroundSize: '60px 60px' }} />

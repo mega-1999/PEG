@@ -38,6 +38,48 @@
   animation: marquee-reverse 55s linear infinite;
   will-change: transform;
 }
+
+@keyframes marquee-dot-track {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333333%);
+  }
+}
+
+@keyframes marquee-dot-track-reverse {
+  0% {
+    transform: translateX(-33.333333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-dot-track1 {
+  animation: marquee-dot-track 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-dot-track2 {
+  animation: marquee-dot-track-reverse 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-dot-track3 {
+  animation: marquee-dot-track 50s linear infinite;
+  will-change: transform;
+}
+
+.marquee-pause-hover:hover .animate-dot-track1,
+.marquee-pause-hover:hover .animate-dot-track2,
+.marquee-pause-hover:hover .animate-dot-track3,
+.animate-dot-track1:hover,
+.animate-dot-track2:hover,
+.animate-dot-track3:hover {
+  animation-play-state: paused !important;
+}
 html {
   scroll-behavior: smooth;
 }

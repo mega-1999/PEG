@@ -9,6 +9,7 @@ import PegHero from "./components/PegHero";
 import LoginGateway from "./components/(auth)/page";
 import AgencySlider from "./components/AgencySlider";
 import PegLocations from "./components/PegLocations";
+import PrecastSkeletonShowcase from "./components/PrecastSkeletonShowcase";
 import FutureCulvertComponent from "./components/FutureCulvertComponent";
 import DeliverableUpgrade from "./components/DeliverableUpgrade";
 import DotMatrixSlider from "./components/DotMatrixSlider";
@@ -64,6 +65,8 @@ export default function Home() {
         </p>
       </div>
 
+      {/* 3D SKELETON MULTI-PRODUCT SHOWCASE */}
+
       <FutureCulvertComponent />
       <UnchallengedResources />
       <DeliverableUpgrade />
@@ -89,6 +92,7 @@ export default function Home() {
 
       <DotMatrixSlider />
       <TrenchingSystem />
+      <PrecastSkeletonShowcase />
       <PegLocations />
       <PegResourceGrid />
       <ContactTerminal />

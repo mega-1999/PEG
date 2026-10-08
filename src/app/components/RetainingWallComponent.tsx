@@ -66,7 +66,7 @@ export default function RetainingWallComponent() {
               viewport={{ once: true }}
               className={`group relative flex rounded-sm overflow-hidden shadow-xl transition-all duration-300 border ${
                 wall.isFeatured
-                  ? "bg-[#00183f] text-white border-[#006def]/40 hover:border-[#006def]"
+                  ? "bg-[#002f7a] text-white border-[#006def]/40 hover:border-[#006def]"
                   : "bg-white text-[#002f7a] border-white/20 hover:border-[#006def]"
               }`}
             >

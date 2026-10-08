@@ -184,7 +184,7 @@ export default function PegHero() {
       </div>
 
       {/* 3. BOTTOM METRICS & TELEMETRY RIBBON (PINNED FULL WIDTH) */}
-      <div className="w-full border-t border-white/15 bg-[#001c4b] py-5 md:py-6 z-20">
+      <div className="w-full border-t border-white/15 bg-[#002f7a] py-5 md:py-6 z-20">
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 space-y-3">
           <div className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-white/70 flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-[#006def] rounded-full animate-pulse" />

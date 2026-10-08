@@ -144,7 +144,7 @@ export default function EntrySystem() {
             </video>
 
             {/* LIGHT TRANSLUCENT BLUEPRINT TINT - ENSURES FULL BRIDGE VISIBILITY */}
-            <div className="absolute inset-0 bg-[#00183f]/30" />
+            <div className="absolute inset-0 bg-[#002f7a]/30" />
             <div
               className="absolute inset-0 opacity-[0.04]"
               style={{
@@ -157,7 +157,7 @@ export default function EntrySystem() {
           </div>
 
           {/* 2. TOP HUD BAR */}
-          <header className="relative z-20 w-full px-6 md:px-12 py-4 flex items-center justify-between border-b border-white/10 bg-[#00183f]/60 backdrop-blur-md">
+          <header className="relative z-20 w-full px-6 md:px-12 py-4 flex items-center justify-between border-b border-white/10 bg-[#002f7a]/60 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <div className="w-2.5 h-2.5 rounded-full bg-[#006def] animate-ping" />
               <div className="flex items-center gap-2 font-mono text-xs font-black text-white uppercase tracking-widest">
@@ -237,7 +237,7 @@ export default function EntrySystem() {
                     </video>
 
                     <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-black/80 backdrop-blur-xs text-white text-[8px] font-mono font-bold uppercase rounded-xs border border-white/20 flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Live CAD Portal
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#006def] animate-pulse" /> Live CAD Portal
                     </div>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export default function EntrySystem() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-[#001f54]/85 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
+                  className="bg-[#001c4b]/95 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-1.5">
@@ -267,7 +267,7 @@ export default function EntrySystem() {
                     </span>
                   </div>
 
-                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-[#001c4b] rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
                       ref={tabletVideoRef}
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
@@ -298,7 +298,7 @@ export default function EntrySystem() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="bg-[#001f54]/85 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
+                  className="bg-[#001c4b]/95 border border-[#006def]/50 hover:border-[#006def] rounded-sm p-3 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.5)] group transition-all"
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-1.5">
@@ -314,7 +314,7 @@ export default function EntrySystem() {
                     </span>
                   </div>
 
-                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-slate-950/80 rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
+                  <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-[#001c4b] rounded-xs overflow-hidden border border-white/15 flex items-center justify-center">
                     <video
                       ref={mobileVideoRef}
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
@@ -347,7 +347,7 @@ export default function EntrySystem() {
           </main>
 
           {/* 4. BOTTOM COMMAND HUD & ENTER PLATFORM BAR */}
-          <footer className="relative z-20 w-full px-6 md:px-12 py-4 bg-[#00183f]/80 border-t border-white/10 backdrop-blur-md">
+          <footer className="relative z-20 w-full px-6 md:px-12 py-4 bg-[#002f7a]/90 border-t border-white/10 backdrop-blur-md">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
               
               <div className="space-y-1">

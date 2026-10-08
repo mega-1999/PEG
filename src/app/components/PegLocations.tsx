@@ -427,8 +427,8 @@ export default function PegLocations() {
                         >
                           {copied ? (
                             <>
-                              <Check className="w-3.5 h-3.5 text-emerald-600" />
-                              <span className="text-emerald-600">Copied</span>
+                              <Check className="w-3.5 h-3.5 text-[#006def]" />
+                              <span className="text-[#006def]">Copied</span>
                             </>
                           ) : (
                             <>

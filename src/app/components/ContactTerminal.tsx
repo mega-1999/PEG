@@ -250,7 +250,7 @@ export default function ContactTerminal() {
                   exit={{ opacity: 0 }}
                   className="py-16 flex flex-col items-center justify-center text-center space-y-4"
                 >
-                  <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-300 flex items-center justify-center shadow-md">
+                  <div className="w-16 h-16 rounded-full bg-blue-50 text-[#006def] border border-[#006def]/30 flex items-center justify-center shadow-md">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-black text-[#002f7a] uppercase tracking-tight">

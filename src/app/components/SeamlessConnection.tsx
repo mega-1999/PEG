@@ -2,7 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Monitor, Factory, Waypoints, ChevronRight } from "lucide-react";
+import { Monitor, Factory, Waypoints, Smartphone, CheckCircle2, Wifi, Zap } from "lucide-react";
+import { getAssetUrl } from "@/lib/utils";
+import LazyVideo from "./LazyVideo";
 
 export default function SeamlessConnection() {
   return (
@@ -34,7 +36,7 @@ export default function SeamlessConnection() {
             transition={{ delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-5xl font-black text-white tracking-tighter leading-none uppercase"
           >
-            One Unique Connection <br />
+            One Seamless Connection <br />
             For All Your Precast Concrete <br />
             <span className="text-[#006def]">Before & After Pouring.</span>
           </motion.h2>
@@ -46,87 +48,123 @@ export default function SeamlessConnection() {
             transition={{ delay: 0.2 }}
             className="text-white/80 font-semibold text-sm md:text-base leading-relaxed max-w-2xl"
           >
-            How do we assist from your desk back to your shop floor seamlessly?
+            Real-time synchronization connecting structural engineering calculations on your desk with shop floor casting beds and mobile field superintendents.
           </motion.p>
         </div>
 
-        {/* CONNECTION PIPELINE GRAPHIC */}
-        <div className="relative mt-4">
+        {/* 3-NODE WORKFLOW: DESK (LEFT) -> MOBILE COMPANION (CENTER) -> SHOP FLOOR (RIGHT) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center max-w-6xl mx-auto">
 
-          {/* VISUAL CONNECTING ARROW LINE (Desktop Only) */}
-          <div className="hidden md:flex absolute top-1/2 left-[30%] right-[30%] -translate-y-1/2 z-0 items-center justify-center pointer-events-none">
-            {/* Structural Dashed Line */}
-            <div className="w-full h-[1px] border-t-2 border-dashed border-[#006def]/60 relative flex items-center justify-center">
-              {/* Central Directional Arrows */}
-              <div className="z-10 flex flex-row bg-[#002f7a] px-3 py-1 border border-white/20 rounded-full">
-                <ChevronRight className="w-4 h-4 text-[#006def] animate-pulse" />
-                <ChevronRight className="w-4 h-4 text-[#006def] animate-pulse delay-75" />
-                <ChevronRight className="w-4 h-4 text-white animate-pulse delay-150" />
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 relative z-10 max-w-5xl mx-auto">
-
-            {/* NODE 1: THE DESK */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2, duration: 0.4 }}
-              whileHover={{ y: -4 }}
-              className="group bg-white hover:bg-blue-50/90 text-[#002f7a] border border-white/20 hover:border-[#006def] p-6 md:p-8 transition-all duration-300 shadow-xl flex flex-col items-center text-center relative rounded-sm cursor-pointer"
-            >
-              {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
-
-              <div className="w-16 h-16 bg-blue-50 border border-[#006def]/20 group-hover:bg-[#002f7a] flex items-center justify-center mb-4 transition-colors duration-300 shrink-0 rounded-sm">
-                <Monitor className="w-8 h-8 text-[#006def] group-hover:text-white transition-colors duration-300" />
+          {/* NODE 1: THE DESK (4 COLS) */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            className="lg:col-span-4 group bg-white hover:bg-slate-50 text-[#002f7a] border border-white/20 p-5 md:p-6 transition-all duration-300 shadow-xl flex flex-col justify-between rounded-sm relative"
+          >
+            <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
+            
+            <div>
+              <div className="w-12 h-12 bg-blue-50 border border-[#006def]/20 flex items-center justify-center mb-3 rounded-sm">
+                <Monitor className="w-6 h-6 text-[#006def]" />
               </div>
 
-              <span className="text-[10px] font-mono font-black text-[#006def] uppercase tracking-[0.2em] mb-1">
+              <span className="text-[9.5px] font-mono font-black text-[#006def] uppercase tracking-[0.2em] block mb-1">
                 Phase 01: Before Pouring
               </span>
 
-              <h3 className="text-xl md:text-2xl font-black text-[#002f7a] uppercase tracking-tight mb-3">
+              <h3 className="text-lg md:text-xl font-black text-[#002f7a] uppercase tracking-tight mb-2">
                 From Your Desk
               </h3>
 
-              <p className="text-[#002f7a]/85 text-xs sm:text-sm font-semibold leading-relaxed max-w-md">
-                Advanced CAD drafting, structural calculations, clash detection, and state-specific DOT submittals engineered to perfection before a single drop of concrete is poured.
+              <p className="text-[#002f7a]/85 text-xs font-semibold leading-relaxed">
+                Advanced CAD drafting, structural calculations, clash detection, and state-specific DOT submittals engineered to perfection before concrete is poured.
               </p>
-            </motion.div>
+            </div>
 
-            {/* NODE 2: THE SHOP */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.4 }}
-              whileHover={{ y: -4 }}
-              className="group bg-white hover:bg-blue-50/90 text-[#002f7a] border border-white/20 hover:border-[#006def] p-6 md:p-8 transition-all duration-300 shadow-xl flex flex-col items-center text-center relative rounded-sm cursor-pointer"
-            >
-              {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
+            <div className="mt-4 pt-3 border-t border-[#002f7a]/10 text-[10px] font-mono font-bold text-[#006def]">
+              ✓ Full 3D LOD 400 CAD
+            </div>
+          </motion.div>
 
-              <div className="w-16 h-16 bg-blue-50 border border-[#006def]/20 group-hover:bg-[#002f7a] flex items-center justify-center mb-4 transition-colors duration-300 shrink-0 rounded-sm">
-                <Factory className="w-8 h-8 text-[#006def] group-hover:text-white transition-colors duration-300" />
+          {/* NODE 2: STRATEGIC STANDALONE MOBILE COMPANION MOCKUP (4 COLS) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+            className="lg:col-span-4 flex flex-col items-center bg-white text-[#002f7a] border border-white/20 p-5 md:p-6 rounded-sm shadow-xl relative overflow-hidden group"
+          >
+            {/* Top Accent Line */}
+            <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
+
+            {/* Top Pill */}
+            <div className="flex items-center justify-between w-full pb-2 mb-3 border-b border-[#002f7a]/10 font-mono text-[9.5px] font-bold text-[#002f7a]">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
+                <span className="text-[#006def] uppercase font-black">MOBILE COMPANION</span>
+              </div>
+              <div className="flex items-center gap-1 text-[#006def]">
+                <Wifi className="w-3 h-3 text-[#006def]" />
+                <span className="font-bold">Live Sync</span>
+              </div>
+            </div>
+
+            {/* Live Mobile Video Viewport */}
+            <div className="relative aspect-[9/16] w-48 sm:w-52 max-w-full bg-[#001c4b] rounded-sm overflow-hidden border border-[#002f7a]/20 shadow-md flex items-center justify-center p-1">
+              <LazyVideo
+                src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4")}
+                className="w-full h-full object-contain"
+                wrapperClassName="w-full h-full"
+                placeholderBg="bg-[#001c4b]"
+              />
+            </div>
+
+            <div className="mt-3 text-center space-y-0.5">
+              <div className="flex items-center justify-center gap-1 text-xs font-mono font-bold text-[#002f7a]">
+                <Smartphone className="w-3.5 h-3.5 text-[#006def]" />
+                <span className="uppercase">Field Dispatch & Inspection</span>
+              </div>
+              <p className="text-[11px] text-[#002f7a]/80 font-semibold">
+                Instant Submittal Verification on Jobsite
+              </p>
+            </div>
+          </motion.div>
+
+          {/* NODE 3: THE SHOP FLOOR (4 COLS) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.4 }}
+            className="lg:col-span-4 group bg-white hover:bg-slate-50 text-[#002f7a] border border-white/20 p-5 md:p-6 transition-all duration-300 shadow-xl flex flex-col justify-between rounded-sm relative"
+          >
+            <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
+            
+            <div>
+              <div className="w-12 h-12 bg-blue-50 border border-[#006def]/20 flex items-center justify-center mb-3 rounded-sm">
+                <Factory className="w-6 h-6 text-[#006def]" />
               </div>
 
-              <span className="text-[10px] font-mono font-black text-[#006def] uppercase tracking-[0.2em] mb-1">
+              <span className="text-[9.5px] font-mono font-black text-[#006def] uppercase tracking-[0.2em] block mb-1">
                 Phase 02: After Pouring
               </span>
 
-              <h3 className="text-xl md:text-2xl font-black text-[#002f7a] uppercase tracking-tight mb-3">
+              <h3 className="text-lg md:text-xl font-black text-[#002f7a] uppercase tracking-tight mb-2">
                 Back To Your Shop
               </h3>
 
-              <p className="text-[#002f7a]/85 text-xs sm:text-sm font-semibold leading-relaxed max-w-md">
-                Parametric formwork fabrication, specified-tolerance component isolation, lifting inserts, and step-by-step erection sequencing deployed directly to the plant floor.
+              <p className="text-[#002f7a]/85 text-xs font-semibold leading-relaxed">
+                Parametric formwork fabrication, specified-tolerance component isolation, lifting inserts, and step-by-step erection sequencing deployed to the plant floor.
               </p>
-            </motion.div>
+            </div>
 
-          </div>
+            <div className="mt-4 pt-3 border-t border-[#002f7a]/10 text-[10px] font-mono font-bold text-[#006def]">
+              ✓ Precision Casting Run Sheets
+            </div>
+          </motion.div>
+
         </div>
 
       </div>

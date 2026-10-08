@@ -80,7 +80,7 @@ export default function PrecastMoldComponent() {
         </div>
 
         {/* TOP FEATURE SHOWCASE GRID */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center bg-[#00183f] text-white border border-[#006def]/30 hover:border-[#006def] p-6 md:p-8 rounded-sm shadow-xl transition-all duration-300 group overflow-hidden">
+        <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center bg-[#002f7a] text-white border border-[#006def]/30 hover:border-[#006def] p-6 md:p-8 rounded-sm shadow-xl transition-all duration-300 group overflow-hidden">
 
           {/* TOP ACCENT LINE */}
           <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300 z-20" />
@@ -142,7 +142,7 @@ export default function PrecastMoldComponent() {
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
                 className={`group relative flex flex-col justify-between border overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 rounded-sm cursor-pointer p-6 md:p-7 ${
                   isBlue
-                    ? "bg-[#00183f] hover:bg-[#001538] text-white border-[#006def]/40 hover:border-[#006def]"
+                    ? "bg-[#002f7a] hover:bg-[#002663] text-white border-[#006def]/40 hover:border-[#006def]"
                     : "bg-white hover:bg-slate-50 text-[#002f7a] border-[#002f7a]/15 hover:border-[#006def]"
                 }`}
               >

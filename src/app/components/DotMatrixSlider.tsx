@@ -98,31 +98,31 @@ const stateAbbrs: Record<string, string> = {
   "West Virginia": "WV", Wisconsin: "WI", Wyoming: "WY", "FLH Divisions (FHWA)": "FHWA"
 };
 
-// Design system colors based on USA Geographic Region
+// Design system colors based on USA Geographic Region (Official PEG Palette)
 const tierColors: Record<UsRegion, { bg: string; text: string; border: string; accent: string }> = {
   West: {
-    bg: "bg-purple-50",
-    text: "text-purple-600",
-    border: "border-purple-200",
-    accent: "#7C3AED"
+    bg: "bg-blue-50",
+    text: "text-[#002f7a]",
+    border: "border-[#002f7a]/30",
+    accent: "#002f7a"
   },
   Midwest: {
-    bg: "bg-emerald-50",
-    text: "text-emerald-600",
-    border: "border-emerald-200",
-    accent: "#059669"
+    bg: "bg-blue-100/70",
+    text: "text-[#006def]",
+    border: "border-[#006def]/30",
+    accent: "#006def"
   },
   South: {
-    bg: "bg-amber-50",
-    text: "text-amber-600",
-    border: "border-amber-200",
-    accent: "#D97706"
+    bg: "bg-slate-100",
+    text: "text-[#002f7a]",
+    border: "border-[#002f7a]/20",
+    accent: "#002f7a"
   },
   Northeast: {
-    bg: "bg-blue-50",
-    text: "text-blue-600",
-    border: "border-blue-200",
-    accent: "#2563EB"
+    bg: "bg-sky-50",
+    text: "text-[#006def]",
+    border: "border-[#006def]/30",
+    accent: "#006def"
   }
 };
 
@@ -433,8 +433,8 @@ export default function DotMatrixSlider() {
 
                 {/* Verification Checkmark */}
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono font-bold text-[#006def]">
-                  <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded text-[11px]">
-                    <CheckCircle className="w-3 h-3 text-emerald-600" />
+                  <span className="flex items-center gap-1 text-[#006def] bg-blue-50 px-2 py-0.5 rounded text-[11px] border border-[#006def]/20">
+                    <CheckCircle className="w-3 h-3 text-[#006def]" />
                     PEG VERIFIED
                   </span>
                   <span className="text-[11px]">REF ID: {activeEnriched.abbr}-DOT</span>

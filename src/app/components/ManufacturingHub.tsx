@@ -8,10 +8,14 @@ import {
   Columns3,
   Flame,
   Component,
-  Settings2,
-  ArrowUpRight,
-  Factory
+  Factory,
+  Tablet,
+  CheckCircle2,
+  Scan,
+  Cpu
 } from "lucide-react";
+import { getAssetUrl } from "@/lib/utils";
+import LazyVideo from "./LazyVideo";
 
 // 1. DEFINE STRICT TYPESCRIPT INTERFACES
 interface MfgItem {
@@ -85,9 +89,9 @@ export default function ManufacturingHub() {
         }}
       />
 
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-6">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-8">
 
-        {/* LINE SYSTEM HEADER */}
+        {/* 1. LINE SYSTEM HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-b border-[#002f7a]/10 pb-4">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
@@ -102,7 +106,7 @@ export default function ManufacturingHub() {
           </div>
         </div>
 
-        {/* 5-COLUMN ASSEMBLY LINE GRID */}
+        {/* 2. 5-COLUMN ASSEMBLY LINE GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3.5 md:gap-4 items-stretch">
           {manufacturingSectors.map((cell, idx) => (
             <motion.div
@@ -157,6 +161,61 @@ export default function ManufacturingHub() {
             </motion.div>
           ))}
         </div>
+
+        {/* 3. STRATEGIC STANDALONE TABLET & IPAD QA/QC MOCKUP SHOWCASE */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="bg-[#002f7a] text-white border border-[#002f7a] shadow-2xl rounded-sm p-5 sm:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center overflow-hidden relative"
+        >
+          {/* LEFT: TABLET QA/QC HUD & CAPABILITIES (5 COLS) */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 text-[#006def] text-[10.5px] font-mono font-bold tracking-wider uppercase border border-white/15">
+              <Tablet className="w-3.5 h-3.5 text-[#006def]" />
+              <span>SHOP FLOOR & CASTING BED QA/QC</span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-tight leading-tight">
+              Real-Time Tablet Runsheets <span className="text-[#006def]">& Form Inspections</span>
+            </h3>
+
+            <p className="text-white/85 text-xs sm:text-sm leading-relaxed font-medium">
+              Equip casting crew foremen and quality control inspectors with instantaneous parametric mold drawings, digital rebar clearance logs, and certified pre-pour sign-offs directly at the casting bed.
+            </p>
+
+            <div className="space-y-2 pt-2 border-t border-white/15 text-xs font-mono font-bold">
+              <div className="flex items-center gap-2 text-white">
+                <CheckCircle2 className="w-4 h-4 text-[#006def] shrink-0" />
+                <span>Zero-Clash Rebar & Anchor Placement Verification</span>
+              </div>
+              <div className="flex items-center gap-2 text-white">
+                <Scan className="w-4 h-4 text-[#006def] shrink-0" />
+                <span>Instant Digital Runsheet & Curing Temperature Logs</span>
+              </div>
+              <div className="flex items-center gap-2 text-white">
+                <Cpu className="w-4 h-4 text-blue-200 shrink-0" />
+                <span>Syncs with Main CAD Server & Batch Plant Telemetry</span>
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT: STRATEGIC LIVE IPAD MOCKUP VIEWPORT (7 COLS) */}
+          <div className="lg:col-span-7 flex flex-col items-center">
+            <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full max-w-xl bg-[#001c4b] overflow-hidden rounded-xs flex items-center justify-center p-2 border border-white/15 shadow-inner">
+              <LazyVideo
+                src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4")}
+                className="w-full h-full object-contain"
+                wrapperClassName="w-full h-full"
+                placeholderBg="bg-[#001c4b]"
+              />
+            </div>
+            <div className="mt-2 text-center text-[10px] font-mono text-white/60 uppercase tracking-widest">
+              Live iPad QA/QC Inspection Screen
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>

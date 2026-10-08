@@ -2,28 +2,30 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileSignature, PenTool, BookOpenCheck, ArrowRight, ShieldCheck } from 'lucide-react';
+import { FileSignature, PenTool, BookOpenCheck, ArrowRight, ShieldCheck, Monitor, CheckCircle2, Zap } from 'lucide-react';
+import { getAssetUrl } from '@/lib/utils';
+import LazyVideo from './LazyVideo';
 
 const upgradeFeatures = [
   {
     title: "Powerful Submittals",
     subtitle: "Streamlined Documentation",
     description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for immediate agency approval.",
-    icon: <FileSignature className="w-6 h-6" />,
+    icon: <FileSignature className="w-5 h-5" />,
     tag: "PE STAMPED"
   },
   {
     title: "Precision Illustrations",
     subtitle: "Multi-Dimensional Clarity",
     description: "Eliminate site-level confusion. We deliver specified-tolerance shop drawings, mold component detailing, and step-by-step erection sequencing.",
-    icon: <PenTool className="w-6 h-6" />,
+    icon: <PenTool className="w-5 h-5" />,
     tag: "SHOP DRAWINGS"
   },
   {
     title: "Dynamic Standards",
     subtitle: "Always Code-Compliant",
     description: "Never fall behind. Our drafting protocols are continuously synchronized with the latest PCI, AASHTO, ASTM, and state-specific DOT master specifications.",
-    icon: <BookOpenCheck className="w-6 h-6" />,
+    icon: <BookOpenCheck className="w-5 h-5" />,
     tag: "AASHTO & PCI"
   }
 ];
@@ -32,12 +34,21 @@ export default function DeliverableUpgrade() {
   return (
     <section className="w-full bg-white text-[#002f7a] py-2 sm:py-4 md:py-6 relative overflow-hidden border-b border-[#002f7a]/10 select-none">
 
+      {/* TECH BLUEPRINT MATRIX BACKGROUND */}
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(to right, #002f7a 1px, transparent 1px), linear-gradient(to bottom, #002f7a 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
       {/* STANDARDIZED CONTAINER */}
-      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 relative z-10 space-y-8">
 
         {/* 1. HEADER */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-4 md:mb-6 gap-4 sm:gap-6 border-b border-[#002f7a]/10 pb-4">
-          <div className="space-y-3">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 sm:gap-6 border-b border-[#002f7a]/10 pb-4">
+          <div className="space-y-2.5">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#006def]/10 text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
               <ShieldCheck className="w-3.5 h-3.5" /> Production Acceleration
             </div>
@@ -49,7 +60,7 @@ export default function DeliverableUpgrade() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <a
               href="#contact"
               className="px-5 py-3 bg-[#002f7a] hover:bg-[#006def] text-white text-xs font-mono font-black uppercase tracking-wider transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
@@ -60,52 +71,96 @@ export default function DeliverableUpgrade() {
           </div>
         </div>
 
-        {/* 2. THREE-COLUMN PILLAR GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {upgradeFeatures.map((feature, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-xl transition-all duration-300 p-6 md:p-8 flex flex-col justify-between"
-            >
-              <div>
-                {/* ICON LEFT + HEADER RIGHT */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="p-3 bg-blue-50 text-[#006def] group-hover:bg-[#002f7a] group-hover:text-white transition-colors duration-300 shrink-0">
-                    {feature.icon}
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="text-[10px] font-mono font-bold text-[#006def] uppercase tracking-widest truncate">
-                        {feature.subtitle}
-                      </span>
-                      <span className="text-[9px] font-mono font-bold text-[#006def] bg-blue-50/70 px-2 py-0.5 border border-[#006def]/20 shrink-0 uppercase">
-                        {feature.tag}
-                      </span>
+        {/* 2. SPLIT LAYOUT: 3 FEATURE PILLARS (LEFT) + STRATEGIC DESKTOP WORKSTATION MOCKUP (RIGHT) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          
+          {/* LEFT: THREE FEATURE PILLARS (5 COLS) */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
+            {upgradeFeatures.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white border border-[#002f7a]/15 hover:border-[#006def] shadow-xs hover:shadow-lg transition-all duration-300 p-5 flex flex-col justify-between rounded-sm"
+              >
+                <div>
+                  <div className="flex items-start gap-3 mb-2.5">
+                    <div className="p-2 bg-blue-50 text-[#006def] group-hover:bg-[#002f7a] group-hover:text-white transition-colors duration-300 shrink-0 border border-[#006def]/20 rounded-sm mt-0.5">
+                      {feature.icon}
                     </div>
-                    <h3 className="text-lg md:text-xl font-black text-[#002f7a] uppercase tracking-tight group-hover:text-[#006def] transition-colors leading-tight">
-                      {feature.title}
-                    </h3>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between gap-1 mb-0.5">
+                        <span className="text-[9.5px] font-mono font-bold text-[#006def] uppercase tracking-wider truncate">
+                          {feature.subtitle}
+                        </span>
+                        <span className="text-[8.5px] font-mono font-bold text-[#006def] bg-blue-50/70 px-1.5 py-0.5 border border-[#006def]/20 shrink-0 uppercase">
+                          {feature.tag}
+                        </span>
+                      </div>
+                      <h3 className="text-sm sm:text-base font-black text-[#002f7a] uppercase tracking-tight group-hover:text-[#006def] transition-colors leading-tight">
+                        {feature.title}
+                      </h3>
+                    </div>
                   </div>
+
+                  <p className="text-xs text-[#002f7a]/85 font-medium leading-relaxed pl-1">
+                    {feature.description}
+                  </p>
                 </div>
+              </motion.div>
+            ))}
+          </div>
 
-                {/* CONTENT */}
-                <p className="text-xs sm:text-sm text-[#002f7a] font-semibold leading-relaxed">
-                  {feature.description}
-                </p>
+          {/* RIGHT: STRATEGIC STANDALONE DESKTOP WORKSTATION MOCKUP (7 COLS) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="lg:col-span-7 flex flex-col bg-[#002f7a] text-white border border-[#002f7a] shadow-2xl rounded-sm overflow-hidden p-4 sm:p-5 group/desk"
+          >
+            {/* TOP DESKTOP HUD BAR */}
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/15 text-white font-mono text-[10px] sm:text-[11px] font-bold">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
+                <span className="text-[#006def] font-black uppercase">LIVE DESKTOP CAD WORKSTATION</span>
+                <span className="hidden sm:inline text-white/50">| LOD 400 ENGINE</span>
               </div>
+              <div className="flex items-center gap-2 text-white/80 text-[9px] sm:text-[10px]">
+                <Monitor className="w-3.5 h-3.5 text-[#006def]" />
+                <span className="uppercase font-bold">Engineering Office View</span>
+              </div>
+            </div>
 
-              <div className="mt-6 pt-4 border-t border-[#002f7a]/10 flex justify-between items-center">
-                <span className="text-[10px] font-mono font-bold text-[#002f7a] uppercase">Professional Standard</span>
-                <span className="text-xs font-black text-[#006def] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                  Details <ArrowRight className="w-3.5 h-3.5" />
-                </span>
+            {/* LIVE DESKTOP VIDEO VIEWPORT */}
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-[#001c4b] overflow-hidden rounded-xs flex items-center justify-center border border-white/10 shadow-inner">
+              <LazyVideo
+                src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4")}
+                className="w-full h-full object-contain"
+                wrapperClassName="w-full h-full"
+                placeholderBg="bg-[#001c4b]"
+              />
+            </div>
+
+            {/* BOTTOM TELEMETRY PILLS */}
+            <div className="pt-3 mt-3 border-t border-white/15 grid grid-cols-3 gap-2 text-center text-[9px] sm:text-[10px] font-mono font-bold text-white">
+              <div className="p-2 bg-white/10 border border-white/15 flex items-center justify-center gap-1 rounded-xs">
+                <CheckCircle2 className="w-3 h-3 text-[#006def] shrink-0" />
+                <span className="truncate">PE Stamp Certified</span>
               </div>
-            </motion.div>
-          ))}
+              <div className="p-2 bg-white/10 border border-white/15 flex items-center justify-center gap-1 rounded-xs">
+                <Zap className="w-3 h-3 text-[#006def] shrink-0" />
+                <span className="truncate">Auto-Calc Engine</span>
+              </div>
+              <div className="p-2 bg-white/10 border border-white/15 flex items-center justify-center gap-1 rounded-xs">
+                <ShieldCheck className="w-3 h-3 text-[#006def] shrink-0" />
+                <span className="truncate">Zero Clash LOD 400</span>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
 
       </div>

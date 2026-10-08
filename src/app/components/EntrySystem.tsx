@@ -179,118 +179,98 @@ export default function EntrySystem() {
             </div>
           </header>
 
-          {/* 3. MAIN SPATIAL CANVAS: 3 STANDALONE STRATEGIC DEVICE MOCKUPS */}
-          <main className="relative z-10 flex-1 w-full max-w-[1600px] mx-auto p-4 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+          {/* 3. MAIN SPATIAL CANVAS: RESPONSIVE DEVICE VIEWPORT (ONLY 1 VIDEO SHOWN PER DEVICE BREAKPOINT) */}
+          <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center">
 
-            {/* SECTION SUB-HEADER */}
-            <div className="text-center mb-6 space-y-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white text-[11px] font-mono font-bold tracking-[0.2em] uppercase border-l-2 border-[#006def]">
-                <span>Connected Multi-Device Ecosystem</span>
-                <span className="text-white/40">&bull;</span>
-                <span className="text-[#006def]">Live Submittal Pipeline</span>
-              </div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
-                One Engineering Source &bull; Three Strategic Viewports
-              </h2>
-            </div>
-
-            {/* 3 STRATEGIC STANDALONE MOCKUP STATIONS - COMPLETELY UNBOXED */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center justify-items-center">
-
-              {/* STRATEGIC PLACE 01: STANDALONE DESKTOP WORKSTATION (5 COLS) - NO BOX */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="md:col-span-5 w-full flex flex-col items-center justify-center"
-              >
-                {/* Standalone Desktop Mockup (Pure Video, No Box) */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
-                  <video
-                    ref={desktopVideoRef}
+            {/* 1. DESKTOP VIEWPORT: ONLY ON DESKTOP (lg:flex hidden) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="hidden lg:flex flex-col items-center justify-center w-full max-w-4xl"
+            >
+              <div className="relative aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
+                <video
+                  ref={desktopVideoRef}
+                  src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  onCanPlay={handleVideoSetup}
+                  onLoadedMetadata={handleVideoSetup}
+                  onEnded={handleVideoEnded}
+                  suppressHydrationWarning
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                >
+                  <source
                     src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    onCanPlay={handleVideoSetup}
-                    onLoadedMetadata={handleVideoSetup}
-                    onEnded={handleVideoEnded}
-                    suppressHydrationWarning
-                    className="w-full h-full object-contain drop-shadow-2xl"
-                  >
-                    <source
-                      src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-              </motion.div>
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </motion.div>
 
-              {/* STRATEGIC PLACE 02: STANDALONE IPAD & TABLET (4 COLS) - NO BOX */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="md:col-span-4 w-full flex flex-col items-center justify-center"
-              >
-                {/* Standalone iPad Mockup (Pure Video, No Box) */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
-                  <video
-                    ref={tabletVideoRef}
+            {/* 2. TABLET VIEWPORT: ONLY ON TABLET (hidden md:flex lg:hidden) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="hidden md:flex lg:hidden flex-col items-center justify-center w-full max-w-2xl"
+            >
+              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
+                <video
+                  ref={tabletVideoRef}
+                  src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  onCanPlay={handleVideoSetup}
+                  onLoadedMetadata={handleVideoSetup}
+                  onEnded={handleVideoEnded}
+                  suppressHydrationWarning
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                >
+                  <source
                     src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    onCanPlay={handleVideoSetup}
-                    onLoadedMetadata={handleVideoSetup}
-                    onEnded={handleVideoEnded}
-                    suppressHydrationWarning
-                    className="w-full h-full object-contain drop-shadow-2xl"
-                  >
-                    <source
-                      src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-              </motion.div>
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </motion.div>
 
-              {/* STRATEGIC PLACE 03: STANDALONE MOBILE COMPANION (3 COLS) - NO BOX */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="md:col-span-3 w-full flex flex-col items-center justify-center"
-              >
-                {/* Standalone Mobile Mockup (Pure Video, No Box) */}
-                <div className="relative aspect-[9/16] w-40 sm:w-48 overflow-hidden flex items-center justify-center">
-                  <video
-                    ref={mobileVideoRef}
+            {/* 3. MOBILE VIEWPORT: ONLY ON MOBILE (flex md:hidden) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex md:hidden flex-col items-center justify-center w-full"
+            >
+              <div className="relative aspect-[9/16] w-52 sm:w-60 overflow-hidden flex items-center justify-center">
+                <video
+                  ref={mobileVideoRef}
+                  src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  onCanPlay={handleVideoSetup}
+                  onLoadedMetadata={handleVideoSetup}
+                  onEnded={handleVideoEnded}
+                  suppressHydrationWarning
+                  className="w-full h-full object-contain drop-shadow-2xl"
+                >
+                  <source
                     src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="auto"
-                    onCanPlay={handleVideoSetup}
-                    onLoadedMetadata={handleVideoSetup}
-                    onEnded={handleVideoEnded}
-                    suppressHydrationWarning
-                    className="w-full h-full object-contain drop-shadow-2xl"
-                  >
-                    <source
-                      src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-              </motion.div>
-
-            </div>
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </motion.div>
 
           </main>
 

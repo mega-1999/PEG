@@ -201,18 +201,15 @@ export default function ManufacturingHub() {
             </div>
           </div>
 
-          {/* RIGHT: STRATEGIC LIVE IPAD MOCKUP VIEWPORT (7 COLS) */}
-          <div className="lg:col-span-7 flex flex-col items-center">
-            <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full max-w-xl bg-[#001c4b] overflow-hidden rounded-xs flex items-center justify-center p-2 border border-white/15 shadow-inner">
+          {/* RIGHT: STRATEGIC LIVE IPAD MOCKUP - UNBOXED (7 COLS) */}
+          <div className="lg:col-span-7 flex flex-col items-center justify-center">
+            <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full max-w-xl overflow-hidden flex items-center justify-center">
               <LazyVideo
                 src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4")}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-2xl"
                 wrapperClassName="w-full h-full"
                 placeholderBg="bg-[#001c4b]"
               />
-            </div>
-            <div className="mt-2 text-center text-[10px] font-mono text-white/60 uppercase tracking-widest">
-              Live iPad QA/QC Inspection Screen
             </div>
           </div>
         </motion.div>

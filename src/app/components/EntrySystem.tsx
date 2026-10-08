@@ -194,30 +194,18 @@ export default function EntrySystem() {
               </h2>
             </div>
 
-            {/* 3 STRATEGIC STANDALONE MOCKUP STATIONS */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6 items-end">
+            {/* 3 STRATEGIC STANDALONE MOCKUP STATIONS - COMPLETELY UNBOXED */}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-center justify-items-center">
 
-              {/* STRATEGIC PLACE 01: STANDALONE DESKTOP WORKSTATION (5 COLS) */}
+              {/* STRATEGIC PLACE 01: STANDALONE DESKTOP WORKSTATION (5 COLS) - NO BOX */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="md:col-span-5 flex flex-col items-center group"
+                className="md:col-span-5 w-full flex flex-col items-center justify-center"
               >
-                {/* Sleek Floating Device Bar */}
-                <div className="flex items-center justify-between w-full pb-2 mb-2 border-b border-white/15 font-mono text-[10px] text-white">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
-                    <span className="text-[#006def] font-black uppercase">01 &bull; DESKTOP CAD WORKSTATION</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-white/70">
-                    <Monitor className="w-3.5 h-3.5 text-[#006def]" />
-                    <span>LOD 400 Drafting</span>
-                  </div>
-                </div>
-
-                {/* Standalone Desktop Mockup Viewport */}
-                <div className="relative aspect-[16/10] w-full bg-[#001c4b] overflow-hidden rounded-xs border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group-hover:border-[#006def] transition-all flex items-center justify-center p-1.5">
+                {/* Standalone Desktop Mockup (Pure Video, No Box) */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
                   <video
                     ref={desktopVideoRef}
                     src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
@@ -230,44 +218,25 @@ export default function EntrySystem() {
                     onLoadedMetadata={handleVideoSetup}
                     onEnded={handleVideoEnded}
                     suppressHydrationWarning
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain drop-shadow-2xl"
                   >
                     <source
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
                       type="video/mp4"
                     />
                   </video>
-                  <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-[#002f7a]/90 text-white text-[8px] font-mono font-bold uppercase rounded-xs border border-[#006def]/30 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#006def] animate-ping" /> Design Desk
-                  </div>
-                </div>
-
-                <div className="mt-2 text-center text-[10px] font-mono text-white/75 font-semibold">
-                  Parametric Formwork & Calculation Automations
                 </div>
               </motion.div>
 
-              {/* STRATEGIC PLACE 02: STANDALONE IPAD & TABLET QA/QC (4 COLS) */}
+              {/* STRATEGIC PLACE 02: STANDALONE IPAD & TABLET (4 COLS) - NO BOX */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="md:col-span-4 flex flex-col items-center group"
+                className="md:col-span-4 w-full flex flex-col items-center justify-center"
               >
-                {/* Sleek Floating Device Bar */}
-                <div className="flex items-center justify-between w-full pb-2 mb-2 border-b border-white/15 font-mono text-[10px] text-white">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
-                    <span className="text-[#006def] font-black uppercase">02 &bull; IPAD QA/QC STATION</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-white/70">
-                    <Tablet className="w-3.5 h-3.5 text-[#006def]" />
-                    <span>Shop Floor</span>
-                  </div>
-                </div>
-
-                {/* Standalone iPad Mockup Viewport */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full bg-[#001c4b] overflow-hidden rounded-xs border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group-hover:border-[#006def] transition-all flex items-center justify-center p-1.5">
+                {/* Standalone iPad Mockup (Pure Video, No Box) */}
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
                   <video
                     ref={tabletVideoRef}
                     src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
@@ -280,44 +249,25 @@ export default function EntrySystem() {
                     onLoadedMetadata={handleVideoSetup}
                     onEnded={handleVideoEnded}
                     suppressHydrationWarning
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain drop-shadow-2xl"
                   >
                     <source
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
                       type="video/mp4"
                     />
                   </video>
-                  <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-[#002f7a]/90 text-white text-[8px] font-mono font-bold uppercase rounded-xs border border-[#006def]/30 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#006def] animate-ping" /> Casting Bed
-                  </div>
-                </div>
-
-                <div className="mt-2 text-center text-[10px] font-mono text-white/75 font-semibold">
-                  NPCA Tolerance & Slump Inspection Feeds
                 </div>
               </motion.div>
 
-              {/* STRATEGIC PLACE 03: STANDALONE MOBILE COMPANION (3 COLS) */}
+              {/* STRATEGIC PLACE 03: STANDALONE MOBILE COMPANION (3 COLS) - NO BOX */}
               <motion.div
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="md:col-span-3 flex flex-col items-center group"
+                className="md:col-span-3 w-full flex flex-col items-center justify-center"
               >
-                {/* Sleek Floating Device Bar */}
-                <div className="flex items-center justify-between w-full pb-2 mb-2 border-b border-white/15 font-mono text-[10px] text-white">
-                  <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
-                    <span className="text-[#006def] font-black uppercase">03 &bull; MOBILE FIELD SYNC</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-white/70">
-                    <Smartphone className="w-3.5 h-3.5 text-[#006def]" />
-                    <span>Jobsite</span>
-                  </div>
-                </div>
-
-                {/* Standalone Mobile Mockup Viewport (Portrait 9:16) */}
-                <div className="relative aspect-[9/16] w-36 sm:w-44 bg-[#001c4b] overflow-hidden rounded-xs border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.6)] group-hover:border-[#006def] transition-all flex items-center justify-center p-1">
+                {/* Standalone Mobile Mockup (Pure Video, No Box) */}
+                <div className="relative aspect-[9/16] w-40 sm:w-48 overflow-hidden flex items-center justify-center">
                   <video
                     ref={mobileVideoRef}
                     src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
@@ -330,20 +280,13 @@ export default function EntrySystem() {
                     onLoadedMetadata={handleVideoSetup}
                     onEnded={handleVideoEnded}
                     suppressHydrationWarning
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain drop-shadow-2xl"
                   >
                     <source
                       src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
                       type="video/mp4"
                     />
                   </video>
-                  <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-[#002f7a]/90 text-white text-[8px] font-mono font-bold uppercase rounded-xs border border-[#006def]/30 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#006def] animate-ping" /> Live Sync
-                  </div>
-                </div>
-
-                <div className="mt-2 text-center text-[10px] font-mono text-white/75 font-semibold">
-                  Field Dispatch & Verification
                 </div>
               </motion.div>
 

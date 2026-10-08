@@ -113,51 +113,22 @@ export default function DeliverableUpgrade() {
             ))}
           </div>
 
-          {/* RIGHT: STRATEGIC STANDALONE DESKTOP WORKSTATION MOCKUP (7 COLS) */}
+          {/* RIGHT: STRATEGIC STANDALONE DESKTOP WORKSTATION MOCKUP (7 COLS) - UNBOXED */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="lg:col-span-7 flex flex-col bg-[#002f7a] text-white border border-[#002f7a] shadow-2xl rounded-sm overflow-hidden p-4 sm:p-5 group/desk"
+            className="lg:col-span-7 flex flex-col items-center justify-center"
           >
-            {/* TOP DESKTOP HUD BAR */}
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/15 text-white font-mono text-[10px] sm:text-[11px] font-bold">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
-                <span className="text-[#006def] font-black uppercase">LIVE DESKTOP CAD WORKSTATION</span>
-                <span className="hidden sm:inline text-white/50">| LOD 400 ENGINE</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/80 text-[9px] sm:text-[10px]">
-                <Monitor className="w-3.5 h-3.5 text-[#006def]" />
-                <span className="uppercase font-bold">Engineering Office View</span>
-              </div>
-            </div>
-
-            {/* LIVE DESKTOP VIDEO VIEWPORT */}
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-[#001c4b] overflow-hidden rounded-xs flex items-center justify-center border border-white/10 shadow-inner">
+            {/* STANDALONE DESKTOP VIDEO MOCKUP - NO BOX */}
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden flex items-center justify-center">
               <LazyVideo
                 src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4")}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-2xl"
                 wrapperClassName="w-full h-full"
                 placeholderBg="bg-[#001c4b]"
               />
-            </div>
-
-            {/* BOTTOM TELEMETRY PILLS */}
-            <div className="pt-3 mt-3 border-t border-white/15 grid grid-cols-3 gap-2 text-center text-[9px] sm:text-[10px] font-mono font-bold text-white">
-              <div className="p-2 bg-white/10 border border-white/15 flex items-center justify-center gap-1 rounded-xs">
-                <CheckCircle2 className="w-3 h-3 text-[#006def] shrink-0" />
-                <span className="truncate">PE Stamp Certified</span>
-              </div>
-              <div className="p-2 bg-white/10 border border-white/15 flex items-center justify-center gap-1 rounded-xs">
-                <Zap className="w-3 h-3 text-[#006def] shrink-0" />
-                <span className="truncate">Auto-Calc Engine</span>
-              </div>
-              <div className="p-2 bg-white/10 border border-white/15 flex items-center justify-center gap-1 rounded-xs">
-                <ShieldCheck className="w-3 h-3 text-[#006def] shrink-0" />
-                <span className="truncate">Zero Clash LOD 400</span>
-              </div>
             </div>
           </motion.div>
 

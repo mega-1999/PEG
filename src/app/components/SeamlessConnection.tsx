@@ -88,47 +88,22 @@ export default function SeamlessConnection() {
             </div>
           </motion.div>
 
-          {/* NODE 2: STRATEGIC STANDALONE MOBILE COMPANION MOCKUP (4 COLS) */}
+          {/* NODE 2: STRATEGIC STANDALONE MOBILE COMPANION MOCKUP (4 COLS) - UNBOXED */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.4 }}
-            className="lg:col-span-4 flex flex-col items-center bg-white text-[#002f7a] border border-white/20 p-5 md:p-6 rounded-sm shadow-xl relative overflow-hidden group"
+            className="lg:col-span-4 flex flex-col items-center justify-center"
           >
-            {/* Top Accent Line */}
-            <div className="absolute top-0 left-0 w-0 h-1 bg-[#006def] group-hover:w-full transition-all duration-300" />
-
-            {/* Top Pill */}
-            <div className="flex items-center justify-between w-full pb-2 mb-3 border-b border-[#002f7a]/10 font-mono text-[9.5px] font-bold text-[#002f7a]">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#006def] animate-pulse" />
-                <span className="text-[#006def] uppercase font-black">MOBILE COMPANION</span>
-              </div>
-              <div className="flex items-center gap-1 text-[#006def]">
-                <Wifi className="w-3 h-3 text-[#006def]" />
-                <span className="font-bold">Live Sync</span>
-              </div>
-            </div>
-
-            {/* Live Mobile Video Viewport */}
-            <div className="relative aspect-[9/16] w-48 sm:w-52 max-w-full bg-[#001c4b] rounded-sm overflow-hidden border border-[#002f7a]/20 shadow-md flex items-center justify-center p-1">
+            {/* Live Mobile Video Viewport - Standalone Phone (No Box) */}
+            <div className="relative aspect-[9/16] w-48 sm:w-56 max-w-full overflow-hidden flex items-center justify-center">
               <LazyVideo
                 src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4")}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain drop-shadow-2xl"
                 wrapperClassName="w-full h-full"
                 placeholderBg="bg-[#001c4b]"
               />
-            </div>
-
-            <div className="mt-3 text-center space-y-0.5">
-              <div className="flex items-center justify-center gap-1 text-xs font-mono font-bold text-[#002f7a]">
-                <Smartphone className="w-3.5 h-3.5 text-[#006def]" />
-                <span className="uppercase">Field Dispatch & Inspection</span>
-              </div>
-              <p className="text-[11px] text-[#002f7a]/80 font-semibold">
-                Instant Submittal Verification on Jobsite
-              </p>
             </div>
           </motion.div>
 

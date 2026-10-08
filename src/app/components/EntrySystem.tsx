@@ -119,7 +119,7 @@ export default function EntrySystem() {
       {!isInitialized && (
         <motion.div
           exit={{ opacity: 0, scale: 1.05, transition: { duration: 0.4 } }}
-          className="fixed inset-0 z-[999] bg-[#001433] flex flex-col justify-between overflow-x-hidden overflow-y-auto select-none"
+          className="fixed inset-0 z-[999] bg-[#001433] flex flex-col justify-between h-[100dvh] max-h-[100dvh] w-full overflow-hidden select-none"
         >
           {/* 1. CINEMATIC BRIDGE / OCEAN DRONE VIDEO BACKGROUND LAYER */}
           <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -157,22 +157,22 @@ export default function EntrySystem() {
           </div>
 
           {/* 2. TOP HUD BAR */}
-          <header className="relative z-20 w-full px-6 md:px-12 py-4 flex items-center justify-between border-b border-white/10 bg-[#002f7a]/60 backdrop-blur-md">
-            <div className="flex items-center gap-3">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#006def] animate-ping" />
-              <div className="flex items-center gap-2 font-mono text-xs font-black text-white uppercase tracking-widest">
-                <Layers className="w-4 h-4 text-[#006def]" />
-                <span>Precast Engineering Group</span>
+          <header className="relative z-20 w-full px-4 sm:px-6 md:px-12 py-3 sm:py-4 flex items-center justify-between border-b border-white/10 bg-[#002f7a]/60 backdrop-blur-md shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#006def] animate-ping shrink-0" />
+              <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[11px] sm:text-xs font-black text-white uppercase tracking-wider sm:tracking-widest truncate">
+                <Layers className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-[#006def] shrink-0" />
+                <span className="truncate">Precast Engineering Group</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-[#006def]/20 border border-[#006def]/40 text-[#006def] text-[10px] font-mono font-bold uppercase rounded-xs">
-                <Radio className="w-3.5 h-3.5 animate-pulse" /> Live Multi-Stream Matrix
+            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+              <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-[#006def]/20 border border-[#006def]/40 text-[#006def] text-[10px] font-mono font-bold uppercase rounded-xs">
+                <Radio className="w-3.5 h-3.5 animate-pulse" /> Live System
               </div>
               <button
                 onClick={handleStart}
-                className="px-4 py-1.5 bg-white/10 hover:bg-[#006def] text-white text-xs font-mono font-bold uppercase tracking-wider border border-white/20 transition-all rounded-xs cursor-pointer"
+                className="px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 hover:bg-[#006def] text-white text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider border border-white/20 transition-all rounded-xs cursor-pointer shrink-0"
               >
                 Skip Intro &rarr;
               </button>
@@ -180,16 +180,16 @@ export default function EntrySystem() {
           </header>
 
           {/* 3. MAIN SPATIAL CANVAS: RESPONSIVE DEVICE VIEWPORT (ONLY 1 VIDEO SHOWN PER DEVICE BREAKPOINT) */}
-          <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center">
+          <main className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-4 py-2 sm:py-4 md:py-6 flex flex-col items-center justify-center min-h-0 overflow-hidden">
 
             {/* 1. DESKTOP VIEWPORT: ONLY ON DESKTOP (lg:flex hidden) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="hidden lg:flex flex-col items-center justify-center w-full max-w-4xl"
+              className="hidden lg:flex flex-col items-center justify-center w-full max-w-4xl max-h-[56vh]"
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
+              <div className="relative aspect-[16/10] w-full max-h-[56vh] overflow-hidden flex items-center justify-center">
                 <video
                   ref={desktopVideoRef}
                   src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Live_Mockup_1.mp4"
@@ -217,9 +217,9 @@ export default function EntrySystem() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="hidden md:flex lg:hidden flex-col items-center justify-center w-full max-w-2xl"
+              className="hidden md:flex lg:hidden flex-col items-center justify-center w-full max-w-xl max-h-[52vh]"
             >
-              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden flex items-center justify-center">
+              <div className="relative aspect-[4/3] sm:aspect-[16/10] w-full max-h-[52vh] overflow-hidden flex items-center justify-center">
                 <video
                   ref={tabletVideoRef}
                   src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_I-pad_Live_Mockup_1.mp4"
@@ -247,9 +247,9 @@ export default function EntrySystem() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex md:hidden flex-col items-center justify-center w-full"
+              className="flex md:hidden flex-col items-center justify-center w-full max-h-[52vh]"
             >
-              <div className="relative aspect-[9/16] w-52 sm:w-60 overflow-hidden flex items-center justify-center">
+              <div className="relative aspect-[9/16] h-[46vh] max-h-[360px] max-w-[85vw] w-auto overflow-hidden flex items-center justify-center">
                 <video
                   ref={mobileVideoRef}
                   src="https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Mobile_Live_Mockup_1.mp4"
@@ -275,26 +275,26 @@ export default function EntrySystem() {
           </main>
 
           {/* 4. BOTTOM COMMAND HUD & ENTER PLATFORM BAR */}
-          <footer className="relative z-20 w-full px-6 md:px-12 py-4 bg-[#002f7a]/90 border-t border-white/10 backdrop-blur-md">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <footer className="relative z-20 w-full px-4 sm:px-6 md:px-12 py-3 sm:py-4 bg-[#002f7a]/90 border-t border-white/10 backdrop-blur-md shrink-0">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
               
-              <div className="space-y-1">
-                <div className="inline-flex items-center gap-1.5 text-white text-xs font-black uppercase tracking-wider">
-                  <Zap className="w-3.5 h-3.5 text-[#006def]" /> Bridging Precasters &bull; Certified Multi-Platform Architecture
+              <div className="space-y-0.5 text-center sm:text-left">
+                <div className="inline-flex items-center gap-1.5 text-white text-[11px] sm:text-xs font-black uppercase tracking-wider">
+                  <Zap className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#006def]" /> Bridging Precasters &bull; Certified Architecture
                 </div>
-                <div className="flex items-center gap-4 text-[11px] font-mono text-white/70">
-                  <span>50 States PE Stamped</span>
+                <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 text-[9.5px] sm:text-[11px] font-mono text-white/70">
+                  <span>50 States PE</span>
                   <span>&bull;</span>
                   <span>AASHTO H-20 & HL-93</span>
                   <span>&bull;</span>
-                  <span>NPCA & PCI Ready</span>
+                  <span>NPCA Ready</span>
                 </div>
               </div>
 
               {/* PROGRESS & INITIALIZATION BUTTON */}
-              <div className="flex items-center gap-4 w-full md:w-auto">
-                <div className="w-40 space-y-1">
-                  <div className="flex justify-between font-mono text-[9px] text-white/70 uppercase">
+              <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 w-full sm:w-auto">
+                <div className="flex-1 sm:w-36 space-y-1">
+                  <div className="flex justify-between font-mono text-[8.5px] sm:text-[9px] text-white/70 uppercase">
                     <span>Syncing Nodes</span>
                     <span className="text-[#006def] font-bold">{progress}%</span>
                   </div>
@@ -313,16 +313,16 @@ export default function EntrySystem() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     onClick={handleStart}
-                    className="px-8 py-3 bg-[#006def] hover:bg-white text-white hover:text-[#002f7a] font-mono font-black text-xs uppercase tracking-[0.25em] flex items-center justify-center gap-2 rounded-xs shadow-lg shadow-[#006def]/30 transition-all duration-300 cursor-pointer"
+                    className="px-5 sm:px-8 py-2 sm:py-3 bg-[#006def] hover:bg-white text-white hover:text-[#002f7a] font-mono font-black text-[10.5px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] flex items-center justify-center gap-1.5 sm:gap-2 rounded-xs shadow-lg shadow-[#006def]/30 transition-all duration-300 cursor-pointer shrink-0"
                   >
-                    <Power className="w-4 h-4" />
+                    <Power className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                     <span>Enter Platform</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
                   </motion.button>
                 ) : (
-                  <div className="px-6 py-3 bg-white/5 border border-white/10 text-center text-white/50 font-mono text-xs uppercase tracking-wider flex items-center gap-2 rounded-xs">
-                    <ShieldCheck className="w-4 h-4 text-[#006def] animate-pulse" />
-                    <span>Connecting Ecosystem...</span>
+                  <div className="px-4 sm:px-6 py-2 sm:py-3 bg-white/5 border border-white/10 text-center text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-1.5 sm:gap-2 rounded-xs shrink-0">
+                    <ShieldCheck className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-[#006def] animate-pulse" />
+                    <span>Connecting...</span>
                   </div>
                 )}
               </div>

@@ -112,7 +112,7 @@ export default function PrecastSkeletonShowcase() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white text-[#006def] text-xs font-black tracking-[0.2em] uppercase border-l-2 border-[#006def]">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#006def]" />
-                <span>3D SKELETON ARCHITECTURE</span>
+                <span>SKELETON ARCHITECTURE</span>
               </div>
 
               {/* MASSIVE TOP-LEFT HEADLINE */}
@@ -187,7 +187,7 @@ export default function PrecastSkeletonShowcase() {
               {/* TOP LABELS & CONTROLS */}
               <div className="absolute top-2.5 left-2.5 z-30 font-mono text-[9px] sm:text-[10px] text-white bg-[#002f7a] px-2.5 py-0.5 font-bold border border-white/20 flex items-center gap-1.5 shadow-xs">
                 <span className="w-1.5 h-1.5 bg-[#006def] rounded-full animate-ping" />
-                <span>3D SKELETON CAD STREAM</span>
+                <span>SKELETON CAD STREAM</span>
               </div>
 
               <div className="absolute top-2.5 right-2.5 z-30 flex items-center gap-1.5">

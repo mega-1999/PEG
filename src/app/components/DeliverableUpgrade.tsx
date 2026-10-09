@@ -121,13 +121,13 @@ export default function DeliverableUpgrade() {
             transition={{ duration: 0.4 }}
             className="lg:col-span-7 flex flex-col items-center justify-center"
           >
-            {/* STANDALONE DESKTOP VIDEO MOCKUP - NO BOX */}
-            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden flex items-center justify-center">
+            {/* STANDALONE DESKTOP VIDEO MOCKUP - BRAND DARK BLUE CONTAINER (NO SHADOWS) */}
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden flex items-center justify-center bg-[#002f7a] rounded-xl p-2 sm:p-4 border border-[#006def]/30">
               <LazyVideo
                 src={getAssetUrl("https://pub-506b16bcde4f4fa8849e4eb8030acc3b.r2.dev/assets/video/Mockup/Precast_Engineering_Group_Desktop_Blue_BG-Live_Mockup.mp4")}
-                className="w-full h-full object-contain drop-shadow-2xl"
+                className="w-full h-full object-contain"
                 wrapperClassName="w-full h-full"
-                placeholderBg="bg-[#001c4b]"
+                placeholderBg="bg-[#002f7a]"
               />
             </div>
           </motion.div>

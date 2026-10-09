@@ -119,41 +119,44 @@ export default function MeetAtShows() {
         </div>
       </div>
 
-      {/* ONE-ROW INFINITE SLIDING MARQUEE RUNWAY */}
-      <div className="relative w-full overflow-hidden py-2 group/marquee">
+      {/* ONE-ROW INFINITE SLIDING MARQUEE RUNWAY - COMPACT SIZED CARDS */}
+      <div className="show-marquee-row relative w-full overflow-hidden py-1 group/marquee">
+
+        {/* Inline style for guaranteed instant marquee pause on hover */}
+        <style>{`
+          .show-marquee-row:hover .show-marquee-inner,
+          .show-marquee-inner:hover {
+            animation-play-state: paused !important;
+          }
+        `}</style>
 
         {/* High-density gradient masks for clean entry and exit fading */}
-        <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none" />
 
         {/* INFINITE LOOP RUNWAY */}
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 60, // Slow, elegant gliding speed
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          className="flex items-stretch gap-6 w-max whitespace-nowrap will-change-transform px-4"
+        <div
+          className="show-marquee-inner flex items-stretch gap-4 w-max animate-marquee will-change-transform px-2"
+          style={{ animationDuration: '50s' }}
         >
           {loopExhibitions.map((show, idx) => (
             <div
               key={`show-${show.tag}-${idx}`}
-              className="w-[290px] sm:w-[330px] bg-blue-50/80 hover:bg-[#002f7a] border border-[#006def]/20 hover:border-[#002f7a] text-[#002f7a] hover:text-white shadow-xs hover:shadow-2xl transition-all duration-500 flex flex-col justify-between shrink-0 group/card overflow-hidden cursor-pointer"
+              className="w-[220px] sm:w-[250px] bg-blue-50/80 hover:bg-[#002f7a] border border-[#006def]/20 hover:border-[#002f7a] text-[#002f7a] hover:text-white shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between shrink-0 group/card rounded-sm overflow-hidden cursor-pointer"
             >
-              {/* TOP IMAGE / LOGO CONTAINER (Solid white for crisp logo clarity) */}
-              <div className="relative w-full h-36 bg-white p-6 flex items-center justify-center border-b border-[#002f7a]/10 transition-colors">
-                <div className="relative w-full h-full group-hover/card:scale-105 transition-transform duration-500">
+              {/* TOP IMAGE / LOGO CONTAINER */}
+              <div className="relative w-full h-24 sm:h-28 bg-white p-3.5 flex items-center justify-center border-b border-[#002f7a]/10 transition-colors">
+                <div className="relative w-full h-full group-hover/card:scale-105 transition-transform duration-300">
                   <Image
                     src={getAssetUrl(show.img)}
                     alt={show.title}
                     fill
-                    sizes="330px"
-                    className="object-contain p-2"
+                    sizes="250px"
+                    className="object-contain p-1"
                   />
                 </div>
 
-                <span className="absolute top-3 left-3 px-2 py-0.5 bg-white border border-[#002f7a]/15 text-[#002f7a] text-[8px] font-mono font-bold tracking-widest uppercase shadow-xs">
+                <span className="absolute top-2 left-2 px-1.5 py-0.5 bg-white border border-[#002f7a]/15 text-[#002f7a] text-[7.5px] font-mono font-bold tracking-wider uppercase shadow-xs rounded-xs">
                   {show.tag}
                 </span>
 
@@ -161,41 +164,41 @@ export default function MeetAtShows() {
                   href={show.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute top-3 right-3 p-1.5 bg-white border border-[#002f7a]/15 text-[#002f7a] hover:text-[#006def] hover:border-[#006def] transition-colors shadow-xs"
+                  className="absolute top-2 right-2 p-1 bg-white border border-[#002f7a]/15 text-[#002f7a] hover:text-[#006def] hover:border-[#006def] transition-colors shadow-xs rounded-xs"
                 >
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-2.5 h-2.5" />
                 </a>
               </div>
 
               {/* DETAILED CONTENT AREA */}
-              <div className="p-4 flex flex-col justify-between flex-1 space-y-3 whitespace-normal">
+              <div className="p-3 flex flex-col justify-between flex-1 space-y-2 whitespace-normal">
                 <div>
-                  <div className="flex items-center gap-2 text-[#006def] group-hover/card:text-blue-200 text-[11px] font-mono font-bold mb-1.5 transition-colors">
-                    <Calendar className="w-3.5 h-3.5 shrink-0" />
-                    <span>{show.date}</span>
+                  <div className="flex items-center gap-1.5 text-[#006def] group-hover/card:text-blue-200 text-[10px] font-mono font-bold mb-1 transition-colors">
+                    <Calendar className="w-3 h-3 shrink-0" />
+                    <span className="truncate">{show.date}</span>
                   </div>
 
-                  <h3 className="text-sm sm:text-base font-black text-[#002f7a] group-hover/card:text-white uppercase tracking-tight line-clamp-2 leading-snug transition-colors">
+                  <h3 className="text-xs sm:text-[13px] font-black text-[#002f7a] group-hover/card:text-white uppercase tracking-tight line-clamp-2 leading-snug transition-colors">
                     {show.title}
                   </h3>
 
-                  <div className="flex items-center gap-1.5 text-[#002f7a]/70 group-hover/card:text-white/80 text-[11px] font-semibold mt-1 transition-colors">
-                    <MapPin className="w-3 h-3 text-[#006def] group-hover/card:text-blue-200 shrink-0 transition-colors" />
+                  <div className="flex items-center gap-1 text-[#002f7a]/70 group-hover/card:text-white/80 text-[10px] font-semibold mt-1 transition-colors">
+                    <MapPin className="w-2.5 h-2.5 text-[#006def] group-hover/card:text-blue-200 shrink-0 transition-colors" />
                     <span className="truncate">{show.location}</span>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#002f7a]/10 group-hover/card:border-white/20 flex items-center justify-between transition-colors">
-                  <span className="text-[10px] font-mono font-bold text-[#002f7a]/60 group-hover/card:text-white/70 uppercase transition-colors">
+                <div className="pt-2 border-t border-[#002f7a]/10 group-hover/card:border-white/20 flex items-center justify-between transition-colors">
+                  <span className="text-[9px] font-mono font-bold text-[#002f7a]/60 group-hover/card:text-white/70 uppercase transition-colors">
                     Official Expo
                   </span>
                   <a
                     href={show.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#006def] group-hover/card:text-blue-200 font-bold text-xs inline-flex items-center gap-1 group-hover/card:translate-x-0.5 transition-all"
+                    className="text-[#006def] group-hover/card:text-blue-200 font-bold text-[11px] inline-flex items-center gap-1 group-hover/card:translate-x-0.5 transition-all"
                   >
-                    Event Info <ArrowRight className="w-3 h-3" />
+                    Event Info <ArrowRight className="w-2.5 h-2.5" />
                   </a>
                 </div>
               </div>
@@ -204,7 +207,7 @@ export default function MeetAtShows() {
               <div className="h-0.5 w-full bg-[#006def] group-hover/card:bg-white opacity-0 group-hover/card:opacity-100 transition-all duration-300" />
             </div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
 

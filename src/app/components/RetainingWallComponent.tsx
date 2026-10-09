@@ -91,14 +91,7 @@ export default function RetainingWallComponent() {
                         : "bg-[#002f7a] text-white"
                     }`}>
                       {wall.tag}
-                    </span>
-                    <span className={`text-[10px] font-mono font-bold px-2.5 py-1 rounded-xs border ${
-                      wall.isFeatured
-                        ? "bg-white/10 text-white border-white/20"
-                        : "bg-white text-[#006def] border-[#006def]/30"
-                    }`}>
-                      {wall.id}
-                    </span>
+                    </span> 
                   </div>
                 </div>
 
@@ -164,4 +157,4 @@ export default function RetainingWallComponent() {
       </div>
     </section>
   );
-}
+}

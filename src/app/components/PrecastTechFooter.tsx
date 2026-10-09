@@ -293,10 +293,10 @@ export default function PrecastTechFooter() {
           </div>
 
           {/* 2ND LINE: OUR GROUP DEDICATED TO PRECAST (HEADING + LOGOS) */}
-          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-start gap-4 sm:gap-6">
             <div className="flex items-center gap-2 shrink-0">
               <span className="w-1.5 h-1.5 bg-[#006def] rounded-full animate-pulse" />
-              <h4 className="text-xs font-mono font-black uppercase tracking-wider text-white">
+              <h4 className="text-xs font-mono font-black uppercase tracking-wider text-white whitespace-nowrap">
                 Our Group Dedicated to Precast
               </h4>
             </div>

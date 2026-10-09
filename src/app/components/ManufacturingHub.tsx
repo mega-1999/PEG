@@ -172,8 +172,8 @@ export default function ManufacturingHub() {
         >
           {/* LEFT: TABLET QA/QC HUD & CAPABILITIES (5 COLS) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 text-[#006def] text-[10.5px] font-mono font-bold tracking-wider uppercase border border-white/15">
-              <Tablet className="w-3.5 h-3.5 text-[#006def]" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-white/10 text-white text-[10.5px] font-mono font-bold tracking-wider uppercase border border-white/15">
+              <Tablet className="w-3.5 h-3.5 text-white" />
               <span>SHOP FLOOR & CASTING BED QA/QC</span>
             </div>
 
@@ -187,15 +187,15 @@ export default function ManufacturingHub() {
 
             <div className="space-y-2 pt-2 border-t border-white/15 text-xs font-mono font-bold">
               <div className="flex items-center gap-2 text-white">
-                <CheckCircle2 className="w-4 h-4 text-[#006def] shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-white shrink-0" />
                 <span>Zero-Clash Rebar & Anchor Placement Verification</span>
               </div>
               <div className="flex items-center gap-2 text-white">
-                <Scan className="w-4 h-4 text-[#006def] shrink-0" />
+                <Scan className="w-4 h-4 text-white shrink-0" />
                 <span>Instant Digital Runsheet & Curing Temperature Logs</span>
               </div>
               <div className="flex items-center gap-2 text-white">
-                <Cpu className="w-4 h-4 text-blue-200 shrink-0" />
+                <Cpu className="w-4 h-4 text-white shrink-0" />
                 <span>Syncs with Main CAD Server & Batch Plant Telemetry</span>
               </div>
             </div>

@@ -167,13 +167,6 @@ export default function PrecastMoldComponent() {
                       }`}>
                         {mold.tag}
                       </span>
-                      <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-xs ${
-                        isBlue
-                          ? "bg-white/10 text-[#006def] border border-[#006def]/40"
-                          : "bg-white text-[#006def] border border-[#006def]/30"
-                      }`}>
-                        {mold.id}
-                      </span>
                     </div>
                   </div>
 

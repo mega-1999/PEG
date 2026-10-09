@@ -245,24 +245,24 @@ export default function PrecastTechFooter() {
                 <span>GENERAL</span>
               </div>
               <a
-                href="mailto:contact@precastengineering.org"
+                href="mailto:ask@precastengineering.org"
                 className="text-xs font-bold text-white/80 hover:text-white transition-colors block truncate"
               >
-                contact@precastengineering.org
+                ask@precastengineering.org
               </a>
             </div>
 
-            {/* SALES */}
+            {/* SALES / INQUIRIES */}
             <div className="space-y-1">
               <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-[#006def]">
                 <Mail className="w-3.5 h-3.5 text-[#006def]" />
-                <span>SALES</span>
+                <span>INQUIRIES</span>
               </div>
               <a
-                href="mailto:sales@precastengineering.org"
+                href="mailto:ask@precastengineering.org"
                 className="text-xs font-bold text-white/80 hover:text-white transition-colors block truncate"
               >
-                sales@precastengineering.org
+                ask@precastengineering.org
               </a>
             </div>
 

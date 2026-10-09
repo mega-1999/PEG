@@ -274,13 +274,13 @@ export const Navbar = () => {
           {/* LEFT: EMAIL & PHONE CONTACT */}
           <div className="h-full flex items-center gap-2 sm:gap-4 shrink-0">
             <a
-              href="mailto:contact@precastengineering.org"
+              href="mailto:ask@precastengineering.org"
               className="flex items-center gap-1.5 hover:text-blue-200 transition-colors py-1"
               title="Email Precast Engineering Group"
             >
               <Mail className="w-3.5 h-3.5 text-white shrink-0" />
-              <span className="font-mono text-[10px] sm:text-[10.5px] hidden sm:inline">contact@precastengineering.org</span>
-              <span className="font-mono text-[10px] sm:hidden inline">contact@precast...</span>
+              <span className="font-mono text-[10px] sm:text-[10.5px] hidden sm:inline">ask@precastengineering.org</span>
+              <span className="font-mono text-[10px] sm:hidden inline">ask@precast...</span>
             </a>
             
             <span className="text-white/30 hidden xs:inline">&bull;</span>
@@ -791,7 +791,7 @@ export const Navbar = () => {
                     <Phone className="w-3.5 h-3.5 text-[#006def]" />
                     <span>+1 (631) 452-1111</span>
                   </a>
-                  <a href="mailto:contact@precastengineering.org" className="flex items-center gap-1.5 hover:text-[#006def]">
+                  <a href="mailto:ask@precastengineering.org" className="flex items-center gap-1.5 hover:text-[#006def]">
                     <Mail className="w-3.5 h-3.5 text-[#006def]" />
                     <span>Email Us</span>
                   </a>

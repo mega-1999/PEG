@@ -166,7 +166,7 @@ export default function EntrySystem() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+            <div className="flex items-center gap-2 text-white sm:gap-4 shrink-0">
               <div className="hidden md:flex items-center gap-2 px-3 py-1 bg-[#006def]/20 border border-[#006def]/40 text-[#006def] text-[10px] font-mono font-bold uppercase rounded-xs">
                 <Radio className="w-3.5 h-3.5 animate-pulse" /> Live System
               </div>

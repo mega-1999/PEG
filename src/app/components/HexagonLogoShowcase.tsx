@@ -136,9 +136,7 @@ function PartnerCard({ logo }: { logo: PartnerItem }) {
 
       {/* CARD TOP HEADER */}
       <div className="flex justify-between items-center text-[10px] font-mono font-bold">
-        <span className="text-[#006def] bg-blue-50 px-1.5 py-0.5 border border-[#006def]/20 rounded-xs">
-          {logo.id}
-        </span>
+       
         <span className="text-[#002f7a]/80 uppercase tracking-wider font-bold text-[9px] truncate max-w-[150px]">
           {logo.category}
         </span>

@@ -280,7 +280,8 @@ export default function EntrySystem() {
               
               <div className="space-y-0.5 text-center sm:text-left">
                 <div className="inline-flex items-center gap-1.5 text-white text-[11px] sm:text-xs font-black uppercase tracking-wider">
-                  <Zap className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#006def]" /> Bridging Precasters &bull; Certified Architecture
+                  <Zap className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#006def]" />
+                  <span>Bridging Precasters &bull; Certified Architecture</span>
                 </div>
                 <div className="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 text-[9.5px] sm:text-[11px] font-mono text-white/70">
                   <span>50 States PE</span>

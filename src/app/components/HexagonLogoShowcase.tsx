@@ -67,30 +67,28 @@ export default function HexagonLogoShowcase() {
           </p>
         </div>
 
-        {/* INFINITE TICKER MARQUEE - ROW 1 (LEFT TO RIGHT) */}
-        <div className="relative w-full overflow-hidden py-1">
-          <motion.div
-            className="flex gap-4 min-w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
+        {/* INFINITE TICKER MARQUEE - ROW 1 (LEFT TO RIGHT) - PAUSE ON HOVER */}
+        <div className="relative w-full overflow-hidden py-1 group/row1">
+          <div
+            className="flex gap-4 w-max animate-marquee group-hover/row1:[animation-play-state:paused] hover:[animation-play-state:paused]"
+            style={{ animationDuration: '45s' }}
           >
-            {[...row1, ...row1].map((logo, idx) => (
+            {[...row1, ...row1, ...row1, ...row1].map((logo, idx) => (
               <PartnerCard key={`row1-${idx}`} logo={logo} />
             ))}
-          </motion.div>
+          </div>
         </div>
 
-        {/* INFINITE TICKER MARQUEE - ROW 2 (RIGHT TO LEFT) */}
-        <div className="relative w-full overflow-hidden py-1">
-          <motion.div
-            className="flex gap-4 min-w-max"
-            animate={{ x: ["-50%", "0%"] }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 38 }}
+        {/* INFINITE TICKER MARQUEE - ROW 2 (RIGHT TO LEFT) - PAUSE ON HOVER */}
+        <div className="relative w-full overflow-hidden py-1 group/row2">
+          <div
+            className="flex gap-4 w-max animate-marquee-reverse group-hover/row2:[animation-play-state:paused] hover:[animation-play-state:paused]"
+            style={{ animationDuration: '48s' }}
           >
-            {[...row2, ...row2].map((logo, idx) => (
+            {[...row2, ...row2, ...row2, ...row2].map((logo, idx) => (
               <PartnerCard key={`row2-${idx}`} logo={logo} />
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* BOTTOM METRIC BADGES BAR */}

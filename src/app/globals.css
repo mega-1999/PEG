@@ -39,6 +39,13 @@
   will-change: transform;
 }
 
+.animate-marquee:hover,
+.animate-marquee-reverse:hover,
+.partner-marquee-row:hover .partner-marquee-inner,
+.partner-marquee-inner:hover {
+  animation-play-state: paused !important;
+}
+
 @keyframes marquee-dot-track {
   0% {
     transform: translateX(0%);

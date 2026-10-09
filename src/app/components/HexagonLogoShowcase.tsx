@@ -67,10 +67,18 @@ export default function HexagonLogoShowcase() {
           </p>
         </div>
 
-        {/* INFINITE TICKER MARQUEE - ROW 1 (LEFT TO RIGHT) - PAUSE ON HOVER */}
-        <div className="relative w-full overflow-hidden py-1 group/row1">
+        {/* Inline style for guaranteed instant marquee pause on hover */}
+        <style>{`
+          .partner-marquee-row:hover .partner-marquee-inner,
+          .partner-marquee-inner:hover {
+            animation-play-state: paused !important;
+          }
+        `}</style>
+
+        {/* INFINITE TICKER MARQUEE - ROW 1 (LEFT TO RIGHT) */}
+        <div className="partner-marquee-row relative w-full overflow-hidden py-1">
           <div
-            className="flex gap-4 w-max animate-marquee group-hover/row1:[animation-play-state:paused] hover:[animation-play-state:paused]"
+            className="partner-marquee-inner flex gap-4 w-max animate-marquee"
             style={{ animationDuration: '45s' }}
           >
             {[...row1, ...row1, ...row1, ...row1].map((logo, idx) => (
@@ -79,10 +87,10 @@ export default function HexagonLogoShowcase() {
           </div>
         </div>
 
-        {/* INFINITE TICKER MARQUEE - ROW 2 (RIGHT TO LEFT) - PAUSE ON HOVER */}
-        <div className="relative w-full overflow-hidden py-1 group/row2">
+        {/* INFINITE TICKER MARQUEE - ROW 2 (RIGHT TO LEFT) */}
+        <div className="partner-marquee-row relative w-full overflow-hidden py-1">
           <div
-            className="flex gap-4 w-max animate-marquee-reverse group-hover/row2:[animation-play-state:paused] hover:[animation-play-state:paused]"
+            className="partner-marquee-inner flex gap-4 w-max animate-marquee-reverse"
             style={{ animationDuration: '48s' }}
           >
             {[...row2, ...row2, ...row2, ...row2].map((logo, idx) => (

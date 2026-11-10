@@ -269,7 +269,7 @@ export const Navbar = () => {
 
       {/* 1. TOP UTILITY BAR (Mobile, Tablet & Desktop Responsive) */}
       <div className="bg-[#002f7a] text-white h-9 sm:h-10 w-full border-b border-white/10">
-        <div className="max-w-[1600px] mx-auto px-3 sm:px-6 md:px-10 lg:px-16 xl:px-20 h-full flex justify-between items-center text-[10px] sm:text-[11px] font-bold tracking-wider">
+        <div className="w-full px-[20px] h-full flex justify-between items-center text-[10px] sm:text-[11px] font-bold tracking-wider">
           
           {/* LEFT: EMAIL & PHONE CONTACT */}
           <div className="h-full flex items-center gap-2 sm:gap-4 shrink-0">
@@ -386,27 +386,27 @@ export const Navbar = () => {
       </div>
 
       {/* 2. MAIN NAVIGATION BAR */}
-      <div className="bg-white border-b border-[#002f7a]/10 h-16 sm:h-20 md:h-24 xl:h-26 w-full relative">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 w-full h-full flex justify-between items-center relative">
+      <div className="bg-white border-b border-[#002f7a]/10 h-16 sm:h-20 md:h-22 xl:h-24 w-full relative">
+        <div className="w-full px-5 h-full flex justify-between items-center relative">
 
-          {/* BRAND LOGO & TAGLINE */}
+          {/* BRAND LOGO (EXTREME LEFT - 20px FROM LEFT EDGE) & TAGLINE */}
           <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex flex-col justify-center items-start group">
             <Image
               src={getAssetUrl("/peg_logo.png")}
               alt="PEG Precast Engineering Group"
-              width={260}
-              height={80}
-              className="h-10 sm:h-14 md:h-18 xl:h-20 w-auto object-contain transition-all"
+              width={220}
+              height={70}
+              className="h-8 sm:h-11 md:h-13 xl:h-15 w-auto object-contain transition-all"
               style={{ width: "auto" }}
               priority
             />
-            <span className="text-[8px] xs:text-[9.5px] sm:text-[10px] md:text-[11.5px] font-bold tracking-wider text-[#002f7a] uppercase group-hover:text-[#006def] transition-colors leading-tight mt-0.5 font-mono">
+            <span className="text-[7.5px] xs:text-[8.5px] sm:text-[9.5px] md:text-[10.5px] font-bold tracking-wider text-[#002f7a] uppercase group-hover:text-[#006def] transition-colors leading-tight mt-0.5 font-mono">
               Advanced Precast Engineering...
             </span>
           </Link>
 
           {/* DESKTOP NAVIGATION LINKS (xl breakpoint - 1280px+) */}
-          <nav className="hidden xl:flex items-center h-full flex-1 justify-center gap-1">
+          <nav className="hidden xl:flex items-center h-full flex-1 justify-center gap-0.5 2xl:gap-1 px-2">
             {navData.map((item) => {
               const isOpen = activeMenu === item.title;
               const hasMegaMenu = !!item.megaMenu;
@@ -419,7 +419,7 @@ export const Navbar = () => {
                   <button
                     type="button"
                     onClick={() => toggleMenu(item.title)}
-                    className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-sm font-black uppercase tracking-tight transition-all duration-200 border-t-4 cursor-pointer
+                    className={`h-full px-2 2xl:px-3 whitespace-nowrap flex items-center gap-1 text-[11px] 2xl:text-xs font-black uppercase tracking-tight transition-all duration-200 border-t-4 cursor-pointer
                       ${isOpen ? 'text-[#002f7a] border-[#002f7a] bg-[#002f7a]/5' : 'text-[#006def] border-transparent hover:text-[#002f7a] hover:border-[#002f7a]'}
                     `}
                   >
@@ -519,41 +519,62 @@ export const Navbar = () => {
             <Link
               href="/blog"
               onClick={() => setActiveMenu(null)}
-              className="h-full px-3 2xl:px-4 whitespace-nowrap flex items-center text-sm font-black uppercase tracking-tight text-[#006def] border-t-4 border-transparent hover:text-[#002f7a] hover:border-[#002f7a] transition-all duration-200"
+              className="h-full px-2 2xl:px-3 whitespace-nowrap flex items-center text-[11px] 2xl:text-xs font-black uppercase tracking-tight text-[#006def] border-t-4 border-transparent hover:text-[#002f7a] hover:border-[#002f7a] transition-all duration-200"
             >
               BLOG
             </Link>
           </nav>
 
-          {/* DESKTOP CTA BUTTON (xl breakpoint - 1280px+) */}
-          <div className="hidden xl:flex shrink-0 pl-4 xl:pl-8 border-l border-[#002f7a]/10 h-10 items-center">
-            <Link
-              href="#technical-vault"
-              className="bg-[#002f7a] whitespace-nowrap hover:bg-[#006def] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors shadow-sm hover:shadow"
-            >
-              Access Vault
-            </Link>
-          </div>
+          {/* RIGHT ACTIONS & EXTREME RIGHT LOGO (20px FROM RIGHT EDGE) */}
+          <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 xl:gap-4 shrink-0">
+            {/* DESKTOP CTA BUTTON (xl breakpoint - 1280px+) */}
+            <div className="hidden xl:flex shrink-0 pl-2 xl:pl-3 border-l border-[#002f7a]/10 h-9 items-center">
+              <Link
+                href="#technical-vault"
+                className="bg-[#002f7a] whitespace-nowrap hover:bg-[#006def] text-white px-3 xl:px-4 py-2 text-[11px] font-bold uppercase tracking-wider rounded transition-colors shadow-sm hover:shadow"
+              >
+                Access Vault
+              </Link>
+            </div>
 
-          {/* TABLET & MOBILE RIGHT ACTIONS (<1280px) */}
-          <div className="xl:hidden flex items-center gap-2.5 sm:gap-3">
-            {/* Quick Vault button on Tablet (sm to lg screens) */}
-            <Link
-              href="#technical-vault"
-              className="hidden sm:inline-flex items-center bg-[#002f7a]/10 hover:bg-[#002f7a] text-[#002f7a] hover:text-white px-3.5 py-2 text-[11px] font-black uppercase tracking-wider rounded transition-all border border-[#002f7a]/20"
-            >
-              Vault
-            </Link>
+            {/* TABLET & MOBILE RIGHT ACTIONS (<1280px) */}
+            <div className="xl:hidden flex items-center gap-1.5 sm:gap-2">
+              {/* Quick Vault button on Tablet (sm to lg screens) */}
+              <Link
+                href="#technical-vault"
+                className="hidden sm:inline-flex items-center bg-[#002f7a]/10 hover:bg-[#002f7a] text-[#002f7a] hover:text-white px-2.5 py-1.5 text-[10px] font-black uppercase tracking-wider rounded transition-all border border-[#002f7a]/20"
+              >
+                Vault
+              </Link>
 
-            {/* Hamburger Button */}
-            <button
-              type="button"
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="bg-[#002f7a] hover:bg-[#006def] transition-colors p-2.5 sm:p-3 rounded-md text-white cursor-pointer shadow-sm flex items-center justify-center"
-              aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              {/* Hamburger Button */}
+              <button
+                type="button"
+                onClick={() => setIsMobileOpen(!isMobileOpen)}
+                className="bg-[#002f7a] hover:bg-[#006def] transition-colors p-2 rounded-md text-white cursor-pointer shadow-sm flex items-center justify-center"
+                aria-label={isMobileOpen ? "Close navigation menu" : "Open navigation menu"}
+              >
+                {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+
+            {/* PRECAST DRAWINGS LOGO - EXTREME RIGHT (20px FROM RIGHT EDGE) */}
+            <Link
+              href="/"
+              onClick={() => setActiveMenu(null)}
+              className="shrink-0 flex items-center group"
+              title="Precast Drawings — Advanced Specs"
             >
-              {isMobileOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
-            </button>
+              <Image
+                src={getAssetUrl("/precast_drawings.jpeg")}
+                alt="Precast Drawings — Advanced Specs"
+                width={220}
+                height={70}
+                className="h-8 sm:h-11 md:h-13 xl:h-15 w-auto object-contain mix-blend-multiply transition-all group-hover:opacity-90"
+                style={{ width: "auto" }}
+                priority
+              />
+            </Link>
           </div>
 
         </div>

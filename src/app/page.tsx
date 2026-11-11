@@ -38,10 +38,11 @@ import PrecastBlogSection from "./components/PrecastBlogSection";
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-white pt-24 md:pt-32">
-      <ResourceDirectory />
+      <PegHero />
 
       {/* 1. HERO */}
       <SponsorMarquee />
+      <ResourceDirectory />
       <HeroEngineering />
       <PegServices />
       <GridContent />
@@ -70,7 +71,6 @@ export default function Home() {
       <FutureCulvertComponent />
       <UnchallengedResources />
       <DeliverableUpgrade />
-      <PegHero />
       {/* 6. PORTALS & RESOURCES */}
       <section id="portal" className="w-full bg-white text-[#002f7a] overflow-hidden relative border-t border-[#002f7a]/10">
         <LoginGateway />

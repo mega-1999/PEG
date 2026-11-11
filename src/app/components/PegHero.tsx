@@ -64,7 +64,7 @@ function SituationTypewriter() {
 
 export default function PegHero() {
   return (
-    <section className="relative w-full min-h-[92vh] flex flex-col justify-between bg-[#002f7a] text-white overflow-hidden select-none border-t border-white/10">
+    <section className="relative w-full min-h-[78vh] flex flex-col justify-between bg-[#002f7a] text-white overflow-hidden select-none border-t border-white/10">
 
       {/* 1. TECHNICAL MATRIX DOT GRID OVERLAY */}
       <div
